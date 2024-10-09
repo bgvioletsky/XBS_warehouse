@@ -52,29 +52,29 @@ def classify_data(data_path):
             try:
                 if data[key]['sourceType']=='video':
                     video_list[key] = data[key]
-                    write_json(data[key],'../xbs_source/video',key+'.json')
-                    convert('../xbs_source/video/'+key+'.json','../xbs_source/video/'+key+'.xbs',0)
+                    write_json(data[key],'xbs_source/video',key+'.json')
+                    convert('xbs_source/video/'+key+'.json','xbs_source/video/'+key+'.xbs',0)
                 elif data[key]['sourceType']=='comic':
                     comic_list[key]=data[key]
-                    write_json(data[key],'../xbs_source/comic',key+'.json')
-                    convert('../xbs_source/comic/'+key+'.json','../xbs_source/comic/'+key+'.xbs',0)
+                    write_json(data[key],'xbs_source/comic',key+'.json')
+                    convert('xbs_source/comic/'+key+'.json','xbs_source/comic/'+key+'.xbs',0)
                 elif data[key]['sourceType']=='audio':
                     audio_list[key]=data[key]
-                    write_json(data[key],'../xbs_source/audio',key+'.json')
-                    convert('../xbs_source/audio/'+key+'.json','../xbs_source/audio/'+key+'.xbs',0)
+                    write_json(data[key],'xbs_source/audio',key+'.json')
+                    convert('xbs_source/audio/'+key+'.json','xbs_source/audio/'+key+'.xbs',0)
                 elif data[key]['sourceType']=='text':
                     text_list[key]=data[key]
-                    write_json(data[key],'../xbs_source/text',key+'.json')
-                    convert('../xbs_source/text/'+key+'.json','../xbs_source/text/'+key+'.xbs',0)
+                    write_json(data[key],'xbs_source/text',key+'.json')
+                    convert('xbs_source/text/'+key+'.json','xbs_source/text/'+key+'.xbs',0)
             except KeyError:
                 data[key]['sourceType'] = 'text'
                 text_list[key]=data[key]
-                write_json(data[key],'../xbs_source/text',key+'.json')
-                convert('../xbs_source/text/'+key+'.json','../xbs_source/text/'+key+'.xbs',0)
-        write_json(video_list,'../xbs_source/video', 'videoList.json')
-        write_json(comic_list,'../xbs_source/comic', 'comicList.json')
-        write_json(audio_list, '../xbs_source/audio', 'audioList.json')
-        write_json(text_list, '../xbs_source/text','textList.json')
+                write_json(data[key],'xbs_source/text',key+'.json')
+                convert('xbs_source/text/'+key+'.json','xbs_source/text/'+key+'.xbs',0)
+        write_json(video_list,'xbs_source/video', 'videoList.json')
+        write_json(comic_list,'xbs_source/comic', 'comicList.json')
+        write_json(audio_list, 'xbs_source/audio', 'audioList.json')
+        write_json(text_list, 'xbs_source/text','textList.json')
 
 def convert_files_in_folder(folder_path):
     for filename in os.listdir(folder_path):
@@ -84,7 +84,7 @@ def convert_files_in_folder(folder_path):
             convert(input_path, output_path, 1)
             classify_data(output_path)
 def main():
-    folder_path = '../xbs_source'
+    folder_path = 'xbs_source'
     convert_files_in_folder(folder_path) 
 
 if __name__ == '__main__':
