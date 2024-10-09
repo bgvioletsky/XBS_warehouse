@@ -24,11 +24,11 @@ jobs:
           pip install requests  # 安装所需的依赖包
       - name: 创建版本号
         run: |
-                   if ! curl -L --silent --output ./version.sh 'https://raw.githubusercontent.com/bgvioletsky/command/refs/heads/main/version.sh'; then
+                   if ! curl -L --silent --output version.sh 'https://raw.githubusercontent.com/bgvioletsky/command/refs/heads/main/version.sh'; then
                       echo "Failed to download the file."
                       exit 1
                    fi                 
-                   if ! mv ./Tool/version  version; then
+                   if ! mv Tool/version  version; then
                       echo "Failed to move the file."
                       exit 1
                    fi
@@ -37,14 +37,14 @@ jobs:
                    echo "**发布时间：$(date +'%Y-%m-%d %H:%M:%S')**" >> bgcode.txt
       - name: 运行脚本
         run: |
-          python ./Tool/convert.py
-          mv ./version ./Tool/version
+          python Tool/convert.py
+          mv version Tool/version
       - name: Commit and push changes
         run: |
               git config --local user.email 'bglhcode@icloud.com'
               git config --local user.name 'BGcode'
               git pull
-              git add ./xbs_source/* ./Tool/version
+              git add xbs_source/* Tool/version
               git commit -m "源检测处理"
               git push
       - name: 发布到release
