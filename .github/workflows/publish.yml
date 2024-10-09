@@ -8,7 +8,7 @@ on:
     
 jobs:
   build:
-    name: Software Download link
+    name: 源拆解
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -17,13 +17,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-                python-version: "3.x"
+            python-version: "3.x"
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests  # 安装所需的依赖包
-          - name: 创建版本号
-          run: |
+      - name: 创建版本号
+        run: |
                    if ! curl -L --silent --output ./version.sh 'https://raw.githubusercontent.com/bgvioletsky/command/refs/heads/main/version.sh'; then
                       echo "Failed to download the file."
                       exit 1
@@ -35,7 +35,7 @@ jobs:
                    
                    echo "version=$(bash version.sh)" >> $GITHUB_ENV
                    echo "**发布时间：$(date +'%Y-%m-%d %H:%M:%S')**" >> bgcode.txt
-      - name: Run Python script
+      - name: 运行脚本
         run: |
           python ./Tool/convert.py
           mv ./version ./Tool/version
