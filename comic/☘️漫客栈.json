@@ -1,0 +1,111 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$..image || @js:\nreturn result.join('\\n');",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet arr = result.match(/\\/(\\d+)\\/(\\d+)/);\nlet bid = arr[1];\nlet cid = arr[2];\n\nreturn 'https://comic.mkzcdn.com/chapter/content/v1/?chapter_id='+cid+'&comic_id='+bid+'&format=1&quality=1&sign=0&type=1&uid=0'",
+        "host": "https://www.mkzhan.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.mkzhan.com",
+        "cat": "//div[@class='comic-status']/span[1]/b",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class='intro-total']"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//p[contains(@class, 'update')]/a",
+            "bookName": "//p[contains(@class, 'title')]/a",
+            "desc": "//p[contains(@class, 'feature')]",
+            "requestInfo": "@js:\n\nlet fl = params.filters;\nif(fl.theme_id.length == 0)\n\tfl.theme_id = undefined;\nif(fl.finish.length == 0)\n\tfl.finish = undefined;\n\n// 将pay转换为is_free / is_vip\nlet pay = parseInt(fl.pay);\nfl.pay = undefined;\nif(pay==1)\n\tfl.is_free = 1;\nelse if(pay==2)\n\tfl.is_vip = 1;\n\nif(params.pageIndex > 1)\n\tfl.page = params.pageIndex;\nreturn {'url':'https://www.mkzhan.com/category/', 'httpParams':fl};",
+            "host": "https://www.mkzhan.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "theme_id\n全部::\n修真::2\n恋爱::3\n校园::4\n冒险::5\n搞笑::6\n生活::7\n热血::8\n架空::9\n后宫::10\n耽美::11\n玄幻::12\n悬疑::13\n恐怖::14\n灵异::15\n动作::16\n科幻::17\n战争::18\n古风::19\n穿越::20\n竞技::21\n百合::22\n励志::23\n同人::24\n真人::26\n霸总::1\n\n\npay\n全部::0\n免费::1\n付费::2\n\n\nfinish\n全部::\n连载::1\n完结::2\n\n\norder\n更新::2\n人气::1"
+            },
+            "cover": "//img/@data-src",
+            "detailUrl": "//p[contains(@class, 'title')]/a/@href",
+            "list": "//div[@class='common-comic-item']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        },
+        "限免": {
+            "cat": "//div[@class='comic-sub-text']",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='comic-name']/a",
+            "desc": "//div[@class='comic-intro']",
+            "requestInfo": "@js:\nreturn {'url':'https://www.mkzhan.com/free/limit/', 'cacheTime':1};",
+            "host": "https://www.mkzhan.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class='comic-name']/a/@href",
+            "cover": "//img[@class='comic-cover']/@src",
+            "validConfig": "",
+            "list": "//div[contains(@class, 'limit-list-item')]",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.mkzhan.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9958",
+    "sourceName": "☘️漫客栈",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641282119.163290",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "lastChapterTitle": "//p[contains(@class, 'update')]/a",
+        "responseFormatType": "html",
+        "bookName": "//p[contains(@class, 'title')]/a",
+        "desc": "//p[contains(@class, 'feature')]",
+        "requestInfo": "https://www.mkzhan.com/search/?keyword=%@keyWord",
+        "host": "https://www.mkzhan.com",
+        "actionID": "searchBook",
+        "detailUrl": "//p[contains(@class, 'title')]/a/@href",
+        "cover": "//img/@data-src",
+        "validConfig": "",
+        "list": "//div[@class='common-comic-item']",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 30
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "host": "https://www.mkzhan.com",
+        "list": "//a[contains(@class, 'j-chapter-link')] || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@data-hreflink"
+    }
+}

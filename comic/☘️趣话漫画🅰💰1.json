@@ -1,0 +1,81 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "httpHeaders": {
+            "User-Agent": "okhttp/3.12.3"
+        },
+        "parserID": "DOM",
+        "host": "https://api.iqhmh.com",
+        "requestInfo": "@js:\nreturn JSON.parse(result);",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5982",
+    "sourceName": "☘️趣话漫画🅰💰1",
+    "sourceUrl": "https://api.iqhmh.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "httpHeaders": {
+        "User-Agent": "okhttp/3.12.3"
+    },
+    "lastModifyTime": "1641441696.065445",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "categories || @js:\nreturn result.join('/');",
+        "lastChapterTitle": "nowChapter",
+        "author": "author",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "httpHeaders": {
+            "User-Agent": "okhttp/3.12.3"
+        },
+        "requestInfo": "@js:\nreturn {'url':'https://api.iqhmh.com/search', 'POST':true, 'httpParams':{'value':params.keyWord, 'page':params.pageIndex, 'limit':30}};",
+        "host": "https://api.iqhmh.com",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "vThumb",
+        "validConfig": "",
+        "list": "data/list",
+        "parserID": "DOM",
+        "desc": "describe"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn {'url':'https://api.iqhmh.com/comic/chapter_list', 'POST':true, 'httpParams':{'work_id':result}};",
+        "title": "title",
+        "host": "https://api.iqhmh.com",
+        "httpHeaders": {
+            "User-Agent": "okhttp/3.12.3"
+        },
+        "list": "data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nlet cid = result.chapter_id;\nlet wid = result.work_id;\nlet obj = {'work_id':wid, 'chapter_id':cid};\nreturn JSON.stringify({'url':'https://api.iqhmh.com/comic/chapter_detail', 'POST':true, 'httpParams':obj});"
+    }
+}

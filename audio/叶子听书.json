@@ -1,0 +1,239 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "0",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "||",
+        "host": "http://www.yzfm.net",
+        "list": "//div[contains(@id, 'playlist')]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "sourceName": "叶子听书",
+    "sourceType": "audio",
+    "sourceUrl": "http://www.yzfm.net",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637503530.146895",
+    "searchBook": {
+        "author": "//div[@class='ec-item']/p[1]/a[2]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class='ec-item']/p[1]/a[1]",
+        "bookName": "//a[@class='ecitem-name']",
+        "desc": "//p[contains(@class, 'desc')]",
+        "requestInfo": "http://www.yzfm.net/h.html?wd=%@keyWord",
+        "host": "http://www.yzfm.net",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class='ecitem-name']/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//li[@class='padd']"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "http://www.yzfm.net",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet ret = result.match(/var player_data=(\\{[\\s\\S]+?\\})/)[1];\n\treturn JSON.parse(ret).url;\n}",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "404",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.yzfm.net",
+        "desc": "//div[@class='album-intro  _t4_']",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {
+        "推荐": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, response)\n{\n\tlet list = [];\n\tlet reg = /<li(?:\\S|\\s)*?album-title.*?title=\"(.*?)\".*?href=\"(.*?)\".*?<span.*?<span.*?>(.*?)<\\/span/gim;\n\twhile(tem=reg.exec(response))\n\t{\n\t\tlet book = {};\n\t\tbook.bookName = tem[1];\n\t\tbook.author = tem[3];\n\t\tbook.detailUrl = tem[2];\n\t\tlist.push(book);\n\t}\n\n\tlet result = {'list':list, 'removeHtmlKeys':'author'}\n\tif(list.length<30)\n\t\tresult.more = false;\n\treturn result;\n}",
+            "requestInfo": "@js:\nreturn 'http://www.yzfm.net' + params.filters.cat + params.filters.sort + '.html';",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "/w/tj"
+                            },
+                            {
+                                "title": "广播",
+                                "value": "/w/gb"
+                            },
+                            {
+                                "title": "评书",
+                                "value": "/w/ps"
+                            },
+                            {
+                                "title": "财经",
+                                "value": "/w/cj"
+                            },
+                            {
+                                "title": "戏曲",
+                                "value": "/w/xq"
+                            },
+                            {
+                                "title": "诗歌",
+                                "value": "/w/sg"
+                            },
+                            {
+                                "title": "儿童",
+                                "value": "/w/et"
+                            },
+                            {
+                                "title": "粤语",
+                                "value": "/w/yy"
+                            },
+                            {
+                                "title": "笑话",
+                                "value": "/w/xiaohua"
+                            },
+                            {
+                                "title": "相声",
+                                "value": "/w/xs"
+                            },
+                            {
+                                "title": "百家讲坛",
+                                "value": "/w/bjjt"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "时间",
+                                "value": ""
+                            },
+                            {
+                                "title": "人气",
+                                "value": "/by/hits"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "/by/score"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "host": "http://www.yzfm.net",
+            "parserID": "DOM"
+        },
+        "小说": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, response)\n{\n\tlet list = [];\n\tlet reg = /<li(?:\\S|\\s)*?album-title.*?title=\"(.*?)\".*?href=\"(.*?)\".*?<span.*?<span.*?>(.*?)<\\/span/gim;\n\twhile(tem=reg.exec(response))\n\t{\n\t\tlet book = {};\n\t\tbook.bookName = tem[1];\n\t\tbook.author = tem[3];\n\t\tbook.detailUrl = tem[2];\n\t\tlist.push(book);\n\t}\n\n\tlet result = {'list':list, 'removeHtmlKeys':'author'}\n\tif(list.length<30)\n\t\tresult.more = false;\n\treturn result;\n}",
+            "requestInfo": "@js:\nreturn 'http://www.yzfm.net' + params.filters.cat + params.filters.sort + '.html';",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "/w/ysxs"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "/w/xh"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "/w/wx"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "/w/xy"
+                            },
+                            {
+                                "title": "幻想",
+                                "value": "/w/hx"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "/w/ds"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "/w/kb"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "/w/yq"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "/w/wy"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "/w/kh"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "/w/ls"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "/w/js"
+                            },
+                            {
+                                "title": "修真",
+                                "value": "/w/jz"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "时间",
+                                "value": ""
+                            },
+                            {
+                                "title": "人气",
+                                "value": "/by/hits"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "/by/score"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "host": "http://www.yzfm.net",
+            "parserID": "DOM"
+        }
+    }
+}

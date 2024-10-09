@@ -1,0 +1,193 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]//text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 6
+        },
+        "host": "http://www.bixia.org",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "http://www.bixia.org",
+        "cover": "//meta[@property='og:image']/@content",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"book-intro\"]",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "author": "//p[@class=\"author\"]",
+            "responseFormatType": "html",
+            "bookName": "//h3[@class=\"name\"]",
+            "desc": "//div[@class=\"desc\"] ||@js:\nreturn result.replace(/[\\r\\\\n\\\"]/g,\"\")",
+            "requestInfo": "@js:\n\n\nlet url =config.host+\"/\"+params.filters.type+ \"/\"\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "http://www.bixia.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[1]/@href",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "周榜",
+                                "value": "hot/week"
+                            },
+                            {
+                                "title": "月榜",
+                                "value": "hot/month"
+                            },
+                            {
+                                "title": "总榜",
+                                "value": "hot/total"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//ul[@class=\"list-1\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//img/@data-src"
+        },
+        "分类排行": {
+            "author": "//p[@class=\"author\"]",
+            "responseFormatType": "html",
+            "bookName": "//h3[@class=\"name\"]",
+            "desc": "//div[@class=\"desc\"] ||@js:\nreturn result.replace(/[\\r\\\\n\\t]/g,\"\")",
+            "requestInfo": "@js:\n\n\nlet url =config.host+\"/\"+params.filters.type+ \"/\"+params.filters.ranking + \"/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "http://www.bixia.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[1]/@href",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "sort/1"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "sort/2"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "sort/3"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "sort/4"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "sort/5"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "sort/6"
+                            },
+                            {
+                                "title": "女生频道",
+                                "value": "sort/7"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "ranking",
+                        "items": [
+                            {
+                                "title": "周榜",
+                                "value": "week"
+                            },
+                            {
+                                "title": "月榜",
+                                "value": "month"
+                            },
+                            {
+                                "title": "总榜",
+                                "value": "total"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//ul[@class=\"list-1\"]/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//img/@data-src"
+        }
+    },
+    "sourceUrl": "http://www.bixia.org",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "2222",
+    "sourceName": "笔下文学",
+    "desc": "🦞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650359830.700506",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//span[@class=\"author\"]",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url= config.host+\"/ar.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'keyWord':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "bookName": "//p[@class=\"name\"]",
+        "detailUrl": "//a/@href",
+        "host": "http://www.bixia.org",
+        "cat": "//span[@class=\"cate\"]",
+        "list": "//ul[@class=\"list search-list\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestParamsEncode": "2147485234",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href",
+        "title": "//a",
+        "moreKeys": {
+            "pageSize": 20,
+            "skipCount": 6,
+            "maxPage": 150
+        },
+        "host": "http://www.bixia.org",
+        "list": "//ul[@class=\"list\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

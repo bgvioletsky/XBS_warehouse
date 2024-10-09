@@ -1,0 +1,163 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.exiaoshuo.com",
+        "httpHeaders": {
+            "Referer": "https://www.zmccx.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]"
+    },
+    "weight": "999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.exiaoshuo.com",
+        "httpHeaders": {
+            "Referer": "https://www.zmccx.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@class=\"listmain\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "E小说网",
+    "sourceUrl": "https://www.exiaoshuo.com",
+    "httpHeaders": {
+        "Referer": "https://www.zmccx.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649463578.182242",
+    "searchBook": {
+        "cat": "//div[@class=\"cat\"]",
+        "author": "//div[@class=\"author\"]",
+        "lastChapterTitle": "//div[@class=\"update\"]",
+        "responseFormatType": "html",
+        "bookName": "//div[@class=\"bookinfo\"]//h4/a",
+        "httpHeaders": {
+            "Referer": "https://www.zmccx.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "https://www.exiaoshuo.com/fxgdf888.php?ie=gbk&q=%@keyWord",
+        "host": "https://www.exiaoshuo.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"bookinfo\"]/h4/a/@href",
+        "cover": "//div[@class=\"bookimg\"]//img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class='bookbox']",
+        "desc": "//div[@class=\"bookinfo\"]/p"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='content']/text()",
+        "actionID": "chapterContent",
+        "host": "https://www.exiaoshuo.com",
+        "httpHeaders": {
+            "Referer": "https://www.zmccx.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "😍-自用",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "小说分类": {
+            "cat": "//span[1]",
+            "responseFormatType": "html",
+            "author": "//span[4]",
+            "lastChapterTitle": "//span[3]",
+            "bookName": "//span[2]/a",
+            "httpHeaders": {
+                "Referer": "https://www.zmccx.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+\"/\"+params.filters.type ;\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.exiaoshuo.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻小说",
+                                "value": "xuanhuan"
+                            },
+                            {
+                                "title": "修真小说",
+                                "value": "xiuzhen"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "dushi"
+                            },
+                            {
+                                "title": "历史小说",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "网游小说",
+                                "value": "wangyou"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "言情小说",
+                                "value": "yanqing"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "qita"
+                            },
+                            {
+                                "title": "全本小说",
+                                "value": "quanben"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//span[2]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"l bd\"]/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

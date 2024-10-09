@@ -1,0 +1,133 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':'', 'sourceRegex':'.*\\\\.(mp3|m4a).*'};",
+        "host": "http://www.23ts.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.23ts.com",
+        "cover": "//div[@class='content']//div[@class='book-img']/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class='book']/div[@class='book-des']",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "榜单": {
+            "cat": "//span[1]",
+            "author": "//span[4]/a",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[3]/a",
+            "bookName": "//span[2]/a",
+            "host": "http://www.23ts.com",
+            "requestInfo": "%@filter%@pageIndex.html",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[2]/a/@href",
+            "moreKeys": {
+                "pageSize": 60,
+                "requestFilters": {
+                    "新书榜": "/top/postdate/",
+                    "推荐榜": "/top/votenum/",
+                    "完本榜": "/over/allvisit/",
+                    "更新榜": "/top/lastupdate/",
+                    "点击榜": "/top/allvisit/"
+                }
+            },
+            "validConfig": "",
+            "list": "//ul[@class='gengxin']/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "status": "//span[5]"
+        },
+        "分类": {
+            "author": "//*[@class='list-book-cs']/span[2]/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//*[@class='list-book-cs']/span[3]/a",
+            "bookName": "//*[@class='list-book-dt']/a",
+            "desc": "//*[@class='list-book-des']",
+            "host": "http://www.23ts.com",
+            "requestInfo": "/sort/%@filter/%@pageIndex.html",
+            "actionID": "bookWorld",
+            "detailUrl": "//*[@class='list-book-dt']/a/@href",
+            "moreKeys": {
+                "pageSize": 60,
+                "requestFilters": {
+                    "玄幻": "xuanhuan",
+                    "长篇短评": "pingshu",
+                    "军事": "junshi",
+                    "灵异": "lingyi",
+                    "职场": "tongren",
+                    "网游竞技": "jingji",
+                    "都市": "dushi"
+                }
+            },
+            "cover": "//img/@data-original",
+            "list": "//*[@class='list-works']//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "http://www.23ts.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "sourceType": "audio",
+    "sourceName": "☘️爱上你听书",
+    "weight": "0",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649043584.234266",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//*[@class='list-book-cs']/span[2]/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//*[@class='list-book-cs']/span[3]/a",
+        "bookName": "//*[@class='list-book-dt']/a",
+        "desc": "//*[@class='list-book-des']",
+        "requestInfo": "/search.html?searchtype=name&searchword=%@keyWord&page=%@pageIndex",
+        "host": "http://www.23ts.com",
+        "actionID": "searchBook",
+        "detailUrl": "//*[@class='list-book-dt']/a/@href",
+        "cover": "//img/@data-original",
+        "validConfig": "",
+        "list": "//*[@class='list-works']//li",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 60
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@class='book']/div[@class='book-info']/dl/dd[position()=last()]/text()",
+        "title": "//a",
+        "host": "http://www.23ts.com",
+        "list": "//div[@id='playlist']//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

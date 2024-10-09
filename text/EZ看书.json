@@ -1,0 +1,88 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id='nr']|@replace:本章未完，请点击下一页继续阅读》》",
+        "moreKeys": {
+            "maxPage": 3
+        },
+        "host": "https://m.ezkanshu.org",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@id='pb_next']/@href|@js:\nlet subUrl1 = result.replace('.html', '');\nlet subUrl2 = params.queryInfo.url.replace('.html', '');\nif(subUrl1.indexOf(subUrl2)>=0)\n\treturn result;\nreturn undefined;"
+    },
+    "enable": false,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = params.queryInfo.detailUrl;\nif(url.indexOf('http')!=0)\n\treturn 'https://www.luolaii.com' + url;\nreturn url;",
+        "lastChapterTitle": "//meta[@property='og:novel:latest_chapter_name']/@content",
+        "host": "https://m.ezkanshu.org",
+        "cover": "//meta[@property='og:image']/@content",
+        "responseFormatType": "html",
+        "desc": "//meta[@property='og:description']/@content",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://m.ezkanshu.org",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "0",
+    "sourceName": "EZ看书",
+    "desc": "搜索不可用",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637334804.468087",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//a[3]|@replace:在线阅读|@replace:免费阅读",
+        "responseFormatType": "html",
+        "bookName": "//a[2]",
+        "requestInfo": "https://m.ezkanshu.org/s.php",
+        "host": "https://m.ezkanshu.org",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "POST": true,
+            "maxPage": 1,
+            "httpParams": {
+                "s": "%@keyWord",
+                "type": "articlename"
+            }
+        },
+        "detailUrl": "//a[2]/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//p[@class='line']"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = params.queryInfo.detailUrl;\nif(url.indexOf('http')!=0)\n\treturn 'https://www.luolaii.com' + url;\nreturn url;",
+        "title": "//a",
+        "host": "https://m.ezkanshu.org",
+        "list": "//div[@class='chapterCon']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

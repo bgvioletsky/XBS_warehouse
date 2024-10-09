@@ -1,0 +1,64 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id='content']|@js:\nreturn result.replace('一秒记住【笔趣阁.www.bqg74.com】', '').replace('亲，本章未完，还有下一页哦^0^', '').replace('亲，本章已完，祝您阅读愉快！^0^', '');",
+        "host": "https://www.bqg74.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class='bottem1']/a[contains(text(),'下一页')]/@href"
+    },
+    "enable": false,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.bqg74.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "0",
+    "sourceName": "笔趣阁bqg74.com",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637655253.885502",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "requestParamsEncode": "2147485234",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, resStr)\n{\n\tif(resStr.indexOf('og:novel:book_name')>0)\n\t{\n\t\tlet reg = /og:novel:author.*?=\"(.*?)\"(?:\\S|\\s)*?og:novel:book_name.*?=\"(.*?)\"(?:\\S|\\s)*?og:novel:read_url.*?=\"(.*?)\"(?:\\S|\\s)*?og:novel:latest_chapter_name.*?=\"(.*?)\"/gim;\n\t\tif(tem=reg.exec(resStr))\n\t\t{\n\t\t\tlet book = {};\n\t\t\tbook.bookName = tem[2];\n\t\t\tbook.author = tem[1];\n\t\t\tbook.detailUrl = tem[3];\n\t\t\tbook.lastChapterTitle = tem[4];\n\t\t\treturn {'list':[book]};\n\t\t}\n\t\treturn undefined;\n\t}\n\n\tlet list = [];\n\tlet reg = /<tr(?:\\S|\\s)*?<td(?:\\S|\\s)*?<a.*?\"(.*?)\">(.*?)<(?:\\S|\\s)*?<a.*?>(.*?)<(?:\\S|\\s)*?<td.*?>(.*?)<(?:\\S|\\s)*?<td.*?>(.*?)</gim;\n\twhile(tem=reg.exec(resStr))\n\t{\n\t\tlet book = {};\n\t\tbook.detailUrl = tem[1];\n\t\tbook.bookName = tem[2];\n\t\tbook.lastChapterTitle = tem[3];\n\t\tbook.author = tem[4];\n\t\tbook.wordCount = tem[5];\n\t\tlist.push(book);\n\t}\n\n\tlet result = {};\n\tresult.list = list;\n\tif(resStr.indexOf('搜索结果')>0){\n\t\tresult.success = true;\n\t\tresult.more = false;\n\t}\n\n\treturn result;\n}",
+        "requestInfo": "@js:\nlet url = '/modules/article/search.php';\nreturn {\"url\":url,\"POST\":true,\"httpParams\":{\"searchtype\":\"articlename\",\"searchkey\":params.keyWord}};",
+        "host": "https://www.bqg74.com",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.bqg74.com",
+        "list": "//div[@id='list']/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js:\nreturn params.queryInfo.detailUrl + result;"
+    },
+    "sourceType": "text"
+}

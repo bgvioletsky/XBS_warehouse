@@ -1,0 +1,224 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class='content_txt']",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://www.dushu.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.dushu.com",
+        "desc": "//div[contains(@class, 'txtsummary')]",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "小说": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/lianzai/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "言情",
+                                "value": "1126"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "1127"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "1128"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "1129"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "1130"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "1131"
+                            },
+                            {
+                                "title": "官场商战",
+                                "value": "1132"
+                            },
+                            {
+                                "title": "悬疑推理",
+                                "value": "1133"
+                            },
+                            {
+                                "title": "武侠玄幻",
+                                "value": "1134"
+                            },
+                            {
+                                "title": "灵异恐怖",
+                                "value": "1135"
+                            },
+                            {
+                                "title": "社会乡土",
+                                "value": "1136"
+                            },
+                            {
+                                "title": "外国小说",
+                                "value": "1139"
+                            },
+                            {
+                                "title": "古典小说",
+                                "value": "1199"
+                            },
+                            {
+                                "title": "现当代小说",
+                                "value": "1138"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        },
+        "图书": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/lianzai/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "经济管理",
+                                "value": "1116"
+                            },
+                            {
+                                "title": "成功励志",
+                                "value": "1117"
+                            },
+                            {
+                                "title": "历史传记",
+                                "value": "1118"
+                            },
+                            {
+                                "title": "两性情感",
+                                "value": "1119"
+                            },
+                            {
+                                "title": "生活时尚",
+                                "value": "1120"
+                            },
+                            {
+                                "title": "文学艺术",
+                                "value": "1121"
+                            },
+                            {
+                                "title": "社会科学",
+                                "value": "1122"
+                            },
+                            {
+                                "title": "亲子少儿",
+                                "value": "1123"
+                            },
+                            {
+                                "title": "科学技术",
+                                "value": "1125"
+                            },
+                            {
+                                "title": "计算机/网络",
+                                "value": "1124"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.dushu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9998",
+    "sourceName": "社科图书",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646910811.779684",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[1]",
+        "responseFormatType": "html",
+        "bookName": "//h3/a",
+        "desc": "//p[2]",
+        "requestInfo": "https://www.dushu.com/search.aspx?wd=%@keyWord&f=0&r=3&t=0&p=%@pageIndex",
+        "host": "https://www.dushu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//div[contains(@class, 'img')]//img/@data-original",
+        "validConfig": "",
+        "list": "//div[@class='book-info']",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 20
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "host": "https://www.dushu.com",
+        "list": "//div[@class='book-summary']//table[contains(@id, 'chapters')]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "sourceType": "text"
+}

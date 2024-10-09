@@ -1,0 +1,83 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9981",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href",
+        "title": "//a",
+        "moreKeys": {
+            "pageSize": 30,
+            "skipCount": 5,
+            "maxPage": 400
+        },
+        "host": "http://m.gebiqu.com",
+        "list": "//div[@class=\"directoryArea\"]/p",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "笔趣阁20",
+    "sourceType": "text",
+    "sourceUrl": "http://m.gebiqu.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651362850.511388",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "author": "//p[2][@class=\"author\"]",
+        "status": "//p[3][@class=\"author\"]",
+        "requestInfo": "@js:\nlet url= config.host+\"/s.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'keyword':params.keyWord};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "bookName": "//p[@class=\"title\"]",
+        "detailUrl": "//a/@href",
+        "host": "http://m.gebiqu.com",
+        "list": "//div/div",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"chaptercontent\"]",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 6
+        },
+        "host": "http://m.gebiqu.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://m.gebiqu.com",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class=\"review\"]"
+    },
+    "bookWorld": {}
+}

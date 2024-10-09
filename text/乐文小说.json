@@ -1,0 +1,104 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestParamsEncode": "2147485234",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 6
+        },
+        "host": "https://www.lwxsw8.com",
+        "list": "//div[@class=\"listmain\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "乐文小说",
+    "sourceType": "text",
+    "sourceUrl": "https://www.lwxsw8.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1656067715.926572",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//div[@class=\"cat\"]",
+        "author": "//div[@class=\"author\"]",
+        "responseFormatType": "html",
+        "bookName": "//h4[@class=\"bookname\"]",
+        "requestInfo": "https://www.lwxsw8.com/s.php?q=%@keyWord",
+        "host": "https://www.lwxsw8.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h4[@class=\"bookname\"]/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"type_show\"]/div",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]",
+        "requestParamsEncode": "2147485234",
+        "actionID": "chapterContent",
+        "host": "https://www.lwxsw8.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "requestParamsEncode": "2147485234",
+        "actionID": "bookDetail",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "https://www.lwxsw8.com",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@property=\"og:description\"]/@content"
+    },
+    "bookWorld": {
+        "分类": {
+            "requestParamsEncode": "2147485234",
+            "responseFormatType": "html",
+            "author": "//span[@class=\"s4\"]",
+            "lastChapterTitle": "//span[@class=\"s3\"]",
+            "bookName": "//span[@class=\"s2\"]",
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\r\nlet url=`https://www.lwxsw8.com/list/${_aa}-1.html`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.lwxsw8.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "moreKeys": {
+                "requestFilters": "_aa\n玄幻魔法::1\n仙侠修真::2\n都市言情::3\n历史军事::4\n网游动漫::5\n科幻小说::6\n恐怖灵异::7\n其他类型::8\n"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"l bd\"]/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "//span[@class=\"s5\"]"
+        }
+    }
+}

@@ -1,0 +1,135 @@
+{
+    "bookWorld": {
+        "日韩": {
+            "cat": "//span[@class=\"pull-left\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"listbox-remarks\"]",
+            "bookName": "//@alt",
+            "requestInfo": "https://www.malimali5.com/vodshow/10----%@pageIndex-.html",
+            "host": "https://www.malimali5.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//li/a/@href",
+            "cover": "//@data-echo",
+            "validConfig": "",
+            "list": "//div[@class=\"listbox board clearfix\"]/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 18
+            },
+            "status": "//span[@class=\"score\"]"
+        },
+        "欧美": {
+            "cat": "//span[@class=\"pull-left\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"listbox-remarks\"]",
+            "bookName": "//@alt",
+            "requestInfo": "https://www.malimali5.com/vodshow/11----%@pageIndex-.html",
+            "host": "https://www.malimali5.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//li/a/@href",
+            "cover": "//@data-echo",
+            "validConfig": "",
+            "list": "//div[@class=\"listbox board clearfix\"]/ul/li",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 18
+            },
+            "status": "//span[@class=\"score\"]"
+        },
+        "国产": {
+            "cat": "//span[@class=\"pull-left\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"listbox-remarks\"]",
+            "bookName": "//@alt",
+            "requestInfo": "https://www.malimali5.com/vodshow/9----%@pageIndex-.html",
+            "host": "https://www.malimali5.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//li/a/@href",
+            "cover": "//@data-echo",
+            "validConfig": "",
+            "list": "//div[@class=\"listbox board clearfix\"]/ul/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 18
+            },
+            "status": "//span[@class=\"score\"]"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.malimali5.com",
+        "list": "//ul[@class=\"rec-list\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "嘛哩嘛哩",
+    "sourceType": "video",
+    "sourceUrl": "https://www.malimali5.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654341133.233078",
+    "searchBook": {
+        "lastChapterTitle": "//span[@class=\"so-imgTag_rb\"]",
+        "responseFormatType": "html",
+        "bookName": "//@alt",
+        "requestInfo": "https://www.malimali5.com/vodsearch/%@keyWord----------%@pageIndex---.html",
+        "host": "https://www.malimali5.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 8
+        },
+        "detailUrl": "//li/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"searchbox board clearfix\"]/ul/li",
+        "parserID": "DOM",
+        "cover": "//@data-echo"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet url=result.content.match(/=(https?:\\/\\/.*\\.m3u8|mp4)/)[1]\n      return url\n}",
+        "requestInfo": "@js:\nif(/m3u8/.test(result)){\n  return {response:result}\n}\nelse{\n let pat=\"\\\\.(mp4|m3u8)\";\n return {url:result,webView:true,sourceRegex:pat}\n}",
+        "host": "https://www.malimali5.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.malimali5.com",
+        "desc": "//meta[@name=\"description\"]/@content",
+        "actionID": "bookDetail"
+    }
+}

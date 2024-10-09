@@ -1,0 +1,288 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"chaptercontent\"]/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':result, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "moreKeys": {
+            "maxPage": 7
+        },
+        "host": "https://m.sdlchxwz.com",
+        "httpHeaders": {
+            "Referer": "https://m.sdlchxwz.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "wordCount": "//div[@id=\"chapterlist\"]/p[10]/a/text()",
+        "requestInfo": "@js:\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':result, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "lastChapterTitle": "//div[@id=\"chapterlist\"]/p[10]/a/text()",
+        "host": "https://m.sdlchxwz.com",
+        "httpHeaders": {
+            "Referer": "https://m.sdlchxwz.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[2]/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "完结": {
+            "cat": "//nav[@class=\"sortChannel_nav\"]/a[@class=\"on\"]/text()",
+            "author": "//div[@class=\"detail\"]/p[@class=\"author\"]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"detail\"]/p[@class=\"title\"]/text()",
+            "httpHeaders": {
+                "Referer": "https://m.sdlchxwz.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url = config.host + '/quanben'+params.filters.type+'_'+ params.pageIndex +'.html';\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':url, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://m.sdlchxwz.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "3"
+                            },
+                            {
+                                "title": "穿越小说",
+                                "value": "4"
+                            },
+                            {
+                                "title": "网游小说",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "6"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "7"
+                            },
+                            {
+                                "title": "全部小说",
+                                "value": "0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"bookimg\"]/a[1]/img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@id=\"main\"]/div",
+            "detailUrl": "//div[@class=\"bookimg\"]/a/@href"
+        },
+        "分类": {
+            "cat": "//nav[@class=\"sortChannel_nav\"]/a[@class=\"on\"]/text()",
+            "author": "//div[@class=\"detail\"]/p[@class=\"author\"]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"detail\"]/p[@class=\"title\"]/text()",
+            "httpHeaders": {
+                "Referer": "https://m.sdlchxwz.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url = config.host + '/xclass/'+params.filters.type+'/'+ params.pageIndex +'.html';\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':url, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://m.sdlchxwz.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "3"
+                            },
+                            {
+                                "title": "穿越小说",
+                                "value": "4"
+                            },
+                            {
+                                "title": "网游小说",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "6"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "7"
+                            },
+                            {
+                                "title": "全部小说",
+                                "value": "0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"bookimg\"]/a[1]/img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "list": "//div[@id=\"main\"]/div",
+            "detailUrl": "//div[@class=\"bookimg\"]/a/@href"
+        },
+        "排行": {
+            "cat": "//nav[@class=\"sortChannel_nav\"]/a[@class=\"on\"]/text()",
+            "author": "//div[@class=\"detail\"]/p[@class=\"author\"]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"detail\"]/p[@class=\"title\"]/text()",
+            "httpHeaders": {
+                "Referer": "https://m.sdlchxwz.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url = config.host + '/ph/all'+params.filters.type+'_'+ params.pageIndex +'.html';\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':url, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://m.sdlchxwz.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "3"
+                            },
+                            {
+                                "title": "穿越小说",
+                                "value": "4"
+                            },
+                            {
+                                "title": "网游小说",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "6"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "7"
+                            },
+                            {
+                                "title": "全部小说",
+                                "value": "0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"bookimg\"]/a[1]/img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@id=\"main\"]/div",
+            "detailUrl": "//div[@class=\"bookimg\"]/a/@href"
+        }
+    },
+    "sourceUrl": "https://m.sdlchxwz.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "爱阅小说网",
+    "httpHeaders": {
+        "Referer": "https://m.sdlchxwz.com/",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "紅蓮華",
+    "lastModifyTime": "1653368551.675601",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[2]/a/text()",
+        "lastChapterTitle": "//p/a[@style=\"color: Red;\"]/text()",
+        "responseFormatType": "html",
+        "bookName": "//a/p[@class=\"title\"]/text()",
+        "httpHeaders": {
+            "Referer": "https://m.sdlchxwz.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "https://m.sdlchxwz.com/search.php?keyword=%@keyWord",
+        "host": "https://m.sdlchxwz.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"hot_sale\"]/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"slide-item list1\"]/div",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':result +\"all.html\", 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "title": "//a/text()",
+        "moreKeys": {
+            "maxPage": 1,
+            "skipCount": 1
+        },
+        "host": "https://m.sdlchxwz.com",
+        "httpHeaders": {
+            "Referer": "https://m.sdlchxwz.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@id=\"chapterlist\"]/p",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

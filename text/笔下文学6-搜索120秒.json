@@ -1,0 +1,156 @@
+{
+    "bookWorld": {
+        "分类": {
+            "cat": "//p[@class=\"info\"]/span[3] ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")",
+            "responseFormatType": "html",
+            "author": "//p[@class=\"info\"]/span[2]",
+            "lastChapterTitle": "//p[@class=\"last\"]/a",
+            "bookName": "//p[@class=\"info\"]/span[1]/a ||@js:\nreturn result.replace(/[\"全文免费阅读\"]/g,\"\")",
+            "httpHeaders": {
+                "Referer": "https://www.bxwx6.org",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+params.filters.type +\"/\" + params.pageIndex+\".html\"\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.bxwx6.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 12,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "小说分类",
+                                "value": "/sort"
+                            },
+                            {
+                                "title": "玄幻小说",
+                                "value": "/sort/xuanhuan"
+                            },
+                            {
+                                "title": "武侠小说",
+                                "value": "/sort/wuxia"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "/sort/dushi"
+                            },
+                            {
+                                "title": "历史小说",
+                                "value": "/sort/lishi"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "/sort/kehuan"
+                            },
+                            {
+                                "title": "游戏小说",
+                                "value": "/sort/youxi"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "/sort/qita"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//p[@class=\"info\"]/span[1]/a/@href",
+            "validConfig": "",
+            "list": "//ul[@class= \"librarylist\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//img/@data-original",
+            "desc": "//p[@class=\"intro\"]"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@id=\"haoshu\"]",
+        "title": "//a",
+        "host": "https://www.bxwx6.org",
+        "httpHeaders": {
+            "Referer": "https://www.bxwx6.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@class=\"card mt20 fulldir\"]//ul[@class=\"dirlist three clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "笔下文学6-搜索120秒",
+    "sourceUrl": "https://www.bxwx6.org",
+    "httpHeaders": {
+        "Referer": "https://www.bxwx6.org",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650545761.219669",
+    "searchBook": {
+        "cat": "//p[@class=\"info\"]/span[3] ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")",
+        "author": "//p[@class=\"info\"]/span[2]",
+        "lastChapterTitle": "//p[@class=\"last\"]/a",
+        "responseFormatType": "html",
+        "bookName": "//p[@class=\"info\"]/span[1]/a",
+        "httpHeaders": {
+            "Referer": "https://www.bxwx6.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url= config.host+\"/search/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.bxwx6.org",
+        "actionID": "searchBook",
+        "detailUrl": "//p[@class=\"info\"]/span[1]/a/@href",
+        "cover": "//img/@data-original",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class= \"librarylist\"]/li",
+        "desc": "//p[@class=\"intro\"]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='chaptercontent']//text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 3
+        },
+        "host": "https://www.bxwx6.org",
+        "httpHeaders": {
+            "Referer": "https://www.bxwx6.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),\"下一页\")] ||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/\\.html/,\"\");\n\nurl = url+\"_\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "😍-自用",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

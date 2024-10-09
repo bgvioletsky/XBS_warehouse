@@ -1,0 +1,127 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@class=\"content\"]/text() |@js:\nreturn result.replace('[看本书最新章节请到棉花糖小说网www.mhtxs.la]', '').replace('棉花糖小说网WWW.mhtxs.la', '').replace('（WWW.mhtxs.la', '').replace('mhtxs.la', '').replace('[棉花糖小说网]', '').replace('7017k','');",
+        "host": "https://www.mhtxs.la/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//div[@class=\"alistbox\"]//span/a",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class=\"alistbox\"]//div[@class=\"sys\"]/a",
+            "bookName": "//div[@class=\"alistbox\"]//h2/a",
+            "desc": "//div[@class=\"alistbox\"]//div[@class=\"intro\"]",
+            "requestInfo": "https://www.mhtxs.la/mulu/%@filter%@pageIndex.html",
+            "host": "https://www.mhtxs.la/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "18",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1-"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "2-"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "3-"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "4-"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "5-"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "7-"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "8-"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "10-"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h2/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "cover": "//div[@class=\"pic\"]//img/@src",
+            "list": "//div[@class=\"alistbox\"]"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.mhtxs.la/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "sourceType": "text",
+    "sourceName": "FZ-棉花糖小说",
+    "weight": "9000",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357523.671630",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[3]",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "search.php?searchkey=%@keyWord",
+        "lastChapterTitle": "//td[2]/a/text()",
+        "bookName": "//td[1]/a",
+        "host": "https://www.mhtxs.la/",
+        "detailUrl": "//td[1]/a/@href",
+        "list": "//table[@class=\"grid\"]//tr[position()>1]",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@name=\"og:novel:update_time\"]/@content",
+        "requestInfo": "@js: return params.queryInfo.detailUrl",
+        "title": "//a",
+        "host": "https://www.mhtxs.la/",
+        "list": "//div[@class=\"novel_list\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js: return params.queryInfo.detailUrl + result;"
+    }
+}

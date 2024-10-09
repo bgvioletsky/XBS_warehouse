@@ -1,0 +1,245 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//div[@id=\"qq\"]/text()||@js:\n\nreturn result.match(/状态：(\\S+)/)[1]",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36\",\n  \"Referer\": config.host\n};\n\nreturn {'url':result, 'POST':false,\"httpHeaders\":hh,cacheTime:3600};",
+        "lastChapterTitle": "//div[@class=\"panel-body text-center info3\"]/div[4]/a/text()",
+        "host": "https://www.nlxs.org",
+        "httpHeaders": {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Cookie": "jieqiVisitTime=jieqiArticlesearchTime%3D1638884443; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9",
+            "Referer": "https://www.nlxs.org/modules/article/search.php?searchkey=%B6%BC%CA%D0&0=2",
+            "Host": "www.nlxs.org",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+            "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+        },
+        "cover": "@js:\n\nlet id = params.queryInfo.detailUrl.match(/(\\d+)/g)[1];\nparams.nativeTool.log(id)\n\nlet iid = parseInt(id/1000);\n\nlet url= config.host+'/files/article/image/'+iid+'/'+id+'/'+id+'s.jpg';\nreturn url",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"info2\"]/div/p/text()||@js:\n\nres = result.replace(/纳兰小说[\\s\\S]+/g,\"\");\nreturn res;"
+    },
+    "weight": "4444",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "nextPageUrl": "@js:\nlet id= params.pageIndex+1\nlet url =params.queryInfo.detailUrl+id+\"/\";\n\nreturn url",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Cookie": "jieqiVisitTime=jieqiArticlesearchTime%3D1638884443; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9",
+            "Referer": "https://www.nlxs.org/modules/article/search.php?searchkey=%B6%BC%CA%D0&0=2",
+            "Host": "www.nlxs.org",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+            "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+        },
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36\",\n  \"Referer\": config.host\n};\n\nreturn {'url':result, 'POST':false,\"httpHeaders\":hh, cacheTime:3600 };",
+        "title": "//a/text()",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 200
+        },
+        "host": "https://www.nlxs.org",
+        "validConfig": "",
+        "list": "//div[@class=\"panel-body\"]/ul[@class=\"list-group list-charts\"]/li",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "👾纳兰小说",
+    "sourceUrl": "https://www.nlxs.org",
+    "httpHeaders": {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Connection": "keep-alive",
+        "Cookie": "jieqiVisitTime=jieqiArticlesearchTime%3D1638884443; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9",
+        "Referer": "https://www.nlxs.org/modules/article/search.php?searchkey=%B6%BC%CA%D0&0=2",
+        "Host": "www.nlxs.org",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+        "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650355505.014669",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "author": "//td[@id=\"booklast\"]/p/a",
+        "responseFormatType": "html",
+        "bookName": "(//td)[2]/p/a",
+        "httpHeaders": {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Cookie": "jieqiVisitTime=jieqiArticlesearchTime%3D1638884443; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9",
+            "Referer": "https://www.nlxs.org/modules/article/search.php?searchkey=%B6%BC%CA%D0&0=2",
+            "Host": "www.nlxs.org",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+            "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+        },
+        "requestInfo": "@js:\n/*let url=config.host+\"/modules/article/search.php?searchkey=\"+params.keyWord+\"&0=\"+params.pageIndex;*/\n\nlet url=config.host+\"/modules/article/search.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1\"\n}\n\n/*return {'url':url, 'POST':false,\"httpHeaders\":hh,\"cacheTime\":3600};*/\n\nlet hp= {'searchkey':params.keyWord,\n\"0\":params.pageIndex};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp,\"httpHeaders\":hh,\"cacheTime\":3600, forbidCookie:true};",
+        "host": "https://www.nlxs.org",
+        "actionID": "searchBook",
+        "detailUrl": "(//a[1]/@href)[1]",
+        "cover": "(//a[1]/@href)[1]||@js:\n\nvar id = result.match(/(\\d+)/g)[1];\nvar iid = parseInt(id/1000);\n\nlet url= config.host+'/files/article/image/'+iid+'/'+id+'/'+id+'s.jpg';\nreturn url",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table[@id=\"bookcon\"]/tr",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "status": "(//td)[5]/p/text()"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"chaptercontent\"]/text()",
+        "actionID": "chapterContent",
+        "host": "https://www.nlxs.org",
+        "httpHeaders": {
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Cookie": "jieqiVisitTime=jieqiArticlesearchTime%3D1638884443; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9",
+            "Referer": "https://www.nlxs.org/modules/article/search.php?searchkey=%B6%BC%CA%D0&0=2",
+            "Host": "www.nlxs.org",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+            "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "不推荐",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "author": "//div[@class=\"media-body\"]/div[@class=\"book_author\"]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"media-body\"]/h4/a/text()",
+            "desc": "//div/p",
+            "requestInfo": "@js:\n\nlet url =config.host+\"/list/\"+params.filters.type+\"-\"+params.pageIndex+\".html\";\n\n\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36\",\n  \"Referer\": config.host\n};\n\nreturn {'url':url, 'POST':false,\"httpHeaders\":hh,webView:false,cacheTime:3600};",
+            "host": "https://www.nlxs.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"media-left media-heading\"]/a/@href",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "4"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "6"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "5"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "7"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "8"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"media-left media-heading\"]/a/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class=\"panel-body\"]/div",
+            "httpHeaders": {
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Connection": "keep-alive",
+                "Cookie": "jieqiVisitTime=jieqiArticlesearchTime%3D1638884443; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9",
+                "Referer": "https://www.nlxs.org/modules/article/search.php?searchkey=%B6%BC%CA%D0&0=2",
+                "Host": "www.nlxs.org",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+                "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+            },
+            "_sIndex": 0
+        },
+        "榜单": {
+            "responseFormatType": "html",
+            "bookName": "//li[@class=\"articlename\"]/a/text()",
+            "httpHeaders": {
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Connection": "keep-alive",
+                "Cookie": "jieqiVisitTime=jieqiArticlesearchTime%3D1638884443; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9; fikker-21PS-d5fy=t1hctYNL4IHyZCnsVCTm2kI52WTeP3X9",
+                "Referer": "https://www.nlxs.org/modules/article/search.php?searchkey=%B6%BC%CA%D0&0=2",
+                "Host": "www.nlxs.org",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+                "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+            },
+            "requestInfo": "@js:\n\nlet url =config.host+\"/book/\"+params.filters.type+\"-\"+params.pageIndex+\".html\";\n\n\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36\",\n  \"Referer\": config.host\n};\n\nreturn {'url':url, 'POST':false,\"httpHeaders\":hh,webView:false};",
+            "host": "https://www.nlxs.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//li[@class=\"articlename\"]/a/@href",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "总排行榜",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "总推荐榜",
+                                "value": "allvote"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "list": "//ul[@class=\"article\"]/li",
+            "_sIndex": 1
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

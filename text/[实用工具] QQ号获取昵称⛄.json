@@ -1,0 +1,82 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "parserID": "DOM",
+        "actionID": "chapterList",
+        "responseFormatType": "html"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "[实用工具] QQ号获取昵称⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://v.api.aa1.cn/api/qqjson",
+    "httpHeaders": {
+        "testqq": "10001"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649600157.050279",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "JSParser": "function functionName(config,params,result){\n\tlet str = result.split('：')[1];\n\tlet json = JSON.parse(str);\n\tlet item = {};\n\titem.bookName = json[0].nickname;\n\titem.cover = json[0].touxiang;\n\titem.detailUrl = params.requestUrls[0];\n\titem.author = params.keyWord;\n\tlet list = [];\n\tlist.push(item);\n\treturn {'list':list};\n}",
+        "requestInfo": "/index.php?qq=%@keyWord",
+        "host": "https://v.api.aa1.cn/api/qqjson",
+        "httpHeaders": {
+            "testqq": "10001"
+        },
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "输入QQ号查询，如10001",
+    "shudanList": {},
+    "password": "stack_s5rVWsUf",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://v.api.aa1.cn/api/qqjson",
+        "httpHeaders": {
+            "testqq": "10001"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "@js:\nlet str = params.queryInfo.author + '的QQ昵称为：' + params.queryInfo.bookName;\nreturn str;"
+    },
+    "bookWorld": {
+        "分类": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config,params,result){\n\tlet str = result.split('：')[1];\n\tlet json = JSON.parse(str);\n\tlet item = {};\n\titem.bookName = json[0].nickname;\n\titem.cover = json[0].touxiang;\n\titem.detailUrl = params.responseUrl;\n\titem.author = config.httpHeaders.testqq;\n\tlet list = [];\n\tlist.push(item);\n\treturn {'list':list};\n}",
+            "requestInfo": "@js:\nlet url = config.host + '/index.php?qq=' + config.httpHeaders.testqq;\nreturn encodeURI(url);",
+            "host": "https://v.api.aa1.cn/api/qqjson",
+            "httpHeaders": {
+                "testqq": "10001"
+            },
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    }
+}

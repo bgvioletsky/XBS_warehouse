@@ -1,0 +1,89 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "0",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = 'https://api.iqhmh.com/comic/chapter_list';\nreturn {'url':url, 'POST':true, 'httpParams':{'work_id':result}};",
+        "host": "https://api.iqhmh.com",
+        "httpHeaders": {
+            "User-Agent": "okhttp/3.12.3"
+        },
+        "list": "@js:\nlet arr = result.data;\nlet len = arr.length;\n\nlet list = [];\nfor(i=0; i<len; i++)\n{\n\tlet old = arr[i];\n\tlet cp = {};\n\n\tlet title = old.title;\n\tif(old.price != undefined && old.price>0)\n\t\ttitle = title + '💰';\n\tcp.title = title;\n\n\tlet hp = {'work_id':old.work_id, 'chapter_id':old.chapter_id};\n\tlet obj = {'url':'https://api.iqhmh.com/comic/chapter_detail', 'POST':true, 'httpParams':hp};\n\tcp.url = JSON.stringify(obj);\n\n\tlist.push(cp);\n}\n\nreturn {'list':list};",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "sourceName": "☘️趣话漫画🅰💰",
+    "sourceType": "comic",
+    "sourceUrl": "https://api.iqhmh.com",
+    "httpHeaders": {
+        "User-Agent": "okhttp/3.12.3"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641403623.817148",
+    "searchBook": {
+        "cat": "categories || @js:\nreturn result.join('/');",
+        "author": "author",
+        "lastChapterTitle": "nowChapter",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "httpHeaders": {
+            "User-Agent": "okhttp/3.12.3"
+        },
+        "requestInfo": "@js:\nlet url = 'https://api.iqhmh.com/search';\nlet hp = {'value':params.keyWord, 'page':params.pageIndex, 'limit':30};\nreturn {'url':url, 'POST':true, 'httpParams':hp};",
+        "host": "https://api.iqhmh.com",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "vThumb",
+        "validConfig": "",
+        "list": "data/list",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$..content.[*]url || @js:\nreturn result.join('\\n');\n//result.split(\"\\n\").map(x=>'<img src=\\\"'+x+'\\\">').join(\"\\n\")",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn JSON.parse(result);",
+        "host": "https://api.iqhmh.com",
+        "httpHeaders": {
+            "User-Agent": "okhttp/3.12.3"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "500",
+    "shudanList": {},
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = 'https://api.iqhmh.com/comic/detail';\nlet hp = {'work_id':result};\nreturn {'url':url, 'POST':true, 'httpParams':hp};",
+        "host": "https://api.iqhmh.com",
+        "httpHeaders": {
+            "User-Agent": "okhttp/3.12.3"
+        },
+        "responseFormatType": "json",
+        "desc": "data/describe",
+        "parserID": "DOM"
+    },
+    "bookWorld": {}
+}

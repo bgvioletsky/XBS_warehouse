@@ -1,0 +1,90 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='content']/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nreturn {\"url\":result, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.23zw.com",
+        "httpHeaders": {
+            "Referer": "https://www.23zw.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.23zw.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "59",
+    "sourceName": "傲世中文网",
+    "httpHeaders": {
+        "Referer": "https://www.23zw.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646667213.708820",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//span[@class='s4']/text()",
+        "lastChapterTitle": "//span[@class='s3']/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//span[@class='s2']/a/text()",
+        "httpHeaders": {
+            "Referer": "https://www.23zw.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url = config.host + \"/modules/article/search.php\";\nlet key = params.keyWord;\nlet hp = {\"searchkey\":key};\n\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\": config.httpHeaders, \"httpParams\":hp};",
+        "host": "https://www.23zw.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "detailUrl": "//span[@class='s2']/a/@href",
+        "cover": "//span[@class='s2']/a/@href || @js:\n\nvar id = result.match(/(\\d+)/g)[1];\nvar iid = parseInt(id/1000);\nreturn config.host + \"/files/article/image/\" + iid + \"/\" + id + \"/\" + id + \"s.jpg\";",
+        "parserID": "DOM",
+        "validConfig": "",
+        "list": "//div[@class='novelslistss']/li"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {\"url\":result, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\": config.httpHeaders};",
+        "title": "//a",
+        "host": "https://www.23zw.com",
+        "httpHeaders": {
+            "Referer": "https://www.23zw.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "list": "//div[@id='list']/dl/dt[2]/following::dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href || @js:\nreturn params.queryInfo.detailUrl + result;"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,195 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "cat": "category_title",
+            "author": "nickname",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "intro",
+            "requestInfo": "http://search.ximalaya.com/speed/album/v1/list?condition=relation&core=album&device=android%@filter&page=%@pageIndex&rows=20&spellchecker=true",
+            "host": "http://search.ximalaya.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "&fq=categoryId:3&kw=玄幻"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "&fq=categoryId:3&kw=仙侠"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "&fq=categoryId:3&kw=都市"
+                            },
+                            {
+                                "title": "经典",
+                                "value": "&fq=categoryId:3&kw=经典"
+                            },
+                            {
+                                "title": "大剧",
+                                "value": "&fq=categoryId:3&kw=大剧"
+                            },
+                            {
+                                "title": "幻想",
+                                "value": "&fq=categoryId:3&kw=幻想"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "&fq=categoryId:3&kw=武侠"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "&fq=categoryId:3&kw=历史小说"
+                            },
+                            {
+                                "title": "教材",
+                                "value": "&fq=categoryId:3&kw=教材"
+                            },
+                            {
+                                "title": "多人",
+                                "value": "&fq=categoryId:3&kw=多人剧"
+                            },
+                            {
+                                "title": "相声",
+                                "value": "&fq=categoryId:3&kw=相声"
+                            },
+                            {
+                                "title": "英文",
+                                "value": "&fq=categoryId:3&kw=英文原版"
+                            },
+                            {
+                                "title": "名著",
+                                "value": "&fq=categoryId:3&kw=名著"
+                            },
+                            {
+                                "title": "乡村",
+                                "value": "&fq=categoryId:3&kw=乡村"
+                            },
+                            {
+                                "title": "广播剧",
+                                "value": "&fq=categoryId:3&kw=广播剧"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "&fq=categoryId:3&kw=游戏"
+                            },
+                            {
+                                "title": "无限",
+                                "value": "&fq=categoryId:3&kw=无限"
+                            },
+                            {
+                                "title": "魔法",
+                                "value": "&fq=categoryId:3&kw=魔法"
+                            },
+                            {
+                                "title": "音乐",
+                                "value": "&fq=categoryId:2&kw=音乐"
+                            },
+                            {
+                                "title": "乡村",
+                                "value": "&fq=categoryId:2&kw=乡村"
+                            },
+                            {
+                                "title": "流行",
+                                "value": "&fq=categoryId:2&kw=流行Top"
+                            },
+                            {
+                                "title": "老歌",
+                                "value": "&fq=categoryId:2&kw=老歌"
+                            },
+                            {
+                                "title": "榜单",
+                                "value": "&fq=categoryId:2&kw=榜单"
+                            },
+                            {
+                                "title": "巅峰",
+                                "value": "&fq=categoryId:2&kw=巅峰榜"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "cover_path",
+            "detailUrl": "id",
+            "list": "response/docs",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "http://search.ximalaya.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9990",
+    "sourceName": "☘️喜马拉雅",
+    "sourceType": "audio",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639842275.716630",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "category_title",
+        "author": "nickname",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "desc": "intro",
+        "requestInfo": "http://search.ximalaya.com/speed/album/v1/list?condition=relation&core=album&device=android&fq=categoryId:3&kw=%@keyWord&page=%@pageIndex&rows=20&spellchecker=true",
+        "host": "http://search.ximalaya.com",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "cover_path",
+        "validConfig": "",
+        "list": "response/docs",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 20
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "playPathAacv224 || playUrl32",
+        "requestInfo": "@js:\nlet page = params.lastResponse == undefined ? 1 : params.pageIndex;\nreturn 'http://mobile.ximalaya.com/fmobile-album/album/track/ts-1576706285548?ac=4G&albumId=' + params.queryInfo.detailUrl + '&device=android&isAsc=true&isQueryInvitationBrand=true&isVideoAsc=true&pageSize=200&source=3&supportWebp=true&pageId=' + page;",
+        "title": "title",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "http://search.ximalaya.com",
+        "list": "data/list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "nextPageUrl": "@js:\nif(result.data.pageId != undefined && result.data.maxPageId != undefined && result.data.pageId < result.data.maxPageId)\n\treturn result.data.pageId + 1;\nreturn undefined;"
+    }
+}

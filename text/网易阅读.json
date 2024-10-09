@@ -1,0 +1,146 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "JS"
+    },
+    "bookWorld": {
+        "采薇书院": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar oldList = resObj.list;\n\tvar length = oldList.length;\n\n\tvar list = [];\n\tfor(let i=0; i<length; i++)\n\t{\n\t\tvar oldInfo = oldList[i];\n\t\tvar book = {};\n\t\t\n\t\tbook.bookId = oldInfo.id;\n\t\tbook.bookName = oldInfo.title;\n\t\tbook.author = oldInfo.author;\n\t\tbook.cover = oldInfo.cover;\n\t\tbook.cat = oldInfo.category;\n\t\tbook.desc = oldInfo.content;\n\n\t\tlist.push(book);\n\t}\n\n\tvar result = {};\n\tresult.list = list;\n\tif(list.length<20)\n\t\tresult.more = false;\n\treturn result;\n}",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "host": "https://easyread.163.com",
+            "moreKeys": {
+                "requestFilters": {
+                    "浪漫青春": "22",
+                    "同人网游": "15",
+                    "都市言情": "8",
+                    "穿越架空": "9",
+                    "宫斗宅斗": "18",
+                    "种田重生": "17",
+                    "古风古韵": "24",
+                    "仙侠幻情": "13",
+                    "灵异推理": "14",
+                    "短篇美文": "16"
+                }
+            },
+            "requestJavascript": "function functionName(config, params) {\n\tvar url = 'https://easyread.163.com/source/v2/searchBook.json';\n\tvar httpParams = {'catId':params.filter, 'wordCount':0, 'pay':2, 'bookStatus':0, 'sort':1, 'page':params.pageIndex};\n\treturn {'url':url, 'httpParams':httpParams};\n}",
+            "parserID": "JS",
+            "responseFormatType": "json"
+        },
+        "出版图书": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar oldList = resObj.list;\n\tvar length = oldList.length;\n\n\tvar list = [];\n\tfor(let i=0; i<length; i++)\n\t{\n\t\tvar oldInfo = oldList[i];\n\t\tvar book = {};\n\t\t\n\t\tbook.bookId = oldInfo.id;\n\t\tbook.bookName = oldInfo.title;\n\t\tbook.author = oldInfo.author;\n\t\tbook.cover = oldInfo.cover;\n\t\tbook.cat = oldInfo.category;\n\t\tbook.desc = oldInfo.content;\n\n\t\tlist.push(book);\n\t}\n\n\tvar result = {};\n\tresult.list = list;\n\tif(list.length<20)\n\t\tresult.more = false;\n\treturn result;\n}",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "host": "https://easyread.163.com",
+            "moreKeys": {
+                "requestFilters": {
+                    "杂志期刊": "12000",
+                    "经济管理": "2400",
+                    "计算机": "3000",
+                    "亲子少儿": "2700",
+                    "文学作品": "2100",
+                    "培训考试": "3100",
+                    "自然科学": "2900",
+                    "品质生活": "2800",
+                    "人文社科": "2300",
+                    "成功励志": "2600"
+                }
+            },
+            "requestJavascript": "function functionName(config, params) {\n\tvar url = 'https://easyread.163.com/source/v2/searchBook.json';\n\tvar httpParams = {'catId':params.filter, 'wordCount':0, 'pay':2, 'bookStatus':0, 'sort':1, 'page':params.pageIndex};\n\treturn {'url':url, 'httpParams':httpParams};\n}",
+            "parserID": "JS",
+            "responseFormatType": "json"
+        },
+        "网文分类": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar oldList = resObj.list;\n\tvar length = oldList.length;\n\n\tvar list = [];\n\tfor(let i=0; i<length; i++)\n\t{\n\t\tvar oldInfo = oldList[i];\n\t\tvar book = {};\n\t\t\n\t\tbook.bookId = oldInfo.id;\n\t\tbook.bookName = oldInfo.title;\n\t\tbook.author = oldInfo.author;\n\t\tbook.cover = oldInfo.cover;\n\t\tbook.cat = oldInfo.category;\n\t\tbook.desc = oldInfo.content;\n\n\t\tlist.push(book);\n\t}\n\n\tvar result = {};\n\tresult.list = list;\n\tif(list.length<20)\n\t\tresult.more = false;\n\treturn result;\n}",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "host": "https://easyread.163.com",
+            "moreKeys": {
+                "requestFilters": {
+                    "同人网游": "10",
+                    "历史传奇": "11",
+                    "灵异恐怖": "6",
+                    "科幻奇幻": "2",
+                    "军事谍战": "3",
+                    "短篇小说": "12",
+                    "都市生活": "7",
+                    "玄幻仙侠": "1",
+                    "悬疑探险": "5"
+                }
+            },
+            "requestJavascript": "function functionName(config, params) {\n\tvar url = 'https://easyread.163.com/source/v2/searchBook.json';\n\tvar httpParams = {'catId':params.filter, 'wordCount':0, 'pay':2, 'bookStatus':0, 'sort':1, 'page':params.pageIndex};\n\treturn {'url':url, 'httpParams':httpParams};\n}",
+            "parserID": "JS",
+            "responseFormatType": "json"
+        }
+    },
+    "weight": "6000",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar oldList = resObj.portions;\n\tvar length = oldList.length;\n\n\tvar list = [];\n\tfor(let i=0; i<length; i++)\n\t{\n\t\tlet oldInfo = oldList[i];\n\t\tif(oldInfo['charSize']==undefined || oldInfo['charSize']<=0)\n\t\t\tcontinue;\n\n\t\tlet chapter = {};\n\t\tchapter.title = oldInfo.title;\n\t\tchapter.url = oldInfo.id;\n\t\tchapter.bookId = params.queryInfo.bookId;\n\t\tchapter.contentId = oldInfo.bigContentId;\n\t\tlist.push(chapter);\n\t}\n\n\treturn {'list':list};\n}",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://easyread.163.com",
+        "responseFormatType": "json",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'https://yuedu.163.com/getBook.do?id=' + params.queryInfo.bookId;\n}"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "JS"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "JS"
+    },
+    "enable": 0,
+    "sourceName": "网易阅读",
+    "sourceUrl": "https://easyread.163.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "JS"
+    },
+    "lastModifyTime": "1637327982.423860",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar list = [];\n\tvar oldList = resObj.entry;\n\tvar length = oldList.length;\n\tfor(let i=0; i<length; i++)\n\t{\n\t\tlet bookInfo = {};\n\t\tlet oldInfo = oldList[i];\n\n\t\tbookInfo.bookId = oldInfo.id;\n\t\tbookInfo.author = oldInfo.author.name;\n\t\tbookInfo.bookName = oldInfo.title;\n\t\tbookInfo.desc = oldInfo.summary;\n\t\tbookInfo.cat = oldInfo['pris:book']['category'];\n\n\t\tif(oldInfo.link.length>1)\n\t\t\tbookInfo.cover = oldInfo.link[1]['_href'];\n\n\t\tlist.push(bookInfo);\n\t}\n\n\tvar result = {};\n\tresult.list = list;\n\tif(list.length<10)\n\t\tresult.more = false;\n\treturn result;\n}",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://easyread.163.com",
+        "responseFormatType": "xml",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params) {\n\t//return 'https://easyread.163.com/searchbook2.atom?bookStatus=0&channel=0&from=0&pay=2&sort=0&v2=2&wordCount=0&page=' + params.pageIndex + '&query' + encodeURI(params.keyWord);\n\tvar url = 'https://easyread.163.com/searchbook2.atom';\n\tvar httpParams = {'from':0, 'pay':2, 'channel':0, 'sort':0, 'bookStatus':0, 'v2':2, 'wordCount':0, 'query':params.keyWord, 'page':params.pageIndex};\n\treturn {'url':url, 'httpParams':httpParams};\n}"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseJavascript": "function functionName(config, params, resObj) {\n\tvar str = Base64.decode(resObj.content);\n\treturn {'content':str, 'removeHtmlKeys':'content'};\n}\n\nvar Base64 = {\n\t_keyStr: \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\",\n\tencode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i, s, o, u, a;\n\t\tvar f = 0;\n\t\te = Base64._utf8_encode(e);\n\t\twhile (f < e.length) {\n\t\t\tn = e.charCodeAt(f++);\n\t\t\tr = e.charCodeAt(f++);\n\t\t\ti = e.charCodeAt(f++);\n\t\t\ts = n >> 2;\n\t\t\to = (n & 3) << 4 | r >> 4;\n\t\t\tu = (r & 15) << 2 | i >> 6;\n\t\t\ta = i & 63;\n\t\t\tif (isNaN(r)) {\n\t\t\t\tu = a = 64\n\t\t\t} else if (isNaN(i)) {\n\t\t\t\ta = 64\n\t\t\t}\n\t\t\tt = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)\n\t\t}\n\t\treturn t\n\t},\n\tdecode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i;\n\t\tvar s, o, u, a;\n\t\tvar f = 0;\n\t\te = e.replace(/[^A-Za-z0-9+/=]/g, \"\");\n\t\twhile (f < e.length) {\n\t\t\ts = this._keyStr.indexOf(e.charAt(f++));\n\t\t\to = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tu = this._keyStr.indexOf(e.charAt(f++));\n\t\t\ta = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tn = s << 2 | o >> 4;\n\t\t\tr = (o & 15) << 4 | u >> 2;\n\t\t\ti = (u & 3) << 6 | a;\n\t\t\tt = t + String.fromCharCode(n);\n\t\t\tif (u != 64) {\n\t\t\t\tt = t + String.fromCharCode(r)\n\t\t\t}\n\t\t\tif (a != 64) {\n\t\t\t\tt = t + String.fromCharCode(i)\n\t\t\t}\n\t\t}\n\t\tt = Base64._utf8_decode(t);\n\t\treturn t\n\t},\n\t_utf8_encode: function(e) {\n\t\te = e.replace(/rn/g, \"n\");\n\t\tvar t = \"\";\n\t\tfor (var n = 0; n < e.length; n++) {\n\t\t\tvar r = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r)\n\t\t\t} else if (r > 127 && r < 2048) {\n\t\t\t\tt += String.fromCharCode(r >> 6 | 192);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t} else {\n\t\t\t\tt += String.fromCharCode(r >> 12 | 224);\n\t\t\t\tt += String.fromCharCode(r >> 6 & 63 | 128);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t}\n\t\t}\n\t\treturn t\n\t},\n\t_utf8_decode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n = 0;\n\t\tvar r = c1 = c2 = 0;\n\t\twhile (n < e.length) {\n\t\t\tr = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r);\n\t\t\t\tn++\n\t\t\t} else if (r > 191 && r < 224) {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tt += String.fromCharCode((r & 31) << 6 | c2 & 63);\n\t\t\t\tn += 2\n\t\t\t} else {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tc3 = e.charCodeAt(n + 2);\n\t\t\t\tt += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);\n\t\t\t\tn += 3\n\t\t\t}\n\t\t}\n\t\treturn t\n\t}\n}",
+        "actionID": "chapterContent",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://easyread.163.com",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'http://yuedu.163.com/getArticleContent.do?sourceUuid=' + params.queryInfo.bookId + '&articleUuid=' + params.queryInfo.url + '&bigContentId=' + params.queryInfo.contentId;\n}",
+        "parserID": "JS",
+        "responseFormatType": "json"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "JS"
+    },
+    "desc": "©",
+    "password": "Baby",
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "JS"
+    },
+    "shudanList": {},
+    "sourceType": "text"
+}

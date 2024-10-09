@@ -1,0 +1,214 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "http://www.kuaishuku.com",
+        "list": "//ul[1][@class=\"list-group list-charts\"][@id=\"stylechapter\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//li/a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "快书库",
+    "sourceType": "text",
+    "sourceUrl": "http://www.kuaishuku.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654771947.452987",
+    "searchBook": {
+        "author": "//td[3]",
+        "lastChapterTitle": "//td[4]",
+        "responseFormatType": "html",
+        "bookName": "//td[2]",
+        "requestInfo": "http://www.kuaishuku.com/search.php?searchkey=%@keyWord",
+        "host": "http://www.kuaishuku.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div/a/@href",
+        "validConfig": "",
+        "list": "//tr",
+        "parserID": "DOM",
+        "status": "//td[5]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.kuaishuku.com",
+        "content": "//div[@class=\"book-content\"]",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "http://www.kuaishuku.com",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@property=\"og:description\"]/@content"
+    },
+    "bookWorld": {
+        "都市言情": {
+            "responseFormatType": "html",
+            "author": "//div[1]/a",
+            "bookName": "//*[@title]",
+            "requestInfo": "http://www.kuaishuku.com/list/3-%@pageIndex.html",
+            "host": "http://www.kuaishuku.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"media-left media-heading\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 30
+            },
+            "_sIndex": 2,
+            "list": "//div[@class=\"panel-body\"]/div",
+            "parserID": "DOM"
+        },
+        "玄幻魔法": {
+            "responseFormatType": "html",
+            "author": "//div[1]/a",
+            "bookName": "//*[@title]",
+            "requestInfo": "http://www.kuaishuku.com/list/1-%@pageIndex.html",
+            "host": "http://www.kuaishuku.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"media-left media-heading\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 30
+            },
+            "_sIndex": 0,
+            "list": "//div[@class=\"panel-body\"]/div",
+            "parserID": "DOM"
+        },
+        "恐怖灵异": {
+            "responseFormatType": "html",
+            "author": "//div[1]/a",
+            "bookName": "//*[@title]",
+            "requestInfo": "http://www.kuaishuku.com/list/7-%@pageIndex.html",
+            "host": "http://www.kuaishuku.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"media-left media-heading\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 30
+            },
+            "_sIndex": 5,
+            "list": "//div[@class=\"panel-body\"]/div",
+            "parserID": "DOM"
+        },
+        "历史军事": {
+            "responseFormatType": "html",
+            "author": "//div[1]/a",
+            "bookName": "//*[@title]",
+            "requestInfo": "http://www.kuaishuku.com/list/4-%@pageIndex.html",
+            "host": "http://www.kuaishuku.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"media-left media-heading\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 30
+            },
+            "_sIndex": 3,
+            "list": "//div[@class=\"panel-body\"]/div",
+            "parserID": "DOM"
+        },
+        "其他小说": {
+            "responseFormatType": "html",
+            "author": "//div[1]/a",
+            "bookName": "//*[@title]",
+            "requestInfo": "http://www.kuaishuku.com/list/8-%@pageIndex.html",
+            "host": "http://www.kuaishuku.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"media-left media-heading\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 30
+            },
+            "_sIndex": 7,
+            "list": "//div[@class=\"panel-body\"]/div",
+            "parserID": "DOM"
+        },
+        "游戏体育": {
+            "responseFormatType": "html",
+            "author": "//div[1]/a",
+            "bookName": "//*[@title]",
+            "requestInfo": "http://www.kuaishuku.com/list/5-%@pageIndex.html",
+            "host": "http://www.kuaishuku.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"media-left media-heading\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 30
+            },
+            "_sIndex": 4,
+            "list": "//div[@class=\"panel-body\"]/div",
+            "parserID": "DOM"
+        },
+        "科幻小说": {
+            "responseFormatType": "html",
+            "author": "//div[1]/a",
+            "bookName": "//*[@title]",
+            "requestInfo": "http://www.kuaishuku.com/list/6-%@pageIndex.html",
+            "host": "http://www.kuaishuku.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"media-left media-heading\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 30
+            },
+            "_sIndex": 6,
+            "list": "//div[@class=\"panel-body\"]/div",
+            "parserID": "DOM"
+        },
+        "武侠修真": {
+            "responseFormatType": "html",
+            "author": "//div[1]/a",
+            "bookName": "//*[@title]",
+            "requestInfo": "http://www.kuaishuku.com/list/2-%@pageIndex.html",
+            "host": "http://www.kuaishuku.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"media-left media-heading\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 30
+            },
+            "_sIndex": 1,
+            "list": "//div[@class=\"panel-body\"]/div",
+            "parserID": "DOM"
+        }
+    }
+}

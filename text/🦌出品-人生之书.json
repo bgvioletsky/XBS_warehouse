@@ -1,0 +1,269 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='content']",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://www.renshengxs.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//p[@class='data'][1]/span[1]",
+            "author": "//p[@class='data'][1]/a[1]",
+            "lastChapterTitle": "//p[@class='data' and contains(text(), '最新')]/a",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='bookname']/a",
+            "desc": "//p[@class='intro']",
+            "requestInfo": "@js:\nlet fl = params.filters;\nreturn 'https://m.renshengxs.com/store/' + fl.sort + '_' + fl.cat + '_' + fl.status + '_' + params.pageIndex + '.html';",
+            "host": "https://www.renshengxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市生活",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "4"
+                            },
+                            {
+                                "title": "游戏竞技",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻未来",
+                                "value": "6"
+                            },
+                            {
+                                "title": "恐怖悬疑",
+                                "value": "7"
+                            },
+                            {
+                                "title": "经典网文",
+                                "value": "9"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "10"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "11"
+                            },
+                            {
+                                "title": "幻想奇缘",
+                                "value": "12"
+                            },
+                            {
+                                "title": "青春校园",
+                                "value": "13"
+                            },
+                            {
+                                "title": "网络情缘",
+                                "value": "14"
+                            },
+                            {
+                                "title": "科幻空间",
+                                "value": "15"
+                            },
+                            {
+                                "title": "鬼怪灵异",
+                                "value": "16"
+                            },
+                            {
+                                "title": "言情美文",
+                                "value": "18"
+                            },
+                            {
+                                "title": "二次元",
+                                "value": "8"
+                            },
+                            {
+                                "title": "N次元",
+                                "value": "17"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "默认",
+                                "value": "0"
+                            },
+                            {
+                                "title": "字数",
+                                "value": "size"
+                            },
+                            {
+                                "title": "收录",
+                                "value": "postdate"
+                            },
+                            {
+                                "title": "总点击",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "月点击",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "周点击",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "日点击",
+                                "value": "dayvisit"
+                            },
+                            {
+                                "title": "总收藏",
+                                "value": "goodnum"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a/img/@src",
+            "detailUrl": "//p[@class='bookname']/a/@href",
+            "list": "//ul[@class='list']/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//p[@class='data'][1]/span[2]"
+        },
+        "榜单": {
+            "cat": "//p[@class='data'][1]/span[1]",
+            "author": "//p[@class='data'][1]/a[1]",
+            "lastChapterTitle": "//p[@class='data' and contains(text(), '最新')]/a",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='bookname']/a",
+            "desc": "//p[@class='intro']",
+            "requestInfo": "@js:\nlet url = 'https://m.renshengxs.com/' + params.filter + '/';\nif(params.pageIndex > 1)\n\treturn url + params.pageIndex + '.html';\nreturn url;",
+            "host": "https://www.renshengxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "点击",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "收藏",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "字数",
+                                "value": "size"
+                            },
+                            {
+                                "title": "强推",
+                                "value": "toptime"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a/img/@src",
+            "detailUrl": "//p[@class='bookname']/a/@href",
+            "list": "//ul[@class='list']/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//p[@class='data'][1]/span[2]"
+        }
+    },
+    "sourceUrl": "https://www.renshengxs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7295",
+    "sourceName": "🦌出品-人生之书",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1640154781.596062",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn result.replace('m.renshengxs.com', 'www.renshengxs.com');",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.renshengxs.com",
+        "list": "//div[@id='list']//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

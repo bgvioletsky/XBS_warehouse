@@ -1,0 +1,91 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://m.gufengmh9.com",
+        "content": "@js:\n\neval(result.match(/<script>([\\s\\S]+?)<\\/script/)[1]);\n\nlet imgHost = pageImage.match(/(http.*?\\/\\/.*?\\/)/)[1];\n\nlet urls = chapterImages.map(uri=>\nimgHost + chapterPath + uri).join('\\n');\n\nlet hh = {'Referer':params.responseUrl};\nreturn JSON.stringify({'url':urls, 'httpHeaders':hh});",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://m.gufengmh9.com",
+        "desc": "//p[contains(@class, 'txtDesc')]",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//p[2]/span[2]",
+            "lastChapterTitle": "//a[@class='coll']",
+            "responseFormatType": "html",
+            "author": "//p[1]/text()",
+            "bookName": "//a[@class='title']",
+            "host": "https://m.gufengmh9.com",
+            "requestInfo": "https://m.gufengmh9.com/%@filter",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": "更新::update/\n排行::rank/"
+            },
+            "cover": "//div[@class='itemImg']//mip-img/@src",
+            "detailUrl": "//a[@class='title']/@href",
+            "list": "//div[@class='itemBox']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "☘️古风漫画",
+    "sourceUrl": "https://m.gufengmh9.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1644987934.322019",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//p[2]/span[2]",
+        "author": "//p[1]/text()",
+        "lastChapterTitle": "//a[@class='coll']",
+        "responseFormatType": "html",
+        "bookName": "//a[@class='title']",
+        "requestInfo": "https://m.gufengmh9.com/search/?keywords=%@keyWord",
+        "host": "https://m.gufengmh9.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class='title']/@href",
+        "cover": "//div[@class='itemImg']//mip-img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class='itemBox']"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://m.gufengmh9.com",
+        "list": "//ul[@id='chapter-list-1']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

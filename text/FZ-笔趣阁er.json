@@ -1,0 +1,70 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"booktext\"]",
+        "host": "https://www.biquger.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.biquger.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-笔趣阁er",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357987.244500",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[3]",
+        "responseFormatType": "html",
+        "bookName": "//td[1]/a",
+        "requestInfo": "https://www.biquger.com/modules/article/search.php?searchkey=%@keyWord",
+        "host": "https://www.biquger.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "wordCount": "//td[4]",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table[@class=\"grid\"]/tr[position()>1]",
+        "status": "//td[6]",
+        "updateTime": "//td[5]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.biquger.com",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,78 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"view_content_txt\"]/p/text()",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://www.txt909.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@id='next_url' and text()='下一页']/@href"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.txt909.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-久久小说下载",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649630576.595620",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[@class=\"mainGreen\"]/text()|@js:\nvar j=result.trim();\nvar h=j.split('\\n')[2];\nreturn h.trim();",
+        "responseFormatType": "html",
+        "author": "//span[@class=\"mainGreen\"]/text()|@js:\nvar j=result.trim();\nvar h=j.split('\\n')[0];\nreturn h.trim();",
+        "bookName": "//span[@class=\"title\"]/a",
+        "requestInfo": "@js:\nlet url = 'search/';\nlet hp = {};\nhp.searchkey = params.keyWord;\nhp.show= 'title,writer';\nreturn {'url':url, 'httpParams':hp};",
+        "host": "https://www.txt909.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "cover": "//a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "detailUrl": "//span[@class=\"title\"]/a/@href|@js:return result.replace('txt','readbook');",
+        "list": "//div[@class=\"listbg\"]",
+        "status": "//span[@class=\"mainGreen\"]/text()|@js:\nvar j=result.trim();\nvar h=j.split('\\n')[1];\nreturn h.trim();"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@class=\"view_info\"]/text()|@js:\nvar g=result.lastIndexOf('上传时间:');\nif(g>0){\nresult= result.substring(g+5,g.length);\n}\nreturn result;",
+        "requestInfo": "@js:\nreturn params.queryInfo.detailUrl;",
+        "title": "//a",
+        "host": "https://www.txt909.com",
+        "list": "//div[@class=\"view_content_list\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

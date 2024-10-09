@@ -1,0 +1,75 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "desc": "推荐",
+    "weight": "1",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result)\n{\n\tif(result.data && result.data.list)\n\t{\n\t\tlet list = [];\n\t\tlet groupList = result.data.list;\n\t\tlet groupCount = groupList.length;\n\t\tfor(i=0; i<groupCount; i++)\n\t\t{\n\t\t\tlet groupInfo = groupList[i];\n\t\t\tif(groupInfo.list)\n\t\t\t{\n\t\t\t\tlet oldList = groupInfo.list;\n\t\t\t\tlet listCount = oldList.length;\n\t\t\t\tfor(j=0; j<listCount; j++)\n\t\t\t\t{\n\t\t\t\t\tlet old = oldList[j];\n\t\t\t\t\tlet chapter = {};\n\t\t\t\t\tchapter.title = old.name;\n\t\t\t\t\tchapter.id = old.id;\n\t\t\t\t\tchapter.bid = params.queryInfo.detailUrl;\n\t\t\t\t\tlist.push(chapter);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn {'list':list};\n\t}\n\treturn undefined;\n}",
+        "requestInfo": "https://quapp.shenbabao.com/book/%@result/",
+        "host": "https://quapp.shenbabao.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "看书吧②",
+    "sourceUrl": "https://quapp.shenbabao.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1648549934.703331",
+    "searchBook": {
+        "cat": "CName",
+        "author": "Author",
+        "responseFormatType": "json",
+        "bookName": "Name",
+        "desc": "Desc",
+        "requestInfo": "https://sou.jiaston.com/search.aspx?key=%@keyWord&page=Page&siteid=app2",
+        "host": "https://quapp.shenbabao.com",
+        "actionID": "searchBook",
+        "detailUrl": "Id",
+        "cover": "Img",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "parserID": "DOM",
+        "validConfig": "",
+        "list": "data",
+        "status": "BookStatus"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "data/content",
+        "requestInfo": "@js:\nreturn 'https://quapp.shenbabao.com/book/' + params.queryInfo.bid + '/' + params.queryInfo.id + '.html';",
+        "host": "https://quapp.shenbabao.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "kanshubax",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "sourceType": "text"
+}

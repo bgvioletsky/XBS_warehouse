@@ -1,0 +1,505 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//article[@class=\"page-content\"]/section/p/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':config.host+result, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "host": "https://m.aixdzs.com",
+        "httpHeaders": {
+            "Referer": "https://m.sdlchxwz.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "热门分类": {
+            "cat": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small lightgreen\"]/text()",
+            "author": "//div[@class=\"meta-l\"]/a/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div/p[3]/a/text()",
+            "bookName": "//div/h3/a/text()",
+            "httpHeaders": {
+                "Referer": "https://m.sdlchxwz.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url = config.host + '/sort/'+params.filters.type+'?w=1&page='+ params.pageIndex;\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':url, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://m.aixdzs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "台言古言",
+                                "value": "9"
+                            },
+                            {
+                                "title": "影视文学",
+                                "value": "18"
+                            },
+                            {
+                                "title": "韩流青春",
+                                "value": "17"
+                            },
+                            {
+                                "title": "传记纪实",
+                                "value": "16"
+                            },
+                            {
+                                "title": "童话故事",
+                                "value": "15"
+                            },
+                            {
+                                "title": "当代现代",
+                                "value": "14"
+                            },
+                            {
+                                "title": "外国文学",
+                                "value": "13"
+                            },
+                            {
+                                "title": "侦探推理",
+                                "value": "12"
+                            },
+                            {
+                                "title": "古典文学",
+                                "value": "11"
+                            },
+                            {
+                                "title": "传统武侠",
+                                "value": "10"
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "耽美同人",
+                                "value": "8"
+                            },
+                            {
+                                "title": "言情穿越",
+                                "value": "7"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "6"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "5"
+                            },
+                            {
+                                "title": "军事历史",
+                                "value": "4"
+                            },
+                            {
+                                "title": "都市青春",
+                                "value": "3"
+                            },
+                            {
+                                "title": "修真仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"ix-list-img-square\"]/a/img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 3,
+            "list": "//ul[@class=\"ix-list ix-border-t\"]/li",
+            "detailUrl": "//div/h3/a/@href",
+            "wordCount": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small smallblue\"]/text()",
+            "desc": "//div[@class=\"ix-list-info ix-border-t burl\"]/p[1]/text()"
+        },
+        "最新分类": {
+            "cat": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small lightgreen\"]/text()",
+            "author": "//div[@class=\"meta-l\"]/a/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div/p[3]/a/text()",
+            "bookName": "//div/h3/a/text()",
+            "httpHeaders": {
+                "Referer": "https://m.sdlchxwz.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url = config.host + '/sort/'+params.filters.type+'?page='+ params.pageIndex;\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':url, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://m.aixdzs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "台言古言",
+                                "value": "9"
+                            },
+                            {
+                                "title": "影视文学",
+                                "value": "18"
+                            },
+                            {
+                                "title": "韩流青春",
+                                "value": "17"
+                            },
+                            {
+                                "title": "传记纪实",
+                                "value": "16"
+                            },
+                            {
+                                "title": "童话故事",
+                                "value": "15"
+                            },
+                            {
+                                "title": "当代现代",
+                                "value": "14"
+                            },
+                            {
+                                "title": "外国文学",
+                                "value": "13"
+                            },
+                            {
+                                "title": "侦探推理",
+                                "value": "12"
+                            },
+                            {
+                                "title": "古典文学",
+                                "value": "11"
+                            },
+                            {
+                                "title": "传统武侠",
+                                "value": "10"
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "耽美同人",
+                                "value": "8"
+                            },
+                            {
+                                "title": "言情穿越",
+                                "value": "7"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "6"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "5"
+                            },
+                            {
+                                "title": "军事历史",
+                                "value": "4"
+                            },
+                            {
+                                "title": "都市青春",
+                                "value": "3"
+                            },
+                            {
+                                "title": "修真仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"ix-list-img-square\"]/a/img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "list": "//ul[@class=\"ix-list ix-border-t\"]/li",
+            "detailUrl": "//div/h3/a/@href",
+            "wordCount": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small smallblue\"]/text()",
+            "desc": "//div[@class=\"ix-list-info ix-border-t burl\"]/p[1]/text()"
+        },
+        "全部小说": {
+            "cat": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small lightgreen\"]/text()",
+            "author": "//div[@class=\"meta-l\"]/a/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div/p[3]/a/text()",
+            "bookName": "//div/h3/a/text()",
+            "httpHeaders": {
+                "Referer": "https://m.sdlchxwz.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url = config.host + '/'+params.filters.type+ '/' +'?page='+ params.pageIndex;\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':url, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://m.aixdzs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "最新更新",
+                                "value": "new"
+                            },
+                            {
+                                "title": "全部完结",
+                                "value": "end"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"ix-list-img-square\"]/a/img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul[@class=\"ix-list ix-border-t\"]/li",
+            "detailUrl": "//div/h3/a/@href",
+            "wordCount": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small smallblue\"]/text()",
+            "desc": "//div[@class=\"ix-list-info ix-border-t burl\"]/p[1]/text()"
+        },
+        "热门排行榜": {
+            "cat": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small lightgreen\"]/text()",
+            "author": "//div[@class=\"meta-l\"]/a/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div/p[3]/a/text()",
+            "bookName": "//div/h3/a/text()",
+            "httpHeaders": {
+                "Referer": "https://m.sdlchxwz.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url = config.host + '/hot/'+params.filters.type +'?page='+ params.pageIndex;\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':url, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://m.aixdzs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "日排行榜",
+                                "value": "day/"
+                            },
+                            {
+                                "title": "月排行榜",
+                                "value": "month/"
+                            },
+                            {
+                                "title": "总排行榜",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"ix-list-img-square\"]/a/img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//ul[@class=\"ix-list ix-border-t\"]/li",
+            "detailUrl": "//div/h3/a/@href",
+            "wordCount": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small smallblue\"]/text()",
+            "desc": "//div[@class=\"ix-list-info ix-border-t burl\"]/p[1]/text()"
+        },
+        "完结分类": {
+            "cat": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small lightgreen\"]/text()",
+            "author": "//div[@class=\"meta-l\"]/a/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div/p[3]/a/text()",
+            "bookName": "//div/h3/a/text()",
+            "httpHeaders": {
+                "Referer": "https://m.sdlchxwz.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url = config.host + '/sort/'+params.filters.type+'?t=1&page='+ params.pageIndex;\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':url, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://m.aixdzs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "台言古言",
+                                "value": "9"
+                            },
+                            {
+                                "title": "影视文学",
+                                "value": "18"
+                            },
+                            {
+                                "title": "韩流青春",
+                                "value": "17"
+                            },
+                            {
+                                "title": "传记纪实",
+                                "value": "16"
+                            },
+                            {
+                                "title": "童话故事",
+                                "value": "15"
+                            },
+                            {
+                                "title": "当代现代",
+                                "value": "14"
+                            },
+                            {
+                                "title": "外国文学",
+                                "value": "13"
+                            },
+                            {
+                                "title": "侦探推理",
+                                "value": "12"
+                            },
+                            {
+                                "title": "古典文学",
+                                "value": "11"
+                            },
+                            {
+                                "title": "传统武侠",
+                                "value": "10"
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "耽美同人",
+                                "value": "8"
+                            },
+                            {
+                                "title": "言情穿越",
+                                "value": "7"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "6"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "5"
+                            },
+                            {
+                                "title": "军事历史",
+                                "value": "4"
+                            },
+                            {
+                                "title": "都市青春",
+                                "value": "3"
+                            },
+                            {
+                                "title": "修真仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"ix-list-img-square\"]/a/img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 4,
+            "list": "//ul[@class=\"ix-list ix-border-t\"]/li",
+            "detailUrl": "//div/h3/a/@href",
+            "wordCount": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small smallblue\"]/text()",
+            "desc": "//div[@class=\"ix-list-info ix-border-t burl\"]/p[1]/text()"
+        }
+    },
+    "sourceUrl": "https://m.aixdzs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "爱下电子书",
+    "httpHeaders": {
+        "Referer": "https://m.sdlchxwz.com/",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🔥紅蓮華",
+    "lastModifyTime": "1653378511.654572",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small lightgreen\"]/text()",
+        "author": "//div[@class=\"meta-l\"]/a/text()",
+        "lastChapterTitle": "//div/p[3]/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//div/h3/a/text()",
+        "httpHeaders": {
+            "Referer": "https://m.sdlchxwz.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "https://m.aixdzs.com/search?k=%@keyWord",
+        "host": "https://m.aixdzs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div/h3/a/@href",
+        "cover": "//div[@class=\"ix-list-img-square\"]/a/img/@src",
+        "validConfig": "",
+        "list": "//ul[@class=\"ix-list ix-border-t\"]/li",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"ix-list-info ix-border-t burl\"]/p[1]/text()",
+        "wordCount": "//span[@class=\"tag-small-group\"]/\nem[@class=\"tag-small smallblue\"]/text()"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nlet hh ={\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1\"};\n\nreturn {'url':config.host+result, 'POST':false,'httpHeaders':config. httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "title": "//a/text()",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "host": "https://m.aixdzs.com",
+        "httpHeaders": {
+            "Referer": "https://m.sdlchxwz.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//ul[@class=\"chapter\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

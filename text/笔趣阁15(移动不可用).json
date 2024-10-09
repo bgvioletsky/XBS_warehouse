@@ -1,0 +1,76 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"TextContent\"]",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 2
+        },
+        "host": "http://www.baoshidajiaju.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "actionID": "bookDetail",
+        "host": "http://www.baoshidajiaju.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"bookintro\"]/p"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "http://www.baoshidajiaju.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9985",
+    "sourceName": "笔趣阁15(移动不可用)",
+    "desc": "🦞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650165264.957080",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//dd[@class=\"book_other\"]",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url= config.host+\"/search\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "bookName": "//@alt",
+        "detailUrl": "//dt/a/@href",
+        "host": "http://www.baoshidajiaju.com",
+        "cover": "//img/@data-original",
+        "responseFormatType": "html",
+        "list": "//div[@id=\"sitebox\"]/dl",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "http://www.baoshidajiaju.com",
+        "list": "//ul[@class=\"chaw_c\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

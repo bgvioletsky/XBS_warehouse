@@ -1,0 +1,75 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id='content']/div[2]|@js:\nreturn result.replace(/请各位书友牢记本站域名.*?找到回家的路！/, '').replace(/本章未完，请点击下一页.*/, '');",
+        "host": "https://www.zhuidu.cc",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class='pt-read-btn']/a[contains(text(),'下一页')]/@href"
+    },
+    "enable": false,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.zhuidu.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "0",
+    "sourceName": "追读看书",
+    "desc": "不稳定",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637331426.886630",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//span[@class='mr30']/a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[1]/div[3]/span/a/@title",
+        "bookName": "//div[1]/div[1]/span/a",
+        "desc": "//div[contains(@class,'desc')]",
+        "requestInfo": "@js:\nlet url = 'http://www.zhuidu.cc/search/result.html?searchkey=' + encodeURI(params.keyWord);\nif(params.pageIndex>1)\n\turl = url + '&page=' + params.pageIndex;\nreturn url;",
+        "host": "https://www.zhuidu.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//div[1]/div[1]/span/a/@href",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "validConfig": "",
+        "cover": "//a/img/@src|@js:\nif(result.indexOf('nocover')>0)\n\treturn nil;\nreturn result;",
+        "parserID": "DOM",
+        "list": "//div[@class='pt-rank-detail']",
+        "success": "//div[@class='pt-rank-head']"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//span",
+        "host": "https://www.zhuidu.cc",
+        "list": "//div[@id='lastchapter']/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "sourceType": "text"
+}

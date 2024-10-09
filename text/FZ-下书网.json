@@ -1,0 +1,79 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[contains(@class, 'pt-read-text')]",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nif(result.indexOf('xiashucom.com')>0)\n\treturn result.replace('www.xiashucom.com', 'mip.xiashucom.com')\nreturn 'https://mip.xiashucom.com' + result;",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://www.xiashucom.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://www.xiashucom.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-下书网",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357502.151004",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//td[2]/a[1]",
+        "lastChapterTitle": "//td[2]/span/a",
+        "responseFormatType": "html",
+        "author": "//td[3]",
+        "bookName": "//td[2]/a[2]",
+        "requestInfo": "https://www.xiashucom.com/search/result.html?searchkey=%@keyWord&page=%@pageIndex",
+        "host": "https://www.xiashucom.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "detailUrl": "//td[2]/a[2]/@href",
+        "validConfig": "",
+        "list": "//table[@class='booklists']//tr",
+        "parserID": "DOM",
+        "status": "//td[5]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "requestInfo": "@js:\nreturn result.replace('/xia/', '/shu/');",
+        "title": "//a",
+        "host": "https://www.xiashucom.com",
+        "list": "//div[@class='mulu']//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

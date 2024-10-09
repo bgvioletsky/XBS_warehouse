@@ -1,0 +1,141 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\r\r\rvar Base64 = {\r    _keyStr: \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\",\r    encode: function(e) {\r        var t = \"\";\r        var n, r, i, s, o, u, a;\r        var f = 0;\r        e = Base64._utf8_encode(e);\r        while (f < e.length) {\r            n = e.charCodeAt(f++);\r            r = e.charCodeAt(f++);\r            i = e.charCodeAt(f++);\r            s = n >> 2;\r            o = (n & 3) << 4 | r >> 4;\r            u = (r & 15) << 2 | i >> 6;\r            a = i & 63;\r            if (isNaN(r)) {\r                u = a = 64\r            } else if (isNaN(i)) {\r                a = 64\r            }\r            t = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)\r        }\r        return t\r    },\r    decode: function(e) {\r        var t = \"\";\r        var n, r, i;\r        var s, o, u, a;\r        var f = 0;\r        e = e.replace(/[^A-Za-z0-9+/=]/g, \"\");\r        while (f < e.length) {\r            s = this._keyStr.indexOf(e.charAt(f++));\r            o = this._keyStr.indexOf(e.charAt(f++));\r            u = this._keyStr.indexOf(e.charAt(f++));\r            a = this._keyStr.indexOf(e.charAt(f++));\r            n = s << 2 | o >> 4;\r            r = (o & 15) << 4 | u >> 2;\r            i = (u & 3) << 6 | a;\r            t = t + String.fromCharCode(n);\r            if (u != 64) {\r                t = t + String.fromCharCode(r)\r            }\r            if (a != 64) {\r                t = t + String.fromCharCode(i)\r            }\r        }\r        t = Base64._utf8_decode(t);\r        return t\r    },\r    _utf8_encode: function(e) {\r        e = e.replace(/rn/g, \"n\");\r        var t = \"\";\r        for (var n = 0; n < e.length; n++) {\r            var r = e.charCodeAt(n);\r            if (r < 128) {\r                t += String.fromCharCode(r)\r            } else if (r > 127 && r < 2048) {\r                t += String.fromCharCode(r >> 6 | 192);\r                t += String.fromCharCode(r & 63 | 128)\r            } else {\r                t += String.fromCharCode(r >> 12 | 224);\r                t += String.fromCharCode(r >> 6 & 63 | 128);\r                t += String.fromCharCode(r & 63 | 128)\r            }\r        }\r        return t\r    },\r    _utf8_decode: function(e) {\r        var t = \"\";\r        var n = 0;\r        var r = c1 = c2 = 0;\r        while (n < e.length) {\r            r = e.charCodeAt(n);\r            if (r < 128) {\r                t += String.fromCharCode(r);\r                n++\r            } else if (r > 191 && r < 224) {\r                c2 = e.charCodeAt(n + 1);\r                t += String.fromCharCode((r & 31) << 6 | c2 & 63);\r                n += 2\r            } else {\r                c2 = e.charCodeAt(n + 1);\r                c3 = e.charCodeAt(n + 2);\r                t += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);\r                n += 3\r            }\r        }\r        return t\r    }\r}\r\rreslut =  Base64.decode(result.match(/cp=\"(.*?)\";/)[1]);\rlet a = eval(reslut);\r\rlet url = \"\";\rlet former = \"http://res.img.shengda0769.com/\"\rfor(var i=0; i < a.length;i++){\r\r    let url_ = former+a[i];\r    url = url + url_+\"\\n\";\r    //console.log(url )\r}\r\r \r// console.log(url)\rreturn url;",
+        "JSParser": "function functionName(config, jsparams, result) {\r \nreturn JSON.stringify({'urls': result.content.split('\\n'), 'httpHeaders': {\r            \"UserAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\",\r            \"referer\": config.host\r        }});\n\r}",
+        "host": "http://m.pufei8.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "(//dl[2])/dd",
+            "author": "(//dl)[1]/dd",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//dl[3]",
+            "bookName": "//a/h3",
+            "requestInfo": "@js:\nif(params.filters.filter==\"update\" ){\r    let url=\"http://m.pufei.org//manhua/update.html\";\r    return url;\r}else if(params.filters.filter==\"paihang\"){\r let url=\"http://m.pufei.org//manhua/paihang.html\";\r    return url;\r}\relse{\npage= params.pageIndex+1\r    let url=\"http://m.pufei.org/\"+params.filters.filter+\"/index_\"+page+\".html\"\r    return url;\r}",
+            "host": "http://m.pufei8.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 18,
+                "maxPage": 20,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "热血",
+                                "value": "shaonianrexue"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "wuxiagedou"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "爱情",
+                                "value": "shaonvaiqing"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "jingjitiyu"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "zhentantuili"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "gaoxiaoxiju"
+                            },
+                            {
+                                "title": "耽美",
+                                "value": "danmeirensheng"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "kongbulingyi"
+                            },
+                            {
+                                "title": "最新",
+                                "value": "update"
+                            },
+                            {
+                                "title": "排行榜",
+                                "value": "paihang"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a//img/@data-src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "detailUrl": "(//a)[1]/@href",
+            "list": "//ul[@id=\"detail\"]/li"
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "99999",
+    "sourceName": "👾扑飞",
+    "sourceUrl": "http://m.pufei8.com",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637893287.352732",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "(//dl[2])/dd",
+        "author": "(//dl)[1]/dd",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//dl[3]",
+        "bookName": "//a/h3",
+        "requestInfo": "http://m.pufei8.com/e/search/?searchget=1&tbname=mh&show=title,player,playadmin,bieming,pinyin,playadmin&tempid=4&keyboard=%@keyWord",
+        "host": "http://m.pufei8.com",
+        "actionID": "searchBook",
+        "detailUrl": "(//a)[1]/@href",
+        "cover": "//a//img/@data-src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@id=\"detail\"]/li"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "http://m.pufei8.com",
+        "list": "//div[@class=\"chapter-list\"]//ul/li||@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

@@ -1,0 +1,133 @@
+{
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    },
+    "authorId": "",
+    "weight": "999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a/text()",
+        "host": "https://www.33yq.org",
+        "httpHeaders": {
+            "Referer": "https://www.33yq.org/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44"
+        },
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "33言情",
+    "sourceType": "text",
+    "sourceUrl": "https://www.33yq.org",
+    "httpHeaders": {
+        "Referer": "https://www.33yq.org/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650372341.051612",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result) {\r    let list = [];\r    if (params.lastResponse == undefined) {\r        let xxurl = params.responseUrl;\r        xxurl = xxurl.substring(0, xxurl.lastIndexOf('/') + 1);\r        params.nativeTool.setCache('yq3Search', xxurl);\r        xxurl = xxurl + (params.pageIndex + 1) + '.html';\r        //params.nativeTool.logWithKey(xxurl, \"xxurl\");\r    }\r    let xpath = params.nativeTool.XPathParserWithSource(result);\r    xpath.queryWithXPath(\"//div[@id=\\\"alistbox\\\"]\").forEach(x => {\r        let bookName = x.queryWithXPath(\"//h2/a/text()\").map(s => s.content()).join();\r        let author = x.queryWithXPath(\"//div[@class=\\\"title\\\"]/span/text()\").map(s => s.content().substring(3)).join();\r        let cover = x.queryWithXPath(\"//div[@class=\\\"pic\\\"]/a/img/@src\").map(s => s.content()).join();\r        let lastChapterTitle = x.queryWithXPath(\"//div[@class=\\\"sys\\\"]/li/a/text()\").map(s => s.content()).join();\r        let desc = x.queryWithXPath(\"//div[@class=\\\"intro\\\"]/text()\").map(s => s.content()).join();\r        let detailUrl = x.queryWithXPath(\"//h2/a/@href\").map(s => s.content()).join();\r        list.push({\r            'detailUrl': detailUrl,\r            'bookName': bookName,\r            'author': author,\r            'cover': cover,\r            'lastChapterTitle': lastChapterTitle,\r            'desc': desc\r        })\r    })\r    return { 'list': list };\r}",
+        "requestInfo": "@js:\nlet cacheKey = params.nativeTool.md5Encode(new Date().getTime().toString());\r\rif (params.pageIndex == 1) {\r    let httpParams = {\r        'searchkey': params.keyWord,\r    };\r    config.httpHeaders['Origin'] = 'https://www.33yq.org';\r    config.httpHeaders['Referer'] = 'https://www.33yq.org/search.html';\r    return {\r        'url': config.host + '/search.html',\r        'httpParams': httpParams,\r        'POST': true,\r        'httpHeaders': config.httpHeaders,\r        'cacheKey': cacheKey,\r    }\r}\rlet url = params.nativeTool.getCache('yq3Search') + params.pageIndex + '.html';\rconfig.httpHeaders['Referer'] = 'https://www.33yq.org/search.html';\rreturn {\r    'url': url,\r    'httpHeaders': config.httpHeaders,\r    'cacheKey': cacheKey,\r};",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "host": "https://www.33yq.org",
+        "httpHeaders": {
+            "Referer": "https://www.33yq.org/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44"
+        },
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]//text()",
+        "actionID": "chapterContent",
+        "host": "https://www.33yq.org",
+        "httpHeaders": {
+            "Referer": "https://www.33yq.org/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "张益达",
+    "shudanList": {},
+    "password": "950206@",
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//div[@class=\"title\"]/span/text() || @js:\nreturn result.substring(3);",
+            "lastChapterTitle": "//div[@class=\"sys\"]/li/a/text()",
+            "bookName": "//h2/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.33yq.org/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44"
+            },
+            "requestInfo": "@js:\nlet cacheKey = params.nativeTool.md5Encode(new Date().getTime().toString());\nlet url = config.host + params.filters.cat + params.pageIndex;\n\nreturn {\n    'url': url,\n    'httpHeaders': config.httpHeaders,\n    'cacheKey': cacheKey,\n}",
+            "host": "https://www.33yq.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": "cat\n玄幻::/sort/1/\n奇幻::/sort/2/\n武侠::/sort/3/\n都市::/sort/4/\n历史::/sort/5/\n军事::/sort/6/\n悬疑::/sort/7/\n游戏::/sort/8/\n科幻::/sort/9/\n体育::/sort/10/\n官场::/sort/11/\n古言::/sort/12/\n现言::/sort/13/\n幻言::/sort/14/\n仙侠::/sort/15/\n青春::/sort/16/\n穿越::/sort/17/\n女生::/sort/18/\nN次元::/sort/19/"
+            },
+            "validConfig": "",
+            "list": "//div[@id=\"alistbox\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//div[@class=\"pic\"]/a/img/@src",
+            "desc": "//div[@class=\"intro\"]/text()"
+        },
+        "排行": {
+            "responseFormatType": "html",
+            "author": "//div[@class=\"title\"]/span/text() || @js:\nreturn result.substring(3);",
+            "lastChapterTitle": "//div[@class=\"sys\"]/li/a/text()",
+            "bookName": "//h2/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.33yq.org/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44"
+            },
+            "requestInfo": "@js:\nlet cacheKey = params.nativeTool.md5Encode(new Date().getTime().toString());\nlet url = config.host + params.filters.rank + params.pageIndex;\n\nreturn {\n    'url': url,\n    'httpHeaders': config.httpHeaders,\n    'cacheKey': cacheKey,\n}",
+            "host": "https://www.33yq.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": "rank\n总点击榜::/allvisit/\n月点击榜::/monthvisit/\n周点击榜::/weekvisit/\n日点击榜::/dayvisit/\n总推荐榜::/allvote/\n月推荐榜::/monthvote/\n周推荐榜::/weekvote/\n日推荐榜::/dayvote/\n总收藏榜::/goodnum/\n总字数榜::/size/\n最新入库::/postdate/\n最近更新::/lastupdate/\n强推榜::/toptime/\n新书榜::/goodnew/"
+            },
+            "validConfig": "",
+            "list": "//div[@id=\"alistbox\"]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//div[@class=\"pic\"]/a/img/@src",
+            "desc": "//div[@class=\"intro\"]/text()"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

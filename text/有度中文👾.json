@@ -1,0 +1,427 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "999",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//span",
+        "host": "https://www.yodu.org",
+        "list": "//ol[@id=\"chapterList\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "有度中文👾",
+    "sourceType": "text",
+    "sourceUrl": "https://www.yodu.org",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637772449.573719",
+    "searchBook": {
+        "cat": "(//span[@class=\"vam mr10\"])[1]",
+        "author": "(//span[@class=\"vam mr10\"])[2]",
+        "responseFormatType": "html",
+        "bookName": "//h3//a/text()",
+        "desc": "//p[@class=\"fs16 mb10 c_strong g_ells\"]",
+        "requestInfo": "@js:\n\nlet url =\"https://www.yodu.org/sa\";\n\nlet hh = {\r\r\r    \"Referer\":\"https://www.yodu.org/sa\",\r    \"User-Agent\":\"Mozilla/5.0 (Linux; Android 8.0.0; MI 5 Build/OPR1.170623.032; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/68.0.3440.91 Mobile Safari/537.36\",\r    \"Cookie\":` jq_Obj=1; PHPSESSID=36hq06gasvkl2abie2bdbqrbdk; jieqiUserInfo=jieqiUserId%3D33450%2CjieqiUserUname%3D2422399492%40qq.com%2CjieqiUserName%3D2422399492%40qq.com%2CjieqiUserGroup%3D3%2CjieqiUserGroupName%3D%E6%99%AE%E9%80%9A%E4%BC%9A%E5%91%98%2CjieqiUserVip%3D0%2CjieqiUserHonorId%3D1%2CjieqiUserHonor%3D%E5%A4%A9%E7%84%B6%2CjieqiUserToken%3D03987f687c4a6fdda9a709e012c3a378%2CjieqiCodeLogin%3D0%2CjieqiCodePost%3D0%2CjieqiUserPassword%3D059d5bcac4de7d89d4c36d9362c6d7e1%2CjieqiUserLogin%3D1637767510; jieqiVisitInfo=jieqiUserLogin%3D1637767510%2CjieqiUserId%3D33450; zh_choose=n; Hm_lvt_d6c21518da630dd4f86d47c04de176de=1637767512; jieqiVisitTime=jieqiArticlesearchTime%3D1637767531; Hm_lpvt_d6c21518da630dd4f86d47c04de176de=1637767590`\r};\n\nlet hp = {\"searchkey\": params.keyWord, \"searchtype\": \"all\"};\n\nreturn {'url':url, 'httpParams':hp ,'httpHeaders':hh,\"POST\":true};",
+        "host": "https://www.yodu.org",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "detailUrl": "//h3/a/@href",
+        "validConfig": "",
+        "list": "//ul[@class=\"ser-ret lh1d5\"]/li",
+        "parserID": "DOM",
+        "cover": "//a/img/@_src"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.yodu.org",
+        "content": "//div[@id=\"TextContent\"]/p",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "👾",
+    "password": "99mh99",
+    "shudanList": {},
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "榜单": {
+            "cat": "(//p//span)[2]",
+            "responseFormatType": "html",
+            "author": "(//p//span)[1]",
+            "bookName": "//a[@class=\"c_strong\"]",
+            "desc": "//a[@class=\"fs16 lh1d5 c_strong oh _p is-truncated\"]/text()",
+            "requestInfo": "@js:\rlet url = config.host+\"/top/\"+params.filters.type+\"_\"+params.pageIndex+\".html\";\rreturn url;",
+            "host": "https://www.yodu.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "总点击榜",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "月点击榜",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "周点击榜",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "日点击榜",
+                                "value": "dayvisit"
+                            },
+                            {
+                                "title": "总推荐",
+                                "value": "allvote"
+                            },
+                            {
+                                "title": "月推荐",
+                                "value": "monthvote"
+                            },
+                            {
+                                "title": "周推荐",
+                                "value": "weekvote"
+                            },
+                            {
+                                "title": "日推荐",
+                                "value": "dayvote"
+                            },
+                            {
+                                "title": "新书榜",
+                                "value": "newhot"
+                            },
+                            {
+                                "title": "收藏榜",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "新入库",
+                                "value": "postdate"
+                            },
+                            {
+                                "title": "字数榜",
+                                "value": "words"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//a[@class=\"c_strong\"]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"g_row lis-mn j_bookList\"]/li",
+            "parserID": "DOM",
+            "cover": "//a//img/@_src"
+        },
+        "轻小说": {
+            "cat": "(//p//span)[2]",
+            "responseFormatType": "html",
+            "author": "(//p//span)[1]",
+            "bookName": "//a[@class=\"c_strong\"]",
+            "desc": "//a[@class=\"fs16 lh1d5 c_strong oh _p is-truncated\"]/text()",
+            "requestInfo": "@js:\rlet url = config.host+\"/\"+params.filters.type+\"/\"+params.pageIndex+\".html\";\rreturn url;",
+            "host": "https://www.yodu.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "一迅社",
+                                "value": "yixunshe"
+                            },
+                            {
+                                "title": "集英社",
+                                "value": "jiyingshe"
+                            },
+                            {
+                                "title": "小学馆",
+                                "value": "xiaoxueguan"
+                            },
+                            {
+                                "title": "GA文库",
+                                "value": "GAwenku"
+                            },
+                            {
+                                "title": "HJ文库",
+                                "value": "HJwenku"
+                            },
+                            {
+                                "title": "MF文库",
+                                "value": "MFwenkuJ"
+                            },
+                            {
+                                "title": "少女文库",
+                                "value": "shaonvwenku"
+                            },
+                            {
+                                "title": "电击文库",
+                                "value": "dianjiwenku"
+                            },
+                            {
+                                "title": "角川文库",
+                                "value": "jiaochuanwenku"
+                            },
+                            {
+                                "title": "Fami通文库",
+                                "value": "Famitongwenku"
+                            },
+                            {
+                                "title": "富士见文库",
+                                "value": "fushijianwenku"
+                            },
+                            {
+                                "title": "其他文库",
+                                "value": "qitawenku"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//a[@class=\"c_strong\"]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"g_row lis-mn j_bookList\"]/li",
+            "parserID": "DOM",
+            "cover": "//a//img/@_src"
+        },
+        "分类": {
+            "cat": "(//p//span)[2]",
+            "responseFormatType": "html",
+            "author": "(//p//span)[1]",
+            "bookName": "//a[@class=\"c_strong\"]",
+            "desc": "//a[@class=\"fs16 lh1d5 c_strong oh _p is-truncated\"]/text()",
+            "requestInfo": "@js:\rlet url = config.host+\"/\"+params.filters.type+\"/\"+params.pageIndex+\".html\";\rreturn url;",
+            "host": "https://www.yodu.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "轻小说",
+                                "value": "qingxiaoshuo"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "wangyouxiaoshuo"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "chuanyuexiaoshuo"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "kehuanxiaoshuo"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "xianxiaxiaoshuo"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "dushixiaoshuo"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "wuxiaxiaoshuo"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "lishixiaoshuo"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "jingjixiaoshuo"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "yanqingxiaoshuo"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "xuanyixiaoshuo"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "junshixiaoshuo"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "lingyixiaoshuo"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//a[@class=\"c_strong\"]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"g_row lis-mn j_bookList\"]/li",
+            "parserID": "DOM",
+            "cover": "//a//img/@_src"
+        },
+        "繁体": {
+            "cat": "(//p//span)[2]",
+            "responseFormatType": "html",
+            "author": "(//p//span)[1]",
+            "bookName": "//a[@class=\"c_strong\"]",
+            "desc": "//a[@class=\"fs16 lh1d5 c_strong oh _p is-truncated\"]/text()",
+            "requestInfo": "@js:\rlet url = config.host+\"/\"+params.filters.type+\"/\"+params.pageIndex+\".html\";\rreturn url;",
+            "host": "https://www.yodu.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "世纪百强",
+                                "value": "shijibaiqiang"
+                            },
+                            {
+                                "title": "随身智囊",
+                                "value": "suishenzhinang"
+                            },
+                            {
+                                "title": "历史烟云",
+                                "value": "lishiyanyun"
+                            },
+                            {
+                                "title": "人物传记",
+                                "value": "zhuanjihuiyi"
+                            },
+                            {
+                                "title": "英语读本",
+                                "value": "yingwenduben"
+                            },
+                            {
+                                "title": "杂文随笔",
+                                "value": "zawensuibi"
+                            },
+                            {
+                                "title": "经典言情",
+                                "value": "jingdianyanqing"
+                            },
+                            {
+                                "title": "经典历史",
+                                "value": "jingdianlishi"
+                            },
+                            {
+                                "title": "侦探推理",
+                                "value": "zhentantuili"
+                            },
+                            {
+                                "title": "惊悚悬疑",
+                                "value": "jingsongxuanyi"
+                            },
+                            {
+                                "title": "寓言童话",
+                                "value": "yuyantonghua"
+                            },
+                            {
+                                "title": "青春都市",
+                                "value": "qingchundushi"
+                            },
+                            {
+                                "title": "社会心理",
+                                "value": "shehuixinli"
+                            },
+                            {
+                                "title": "外国小说",
+                                "value": "waiguoxiaoshuo"
+                            },
+                            {
+                                "title": "经典科幻",
+                                "value": "jingdiankehuan"
+                            },
+                            {
+                                "title": "当代小说",
+                                "value": "dangdaixiaoshuo"
+                            },
+                            {
+                                "title": "经典武侠",
+                                "value": "jingdianwuxia"
+                            },
+                            {
+                                "title": "纪实报告",
+                                "value": "jishibaogao"
+                            },
+                            {
+                                "title": "世界历史",
+                                "value": "shijielishi"
+                            },
+                            {
+                                "title": "中国历史",
+                                "value": "zhongguolishi"
+                            },
+                            {
+                                "title": "科普学习",
+                                "value": "kepuxuexi"
+                            },
+                            {
+                                "title": "诗歌戏曲",
+                                "value": "shigexiqu"
+                            },
+                            {
+                                "title": "宗教哲学",
+                                "value": "zongjiaozhexue"
+                            },
+                            {
+                                "title": "国学古籍",
+                                "value": "guoxueguji"
+                            },
+                            {
+                                "title": "战争军事",
+                                "value": "zhanzhengjunshi"
+                            },
+                            {
+                                "title": "政治经济",
+                                "value": "zhengzhijingji"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//a[@class=\"c_strong\"]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"g_row lis-mn j_bookList\"]/li",
+            "parserID": "DOM",
+            "cover": "//a//img/@_src"
+        }
+    }
+}

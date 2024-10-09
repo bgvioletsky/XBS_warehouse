@@ -1,0 +1,172 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"nr1\"]//text()",
+        "actionID": "chapterContent",
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485232",
+        "host": "https://m.baihexs.com",
+        "httpHeaders": {
+            "Referer": "https://m.baihexs.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//div[@class=\"block_txt2\"]/p[4]/a//text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//ul[@class=\"chapter\"]//a//text()",
+        "responseEncode": "2147485232",
+        "httpHeaders": {
+            "Referer": "https://m.baihexs.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "https://m.baihexs.com",
+        "actionID": "bookDetail",
+        "desc": "//div[@class=\"intro_info\"]//text()",
+        "cover": "//div[@class=\"block_img2\"]/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "status": "//div[@class=\"block_txt2\"]/p[5]//text() ||@js: return result.replace(/状态：/g, \"\");"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "requestParamsEncode": "2147485234",
+            "responseEncode": "2147485232",
+            "responseFormatType": "html",
+            "author": "//a[3]//text()",
+            "cat": "//a[1]//text()",
+            "bookName": "//a[2]//text()",
+            "httpHeaders": {
+                "Referer": "https://m.baihexs.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\rlet url = config.host +\"/\"+params.filters.aa+\"-\"+params.pageIndex+\"/\"\r\rlet hh= {\r  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\r}\r\rreturn {'url':url, 'POST':false, \r\"httpHeaders\": config.httpHeaders,\rforbidCookie:true,cacheTime:3600};",
+            "host": "https://m.baihexs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "aa",
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "sort-1"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "sort-2"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "sort-3"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "sort-4"
+                            },
+                            {
+                                "title": "游戏竞技",
+                                "value": "sort-5"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "sort-6"
+                            },
+                            {
+                                "title": "其他类型",
+                                "value": "sort-7"
+                            },
+                            {
+                                "title": "全本小说",
+                                "value": "full"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//a[2]/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"cover\"]/p"
+        }
+    },
+    "sourceUrl": "https://m.baihexs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "99",
+    "sourceName": "百合小说",
+    "httpHeaders": {
+        "Referer": "https://m.baihexs.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654167443.848675",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485232",
+        "responseFormatType": "html",
+        "author": "//../p/text() ||@js:\r\nreturn result.replace(/\\//g, \"\");",
+        "cat": "//a[1]",
+        "bookName": "//a[@class='blue']//text()",
+        "httpHeaders": {
+            "Referer": "https://m.baihexs.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url=config.host+\"/modules/article/waps.php/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord,'searchtype':'articlename','submit':''\n};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600,};",
+        "host": "https://m.baihexs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[2]/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"cover\"]/p",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "nextPageUrl": "//div[@class=\"page\"]/a/@href",
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485232",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "Referer": "https://m.baihexs.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet bookid = result.match(/\\d+/)[0];\rlet url = config.host + \"/wapbook-\"+ bookid + \"_\" + params.pageIndex + '/';\rreturn url;",
+        "title": "//a/text()",
+        "actionID": "chapterList",
+        "host": "https://m.baihexs.com",
+        "moreKeys": {
+            "maxPage": 50
+        },
+        "validConfig": "",
+        "list": "//ul[@class=\"chapter\"]/li",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

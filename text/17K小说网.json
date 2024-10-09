@@ -1,0 +1,75 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@class='readAreaBox content']/div[@class='p']|//div[@class='content'] || @js:\nreturn result.replace(/下载17K客户端(\\S|\\s)*?免费读全站。/, '').replace(/本书首发来自.*?第一时间看正版内容！/, '');",
+        "host": "https://www.17k.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.17k.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1111",
+    "sourceName": "17K小说网",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650361420.807651",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//li[@class='bq']/span[2]/a",
+        "author": "//span[@class='ls']/a",
+        "responseFormatType": "html",
+        "bookName": "//div[@class='textleft']/a/img/@alt",
+        "desc": "//ul/li[3]/p",
+        "requestInfo": "@js:\nlet url = 'https://search.17k.com/search.xhtml';\nlet httpParams = {'c.q':params.keyWord, 'c.st':0};\nif(params.pageIndex>1)\n\thttpParams.page = params.pageIndex;\nreturn {'url':url, 'httpParams':httpParams};",
+        "host": "https://www.17k.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class='textleft']/a/@href",
+        "wordCount": "//li[@class='bq']/span[3]/code",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "cover": "//div[@class='textleft']/a/img/@src",
+        "parserID": "DOM",
+        "validConfig": "",
+        "list": "//div[@class='textlist']"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//dl[@class='Volume'][position()=last()]/dd/a[position()=last()]/@title",
+        "requestInfo": "@js:\nreturn result.replace('/book/', '/list/');",
+        "title": "//a",
+        "host": "https://www.17k.com",
+        "list": "//dl[@class='Volume']/dd/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

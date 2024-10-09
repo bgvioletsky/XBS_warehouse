@@ -1,0 +1,73 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='content']/p",
+        "host": "https://www.biquge77.net",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.biquge77.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1200",
+    "sourceName": "笔趣阁biquge77",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1627732000.606075",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//span[4]",
+        "lastChapterTitle": "//span[3]/a",
+        "responseFormatType": "html",
+        "bookName": "//span[2]/a",
+        "requestInfo": "@js:\nreturn {'url':'https://www.biquge77.net/search/', 'POST':true, 'httpParams':{'searchkey':params.keyWord, 'Submit':'搜索'}};",
+        "host": "https://www.biquge77.net",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "detailUrl": "//span[2]/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[contains(@class, 'txt-list')]/li"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "|",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.biquge77.net",
+        "list": "//div[@class='section-box']//li/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,86 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//article[@class='content']",
+        "actionID": "chapterContent",
+        "host": "https://www.2kzw.cc",
+        "httpHeaders": {
+            "Referer": "http://www.2kzw.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.2kzw.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "31",
+    "sourceName": "2K中文网",
+    "httpHeaders": {
+        "Referer": "http://www.2kzw.cc",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646802171.397646",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[@class='fs12 gray']/span[1]/text()|@replace:作者:",
+        "responseFormatType": "html",
+        "bookName": "//div[@class='article']/a[1]",
+        "desc": "//span[@class='fs12 gray'] || @js:\nreturn result.replace(/[\\u201c\\u201d]/g, \"'\");",
+        "requestInfo": "@js:\n\nlet url =  \"https://m.2kzw.cc/search/?searchtype=all&t_btnsearch=&searchkey=\" + encodeURI(params.keyWord);\nlet hh = {\"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1\"};\n\nreturn {\"url\":url, \"POST\":true, \"forbidCookie\":true, \"httpHeaders\":hh};",
+        "host": "https://www.2kzw.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class='article']/a[1]/@href || @js:\nreturn result.replace(/(\\d+)/, \"indexlist\");",
+        "cover": "//td[1]/a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table[@class='list-item']/tr",
+        "httpHeaders": {
+            "Referer": "http://www.2kzw.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "requestInfo": "@js:\n\nreturn {\"url\":result, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":config.httpHeaders};",
+        "title": "//a/text()",
+        "host": "https://www.2kzw.cc",
+        "httpHeaders": {
+            "Referer": "http://www.2kzw.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "list": "//div[@class='container border3-2 mt8 mb20']/div[2]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@class=\"index-container-btn\"]/@href"
+    },
+    "sourceType": "text"
+}

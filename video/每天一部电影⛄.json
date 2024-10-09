@@ -1,0 +1,90 @@
+{
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "movie_type",
+            "author": "movie_performer",
+            "responseFormatType": "json",
+            "bookName": "movie_name",
+            "desc": "movie_desc",
+            "requestInfo": "https://yukinonootto.coding.net/p/yukinonomovie/d/yukinonomovie/git/raw/master/movie_stack/stack_movie.json",
+            "host": "https://www.baidu.com",
+            "actionID": "bookWorld",
+            "detailUrl": "video_url",
+            "cover": "movie_cover",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "$.data",
+            "status": "movie_scroe ||@js:\nreturn '豆瓣评分：'+result;"
+        }
+    },
+    "weight": "10006",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result) {\n\tlet item = {};\n\titem.url = params.queryInfo.detailUrl;\n\titem.title = params.queryInfo.bookName;\n\tlet list = [];\n\tlist.push(item);\n\treturn {'list':list};\t\n  \n}",
+        "requestInfo": "https:/www.baidu.com",
+        "host": "https://www.baidu.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "每天一部电影⛄",
+    "sourceType": "video",
+    "sourceUrl": "https://www.baidu.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649852491.258753",
+    "searchBook": {
+        "cat": "movie_type",
+        "responseFormatType": "json",
+        "author": "movie_performer",
+        "bookName": "movie_name",
+        "desc": "movie_desc",
+        "requestInfo": "https://yukinonootto.coding.net/p/yukinonomovie/d/yukinonomovie/git/raw/master/movie_stack/stack_movie.json",
+        "host": "https://www.baidu.com",
+        "actionID": "searchBook",
+        "detailUrl": "video_url",
+        "cover": "movie_cover",
+        "validConfig": "",
+        "list": "$.data",
+        "parserID": "DOM",
+        "status": "movie_scroe ||@js:\nreturn '豆瓣评分：'+result;"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.url;",
+        "host": "https://www.baidu.com",
+        "parserID": "DOM",
+        "requestInfo": "https://www.baidu.com",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "Ks🔍✨",
+    "shudanList": {},
+    "password": "KksnoyunaHonʌ_ə34",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": ""
+}

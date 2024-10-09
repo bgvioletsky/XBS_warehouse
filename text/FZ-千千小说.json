@@ -1,0 +1,70 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"content\"]/text()|@js:\nreturn result.replace(/千千小说网.*?第388/,'');",
+        "host": "https://www.qqxs.tw",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.qqxs.tw",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9878",
+    "sourceName": "FZ-千千小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642209615.351174",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//div[@class=\"article\"]/p/span[1]|@js:\nreturn result.replace('作者:','')",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class=\"update\"]/a",
+        "bookName": "//div[@class=\"article\"]/a[1]",
+        "requestInfo": "https://m.qqxs.tw/modules/article/search.php?searchtype=articlename&searchkey=%@keyWord",
+        "host": "https://www.qqxs.tw",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"article\"]/a[1]/@href|@js:return result.replace('m.','www.')",
+        "cover": "//td[1]/a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table[@class=\"list-item\"]/tr"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.qqxs.tw",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js:return params.queryInfo.detailUrl+result"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,131 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "@js:\nreturn params.queryInfo.bookName;",
+        "host": "http://music.163.com",
+        "httpHeaders": {
+            "imgServer": "http://img.6yueting.com:20001"
+        },
+        "list": "//body",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "@js:\nreturn params.queryInfo.detailUrl;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "网易云音乐⛄",
+    "sourceType": "audio",
+    "sourceUrl": "http://music.163.com",
+    "httpHeaders": {
+        "imgServer": "http://img.6yueting.com:20001"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650029185.192786",
+    "searchBook": {
+        "cat": "$.album.type",
+        "responseFormatType": "json",
+        "author": "$.artists..name ||@js:\nreturn result.join('\\n');",
+        "bookName": "name",
+        "httpHeaders": {
+            "imgServer": "http://img.6yueting.com:20001"
+        },
+        "requestInfo": "@js:\nlet url = config.host + \"/api/search/pc\";\nlet hp = {};\nlet post = true;\nhp.s = params.keyWord;\nhp.offset = params.offset;\nhp.limit = params.pageSize;\nhp.type = 1;\nreturn {'url':url,'httpParams':hp,'POST':post}",
+        "host": "http://music.163.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "cover": "$.album.picUrl",
+        "validConfig": "",
+        "list": "$.result.songs",
+        "parserID": "DOM",
+        "detailUrl": "id",
+        "desc": "$.alias ||@js:\nreturn result.join('\\n');"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.responseUrl;",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet url = 'http://v.api.aa1.cn/api/wymusic/index.php?id=';\nurl += params.queryInfo.url;\nreturn encodeURI(url);",
+        "host": "http://music.163.com",
+        "httpHeaders": {
+            "imgServer": "http://img.6yueting.com:20001"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "Ks🔍✨",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "全球媒体榜": {
+            "author": "$.ar..name ||@js:\nreturn result.join('\\n');",
+            "responseFormatType": "json",
+            "bookName": "$.name",
+            "httpHeaders": {
+                "imgServer": "http://img.6yueting.com:20001"
+            },
+            "requestInfo": "http://cloud-music.pl-fe.cn/playlist/detail?id=%@filter",
+            "host": "http://music.163.com",
+            "actionID": "bookWorld",
+            "detailUrl": "$.id",
+            "cover": "$.al.picUrl",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "$.playlist.tracks",
+            "desc": "$.alia ||@js:\nreturn result.join('\\n');",
+            "moreKeys": {
+                "requestFilters": "云音乐说唱榜::991319590\n云音乐古典榜::71384707\n云音乐电音榜::1978921795\n云音乐ACG榜::71385702\n云音乐韩语榜::745956260\n云音乐国电榜::10520166\nUK排行榜周榜::180106\n美国Billboard榜::60198\nBeatport全球电子舞曲榜::3812895\nKTV唛榜::21845217\n日本Oricon榜::60131\n云音乐欧美热歌榜::2809513713\n云音乐欧美新歌榜::2809577409\n法国 NRJ Vos Hits 周榜::27135204\n云音乐ACG动画榜::3001835560\n云音乐ACG游戏榜::3001795926\n云音乐ACG VOCALOID榜::3001890046\n中国新乡村音乐排行榜::3112516681\n云音乐日语榜::5059644681\n云音乐摇滚榜::5059633707\n云音乐古风榜::5059642708\n潜力爆款榜::5338990334\n云音乐民谣榜::5059661515\n听歌识曲榜::6688069460\n网络热歌榜::6723173524\n俄语榜::6732051320\n越南语榜::6732014811\n中文DJ榜::6886768100\n俄罗斯top hit流行音乐榜::6939992364\n泰语榜::7095271308\nBEAT排行榜::7356827205"
+            }
+        },
+        "云音乐特色榜": {
+            "author": "$.ar..name ||@js:\nreturn result.join('\\n');",
+            "responseFormatType": "json",
+            "bookName": "$.name",
+            "httpHeaders": {
+                "imgServer": "http://img.6yueting.com:20001"
+            },
+            "requestInfo": "http://cloud-music.pl-fe.cn/playlist/detail?id=%@filter",
+            "host": "http://music.163.com",
+            "actionID": "bookWorld",
+            "detailUrl": "$.id",
+            "cover": "$.al.picUrl",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "$.playlist.tracks",
+            "desc": "$.alia ||@js:\nreturn result.join('\\n');",
+            "moreKeys": {
+                "requestFilters": "飙升榜::19723756\n新歌榜::3779629\n原创榜::2884035\n热歌榜::3778678"
+            }
+        }
+    }
+}

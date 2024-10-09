@@ -1,0 +1,282 @@
+{
+    "authorId": "",
+    "bookWorld": {
+        "女频": {
+            "cat": "category_id_1_info/name",
+            "responseFormatType": "json",
+            "lastChapterTitle": "last_chapter_title",
+            "author": "author_name",
+            "bookName": "book_title",
+            "httpHeaders": {
+                "Host": "api.xsdoudou.com",
+                "User-Agent": "okhttp/3.10.0",
+                "Content-Type": "application/json; charset=UTF-8"
+            },
+            "requestInfo": "@js:\nlet tmp = ( new Date()).valueOf()+\"000000\";\n//update 更新时间 writing_process //type 全部 无category2\nlet url  = config.host +\"/doudou500/bookmall/categorysearch\";\nif(params.filters.update!=\"\" & params.filters.type!=\"\" ){\n\tlet hp={\n\t    \"category1\": 2,\n\t    \"category2\":params.filters.type,\n\t    \"pageNum\": 1,\n\t    \"pageSize\": 20,\n\t    \"writing_process\": params.filters.update,\n\t    \"app_id\": \"61096114\",\n\t    \"app_key\": \"3093373058\",\n\t    \"app_name\": \"豆豆免费小说\",\n\t    \"app_ver\": \"5.8.3\",\n\t    \"book_ver\": \"2\",\n\t    \"channel_id\": \"1000010004\",\n\t    \"devi_id\": params.nativeTool.deviceId(),\n\t    \"is_free\": 0,\n\t    \"islogin\": \"0\",\n\t    \"push_id\": \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n\t    \"request_time\": tmp,\n\t    \"secret\": \"\",\n\t    \"site\": \"2\",\n\t    \"user_id\": \"83723967\"\n\t};\n\n\treturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}\n}else if(params.filters.update!=\"\" & params.filters.type==\"\" ){\n\n\tlet hp={\n\t\t    \"category1\": 2,\n\t\t    \"pageNum\": 1,\n\t\t    \"pageSize\": 20,\n\t\t    \"writing_process\": params.filters.update,\n\t\t    \"app_id\": \"61096114\",\n\t\t    \"app_key\": \"3093373058\",\n\t\t    \"app_name\": \"豆豆免费小说\",\n\t\t    \"app_ver\": \"5.8.3\",\n\t\t    \"book_ver\": \"2\",\n\t\t    \"channel_id\": \"1000010004\",\n\t\t    \"devi_id\": params.nativeTool.deviceId(),\n\t\t    \"is_free\": 0,\n\t\t    \"islogin\": \"0\",\n\t\t    \"push_id\": \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n\t\t    \"request_time\": tmp,\n\t\t    \"secret\": \"\",\n\t\t    \"site\": \"2\",\n\t\t    \"user_id\": \"83723967\"\n\t\t};\n\n\treturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}\n\n}else if(params.filters.update==\"\" & params.filters.type!=\"\"){\n\n\tlet hp={\n\t\t\t    \"category1\": 2,\n\t    \t    \"category2\":params.filters.type,\n\t\t\t    \"pageNum\": 1,\n\t\t\t    \"pageSize\": 20,\n\t\t\t    \"app_id\": \"61096114\",\n\t\t\t    \"app_key\": \"3093373058\",\n\t\t\t    \"app_name\": \"豆豆免费小说\",\n\t\t\t    \"app_ver\": \"5.8.3\",\n\t\t\t    \"book_ver\": \"2\",\n\t\t\t    \"channel_id\": \"1000010004\",\n\t\t\t    \"devi_id\": params.nativeTool.deviceId(),\n\t\t\t    \"is_free\": 0,\n\t\t\t    \"islogin\": \"0\",\n\t\t\t    \"push_id\": \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n\t\t\t    \"request_time\": tmp,\n\t\t\t    \"secret\": \"\",\n\t\t\t    \"site\": \"2\",\n\t\t\t    \"user_id\": \"83723967\"\n\t\t\t};\n\n\treturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}\n\n}else\n{\n\tlet hp={\n\t    \"category1\": 2,\n\t    \"category2\":params.filters.type,\n\t    \"pageNum\": 1,\n\t    \"pageSize\": 20,\n\t    \"app_id\": \"61096114\",\n\t    \"app_key\": \"3093373058\",\n\t    \"app_name\": \"豆豆免费小说\",\n\t    \"app_ver\": \"5.8.3\",\n\t    \"book_ver\": \"2\",\n\t    \"channel_id\": \"1000010004\",\n\t    \"devi_id\": params.nativeTool.deviceId(),\n\t    \"is_free\": 0,\n\t    \"islogin\": \"0\",\n\t    \"push_id\": \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n\t    \"request_time\": tmp,\n\t    \"secret\": \"\",\n\t    \"site\": \"2\",\n\t    \"user_id\": \"83723967\"\n\t};\n\n\treturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}\n\n}",
+            "host": "https://api.xsdoudou.com",
+            "actionID": "bookWorld",
+            "detailUrl": "book_id",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "现代",
+                                "value": "41"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "42"
+                            },
+                            {
+                                "title": "古代",
+                                "value": "43"
+                            },
+                            {
+                                "title": "奇缘",
+                                "value": "44"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "45"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "46"
+                            },
+                            {
+                                "title": "出版",
+                                "value": "998"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "update",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "已完结",
+                                "value": "1"
+                            },
+                            {
+                                "title": "连载中",
+                                "value": "0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "source/rows",
+            "parserID": "DOM",
+            "cover": "cover_url",
+            "desc": "book_intro",
+            "_sIndex": 0
+        },
+        "男频": {
+            "cat": "category_id_1_info/name",
+            "responseFormatType": "json",
+            "lastChapterTitle": "last_chapter_title",
+            "author": "author_name",
+            "bookName": "book_title",
+            "httpHeaders": {
+                "Host": "api.xsdoudou.com",
+                "User-Agent": "okhttp/3.10.0",
+                "Content-Type": "application/json; charset=UTF-8"
+            },
+            "requestInfo": "@js:\nlet tmp = ( new Date()).valueOf()+\"000000\";\n//update 更新时间 writing_process //type 全部 无category2\nlet url  = config.host +\"/doudou500/bookmall/categorysearch\";\nif(params.filters.update!=\"\" & params.filters.type!=\"\" ){\n\tlet hp={\n\t    \"category1\": 1,\n\t    \"category2\":params.filters.type,\n\t    \"pageNum\": 1,\n\t    \"pageSize\": 20,\n\t    \"writing_process\": params.filters.update,\n\t    \"app_id\": \"61096114\",\n\t    \"app_key\": \"3093373058\",\n\t    \"app_name\": \"豆豆免费小说\",\n\t    \"app_ver\": \"5.8.3\",\n\t    \"book_ver\": \"2\",\n\t    \"channel_id\": \"1000010004\",\n\t    \"devi_id\": params.nativeTool.deviceId(),\n\t    \"is_free\": 0,\n\t    \"islogin\": \"0\",\n\t    \"push_id\": \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n\t    \"request_time\": tmp,\n\t    \"secret\": \"\",\n\t    \"site\": \"2\",\n\t    \"user_id\": \"83723967\"\n\t};\n\n\treturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}\n}else if(params.filters.update!=\"\" & params.filters.type==\"\" ){\n\n\tlet hp={\n\t\t    \"category1\": 1,\n\t\t    \"pageNum\": 1,\n\t\t    \"pageSize\": 20,\n\t\t    \"writing_process\": params.filters.update,\n\t\t    \"app_id\": \"61096114\",\n\t\t    \"app_key\": \"3093373058\",\n\t\t    \"app_name\": \"豆豆免费小说\",\n\t\t    \"app_ver\": \"5.8.3\",\n\t\t    \"book_ver\": \"2\",\n\t\t    \"channel_id\": \"1000010004\",\n\t\t    \"devi_id\": params.nativeTool.deviceId(),\n\t\t    \"is_free\": 0,\n\t\t    \"islogin\": \"0\",\n\t\t    \"push_id\": \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n\t\t    \"request_time\": tmp,\n\t\t    \"secret\": \"\",\n\t\t    \"site\": \"2\",\n\t\t    \"user_id\": \"83723967\"\n\t\t};\n\n\treturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}\n\n}else if(params.filters.update==\"\" & params.filters.type!=\"\"){\n\n\tlet hp={\n\t\t\t    \"category1\": 1,\n\t    \t    \"category2\":params.filters.type,\n\t\t\t    \"pageNum\": 1,\n\t\t\t    \"pageSize\": 20,\n\t\t\t    \"app_id\": \"61096114\",\n\t\t\t    \"app_key\": \"3093373058\",\n\t\t\t    \"app_name\": \"豆豆免费小说\",\n\t\t\t    \"app_ver\": \"5.8.3\",\n\t\t\t    \"book_ver\": \"2\",\n\t\t\t    \"channel_id\": \"1000010004\",\n\t\t\t    \"devi_id\": params.nativeTool.deviceId(),\n\t\t\t    \"is_free\": 0,\n\t\t\t    \"islogin\": \"0\",\n\t\t\t    \"push_id\": \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n\t\t\t    \"request_time\": tmp,\n\t\t\t    \"secret\": \"\",\n\t\t\t    \"site\": \"2\",\n\t\t\t    \"user_id\": \"83723967\"\n\t\t\t};\n\n\treturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}\n\n}else\n{\n\tlet hp={\n\t    \"category1\": 1,\n\t    \"category2\":params.filters.type,\n\t    \"pageNum\": 1,\n\t    \"pageSize\": 20,\n\t    \"app_id\": \"61096114\",\n\t    \"app_key\": \"3093373058\",\n\t    \"app_name\": \"豆豆免费小说\",\n\t    \"app_ver\": \"5.8.3\",\n\t    \"book_ver\": \"2\",\n\t    \"channel_id\": \"1000010004\",\n\t    \"devi_id\": params.nativeTool.deviceId(),\n\t    \"is_free\": 0,\n\t    \"islogin\": \"0\",\n\t    \"push_id\": \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n\t    \"request_time\": tmp,\n\t    \"secret\": \"\",\n\t    \"site\": \"2\",\n\t    \"user_id\": \"83723967\"\n\t};\n\n\treturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}\n\n}",
+            "host": "https://api.xsdoudou.com",
+            "actionID": "bookWorld",
+            "detailUrl": "book_id",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "4"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "6"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "7"
+                            },
+                            {
+                                "title": "出版",
+                                "value": "999"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "update",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "已完结",
+                                "value": "1"
+                            },
+                            {
+                                "title": "连载中",
+                                "value": "0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "source/rows",
+            "parserID": "DOM",
+            "cover": "cover_url",
+            "desc": "book_intro",
+            "_sIndex": 1
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nlet tmp = ( new Date()).valueOf()+\"000000\";\n\nlet url  = config.host +\"/doudou500/reader/getAllChapter\";\nlet hp={\n   \"app_id\" : \"61096114\",\n   \"app_key\" : \"3093373058\",\n   \"app_name\" : \"豆豆免费小说\",\n   \"app_ver\" : \"5.8.3\",\n   \"book_id\" : result,\n   \"book_ver\" : \"2\",\n   \"channel_id\" : \"1000010004\",\n   \"devi_id\" : params.nativeTool.deviceId(),\n   \"is_free\" : 0,\n   \"islogin\" : \"1\",\n   \"push_id\" : \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n   \"request_time\" : tmp,\n   \"secret\" : \"\",\n   \"site\" : \"2\",\n   \"user_id\" : \"83723967\"\n};\n\nreturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}",
+        "title": "title",
+        "moreKeys": {
+            "maxPage": 10,
+            "pageSize": 30
+        },
+        "host": "https://api.xsdoudou.com",
+        "httpHeaders": {
+            "Host": "api.xsdoudou.com",
+            "User-Agent": "okhttp/3.10.0",
+            "Content-Type": "application/json; charset=UTF-8"
+        },
+        "list": "result/data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "content_id||@js:\nlet url=params.queryInfo.detailUrl +\"#\"+result;\nreturn url"
+    },
+    "shudanList": {},
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "👾豆豆api",
+    "sourceType": "text",
+    "sourceUrl": "https://api.xsdoudou.com",
+    "httpHeaders": {
+        "Host": "api.xsdoudou.com",
+        "User-Agent": "okhttp/3.10.0",
+        "Content-Type": "application/json; charset=UTF-8"
+    },
+    "shudanDetail": {
+        "author": "author_name",
+        "lastChapterTitle": "last_chapter_title",
+        "bookName": "book_title",
+        "httpHeaders": {
+            "Host": "api.xsdoudou.com",
+            "User-Agent": "okhttp/3.10.0",
+            "Content-Type": "application/json; charset=UTF-8"
+        },
+        "requestInfo": "@js:\n\n@js:\n\n\n\nlet tmp = ( new Date()).valueOf()+\"000000\";\nlet url  = config.host +\"/doudou500/bookmall/highqualitybooks\";\n\nlet hp={\n    \"categoryId1\": 0,\n    \"highBookId\": params.queryInfo.url,\n    \"preferenceId\": 0,\n    \"app_id\": \"61096114\",\n    \"app_key\": \"3093373058\",\n    \"app_name\": \"豆豆免费小说\",\n    \"app_ver\": \"5.8.3\",\n    \"book_ver\": \"2\",\n    \"channel_id\": \"1000010004\",\n    \"devi_id\": params.nativeTool.deviceId(),\n    \"is_free\": 0,\n    \"islogin\": \"0\",\n    \"push_id\": \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n    \"request_time\": tmp,\n    \"secret\": \"\",\n    \"site\": \"2\",\n    \"user_id\": \"83723967\"\n};\n\nreturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}",
+        "host": "https://api.xsdoudou.com",
+        "actionID": "shudanDetail",
+        "detailUrl": "book_id",
+        "cover": "cover_url",
+        "validConfig": "",
+        "list": "source[0]/appBookList",
+        "parserID": "DOM",
+        "desc": "book_intro"
+    },
+    "lastModifyTime": "1649500151.342885",
+    "searchBook": {
+        "cat": "category_id_1_info/name",
+        "author": "author_name",
+        "lastChapterTitle": "last_chapter_title",
+        "responseFormatType": "json",
+        "bookName": "book_title",
+        "httpHeaders": {
+            "Host": "api.xsdoudou.com",
+            "User-Agent": "okhttp/3.10.0",
+            "Content-Type": "application/json; charset=UTF-8"
+        },
+        "requestInfo": "@js:\n\nlet tmp = ( new Date()).valueOf()+\"000000\";\n\nlet url  = config.host +\"/doudou500/search/search\";\n\nlet hp={\n   \"pageNum\" : params.pageIndex,\n   \"pageSize\" : 30,\n   \"search\" : params.keyWord,\n   \"app_id\" : \"61096114\",\n   \"app_key\" : \"3093373058\",\n   \"app_name\" : \"豆豆免费小说\",\n   \"app_ver\" : \"5.8.3\",\n   \"book_ver\" : \"2\",\n   \"channel_id\" : \"1000010004\",\n   \"devi_id\" : params.nativeTool.deviceId(),\n   \"is_free\" : 0,\n   \"islogin\" : \"0\",\n   \"push_id\" : \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n   \"request_time\" : tmp,\n   \"secret\" : \"\",\n   \"site\" : \"2\",\n   \"user_id\" : \"83723967\"\n};\n\nlet hh = {\n    \"User-Agent\": \"okhttp/3.10.0\",\n    \"Content-Type\":\"application/json; charset=UTF-8\",\n    \"Host\":\"api.xsdoudou.com\"\n}\nreturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}",
+        "host": "https://api.xsdoudou.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 10,
+            "pageSize": 30
+        },
+        "desc": "book_intro",
+        "validConfig": "",
+        "list": "source/rows",
+        "parserID": "DOM",
+        "cover": "cover_url",
+        "detailUrl": "book_id"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "result/data/content",
+        "requestInfo": "@js:\n\nlet tag = result.split(\"#\");\n\nlet tmp = ( new Date()).valueOf()+\"000000\";\n\nlet url  = config.host +\"/doudou500/reader/chapterContent\";\nlet hp={\n   \"app_id\" : \"61096114\",\n   \"app_key\" : \"3093373058\",\n   \"app_name\" : \"豆豆免费小说\",\n   \"app_ver\" : \"5.8.3\",\n   \"book_id\" : tag[0],\n   \"book_ver\" : \"2\",\n   \"channel_id\" : \"1000010004\",\n   \"contentId\" : tag[1],\n   \"devi_id\" : params.nativeTool.deviceId(),\n   \"is_free\" : 0,\n   \"islogin\" : \"1\",\n   \"push_id\" : \"ApWDwNNM-zx0jC1zR1_4_oCswjkbLAKtEhWm5IK2aa3o\",\n   \"request_time\" : tmp,\n   \"secret\" : \"\",\n   \"site\" : \"2\",\n   \"user_id\" : \"83723967\"\n}\n;\n\nreturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}",
+        "host": "https://api.xsdoudou.com",
+        "httpHeaders": {
+            "Host": "api.xsdoudou.com",
+            "User-Agent": "okhttp/3.10.0",
+            "Content-Type": "application/json; charset=UTF-8"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "desc": "推荐",
+    "password": "99mh99.",
+    "help": "安卓豆豆免费小说",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    }
+}

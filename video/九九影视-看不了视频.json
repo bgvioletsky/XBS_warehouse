@@ -1,0 +1,257 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.btzj.cc",
+        "httpHeaders": {
+            "Referer": "https://www.btzj.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "cat": "//dl[@class=\"dl-horizontal\"]//dd[2]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"vod-content\"]"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result,'httpHeaders':config.httpHeaders};",
+        "title": "//a/text()",
+        "host": "https://www.btzj.cc",
+        "httpHeaders": {
+            "Referer": "https://www.btzj.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "list": "//li[@class=\"col-md-2 col-sm-3 col-xs-4\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "九九影视-看不了视频",
+    "sourceType": "video",
+    "sourceUrl": "https://www.btzj.cc",
+    "httpHeaders": {
+        "Referer": "https://www.btzj.cc",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651389238.706002",
+    "searchBook": {
+        "responseFormatType": "html",
+        "author": "//h6/text()",
+        "bookName": "//h4/a",
+        "httpHeaders": {
+            "Referer": "https://www.btzj.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url= config.host+\"/vodsearch/-------------.html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'wd':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.btzj.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "cover": "//img//@data-original",
+        "validConfig": "",
+        "list": "//ul[@class=\"list-unstyled\"]/li",
+        "parserID": "DOM",
+        "status": "//li[@class=\"y-col-xs6 y-part-eone\"][2]//a"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "|",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet pat=\".*\\\\.(m3u8|mp4).*\"\n\nreturn {'url':result,'httpHeaders':config.httpHeaders, 'webView':true,'sourceRegex':pat};",
+        "host": "https://www.btzj.cc",
+        "httpHeaders": {
+            "Referer": "https://www.btzj.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "😍-自用",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "电影": {
+            "responseFormatType": "html",
+            "author": "//h6/text()",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://www.btzj.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type,_area,_language,_year,_rank}=params.filters\nlet url=`https://www.btzj.cc${_type}${_area}${_rank}${_language}----${params.pageIndex}--${_year}.html`;\n\nreturn {url:url}",
+            "host": "https://www.btzj.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "_type\n全部::/vodshow/1\n动作片::/vodshow/6\n科幻片::/vodshow/9\n喜剧片::/vodshow/7\n爱情片::/vodshow/8\n恐怖片::/vodshow/10\n剧情片::/vodshow/11\n战争片::/vodshow/12\n纪录片::/vodshow/13\n\n_area\n全部:: -\n大陆::-%E5%A4%A7%E9%99%86\n香港::-%E9%A6%99%E6%B8%AF\n台湾::-%E5%8F%B0%E6%B9%BE\n美国::-%E7%BE%8E%E5%9B%BD\n法国::-%E6%B3%95%E5%9B%BD\n英国::-%E8%8B%B1%E5%9B%BD\n日本::-%E6%97%A5%E6%9C%AC\n韩国::-%E9%9F%A9%E5%9B%BD\n德国::-%E5%BE%B7%E5%9B%BD\n泰国::-%E6%B3%B0%E5%9B%BD\n印度::-%E5%8D%B0%E5%BA%A6\n意大利::-%E6%84%8F%E5%A4%A7%E5%88%A9\n西班牙::-%E8%A5%BF%E7%8F%AD%E7%89%99\n加拿大::-%E5%8A%A0%E6%8B%BF%E5%A4%A7\n其他::-%E5%85%B6%E4%BB%96\n\n_language\n全部::--\n国语::-%E5%9B%BD%E8%AF%AD\n英语::--%E8%8B%B1%E8%AF%AD\n粤语::--%E7%B2%A4%E8%AF%AD\n闽南语::--%E9%97%BD%E5%8D%97%E8%AF%AD\n韩语::--%E9%9F%A9%E8%AF%AD\n日语::--%E6%97%A5%E8%AF%AD\n法语::--%E6%B3%95%E8%AF%AD\n德语::--%E5%BE%B7%E8%AF%AD\n其它::--%E5%85%B6%E5%AE%83\n\n_year\n全部:: -\n2021::-2021\n2020::-2020\n2019::-2019\n2018::-2018\n2017::-2017\n2016::-2016\n2015::-2015\n2014::-2014\n2013::-2013\n2012::-2012\n2011::-2011\n2010::-2010\n2009::-2009\n2008::-2008\n2007::-2007\n2006::-2006\n2005::-2005\n2004::-2004\n2003::-2003\n2002::-2002\n2001::-2001\n2000::-2000\n1999::-1999\n1998::-1998\n1997::-1997\n\n_rank\n最近热播::-hits\n最新上映::-time\n评分最高::-score"
+            },
+            "cover": "//img//@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "detailUrl": "//h4/a/@href",
+            "list": "//ul[@class=\"list-unstyled\"]/li",
+            "status": "//li[@class=\"y-col-xs6 y-part-eone\"][2]//a"
+        },
+        "国产剧": {
+            "responseFormatType": "html",
+            "author": "//h6/text()",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://www.btzj.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type,_area,_language,_year,_rank}=params.filters\nlet url=`https://www.btzj.cc${_type}${_area}${_rank}${_language}----${params.pageIndex}--${_year}.html`;\n\nreturn {url:url}",
+            "host": "https://www.btzj.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "_type\n全部::/vodshow/36\n_area\n 全部::-\n大陆::-%E5%A4%A7%E9%99%86\n香港::-%E9%A6%99%E6%B8%AF\n台湾::-%E5%8F%B0%E6%B9%BE\n美国::-%E7%BE%8E%E5%9B%BD\n法国::-%E6%B3%95%E5%9B%BD\n英国::-%E8%8B%B1%E5%9B%BD\n日本::-%E6%97%A5%E6%9C%AC\n韩国::-%E9%9F%A9%E5%9B%BD\n德国::-%E5%BE%B7%E5%9B%BD\n泰国::-%E6%B3%B0%E5%9B%BD\n印度::-%E5%8D%B0%E5%BA%A6\n意大利::-%E6%84%8F%E5%A4%A7%E5%88%A9\n西班牙::-%E8%A5%BF%E7%8F%AD%E7%89%99\n加拿大::-%E5%8A%A0%E6%8B%BF%E5%A4%A7\n\n_language\n全部::--\n 全部::\n国语::--%E5%9B%BD%E8%AF%AD\n英语::--%E8%8B%B1%E8%AF%AD\n韩语::--%E9%9F%A9%E8%AF%AD\n日语::--%E6%97%A5%E8%AF%AD\n泰语::--%E6%B3%B0%E8%AF%AD\n_year\n全部::-\n2021::-2021\n2020::-2020\n2019::-2019\n2018::-2018\n2017::-2017\n2016::-2016\n2015::-2015\n2014::-2014\n2013::-2013\n2012::-2012\n2011::-2011\n2010::-2010\n\n_rank\n最近热播::-hits\n最新上映::-time\n评分最高::-score"
+            },
+            "cover": "//img//@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 3,
+            "detailUrl": "//h4/a/@href",
+            "list": "//ul[@class=\"list-unstyled\"]/li",
+            "status": "//li[@class=\"y-col-xs6 y-part-eone\"][2]//a"
+        },
+        "日剧": {
+            "responseFormatType": "html",
+            "author": "//h6/text()",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://www.btzj.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type,_area,_language,_year,_rank}=params.filters\nlet url=`https://www.btzj.cc${_type}${_area}${_rank}${_language}----${params.pageIndex}--${_year}.html`;\n\nreturn {url:url}",
+            "host": "https://www.btzj.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "_type\n全部::/vodshow/16\n_area\n全部::-\n日本::-%E6%97%A5%E6%9C%AC\n\n_language\n全部::--\n 国语::--%E5%9B%BD%E8%AF%AD\n英语::--%E8%8B%B1%E8%AF%AD\n韩语::--%E9%9F%A9%E8%AF%AD\n日语::--%E6%97%A5%E8%AF%AD\n泰语::--%E6%B3%B0%E8%AF%AD\n_year\n全部::-\n2021::-2021\n2020::-2020\n2019::-2019\n2018::-2018\n2017::-2017\n2016::-2016\n2015::-2015\n2014::-2014\n2013::-2013\n2012::-2012\n2011::-2011\n2010::-2010\n\n_rank\n最近热播::-hits\n最新上映::-time\n评分最高::-score"
+            },
+            "cover": "//img//@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 4,
+            "detailUrl": "//h4/a/@href",
+            "list": "//ul[@class=\"list-unstyled\"]/li",
+            "status": "//li[@class=\"y-col-xs6 y-part-eone\"][2]//a"
+        },
+        "动漫": {
+            "responseFormatType": "html",
+            "author": "//h6/text()",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://www.btzj.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type,_area,_language,_year,_rank}=params.filters\nlet url=`https://www.btzj.cc${_type}${_area}${_rank}${_language}----${params.pageIndex}--${_year}.html`;\n\nreturn {url:url}",
+            "host": "https://www.btzj.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "_type\n全部::/vodshow/4\n\n_area\n 全部::-\n国产::-%E5%9B%BD%E4%BA%A7\n日本::-%E6%97%A5%E6%9C%AC\n欧美::-%E6%AC%A7%E7%BE%8E\n其他::-%E5%85%B6%E4%BB%96\n\n_language\n 全部::--\n国语::--%E5%9B%BD%E8%AF%AD\n英语::--%E8%8B%B1%E8%AF%AD\n粤语::--%E7%B2%A4%E8%AF%AD\n闽南语::--%E9%97%BD%E5%8D%97%E8%AF%AD\n韩语::--%E9%9F%A9%E8%AF%AD\n日语::--%E6%97%A5%E8%AF%AD\n其它::--%E5%85%B6%E5%AE%83\n\n_year\n全部:: -\n2021::-2021\n2020::-2020\n2019::-2019\n2018::-2018\n2017::-2017\n2016::-2016\n2015::-2015\n2014::-2014\n2013::-2013\n2012::-2012\n2011::-2011\n2010::-2010\n2009::-2009\n2008::-2008\n2007::-2007\n2006::-2006\n2005::-2005\n2004::-2004\n2003::-2003\n2002::-2002\n2001::-2001\n2000::-2000\n1999::-1999\n1998::-1998\n1997::-1997\n\n_rank\n最近热播::-hits\n最新上映::-time\n评分最高::-score"
+            },
+            "cover": "//img//@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 6,
+            "detailUrl": "//h4/a/@href",
+            "list": "//ul[@class=\"list-unstyled\"]/li",
+            "status": "//li[@class=\"y-col-xs6 y-part-eone\"][2]//a"
+        },
+        "韩剧": {
+            "responseFormatType": "html",
+            "author": "//h6/text()",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://www.btzj.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type,_area,_language,_year,_rank}=params.filters\nlet url=`https://www.btzj.cc${_type}${_area}${_rank}${_language}----${params.pageIndex}--${_year}.html`;\n\nreturn {url:url}",
+            "host": "https://www.btzj.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "_type\n全部::/vodshow/15\n_area\n全部::-\n韩国::-%E9%9F%A9%E5%9B%BD\n\n_language\n全部::--\n 国语::--%E5%9B%BD%E8%AF%AD\n英语::--%E8%8B%B1%E8%AF%AD\n韩语::--%E9%9F%A9%E8%AF%AD\n日语::--%E6%97%A5%E8%AF%AD\n泰语::--%E6%B3%B0%E8%AF%AD\n_year\n全部::-\n2021::-2021\n2020::-2020\n2019::-2019\n2018::-2018\n2017::-2017\n2016::-2016\n2015::-2015\n2014::-2014\n2013::-2013\n2012::-2012\n2011::-2011\n2010::-2010\n\n_rank\n最近热播::-hits\n最新上映::-time\n评分最高::-score"
+            },
+            "cover": "//img//@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "detailUrl": "//h4/a/@href",
+            "list": "//ul[@class=\"list-unstyled\"]/li",
+            "status": "//li[@class=\"y-col-xs6 y-part-eone\"][2]//a"
+        },
+        "美剧": {
+            "responseFormatType": "html",
+            "author": "//h6/text()",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://www.btzj.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type,_area,_language,_year,_rank}=params.filters\nlet url=`https://www.btzj.cc${_type}${_area}${_rank}${_language}----${params.pageIndex}--${_year}.html`;\n\nreturn {url:url}",
+            "host": "https://www.btzj.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "_type\n全部::/vodshow/2\n_area\n全部::-\n内地::-%E5%86%85%E5%9C%B0\n韩国::-%E9%9F%A9%E5%9B%BD\n香港::-%E9%A6%99%E6%B8%AF\n台湾::-%E5%8F%B0%E6%B9%BE\n日本::-%E6%97%A5%E6%9C%AC\n美国::-%E7%BE%8E%E5%9B%BD\n泰国::-%E6%B3%B0%E5%9B%BD\n英国::-%E8%8B%B1%E5%9B%BD\n新加坡::-%E6%96%B0%E5%8A%A0%E5%9D%A1\n其他::-%E5%85%B6%E4%BB%96\n\n_language\n全部::--\n国语::--%E5%9B%BD%E8%AF%AD\n英语::--%E8%8B%B1%E8%AF%AD\n\n_year\n全部::-\n2021::-2021\n2020::-2020\n2019::-2019\n2018::-2018\n2017::-2017\n2016::-2016\n2015::-2015\n2014::-2014\n2013::-2013\n2012::-2012\n2011::-2011\n2010::-2010\n\n_rank\n最近热播::-hits\n最新上映::-time\n评分最高::-score"
+            },
+            "cover": "//img//@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "detailUrl": "//h4/a/@href",
+            "list": "//ul[@class=\"list-unstyled\"]/li",
+            "status": "//li[@class=\"y-col-xs6 y-part-eone\"][2]//a"
+        },
+        "泰剧": {
+            "responseFormatType": "html",
+            "author": "//h6/text()",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://www.btzj.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type,_area,_language,_year,_rank}=params.filters\nlet url=`https://www.btzj.cc${_type}${_area}${_rank}${_language}----${params.pageIndex}--${_year}.html`;\n\nreturn {url:url}",
+            "host": "https://www.btzj.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "_type\n全部::/vodshow/17\n_area\n全部::-\n泰国::-%E6%B3%B0%E5%9B%BD\n\n_language\n全部::--\n 国语::--%E5%9B%BD%E8%AF%AD\n英语::--%E8%8B%B1%E8%AF%AD\n韩语::--%E9%9F%A9%E8%AF%AD\n日语::--%E6%97%A5%E8%AF%AD\n泰语::--%E6%B3%B0%E8%AF%AD\n_year\n全部::-\n2021::-2021\n2020::-2020\n2019::-2019\n2018::-2018\n2017::-2017\n2016::-2016\n2015::-2015\n2014::-2014\n2013::-2013\n2012::-2012\n2011::-2011\n2010::-2010\n\n_rank\n最近热播::-hits\n最新上映::-time\n评分最高::-score"
+            },
+            "cover": "//img//@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 5,
+            "detailUrl": "//h4/a/@href",
+            "list": "//ul[@class=\"list-unstyled\"]/li",
+            "status": "//li[@class=\"y-col-xs6 y-part-eone\"][2]//a"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

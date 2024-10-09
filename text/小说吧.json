@@ -1,0 +1,73 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"acontent\"]/text()|@js:\nvar ind1= result.indexOf('(小说吧 www.xiaoshuoba.com)');\nif(ind1>0){\n    result=result.substring(ind1+48,result.length);\n}\n\nvar ind2= result.lastIndexOf('小说吧 www.xiaoshuoba.com');\nif(ind2>0){\n    result=result.substring(0,ind2);\n}\n//var rr=r.substring(0,r.indexOf('章节错误,'));\nreturn result;",
+        "host": "http://www.xiaoshuoba.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.xiaoshuoba.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "2222",
+    "sourceName": "小说吧",
+    "desc": "🦞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650359648.950249",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class=\"c_tag\"][1]/span[4]",
+        "author": "//div[@class=\"c_tag\"][1]/span[2]",
+        "lastChapterTitle": "//div[@class=\"c_tag\"][2]//a",
+        "responseFormatType": "html",
+        "bookName": "//span[@class=\"c_subject\"]/a",
+        "requestInfo": "modules/article/search.php?q=%@keyWord",
+        "host": "http://www.xiaoshuoba.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//div[2]/div/a/@href",
+        "cover": "//div[@class=\"fl\"]/a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//div[@class=\"c_tag\"][1]/span[6]",
+        "list": "//div[@class=\"c_row\"]",
+        "status": "//div[@class=\"c_tag\"][1]/span[8]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//h1/span[2]|@replace:更新时间：",
+        "title": "//a",
+        "host": "http://www.xiaoshuoba.com/",
+        "list": "//ul[@class=\"chapters\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

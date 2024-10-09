@@ -1,0 +1,195 @@
+{
+    "bookWorld": {
+        "分类": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]/a",
+            "bookName": "//span[1]/a",
+            "requestInfo": "/fenlei/%@filter_%@pageIndex/",
+            "host": "http://www.yqzww.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[1]/a/@href",
+            "cover": "//span[1]/a/@href ||@js:\nvar item = result.match(/(\\d+)\\//);\nlet id1 = item[1];\n\nlet img = ''\nif(id1<1000){\n\timg = config.host+'/files/article/image/' +parseInt(id1/1000)+'/'+id1+'/'+id1+'s.jpg';\n}else{\n\timg = config.host+'/files/article/image/' +parseInt(id1/1000)+'/'+(id1-1)+'/'+(id1-1)+'s.jpg';\n}\nreturn img;",
+            "validConfig": "",
+            "list": "//div[contains(@class,\"gx_cont\")]//ul//li[position()>1]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻小说",
+                                "value": 1
+                            },
+                            {
+                                "title": "修真小说",
+                                "value": 2
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": 3
+                            },
+                            {
+                                "title": "历史小说",
+                                "value": 4
+                            },
+                            {
+                                "title": "网游小说",
+                                "value": 5
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": 6
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            }
+        },
+        "排行": {
+            "cat": "//span[2]/a",
+            "author": "//span[4]/a",
+            "responseFormatType": "html",
+            "bookName": "//span[3]/a",
+            "requestInfo": "/top/%@filter/%@pageIndex.html",
+            "host": "http://www.yqzww.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "总点击榜",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "月点击榜",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "周点击榜",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "日点击榜",
+                                "value": "dayvisit"
+                            },
+                            {
+                                "title": "总收藏榜",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "总推荐榜",
+                                "value": "weekvote"
+                            },
+                            {
+                                "title": "数字排行",
+                                "value": "size"
+                            },
+                            {
+                                "title": "本站推荐",
+                                "value": "toptime"
+                            },
+                            {
+                                "title": "最近更新",
+                                "value": "lastupdate"
+                            },
+                            {
+                                "title": "最新入库",
+                                "value": "postdate"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "detailUrl": "//span[3]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"sk_cont\"]//ul//li[position()>1]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//span[3]/a/@href ||@js:\nvar item = result.match(/(\\d+)\\//);\nlet id1 = item[1];\n\nlet img = ''\nif(id1<1000){\n\timg = config.host+'/files/article/image/' +parseInt(id1/1000)+'/'+id1+'/'+id1+'s.jpg';\n}else{\n\timg = config.host+'/files/article/image/' +parseInt(id1/1000)+'/'+(id1-1)+'/'+(id1-1)+'s.jpg';\n}\nreturn img;"
+        }
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config,params,result){\n\tif(result.list[0].url.indexOf('undefined')>=0){\n\t\tresult.list.shift();\n\t}\n\treturn {'list':result.list};\n}",
+        "title": "//a",
+        "host": "http://www.yqzww.org",
+        "list": "//ul[@class=\"mulu_list\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href ||@js:\nreturn params.queryInfo.detailUrl + result;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "言情中文网⛄",
+    "sourceType": "text",
+    "sourceUrl": "http://www.yqzww.org",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642863227.514179",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//td[3]",
+        "responseFormatType": "html",
+        "bookName": "//td[1]/a",
+        "requestInfo": "/modules/article/search.php?searchkey=%@keyWord&page=%@pageIndex",
+        "host": "http://www.yqzww.org",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "cover": "//td[1]/a/@href ||@js:\nvar item = result.match(/(\\d+)\\//);\nlet id1 = parseInt(item[1]);\nlet img = ''\nif(id1<1000){\n\timg = config.host+'/files/article/image/' +parseInt(id1/1000)+'/'+id1+'/'+id1+'s.jpg';\n}else{\n\timg = config.host+'/files/article/image/' +parseInt(id1/1000)+'/'+(id1-1)+'/'+(id1-1)+'s.jpg';\n}\nreturn img;",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table//tr[position()>1]",
+        "moreKeys": {
+            "pageSize": 40
+        },
+        "wordCount": "//td[4]",
+        "status": "//td[6]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet beginStr = 'class=\"chapter-content\">';\n\tlet beginIndex = result.indexOf(beginStr);\n\n      function typeSet(str){\n\t\tstr = str.replace(/<br[\\s]*[\\/]*>/gi,'\\n');\n            str = str.replace(/(言情中文网.*最新章节！|一秒记住.*免费阅读！|第.*章[\\s\\S]*?\\n)/gi,'');\n            str = str.replace(/\\n[\\s]*\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,'');\n            //str = str.replace(/<p[^>]*>[\\s\\S]+<\\/[^>]*>/gi,'');\n\t\tstr = str.replace(/<[^>]*>/gi,'');\n\t\tstr = str.replace(/本书由[\\s\\S]+现金红包！/gi,'');\n            return str;\n      }\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex + beginStr.length);\n\t\tparams.nativeTool.log(subStr);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n            \n\t\treturn typeSet(tarStr);\n\t}\n\treturn undefined;\n}",
+        "host": "http://www.yqzww.org",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "desc": "勿频繁操作",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.yqzww.org",
+        "cover": "//div[@id=\"fmimg\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]"
+    }
+}

@@ -1,0 +1,204 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"htmlContent\"]/p[position()<last()]/text() ||@js: return result.replace(/(。更新最快| 更新最快|你看到的内容中间[\\s\\S]*)/,\"\")",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 6
+        },
+        "host": "https://www.xs635.com",
+        "httpHeaders": {
+            "Referer": "https://www.xs63.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),\"下一页\")] ||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"_\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "lastChapterTitle": "//div[@class=\"update\"]",
+        "host": "https://www.xs635.com",
+        "httpHeaders": {
+            "Referer": "https://www.xs63.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//div[@class=\"pic\"]//@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//h3[@class=\"bookinfo_intro\"] ||@js:\nreturn  result.replace(/[\\r\\n\\t]/g,\"\")"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//dd[2]/span",
+            "lastChapterTitle": "//dd[4]/a",
+            "bookName": "//h3/a",
+            "httpHeaders": {
+                "Referer": "https://www.xs63.cc",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+\"/\"+params.filters.type +\"/\" + params.pageIndex+\".html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.xs635.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "xuanhuan"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "xianxia"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "dushi"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "kongbu"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "qita"
+                            },
+                            {
+                                "title": "全本",
+                                "value": "quanben"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"sitebox\"]/dl",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//img/@date-original",
+            "desc": "//dd[3] ||@js:\nreturn  result.replace(/[\\r\\n]/g,\"\");"
+        },
+        "排行": {
+            "cat": "//p[5]/text()  ||@js:\nreturn  result.replace(/[\\r\\n\\t]/g,\"\");",
+            "responseFormatType": "html",
+            "author": "//p[3]",
+            "lastChapterTitle": "//p[2]/a",
+            "bookName": "//p[1]/a",
+            "httpHeaders": {
+                "Referer": "https://www.xs63.cc",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+params.filters.type+ params.pageIndex+\".html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.xs635.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "小说排行榜",
+                                "value": "/paixingbang/"
+                            },
+                            {
+                                "title": "最新更新小说",
+                                "value": "/update/"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//p[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"toplist\"]/ul/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "wordCount": "//p[4]/text() ||@js:\nreturn  result.replace(/[\\r\\n\\t]/g,\"\");"
+        }
+    },
+    "sourceUrl": "https://www.xs635.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "小说路上",
+    "httpHeaders": {
+        "Referer": "https://www.xs63.cc",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654432522.951506",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//p[5]",
+        "author": "//p[3]",
+        "lastChapterTitle": "//p[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//p[1]/a ||@js:\nreturn result.replace(/作者：.*/, '');",
+        "httpHeaders": {
+            "Referer": "https://www.xs63.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url= config.host+\"/search/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'kw':params.keyWord, 'page':params.pageIndex};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.xs635.com",
+        "actionID": "searchBook",
+        "detailUrl": "//p[1]/a/@href",
+        "wordCount": "//p[4]",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"toplist\"]/ul/li",
+        "moreKeys": {
+            "maxPage": 10
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@id=\"info\"]/p[3]",
+        "title": "//a",
+        "host": "https://www.xs635.com",
+        "httpHeaders": {
+            "Referer": "https://www.xs63.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@class=\"book_list\"][2]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

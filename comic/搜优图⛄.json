@@ -1,0 +1,622 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "weight": "10005",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://www.syt5.com",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n\tlet chapterInfo = {};\n\tchapterInfo.title = params.queryInfo.bookName;\n\tchapterInfo.url = params.queryInfo.detailUrl;\n      //chapterInfo.updateTime = params.queryInfo.status;\n\tlist.push(chapterInfo);\n\n\treturn {'list':list};\n}",
+        "actionID": "chapterList"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "搜优图⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.syt5.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642079701.311417",
+    "searchBook": {
+        "cat": "//div[2]/p[2]//a",
+        "responseFormatType": "html",
+        "bookName": "//div[2]/p[1]/a",
+        "requestInfo": "/c-0-3-0-%@keyWord/%@pageIndex.html",
+        "host": "https://www.syt5.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[2]/p[1]/a/@href",
+        "moreKeys": {
+            "pageSize": 25
+        },
+        "validConfig": "",
+        "list": "//div[@class=\"card-box\"]",
+        "cover": "//img//@lazysrc",
+        "parserID": "DOM",
+        "status": "//div[3]/span[2]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//ul[@class=\"cl piclistw\"]//img//@src || //div[@class=\"showcontw mtw\"]//img//@src || //div[@class=\"wenzHtml ptm\"]//img//@src || //div[@id=\"showimages\"]//img//@src ||@js:\nlet reg = /http[^\\s]+[jpg|png|gif|webp]/gi;\nlet tem = result.match(reg);\n\nreturn tem;",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\n\tlet list = [];\n\n\tparams.nativeTool.log(result.content.length);\n\tfor(let i=0;i<result.content.length;i++){\n\t\tlet type = result.content[0].split(/\\./gi).pop()\n\t\tlet base = result.content[i].split(type)[0];\n\t\tlet item = base + type;\n\t\tlist.push(item);\n\t}\n\treturn list.join('\\n');\n}",
+        "host": "https://www.syt5.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "壁纸",
+    "password": "KksnoyunaHonʌ_ə34",
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "手机壁纸": {
+            "cat": "//div[2]/p[2]//a",
+            "responseFormatType": "html",
+            "bookName": "//div[2]/p[1]/a",
+            "requestInfo": "@js:\nlet url = config.host + '/mbizhi/' + params.filters.type0 + '/' ;\nif(params.pageIndex >1 ){\n\turl += 'index_' + params.pageIndex +'.html';\n}\nreturn encodeURI(url);",
+            "host": "https://www.syt5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "25",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "分类",
+                                "value": ""
+                            },
+                            {
+                                "title": "美女",
+                                "value": "mmeinv"
+                            },
+                            {
+                                "title": "欧美",
+                                "value": "mshuaige"
+                            },
+                            {
+                                "title": "明星",
+                                "value": "mmingxing"
+                            },
+                            {
+                                "title": "唯美",
+                                "value": "mmote"
+                            },
+                            {
+                                "title": "动漫",
+                                "value": "mdongman"
+                            },
+                            {
+                                "title": "卡通",
+                                "value": "mkatong"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "myouxi"
+                            },
+                            {
+                                "title": "影视",
+                                "value": "myingshi"
+                            },
+                            {
+                                "title": "爱情",
+                                "value": "maiqing"
+                            },
+                            {
+                                "title": "汽车",
+                                "value": "mqiche"
+                            },
+                            {
+                                "title": "风景",
+                                "value": "mfengjing"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "mtiyu"
+                            },
+                            {
+                                "title": "可爱",
+                                "value": "mkeai"
+                            },
+                            {
+                                "title": "植物",
+                                "value": "mzhiwu"
+                            },
+                            {
+                                "title": "动物",
+                                "value": "mdongwu"
+                            },
+                            {
+                                "title": "建筑",
+                                "value": "mjianzhu"
+                            },
+                            {
+                                "title": "品牌",
+                                "value": "mpinpai"
+                            },
+                            {
+                                "title": "创意",
+                                "value": "mchuangyi"
+                            },
+                            {
+                                "title": "非主流",
+                                "value": "mfzl"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "detailUrl": "//div[2]/p[1]/a/@href",
+            "cover": "//img//@lazysrc",
+            "list": "//div[@class=\"card-box\"]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//div[3]/span[2]"
+        },
+        "帅哥图片": {
+            "cat": "//div[2]/p[2]//a",
+            "responseFormatType": "html",
+            "bookName": "//div[2]/p[1]/a",
+            "requestInfo": "@js:\nlet url = config.host + '/shuaige/' + params.filters.type0 + '/' ;\nif(params.pageIndex >1 ){\n\turl += '_' + params.pageIndex +'.html';\n}\nreturn encodeURI(url);",
+            "host": "https://www.syt5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "25",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "分类",
+                                "value": ""
+                            },
+                            {
+                                "title": "韩国帅哥",
+                                "value": "hgsg"
+                            },
+                            {
+                                "title": "欧美图片",
+                                "value": "omsg"
+                            },
+                            {
+                                "title": "帅哥照片",
+                                "value": "sgshz"
+                            },
+                            {
+                                "title": "肌肉帅哥",
+                                "value": "jrsg"
+                            },
+                            {
+                                "title": "小帅哥",
+                                "value": "xsg"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "detailUrl": "//div[2]/p[1]/a/@href",
+            "cover": "//img//@lazysrc",
+            "list": "//div[@class=\"card-box\"]",
+            "_sIndex": 6,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//div[3]/span[2]"
+        },
+        "明星图片": {
+            "cat": "//div[2]/p[2]//a",
+            "responseFormatType": "html",
+            "bookName": "//div[2]/p[1]/a",
+            "requestInfo": "@js:\nlet url = config.host + '/mingxing/' + params.filters.type0 + '/' ;\nif(params.pageIndex >1 ){\n\turl += '_' + params.pageIndex +'.html';\n}\nreturn encodeURI(url);",
+            "host": "https://www.syt5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "25",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "分类",
+                                "value": ""
+                            },
+                            {
+                                "title": "女明星",
+                                "value": "mnmx"
+                            },
+                            {
+                                "title": "男明星",
+                                "value": "mxsg"
+                            },
+                            {
+                                "title": "剧照海报",
+                                "value": "jzhb"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "detailUrl": "//div[2]/p[1]/a/@href",
+            "cover": "//img//@lazysrc",
+            "list": "//div[@class=\"card-box\"]",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//div[3]/span[2]"
+        },
+        "动漫图片": {
+            "cat": "//div[2]/p[2]//a",
+            "responseFormatType": "html",
+            "bookName": "//div[2]/p[1]/a",
+            "requestInfo": "@js:\nlet url = config.host + '/dmkt/' + params.filters.type0 + '/' ;\nif(params.pageIndex >1 ){\n\turl += '_' + params.pageIndex +'.html';\n}\nreturn encodeURI(url);",
+            "host": "https://www.syt5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "25",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "分类",
+                                "value": ""
+                            },
+                            {
+                                "title": "动漫美女",
+                                "value": "dmmm"
+                            },
+                            {
+                                "title": "可爱动漫",
+                                "value": "qbrw"
+                            },
+                            {
+                                "title": "动漫人物",
+                                "value": "dmrw"
+                            },
+                            {
+                                "title": "动漫美图",
+                                "value": "dmmt"
+                            },
+                            {
+                                "title": "动漫情侣",
+                                "value": "mt"
+                            },
+                            {
+                                "title": "海贼王",
+                                "value": "hzw"
+                            },
+                            {
+                                "title": "火影忍者",
+                                "value": "hyrz"
+                            },
+                            {
+                                "title": "漫画大全",
+                                "value": "mhdq"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "detailUrl": "//div[2]/p[1]/a/@href",
+            "cover": "//img//@lazysrc",
+            "list": "//div[@class=\"card-box\"]",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//div[3]/span[2]"
+        },
+        "头像图片": {
+            "cat": "//div[2]/p[2]//a",
+            "responseFormatType": "html",
+            "bookName": "//div[2]/p[1]/a",
+            "requestInfo": "@js:\nlet url = config.host + '/touxiang/' + params.filters.type0 + '/' ;\nif(params.pageIndex >1 ){\n\turl += '_' + params.pageIndex +'.html';\n}\nreturn encodeURI(url);",
+            "host": "https://www.syt5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "25",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "分类",
+                                "value": ""
+                            },
+                            {
+                                "title": "QQ头像",
+                                "value": "qqtx"
+                            },
+                            {
+                                "title": "微信头像",
+                                "value": "weixin"
+                            },
+                            {
+                                "title": "动漫头像",
+                                "value": "dmtx"
+                            },
+                            {
+                                "title": "情侣头像",
+                                "value": "qinglv"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "detailUrl": "//div[2]/p[1]/a/@href",
+            "cover": "//img//@lazysrc",
+            "list": "//div[@class=\"card-box\"]",
+            "_sIndex": 5,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//div[3]/span[2]"
+        },
+        "唯美图片": {
+            "cat": "//div[2]/p[2]//a",
+            "responseFormatType": "html",
+            "bookName": "//div[2]/p[1]/a",
+            "requestInfo": "@js:\nlet url = config.host + '/weimei/' + params.filters.type0 + '/' ;\nif(params.pageIndex >1 ){\n\turl += '_' + params.pageIndex +'.html';\n}\nreturn encodeURI(url);",
+            "host": "https://www.syt5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "25",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "分类",
+                                "value": ""
+                            },
+                            {
+                                "title": "唯美意境",
+                                "value": "wmt"
+                            },
+                            {
+                                "title": "风景图片",
+                                "value": "fengjing"
+                            },
+                            {
+                                "title": "文字图片",
+                                "value": "wenzi"
+                            },
+                            {
+                                "title": "古风图片",
+                                "value": "gufeng"
+                            },
+                            {
+                                "title": "伤感图片",
+                                "value": "sg"
+                            },
+                            {
+                                "title": "爱情图片",
+                                "value": "aiqing"
+                            },
+                            {
+                                "title": "唯美背景",
+                                "value": "chahua"
+                            },
+                            {
+                                "title": "非主流图片",
+                                "value": "feizhuliu"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "detailUrl": "//div[2]/p[1]/a/@href",
+            "cover": "//img//@lazysrc",
+            "list": "//div[@class=\"card-box\"]",
+            "_sIndex": 4,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//div[3]/span[2]"
+        },
+        "壁纸图片": {
+            "cat": "//div[2]/p[2]//a",
+            "responseFormatType": "html",
+            "bookName": "//div[2]/p[1]/a",
+            "requestInfo": "@js:\nlet url = config.host + '/bizhi/' + params.filters.type0 + '/' + params.filters.type1 + '_' + params.filters.type2 + '/' + 'index';\nif(params.pageIndex >1 ){\n\turl += '_' + params.pageIndex;\n}\nurl += '.html'\nreturn encodeURI(url);",
+            "host": "https://www.syt5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "25",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "分类",
+                                "value": ""
+                            },
+                            {
+                                "title": "风景壁纸",
+                                "value": "fjbz"
+                            },
+                            {
+                                "title": "明星帅哥",
+                                "value": "mxbz"
+                            },
+                            {
+                                "title": "美女壁纸",
+                                "value": "mnbz"
+                            },
+                            {
+                                "title": "唯美壁纸",
+                                "value": "wmbz"
+                            },
+                            {
+                                "title": "简约壁纸",
+                                "value": "jybz"
+                            },
+                            {
+                                "title": "动漫壁纸",
+                                "value": "dmbz"
+                            },
+                            {
+                                "title": "游戏壁纸",
+                                "value": "yxbz"
+                            },
+                            {
+                                "title": "动物壁纸",
+                                "value": "dwbz"
+                            },
+                            {
+                                "title": "汽车壁纸",
+                                "value": "qcbz"
+                            },
+                            {
+                                "title": "影视壁纸",
+                                "value": "ysbz"
+                            },
+                            {
+                                "title": "其他壁纸",
+                                "value": "qita"
+                            }
+                        ],
+                        "key": "type0"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "分辨率",
+                                "value": "0"
+                            },
+                            {
+                                "title": "7680x4320(8k)",
+                                "value": "7680x4320"
+                            },
+                            {
+                                "title": "3840x2160(4k)",
+                                "value": "3840x2160"
+                            },
+                            {
+                                "title": "2560x1440(2k)",
+                                "value": "2560x1440"
+                            },
+                            {
+                                "title": "2880x1800(Retina屏)",
+                                "value": "2880x1800"
+                            },
+                            {
+                                "title": "2560x1600(27-30英寸)",
+                                "value": "2560x1600"
+                            },
+                            {
+                                "title": "1920x1200",
+                                "value": "1920x1200"
+                            },
+                            {
+                                "title": "1920x1080(15-23英寸)",
+                                "value": "1920x1080"
+                            },
+                            {
+                                "title": "1680x1050(22英寸)",
+                                "value": "1680x1050"
+                            },
+                            {
+                                "title": "1600x900(20英寸)",
+                                "value": "1600x900"
+                            },
+                            {
+                                "title": "1440x900(15-19英寸)",
+                                "value": "1440x900"
+                            },
+                            {
+                                "title": "1280x1024(17-19英寸)",
+                                "value": "1280x1024"
+                            }
+                        ],
+                        "key": "type1"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "颜色",
+                                "value": "0"
+                            },
+                            {
+                                "title": "红色",
+                                "value": "hongse"
+                            },
+                            {
+                                "title": "黄色",
+                                "value": "huangse"
+                            },
+                            {
+                                "title": "白色",
+                                "value": "baise"
+                            },
+                            {
+                                "title": "绿色",
+                                "value": "lvse"
+                            },
+                            {
+                                "title": "青色",
+                                "value": "qingse"
+                            },
+                            {
+                                "title": "蓝色",
+                                "value": "lanse"
+                            },
+                            {
+                                "title": "紫色",
+                                "value": "zise"
+                            },
+                            {
+                                "title": "黑色",
+                                "value": "heise"
+                            },
+                            {
+                                "title": "棕色",
+                                "value": "zongse"
+                            },
+                            {
+                                "title": "橙色",
+                                "value": "chengse"
+                            },
+                            {
+                                "title": "粉色",
+                                "value": "fense"
+                            },
+                            {
+                                "title": "灰色",
+                                "value": "huise"
+                            },
+                            {
+                                "title": "炫彩",
+                                "value": "xuancai"
+                            }
+                        ],
+                        "key": "type2"
+                    }
+                ]
+            },
+            "detailUrl": "//div[2]/p[1]/a/@href",
+            "cover": "//img//@lazysrc",
+            "list": "//div[@class=\"card-box\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//div[3]/span[2]"
+        }
+    }
+}

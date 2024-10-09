@@ -1,0 +1,112 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "data/current_chapter/chapter_img_list || @js:\nreturn result.join('\\n');",
+        "actionID": "chapterContent",
+        "host": "http://m.soudongman.com",
+        "httpHeaders": {
+            "Referer": "http://m.soudongman.com/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 11; PCLM10 Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.72 Mobile Safari/537.36"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://m.soudongman.com",
+        "httpHeaders": {
+            "Referer": "http://m.soudongman.com/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 11; PCLM10 Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.72 Mobile Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//*[@class='minignore content']"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//span",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "httpHeaders": {
+                "Referer": "http://m.soudongman.com/",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 11; PCLM10 Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.72 Mobile Safari/537.36"
+            },
+            "host": "http://m.soudongman.com",
+            "requestInfo": "@js:\nlet url = 'http://m.soudongman.com/sort/all';\nif(params.pageIndex > 1)\n\turl += '_p' + params.pageIndex;\nreturn url + '.html';",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3/a/@href",
+            "moreKeys": {
+                "pageSize": "30"
+            },
+            "cover": "//img/@data-src",
+            "list": "//li[@class='item']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5992",
+    "sourceName": "☘️搜动漫",
+    "httpHeaders": {
+        "Referer": "http://m.soudongman.com/",
+        "User-Agent": "Mozilla/5.0 (Linux; Android 11; PCLM10 Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.72 Mobile Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "sourceUrl": "http://m.soudongman.com",
+    "lastModifyTime": "1641313711.457295",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "html",
+        "lastChapterTitle": "//span",
+        "bookName": "//h3/a",
+        "httpHeaders": {
+            "Referer": "http://m.soudongman.com/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 11; PCLM10 Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.72 Mobile Safari/537.36"
+        },
+        "requestInfo": "http://m.soudongman.com/sort/all.html?key=%@keyWord",
+        "host": "http://m.soudongman.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//img/@data-src",
+        "validConfig": "",
+        "list": "//li[@class='item']",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://m.soudongman.com",
+        "httpHeaders": {
+            "Referer": "http://m.soudongman.com/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 11; PCLM10 Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.72 Mobile Safari/537.36"
+        },
+        "list": "//*[@class='chapterlist']/li || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href || @js:\nvar bid = params.responseUrl.match(/com\\/(.*?)\\/?$/)[1];\nvar cid = result.match(/\\/?(.*?)\\.html/)[1];\nreturn \"https://m.soudongman.com/api/getchapterinfov2?product_id=9&productname=soudm&platformname=wap&comic_id=\"+bid+\"&chapter_newid=\"+cid+\"&isWebp=1&quality=low\";"
+    }
+}

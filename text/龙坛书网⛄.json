@@ -1,0 +1,74 @@
+{
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//div[@id=\"info\"]/p[6]",
+        "title": "//a",
+        "host": "https://www.longtanshuwang.com",
+        "list": "//div[@class=\"listmain\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "龙坛书网⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://www.longtanshuwang.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1635590602.263407",
+    "searchBook": {
+        "cat": "//div[@class=\"cat\"]",
+        "author": "//div[@class=\"author\"]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class=\"update\"]//a",
+        "bookName": "//h4[@class=\"bookname\"]",
+        "desc": "//p",
+        "requestInfo": "https://www.longtanshuwang.com/s666.php?ie=gbk&q=%@keyWord",
+        "host": "https://www.longtanshuwang.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h4[@class=\"bookname\"]//a//@href",
+        "cover": "//img//@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"bookbox\"]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"book\"]//div[@id=\"content\"] ||@js:\n\nvar arr = ['公众号','第.*章'];\nlet txt = '';\narr.forEach(function(value,index,array){\n\tif(index<array.length-1){\n\t\ttxt += value + '[^>]*>|';\n\t}else{\n\t\ttxt += value + '[^>]*>';\n\t}\n});\n\nlet regstr = txt;\nfunction typeset(str)//文字排版正则替换\n{\n //修正不规则标点\n str=str.replace(/,/gi,\"，\");\n str=str.replace(/\\.\\r/gi,\"。\\r\");\n str=str.replace(/．/gi,\"。\");\n str=str.replace(/;/gi,\"；\");\n str=str.replace(/\\\"/gi,\"＂\");\n str=str.replace(/\\'/gi,\"｀\");\n str=str.replace(/!/gi,\"！\");\n str=str.replace(/\\(/gi,\"（\");\n str=str.replace(/\\)/gi,\"）\");\n str=str.replace(/【/gi,\"「\");\n str=str.replace(/『/gi,\"「\");\n str=str.replace(/】/gi,\"」\");\n str=str.replace(/』/gi,\"」\");\n //修正不规则换行，其中 。？！…」\"）\\n\\r 为有效换行标志符．（注意：此代码将破坏所有无效标点换行）\n //str=str.replace(/([^。？！…」\"）\\n\\r])[\\n\\r]{2}/gi,\"$1\");\n//str=str.replace(/(\\\"[^\\\"]*\\\")/gi,\"\\n\\r$1\\n\\r\");\n //修正不规则段落\n str=\"\\n\"+str;\n str=str.replace(/[\\n|\\r]+[ |　|\\t]*/gi,\"\\n\\n　　\");\n str=str.replace(\"\\n\\n\",\"\");\n str=str.replace(new RegExp(regstr),\"\");\n return str;\n}\n\nreturn typeset(result);",
+        "host": "https://www.longtanshuwang.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "desc": "Ks🔍",
+    "shudanList": {},
+    "bookWorld": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

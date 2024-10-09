@@ -1,0 +1,72 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='content']",
+        "host": "https://www.biquvv.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": false,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.biquvv.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "0",
+    "sourceName": "笔趣阁biquvv",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637655178.014924",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//meta[@property='og:novel:category']/@content || //div[2]/span[4]",
+        "author": "//meta[@property='og:novel:author']/@content || //div[2]/span[2]",
+        "lastChapterTitle": "//meta[@property='og:novel:latest_chapter_name']/@content || //div[4]/span[2]",
+        "responseFormatType": "html",
+        "bookName": "//meta[@property='og:novel:book_name']/@content || //div[1]/span[1]/a",
+        "desc": "//meta[@property='og:description']/@content || //div[3]",
+        "requestInfo": "@js:\nreturn {'url':'https://www.biquvv.com/modules/article/search.php', 'POST':true, 'httpParams':{'searchkey':params.keyWord}};",
+        "host": "https://www.biquvv.com",
+        "actionID": "searchBook",
+        "detailUrl": "//meta[@property='og:novel:read_url']/@content || //div[1]/a[1]/@href",
+        "wordCount": "//meta[@property='og:novel:current_words']/@content || //div[2]/span[6]",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@id='jieqi_page_contents']/div/div[2] ||",
+        "status": "//meta[@property='og:novel:status']/@content || //div[2]/span[8]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = result.replace('/book/', '/info/');\nif(url.indexOf('.html')>0)\n\treturn url;\nreturn url.substr(0, url.length-1) + '.html';",
+        "title": "//a",
+        "host": "https://www.biquvv.com",
+        "list": "//div[@id='list']/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

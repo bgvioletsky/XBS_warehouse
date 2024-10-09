@@ -1,0 +1,82 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "content",
+        "requestInfo": "/9/book/chapter?%@result",
+        "host": "https://h5.reader.qq.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "http://ubook.3g.qq.com/9/intro?bid=%@result",
+        "host": "https://h5.reader.qq.com",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "book/intro"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://h5.reader.qq.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9889",
+    "sourceName": "FZ-久久阅读",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642209198.592862",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "lastChapterName",
+        "bookName": "title",
+        "requestInfo": "/9/search?key=%@keyWord&pageNo=%@pageIndex",
+        "host": "https://h5.reader.qq.com",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "wordCount": "totalWords",
+        "validConfig": "",
+        "cover": "cover",
+        "parserID": "DOM",
+        "list": "booklist",
+        "status": "finished"
+    },
+    "chapterList": {
+        "nextPageUrl": "@js:\nvar u1=params.queryInfo.detailUrl;\nvar total= result.total;\nvar pageNo= result.pageNo;\nif(parseInt(pageNo)<=(parseInt(total/100))){\nreturn u1+\"&pageNo=\"+(parseInt(pageNo) + parseInt(\"1\"));\n}\nreturn;",
+        "responseFormatType": "json",
+        "url": "seq|@js:\nreturn 'bid=' + params.queryInfo.detailUrl + '&cid=' + result;",
+        "requestInfo": "/9/chapter?bid=%@result",
+        "title": "title",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://h5.reader.qq.com",
+        "validConfig": "",
+        "list": "chapter",
+        "parserID": "DOM",
+        "updateTime": "book/updateDate"
+    },
+    "sourceType": "text"
+}

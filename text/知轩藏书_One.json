@@ -1,0 +1,140 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"novelcontent\"]/p/text() ||@js:\nres =result.replace(/百度搜索.*?！/g,\"\").replace(/精校完本小说.*?com/g,\"\");\nreturn res;",
+        "host": "https://m.zxcs88.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js: \nlet res =params.queryInfo.detailUrl\n\nlet id = res.match(/(\\d+)/g)[2];\n\nlet url= config.host +\"/book/\"+id+\"/\";\n\nreturn url",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "https://m.zxcs88.com",
+        "cat": "//p[@class=\"infotype\"]/p[2]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@property=\"og:description\"]/@content"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//p[@class=\"author\"]",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"content\"]/h6/a",
+            "desc": "//p[@class=\"simple\"]",
+            "requestInfo": "@js:\rlet url = \"https://m.zxcs88.com/sort/\"+params.filters.type+params.pageIndex+\"/\";\rreturn url;",
+            "host": "https://m.zxcs88.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"content\"]/h6/a/@href||@js:\n\nlet id = result.match(/(\\d+)/g)[1];\nlet iid = parseInt(id/1000);\nlet url = \"https://m.zxcs88.com/\"+iid+\"/\"+id+\"/\";\n\nreturn url",
+            "moreKeys": {
+                "pageSize": 5,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1_"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "2_"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "3_"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "4_"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "5_"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "6_"
+                            },
+                            {
+                                "title": "女频",
+                                "value": "7_"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "8_"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"pic\"]//img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class=\"article\"]"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://m.zxcs88.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "知轩藏书_One",
+    "desc": "👾精校",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637304155.865270",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485232",
+        "author": "//span[@class=\"author\"]/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//p/a/text()",
+        "requestInfo": "@js:\nlet url= config.host+\"/s.php\"\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url, 'POST':true, 'httpParams':{'s':params.keyWord,\n\"type\":\"articlename\"},\"httpHeaders\":hh};",
+        "host": "https://m.zxcs88.com",
+        "actionID": "searchBook",
+        "detailUrl": "//p/a/@href ||@js:\n\nlet id = result.match(/(\\d+)/)[1];\nlet iid = parseInt(id/1000);\n\nlet url = \"https://m.zxcs88.com/\"+iid+\"/\"+id+\"/\";\n\nreturn url",
+        "cover": "//p/a/@href||@js:\nvar id = result.match(/(\\d+)/)[1];\nvar iid = parseInt(id/1000);\n\n\n\nreturn 'http://fm.zxcs88.com/'+iid+'/'+id+'/'+id+'s.jpg';",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"searchresult\"]/p"
+    },
+    "chapterList": {
+        "nextPageUrl": "//a[contains(text(), '下一页')]/@href ||@js:\nreturn config.host+result",
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "title": "//a",
+        "host": "https://m.zxcs88.com",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 900
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class=\"chapters\"]/li"
+    },
+    "sourceType": "text"
+}

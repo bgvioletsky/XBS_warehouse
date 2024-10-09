@@ -1,0 +1,252 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class=\"book_content\"]//text()",
+        "actionID": "chapterContent",
+        "host": "https://www.80xs.la",
+        "httpHeaders": {
+            "Referer": "https://www.80xs.la",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "女生分类": {
+            "author": "//span[@class=\"parag_2013\"]/a",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[3]",
+            "bookName": "//div[1]/div[1]/a ||@js:\nreturn result.replace(/[\"小说下载TXT\"]/g,\"\")",
+            "httpHeaders": {
+                "Referer": "https://www.80xs.la",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+params.filters.type+ params.pageIndex+\".html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.80xs.la",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[1]/div[1]/a/@href",
+            "cover": "//img/@src",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "魔幻女强",
+                                "value": "/sort2/"
+                            },
+                            {
+                                "title": "都市婚姻",
+                                "value": "/sort4/"
+                            },
+                            {
+                                "title": "百合之恋",
+                                "value": "/sort5/"
+                            },
+                            {
+                                "title": "同人美文",
+                                "value": "/sort11/"
+                            },
+                            {
+                                "title": "穿越架空",
+                                "value": "/sort17/"
+                            },
+                            {
+                                "title": "王室贵族",
+                                "value": "/sort18/"
+                            },
+                            {
+                                "title": "魔法校园",
+                                "value": "/sort19/"
+                            },
+                            {
+                                "title": "乡土布衣",
+                                "value": "/sort20/"
+                            },
+                            {
+                                "title": "官职商战",
+                                "value": "/sort21/"
+                            },
+                            {
+                                "title": "间谍暗战",
+                                "value": "/sort23/"
+                            },
+                            {
+                                "title": "唯美言情",
+                                "value": "/sort24/"
+                            },
+                            {
+                                "title": "诗歌文集",
+                                "value": "/sort25/"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//div[@id=\"list_art_2013\"]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "desc": "//div[1]/div[2]/text()",
+            "status": "//div[1]/div[1]/div[2]/span[1]"
+        },
+        "男生分类": {
+            "author": "//span[@class=\"parag_2013\"]/a",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[3]",
+            "bookName": "//div[1]/div[1]/a ||@js:\nreturn result.replace(/[\"小说下载TXT\"]/g,\"\")",
+            "httpHeaders": {
+                "Referer": "https://www.80xs.la",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+params.filters.type+ params.pageIndex+\".html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.80xs.la",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[1]/div[1]/a/@href",
+            "cover": "//img/@src",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "奇幻修真",
+                                "value": "/sort3/"
+                            },
+                            {
+                                "title": "奇幻魔法",
+                                "value": "/sort13/"
+                            },
+                            {
+                                "title": "异术超能",
+                                "value": "/sort1/"
+                            },
+                            {
+                                "title": "东方传奇",
+                                "value": "/sort12/"
+                            },
+                            {
+                                "title": "王朝争霸",
+                                "value": "/sort14/"
+                            },
+                            {
+                                "title": "江湖武侠",
+                                "value": "/sort15/"
+                            },
+                            {
+                                "title": "未来幻想",
+                                "value": "/sort9/"
+                            },
+                            {
+                                "title": "灵异鬼怪",
+                                "value": "/sort10/"
+                            },
+                            {
+                                "title": "探险揭秘",
+                                "value": "/sort22/"
+                            },
+                            {
+                                "title": "历史传记",
+                                "value": "/sort6/"
+                            },
+                            {
+                                "title": "特种军旅",
+                                "value": "/sort7/"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "/sort16/"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "/sort8/"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//div[@id=\"list_art_2013\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "desc": "//div[1]/div[2]/text()",
+            "status": "//div[1]/div[1]/div[2]/span[1]"
+        }
+    },
+    "sourceUrl": "https://www.80xs.la",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "80小说",
+    "desc": "😍-自用",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "httpHeaders": {
+        "Referer": "https://www.80xs.la",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "lastModifyTime": "1650206054.693918",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//li[1]/p[1]/text()[2]",
+        "author": "//li[1]/p[1]/a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//li[1]/p[3]/text()[2]",
+        "bookName": "//li[1]/a[2] ||@js:\nreturn result.replace(/[\"小说下载TXT\"]/g,\"\")",
+        "httpHeaders": {
+            "Referer": "https://www.80xs.la",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url= config.host+\"/modules/article/search.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.80xs.la",
+        "actionID": "searchBook",
+        "detailUrl": "//li[1]/a[2]/@href",
+        "cover": "//li[1]/a[1]//img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"storelistbt5\"]/ul",
+        "parserID": "DOM",
+        "desc": "//li[1]/p[2]",
+        "status": "//li[1]/p[3]/span"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nlet key = \"txtml\";\n\nlet id = result.match(/(\\d+)/g)[1];\n\nlet url = config.host+\"/\"+key+\"_\"+id+\".html\";\nreturn url",
+        "title": "//a",
+        "host": "https://www.80xs.la",
+        "httpHeaders": {
+            "Referer": "https://www.80xs.la",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@id=\"yulan\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

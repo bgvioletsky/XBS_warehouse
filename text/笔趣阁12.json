@@ -1,0 +1,76 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@class=\"txt\"]/text()",
+        "host": "https://so.biqusoso.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "actionID": "bookDetail",
+        "host": "https://so.biqusoso.com",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"intro\"]"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://so.biqusoso.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9988",
+    "sourceName": "笔趣阁12",
+    "desc": "🦞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650165116.241012",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "author": "//span[@class=\"s4\"]",
+        "requestInfo": "@js:\nlet url = \"https://so.biqusoso.com/s.php/\";\nreturn {\"url\":url, \"POST\":true,\"httpParams\":{\"searchkey\":params.keyWord}};",
+        "detailUrl": "//span[@class=\"s2\"]/a/@href",
+        "bookName": "//span[@class=\"s2\"]",
+        "host": "https://so.biqusoso.com",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "list": "//ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//p[@class=\"update-text\"]",
+        "title": "//a",
+        "host": "https://so.biqusoso.com",
+        "list": "//ul[2][@class=\"cf\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|https://www.qu-la.com%@result"
+    },
+    "sourceType": "text"
+}

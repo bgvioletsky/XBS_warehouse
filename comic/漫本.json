@@ -1,0 +1,240 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.manben.com",
+        "cat": "//div[@class='comicInfo']//span[contains(text(), '类  型')] || @replace:类  型：",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class='comicInfo']//p[@class='content']"
+    },
+    "authorId": "",
+    "weight": "10100",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "host": "http://www.manben.com",
+        "list": "//div[contains(@id, 'chapterlist')]//a || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "validConfig": "",
+        "requestInfo": "/search.ashx?t=%@keyWord&isremovehtml=1",
+        "title": "Title",
+        "host": "http://www.manben.com",
+        "list": "|",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "漫本",
+    "sourceType": "comic",
+    "sourceUrl": "http://www.manben.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637396912.086307",
+    "searchBook": {
+        "responseFormatType": "html",
+        "bookName": "//p[@class='title']/a",
+        "desc": "//p[@class='tip']/a",
+        "requestInfo": "@js:\nlet url = 'http://www.manben.com/search';\nlet hp = {'title':params.keyWord, 'language':1};\nif(params.pageIndex>1)\n\thp.page = params.pageIndex;\nreturn {'url':url, 'httpParams':hp};",
+        "host": "http://www.manben.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 12
+        },
+        "detailUrl": "//p[@class='title']/a/@href",
+        "validConfig": "",
+        "cover": "//img[@class='cover']/@src",
+        "parserID": "DOM",
+        "list": "//div[@class='item ib']"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "@js:\nlet hh = {'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15', 'Accept':'image/webp,image/png,image/svg+xml,image/*;q=0.8,video/*;q=0.8,*/*;q=0.5', 'Referer':'http://www.manben.com/'};\nlet ret = {'urls':result, 'httpHeaders':hh};\nreturn JSON.stringify(ret);",
+        "requestInfo": "@js:\nlet js = \"newImgs\";\nreturn {'url':result, 'webView':'', 'webViewJs':js, 'httpHeaders':{'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 '}};",
+        "host": "http://www.manben.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "newcomicbmw",
+    "desc": "强推",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "TagList[1]",
+            "responseFormatType": "json",
+            "lastChapterTitle": "LastUpdateInfo",
+            "bookName": "Title",
+            "desc": "Content",
+            "requestInfo": "@js:\nlet url = 'http://www.manben.com/mh-list/pagerdata.ashx?d=' + encodeURI((new Date()).toGMTString());\nlet hp = params.filters;\nhp.t = 2;\nhp.pageindex = params.pageIndex;\nhp.sc = 1;\nhp.tgroup = 0;\nhp.tnm = '';\nreturn {'url':url, 'POST':true, 'httpParams':hp};",
+            "host": "http://www.manben.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "10",
+                "requestFilters": [
+                    {
+                        "key": "tagid",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "37"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "14"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "31"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "17"
+                            },
+                            {
+                                "title": "格斗",
+                                "value": "28"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "25"
+                            },
+                            {
+                                "title": "励志",
+                                "value": "10"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "1"
+                            },
+                            {
+                                "title": "爱情",
+                                "value": "26"
+                            },
+                            {
+                                "title": "日常",
+                                "value": "7"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "12"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "3"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "tarea",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "大陆",
+                                "value": "37"
+                            },
+                            {
+                                "title": "港台",
+                                "value": "35"
+                            },
+                            {
+                                "title": "日韩",
+                                "value": "36"
+                            },
+                            {
+                                "title": "欧美",
+                                "value": "52"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "tst",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "tsort",
+                        "items": [
+                            {
+                                "title": "更新",
+                                "value": "2"
+                            },
+                            {
+                                "title": "热门",
+                                "value": "4"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "BigPic",
+            "detailUrl": "Url",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "|",
+            "status": "Status"
+        },
+        "榜单": {
+            "lastChapterTitle": "//div[contains(@class, 'img')]/a[contains(@class, 'tip')]",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='title']/a",
+            "desc": "//p[@class='line' and position()=last()]/span[@class='ib']",
+            "requestInfo": "http://www.manben.com/%@filter",
+            "host": "http://www.manben.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": {
+                    "评分": "mh-ranklist-score/",
+                    "人气": "mh-ranklist/",
+                    "收藏": "mh-ranklist-collections/",
+                    "吐槽": "mh-ranklist-comment/"
+                }
+            },
+            "detailUrl": "//p[@class='title']/a/@href",
+            "cover": "//div[contains(@class, 'img')]//img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class='ib item']"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

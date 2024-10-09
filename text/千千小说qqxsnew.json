@@ -1,0 +1,155 @@
+{
+    "bookWorld": {
+        "分类": {
+            "author": "//span[@class='s4']/a/text()",
+            "lastChapterTitle": "//span[@class='s3']/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[@class='s2']/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.qqxsnew.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + \"/list/\" + params.filters.type + \"-\" + params.pageIndex + \".html\";\n\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\": config.httpHeaders};",
+            "host": "https://www.qqxsnew.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class='s2']/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "4"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "6"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "7"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "8"
+                            },
+                            {
+                                "title": "全本",
+                                "value": "wanben"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//div[@class='l']//ul[1]/li[position()>0]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//span[@class='s2']/a/@href || @js:\nreturn config.host + \"/img/\" + result.replace(/^\\/|\\/$/g, \"\") + \".jpg\";"
+        }
+    },
+    "weight": "9888",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.qqxsnew.com",
+        "httpHeaders": {
+            "Referer": "https://www.qqxsnew.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "list": "//div[@id='list']/dl/dt[2]/following::dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "千千小说qqxsnew",
+    "sourceUrl": "https://www.qqxsnew.com",
+    "httpHeaders": {
+        "Referer": "https://www.qqxsnew.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646580612.056055",
+    "searchBook": {
+        "author": "//span[3]",
+        "lastChapterTitle": "//span[4]/a",
+        "responseFormatType": "html",
+        "bookName": "//span[2]/a",
+        "httpHeaders": {
+            "Referer": "https://www.qqxsnew.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url = config.host + \"/search.php\";\nlet key = params.keyWord;\nlet hp= {\"keyword\":key};\n\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\": config.httpHeaders, \"httpParams\":hp};",
+        "host": "https://www.qqxsnew.com",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]/a/@href",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class='novelslist2']//li|@js:\nif(result.length>20)\n\treturn result.slice(0, 20);\nreturn result;",
+        "cover": "//span[2]/a/@href || @js:\nreturn config.host + \"/img/\" + result.replace(/^\\/|\\/$/g, \"\") + \".jpg\";"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='content']/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nreturn {\"url\":result, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.qqxsnew.com",
+        "httpHeaders": {
+            "Referer": "https://www.qqxsnew.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "Pikachu",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

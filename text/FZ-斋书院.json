@@ -1,0 +1,79 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"content\"]/p/text()",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "host": "https://www.zhaishuyuan.org",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class=\"jump\"]/a[@id=\"next_url\" and contains(text(),'下一页')]/@href"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.zhaishuyuan.org",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-斋书院",
+    "desc": "推荐",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357538.841149",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//dd[@class=\"book_other\"]/span[3]",
+        "author": "//dd[@class=\"book_other\"]/span[1]/a",
+        "responseFormatType": "html",
+        "bookName": "//dd/h3/a",
+        "requestInfo": "@js:\nlet url = 'https://www.zhaishuyuan.org/search/';\nlet hp = {};\nhp.searchkey = params.keyWord;\nhp.page= params.pageIndex;\n//hp.searchtype='0';\nreturn {'POST':true,'url':url, 'httpParams':hp,};",
+        "host": "https://www.zhaishuyuan.org",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 30
+        },
+        "detailUrl": "//dd/h3/a/@href",
+        "validConfig": "",
+        "cover": "//dt/a/img/@src",
+        "parserID": "DOM",
+        "wordCount": "//dd[@class=\"book_other\"]/span[4]",
+        "list": "//div[@id=\"sitembox\"]/dl",
+        "status": "//dd[@class=\"book_other\"]/span[2]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.zhaishuyuan.org",
+        "list": "//div[@id='readerlist']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

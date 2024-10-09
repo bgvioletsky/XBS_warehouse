@@ -1,0 +1,74 @@
+{
+    "bookDetail": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar reg = /og:description.*?content=\"(.*?)\"\\/>(?:\\S|\\s)*?og:image.*?content=\"(.*?)\"\\/>(?:\\S|\\s)*?latest_chapter_name.*?content=\"(.*?)\"\\/>/gim;\n\twhile(tem=reg.exec(resStr))\n\t{\n\t\tlet bookInfo = params.queryInfo;\n\t\tbookInfo.desc = tem[1];\n\t\tbookInfo.cover = tem[2];\n\t\tbookInfo.lastChapterTitle = tem[3];\n\t\treturn {'response':bookInfo};\n  \t}\n\treturn undefined;\n}",
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://www.duokan8.com/",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'http://www.duokanba.info' + params.queryInfo.bookId;\n}",
+        "parserID": "JS"
+    },
+    "bookWorld": {},
+    "weight": "0",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar beginIndex = resStr.indexOf('chapter-list');\n\tif(beginIndex<0)\n\t\treturn null;\n\tvar subString = resStr.substring(beginIndex, resStr.length);\n\n\tvar list = [];\n\tvar reg = /<li>.*?href=\"(.*?)\".*?>(.*?)</gim;\n\twhile(tem=reg.exec(subString))\n\t{\n\t\tlet chapter = {};\n\t\tchapter.url = tem[1];\n\t\tchapter.title = tem[2];\n\t\tlist.push(chapter);\n    \t}\n\treturn {'list':list};\n}",
+        "validConfig": "",
+        "actionID": "chapterList",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://www.duokan8.com/",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'http://www.duokanba.info' + params.queryInfo.bookId;\n}",
+        "parserID": "JS"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "JS"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "JS"
+    },
+    "enable": false,
+    "sourceName": "多看小说吧",
+    "sourceUrl": "http://www.duokan8.com/",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "JS"
+    },
+    "lastModifyTime": "1637341396.995847",
+    "searchBook": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar list = [];\n\tvar reg = /<div class=\"hot_sale.*?<a href=\"(.*?)\">(.*?)<.*?author\">(.*?)<.*?>(.*?)<.*?author\">(.*?)<.*?>(.*?)</gim;\n\twhile(tem=reg.exec(resStr))\n\t{\n\t\tlet book = {};\n\n\t\tlet cat = tem[3];\n\t\tlet beginIndex = cat.indexOf('小说');\n\t\tif(beginIndex>0)\n\t\t\tcat = cat.substring(0, beginIndex);\n\n\t\tlet status = tem[5];\n\t\tbeginIndex = status.indexOf('|');\n\t\tif(beginIndex>0)\n\t\t\tstatus = status.substring(0, beginIndex);\n\n\t\tbook.bookId = tem[1];\n\t\tbook.bookName = tem[2];\n\t\tbook.cat = cat;\n\t\tbook.author = tem[4];\n\t\tbook.status = status;\n\t\tbook.lastChapterTitle = tem[6];\n\n\t\tbeginIndex = book.bookId.indexOf('_'); // /34_34199/\n\t\tif(beginIndex>0){\n\t\t\tlet coverPre = book.bookId.substring(0, beginIndex);\n\t\t\tlet coverLast = book.bookId.substring(beginIndex+1, book.bookId.length-1);\n\t\t\tbook.cover = 'http://www.duokan8.com/files/article/image' + coverPre + '/' + coverLast + '/' + coverLast + 's.jpg';\n\t\t}\n\n\t\tlist.push(book);\n    \t}\n\n\tvar result = {};\n\tresult.list = list;\n\tresult.more = false;\n\tif(resStr.indexOf(params.keyWord)>0)\n\t\tresult.success = true;\n\n\treturn result;\n}",
+        "validConfig": "",
+        "actionID": "searchBook",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://www.duokan8.com/",
+        "requestJavascript": "function functionName(config, params) {\n\tvar url = 'http://m.duokan8.com/s.php';\n\tvar params = {'keyword':params.keyWord, 't':'1'};\n\treturn {'url':url, 'POST':true, 'httpParams':params};\n}",
+        "parserID": "JS"
+    },
+    "chapterContent": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar beginChar = '<div id=\"htmlContent\">'\n\tvar endChar = '</div>';\t\n\n\tvar beginIndex = resStr.indexOf(beginChar);\n\tif(beginIndex>0) \n\t{\n\t\tvar subString = resStr.substring(beginIndex+beginChar.length, resStr.length);\n\t\tvar endIndex = subString.indexOf(endChar);\n\t\tif(endIndex>0)\n\t\t\treturn {'response':subString.substring(0, endIndex), 'removeHtmlKeys':'response'};\n\t}\n\n\treturn undefined;\n}",
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://www.duokan8.com/",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'http://www.duokanba.info' + params.queryInfo.url;\n}",
+        "parserID": "JS"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "JS"
+    },
+    "desc": "404",
+    "shudanList": {},
+    "password": "Baby",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "JS"
+    },
+    "authorId": "1600856233.220379",
+    "sourceType": "text"
+}

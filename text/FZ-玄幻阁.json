@@ -1,0 +1,77 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//*[@id=\"content\"]/text()",
+        "host": "https://www.xuankuge.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.xuankuge.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "FZ-玄幻阁",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650358191.840834",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//td[4]/p",
+        "author": "//dd[@class=\"book_other\"]/span[1]",
+        "lastChapterTitle": "//dd[@class=\"book_other\"][2]/a",
+        "responseFormatType": "html",
+        "bookName": "//h3/a",
+        "requestInfo": "@js:\nlet url = 'https://www.xuankuge.com/modules/article/search.php';\nlet hp = {};\nhp.s= params.keyWord;\n//hp.s= '7673184438602983814';\nhp.searchtype='articlename';\nreturn {'POST':false,'url':url, 'httpParams':hp, 'forbidCookie':true,'cacheTime':'1'};",
+        "host": "https://www.xuankuge.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "detailUrl": "//h3/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "cover": "//dt/a/img/@src",
+        "list": "//div[@id=\"sitebox\"]/dl",
+        "status": "//dd[@class=\"book_other\"]/span[2]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 9
+        },
+        "host": "https://www.xuankuge.com",
+        "list": "//div[@id=\"readerlist\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js: return params.queryInfo.detailUrl +result;"
+    },
+    "sourceType": "text"
+}

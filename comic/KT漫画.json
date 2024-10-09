@@ -1,0 +1,74 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "lastChapterTitle": "/html/body/div[3]/div[2]/dl/dt[1]/a",
+        "host": "http://m.700mh.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"book-intro book-intro-more\"]/p"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://m.700mh.com",
+        "list": "//div[@class=\"c-l\"]/dl/dt|@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceType": "comic",
+    "sourceName": "KT漫画",
+    "sourceUrl": "http://m.700mh.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1634112694.564600",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "responseFormatType": "html",
+        "bookName": "//h3",
+        "requestInfo": "http://www.700mh.com/e/search/?searchget=1&tbname=mh&show=title,player,playadmin,bieming,pinyin,playadmin&tempid=4&keyboard=%@keyWord",
+        "host": "http://m.700mh.com",
+        "actionID": "searchBook",
+        "detailUrl": "//li/a/@href|@js:\nreturn 'http://m.700mh.com'+result;",
+        "cover": "//div[@class=\"thumb\"]/img/@data-src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@id=\"detail\"]/li",
+        "status": "//div[@class=\"thumb\"]/i"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "http://m.700mh.com",
+        "content": "@js:\n\nfunction Base64() { \n  \n // private property \n _keyStr = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\"; \n  \n // public method for encoding \n this.encode = function (input) { \n  var output = \"\"; \n  var chr1, chr2, chr3, enc1, enc2, enc3, enc4; \n  var i = 0; \n  input = _utf8_encode(input); \n  while (i < input.length) { \n   chr1 = input.charCodeAt(i++); \n   chr2 = input.charCodeAt(i++); \n   chr3 = input.charCodeAt(i++); \n   enc1 = chr1 >> 2; \n   enc2 = ((chr1 & 3) << 4) | (chr2 >> 4); \n   enc3 = ((chr2 & 15) << 2) | (chr3 >> 6); \n   enc4 = chr3 & 63; \n   if (isNaN(chr2)) { \n    enc3 = enc4 = 64; \n   } else if (isNaN(chr3)) { \n    enc4 = 64; \n   } \n   output = output + \n   _keyStr.charAt(enc1) + _keyStr.charAt(enc2) + \n   _keyStr.charAt(enc3) + _keyStr.charAt(enc4); \n  } \n  return output; \n } \n  \n // public method for decoding \n this.decode = function (input) { \n  var output = \"\"; \n  var chr1, chr2, chr3; \n  var enc1, enc2, enc3, enc4; \n  var i = 0; \n  input = input.replace(/[^A-Za-z0-9\\+\\/\\=]/g, \"\"); \n  while (i < input.length) { \n   enc1 = _keyStr.indexOf(input.charAt(i++)); \n   enc2 = _keyStr.indexOf(input.charAt(i++)); \n   enc3 = _keyStr.indexOf(input.charAt(i++)); \n   enc4 = _keyStr.indexOf(input.charAt(i++)); \n   chr1 = (enc1 << 2) | (enc2 >> 4); \n   chr2 = ((enc2 & 15) << 4) | (enc3 >> 2); \n   chr3 = ((enc3 & 3) << 6) | enc4; \n   output = output + String.fromCharCode(chr1); \n   if (enc3 != 64) { \n    output = output + String.fromCharCode(chr2); \n   } \n   if (enc4 != 64) { \n    output = output + String.fromCharCode(chr3); \n   } \n  } \n  output = _utf8_decode(output); \n  return output; \n } \n  \n // private method for UTF-8 encoding \n _utf8_encode = function (string) { \n  string = string.replace(/\\r\\n/g,\"\\n\"); \n  var utftext = \"\"; \n  for (var n = 0; n < string.length; n++) { \n   var c = string.charCodeAt(n); \n   if (c < 128) { \n    utftext += String.fromCharCode(c); \n   } else if((c > 127) && (c < 2048)) { \n    utftext += String.fromCharCode((c >> 6) | 192); \n    utftext += String.fromCharCode((c & 63) | 128); \n   } else { \n    utftext += String.fromCharCode((c >> 12) | 224); \n    utftext += String.fromCharCode(((c >> 6) & 63) | 128); \n    utftext += String.fromCharCode((c & 63) | 128); \n   } \n  \n  } \n  return utftext; \n } \n  \n // private method for UTF-8 decoding \n _utf8_decode = function (utftext) { \n  var string = \"\"; \n  var i = 0; \n  var c = c1 = c2 = 0; \n  while ( i < utftext.length ) { \n   c = utftext.charCodeAt(i); \n   if (c < 128) { \n    string += String.fromCharCode(c); \n    i++; \n   } else if((c > 191) && (c < 224)) { \n    c2 = utftext.charCodeAt(i+1); \n    string += String.fromCharCode(((c & 31) << 6) | (c2 & 63)); \n    i += 2; \n   } else { \n    c2 = utftext.charCodeAt(i+1); \n    c3 = utftext.charCodeAt(i+2); \n    string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63)); \n    i += 3; \n   } \n  } \n  return string; \n } \n} \n\n\n\n\n\n\nurl='http://fo.xyclmx.com/';\nlet html=\"\";\nvar base = new Base64(); \nlet res = eval(base.decode(result.match(/packed=\\\"(.*?)\\\"/)[1]).slice(4));\neval(res);\n\nfor(var i in packedarr){\n    html += encodeURI(url+packedarr[i])+'\\n';\n\n}\nreturn html;",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "未写发现",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

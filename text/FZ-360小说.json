@@ -1,0 +1,82 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]/text()|@js:\nvar h=result.indexOf('最新章节');\nif(h>-1){\nresult=result.substring(h+5, result.length);\n}\nreturn result.trim();",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "host": "http://www.360xs.cc",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@id=\"read_link\"]/a[contains(text(),'下一页')]/@href|@js:\nvar h=result.lastIndexOf('-');\nvar g=result.lastIndexOf('.');\nvar u=result.substring(h,g);\nif(u.length<3){\nreturn result;\n}\nreturn;"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.360xs.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "sourceType": "text",
+    "sourceName": "FZ-360小说",
+    "weight": "9000",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649606201.978976",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseEncode": "2147485234",
+        "cat": "//div[@class=\"article_info_content\"]/ul/li[2]/a",
+        "author": "//td[3]",
+        "lastChapterTitle": "//td[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//td[1]/a",
+        "requestParamsEncode": "2147485234",
+        "desc": "intro",
+        "requestInfo": "@js:\nlet url = '/modules/article/search.php';\nlet hp = {};\nhp.searchkey = params.keyWord;\nhp.page= params.pageIndex;\nhp.searchtype='articlename';\nreturn {'POST':false,'url':url, 'httpParams':hp,};",
+        "host": "http://www.360xs.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "cover": "//div[@class=\"article_info_img\"]/a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "wordNum",
+        "list": "//table[@class=\"grid\"]/tr",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "status": "//td[6]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@ property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "http://www.360xs.cc",
+        "list": "//dl[@class=\"zjlist\"]/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js:return params.queryInfo.detailUrl+result;"
+    }
+}

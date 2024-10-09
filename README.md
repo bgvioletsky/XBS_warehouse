@@ -1,2 +1,4 @@
 # XBS_warehouse
 xbs仓库
+用于存放香色闺阁源仓库
+对源转换需将源文件放入xbs_source文件夹

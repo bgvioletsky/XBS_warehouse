@@ -1,0 +1,70 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"content\"]/text()|@js:return result.substring(result.indexOf('让你阅读更清爽，请记住我们的网址')+23,result.length)",
+        "host": "http://biqugu.net",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://biqugu.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-笔趣谷",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650358136.550205",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//li[3]/a",
+        "lastChapterTitle": "//li[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//li[1]/a",
+        "requestInfo": "http://biqugu.net/s_%@keyWord",
+        "host": "http://biqugu.net",
+        "actionID": "searchBook",
+        "detailUrl": "//li[1]/a/@href|http://biqugu.net%@result",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class=\"list_content\"]",
+        "updateTime": "//li[4]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//div[@class=\"f_l t_l w4\"]/text()|@js:return result.replace('最新章节：','').replace('（','').replace('）','').trim()",
+        "requestInfo": "@js:\nreturn params.queryInfo.detailUrl;",
+        "title": "//a",
+        "host": "http://biqugu.net",
+        "list": "//div[@class=\"chapter\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|http://biqugu.net%@result"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,99 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"view_content_txt\"]",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://www.txt99.org",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"_\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//div[@class=\"downInfoRowL\"]/li[6]/span",
+        "wordCount": "//div[@class=\"downInfoRowL\"]/li[3]/text()",
+        "validConfig": "",
+        "host": "https://www.txt99.org",
+        "cat": "//div[@class=\"downInfoRowL\"]/li[2]/text()",
+        "cover": "//span//@src",
+        "responseFormatType": "html",
+        "desc": "//div[@id=\"mainSoftIntro\"]/p",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//div[2]/span",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.txt99.org/html/list-${_type}-${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.txt99.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[1]/a/@href",
+            "moreKeys": {
+                "pageSize": 27,
+                "requestFilters": "_type\n武侠::wuxiaxianxia\n言情::yanqing\n玄幻::xuanhuan\n都市::dushi\n穿越::chuanyue\n科幻::kehuanxiaoshuo\n网游::wangyou\n同人::tongren\n历史::lishi\n惊悚::jingsong\n重生::chongsheng\n耽美::danmei"
+            },
+            "cover": "//a/img/@src",
+            "list": "//div[@id=\"catalog\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://www.txt99.org",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "久久小说下载网",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654742242.114279",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "author": "//div[2]/span",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = 'https://www.txt99.org/search/';\nreturn {'url':url, 'POST':true, 'httpParams':{'searchkey':params.keyWord, 'show':'title,writer','submit':''}};",
+        "bookName": "//span[2]/a",
+        "detailUrl": "//span[2]/a/@href",
+        "host": "https://www.txt99.org",
+        "list": "//div[@id=\"catalog\"]/div",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "cover": "//a/img/@src"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet id = params.queryInfo.detailUrl.match(/(\\d+)/g)[0];\n\nlet url = config.host+\"/indexlist/\"+id+\"/\";\nreturn url",
+        "title": "//a",
+        "host": "https://www.txt99.org",
+        "list": "//div[@class=\"view_content_list\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

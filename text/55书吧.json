@@ -1,0 +1,73 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//dd[@id='contents']",
+        "host": "http://www.55shuba.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.55shuba.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "999",
+    "sourceName": "55书吧",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1648727935.235261",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//dd[@class='author']",
+        "responseFormatType": "html",
+        "bookName": "//dd[@class='name']/a",
+        "requestInfo": "@js:\nlet url = \"http://www.55shuba.com/modules/article/search.php\";\nreturn {\"url\":url,\"httpParams\":{\"searchtype\":\"articlename\",\"submit\":\"搜索\",\"searchkey\":params.keyWord,\"page\":params.pageIndex}};",
+        "host": "http://www.55shuba.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 30
+        },
+        "wordCount": "//dd[@class='size']",
+        "detailUrl": "//dd[@class='name']/a/@href",
+        "validConfig": "",
+        "cover": "//dd[1]/div/a/img/@src",
+        "parserID": "DOM",
+        "list": "//div[@class='listtab']/dl"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn result.replace('/txt/', '/du').replace('.htm', '/');",
+        "title": "//a",
+        "host": "http://www.55shuba.com",
+        "list": "//table[@class='list']/tbody/tr/td",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href || @js:\nreturn params.queryInfo.detailUrl.replace('/txt/', '/du').replace('.htm', '/') + result;"
+    },
+    "sourceType": "text"
+}

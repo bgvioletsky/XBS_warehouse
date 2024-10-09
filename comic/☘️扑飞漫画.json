@@ -1,0 +1,96 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 "
+        },
+        "parserID": "DOM",
+        "host": "http://m.pufei5.com",
+        "content": "@js:\n\nvar html=result;\n\nlet urls = (function getImgList()\n{\n\n    \tvar p = \"cp=\\\"(.*?)\\\"\";\n    \tvar str = html.match(p)[1];\n    \thost = \"http://res.img.shengda0769.com/\"\n\n    \tif (str!=null)\n\t{\n\n        \tvar list = eval(\"(\"+params.nativeTool.base64Decode(str)+\")\").toString().split(\",\");\n        \tvar piclist = new Array([list.length]);\n        \tfor (var i = 0; i < list.length; i++) {\n        \t\tpiclist[i] = host + list[i];\n        \t}\n\n        \treturn piclist;\n\n    }else {\n        return null;\n    }\n\r\n}())\n\nlet hh = {'Referer':params.responseUrl};\nreturn JSON.stringify({'url':urls, 'httpHeaders':hh});",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://m.pufei5.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 "
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id='bookIntro']"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//dl[2]/dd",
+            "responseFormatType": "html",
+            "author": "//dl[1]/dd",
+            "lastChapterTitle": "//dl[3]/dd",
+            "bookName": "//h3",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 "
+            },
+            "requestInfo": "@js:\nlet url = 'http://m.pufei5.com/' + params.filter + '/';\nif(params.pageIndex > 1)\n\treturn url + 'index_' + params.pageIndex + '.html';\nreturn url;",
+            "host": "http://m.pufei5.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "pageSize": "25",
+                "requestFilters": "少年热血::shaonianrexue\n少女爱情::shaonvaiqing\n武侠格斗::wuxiagedou\n科幻魔幻::kehuan\n竞技体育::jingjitiyu\n搞笑喜剧::gaoxiaoxiju\n耽美BL::danmeirensheng\n侦探推理::zhentantuili\n恐怖灵异::kongbulingyi"
+            },
+            "validConfig": "",
+            "list": "//div[@class='cont-list']//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//div/img/@data-src"
+        }
+    },
+    "sourceUrl": "http://m.pufei5.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5996",
+    "sourceName": "☘️扑飞漫画",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 "
+    },
+    "lastModifyTime": "1641302482.331922",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://m.pufei5.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 "
+        },
+        "list": "//div[@class='chapter-list']//li || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

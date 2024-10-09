@@ -1,0 +1,200 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "data/content",
+        "moreKeys": {
+            "maxPage": 1000
+        },
+        "host": "https://souxs.leeyegy.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "推荐🎉": {
+            "cat": "CName",
+            "author": "Author",
+            "responseFormatType": "json",
+            "bookName": "Name",
+            "desc": "Desc",
+            "requestInfo": "@js:\nreturn 'https://scxs.pysmei.com/top/man/top/' + params.filters.type + '/' + params.filters.date + '/' + params.pageIndex+'.html';",
+            "host": "https://souxs.leeyegy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 1,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "完结",
+                                "value": "over"
+                            },
+                            {
+                                "title": "推荐",
+                                "value": "commend"
+                            },
+                            {
+                                "title": "收藏",
+                                "value": "collect"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "vote"
+                            },
+                            {
+                                "title": "热更",
+                                "value": "hot"
+                            },
+                            {
+                                "title": "新书榜",
+                                "value": "new"
+                            }
+                        ],
+                        "key": "type"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "周榜",
+                                "value": "week"
+                            },
+                            {
+                                "title": "月榜",
+                                "value": "month"
+                            },
+                            {
+                                "title": "总榜",
+                                "value": "total"
+                            }
+                        ],
+                        "key": "date"
+                    }
+                ]
+            },
+            "detailUrl": "Id|@js:\nlet id = parseInt(result/1000)+1;\nreturn 'https://infosxs.pysmei.com/BookFiles/Html/'+id+'/'+result+'/index.html';",
+            "validConfig": "",
+            "parserID": "DOM",
+            "cover": "Img|@js:\nreturn \"https://imgapixs.pysmei.com//BookFiles/BookImages/\"+result",
+            "list": "data/BookList",
+            "status": "Score|@js:\nreturn \"评分：\"+result"
+        },
+        "分类🎉": {
+            "cat": "CName",
+            "author": "Author",
+            "responseFormatType": "json",
+            "bookName": "Name",
+            "desc": "Desc",
+            "requestInfo": "https://scxs.pysmei.com/Categories/%@filter/hot/%@pageIndex.html",
+            "host": "https://souxs.leeyegy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 1,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "4"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "5"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "6"
+                            },
+                            {
+                                "title": "女频",
+                                "value": "7"
+                            },
+                            {
+                                "title": "同人",
+                                "value": "66"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "Id|@js:\nlet id = parseInt(result/1000)+1;\nreturn 'https://infosxs.pysmei.com/BookFiles/Html/'+id+'/'+result+'/index.html';",
+            "validConfig": "",
+            "parserID": "DOM",
+            "cover": "Img|@js:\nreturn \"https://imgapixs.pysmei.com//BookFiles/BookImages/\"+result",
+            "list": "data/BookList",
+            "status": "Score|@js:\nreturn \"评分：\"+result"
+        }
+    },
+    "sourceUrl": "https://souxs.leeyegy.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8599",
+    "sourceName": "笔趣阁api",
+    "desc": "👾推荐",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637247710.035492",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "CName",
+        "author": "Author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "LastChapter",
+        "bookName": "Name",
+        "desc": "l",
+        "requestInfo": "/search.aspx?key=%@keyWord&page=%@pageIndex&siteid=app2",
+        "host": "https://souxs.leeyegy.com",
+        "actionID": "searchBook",
+        "detailUrl": "Id|@js:\nlet id = parseInt(result/1000)+1;\nreturn 'https://infosxs.pysmei.com/BookFiles/Html/'+id+'/'+result+'/index.html';",
+        "cover": "Img",
+        "validConfig": "",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 1
+        },
+        "list": "data"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://souxs.leeyegy.com",
+        "JSParser": "function functionName(config, params, result)\r{\r    let list = [];\r    let reg = /id\":(\\d+),\"name\":\"(.*?)\"/gim;\r\r    let url_ = params.queryInfo.detailUrl;\r    url_ = url_.replace(\"index.html\",\"\");\r \r    while(tem = reg.exec(result))\r    {\r        let chapterInfo = {};\r        chapterInfo.title = tem[2];\r\r        chapterInfo.url =url_+tem[1]+'.html';\r        list.push(chapterInfo);\r    }\r\r    return {'list':list};\r}",
+        "actionID": "chapterList"
+    },
+    "sourceType": "text"
+}

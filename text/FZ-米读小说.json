@@ -1,0 +1,74 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"chaptercontent\"]/text()",
+        "host": "https://www.mdxs123.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.mdxs123.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-米读小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357869.732423",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class=\"cat\"]|@js:return result.replace('分类：','')",
+        "author": "//div[@class=\"author\"]|@js:return result.replace('作者：','')",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class=\"update\"]/a",
+        "bookName": "//h4/a",
+        "requestInfo": "s?q=%@keyWord",
+        "host": "https://www.mdxs123.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "cover": "//div[@class=\"bookimg\"]/a/img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"bookbox\"]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 0
+        },
+        "host": "https://www.mdxs123.com/",
+        "list": "//div[@class=\"listmain\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class=\"col-xs-8\"]/ul[@class=\"list-group\"]/li[6]/a[1]/@href"
+    },
+    "sourceType": "text"
+}

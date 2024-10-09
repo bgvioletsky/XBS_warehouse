@@ -1,0 +1,69 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"content\"]",
+        "host": "https://novel.snssdk.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://novel.snssdk.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-番茄小说app",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650358036.306595",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "category",
+        "author": "author |@js:return result.replace('<em>','').replace('</em>','')",
+        "responseFormatType": "json",
+        "bookName": "title|@js:return result.replace('<em>','').replace('</em>','')",
+        "requestInfo": "https://novel.snssdk.com/api/novel/channel/homepage/search/search/v1/?aid=13&q=%@keyWord",
+        "host": "https://novel.snssdk.com",
+        "actionID": "searchBook",
+        "detailUrl": "book_id|@js:\nreturn \"https:\\/\\/novel.snssdk.com\\/api\\/novel\\/book\\/directory\\/list\\/v1?book_id=\"+result;",
+        "cover": "thumb_url",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "data/ret_data"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://novel.snssdk.com",
+        "list": "data/item_list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,147 @@
+{
+    "bookWorld": {
+        "排行榜": {
+            "cat": "//span[@class=\"s1\"]/text()",
+            "author": "//span[@class=\"s4\"]/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"s3\"]/a/text()",
+            "bookName": "//span[@class=\"s2\"]/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.biqugesk.org",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\rlet url = config.host+params.filters.aa+params.pageIndex+\".html\"\r\rlet hh= {\r  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\r}\r\rreturn {'url':url, 'POST':false, \r\"httpHeaders\": config.httpHeaders,\rforbidCookie:true,cacheTime:3600};",
+            "host": "https://www.biqugesk.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": "aa\n周点击榜::/top/weekvisit_\n月点击榜::/top/monthvisit_\n总点击榜::/top/allvisit_\n周推荐榜::/top/weekvote_\n月推荐榜::/top/monthvote_\n总推荐榜::/top/allvote_\n总收藏榜::/top/goodnum_\n总字数榜::/top/size_\n最新入库::/top/postdate_\n最近更新::/top/lastupdate_\n新书榜单::/top/goodnew_\n新书::/top/postdate_\n"
+            },
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@id=\"main\"]//li",
+            "status": "//span[@class=\"s7\"]/text()"
+        },
+        "分类": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"s3\"]/a/text()",
+            "author": "//span[@class=\"s4\" or @class=\"s5\"]/text()",
+            "bookName": "//span[@class=\"s2\"]/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.biqugesk.org",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\rlet url = config.host + \"/category/\" + params.filters.aa+params.pageIndex+\".html\"\r\rlet hh= {\r  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\r}\r\rreturn {'url':url, 'POST':false, \r\"httpHeaders\": config.httpHeaders,\rforbidCookie:true,cacheTime:3600};",
+            "host": "https://www.biqugesk.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "moreKeys": {
+                "pageSize": "60",
+                "requestFilters": "aa\n玄幻小说::1_\n修真小说::2_\n言情都市::3_\n穿越小说::4_\n网游小说::6_\n科幻小说::7_\n灵异小说::8_\n综合小说::10_\n高辣文::11_\n"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"l\" or @class=\"r\"]//li"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@id=\"info\"]/p[4]/text()",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "title": "//a//text()",
+        "host": "https://www.biqugesk.org",
+        "httpHeaders": {
+            "Referer": "https://www.biqugesk.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@id=\"list\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "笔趣阁1",
+    "sourceUrl": "https://www.biqugesk.org",
+    "httpHeaders": {
+        "Referer": "https://www.biqugesk.org",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1655128939.883309",
+    "searchBook": {
+        "author": "//td[@class=\"odd\"][2]/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//td[@class=\"even\"]/a/text()",
+        "bookName": "//td[@class=\"odd\"]/a/text()",
+        "httpHeaders": {
+            "Referer": "https://www.biqugesk.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "host": "https://www.biqugesk.org",
+        "actionID": "searchBook",
+        "detailUrl": "//td[@class=\"odd\"]/a/@href",
+        "wordCount": "//td[@class=\"even\"][2]/text()",
+        "validConfig": "",
+        "list": "//div[@id=\"wrapper\"]//tr[position()>1]",
+        "parserID": "DOM",
+        "status": "//td[@class=\"even\"][3]/text()"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"booktext\"]/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "https://www.biqugesk.org",
+        "httpHeaders": {
+            "Referer": "https://www.biqugesk.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞搜索不可用",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "desc": "//div[@id=\"list\"]/p/text()",
+        "lastChapterTitle": "//div[@id=\"info\"]/p[5]/a/text()",
+        "host": "https://www.biqugesk.org",
+        "httpHeaders": {
+            "Referer": "https://www.biqugesk.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cat": "//div[@id=\"info\"]/p[3]/text()",
+        "responseFormatType": "html",
+        "cover": "//div[@id=\"fmimg\"]/img/@src",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

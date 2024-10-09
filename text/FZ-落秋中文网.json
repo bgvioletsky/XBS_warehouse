@@ -1,0 +1,79 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"htmlContent\"]/text()|@js: return result.replace('落秋中文网','').replace('，最快更新','').replace('www.lqbook.com','')",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 3
+        },
+        "host": "https://www.luoqiu.info/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href|@js:\nvar h=params.queryInfo.url;\nvar g=h.substring(0,h.lastIndexOf('/'));\nreturn g+\"/\"+result;"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.luoqiu.info/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9834",
+    "sourceName": "FZ-落秋中文网",
+    "desc": "30s",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647734568.381635",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "responseFormatType": "html",
+        "author": "//td[4]",
+        "cat": "//td[1]",
+        "bookName": "//td[2]/a",
+        "lastChapterTitle": "//td[3]/a",
+        "requestInfo": "@js:\nlet url = 'modules/article/search.php';\nlet hp = {};\nhp.searchkey = params.keyWord;\n//hp.pn= params.pageIndex;\n//hp.searchtype='0';\nreturn {'POST':false,'url':url, 'httpParams':hp,};",
+        "host": "https://www.luoqiu.info/",
+        "actionID": "searchBook",
+        "detailUrl": "//td[2]/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table[@class=\"table\"]/tr[position()>1]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 13
+        },
+        "host": "https://www.luoqiu.info/",
+        "list": "//dl[@class=\"panel-body panel-chapterlist\"][1]/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js: \nreturn params.queryInfo.detailUrl +result;"
+    },
+    "sourceType": "text"
+}

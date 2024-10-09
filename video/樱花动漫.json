@@ -1,0 +1,399 @@
+{
+    "bookWorld": {
+        "分类": {
+            "cat": "//span[2]/a/text() || @js:\n\nreturn result. replace(/\\n/g,' • ');",
+            "responseFormatType": "html",
+            "bookName": "//h2/a/text()",
+            "httpHeaders": {
+                "Referer": "http://www.yinghuacd.com/",
+                "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet end = params.pageIndex > 1 ? params.pageIndex + '.html' : '';\nlet url = config.host + params.filters.flt + end;\n\nreturn {\n    'url':url,\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n    'httpHeaders':config.httpHeaders,\n}",
+            "host": "http://www.yinghuacd.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 15,
+                "requestFilters": [
+                    {
+                        "key": "flt",
+                        "items": [
+                            {
+                                "title": "日本",
+                                "value": "/japan/"
+                            },
+                            {
+                                "title": "大陆",
+                                "value": "/china/"
+                            },
+                            {
+                                "title": "美国",
+                                "value": "/american/"
+                            },
+                            {
+                                "title": "英国",
+                                "value": "/england/"
+                            },
+                            {
+                                "title": "韩国",
+                                "value": "/korea/"
+                            },
+                            {
+                                "title": "日语",
+                                "value": "/29/"
+                            },
+                            {
+                                "title": "国语",
+                                "value": "/30/"
+                            },
+                            {
+                                "title": "粤语",
+                                "value": "/31/"
+                            },
+                            {
+                                "title": "英语",
+                                "value": "/32/"
+                            },
+                            {
+                                "title": "韩语",
+                                "value": "/33/"
+                            },
+                            {
+                                "title": "方言",
+                                "value": "/34/"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "/66/"
+                            },
+                            {
+                                "title": "格斗",
+                                "value": "/64/"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "/91/"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "/70/"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "/67/"
+                            },
+                            {
+                                "title": "LOLI",
+                                "value": "/111/"
+                            },
+                            {
+                                "title": "神魔",
+                                "value": "/83/"
+                            },
+                            {
+                                "title": "机战",
+                                "value": "/81/"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "/75/"
+                            },
+                            {
+                                "title": "真人",
+                                "value": "/74/"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "/84/"
+                            },
+                            {
+                                "title": "魔法",
+                                "value": "/73/"
+                            },
+                            {
+                                "title": "美少女",
+                                "value": "/72/"
+                            },
+                            {
+                                "title": "神话",
+                                "value": "/102/"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "/61/"
+                            },
+                            {
+                                "title": "运动",
+                                "value": "/69/"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "/62/"
+                            },
+                            {
+                                "title": "童话",
+                                "value": "/103/"
+                            },
+                            {
+                                "title": "励志",
+                                "value": "/85/"
+                            },
+                            {
+                                "title": "后宫",
+                                "value": "/99/"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "/80/"
+                            },
+                            {
+                                "title": "吸血鬼",
+                                "value": "/119/"
+                            },
+                            {
+                                "title": "A",
+                                "value": "/a/"
+                            },
+                            {
+                                "title": "B",
+                                "value": "/b/"
+                            },
+                            {
+                                "title": "C",
+                                "value": "/c/"
+                            },
+                            {
+                                "title": "D",
+                                "value": "/d/"
+                            },
+                            {
+                                "title": "E",
+                                "value": "/e/"
+                            },
+                            {
+                                "title": "F",
+                                "value": "/f/"
+                            },
+                            {
+                                "title": "G",
+                                "value": "/g/"
+                            },
+                            {
+                                "title": "H",
+                                "value": "/h/"
+                            },
+                            {
+                                "title": "I",
+                                "value": "/i/"
+                            },
+                            {
+                                "title": "J",
+                                "value": "/j/"
+                            },
+                            {
+                                "title": "K",
+                                "value": "/k/"
+                            },
+                            {
+                                "title": "L",
+                                "value": "/l/"
+                            },
+                            {
+                                "title": "M",
+                                "value": "/m/"
+                            },
+                            {
+                                "title": "N",
+                                "value": "/n/"
+                            },
+                            {
+                                "title": "O",
+                                "value": "/o/"
+                            },
+                            {
+                                "title": "P",
+                                "value": "/p/"
+                            },
+                            {
+                                "title": "Q",
+                                "value": "/q/"
+                            },
+                            {
+                                "title": "R",
+                                "value": "/r/"
+                            },
+                            {
+                                "title": "S",
+                                "value": "/s/"
+                            },
+                            {
+                                "title": "T",
+                                "value": "/t/"
+                            },
+                            {
+                                "title": "U",
+                                "value": "/u/"
+                            },
+                            {
+                                "title": "V",
+                                "value": "/v/"
+                            },
+                            {
+                                "title": "W",
+                                "value": "/w/"
+                            },
+                            {
+                                "title": "X",
+                                "value": "/x/"
+                            },
+                            {
+                                "title": "Y",
+                                "value": "/y/"
+                            },
+                            {
+                                "title": "Z",
+                                "value": "/z/"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "/0/"
+                            },
+                            {
+                                "title": "2022",
+                                "value": "/2022/"
+                            },
+                            {
+                                "title": "2021",
+                                "value": "/2021/"
+                            },
+                            {
+                                "title": "2020",
+                                "value": "/2020/"
+                            },
+                            {
+                                "title": "2019",
+                                "value": "/2019/"
+                            },
+                            {
+                                "title": "2018",
+                                "value": "/2018/"
+                            },
+                            {
+                                "title": "2017",
+                                "value": "/2017/"
+                            },
+                            {
+                                "title": "2016",
+                                "value": "/2016/"
+                            },
+                            {
+                                "title": "2015",
+                                "value": "/2015/"
+                            },
+                            {
+                                "title": "2014",
+                                "value": "/2014/"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"lpic\"]/ul/li",
+            "detailUrl": "//h2/a[1]/@href",
+            "status": "//span[1]//text()",
+            "desc": "//p/text()"
+        }
+    },
+    "authorId": "",
+    "weight": "999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nreturn {\n    'url':result,\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n    'httpHeaders': config.httpHeaders,\n};",
+        "title": "//a/text()",
+        "host": "http://www.yinghuacd.com",
+        "httpHeaders": {
+            "Referer": "http://www.yinghuacd.com/",
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@class=\"movurl\"]/ul/li || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "樱花动漫",
+    "sourceType": "video",
+    "sourceUrl": "http://www.yinghuacd.com",
+    "httpHeaders": {
+        "Referer": "http://www.yinghuacd.com/",
+        "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651599655.241340",
+    "searchBook": {
+        "cat": "//span[2]/a/text() || @js:\n\nreturn result. replace(/\\n/g,' • ');",
+        "responseFormatType": "html",
+        "bookName": "//h2/a//text() || @js:\n\nreturn result. replace(/\\n/g,'');",
+        "httpHeaders": {
+            "Referer": "http://www.yinghuacd.com/",
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\n\nlet url = config.host + '/search/' + encodeURI(params.keyWord) + '/?page=' + params.pageIndex;\n\nreturn {\n    'url':url,\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n    'httpHeaders':config.httpHeaders,\n}",
+        "host": "http://www.yinghuacd.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h2/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"lpic\"]/ul/li",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 17
+        },
+        "desc": "//p/text()",
+        "status": "//span[1]/text()"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nlet url = String(result);\nlet url_index = url.indexOf('url=');\nif (url_index != -1) {\n    url = url.substring(url_index + 4);\n}\nlet id = url.lastIndexOf('http');\nif (id > 4) {\n    url = url.substring(id);\n}\n\nconfig.httpHeaders['Origin'] = 'https://tup.yinghuacd.com';\nreturn JSON.stringify({\n    'url': url,\n    'httpHeaders': config.httpHeaders\n});",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet httpHeaders = {\n    \"Accept\": \"*/*\",\n    \"User-Agent\": \"Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1\",\n};\nreturn {\n    \"url\": result ,\n    \"httpHeaders\": httpHeaders,\n    cacheKey: params.nativeTool.md5Encode(String((new Date).getTime())),\n    webView: true,\n    sourceRegex: \"(?:\\\\.m3u8\\$|\\\\.mp4)\"\n};",
+        "host": "http://www.yinghuacd.com",
+        "httpHeaders": {
+            "Referer": "http://www.yinghuacd.com/",
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "950206@",
+    "desc": "张益达",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "☀️稀饭动漫": {
+        "bookDetail": {
+            "actionID": "bookDetail",
+            "parserID": "DOM"
+        },
+        "weight": "9999",
+        "miniAppVersion": "2.53.2",
+        "chapterList": {
+            "validConfig": "",
+            "actionID": "chapterList",
+            "JSParser": "function functionName(config, jsparams, result) {\n    let list = [];\n    for (let i = 0; i < result.list.length; i++) {\n        let titles = result.list[i][\"title\"].split(\"\\n\");\n        let urls = result.list[i][\"url\"].split(\"\\n\");\n        for (let j = 0; j < titles.length; j++) {\n            list.push({\"title\": \"【\"+ titles[j]+\"】\", \n\"url\": urls[j]})\n        }\n    }\n\n    return {\"list\": list};\n\n}",
+            "requestInfo": "\/xgapp.php\/v2\/video_detail?id=%@result",
+            "title": "@js: \nreturn result.replace(\/\\#|\\$\\$\\$\/g,\"\\n\").replace(\/\\$.+\/g,\"\")",
+            "host": "https:\/\/pzoap.moedot.net",
+            "httpHeaders": {
+                "user-agent": "Dart\/2.14 (dart:io)"
+            },
+            "list": "$.data.vod_info.vod_url_with_player..url",
+            "responseFormatType": "json",
+            "parserID": "DOM",
+            "url": "@js: \nreturn result.replace(\/\\#|\\$\\$\\$\/g,\"\\n\").replace(\/.+\\$\/g,\"\")"
+        },
+        "searchShudan": {
+            "actionID": "searchShudan",
+            "parserID": "DOM"
+        },
+        "relatedWord": {
+            "actionID": "relatedWord",
+            "parserID": "DOM"
+        },
+        "enable": 1,
+        "sourceType": "video",
+        "sourceName": "☀️稀饭动漫",
+        "sourceUrl": "https:\/\/pzoap.moedot.net",
+        "httpHeaders": {
+            "user-agent": "Dart\/2.14 (dart:io)"
+        },
+        "shudanDetail": {
+            "actionID": "shudanDetail",
+            "parserID": "DOM"
+        },
+        "lastModifyTime": "1726391156.538219",
+        "toTop": "1727876694.092046",
+        "searchBook": {
+            "cat": "@js: \n\nreturn result.vod_class.replace(\/\\,\/g,\"·\")",
+            "responseFormatType": "json",
+            "bookName": "vod_name",
+            "desc": "@js:\nreturn `${result.vod_year}•${result.vod_area}•${result.vod_score}分\\n\\n${result.vod_time_add}`",
+            "requestInfo": "\/xgapp.php\/v2\/search?pg=%@pageIndex&text=%@keyWord",
+            "host": "https:\/\/pzoap.moedot.net",
+            "actionID": "searchBook",
+            "detailUrl": "vod_id",
+            "cover": "vod_pic",
+            "validConfig": "",
+            "list": "data",
+            "parserID": "DOM",
+            "httpHeaders": {
+                "user-agent": "Dart\/2.14 (dart:io)"
+            },
+            "moreKeys": {
+                "pageSize": 20,
+                "removeHtmlKeys": [
+                    "desc"
+                ]
+            },
+            "status": "vod_remarks"
+        },
+        "chapterContent": {
+            "actionID": "chapterContent",
+            "parserID": "DOM"
+        },
+        "shupingList": {
+            "actionID": "shupingList",
+            "parserID": "DOM"
+        },
+        "shudanList": {},
+        "bookWorld": {
+            "分类": {
+                "responseFormatType": "json",
+                "bookName": "vod_name",
+                "httpHeaders": {
+                    "user-agent": "Dart\/2.14 (dart:io)"
+                },
+                "requestInfo": "@js:\nlet {_aa,_bb}=params.filters\nlet url=`\/xgapp.php\/v2\/video?pg=${params.pageIndex}&tid=${_aa}&class=&area=&lang=&year=${_bb}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+                "host": "https:\/\/pzoap.moedot.net",
+                "actionID": "bookWorld",
+                "detailUrl": "vod_id",
+                "cover": "vod_pic",
+                "desc": "@js:\nreturn `${result.vod_score}分\\n\\n${result.vod_time_add}`",
+                "list": "data",
+                "_sIndex": 0,
+                "parserID": "DOM",
+                "moreKeys": {
+                    "pageSize": 20,
+                    "requestFilters": "_aa\n连载新番::1\n完结旧番::2\n剧场版::3\n美漫区::21\n贤者专区::22\n\n_bb\n全部::\n2024::2024\n2023::2023\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012"
+                },
+                "status": "vod_remarks",
+                "validConfig": ""
+            }
+        },
+        "shupingHome": {
+            "actionID": "shupingHome",
+            "parserID": "DOM"
+        }
+    }
+}

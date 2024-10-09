@@ -1,0 +1,348 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.imitui.com",
+        "desc": "//div[@id='intro-all']/p",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "weight": "3960",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a/span",
+        "host": "https://www.imitui.com",
+        "list": "//ul[contains(@id, 'chapter-list')]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceType": "comic",
+    "sourceName": "爱米推漫画",
+    "sourceUrl": "https://www.imitui.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641274891.841305",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "/search/?keywords=%@keyWord",
+        "lastChapterTitle": "//a[@class='cover']/span[@class='tt']",
+        "bookName": "//p[@class='ell']/a",
+        "host": "https://www.imitui.com",
+        "detailUrl": "//p[@class='ell']/a/@href",
+        "cover": "//a[@class='cover']/img/@src",
+        "responseFormatType": "html",
+        "list": "//li[@class='item-lg']",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "@js:\n\nlet hh = {'accept':'image/webp,image/png,image/svg+xml,image/*;q=0.8,video/*;q=0.8,*/*;q=0.5', 'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15', 'referer':'https://www.imitui.com/'};\n\nreturn JSON.stringify({'urls': result, 'httpHeaders':hh});",
+        "requestInfo": "@js:\n\nlet js = \"let result=[]; let i=1; let imgCount=SinMH.getChapterImageCount(); while(i<=imgCount){result.push(SinMH.getChapterImage(i));i++;}; result\";\n\nreturn {'url':result, 'webView':'', 'webViewJs':js};",
+        "host": "https://www.imitui.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "newcomicbmw",
+    "help": "前未/果果/爱米推/动漫画/漫画芯",
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//a[@class='cover']/span[@class='tt']",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='ell']/a",
+            "requestInfo": "@js:\n\nlet url = 'https://www.imitui.com/list/';\nlet fl = params.filters;\n\nlet arrFl = [];\nif(fl.diqu.length>0)\n\tarrFl.push(fl.diqu);\nif(fl.cat.length>0)\n\tarrFl.push(fl.cat);\nif(fl.status.length>0)\n\tarrFl.push(fl.status);\n\nif(arrFl.length>0)\n\turl = url + arrFl.join('-') + '/';\n\nurl = url + fl.sort;\n\nif(params.pageIndex>1)\n\turl = url + '?page=' + params.pageIndex;\n\nreturn url;",
+            "host": "https://www.imitui.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "36",
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "lianai"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "gufeng"
+                            },
+                            {
+                                "title": "生活",
+                                "value": "shenghuo"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "gaoxiao"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "xuanhuan"
+                            },
+                            {
+                                "title": "修真",
+                                "value": "xiuzhen"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "chuanyue"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "rexue"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "maoxian"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "youxi"
+                            },
+                            {
+                                "title": "动作",
+                                "value": "dongzuo"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "dushi"
+                            },
+                            {
+                                "title": "新作",
+                                "value": "xinzuo"
+                            },
+                            {
+                                "title": "漫改",
+                                "value": "mangai"
+                            },
+                            {
+                                "title": "精品",
+                                "value": "jingpin"
+                            },
+                            {
+                                "title": "真人",
+                                "value": "zhenren"
+                            },
+                            {
+                                "title": "推理",
+                                "value": "tuili"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "xuanyi"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "kongbu"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "wuxia"
+                            },
+                            {
+                                "title": "后宫",
+                                "value": "hougong"
+                            },
+                            {
+                                "title": "日更",
+                                "value": "rigeng"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "御姐",
+                                "value": "yujie"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "zhanzheng"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "jingji"
+                            },
+                            {
+                                "title": "萝莉",
+                                "value": "luoli"
+                            },
+                            {
+                                "title": "杂志",
+                                "value": "zazhi"
+                            },
+                            {
+                                "title": "唯美",
+                                "value": "weimei"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "diqu",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "大陆",
+                                "value": "dalu"
+                            },
+                            {
+                                "title": "欧美",
+                                "value": "oumei"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "riben"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "qita"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "连载",
+                                "value": "lianzai"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "wanjie"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "热度",
+                                "value": "click/"
+                            },
+                            {
+                                "title": "更新",
+                                "value": "update/"
+                            },
+                            {
+                                "title": "收录",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//p[@class='ell']/a/@href",
+            "validConfig": "",
+            "cover": "//a[@class='cover']/img/@src",
+            "parserID": "DOM",
+            "list": "//li[@class='item-lg']"
+        },
+        "榜单": {
+            "lastChapterTitle": "//a[@class='cover']/span[@class='tt']",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='ell']/a",
+            "requestInfo": "@js:\nreturn 'https://www.imitui.com/rank/' + params.filters.type + params.filters.sort + '/';",
+            "host": "https://www.imitui.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": "popularity"
+                            },
+                            {
+                                "title": "点击",
+                                "value": "click"
+                            },
+                            {
+                                "title": "订阅",
+                                "value": "subscribe"
+                            },
+                            {
+                                "title": "魔法",
+                                "value": "mofa"
+                            },
+                            {
+                                "title": "少年",
+                                "value": "shaonian"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "wanjie"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "总榜",
+                                "value": ""
+                            },
+                            {
+                                "title": "日榜",
+                                "value": "-daily"
+                            },
+                            {
+                                "title": "周榜",
+                                "value": "-weekly"
+                            },
+                            {
+                                "title": "月榜",
+                                "value": "-monthly"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//p[@class='ell']/a/@href",
+            "validConfig": "",
+            "cover": "//a[@class='cover']/img/@src",
+            "parserID": "DOM",
+            "list": "//li[@class='item-sm']"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

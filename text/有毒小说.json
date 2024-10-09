@@ -1,0 +1,78 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "data/content",
+        "requestInfo": "@js:\nlet url = 'https://pre-api.youdubook.com/api/readNew';\nlet hp = JSON.parse(result);\nreturn {'url':url, 'httpParams':hp};",
+        "host": "https://www.youdubook.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.youdubook.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7200",
+    "sourceName": "有毒小说",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637326575.932911",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "second_type_name",
+        "author": "novel_author",
+        "lastChapterTitle": "novel_newcname",
+        "responseFormatType": "json",
+        "bookName": "novel_name",
+        "desc": "novel_info",
+        "requestInfo": "@js:\nlet url = 'https://pre-api.youdubook.com/api/searchAll';\nlet hp = {'page':params.pageIndex, 'pageSize':10, 'search_value':params.keyWord, 'search_type':'novel'};\nreturn {'url':url, 'httpParams':hp};",
+        "host": "https://www.youdubook.com",
+        "actionID": "searchBook",
+        "detailUrl": "novel_id",
+        "cover": "novel_cover || https://alioss.youdubook.com%@result",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "parserID": "DOM",
+        "validConfig": "",
+        "wordCount": "novel_wordnumber",
+        "list": "data/data",
+        "status": "novel_process_name"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "data/data[-1]/chapter_time",
+        "requestInfo": "https://pre-api.youdubook.com/api/directoryList?nid=%@result&orderBy=0",
+        "title": "chapter_name",
+        "host": "https://www.youdubook.com",
+        "list": "data/data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nlet ret = {};\nret.nid = result.chapter_nid;\nret.vid = result.chapter_vid;\nret.chapter_id = result.chapter_id;\nret.chapter_order = result.chapter_order;\nret.showpic = false;\nreturn JSON.stringify(ret);"
+    },
+    "sourceType": "text"
+}

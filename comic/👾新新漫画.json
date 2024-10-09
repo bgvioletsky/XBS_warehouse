@@ -1,0 +1,123 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':encodeURI(result),'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+        "host": "https://www.77mh.in",
+        "httpHeaders": {
+            "Referer": "https://www.77mh.in",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "desc": "//i[@id=\"det\"]/text()",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':encodeURI(result),'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+        "title": "//a//text()",
+        "host": "https://www.77mh.in",
+        "httpHeaders": {
+            "Referer": "https://www.77mh.in",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "list": "//ul[@id=\"coclist1\"]|//ul[@id=\"ar_list_normal ar_rlos_bor\"]/li||@js:\nreturn result.reverse()",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "(//a)[1]/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "👾新新漫画",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.77mh.in",
+    "httpHeaders": {
+        "Referer": "https://www.77mh.in",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650249089.965745",
+    "searchBook": {
+        "cat": "//dd/i[@class=\"status\"]/span/text()",
+        "responseFormatType": "html",
+        "author": "//dd/i[@class=\"author\"]/a[2]/text()",
+        "bookName": "//dd/h1/a//text() ||@js:\nreturn result.replace(/\\n/g,\"\")",
+        "httpHeaders": {
+            "Referer": "https://www.77mh.in",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url = config.host.replace(/www/,\"so\")+\"/k.php\";\nlet hp = {\n  \"k\":params.keyWord,\n  \"p\":params.pageIndex,\n  \"type\":\"2-0-0-0\"\n}\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}",
+        "host": "https://www.77mh.in",
+        "actionID": "searchBook",
+        "detailUrl": "//dt[1]/a/@href",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "validConfig": "",
+        "list": "//div[@class=\"ar_list\"]//ul/dl",
+        "parserID": "DOM",
+        "cover": "//dt[1]/a/img/@src",
+        "desc": "//dd/i[@class=\"info\"]//text()||@js:\nreturn result.replace(/\\n/g,\"\")",
+        "status": "//dd/i[@class=\"author\"]/a[1]/text()"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\n\nlet imgUrls = result.split(\"|\");\n\nlet tagUrl = imgUrls[0];\nlet imgs = \"\"\n// console.log(imgUrls)\nfor(let i = 1;i<imgUrls.length;i++){\n\n    if (i == imgUrls.length-1) {\n\n        imgs += encodeURI(tagUrl+imgUrls[i]);\n    }else{\n\n        imgs += encodeURI(tagUrl+imgUrls[i])+\"\\n\";\n    }\n}\n\nreturn imgs;",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n let js = `var result ;result = img_qianz+\"|\"+msg;`;\n\n\nreturn {'url':encodeURI(result), 'POST':false,\"webView\":true,\"webViewJs\":js,'cacheTime':3600};",
+        "host": "https://www.77mh.in",
+        "httpHeaders": {
+            "Referer": "https://www.77mh.in",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//dd/i[@class=\"author\"]/a[2]/text()",
+            "bookName": "//dd/h1/a//text() ||@js:\nreturn result.replace(/\\n/g,\"\")",
+            "httpHeaders": {
+                "Referer": "https://www.77mh.in",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet id = params.pageIndex-1;\nlet url = config.host +params.filters.type+id+\".html\";\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+            "host": "https://www.77mh.in",
+            "actionID": "bookWorld",
+            "detailUrl": "//dt[1]/a/@href",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": "type\n热血机战::/rexue/index_\n科幻未来::/kehuan/index_\n恐怖惊悚::/kongbu/index_\n推理悬疑::/xuanyi/index_\n滑稽搞笑::/gaoxiao/index_\n恋爱生活::/love/index_\n耽美人生::/danmei/index_\n体育竞技::/tiyu/index_\n纯情少女::/chunqing/index_\n魔法奇幻::/qihuan/index_\n武侠经典::/wuxia/index_\n"
+            },
+            "cover": "//dt[1]/a/img/@src",
+            "list": "//div[@class=\"ar_list_co\"]/dl",
+            "parserID": "DOM",
+            "desc": "//dd/i[@class=\"info\"]//text()||@js:\nreturn result.replace(/\\n/g,\"\")",
+            "validConfig": "",
+            "status": "//dd/i[@class=\"status\"]/a[1]/text()"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

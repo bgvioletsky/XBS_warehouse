@@ -1,0 +1,93 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "host": "https://getcomicinfo-globalapi.zymk.cn",
+        "requestInfo": "@js:\nlet obj = JSON.parse(result);\nlet addr = obj.addr;\nlet end = obj.end;\n\nlet baseUrl = 'http://mhpic.xiaomingtaiji.net/comic/' + addr;\n\nhtml=\"\";\ni=1\nwhile(i<=end){\n\thtml += baseUrl + i + '.jpg-zymk.high.webp\\n';\n\ti++;\n}\nreturn {'response':html};",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "https://getcomicinfo-globalapi.zymk.cn/app_api/v5/getcomicinfo/?comic_id=%@result&client-type=android&productname=zymk&platformname=android&client-channel=web_down&loglevel=3&client-version=6.0.0",
+        "host": "https://getcomicinfo-globalapi.zymk.cn",
+        "responseFormatType": "json",
+        "desc": "data/desc",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "json",
+            "lastChapterTitle": "last_chapter/name",
+            "bookName": "comic_name",
+            "desc": "comic_feature",
+            "requestInfo": "@js:\nlet url = '/app_api/v5/getsortlist_new/';\nlet fl = params.filters;\nfl.page = params.pageIndex;\nreturn {'url':url, 'httpParams':fl};",
+            "host": "https://getcomicinfo-globalapi.zymk.cn",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": "type\n热血::5\n搞笑::6\n玄幻::7\n生活::8\n恋爱::9\n动作::10\n科幻::11\n战争::12\n悬疑::13\n恐怖::14\n校园::15\n历史::16\n穿越::17\n体育::19\n都市::20\n漫改::22\n修真::53\n霸总::62\n古风::63\n游戏::64\n真人::65\n武侠::66\n连载::23\n完结::24\n短篇::57\n少男::25\n少女::26\n青年::27\n知音漫客::28\n漫客栈::51\n神漫::29\n飒漫画::30\n飒漫乐园::52\n其他::58\n\nsort\n更新::date\n人气::click\n评分::score\n打赏::gold\n月票::monthly_ticket"
+            },
+            "cover": "comic_id || @js:\nlet a = (Array(6).join('0') + result).slice(-6);\nlet sub = a.slice(0,3)+'/'+a.slice(3);\nreturn 'https://image.zymkcdn.com/file/cover/000/' + sub + '_3_4.jpg-300x400.jpg.webp';",
+            "validConfig": "",
+            "list": "data/page/comic_list",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "comic_id"
+        }
+    },
+    "sourceUrl": "https://getcomicinfo-globalapi.zymk.cn",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9959",
+    "sourceName": "☘️知音漫客",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "推荐",
+    "lastModifyTime": "1641259204.042378",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "json",
+        "lastChapterTitle": "last_chapter/name",
+        "bookName": "comic_name",
+        "desc": "comic_feature",
+        "requestInfo": "/app_api/v5/getsortlist_new/?key=%@keyWord&type=&page=%@pageIndex",
+        "host": "https://getcomicinfo-globalapi.zymk.cn",
+        "actionID": "searchBook",
+        "detailUrl": "comic_id",
+        "cover": "comic_id || @js:\nlet a = (Array(6).join('0') + result).slice(-6);\nlet sub = a.slice(0,3)+'/'+a.slice(3);\nreturn 'https://image.zymkcdn.com/file/cover/000/' + sub + '_3_4.jpg-300x400.jpg.webp';",
+        "validConfig": "",
+        "list": "data/page/comic_list",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://getcomicinfo-globalapi.zymk.cn/app_api/v5/getcomicinfo/?comic_id=%@result&client-type=android&productname=zymk&platformname=android&client-channel=web_down&loglevel=3&client-version=6.0.0",
+        "title": "chapter_name",
+        "host": "https://getcomicinfo-globalapi.zymk.cn",
+        "list": "data/chapter_list || @js:\nreturn result.reverse();",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nlet addr = result.chapter_addr;\nlet end = result.end_var;\nreturn JSON.stringify({'addr':addr, 'end':end});"
+    }
+}

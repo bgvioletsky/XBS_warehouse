@@ -1,0 +1,74 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "JS"
+    },
+    "desc": "待修复",
+    "weight": "0",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar url = '';\n\tvar bookId = params.queryInfo.bookId;\n\tvar beginIndex = bookId.indexOf('book/');\n\tvar endIndex = bookId.indexOf('.htm');\n\tif(beginIndex>0 && endIndex>0){\n\t\tbookId = bookId.substring(beginIndex+5, endIndex);\n\t\tif(bookId.length>2)\n\t\t\turl = 'http://aixswx.com/xs/' + bookId.substr(0, 3) + '/' + bookId + '/';\n\t}\n\n\tvar listGroup = [];\n\tvar regGroup = /data-id=\"(.*?)\">((\\S|\\s)*?)<\\/div/gim;\n\twhile(tem=regGroup.exec(resStr))\n\t{\n\t\tlet groupInfo={};\n\t\tgroupInfo.idx=tem[1];\n\t\tgroupInfo.ctx=tem[2];\n\t\tlistGroup.push(groupInfo);\n\t}\n\tlistGroup=listGroup.sort(function(a,b){return a.idx-b.idx;});\n\n\tvar reg = /chapter\".*?href=\"(.*?)\">(.*?)</gim;\n\tvar length = listGroup.length;\n\tvar list = [];\n\tfor(let i=0; i<length; i++)\n\t{\n\t\tlet content = listGroup[i].ctx;\n\t\twhile(tem=reg.exec(content))\n\t\t{\n\t\t\tlet chapterInfo = {};\n\t\t\tchapterInfo.url = url + tem[1];\n\t\t\tchapterInfo.title = tem[2];\n\t\t\tlist.push(chapterInfo);\n\t\t}\n\t}\n\treturn {'list':list};\n}",
+        "validConfig": "",
+        "actionID": "chapterList",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://wap.aixswx.com",
+        "requestJavascript": "function functionName(config, params) {\t\n\tvar bookId = params.queryInfo.bookId;\n\tvar beginIndex = bookId.indexOf('book/');\n\tvar endIndex = bookId.indexOf('.htm');\n\tif(beginIndex>0 && endIndex>0){\n\t\tbookId = bookId.substring(beginIndex+5, endIndex);\n\t\tif(bookId.length>2){\n\t\t\tvar url = 'http://wap.aixswx.com/xs/' + bookId.substr(0, 3) + '/' + bookId + '/';\n\t\t\treturn {'url':url, 'forbidCookie':false};\n\t\t}\n\t}\n\treturn undefined;\n}",
+        "parserID": "JS"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "JS"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "JS"
+    },
+    "enable": false,
+    "sourceName": "星空小说网",
+    "sourceUrl": "http://wap.aixswx.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "JS"
+    },
+    "lastModifyTime": "1637329692.855509",
+    "searchBook": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar subStr = resStr;\n\tvar endIndex = resStr.indexOf('rec-book');\n\tif(endIndex>0)\n\t\tsubStr = subStr.substr(0, endIndex);\n\telse\n\t\treturn undefined;\n\n\tvar result = {};\n\tvar list = [];\n\tvar reg = /<li.*?href=\"(.*?)\".*?span>(.*?)\\((.*?)\\)/gim;\n\twhile(tem=reg.exec(subStr))\n\t{\n\t\tlet bookInfo = {};\n\t\tbookInfo.bookId = tem[1];\n      \t\tbookInfo.bookName = tem[2];\n    \t\tbookInfo.author = tem[3];\n\t\tlist.push(bookInfo);\n    \t}\n\n\tresult.list = list;\n\tresult.more = false;\n\tresult.success = true;\n\treturn result;\n}",
+        "validConfig": "",
+        "actionID": "searchBook",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://wap.aixswx.com",
+        "requestJavascript": "function functionName(config, params) {\n\treturn {'url':'http://wap.aixswx.com/s.php', 'POST':true, 'httpParams':{'s':params.keyWord}, 'forbidCookie':true};\n}",
+        "parserID": "JS"
+    },
+    "chapterContent": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar listGroup = [];\n\tvar regGroup = /data-id=\"(.*?)\">((\\S|\\s)*?)<\\/dd/gim;\n\twhile(tem=regGroup.exec(resStr))\n\t{\n\t\tlet groupInfo={};\n\t\tgroupInfo.idx=tem[1];\n\t\tgroupInfo.ctx=tem[2];\n\t\tlistGroup.push(groupInfo);\n\t}\n\tlistGroup=listGroup.sort(function(a,b){return a.idx-b.idx;});\n\n\tvar content = '';\n\tvar length = listGroup.length;\n\tfor(let i=0; i<length; i++){\n\t\tlet groupInfo = listGroup[i];\n\t\tlet ctx = groupInfo.ctx;\n\t\tif(groupInfo.idx>=999)\n\t\t\tbreak;\n\t\tcontent = content + ctx;\n\t}\n\treturn {'response':content, 'removeHtmlKeys':'content'};\n}",
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://wap.aixswx.com",
+        "requestJavascript": "function functionName(config, params) {\n\treturn {'url':params.queryInfo.url, 'forbidCookie':false};\n}",
+        "parserID": "JS"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "JS"
+    },
+    "password": "Baby",
+    "shudanList": {},
+    "authorId": "1600862082.628709",
+    "bookDetail": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar subStr = resStr;\n\tvar beginIndex = resStr.indexOf('book-info');\n\tif(beginIndex>0)\n\t{\n\t\tsubStr = subStr.substr(beginIndex);\n\n\t\tvar reg = /<img.*?src=\"(.*?)\"(?:\\S|\\s)*?class=\"intro.*?>((\\S|\\s)*?)</gim;\n\t\twhile(tem=reg.exec(subStr))\n\t\t{\n\t\t\tlet cover = tem[1];\n\t\t\tlet desc = tem[2];\n\n\t\t\tif(cover.indexOf('http')<0){\n\t\t\t\tif(cover.indexOf('.com')<0)\n\t\t\t\t\tcover = 'http://wap.aixswx.com' + cover;\n\t\t\t\telse\n\t\t\t\t\tcover = 'http:' + cover;\n\t\t\t}\n\n\t\t\tlet endIndex= desc.indexOf('星空小说网');\n\t\t\tif(endIndex>0){\n\t\t\t\tlet endIndex2 = desc.lastIndexOf('阅读');\n\t\t\t\tif(endIndex2>0)\n\t\t\t\t\tdesc = desc.substr(0, endIndex2);\n\t\t\t\telse\n\t\t\t\t\tdesc = desc.substr(0, endIndex);\n\t\t\t}\n\n\t\t\tlet bookInfo = params.queryInfo;\n\t\t\tbookInfo.cover = cover;\n\t\t\tbookInfo.desc = desc;\n\t\t\treturn {'response':bookInfo, 'removeHtmlKeys':'desc'};\n  \t\t}\n\t}\n\treturn undefined;\n}",
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://wap.aixswx.com",
+        "requestJavascript": "function functionName(config, params){\n\tif(params.queryInfo.cover && params.queryInfo.desc)\n\t\treturn {'response':params.queryInfo};\n\treturn 'http://wap.aixswx.com' + params.queryInfo.bookId;\n}",
+        "parserID": "JS"
+    },
+    "bookWorld": {},
+    "sourceType": "text"
+}

@@ -1,0 +1,139 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[contains(@class, 'chapter-contents')]//p",
+        "actionID": "chapterContent",
+        "host": "https://www.24en.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 9; zh-cn; MI 6 Build/PKQ1.190118.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.8.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.24en.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 9; zh-cn; MI 6 Build/PKQ1.190118.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.8.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class='intro_text']/p"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "responseFormatType": "html",
+            "author": "//div[3]/a[1]",
+            "bookName": "//h1/a",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (Linux; U; Android 9; zh-cn; MI 6 Build/PKQ1.190118.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.8.1"
+            },
+            "requestInfo": "@js:\nreturn 'https://www.24en.com/novel/' + params.filter + '/index_' + params.pageIndex + '.html';",
+            "host": "https://www.24en.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h1/a/@href",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "经典小说",
+                                "value": "classics"
+                            },
+                            {
+                                "title": "名人传记",
+                                "value": "biography"
+                            },
+                            {
+                                "title": "励志小说",
+                                "value": "lizhi"
+                            },
+                            {
+                                "title": "儿童小说",
+                                "value": "children"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "science-fiction"
+                            },
+                            {
+                                "title": "短篇小说",
+                                "value": "short"
+                            },
+                            {
+                                "title": "宗教小说",
+                                "value": "religion"
+                            },
+                            {
+                                "title": "英文戏剧",
+                                "value": "drama"
+                            },
+                            {
+                                "title": "双语文哲",
+                                "value": "history"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul[@class='booklist']//li",
+            "desc": "//div[3]/text()[5]",
+            "status": "//div[3]/text()[4]",
+            "cover": "//div/a/img/@src"
+        }
+    },
+    "sourceUrl": "https://www.24en.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7305",
+    "sourceName": "🦌出品-读书-爱思英语",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Linux; U; Android 9; zh-cn; MI 6 Build/PKQ1.190118.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.8.1"
+    },
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1640154974.903557",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.24en.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 9; zh-cn; MI 6 Build/PKQ1.190118.001) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.128 Mobile Safari/537.36 XiaoMi/MiuiBrowser/10.8.1"
+        },
+        "list": "//div[@class='chapter_list']//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

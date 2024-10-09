@@ -1,0 +1,81 @@
+{
+    "bookWorld": {
+        "分类": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\tlet bookInfo = {};\n\n\tbookInfo.detailUrl = params.responseUrl;\n\tbookInfo.bookName ='你所在的城市目前的天气';\n\tbookInfo.author = result.wea\n\tbookInfo.status = result.update_time;\n\tbookInfo.desc ='天气：' + result.wea + '，当前温度：'+result.tem+'℃，最高温度：'+result.tem_day+'℃，最低温度：'+result.tem_night+'℃，'+result.win+'：'+result.win_speed+'，更新于'+result.update_time;\n\tbookInfo.cover = config.httpHeaders.imgUrl+result.wea_img + '.png';\n\tlist.push(bookInfo);\n\n\treturn {'list':list,\"more\":false};\n}",
+            "requestInfo": "@js:\nlet url = config.host + '/free/day?appid=' + config.httpHeaders.appid + '&appsecret=' + config.httpHeaders.appsecret;\nreturn encodeURI(url);",
+            "host": "https://tianqiapi.com",
+            "httpHeaders": {
+                "appid": "72538887",
+                "appsecret": "XN35gQ3O",
+                "imgUrl": "https://cdn.jsdelivr.net/gh/Uyukisan/onericetwowine/"
+            },
+            "_sIndex": 0,
+            "responseFormatType": "json",
+            "parserID": "DOM"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "天气api(实况) ⛄",
+    "sourceUrl": "https://tianqiapi.com",
+    "httpHeaders": {
+        "appid": "72538887",
+        "appsecret": "XN35gQ3O",
+        "imgUrl": "https://cdn.jsdelivr.net/gh/Uyukisan/onericetwowine/"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649593037.174369",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\tlet bookInfo = {};\n\n\tbookInfo.detailUrl = params.responseUrl;\n\tbookInfo.bookName = params.keyWord+'目前的天气';\n\tbookInfo.author = result.wea\n\tbookInfo.status = result.update_time;\n\tbookInfo.desc ='天气：' + result.wea + '，当前温度：'+result.tem+'℃，最高温度：'+result.tem_day+'℃，最低温度：'+result.tem_night+'℃，'+result.win+'：'+result.win_speed+'，更新于'+result.update_time;\n\tbookInfo.cover = config.httpHeaders.imgUrl+result.wea_img + '.png';\n\tlist.push(bookInfo);\n\n\treturn {'list':list,\"more\":false};\n}",
+        "requestInfo": "@js:\nlet url = config.host + '/free/day?appid=' + config.httpHeaders.appid + '&appsecret=' + config.httpHeaders.appsecret + '&city=' + params.keyWord;\nreturn encodeURI(url);",
+        "host": "https://tianqiapi.com",
+        "httpHeaders": {
+            "appid": "72538887",
+            "appsecret": "XN35gQ3O",
+            "imgUrl": "https://cdn.jsdelivr.net/gh/Uyukisan/onericetwowine/"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "支持市区县天气查询，如：上海",
+    "shudanList": {},
+    "help": "如果查询次数用完，前往https://tianqiapi.com注册账号，复制appid和appsecret，更改全局httpHeaders里的appid和appsecret的值即可。",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "json",
+        "actionID": "bookDetail"
+    },
+    "sourceType": "text"
+}

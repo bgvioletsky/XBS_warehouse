@@ -1,0 +1,86 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "data/chapter/content",
+        "actionID": "chapterContent",
+        "requestInfo": "https://api.lovenovelapp.com/chapter/content?id=%@result",
+        "host": "https://api.lovenovelapp.com/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "data/novelInfo/is_finished",
+        "wordCount": "data/novelInfo/length",
+        "requestInfo": "https://api.lovenovelapp.com/novel?id=%@result",
+        "host": "https://api.lovenovelapp.com/",
+        "cat": "$..name",
+        "cover": "data/novelInfo/cover",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "@js:\nreturn result.data.novelInfo.sexualityName + '\\n' + result.data.novelInfo.recommend_text + '\\n' + result.data.novelInfo.brief;"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://api.lovenovelapp.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1111",
+    "sourceName": "恋文",
+    "desc": "中英皆有",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650361536.525601",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "$..name",
+        "author": "user/nickname",
+        "responseFormatType": "json",
+        "lastChapterTitle": "last_chapter_title",
+        "bookName": "title",
+        "desc": "@js:\nreturn result.sexualityName + '\\n' + result.recommend_text + '\\n' + result.brief;",
+        "requestInfo": "https://api.lovenovelapp.com/searchNovel?page=%@pageIndex&size=20&wd=%@keyWord",
+        "host": "https://api.lovenovelapp.com/",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "wordCount": "length",
+        "detailUrl": "id",
+        "list": "data/list",
+        "parserID": "DOM",
+        "cover": "cover",
+        "validConfig": "",
+        "status": "is_finished"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://api.lovenovelapp.com/novel/chapters?novel_id=%@result",
+        "title": "title",
+        "host": "https://api.lovenovelapp.com/",
+        "list": "data/chapters",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id"
+    },
+    "sourceType": "text"
+}

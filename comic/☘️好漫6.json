@@ -1,0 +1,91 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.haoman6.com",
+        "content": "//div[contains(@class, 'rd-article__pic')]/img/@dta-echo",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.haoman6.com",
+        "cat": "//div[@class='comic-status']/span[1]/b/a || @js:\nreturn result.replace(/\\n/g, '\\/');",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class='intro']"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//p[contains(@class, 'update')]/a",
+            "responseFormatType": "html",
+            "bookName": "//p[contains(@class, 'title')]/a || @replace:(最新在线)",
+            "requestInfo": "@js:\nlet fl = params.filters;\nlet url = 'https://www.haoman6.com/category/' + fl.tags + fl.finish + fl.order;\nif(params.pageIndex > 1)\n\treturn url + '/page/' + params.pageIndex;\nreturn url;",
+            "host": "https://www.haoman6.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": "tags\n全部::\n热血::/tags/6\n冒险::/tags/7\n科幻::/tags/8\n霸总::/tags/9\n玄幻::/tags/10\n校园::/tags/11\n修真::/tags/12\n搞笑::/tags/13\n穿越::/tags/14\n后宫::/tags/15\n耽美::/tags/16\n恋爱::/tags/17\n悬疑::/tags/18\n恐怖::/tags/19\n战争::/tags/20\n动作::/tags/21\n同人::/tags/22\n竞技::/tags/23\n励志::/tags/24\n架空::/tags/25\n灵异::/tags/26\n百合::/tags/27\n古风::/tags/28\n生活::/tags/29\n真人::/tags/30\n都市::/tags/31\n其他::/tags/48\n内地::/tags/50\n\nfinish\n全部::\n连载::/finish/1\n完结::/finish/2\n\norder\n热门人气::/order/hits\n更新时间::/order/addtime"
+            },
+            "cover": "//img/@data-original",
+            "detailUrl": "//p[contains(@class, 'title')]/a/@href",
+            "list": "//div[@class='common-comic-item']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://www.haoman6.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8592",
+    "sourceName": "☘️好漫6",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641259405.070147",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "html",
+        "lastChapterTitle": "//p[contains(@class, 'update')]/a",
+        "bookName": "//p[contains(@class, 'title')]/a || @replace:(最新在线)",
+        "desc": "//p[contains(@class, 'feature')]",
+        "requestInfo": "https://www.haoman6.com/search/%@keyWord/%@pageIndex",
+        "host": "https://www.haoman6.com",
+        "actionID": "searchBook",
+        "detailUrl": "//p[contains(@class, 'title')]/a/@href",
+        "cover": "//img/@data-original",
+        "validConfig": "",
+        "list": "//div[@class='common-comic-item']",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "host": "https://www.haoman6.com",
+        "list": "//a[contains(@class, 'chapter-link')]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    }
+}

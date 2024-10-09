@@ -1,0 +1,80 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"BookText\"]/p/text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 4
+        },
+        "host": "https://www.yushubo.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[text()='下一页']/@href"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.yushubo.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "FZ-御书网",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650334827.092847",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[@class=\"col-r\"]/p[2]/text()",
+        "responseFormatType": "html",
+        "bookName": "//div[@class=\"col-r\"]/h3/a",
+        "requestInfo": "@js:\nlet url = '/search.html';\nlet hp = {};\nhp.ss = params.keyWord;\nreturn {'POST':false,'url':url, 'httpParams':hp,};",
+        "host": "https://www.yushubo.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"col-r\"]/h3/a/@href",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class=\"search-list\"]/li",
+        "cover": "//a[1]/img/@src",
+        "status": "//div[@class=\"col-r\"]/p1/text()"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//em[@class='articleval']",
+        "requestInfo": "@js:return result.replace('book','list_other');",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "host": "https://www.yushubo.com",
+        "list": "//ul[@class=\"clearfix chapter-list\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

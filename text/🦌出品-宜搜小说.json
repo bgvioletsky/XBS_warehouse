@@ -1,0 +1,220 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "content",
+        "actionID": "chapterContent",
+        "requestInfo": "http://api.easou.com/api/bookapp/chargeChapter.m?a=1&autoBuy=0&cid=eef_easou_book&version=002&os=android&udid=1FD1EC34C1A1DD11DD61A603B9369449&appverion=1064&ch=blf1298_11982_011&session_id=-nEua-HnRcZlOf2ovVVOOzJ&lastClock=0&dzh=1&scp=0&appid=10001&utype=0&rtype=1&pushid=1a0018970afa6c9bc74&ptype=4&birt=1548574906221&instime=1548574868198&%@result",
+        "host": "http://api.easou.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "cat": "category",
+            "author": "author",
+            "lastChapterTitle": "lastChapterName",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "desc",
+            "requestInfo": "@js:\nreturn 'http://api.easou.com/api/bookapp/searchdzh.m?word=' + encodeURI(params.filters.cat) + '&type=0&page_id=' + params.pageIndex + '&count=20&sort_type=0&subclass=0&datasource=0&showj=1&wc=0&catalog=0&bookStatus=' + params.filters.status + '&cid=eef_easou_book&version=002&os=android&udid=1FD1EC34C1A1DD11DD61A603B9369449&appverion=1064&ch=blf1298_11982_011&session_id=-nEua-HnRcZlOf2ovVVOOzJ&lastClock=0&dzh=1&scp=0&appid=10001&utype=0&rtype=1&pushid=1a0018970afa6c9bc74&ptype=4&birt=1548574906221&instime=1548574868198';",
+            "host": "http://api.easou.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "玄幻奇幻"
+                            },
+                            {
+                                "title": "现代都市",
+                                "value": "现代都市"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "武侠仙侠"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "科幻小说"
+                            },
+                            {
+                                "title": "游戏竞技",
+                                "value": "游戏竞技"
+                            },
+                            {
+                                "title": "次元小说",
+                                "value": "次元小说"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "历史军事"
+                            },
+                            {
+                                "title": "灵异悬疑",
+                                "value": "灵异悬疑"
+                            },
+                            {
+                                "title": "重生致富",
+                                "value": "重生致富"
+                            },
+                            {
+                                "title": "系统脑洞",
+                                "value": "系统脑洞"
+                            },
+                            {
+                                "title": "轻松奶爸",
+                                "value": "轻松奶爸"
+                            },
+                            {
+                                "title": "文娱崛起",
+                                "value": "文娱崛起"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "现代言情"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "古代言情"
+                            },
+                            {
+                                "title": "幻想言情",
+                                "value": "幻想言情"
+                            },
+                            {
+                                "title": "浪漫青春",
+                                "value": "浪漫青春"
+                            },
+                            {
+                                "title": "种田爽文",
+                                "value": "种田爽文"
+                            },
+                            {
+                                "title": "总裁独宠",
+                                "value": "总裁独宠"
+                            },
+                            {
+                                "title": "扮猪吃虎",
+                                "value": "扮猪吃虎"
+                            },
+                            {
+                                "title": "短篇小说",
+                                "value": "短篇小说"
+                            },
+                            {
+                                "title": "经典名著",
+                                "value": "经典名著"
+                            },
+                            {
+                                "title": "其他出版",
+                                "value": "其他出版"
+                            },
+                            {
+                                "title": "现代文学",
+                                "value": "现代文学"
+                            },
+                            {
+                                "title": "轻の小说",
+                                "value": "轻の小说"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "imgUrl",
+            "wordCount": "wordCount",
+            "list": "all_book_items",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "@js:\nreturn 'nid=' + result.nid + '&gid=' + result.gid;",
+            "status": "status",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "http://api.easou.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7300",
+    "sourceName": "🦌出品-宜搜小说",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "password": "xiaoluvesion",
+    "lastModifyTime": "1640154607.944531",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "category",
+        "author": "author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "lastChapterName",
+        "bookName": "name",
+        "desc": "desc",
+        "requestInfo": "http://api.easou.com/api/bookapp/searchdzh.m?word=%@keyWord&type=0&page_id=%@pageIndex&count=20&sort_type=0&subclass=0&datasource=0&showj=1&wc=0&catalog=0&bookStatus=0&cid=eef_easou_book&version=002&os=android&udid=1FD1EC34C1A1DD11DD61A603B9369449&appverion=1064&ch=blf1298_11982_011&session_id=-nEua-HnRcZlOf2ovVVOOzJ&lastClock=0&dzh=1&scp=0&appid=10001&utype=0&rtype=1&pushid=1a0018970afa6c9bc74&ptype=4&birt=1548574906221&instime=1548574868198",
+        "host": "http://api.easou.com",
+        "actionID": "searchBook",
+        "detailUrl": "@js:\nreturn 'nid=' + result.nid + '&gid=' + result.gid;",
+        "cover": "imgUrl",
+        "validConfig": "",
+        "list": "all_book_items",
+        "parserID": "DOM",
+        "wordCount": "wordCount",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "status": "status"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "http://api.easou.com/api/bookapp/bookSummary.m?nid=%@result&sort=1&size=10000&returnType=110&session_id=-nEua-HnRcZlOf2ovVVOOzJ&gsort=1&showj=1&ad=0&cid=eef_easou_book&version=002&os=android&udid=1FD1EC34C1A1DD11DD61A603B9369449&appverion=1064&ch=blf1298_11982_011&session_id=-nEua-HnRcZlOf2ovVVOOzJ&lastClock=0&dzh=1&scp=0&appid=10001&utype=0&rtype=1&pushid=1a0018970afa6c9bc74&ptype=4&birt=1548574906221&instime=1548574868198",
+        "title": "chapter_name",
+        "host": "http://api.easou.com",
+        "list": "$.volumes[*].chapters[*] || $.chapters[*]",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn params.queryInfo.detailUrl + '&sort=' + result.sort + '&gsort=0&sgsort=0&sequence=2&chapter_name=' + encodeURI(result.chapter_name);"
+    },
+    "sourceType": "text"
+}

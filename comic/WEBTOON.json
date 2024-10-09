@@ -1,0 +1,89 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//*[@id='_imageList']/img/@data-url || @js:\nlet urls = result.replace(/webtoon/g, 'mwebtoon');\nreturn JSON.stringify({'urls':urls, 'httpHeaders':{'Referer':params.responseUrl}});",
+        "host": "https://www.webtoons.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "genres": {
+            "author": "//p[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='subj']",
+            "requestInfo": "@js:\nreturn 'https://www.webtoons.com/en/drama?sortOrder=' + params.filters.sort;",
+            "host": "https://www.webtoons.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "requestFilters": "cat\n Drama::1\nFantasy::2\nComedy::3\nAction::4\nSlice of Life::5\nRomance::6\nSuperhero::7\nSci-fi::8\nThriller::9\nSupernatural::10\nMystery::11\nSports::12\nHistorical::13\nHeartwarming::14\nHorror::15\nInformative::16\n\nsort\nPopularity::READ_COUNT\nLikes::LIKEIT\nDate::UPDATE"
+            },
+            "validConfig": "",
+            "cover": "//img/@src",
+            "list": "@js:\nlet xpath = '//ul[@class=\"card_lst\"][' + params.filters.cat + ']/li/a';\nreturn result.queryWithXPath(xpath);",
+            "parserID": "DOM"
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "WEBTOON",
+    "sourceUrl": "https://www.webtoons.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650287718.280093",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//p[contains(@class, 'genre')]",
+        "author": "//p[@class='author']",
+        "responseFormatType": "html",
+        "bookName": "//p[@class='subj']",
+        "requestInfo": "https://www.webtoons.com/en/search?keyword=%@keyWord",
+        "host": "https://www.webtoons.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href||@js:\nreturn 'https://m.webtoons.com' + result;",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "moreKeys": {
+            "skipcount": 7
+        },
+        "list": "//ul/li"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = result;\nlet httpHeaders = {'user-agent':'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Mobile Safari/537.36'};\nreturn {'url':url, 'httpHeaders':httpHeaders};",
+        "title": "//p[@class='sub_title']",
+        "host": "https://www.webtoons.com/",
+        "list": "//li[contains(@id, 'episode_')]||@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href||@js:\nreturn result.replace('m.webtoons.com', 'www.webtoons.com');"
+    }
+}

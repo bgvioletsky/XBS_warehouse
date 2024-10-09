@@ -1,0 +1,213 @@
+{
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "3997",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, jsparams, result) {\n    let list = [];\n    let url1s = jsparams.responseUrl.split(\"/\")\n    let url1 = url1s[url1s.length-2];\n\n    list.push({\"title\": \"1\", \"url\": \"/\" + url1 +\"/?pline=0\"});\n\n    let titles = result[\"list\"][0][\"title\"].split(\"\\n\");\n\n    let urls = result[\"list\"][0][\"url\"].split(\"\\n\");\n\n    for (let j = 0; j < titles.length; j++) {\n\n        if(titles[j] !== \"下一页>\"){\n            list.push({\"title\": titles[j], \"url\": urls[j] +\"?pline=0\"})\n        }\n    }\n    return {\"updateTime\": \"\", \"list\": list};\n}",
+        "requestInfo": "@js:\nlet id =result.match(/(\\d+)/)[1];\nlet url =config.host+\"/\"+id+\"?pline=0\"\nparams.nativeTool.log(url) \nreturn url",
+        "title": "//a/span",
+        "host": "https://ios.bb74.xyz/?utm_source=567",
+        "httpHeaders": {
+            "Referer": "https://ios.41a.xyz",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@class=\"listbox\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceType": "comic",
+    "sourceName": "👾BICA庇護所😈",
+    "sourceUrl": "https://ios.bb74.xyz/?utm_source=567",
+    "httpHeaders": {
+        "Referer": "https://ios.41a.xyz",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649835758.264180",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url =config.host+\"/searchpage/?pgcount=\"+params.pageIndex+\"&keys=\"+encodeURI(params.keyWord)\nreturn url",
+        "bookName": "//a/div",
+        "detailUrl": "//a/@href",
+        "host": "https://ios.bb74.xyz/?utm_source=567",
+        "httpHeaders": {
+            "Referer": "https://ios.41a.xyz",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//ul[@class=\"list cl\"]/li",
+        "cover": "//a/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//article/p/img/@src||@js:\nreturn result.replace(/t\\.jpg/g,\".jpg\");",
+        "actionID": "chapterContent",
+        "host": "https://ios.bb74.xyz/?utm_source=567",
+        "httpHeaders": {
+            "Referer": "https://ios.41a.xyz",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "help": "失效",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "韩漫": {
+            "responseFormatType": "html",
+            "bookName": "//a/img/@alt",
+            "httpHeaders": {
+                "Referer": "https://ios.41a.xyz",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url =config.host+\"/category/co-comic/page/\"+params.pageIndex+\"/\"\n\nreturn {'url':url,'httpHeaders':config.httpHeaders};",
+            "host": "https://ios.bb74.xyz/?utm_source=567",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "pageSize": 20
+            },
+            "validConfig": "",
+            "list": "//ul[@class=\"list cl\"]/li",
+            "cover": "//a/img/@src",
+            "parserID": "DOM"
+        },
+        "标签": {
+            "responseFormatType": "html",
+            "bookName": "//a/img/@alt",
+            "httpHeaders": {
+                "Referer": "https://ios.41a.xyz",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet url =config.host+\"/tag/\"+encodeURI(params.filter)+\"/page/\"+params.pageIndex+\"/\";\n\nreturn url",
+            "host": "https://ios.bb74.xyz/?utm_source=567",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "pageSize": "24",
+                "maxPage": 100,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "马赛克修正",
+                                "value": "马赛克修正"
+                            },
+                            {
+                                "title": "长筒袜",
+                                "value": "长筒袜"
+                            },
+                            {
+                                "title": "萝莉",
+                                "value": "萝莉"
+                            },
+                            {
+                                "title": "肛交",
+                                "value": "肛交"
+                            },
+                            {
+                                "title": "翻译",
+                                "value": "翻译"
+                            },
+                            {
+                                "title": "眼镜",
+                                "value": "眼镜"
+                            },
+                            {
+                                "title": "漫画家",
+                                "value": "漫画家"
+                            },
+                            {
+                                "title": "未通过正太",
+                                "value": "未通过正太"
+                            },
+                            {
+                                "title": "推荐",
+                                "value": "推荐"
+                            },
+                            {
+                                "title": "巨乳",
+                                "value": "巨乳"
+                            },
+                            {
+                                "title": "女生制服",
+                                "value": "女生制服"
+                            },
+                            {
+                                "title": "唐装",
+                                "value": "唐装"
+                            },
+                            {
+                                "title": "同人志封面",
+                                "value": "同人志封面"
+                            },
+                            {
+                                "title": "口交",
+                                "value": "口交"
+                            },
+                            {
+                                "title": "原创",
+                                "value": "原创"
+                            },
+                            {
+                                "title": "单男主",
+                                "value": "单男主"
+                            },
+                            {
+                                "title": "单女主",
+                                "value": "单女主"
+                            },
+                            {
+                                "title": "全彩色",
+                                "value": "全彩色"
+                            },
+                            {
+                                "title": "乱交",
+                                "value": "乱交"
+                            },
+                            {
+                                "title": "中出",
+                                "value": "中出"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//ul[@class=\"list cl\"]/li",
+            "cover": "//a/img/@src",
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

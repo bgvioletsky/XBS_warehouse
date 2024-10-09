@@ -1,0 +1,163 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "223",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//span[@class=\"uptime\"]/span/text()",
+        "title": "//li/a/text()",
+        "host": "https://www.zhaishuyuan.org",
+        "httpHeaders": {
+            "Referer": "https://www.zhaishuyuan.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+        },
+        "list": "//div[@id=\"readerlist\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//li/a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "斋书宛",
+    "sourceUrl": "https://www.zhaishuyuan.org",
+    "httpHeaders": {
+        "Referer": "https://www.zhaishuyuan.org",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650095443.952279",
+    "toTop": "1650089208.273593",
+    "searchBook": {
+        "cat": "//dd[@class=\"book_other\"]/span[3]/text()",
+        "author": "//dd[@class=\"book_other\"]/span[1]/a/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//dd[@class=\"book_other\"]/a/@herf",
+        "bookName": "//h3/a/text()",
+        "httpHeaders": {
+            "Referer": "https://www.zhaishuyuan.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+        },
+        "requestInfo": "@js:\nlet url  = config.host +\"/search/\";\n\nlet hp={\n    \"searchkey\":params.keyWord,\n    \n};\n\nreturn {\n    'url':url, \n    'POST': true, \n    'httpParams':hp,\n    \"httpHeaders\": config.httpHeaders,\n    \"forbidCookie\":\"true\"\n};",
+        "host": "https://www.zhaishuyuan.org",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "cover": "//dt/a/img/@src",
+        "validConfig": "",
+        "list": "//div[@ id=\"sitembox\"]/dl",
+        "parserID": "DOM",
+        "desc": "//dd[@class=\"book_des\"]/text()",
+        "wordCount": "//dd[@class=\"book_other\"]/span[4]/text()",
+        "status": "//dd[@class=\"book_other\"]/span[2]/text()",
+        "detailUrl": "//h3/a/@href"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]/p/text()",
+        "actionID": "chapterContent",
+        "host": "https://www.zhaishuyuan.org",
+        "httpHeaders": {
+            "Referer": "https://www.zhaishuyuan.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@id=\"next_url\"]/@href"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "bgcode",
+    "shudanList": {},
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "发现": {
+            "cat": "//li[@class=\"two\"]/text()",
+            "author": "//li[@class=\"four\"]/a/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//li[@class=\"three\"]/span/a/text()",
+            "bookName": "//li[@class=\"three\"]/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.zhaishuyuan.org",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+            },
+            "host": "https://www.zhaishuyuan.org",
+            "requestInfo": "@js:\nlet url  = config.host +\"/category/\" + params.filters.type + params.pageIndex +\".html\";\n\nreturn {\n    'url':url, \n    \"httpHeaders\": config.httpHeaders,\n};",
+            "actionID": "bookWorld",
+            "detailUrl": "//li[@class=\"three\"]/a/@href",
+            "moreKeys": {
+                "maxPage": 1000,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部小说",
+                                "value": ""
+                            },
+                            {
+                                "title": "玄幻小说",
+                                "value": "xuanhuan_"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "wuxia_"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "dushi_"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "wangyou_"
+                            },
+                            {
+                                "title": "穿越小说",
+                                "value": "chuanyue_"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "kehuan_"
+                            },
+                            {
+                                "title": "悬疑推理",
+                                "value": "xuanyi_"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "qita_"
+                            }
+                        ]
+                    }
+                ],
+                "pageSize": 30
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"shulist\"]/ul",
+            "cover": "//li[@class=\"three\"]/a/@href ||@js:\n\nvar id = result.match(/(\\d+)/g)[0];\n\nvar idd= result.match(/(\\d+)/g)[1];\n\n\n\n\n\nreturn 'https://img.zhaishuyuan.org/' +id+'/'+idd+'/'+idd+'s.jpg';",
+            "wordCount": "//li[@class=\"five\"]/text()"
+        }
+    },
+    "sourceType": "text"
+}

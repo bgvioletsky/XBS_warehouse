@@ -1,0 +1,244 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "1000",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "http://www.zym888.com",
+        "httpHeaders": {
+            "Referer": "http://www.zym888.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//td[@class=\"L\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "七猫小说",
+    "sourceUrl": "http://www.zym888.com",
+    "httpHeaders": {
+        "Referer": "http://www.zym888.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649664168.250411",
+    "searchBook": {
+        "cat": "//a[2]",
+        "author": "author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "latest_chapter_name",
+        "bookName": "book_name",
+        "httpHeaders": {
+            "Referer": "http://www.zym888.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "http://www.zym888.com/api/search?q=%@keyWord",
+        "host": "http://www.zym888.com",
+        "actionID": "searchBook",
+        "detailUrl": "book_detail_url||@js:\n\nlet key = \"xiaoshuo\";\n\nlet id = result.match(/(\\d+)/g)[0];\n\nlet preId = parseInt(id/1000); \n\nlet url =\"/\"+key+\"/\"+preId+\"/\"+id+\"/\";\nreturn url",
+        "desc": "intro",
+        "validConfig": "",
+        "list": "data/search",
+        "parserID": "DOM",
+        "cover": "cover",
+        "status": "status_str"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='htmlContent']//text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 5
+        },
+        "host": "http://www.zym888.com",
+        "httpHeaders": {
+            "Referer": "http://www.zym888.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),\"翻下页\")] ||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"_\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "😍-自用",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\n\nlet key = \"xiaoshuo\";\n\nlet id = result.match(/(\\d+)/g)[1];\n\nlet url = config.host+\"/\"+key+\"/\"+id;\nreturn url",
+        "host": "http://www.zym888.com",
+        "httpHeaders": {
+            "Referer": "http://www.zym888.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//div[@class=\"fl\"]//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//dd[@style=\"padding:10px 30px 0 25px;\"]/p[2]"
+    },
+    "bookWorld": {
+        "排行": {
+            "responseFormatType": "html",
+            "author": "//td[3]",
+            "lastChapterTitle": "//td[2]/a",
+            "bookName": "//td[1]/a[2]",
+            "httpHeaders": {
+                "Referer": "http://www.zym888.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+\"/\"+params.filters.type+ \"/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "http://www.zym888.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[1]/a[2]/@href",
+            "moreKeys": {
+                "pageSize": 32,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "总排行榜",
+                                "value": "top/allvisit"
+                            },
+                            {
+                                "title": "总推荐榜",
+                                "value": "top/allvote"
+                            },
+                            {
+                                "title": "月排行榜",
+                                "value": "top/monthvisit"
+                            },
+                            {
+                                "title": "月推荐榜",
+                                "value": "top/monthvote"
+                            },
+                            {
+                                "title": "周排行榜",
+                                "value": "top/weekvisit"
+                            },
+                            {
+                                "title": "周推荐榜",
+                                "value": "top/weekvote"
+                            },
+                            {
+                                "title": "最新入库",
+                                "value": "top/postdate"
+                            },
+                            {
+                                "title": "最近更新",
+                                "value": "top/lastupdate"
+                            },
+                            {
+                                "title": "总收藏榜",
+                                "value": "top/goodnum"
+                            },
+                            {
+                                "title": "字数排行",
+                                "value": "top/size"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//tr",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "wordCount": "//td[4]",
+            "status": "//td[5]"
+        },
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//td[3]",
+            "lastChapterTitle": "//td[2]/a",
+            "bookName": "//td[1]/a[2]",
+            "httpHeaders": {
+                "Referer": "http://www.zym888.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+\"/\"+params.filters.type+ \"/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "http://www.zym888.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[1]/a[2]/@href",
+            "moreKeys": {
+                "pageSize": 32,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻小说",
+                                "value": "fenlei1"
+                            },
+                            {
+                                "title": "武侠小说",
+                                "value": "fenlei2"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "fenlei3"
+                            },
+                            {
+                                "title": "历史小说",
+                                "value": "fenlei4"
+                            },
+                            {
+                                "title": "网游小说",
+                                "value": "fenlei5"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "fenlei6"
+                            },
+                            {
+                                "title": "恐怖小说",
+                                "value": "fenlei7"
+                            },
+                            {
+                                "title": "女生小说",
+                                "value": "fenlei8"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "fenlei9"
+                            },
+                            {
+                                "title": "全本小说",
+                                "value": "quanben"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//tr",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "wordCount": "//td[4]",
+            "status": "//td[5]"
+        }
+    },
+    "sourceType": "text"
+}

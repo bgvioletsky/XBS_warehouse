@@ -1,0 +1,90 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "http://www.buka.cn",
+        "content": "@js:\r\nvar jp = /src=\"(.*?)0001.jpg/;\r\nvar p = /pcount = (.*);/;\r\nvar jpgstr = result.match(jp)[1];\r\nvar mp = +result.match(p)[1];\r\nvar piclist = new Array(mp); \r\nfor (var i = 0; i < mp; i++) {         \r\npiclist[i] = jpgstr+(new Array(4).join('0') + (i+1)).slice(-4)+\".jpg\";\r\n}\nhtml='';\nfor(i in piclist){\n\thtml += piclist[i] + '\\n';\n}\nreturn html;",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.buka.cn",
+        "desc": "//div[@class='manga-desc']/p",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//a[@class='manga-update'] || @js:\nreturn result.trim().split('\\n')[0];",
+            "author": "//a[@class='manga-author'] || @js:\nreturn result.trim().split('\\n')[0];",
+            "responseFormatType": "html",
+            "bookName": "//a[@class='manga-name'] || @js:\nreturn result.trim().split('\\n')[0];",
+            "requestInfo": "%@filter",
+            "host": "http://www.buka.cn",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": "更新::/news.html\n热门::/ranking.html\n付费::/category/12128/%E4%BB%98%E8%B4%B9%E6%BC%AB%E7%94%BB.html\n上新::/category/12084/%E6%9C%80%E8%BF%91%E4%B8%8A%E6%96%B0.html\n经典::/category/303/%E7%BB%8F%E5%85%B8.html\n联合::/category/12033/%E8%81%94%E5%90%88%E5%87%BA%E5%93%81.html\n条漫::/category/12036/%E6%9D%A1%E6%BC%AB.html\n玄幻::/category/12041/%E7%8E%84%E5%B9%BB.html\n都市::/category/12116/%E9%83%BD%E5%B8%82%E6%81%8B%E7%88%B1.html\n恋爱::/category/404/%E6%81%8B%E7%88%B1.html\n原创::/category/12091/%E7%94%A8%E6%88%B7%E5%8E%9F%E5%88%9B.html\n游戏::/category/12018/%E6%B8%B8%E6%88%8F.html\n治愈::/category/202/%E6%B2%BB%E6%84%88.html\n科幻::/category/403/%E7%A7%91%E5%B9%BB.html\n搞笑::/category/10008/%E6%90%9E%E7%AC%91.html\n励志::/category/12023/%E5%8A%B1%E5%BF%97.html\n格斗::/category/410/%E6%A0%BC%E6%96%97.html\n少女::/category/12103/%E5%B0%91%E5%A5%B3%E6%BC%AB.html\n少年::/category/12104/%E5%B0%91%E5%B9%B4%E6%BC%AB.html\n真人::/category/12117/%E7%9C%9F%E4%BA%BA%E6%BC%AB.html"
+            },
+            "cover": "//img/@src || @js:\nreturn result.trim().split('\\n')[0];",
+            "detailUrl": "//a[@class='manga-name']/@href || @js:\nreturn result.trim().split('\\n')[0];",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class='manga-list']//li",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "http://www.buka.cn",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8598",
+    "sourceName": "☘️布卡漫画💰",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641259348.154031",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//a[@class='manga-author'] || @js:\nreturn result.trim().split('\\n')[0];",
+        "lastChapterTitle": "//a[@class='manga-update'] || @js:\nreturn result.trim().split('\\n')[0];",
+        "responseFormatType": "html",
+        "bookName": "//a[@class='manga-name'] || @js:\nreturn result.trim().split('\\n')[0];",
+        "requestInfo": "/search?word=%@keyWord",
+        "host": "http://www.buka.cn",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class='manga-name']/@href || @js:\nreturn result.trim().split('\\n')[0];",
+        "cover": "//img/@src || @js:\nreturn result.trim().split('\\n')[0];",
+        "validConfig": "",
+        "list": "//div[@class='manga-list']//li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet listNew = [];\n\tlet list = result.list;\n\tfor(i in list) {\n\t\tlet cp = list[i]\n\t\tif(cp.url != undefined)\n\t\t\tlistNew.push(cp);\n\t}\n\n\tif(listNew.length>2)\n\t{\n\t\tlet url1 = listNew[0].url;\n\t\tlet url2 = listNew[1].url;\n\n\t\tlet sub1 = url1.substr(url1.lastIndexOf('/'));\n\t\tlet sub2 = url2.substr(url2.lastIndexOf('/'));\n\t\t\n\t\tlet id1 = sub1.match(/\\d+/)[0];\n\t\tlet id2 = sub2.match(/\\d+/)[0];\n\t\tif(parseInt(id1) > parseInt(id2))\n\t\t\tlistNew = listNew.reverse();\n\t}\n\n\tresult.list = listNew;\n\treturn result;\n}",
+        "title": "//text()",
+        "host": "http://www.buka.cn",
+        "list": "//div[@id='episodes']//a[contains(@class, 'epsbox-eplink')]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    }
+}

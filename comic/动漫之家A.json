@@ -1,0 +1,114 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "host": "https://api.dmzj.com",
+        "content": "chapter/page_url || @js:\n\nlet hh = {};\nhh['Referer']=params.responseUrl;\nhh['Accept']='image/webp,image/png,image/svg+xml,image/*;q=0.8,video/*;q=0.8,*/*;q=0.5';\nhh['User-Agent']='Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1';\n\nlet obj = {'urls':result, 'httpHeaders':hh};\nreturn JSON.stringify(obj);",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "https://api.m.dmzj.com/info/%@result.html",
+        "host": "https://api.dmzj.com",
+        "responseFormatType": "json",
+        "desc": "comic/description",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "types",
+            "author": "authors",
+            "responseFormatType": "json",
+            "lastChapterTitle": "last_update_chapter_name",
+            "bookName": "name",
+            "requestInfo": "@js:\nlet fl = params.filters;\nreturn 'https://api.m.dmzj.com/classify/' + fl.cat + '-0-' + fl.status + '-' + fl.zoom + '-' + fl.sort + '-' + (params.pageIndex-1) + '.json';",
+            "host": "https://api.dmzj.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "15",
+                "requestFilters": "cat\n全部::0\n冒险::1\n欢乐::2\n格斗::3\n科幻::4\n爱情::5\n竞技::6\n魔法::7\n校园::8\n悬疑::9\n恐怖::10\n生活::11\n百合::12\n伪娘::13\n耽美::14\n后宫::15\n萌系::16\n治愈::17\n武侠::18\n职场::19\n奇幻::20\n节操::21\n轻の::22\n搞笑::23\n\nzoom\n全部::0\n日本::1\n内地::2\n欧美::3\n港台::4\n韩国::5\n其他::6\n\nstatus\n全部::0\n连载::1\n完结::2\n\nsort\n人气::0\n更新::1"
+            },
+            "detailUrl": "comic_py",
+            "validConfig": "",
+            "list": "|",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "status"
+        },
+        "榜单": {
+            "cat": "types",
+            "author": "authors",
+            "responseFormatType": "json",
+            "lastChapterTitle": "last_update_chapter_name",
+            "bookName": "name",
+            "requestInfo": "@js:\nlet fl = params.filters;\nreturn 'https://api.m.dmzj.com/rank/' + fl.sort + '0-' + fl.rank + (params.pageIndex-1) + '.json';",
+            "host": "https://api.dmzj.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "10",
+                "requestFilters": "sort\n人气::0-\n吐槽::1-\n订阅::2-\n\nrank\n日榜::0-\n周榜::1-\n月榜::2-\n总榜::3-"
+            },
+            "detailUrl": "comic_py",
+            "validConfig": "",
+            "list": "|",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "status": "status"
+        }
+    },
+    "sourceUrl": "https://api.dmzj.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7002",
+    "sourceName": "动漫之家A",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "推荐)\nv3api.dmzj.com备用",
+    "lastModifyTime": "1641455964.507299",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "types",
+        "author": "authors",
+        "lastChapterTitle": "last_update_chapter_name",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "requestInfo": "https://api.m.dmzj.com/search/%@keyWord",
+        "host": "https://api.dmzj.com",
+        "actionID": "searchBook",
+        "detailUrl": "comic_py",
+        "validConfig": "",
+        "list": "|",
+        "parserID": "DOM",
+        "status": "status"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://api.m.dmzj.com/info/%@result.html",
+        "host": "https://api.dmzj.com",
+        "list": "chapter_json || @js:\nlet obj = JSON.parse(result);\nlet len = obj.length;\nlet list = [];\n\nparams.nativeTool.logWithKey(obj, 'obj');\n\nlet preUrl = 'https://api.m.dmzj.com/comic/chapter/';\nfor(i=0; i<len; i++)\n{\n\tparams.nativeTool.logWithKey(i, 'i');\n\n\tlet data = obj[i].data;\n\tif(data != undefined)\n\t{\n\n\t\tlet len2 = data.length;\n\n\t\tfor(j=0; j<len2; j++)\n\t\t{\n\t\t\tparams.nativeTool.logWithKey(j, 'j');\n\n\t\t\tlet sub = data[j];\n\t\t\tlet cp = {};\n\t\t\tcp.title = sub.chapter_name;\n\t\t\tcp.url = preUrl + sub.comic_id + '/' + sub.id + '.html';\n\t\t\tlist.push(cp);\n\t\t}\n\n\t}\n}\n\nreturn {'list':list.reverse()};",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    }
+}

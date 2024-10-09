@@ -1,0 +1,193 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':'', 'webViewSkipUrls':['bdstatic.com', '.51.la', '360650.xyz'], 'sourceRegex':'.*\\\\.(mp3|m4a).*'};",
+        "host": "https://mitingshu.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "author": "//h2/span/text()",
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "desc": "//section/p[contains(@class, 'f-gray')]",
+            "requestInfo": "@js:\nlet url = 'https://mitingshu.com/books/' + params.filter;\nif(params.pageIndex>1)\n\turl = url + '-' + params.pageIndex;\nreturn url + '.html';",
+            "host": "https://mitingshu.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 16,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "3"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "4"
+                            },
+                            {
+                                "title": "惊悚",
+                                "value": "5"
+                            },
+                            {
+                                "title": "推理",
+                                "value": "6"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "7"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "8"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "9"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "10"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "11"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "12"
+                            },
+                            {
+                                "title": "评书",
+                                "value": "13"
+                            },
+                            {
+                                "title": "戏曲",
+                                "value": "14"
+                            },
+                            {
+                                "title": "笑话",
+                                "value": "15"
+                            },
+                            {
+                                "title": "儿童",
+                                "value": "16"
+                            },
+                            {
+                                "title": "财经",
+                                "value": "17"
+                            },
+                            {
+                                "title": "广播",
+                                "value": "18"
+                            },
+                            {
+                                "title": "诗歌",
+                                "value": "19"
+                            },
+                            {
+                                "title": "文学",
+                                "value": "20"
+                            },
+                            {
+                                "title": "粤语",
+                                "value": "21"
+                            },
+                            {
+                                "title": "经典",
+                                "value": "22"
+                            },
+                            {
+                                "title": "小品",
+                                "value": "23"
+                            },
+                            {
+                                "title": "讲坛",
+                                "value": "24"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//span[@class='img-box']/img/@src",
+            "list": "//li[contains(@class, 'col-12')]/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://mitingshu.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "6088",
+    "sourceName": "☘️小米听书",
+    "sourceType": "audio",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639841452.532133",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//h2/span/text()",
+        "responseFormatType": "html",
+        "bookName": "//h2/a",
+        "desc": "//p[contains(@class, 'f-gray')]",
+        "requestInfo": "https://mitingshu.com/search.php?page=%@pageIndex&searchword=%@keyWord&searchtype=",
+        "host": "https://mitingshu.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//h2/a/@href",
+        "moreKeys": {
+            "pageSize": 16
+        },
+        "cover": "//span[@class='img-box']/img/@src",
+        "list": "//li[contains(@class, 'col-12')]/div",
+        "parserID": "DOM",
+        "validConfig": ""
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://mitingshu.com/",
+        "list": "//div[@id='yuedu']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

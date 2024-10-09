@@ -1,0 +1,118 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.pilibook.net",
+        "content": "//div[@id=\"novelcontent\"]/p/text()",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//div[@class=\"infotype\"]/p[4]",
+        "host": "https://www.pilibook.net",
+        "cat": "//div[@class=\"infotype\"]/p[2]",
+        "cover": "//div[@class=\"pic\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"intro\"]/p/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "cat": "//p[1]",
+            "author": "//p[3]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//p[2]/a/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.pilibook.com/top/${_type}${params.pageIndex}/`;\n\nreturn {url:url}",
+            "host": "https://www.pilibook.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n日点击榜::dayvisit_\n周点击榜::weekvisit_\n月点击榜::monthvisit_\n总点击榜::allvisit_\n总收藏榜::goodnum_\n字数排行::size_\n最新入库::postdate_\n最近更新::lastupdate_"
+            },
+            "detailUrl": "//p[2]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"articlegeneral\"]",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        },
+        "分类": {
+            "author": "//p/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//h6/a/text()",
+            "desc": "//p[2]/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.pilibook.com${_type}${params.pageIndex}/`;\n\nreturn {url:url}",
+            "host": "https://www.pilibook.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n男频小说::/sort/1_\n女频小说::/sort/2_\n中国文学::/sort/3_\n外国文学::/sort/4_\n轻小说::/sort/5_\n百合小说::/sort/6_\n耽美小说::/sort/7_\n男主无CP::/sort/8_"
+            },
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//div[@class=\"article\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//h6/a/@href"
+        }
+    },
+    "sourceUrl": "https://www.pilibook.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "霹雳书坊",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1653108716.407450",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485232",
+        "author": "//span/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//p/a/text()",
+        "requestInfo": "@js:\nlet url =config.host+\"/s.php\";\n\nlet hh={\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39\"};\n\nlet hp={'s':params.keyWord,'type':'articlename',}\n\nreturn{'url':url,'POST':true,'httpParams':hp,\"httpHeaders\":config.httpHeaders};",
+        "host": "https://www.pilibook.net",
+        "actionID": "searchBook",
+        "detailUrl": "//p/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"searchresult\"]/p",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "requestInfo": "@js:\n\nlet id = params.queryInfo.detailUrl.match(/(\\d+)/g)[0];\n\nlet preId = parseInt(id/1000); \n\nlet url = config.host+\"/\"+preId+\"/\"+id+\"_\"+params.pageIndex +\"/\";\nreturn url",
+        "title": "//a/text()",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://www.pilibook.net",
+        "list": "//ul[@class=\"chapters\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class=\"page\"]/a[text()=\"下一页\"]/@href"
+    },
+    "sourceType": "text"
+}

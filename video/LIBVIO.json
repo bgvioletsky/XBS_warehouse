@@ -1,0 +1,178 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.libvio.com",
+        "cat": "//p[@class=\"data\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@name=\"description\"]/@content"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.libvio.com",
+        "list": "//ul[@class=\"stui-content__playlist clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "LIBVIO",
+    "sourceType": "video",
+    "sourceUrl": "https://www.libvio.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651368756.477815",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "requestInfo": "https://www.libvio.com/search/-------------.html?wd=%@keyWord&p&submit=",
+        "detailUrl": "//h4[@class=\"title text-overflow\"]/a/@href",
+        "bookName": "//@title",
+        "host": "https://www.libvio.com",
+        "list": "//ul[@class=\"stui-vodlist clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "cover": "//@data-original"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet pat=\".*\\\\.(m3u8|mp4).*\"\nreturn {'url':result,'httpHeaders':config.httpHeaders, 'webView':true,'sourceRegex':pat};",
+        "host": "https://www.libvio.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "日韩剧2": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.libvio.com/type/15-2.html",
+            "detailUrl": "//h4[@class=\"title text-overflow\"]/a/@href",
+            "bookName": "//@title",
+            "host": "https://www.libvio.com",
+            "_sIndex": 7,
+            "cover": "//@data-original",
+            "list": "//ul[@class=\"stui-vodlist clearfix\"]/li",
+            "parserID": "DOM",
+            "responseFormatType": "html"
+        },
+        "电影": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.libvio.com/type/1.html",
+            "detailUrl": "//h4[@class=\"title text-overflow\"]/a/@href",
+            "bookName": "//@title",
+            "host": "https://www.libvio.com",
+            "_sIndex": 2,
+            "cover": "//@data-original",
+            "list": "//ul[@class=\"stui-vodlist clearfix\"]/li",
+            "parserID": "DOM",
+            "responseFormatType": "html"
+        },
+        "动漫": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.libvio.com/type/4.html",
+            "detailUrl": "//h4[@class=\"title text-overflow\"]/a/@href",
+            "bookName": "//@title",
+            "host": "https://www.libvio.com",
+            "_sIndex": 0,
+            "cover": "//@data-original",
+            "list": "//ul[@class=\"stui-vodlist clearfix\"]/li",
+            "parserID": "DOM",
+            "responseFormatType": "html"
+        },
+        "电影2": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.libvio.com/type/1-2.html",
+            "detailUrl": "//h4[@class=\"title text-overflow\"]/a/@href",
+            "bookName": "//@title",
+            "host": "https://www.libvio.com",
+            "_sIndex": 3,
+            "cover": "//@data-original",
+            "list": "//ul[@class=\"stui-vodlist clearfix\"]/li",
+            "parserID": "DOM",
+            "responseFormatType": "html"
+        },
+        "动漫2": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.libvio.com/type/4-2.html",
+            "detailUrl": "//h4[@class=\"title text-overflow\"]/a/@href",
+            "bookName": "//@title",
+            "host": "https://www.libvio.com",
+            "_sIndex": 1,
+            "cover": "//@data-original",
+            "list": "//ul[@class=\"stui-vodlist clearfix\"]/li",
+            "parserID": "DOM",
+            "responseFormatType": "html"
+        },
+        "剧集2": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.libvio.com/type/2-2.html",
+            "detailUrl": "//h4[@class=\"title text-overflow\"]/a/@href",
+            "bookName": "//@title",
+            "host": "https://www.libvio.com",
+            "_sIndex": 5,
+            "cover": "//@data-original",
+            "list": "//ul[@class=\"stui-vodlist clearfix\"]/li",
+            "parserID": "DOM",
+            "responseFormatType": "html"
+        },
+        "日韩剧": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.libvio.com/type/15.html",
+            "detailUrl": "//h4[@class=\"title text-overflow\"]/a/@href",
+            "bookName": "//@title",
+            "host": "https://www.libvio.com",
+            "_sIndex": 6,
+            "cover": "//@data-original",
+            "list": "//ul[@class=\"stui-vodlist clearfix\"]/li",
+            "parserID": "DOM",
+            "responseFormatType": "html"
+        },
+        "剧集": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.libvio.com/type/2.html",
+            "detailUrl": "//h4[@class=\"title text-overflow\"]/a/@href",
+            "bookName": "//@title",
+            "host": "https://www.libvio.com",
+            "_sIndex": 4,
+            "cover": "//@data-original",
+            "list": "//ul[@class=\"stui-vodlist clearfix\"]/li",
+            "parserID": "DOM",
+            "responseFormatType": "html"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

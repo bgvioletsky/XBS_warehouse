@@ -1,0 +1,75 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//*[@id='txtContent']",
+        "moreKeys": {
+            "removeHtmlKeys": "content"
+        },
+        "host": "http://du1du.org",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://du1du.org",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "80",
+    "sourceName": "读一读du1du",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649280465.397614",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[1]/i",
+        "author": "//div[4]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[3]/a",
+        "bookName": "//div[2]/a",
+        "requestInfo": "http://du1du.org/search.htm?keyword=%@keyWord",
+        "host": "http://du1du.org",
+        "actionID": "searchBook",
+        "detailUrl": "//div[2]/a/@href",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//*[@id='novel-list']//li"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "%@resultmulu.htm",
+        "title": "//a",
+        "host": "http://du1du.org",
+        "list": "//*[@id='chapters-list']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

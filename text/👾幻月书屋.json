@@ -1,0 +1,122 @@
+{
+    "bookWorld": {
+        "分类": {
+            "author": "//dd[@class=\"book_other\"]/span/text()",
+            "lastChapterTitle": "(//dd[@class=\"book_other\"])[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//dd/h3/a/text()",
+            "httpHeaders": {
+                "referer": "http://www.huanyue1234.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host +\"/book/\"+params.filters.class+\"/\"+params.filters.type+\"-0-\"+params.filters.words+\"-0-0-\"+params.filters.order+\"-\"+params.filters.status+\"-\"+params.pageIndex+\".html\";\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+            "host": "http://www.huanyue1234.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": "class\n书库::quanbu\n玄幻::xuanhuan\n仙侠::xianxia\n都市::dushi\n军史::lishi\n网游::wangyou\n科幻::kehuan\n灵异::lingyi\n言情::yanqing\n其他::qita\n\ntype\n全部::default\n总点击::allvisit\n月点击::monthvisit\n周点击::weekvisit\n日点击::dayvisit\n总推荐::allvote\n总收藏::goodnum\n字数::size\n入站时间::postdate\n更新时间::lastupdate\n\nwords\n全部::0\n30万以下::1\n30万-50万::2\n50万-100万::3\n100万-200万::4\n200万以上::5\n\norder\n全部::0\n连载::1\n完本::2\n\nstatus\n倒序::0\n正序::1\n"
+            },
+            "cover": "//dt//img/@src",
+            "desc": "//dd[@class=\"book_des\"]/text()",
+            "list": "//div[@class=\"sitebox\"]/dl",
+            "parserID": "DOM",
+            "detailUrl": "//dt/a/@href",
+            "validConfig": ""
+        }
+    },
+    "weight": "4444",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nif(result.indexOf(\"_\")!=-1){\n\nlet res = result.split(\"_\")\nlet url = config.host+\"/book\"+res[0]+'/'+res[1]\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600};\n}else{\n\nreturn {'url':result,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600};\n\n}",
+        "title": "//a/text()",
+        "host": "http://www.huanyue1234.com",
+        "httpHeaders": {
+            "referer": "http://www.huanyue1234.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "list": "//div[@class=\"book_list\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "👾幻月书屋",
+    "sourceType": "text",
+    "sourceUrl": "http://www.huanyue1234.com",
+    "httpHeaders": {
+        "referer": "http://www.huanyue1234.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650355551.039780",
+    "searchBook": {
+        "author": "(//p[@class=\"author\"])[1]/text() ||@js:\n\nlet name = result.match(/作者：(.*)/)[1]\nreturn name",
+        "responseFormatType": "html",
+        "bookName": "//p[@class=\"title\"]/text()",
+        "httpHeaders": {
+            "referer": "http://www.huanyue1234.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url  = config.host.replace(\"www\",\"m\") +\"/s.php\";\nlet hp = {\n    \"keyword\":params.keyWord,\n    \"t\":\"1\"\n}\n\nlet hh = {\n    \"User-Agent\": \" Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1\",\n    \"referer\": \" http://m.huanyue1234.com/\"\n}\n\nreturn {'url':url,'POST':true,'httpHeaders':hh,'httpParams':hp,'cacheTime':3600}",
+        "host": "http://www.huanyue1234.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "detailUrl": "//a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"recommend mybook\"]/div[position()>1]",
+        "parserID": "DOM",
+        "cover": "//a/@href ||@js:\n\nlet res = result.split(\"_\")\nlet url = \"http://www.huanyue1234.com/files/article/image/\"+res[0]+\"/\"+res[1]+\"/\"+res[1]+\"s.jpg\"\nreturn url",
+        "status": "(//p[@class=\"author\"])[2]/text() ||@js:\n\nlet name = result.match(/(.*?)\\s+| 更新/)[1]\nreturn name"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"htmlContent\"]//text() ||@js: return result.replace(/章节错误.*/,\"\")",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600};",
+        "host": "http://www.huanyue1234.com",
+        "httpHeaders": {
+            "referer": "http://www.huanyue1234.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\n\nif(result.indexOf(\"_\")!=-1){\n\nlet res = result.split(\"_\")\nlet url = config.host+\"/book\"+res[0]+'/'+res[1]\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600};\n}else{\n\nreturn {'url':result,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600};\n\n}",
+        "host": "http://www.huanyue1234.com",
+        "httpHeaders": {
+            "referer": "http://www.huanyue1234.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//h3[@class=\"bookinfo_intro\"]/div/following-sibling::text()"
+    }
+}

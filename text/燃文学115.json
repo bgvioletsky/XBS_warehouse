@@ -1,0 +1,99 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class=\"read-content j_readContent\"]/p ||@js: return result.replace(/\\(１.*/, \"\").replace(/\\(1.*/, \"\").replace(/最新章节.*/, \"\");",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 7
+        },
+        "host": "http://www.115wx.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url;\n\nurl = url+\"?page=\"+pageid;\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//div[@class=\"tags clearfixer\"]/span",
+        "actionID": "bookDetail",
+        "wordCount": "//div[@class=\"hits\"]/span[1]",
+        "validConfig": "",
+        "lastChapterTitle": "//span[@class=\"chaptername fl\"]/a/text()",
+        "host": "http://www.115wx.com",
+        "cat": "//div[@class=\"tags clearfixer\"]/a/span",
+        "cover": "//span/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"brief fl\"]/p",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "author": "//dd/p[1]/a/text()[1]",
+            "responseFormatType": "html",
+            "bookName": "//dd/a/text()",
+            "requestInfo": "@js:\nlet {_type,_top}=params.filters\nlet url=`http://www.115wx.com/${_type}?order=${_top}&page=${params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.115wx.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_type\n玄幻::xuanhuan\n仙侠::xianxia\n都市::dushi\n历史::lishi\n科幻::kehuan\n恐怖::kongbu\n其他::qita\n全本::quanben\n\n_top\n总人气::all\n周人气::week\n月人气::month\n最新入库::post\n更近更新::update\n推荐票::vote"
+            },
+            "detailUrl": "//dd/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"listboxw\"]/dl",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//a/img/@data-original"
+        }
+    },
+    "sourceUrl": "http://www.115wx.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "燃文学115",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654174890.930687",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "author": "//dd/p[1]/a[1]/text()",
+        "requestInfo": "http://www.115wx.com/search?keyword=%@keyWord",
+        "bookName": "//dl/dd/a ||@js:\nreturn result.replace(/作者：.*/, '');",
+        "detailUrl": "//dd/a/@href",
+        "host": "http://www.115wx.com",
+        "list": "//div[@class=\"rankdatacont search\"]/div",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn params.queryInfo.detailUrl +\"/#catalog\"",
+        "title": "//span",
+        "host": "http://www.115wx.com",
+        "list": "//div[@class=\"cate-list\"]//li/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,181 @@
+{
+    "bookWorld": {
+        "国漫推荐": {
+            "cat": "catename",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "httpHeaders": {
+                "Referer": "https://h5.bbxcomic.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet httpParams = {\n    'type':\"国漫推荐\",\n    'page': params.pageIndex,\n    'pageSize': 9,\n};\n\nlet cacheKey = params.nativeTool.md5Encode(String(new Date().getTime()));\n\nlet token = params.nativeTool.getCache('bbx_token');\nif (token != undefined) \n    config.httpHeaders['authorization'] = 'Bearer ' + token;\n\nconfig.httpHeaders['Content-Type'] = 'application/x-www-form-urlencoded';\n\nreturn {\n    'url': 'https://api.bbxcomic.com/api/v1/index/cate_comic',\n    'cacheKey': cacheKey,\n    'POST': true,\n    'httpHeaders': config.httpHeaders,\n    'httpParams': httpParams,\n}",
+            "host": "https://h5.bbxcomic.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "titleimg",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "data/list/data",
+            "moreKeys": {
+                "pageSize": 9
+            }
+        },
+        "付费自翻": {
+            "cat": "catename",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "httpHeaders": {
+                "Referer": "https://h5.bbxcomic.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet httpParams = {\n    'type':\"付费自翻\",\n    'page': params.pageIndex,\n    'pageSize': 9,\n};\nlet cacheKey = params.nativeTool.md5Encode(String(new Date().getTime()));\n\nlet token = params.nativeTool.getCache('bbx_token');\nif (token != undefined) \n    config.httpHeaders['authorization'] = 'Bearer ' + token;\n\nconfig.httpHeaders['Content-Type'] = 'application/x-www-form-urlencoded';\n\nreturn {\n    'url': 'https://api.bbxcomic.com/api/v1/index/cate_comic',\n    'cacheKey': cacheKey,\n    'POST': true,\n    'httpHeaders': config.httpHeaders,\n    'httpParams': httpParams,\n}",
+            "host": "https://h5.bbxcomic.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "titleimg",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "list": "data/list/data",
+            "moreKeys": {
+                "pageSize": 9
+            }
+        },
+        "韩漫推荐": {
+            "cat": "catename",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "httpHeaders": {
+                "Referer": "https://h5.bbxcomic.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet httpParams = {\n    'type':\"韩漫推荐\",\n    'page': params.pageIndex,\n    'pageSize': 9,\n};\n\nlet cacheKey = params.nativeTool.md5Encode(String(new Date().getTime()));\n\nlet token = params.nativeTool.getCache('bbx_token');\nif (token != undefined) \n    config.httpHeaders['authorization'] = 'Bearer ' + token;\n\nconfig.httpHeaders['Content-Type'] = 'application/x-www-form-urlencoded';\n\nreturn {\n    'url': 'https://api.bbxcomic.com/api/v1/index/cate_comic',\n    'cacheKey': cacheKey,\n    'POST': true,\n    'httpHeaders': config.httpHeaders,\n    'httpParams': httpParams,\n}",
+            "host": "https://h5.bbxcomic.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "titleimg",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "data/list/data",
+            "moreKeys": {
+                "pageSize": 9
+            }
+        },
+        "登陆测试账号": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result) {\r    let list = [];\r    if (params.lastResponse == undefined) {\r        let token = result.data.token;\r        let userdata = result.data.userdata;\r        // 全局缓存token🥹\r        params.nativeTool.setCache('bbx_token', token);\r        if (result.code == 0) {\r            // 异步再次请求,登陆个人中心😌\r            let httpParams = {};\r            config.httpHeaders['authorization'] = 'Bearer ' + token;\r            config.httpHeaders['accept'] = 'application/json';\r            config.httpHeaders['content-type'] = 'application/x-www-form-urlencoded';\r            return {\r                'url': 'https://api.bbxcomic.com/api/v1/user/userdata',\r                'httpParams': httpParams,\r                'POST': true,\r                'more': true,\r                'success': true,\r                'autoRequestMore': true,\r                'httpHeaders': config.httpHeaders,\r                'userdata': JSON.stringify(userdata), // 添加自定义参数\r            };\r        } else {\r            list.push({ 'bookName': '登陆失败:' + result.msg });\r        }\r    } else {\r        // 读取自定义参数😎\r        let userdata = JSON.parse(params.lastResponse.userdata);\r        list.push({ 'bookName': result.code == 0 ? '登陆成功' : '登陆失败:' + result.msg, 'cover': userdata.face });\r    }\r    return { 'list': list, };\r}",
+            "requestInfo": "@js:\n\nif (params.lastResponse == undefined) {\r    let cacheKey = params.nativeTool.md5Encode(String(new Date().getTime()));\r    let httpParams = {\r        'name': \"signs\",\r        'password': '123456',\r    };\r    config.httpHeaders['accept'] = 'application/json';\r    config.httpHeaders['Content-Type'] = 'application/x-www-form-urlencoded';\r    return {\r        'url': 'https://api.bbxcomic.com/api/v1/login',\r        'cacheKey': cacheKey,\r        'POST': true,\r        'httpHeaders': config.httpHeaders,\r        'httpParams': httpParams,\r    }\r}\rreturn params.lastResponse;",
+            "host": "https://h5.bbxcomic.com",
+            "httpHeaders": {
+                "Referer": "https://h5.bbxcomic.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "_sIndex": 3,
+            "responseFormatType": "json",
+            "parserID": "DOM"
+        }
+    },
+    "weight": "999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet token = params.nativeTool.getCache('bbx_token');\nif (token != undefined) \n    config.httpHeaders['authorization'] = 'Bearer ' + token;\n\nlet httpParams = {\n    'id': result,\n};\nconfig.httpHeaders['Content-Type'] = 'application/x-www-form-urlencoded';\nreturn {\n    'url': 'https://api.bbxcomic.com/api/v1/comic/chapters',\n    'POST': true,\n    'httpHeaders': config.httpHeaders,\n    'httpParams': httpParams,\n}",
+        "title": "@js:\nreturn result.title+(result.coin>0?'🔒':'');",
+        "host": "https://h5.bbxcomic.com",
+        "httpHeaders": {
+            "Referer": "https://h5.bbxcomic.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "list": "data/list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "笨笨熊漫画",
+    "sourceType": "comic",
+    "sourceUrl": "https://h5.bbxcomic.com",
+    "httpHeaders": {
+        "Referer": "https://h5.bbxcomic.com/",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651756307.665260",
+    "searchBook": {
+        "cat": "catename",
+        "author": "author",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "httpHeaders": {
+            "Referer": "https://h5.bbxcomic.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\nlet cacheKey = params.nativeTool.md5Encode(String(new Date().getTime()));\r\rlet httpParams = {\r    'keys': params.keyWord,\r    'page': params.pageIndex,\r    'pageSize': 9,\r};\rlet token = params.nativeTool.getCache('bbx_token');\rif (token != undefined) \r    config.httpHeaders['authorization'] = 'Bearer ' + token;\r\rconfig.httpHeaders['Content-Type'] = 'application/x-www-form-urlencoded';\rreturn {\r    'url': 'https://api.bbxcomic.com/api/v1/index/search-comic',\r    'cacheKey':cacheKey,\r    'POST': true,\r    'httpHeaders': config.httpHeaders,\r    'httpParams': httpParams,\r}",
+        "host": "https://h5.bbxcomic.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 9
+        },
+        "detailUrl": "id",
+        "validConfig": "",
+        "list": "data/list/data",
+        "parserID": "DOM",
+        "cover": "titleimg"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result) {\n    let urls = [];\n    result.data.list.forEach(x => {\n        x.filelist.forEach(x1 => {\n            urls.push(encodeURI(x1));\n        });\n    });\n    config.httpHeaders['accept'] = 'image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8';\n    config.httpHeaders['referer'] = 'https://h5.bbxcomic.com/';\n    return JSON.stringify({\n        'urls': urls,\n        'httpHeaders': config.httpHeaders,\n    });\n}",
+        "requestInfo": "@js:\n\nlet token = params.nativeTool.getCache('bbx_token');\nif (token != undefined) \n    config.httpHeaders['authorization'] = 'Bearer ' + token;\n\nlet httpParams = {\n    'id': result,\n};\nconfig.httpHeaders['Content-Type'] = 'application/x-www-form-urlencoded';\nreturn {\n    'url': 'https://api.bbxcomic.com/api/v1/comic/chaptersdetail',\n    'POST': true,\n    'httpHeaders': config.httpHeaders,\n    'httpParams': httpParams,\n}",
+        "host": "https://h5.bbxcomic.com",
+        "httpHeaders": {
+            "Referer": "https://h5.bbxcomic.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "张益达",
+    "shudanList": {},
+    "help": "每月需要登录一次哟。有付费内容😅可自行替换自己的账号登陆",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\n\nlet httpParams = {\n    'id': result,\n};\nconfig.httpHeaders['Content-Type'] = 'application/x-www-form-urlencoded';\nreturn {\n    'url': 'https://api.bbxcomic.com/api/v1/comic/detail',\n    'POST': true,\n    'httpHeaders': config.httpHeaders,\n    'httpParams': httpParams,\n}",
+        "host": "https://h5.bbxcomic.com",
+        "httpHeaders": {
+            "Referer": "https://h5.bbxcomic.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "cat": "data/detail/tags",
+        "responseFormatType": "json",
+        "desc": "data/detail/content",
+        "parserID": "DOM"
+    }
+}

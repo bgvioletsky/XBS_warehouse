@@ -1,0 +1,75 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"htmlContent\"]|@js:return result.replace(/本章未完，点击下一页继续阅读/,'').replace('-->>','')",
+        "moreKeys": {
+            "maxPage": 6
+        },
+        "host": "http://www.zhuishu5.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@id='linkNext' and text()='下一页']/@href"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.zhuishu5.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-追书网",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357938.441981",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//p[@class=\"booktag\"]/a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//p[2]/a",
+        "bookName": "//h1/a",
+        "requestInfo": "modules/article/2022search.php?searchkey=%@keyWord",
+        "host": "http://www.zhuishu5.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//h1/a/@href",
+        "cover": "//img[@class=\"img-thumbnail\"]/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"panel-body\"]/div",
+        "status": "//span[@class=\"blue\"][2]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "http://www.zhuishu5.com/",
+        "list": "//dd[@class=\"col-md-3\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

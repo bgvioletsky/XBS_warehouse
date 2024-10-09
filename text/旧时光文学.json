@@ -1,0 +1,154 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//*[@class=\"red\"][2]",
+        "validConfig": "",
+        "cat": "//*[@class=\"breadcrumb\"]/li[2]/a",
+        "host": "https://www.oldtimesxs.cc",
+        "httpHeaders": {
+            "Referer": "https://www.oldtimesxs.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//*[@class=\"bookcover hidden-xs\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//*[@class=\"bookintro\"] ||@js:\r\nreturn result.replace(/\\n/g, \"\");"
+    },
+    "weight": "9872",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//*[@class=\"booktime\"]",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "title": "//a",
+        "host": "https://www.oldtimesxs.cc",
+        "httpHeaders": {
+            "Referer": "https://www.oldtimesxs.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//*[@id=\"list-chapterAll\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href ||@js:\r\nreturn params.queryInfo.detailUrl+result;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "旧时光文学",
+    "sourceUrl": "https://www.oldtimesxs.cc",
+    "httpHeaders": {
+        "Referer": "https://www.oldtimesxs.cc",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1653745302.652616",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//*[@class=\"author\"][1]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//*[@class=\"cat\"]/a",
+        "bookName": "//h4/a",
+        "httpHeaders": {
+            "Referer": "https://www.oldtimesxs.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url=config.host+\"/modules/article/search.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'sosokey':params.keyWord,'page':params.pageIndex,\"submit\":\"\" };\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "https://www.oldtimesxs.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "wordCount": "//*[@class=\"author\"][2]",
+        "validConfig": "",
+        "list": "//*[@class=\"bookbox\"]",
+        "parserID": "DOM",
+        "desc": "//*[@class=\"update\"] ||@js:\r\nreturn result.replace(/\\n/g, \"\");"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//*[@class=\"readcontent\"]/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "moreKeys": {
+            "maxPage": 4
+        },
+        "host": "https://www.oldtimesxs.cc",
+        "httpHeaders": {
+            "Referer": "https://www.oldtimesxs.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//*[@id=\"linkNext\"]/@href ||@js:\rlet bookid = result.match(/\\d.*_/)[0];\rlet page= params.pageIndex+1; \rlet url = config.host + \"/go/\" + bookid+page + \".html\";\rreturn url;"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐯",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//*[@class=\"cat\"]/a",
+            "author": "//*[@class=\"author\"][1]",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://www.oldtimesxs.cc",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\r\nlet url=`https://www.oldtimesxs.cc/${_aa}-${params.pageIndex}.html`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.oldtimesxs.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_aa\n玄幻小说::xuanhuan\n仙侠小说::xianxia\n都市小说::dushi\n军史小说::junshi\n网游小说::wangyou\n科幻小说::kehuan\n灵异小说::lingyi\n言情小说::yanqing\n其他小说::qita"
+            },
+            "wordCount": "//*[@class=\"author\"][2]",
+            "detailUrl": "//h4/a/@href",
+            "list": "//*[@class=\"bookbox\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "desc": "//*[@class=\"update\"] ||@js:\r\nreturn result.replace(/\\n/g, \"\");",
+            "validConfig": ""
+        },
+        "排行": {
+            "lastChapterTitle": "//*[@class=\"cat\"]/a",
+            "responseFormatType": "html",
+            "author": "//*[@class=\"author\"][1]",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://www.oldtimesxs.cc",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "host": "https://www.oldtimesxs.cc",
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\r\nlet url=`https://www.oldtimesxs.cc/${_aa}-${params.pageIndex}.html`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_aa\n总点击榜::allvisit\n月点击榜::monthvisit\n周点击榜::weekvisit\n总推荐榜::allvote\n月推荐榜::monthvote\n收藏排行::goodnum\n最近更新::lastupdate\n新书上架::postdate\n字数排行::size"
+            },
+            "wordCount": "//*[@class=\"author\"][2]",
+            "detailUrl": "//h4/a/@href",
+            "list": "//*[@class=\"bookbox\"]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "desc": "//*[@class=\"update\"] ||@js:\r\nreturn result.replace(/\\n/g, \"\");",
+            "validConfig": ""
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,76 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class='content_txt']",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://www.dushu.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://www.dushu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7304",
+    "sourceName": "🦌出品-读书-社科图书",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650358650.610850",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[1]",
+        "responseFormatType": "html",
+        "bookName": "//h3/a",
+        "desc": "//p[2]",
+        "requestInfo": "https://www.dushu.com/search.aspx?wd=%@keyWord&f=0&r=3&t=0&p=%@pageIndex",
+        "host": "https://www.dushu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//div[contains(@class, 'img')]//img/@data-original",
+        "validConfig": "",
+        "list": "//div[@class='book-info']",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 20
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "host": "https://www.dushu.com",
+        "list": "//div[@class='book-summary']//table[contains(@id, 'chapters')]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "sourceType": "text"
+}

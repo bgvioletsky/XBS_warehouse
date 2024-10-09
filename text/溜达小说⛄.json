@@ -1,0 +1,131 @@
+{
+    "bookWorld": {
+        "分类": {
+            "cat": "//dd[2]//span[3]",
+            "lastChapterTitle": "//dd[4]//a",
+            "responseFormatType": "html",
+            "author": "//dd[2]//span[1]//a",
+            "bookName": "//h3//a",
+            "desc": "//dd[@class=\"book_des\"]",
+            "requestInfo": "@js:\nlet url = \"http://www.txtshuku.org/mulu/\";\nif(params.filters.class!=\"\"){\n\turl += params.filters.class;\n}\nurl += '-'+params.pageIndex + \".html\";\n\nreturn encodeURI(url);",
+            "host": "http://www.txtshuku.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3//a//@href",
+            "wordCount": "//dd[2]//span[4]",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": 1
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": 2
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": 3
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": 4
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": 5
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": 6
+                            },
+                            {
+                                "title": "女频频道",
+                                "value": 7
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "cover": "//img//@data-original ||@js:\nreturn config.host + result;",
+            "list": "//div[@id=\"sitebox\"]//dl",
+            "status": "//dd[2]//span[2]"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//span[@class=\"uptime\"]//span",
+        "title": "//a//@title",
+        "host": "http://www.txtshuku.org",
+        "list": "//div[@id=\"readerlist\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "溜达小说⛄",
+    "sourceType": "text",
+    "sourceUrl": "http://www.txtshuku.org",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1638862823.695583",
+    "searchBook": {
+        "cat": "//dd[2]//span[3]",
+        "author": "//dd[2]//span[1]//a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//dd[4]//a",
+        "bookName": "//h3//a",
+        "desc": "//dd[@class=\"book_des\"]",
+        "requestInfo": "@js:\nlet url = 'http://www.txtshuku.org/search.php';\nlet postpara = {'searchkey':params.keyWord};\nreturn {'url':url, 'httpParams':postpara, 'POST':true}",
+        "host": "http://www.txtshuku.org",
+        "actionID": "searchBook",
+        "detailUrl": "//h3//a//@href",
+        "cover": "//img//@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//dd[2]//span[4]",
+        "list": "//div[@id=\"sitembox\"]//dl",
+        "status": "//dd[2]//span[2]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet beginStr = '<div id=\"content\">';\n\tlet beginIndex = result.indexOf(beginStr);\n      function typeSet(str){\n            str = str.replace(/<br\\/>/gi,'\\n');\n            str = str.replace(/\\n\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,'  ');\n            str = str.replace(/<i>(.*?)<\\/i>/gi,'');\n            return str;\n      }\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex + beginStr.length);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n            \n\t\treturn typeSet(tarStr);\n\t}\n\treturn undefined;\n}",
+        "host": "http://www.txtshuku.org",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

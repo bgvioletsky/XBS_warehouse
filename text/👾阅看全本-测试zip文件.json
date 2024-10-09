@@ -1,0 +1,102 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\treturn result;\n}",
+        "requestInfo": "@js:\n\nreturn {url:result,cacheTime:3600};",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://api.dyuexiaoshuoapp.top",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "categoryName",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "intro",
+            "requestInfo": "@js:\n//let url=config.host+\"/api/v1/novelsearch\";\n\nlet url=\"http://statics.rungean.com/static/ranking/66/1/popularity.json\"\n\nlet DeviceId =params.nativeTool.deviceId();\n\nlet hh = {'User-Agent':'YueKan/1.0.3 (com.yuekanxs.ykqbmfxs; build:4; iOS 15.2.0) Alamofire/1.0.3', 'Referer':config.host};\n\nlet hp = {\"content\": params.keyWord, \"pkgName\": \"com.yuekanxs.ykqbmfxs\", \"pageIndex\": params.pageIndex, \"pageSize\": 20,\"type\":1,\"device\": DeviceId};\n\nreturn {'url':url,'httpHeaders':hh,cacheTime:3600};",
+            "host": "https://api.dyuexiaoshuoapp.top",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 1
+            },
+            "detailUrl": "zipurl",
+            "cover": "picture",
+            "list": "data",
+            "parserID": "DOM",
+            "wordCount": "wordNum",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://api.dyuexiaoshuoapp.top",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "👾阅看全本-测试zip文件",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1638939907.619253",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "categoryName",
+        "responseFormatType": "json",
+        "lastChapterTitle": "chapterName",
+        "author": "author",
+        "bookName": "name",
+        "desc": "intro",
+        "requestInfo": "@js:\nlet url=config.host+\"/api/v1/novelsearch\";\n\nlet DeviceId =params.nativeTool.deviceId();\n\nlet hh = {'User-Agent':'YueKan/1.0.3 (com.yuekanxs.ykqbmfxs; build:4; iOS 15.2.0) Alamofire/1.0.3', 'Referer':config.host};\n\nlet hp = {\"content\": params.keyWord, \"pkgName\": \"com.yuekanxs.ykqbmfxs\", \"pageIndex\": params.pageIndex, \"pageSize\": 20,\"type\":1,\"device\": DeviceId};\n\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh,cacheTime:3600};",
+        "host": "https://api.dyuexiaoshuoapp.top",
+        "actionID": "searchBook",
+        "detailUrl": "bookId",
+        "cover": "picture",
+        "validConfig": "",
+        "list": "data/list",
+        "parserID": "DOM",
+        "wordCount": "wordNum",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "status": "bookStatus"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nif(result.indexOf(\"zip\")==-1){\n\nlet pic =params.queryInfo.cover;\n\n\nlet res = \"/\"+params.queryInfo.detailUrl+\".zip\";\n\nid = pic.match(/cover\\/(\\d+)/)[1];\nres = id +res;\nlet url =\"http://statics.rungean.com/static/book/zip/\"+res;\n\nreturn {url:url,cacheTime:3600, 'responseFormatType':'filePath'};\n\n}else{\n\nreturn {url:result,cacheTime:3600, 'responseFormatType':'filePath'};}",
+        "title": "name",
+        "host": "https://api.dyuexiaoshuoapp.top",
+        "list": "@js:\n\nlet dirPath = params.nativeTool.unzipFile(result);\nparams.nativeTool.log(dirPath) \nlet listPath = dirPath + '/' + 'chapter.json';\nlet fileStr = params.nativeTool.readTxtFile(listPath);\n\nlet oriObj = JSON.parse(fileStr);\n\nreturn oriObj.data;",
+        "responseFormatType": "filePath",
+        "parserID": "DOM",
+        "url": "id||@js:\nres = params.responseUrl.match(/(\\/\\d+\\S+)/)[1];\n\n\nlet url = \"http://statics.rungean.com/static/uploadfile/chapter\"+res.replace(\".zip\",\"/\"+result);\nreturn url +\".txt\";"
+    },
+    "sourceType": "text"
+}

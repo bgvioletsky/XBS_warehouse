@@ -1,0 +1,143 @@
+{
+    "bookWorld": {
+        "排行￼": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"hl\"]",
+            "author": "//*[@class=\"comic-author\"]",
+            "bookName": "//*[@class=\"comic__title\"]/a",
+            "httpHeaders": {
+                "Referer": "http://www.timemade.cn",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\r\nlet url=`http://www.timemade.cn/custom/${_aa}`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.timemade.cn",
+            "actionID": "bookWorld",
+            "detailUrl": "//*[@class=\"comic__title\"]/a/@href",
+            "moreKeys": {
+                "pageSize": 99,
+                "requestFilters": "_aa\n年度榜::hot\n本月榜::month\n本周榜::week\n今日榜::day\n上升榜::ascension\n评分榜::score\n收藏榜::fav\n打赏榜::reward\n月票榜::ticket"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//*[@class=\"top-list__box-item\"]",
+            "desc": "//*[@class=\"comic-feature\"]",
+            "cover": "//img/@data-original"
+        },
+        "分类": {
+            "cat": "//*[@class=\"comic-feature\"]",
+            "lastChapterTitle": "//*[@class=\"comic-update\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//*[@class=\"comic__title\"]/a",
+            "httpHeaders": {
+                "Referer": "http://www.timemade.cn",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa,_ab,_ac,_ad,_ae,_af,_ag,_ah,_ai}=params.filters\r\nlet url=`http://www.timemade.cn/category/${_ai}/${_aa}/${_ab}/${_ac}/${_ad}/${_ae}/${_af}${_ag}/${_ah}/page/${params.pageIndex}`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.timemade.cn",
+            "actionID": "bookWorld",
+            "detailUrl": "//*[@class=\"comic__title\"]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_aa\n全部::\n少年漫画::list/1\n少女漫画::list/2\n青年漫画::list/3\n少儿漫画::list/4\n\n_ab\n全部::\n热血::tags/6\n玄幻::tags/10\n校园::tags/11\n搞笑::tags/13\n穿越::tags/14\n耽美::tags/16\n恋爱::tags/17\n悬疑::tags/18\n恐怖::tags/19\n动作::tags/21\n励志::tags/24\n灵异::tags/26\n百合::tags/27\n古风::tags/28\n都市::tags/31\n总裁::tags/48\n军事::tags/49\n纯爱::tags/50\n奇幻::tags/51\n治愈::tags/53\n少年::tags/54\n活动专区::tags/56\n\n_ac\n全部::\n故事漫画::theme/32\n轻小说::theme/33\n四格::theme/34\n绘本::theme/35\n单幅::theme/36\n条漫::theme/37\n\n_ad\n全部::\n签约::quality/38\n精品::quality/39\n热门::quality/40\n新手::quality/41\n\n_ae\n全部::\n内地::city/42\n港台::city/43\n韩国::city/44\n日本::city/45\n\n_af\n全部::\n首发::copyright/46\n独家::copyright/47\n\n_ag\n全部::\n免费::pay/1\n付费::pay/2\nVIP::pay/3\n\n_ah\n全部::\n连载::finish/1\n完结::finish/2\n\n_ai\n热门人气::order/hits\n更新时间::order/addtime"
+            },
+            "cover": "//img/@data-original",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//*[@class=\"common-comic-item\"]",
+            "validConfig": ""
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "title": "//a",
+        "host": "http://www.timemade.cn",
+        "httpHeaders": {
+            "Referer": "http://www.timemade.cn",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//*[@class=\"chapter__list-box clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "太麻漫画",
+    "sourceType": "comic",
+    "sourceUrl": "http://www.timemade.cn",
+    "httpHeaders": {
+        "Referer": "http://www.timemade.cn",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1653744856.832602",
+    "searchBook": {
+        "responseFormatType": "html",
+        "lastChapterTitle": "//*[@class=\"comic-update\"]/a",
+        "bookName": "//*[@class=\"comic__title\"]/a",
+        "desc": "//*[@class=\"comic-feature\"]",
+        "requestInfo": "@js:\n\nlet url=config.host+\"/index.php/search\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'key':params.keyWord,'page':params.pageIndex,};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "http://www.timemade.cn",
+        "actionID": "searchBook",
+        "detailUrl": "//*[@class=\"comic__title\"]/a/@href",
+        "httpHeaders": {
+            "Referer": "http://www.timemade.cn",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "validConfig": "",
+        "list": "//*[@class=\"common-comic-item\"]",
+        "parserID": "DOM",
+        "cover": "//*[@class=\"common-comic-item\"]//img/@data-original"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//*[@class=\"rd-article-wr clearfix\"]/div/img/@data-original",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "http://www.timemade.cn",
+        "httpHeaders": {
+            "Referer": "http://www.timemade.cn",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐯",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.timemade.cn",
+        "cat": "//*[@class=\"text\"][1]/b",
+        "httpHeaders": {
+            "Referer": "http://www.timemade.cn",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    }
+}

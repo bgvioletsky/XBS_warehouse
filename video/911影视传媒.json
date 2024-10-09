@@ -1,0 +1,166 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "JSParser": "function functionName(config, jsparams, result) {\n    let ts = result.updateTime.split(\"\\n\");\n    let list = [];\n    for (let i = 0; i < ts.length; i++) {\n        if (\"url\" in result[\"list\"][i]) {\n            let title = result[\"list\"][i][\"title\"];\n            let titles = title.split(\"\\n\");\n            let urls = result[\"list\"][i][\"url\"].split(\"\\n\");\n            for (let j = 0; j < titles.length; j++) {\n                list.push({\"title\": ts[i] + \"-\" + titles[j], \"url\": urls[j]})\n            }\n        }\n    }\n    return {\"updateTime\": \"\", \"list\": list};}",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "Referer": " http://www.diy911.xyz",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nreturn {'url':result,'httpHeaders':config.httpHeaders};",
+        "title": "//span",
+        "actionID": "chapterList",
+        "host": "http://www.diy911.xyz",
+        "validConfig": "",
+        "list": "//*[@class=\"scroll-content\"]",
+        "parserID": "DOM",
+        "updateTime": "//*[@class=\"module-tab-content\"]/div/span"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "911影视传媒",
+    "sourceType": "video",
+    "sourceUrl": "http://www.diy911.xyz",
+    "httpHeaders": {
+        "Referer": " http://www.diy911.xyz",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654346904.180798",
+    "searchBook": {
+        "cat": "//*[@class=\"video-info-aux\"] ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")",
+        "responseFormatType": "html",
+        "author": "//*[@class=\"video-info-items\"][position()<3] ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")",
+        "bookName": "//h3/a",
+        "httpHeaders": {
+            "Referer": " http://www.diy911.xyz",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\n/*let hp ={\n    \"wd\": params.keyWord,\n    \n};*/\n\nlet url = config.host +\"/index.php/vod/search/page/\"+params.pageIndex+\"/wd/\"+encodeURI(params.keyWord)+\".html\";\n\n\n\nreturn {'url':url, 'POST':false,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+        "host": "http://www.diy911.xyz",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "detailUrl": "//h3/a/@href",
+        "validConfig": "",
+        "list": "//*[@class=\"module-search-item\"]",
+        "parserID": "DOM",
+        "cover": "//img/@data-src",
+        "desc": "//*[@class=\"video-info-items\"][3] ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "|@js:\r\nif(result.match(/\\?url=/g)){\r\n\tlet url = result.match(/\\?url=(.*)/)[1]\r\n\treturn url \r\n\r\n}else{\r\n\r\n\treturn result;\r\n\r\n}",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet pat=\".*\\\\.(m3u8|m4a).*\"\nreturn {'url':result,'httpHeaders':config.httpHeaders, 'webView':true,'sourceRegex':pat};",
+        "host": "http://www.diy911.xyz",
+        "httpHeaders": {
+            "Referer": " http://www.diy911.xyz",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐯",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result,'httpHeaders':config.httpHeaders,cacheTime:3600};",
+        "host": "http://www.diy911.xyz",
+        "httpHeaders": {
+            "Referer": " http://www.diy911.xyz",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "desc": "//*[@class=\"video-info-item video-info-content vod_content\"]/span",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "连续剧": {
+            "responseFormatType": "html",
+            "bookName": "//*[@class=\"module-item-titlebox\"]/a",
+            "httpHeaders": {
+                "Referer": " http://www.diy911.xyz",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\r\nlet url=`http://www.diy911.xyz/index.php/vod/type/${_aa}/page/${params.pageIndex}.html`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.diy911.xyz",
+            "actionID": "bookWorld",
+            "detailUrl": "//*[@class=\"module-item-titlebox\"]/a/@href",
+            "cover": "//img/@data-src",
+            "moreKeys": {
+                "pageSize": 72,
+                "requestFilters": "_aa\n纪录片::id/22\n国产剧::id/13\n港台剧::id/14\n日韩剧::id/15\n欧美剧::id/16\n泰剧片::id/23\n"
+            },
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//*[@class=\"module-item module-item-go w16\"]",
+            "validConfig": ""
+        },
+        "午夜剧场": {
+            "responseFormatType": "html",
+            "bookName": "//*[@class=\"module-item-titlebox\"]/a",
+            "httpHeaders": {
+                "Referer": " http://www.diy911.xyz",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\r\nlet url=`http://www.diy911.xyz/index.php/vod/type/${_aa}/page/${params.pageIndex}.html`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.diy911.xyz",
+            "actionID": "bookWorld",
+            "detailUrl": "//*[@class=\"module-item-titlebox\"]/a/@href",
+            "cover": "//img/@data-src",
+            "moreKeys": {
+                "pageSize": 72,
+                "requestFilters": "_aa\n偷拍自拍::id/31\n网红主播::id/32\n成人传媒::id/33\n中文字幕::id/35\n口爆颜射::id/41\n萝莉女少::id/42\n人妻熟女::id/43\n三级伦理::id/45\n日本素人::id/59\n日韩无码::id/37\n日韩有码::id/47\n亚洲有码::id/38\n欧美视频::id/39\n美乳巨乳::id/40\nSM视频::id/36\n"
+            },
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "list": "//*[@class=\"module-item module-item-go w16\"]",
+            "validConfig": ""
+        },
+        "电影": {
+            "responseFormatType": "html",
+            "bookName": "//*[@class=\"module-item-titlebox\"]/a",
+            "httpHeaders": {
+                "Referer": " http://www.diy911.xyz",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\r\nlet url=`http://www.diy911.xyz/index.php/vod/type/${_aa}/page/${params.pageIndex}.html`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.diy911.xyz",
+            "actionID": "bookWorld",
+            "detailUrl": "//*[@class=\"module-item-titlebox\"]/a/@href",
+            "cover": "//img/@data-src",
+            "moreKeys": {
+                "pageSize": 72,
+                "requestFilters": "_aa\n电影::id/53\n剧情片::id/11\n爱情片::id/8\n喜剧片::id/7\n动作片::id/6\n冒险片::id/29\n科幻片::id/9\n战争片::id/12\n悬疑片::id/25\n惊悚片::id/28\n恐怖片::id/10\n犯罪片::id/26\n海外剧::id/54\n伦理片::id/24\n"
+            },
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//*[@class=\"module-item module-item-go w16\"]",
+            "validConfig": ""
+        }
+    }
+}

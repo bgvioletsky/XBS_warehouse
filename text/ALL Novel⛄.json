@@ -1,0 +1,148 @@
+{
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//a/div",
+            "requestInfo": "/%@filter.html?page=%@pageIndex",
+            "host": "https://allnovel.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//div[contains(@class,\"list-novel\")]/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 18,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "Romance",
+                                "value": "romance"
+                            },
+                            {
+                                "title": "Adventure",
+                                "value": "adventure"
+                            },
+                            {
+                                "title": "Thriller",
+                                "value": "thriller"
+                            },
+                            {
+                                "title": "Fantasy",
+                                "value": "fantasy"
+                            },
+                            {
+                                "title": "Young",
+                                "value": "young"
+                            },
+                            {
+                                "title": "Mystery",
+                                "value": "mystery"
+                            },
+                            {
+                                "title": "Historical",
+                                "value": "historical"
+                            },
+                            {
+                                "title": "Horror",
+                                "value": "horror"
+                            },
+                            {
+                                "title": "Science",
+                                "value": "science"
+                            },
+                            {
+                                "title": "Humorous",
+                                "value": "humorous"
+                            },
+                            {
+                                "title": "Christian",
+                                "value": "christian"
+                            },
+                            {
+                                "title": "Western",
+                                "value": "western"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            }
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://allnovel.net",
+        "list": "//div[@class=\"list-page-novel\"]//tr",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "ALL Novel⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://allnovel.net",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642360790.486743",
+    "searchBook": {
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n      params.nativeTool.log(config);\n      for(let i=0;i<result.list.length;i++){\n            let item = result.list[i];\n            item.bookName = (config.moreKeys.pageSize*(params.pageIndex-1)+i)+':'+item.bookName\n            list.push(item);\n\n      }\n\t\n\treturn {'list':list};\n}",
+        "responseFormatType": "html",
+        "bookName": "//a/div",
+        "requestInfo": "/search.php?keyword=%@keyWord&page=%@pageIndex",
+        "host": "https://allnovel.net",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href",
+        "moreKeys": {
+            "pageSize": 18
+        },
+        "validConfig": "",
+        "cover": "//img/@src",
+        "parserID": "DOM",
+        "list": "//div[contains(@class,\"list-novel\")]/div"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://allnovel.net",
+        "content": "//div[@class=\"des_novel \"]//p",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://allnovel.net",
+        "cat": "//div[@class=\"detail-novel\"]/div[1]/div[2]/div/div[2]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"des-novel\"]//p"
+    }
+}

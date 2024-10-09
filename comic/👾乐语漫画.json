@@ -1,0 +1,100 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\n\nreturn {'url':result,'httpHeaders':config.httpHeaders,\"POST\":false,cacheTime:3600};",
+        "lastChapterTitle": "//div[@class=\"data\"]/p[@class=\"act\"]/text()",
+        "host": "https://m.leyuman.com",
+        "httpHeaders": {
+            "Referer": "https://m.leyuman.com",
+            "User-Agent": "Mozilla/5.0 (iPad; CPU OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "cat": "//div[@class=\"data\"]/p[@class=\"yac\"]/a/text()",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@name=\"description\"]/@content"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nreturn {'url':result,'httpHeaders':config.httpHeaders,\"POST\":false,cacheTime:3600};",
+        "title": "//a",
+        "host": "https://m.leyuman.com",
+        "httpHeaders": {
+            "Referer": "https://m.leyuman.com",
+            "User-Agent": "Mozilla/5.0 (iPad; CPU OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//ul[@class=\"list_block show\"]/li||@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href||@js:\nreturn config.host +result"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "👾乐语漫画",
+    "sourceType": "comic",
+    "sourceUrl": "https://m.leyuman.com",
+    "httpHeaders": {
+        "Referer": "https://m.leyuman.com",
+        "User-Agent": "Mozilla/5.0 (iPad; CPU OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1638194369.133101",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "requestInfo": "@js:\nlet url=config.host+\"/index.php/search.html\";\n\nlet hh = {'User-Agent':'Mozilla/5.0 (iPad; CPU OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1', 'Referer':config.host};\n\nlet hp = {\"keyword\": params.keyWord};\n\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh,\"POST\":true};",
+        "bookName": "//a[@class=\"vbox_t\"]/@title",
+        "detailUrl": "//a[@class=\"vbox_t\"]/@href",
+        "host": "https://m.leyuman.com",
+        "httpHeaders": {
+            "Referer": "https://m.leyuman.com",
+            "User-Agent": "Mozilla/5.0 (iPad; CPU OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//ul[@class=\"tbox_m\"]/li",
+        "cover": "//mip-img/@src",
+        "parserID": "DOM",
+        "responseFormatType": "html"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "@js:\nreturn result",
+        "JSParser": "function functionName(config, params, result) {\n\rlet res = JSON.parse(result.content);\n\nlet urls = \"\";\nfor (var i = 0; i < res.length; i++) {\n\turls = urls + res[i]+\"\\n\"\n}\n\n//params.nativeTool.logWithKey(urls,\"链接\") \n\nreturn JSON.stringify({'urls': urls.split('\\n'), 'httpHeaders':config.httpHeaders});\n\r}",
+        "requestInfo": "@js:\nlet js=\"z_img\";\nreturn {'url':result, 'webView':'', 'webViewJs':js};",
+        "host": "https://m.leyuman.com",
+        "httpHeaders": {
+            "Referer": "https://m.leyuman.com",
+            "User-Agent": "Mozilla/5.0 (iPad; CPU OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

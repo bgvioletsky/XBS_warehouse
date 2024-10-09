@@ -1,0 +1,104 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id='nr1']/text()||||@js:\nif(params.lastResponse)\n{\n\nvar Base64 = {\n\t_keyStr: \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\",\n\tencode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i, s, o, u, a;\n\t\tvar f = 0;\n\t\te = Base64._utf8_encode(e);\n\t\twhile (f < e.length) {\n\t\t\tn = e.charCodeAt(f++);\n\t\t\tr = e.charCodeAt(f++);\n\t\t\ti = e.charCodeAt(f++);\n\t\t\ts = n >> 2;\n\t\t\to = (n & 3) << 4 | r >> 4;\n\t\t\tu = (r & 15) << 2 | i >> 6;\n\t\t\ta = i & 63;\n\t\t\tif (isNaN(r)) {\n\t\t\t\tu = a = 64\n\t\t\t} else if (isNaN(i)) {\n\t\t\t\ta = 64\n\t\t\t}\n\t\t\tt = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)\n\t\t}\n\t\treturn t\n\t},\n\tdecode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i;\n\t\tvar s, o, u, a;\n\t\tvar f = 0;\n\t\te = e.replace(/[^A-Za-z0-9+/=]/g, \"\");\n\t\twhile (f < e.length) {\n\t\t\ts = this._keyStr.indexOf(e.charAt(f++));\n\t\t\to = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tu = this._keyStr.indexOf(e.charAt(f++));\n\t\t\ta = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tn = s << 2 | o >> 4;\n\t\t\tr = (o & 15) << 4 | u >> 2;\n\t\t\ti = (u & 3) << 6 | a;\n\t\t\tt = t + String.fromCharCode(n);\n\t\t\tif (u != 64) {\n\t\t\t\tt = t + String.fromCharCode(r)\n\t\t\t}\n\t\t\tif (a != 64) {\n\t\t\t\tt = t + String.fromCharCode(i)\n\t\t\t}\n\t\t}\n\t\tt = Base64._utf8_decode(t);\n\t\treturn t\n\t},\n\t_utf8_encode: function(e) {\n\t\te = e.replace(/rn/g, \"n\");\n\t\tvar t = \"\";\n\t\tfor (var n = 0; n < e.length; n++) {\n\t\t\tvar r = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r)\n\t\t\t} else if (r > 127 && r < 2048) {\n\t\t\t\tt += String.fromCharCode(r >> 6 | 192);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t} else {\n\t\t\t\tt += String.fromCharCode(r >> 12 | 224);\n\t\t\t\tt += String.fromCharCode(r >> 6 & 63 | 128);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t}\n\t\t}\n\t\treturn t\n\t},\n\t_utf8_decode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n = 0;\n\t\tvar r = c1 = c2 = 0;\n\t\twhile (n < e.length) {\n\t\t\tr = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r);\n\t\t\t\tn++\n\t\t\t} else if (r > 191 && r < 224) {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tt += String.fromCharCode((r & 31) << 6 | c2 & 63);\n\t\t\t\tn += 2\n\t\t\t} else {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tc3 = e.charCodeAt(n + 2);\n\t\t\t\tt += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);\n\t\t\t\tn += 3\n\t\t\t}\n\t\t}\n\t\treturn t\n\t}\n}\n\n\tlet str = result.match(/var mytxt.*?['\"](.*?)['\"];/)[1];\n\tif(str)\n\t\treturn Base64.decode(str);\n}\nreturn result;",
+        "requestInfo": "@js:\nif(result.indexOf('tyue.net')!=-1)\n\treturn result.replace('www.tyue', 'm.tyue');\nreturn 'https://m.tyue.net' + result;",
+        "moreKeys": {
+            "maxPage": 5
+        },
+        "host": "https://www.tyue.net",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@id='pb_next' and text()='下一页']/@href"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//p[@class='author']/span[1]|@replace:作者：",
+            "lastChapterTitle": "//p[@class='lastchapter']/a",
+            "responseFormatType": "html",
+            "bookName": "//h1/a",
+            "desc": "//p[@class='intro']",
+            "requestInfo": "/sort/%@filter_%@pageIndex/",
+            "host": "https://www.tyue.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": {
+                    "科幻": "6",
+                    "玄幻": "1",
+                    "其他": "8",
+                    "军史": "4",
+                    "恐怖": "7",
+                    "仙侠": "2",
+                    "都市": "3",
+                    "网游": "5"
+                }
+            },
+            "detailUrl": "//div[@class='art']/h1/a/@href",
+            "cover": "//div[@class='img']//img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//li[@class='one']",
+            "status": "//p[@class='author']/span[2]|@replace:状态："
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.tyue.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-婷阅小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357973.728656",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//span[1]",
+        "responseFormatType": "html",
+        "bookName": "//h2/a",
+        "requestInfo": "@js:\nreturn {'url':'/s.php', 'POST':true, 'httpParams':{'searchkey':params.keyWord}};",
+        "host": "https://www.tyue.net",
+        "actionID": "searchBook",
+        "detailUrl": "//h2/a/@href",
+        "cover": "//a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class='topul']/li",
+        "status": "//i"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@class='article']/p[@class='author']/span[3]|@js:return result.replace('更新时间：','')",
+        "title": "//a",
+        "host": "https://www.tyue.net",
+        "list": "//ul[@class='chapter9']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

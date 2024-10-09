@@ -1,0 +1,147 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='cont-body']/p",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 3
+        },
+        "host": "https://www.yeban360.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[contains(@class, 'text-center')]/a[position()=last()]/@href || @js:\n\nlet nextUrl = result.split('\\n')[0];\n\t//params.nativeTool.logWithKey(nextUrl, 'nextUrl');\n\nlet firstUrl = params.queryInfo.url;\n\t//params.nativeTool.logWithKey(firstUrl, 'firstUrl');\n\nlet bookId = /\\d+/.exec(firstUrl.substr(firstUrl.lastIndexOf('/')))[0];\n\t//params.nativeTool.logWithKey(bookId, 'bookId');\n\nif(nextUrl.indexOf(bookId)>0)\n\treturn nextUrl;\nreturn undefined;"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "responseFormatType": "html",
+            "bookName": "//h4/a",
+            "desc": "//div[@class='media-info']",
+            "host": "https://www.yeban360.com",
+            "requestInfo": "@js:\nlet url = 'https://www.yeban360.com/list/' + params.filter;\nif(params.pageIndex>1)\n\turl = url + params.pageIndex;\nreturn url + '.html';",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "10",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "奇幻·玄幻",
+                                "value": "qihuan"
+                            },
+                            {
+                                "title": "科幻·游戏",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "武侠·仙侠",
+                                "value": "wuxia"
+                            },
+                            {
+                                "title": "女生·言情",
+                                "value": "yanqing"
+                            },
+                            {
+                                "title": "都市·娱乐",
+                                "value": "dushi"
+                            },
+                            {
+                                "title": "历史·军事",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "悬疑·灵异",
+                                "value": "xuanyi"
+                            },
+                            {
+                                "title": "耽美·纯爱",
+                                "value": "chunai"
+                            },
+                            {
+                                "title": "成长·励志",
+                                "value": "lizhi"
+                            },
+                            {
+                                "title": "散文·随笔",
+                                "value": "sanwen"
+                            },
+                            {
+                                "title": "健康·生活",
+                                "value": "health"
+                            },
+                            {
+                                "title": "文学名著",
+                                "value": "mingzhu"
+                            },
+                            {
+                                "title": "中国文学",
+                                "value": "china"
+                            },
+                            {
+                                "title": "外国文学",
+                                "value": "foreign"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "lightnovel"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//img[contains(@class, 'book-img')]/@src",
+            "validConfig": "",
+            "list": "//div[@class='media']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//h4/a/@href"
+        }
+    },
+    "sourceUrl": "https://www.yeban360.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7281",
+    "sourceName": "🦌出品-夜伴书屋",
+    "desc": "仅分类",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1640155397.792242",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "host": "https://www.yeban360.com",
+        "list": "//div[@id='all-chapter']//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "sourceType": "text"
+}

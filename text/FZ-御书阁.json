@@ -1,0 +1,75 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"content\"]/text()|@js:\nvar j=result.indexOf('最新章节！');\nif(j>0){\n    result=result.substring(j+5, result.length);\n}\nreturn result;",
+        "moreKeys": {
+            "maxPage": 4
+        },
+        "host": "https://www.yushuge.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.yushuge.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "FZ-御书阁",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650334843.195884",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//td[3]||//meta[@property=\"og:novel:author\"]/@content",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//td[2]/a||//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "bookName": "//td[1]/a||//meta[@property=\"og:title\"]/@content",
+        "requestInfo": "/modules/article/search.php?searchkey=%@keyWord",
+        "host": "https://www.yushuge.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href||//meta[@property=\"og:url\"]/@content",
+        "cover": "//a/img/@src||//meta[@property=\"og:image\"]/@content",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//td[4]",
+        "list": "//table[@class=\"grid\"]/tr[position()>1]||html",
+        "status": "//td[6]||//meta[@property=\"og:novel:status\"]/@content"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.yushuge.com/",
+        "list": "//dl[@class=\"zjlist\"]/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js:\nvar j=params.queryInfo.detailUrl;\nvar h=j+result;\nreturn h;"
+    },
+    "sourceType": "text"
+}

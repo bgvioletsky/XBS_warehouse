@@ -1,0 +1,75 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "weight": "5000",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.hetushu.com",
+        "list": "//dl[@id='dir']/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "和图书",
+    "sourceUrl": "https://www.hetushu.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637342051.649715",
+    "searchBook": {
+        "author": "//h4/span || @js:\nreturn result.replace('/', '');",
+        "responseFormatType": "html",
+        "bookName": "//h4/a",
+        "desc": "//div[@class='intro']",
+        "requestInfo": "book/search.php?keyword=%@keyWord",
+        "host": "https://www.hetushu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "cover": "//a/img/@src || https://www.hetushu.com%@result",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//dl[@class='list']/dd",
+        "success": "//div[@id='search_box']"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, document)\n{\n\tif(params.lastResponse)\n\t{\n\t\tlet token = params.responseHeaders.token;\n\t\tlet arrOld = params.lastResponse.contentList;\n\t\tlet arrMap = Base64.decode(token).split(/[A-Z]+%/);\n\n\t\tlet  b = 0;\n\t\tlet arrNew = new Array(arrMap.length).fill('');\n\t\tfor (var i = 0; i < arrMap.length && i < arrOld.length; i++) {\n\t\t\tif (parseInt(arrMap[i]) < 5) {\n\t\t\t\tarrNew[parseInt(arrMap[i])] = arrOld[i];\n\t\t\t\tb++;\n\t\t\t} else {\n\t\t\t\tarrNew[parseInt(arrMap[i]) - b] = arrOld[i];\n\t\t\t}\n\t\t}\n\t\treturn arrNew.join(\"\\n\");\n\t}\n\n\tlet arrContent = [];\n\tlet arrElement = document.queryWithXPath(\"//div[@id='content']/div\");\n\tlet len = arrElement.length;\n\tfor(i=0; i<len; i++) {\n\t\tarrContent.push(arrElement[i].content());\n\t}\n\n\tif(arrContent.length>0) {\n\t\tlet nextUrl = params.queryInfo.url.replace('.html', '.json')\n\t\tlet index = nextUrl.lastIndexOf('/');\n\t\tnextUrl = nextUrl.substr(0, index+1) + 'r' + nextUrl.substr(index+1);\n\t\treturn {'autoRequestMore':true, 'more':true, 'success':true, 'nextPageUrl':nextUrl, 'contentList':arrContent};\n\t}\n\treturn undefined;\n}\n\nvar Base64 = {\n\t_keyStr: \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\",\n\tencode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i, s, o, u, a;\n\t\tvar f = 0;\n\t\te = Base64._utf8_encode(e);\n\t\twhile (f < e.length) {\n\t\t\tn = e.charCodeAt(f++);\n\t\t\tr = e.charCodeAt(f++);\n\t\t\ti = e.charCodeAt(f++);\n\t\t\ts = n >> 2;\n\t\t\to = (n & 3) << 4 | r >> 4;\n\t\t\tu = (r & 15) << 2 | i >> 6;\n\t\t\ta = i & 63;\n\t\t\tif (isNaN(r)) {\n\t\t\t\tu = a = 64\n\t\t\t} else if (isNaN(i)) {\n\t\t\t\ta = 64\n\t\t\t}\n\t\t\tt = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)\n\t\t}\n\t\treturn t\n\t},\n\tdecode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i;\n\t\tvar s, o, u, a;\n\t\tvar f = 0;\n\t\te = e.replace(/[^A-Za-z0-9+/=]/g, \"\");\n\t\twhile (f < e.length) {\n\t\t\ts = this._keyStr.indexOf(e.charAt(f++));\n\t\t\to = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tu = this._keyStr.indexOf(e.charAt(f++));\n\t\t\ta = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tn = s << 2 | o >> 4;\n\t\t\tr = (o & 15) << 4 | u >> 2;\n\t\t\ti = (u & 3) << 6 | a;\n\t\t\tt = t + String.fromCharCode(n);\n\t\t\tif (u != 64) {\n\t\t\t\tt = t + String.fromCharCode(r)\n\t\t\t}\n\t\t\tif (a != 64) {\n\t\t\t\tt = t + String.fromCharCode(i)\n\t\t\t}\n\t\t}\n\t\tt = Base64._utf8_decode(t);\n\t\treturn t\n\t},\n\t_utf8_encode: function(e) {\n\t\te = e.replace(/rn/g, \"n\");\n\t\tvar t = \"\";\n\t\tfor (var n = 0; n < e.length; n++) {\n\t\t\tvar r = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r)\n\t\t\t} else if (r > 127 && r < 2048) {\n\t\t\t\tt += String.fromCharCode(r >> 6 | 192);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t} else {\n\t\t\t\tt += String.fromCharCode(r >> 12 | 224);\n\t\t\t\tt += String.fromCharCode(r >> 6 & 63 | 128);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t}\n\t\t}\n\t\treturn t\n\t},\n\t_utf8_decode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n = 0;\n\t\tvar r = c1 = c2 = 0;\n\t\twhile (n < e.length) {\n\t\t\tr = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r);\n\t\t\t\tn++\n\t\t\t} else if (r > 191 && r < 224) {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tt += String.fromCharCode((r & 31) << 6 | c2 & 63);\n\t\t\t\tn += 2\n\t\t\t} else {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tc3 = e.charCodeAt(n + 2);\n\t\t\t\tt += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);\n\t\t\t\tn += 3\n\t\t\t}\n\t\t}\n\t\treturn t;\n\t}\n}",
+        "requestInfo": "@js:\nif(params.lastResponse)\n\treturn {'url':result, 'responseFormatType':'data', 'httpHeaders':{'X-Requested-With':'XMLHttpRequest', 'User-Agent':'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Referer':'https://www.hetushu.com'}};\nreturn result;",
+        "moreKeys": {
+            "useResponseHeaders": true
+        },
+        "host": "https://www.hetushu.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "稳定但网速有点慢",
+    "password": "Liquor030",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "sourceType": "text"
+}

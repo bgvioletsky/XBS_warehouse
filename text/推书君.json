@@ -1,0 +1,385 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "lastChapterTitle": "//div[@class=\"sm:hidden\"]/div[2]",
+        "host": "https://www.tuishujun.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"whitespace-pre-line break-all pt-2 pb-0 px-0\"]//p[@class=\"inline\"]"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "tags[0]/name",
+            "author": "book_author_name",
+            "responseFormatType": "json",
+            "bookName": "book_name",
+            "desc": "top_comment/comment",
+            "requestInfo": "@js:\nlet url =\"https://www.tuishujun.com/v1/books?page=\"+params.pageIndex+\"&with_top_comment=1&tags=\"+params.filters.type;\nurl = encodeURI(url);\nreturn url;",
+            "host": "https://www.tuishujun.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 1,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "游戏",
+                                "value": "游戏"
+                            },
+                            {
+                                "title": "东方玄幻",
+                                "value": "东方玄幻"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "都市"
+                            },
+                            {
+                                "title": "重生",
+                                "value": "重生"
+                            },
+                            {
+                                "title": "系统流",
+                                "value": "系统流"
+                            },
+                            {
+                                "title": "同人",
+                                "value": "同人"
+                            },
+                            {
+                                "title": "变身",
+                                "value": "变身"
+                            },
+                            {
+                                "title": "都市异能",
+                                "value": "都市异能"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "灵异"
+                            },
+                            {
+                                "title": "海贼",
+                                "value": "海贼"
+                            },
+                            {
+                                "title": "二次元",
+                                "value": "二次元"
+                            },
+                            {
+                                "title": "末日流",
+                                "value": "末日流"
+                            },
+                            {
+                                "title": "种田文",
+                                "value": "种田文"
+                            },
+                            {
+                                "title": "异界",
+                                "value": "异界"
+                            },
+                            {
+                                "title": "异术超能",
+                                "value": "异术超能"
+                            },
+                            {
+                                "title": "古典仙侠",
+                                "value": "古典仙侠"
+                            },
+                            {
+                                "title": "三国",
+                                "value": "三国"
+                            },
+                            {
+                                "title": "洪荒流",
+                                "value": "洪荒流"
+                            },
+                            {
+                                "title": "魔法",
+                                "value": "魔法"
+                            },
+                            {
+                                "title": "星际",
+                                "value": "星际"
+                            },
+                            {
+                                "title": "励志",
+                                "value": "励志"
+                            },
+                            {
+                                "title": "武侠幻想",
+                                "value": "武侠幻想"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "科幻"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "热血"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "武侠"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "网游"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "搞笑"
+                            },
+                            {
+                                "title": "娱乐",
+                                "value": "娱乐"
+                            },
+                            {
+                                "title": "无敌流",
+                                "value": "无敌流"
+                            },
+                            {
+                                "title": "明星",
+                                "value": "明星"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "穿越"
+                            },
+                            {
+                                "title": "架空历史",
+                                "value": "架空历史"
+                            },
+                            {
+                                "title": "无限流",
+                                "value": "无限流"
+                            },
+                            {
+                                "title": "法师",
+                                "value": "法师"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "轻小说"
+                            },
+                            {
+                                "title": "修真",
+                                "value": "修真"
+                            },
+                            {
+                                "title": "神话",
+                                "value": "神话"
+                            },
+                            {
+                                "title": "科幻网游",
+                                "value": "科幻网游"
+                            },
+                            {
+                                "title": "穿书",
+                                "value": "穿书"
+                            },
+                            {
+                                "title": "孤儿",
+                                "value": "孤儿"
+                            },
+                            {
+                                "title": "修真文明",
+                                "value": "修真文明"
+                            },
+                            {
+                                "title": "皇帝",
+                                "value": "皇帝"
+                            },
+                            {
+                                "title": "悬疑灵异",
+                                "value": "悬疑灵异"
+                            },
+                            {
+                                "title": "美食",
+                                "value": "美食"
+                            },
+                            {
+                                "title": "江湖",
+                                "value": "江湖"
+                            },
+                            {
+                                "title": "豪门",
+                                "value": "豪门"
+                            },
+                            {
+                                "title": "剑",
+                                "value": "剑"
+                            },
+                            {
+                                "title": "脑洞",
+                                "value": "脑洞"
+                            },
+                            {
+                                "title": "克苏鲁",
+                                "value": "克苏鲁"
+                            },
+                            {
+                                "title": "娱乐",
+                                "value": "娱乐"
+                            },
+                            {
+                                "title": "科技",
+                                "value": "科技"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "历史"
+                            },
+                            {
+                                "title": "直播",
+                                "value": "直播"
+                            },
+                            {
+                                "title": "技术",
+                                "value": "技术"
+                            },
+                            {
+                                "title": "灵气复苏",
+                                "value": "灵气复苏"
+                            },
+                            {
+                                "title": "大佬",
+                                "value": "大佬"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "战争"
+                            },
+                            {
+                                "title": "人生",
+                                "value": "人生"
+                            },
+                            {
+                                "title": "两宋元明",
+                                "value": "两宋元明"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "恋爱"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "军事"
+                            },
+                            {
+                                "title": "未来世界",
+                                "value": "未来世界"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "wordCount": "book_words",
+            "validConfig": "",
+            "parserID": "DOM",
+            "cover": "id||@js:\nurl=\"https://rmt.ladydaily.com/fetch/tuishujun/storage/cover/\"+result+\"?fmt=webp&w=150\";\nreturn url;",
+            "detailUrl": "id||@js:\nreturn \"https://www.tuishujun.com/books/\"+result;",
+            "list": "results",
+            "status": "book_status"
+        },
+        "榜单": {
+            "cat": "tags[0]/name",
+            "author": "book_author_name",
+            "responseFormatType": "json",
+            "bookName": "book_name",
+            "requestInfo": "@js:\nlet url =\"https://www.tuishujun.com/v1/rank/\"+params.filters.type;\nurl = encodeURI(url);\nreturn url;",
+            "host": "https://www.tuishujun.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "幼苗榜",
+                                "value": "baby"
+                            },
+                            {
+                                "title": "新书榜",
+                                "value": "newest"
+                            },
+                            {
+                                "title": "连载榜",
+                                "value": "unfinished"
+                            },
+                            {
+                                "title": "完结榜",
+                                "value": "finished"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "wordCount": "book_words",
+            "validConfig": "",
+            "cover": "id||@js:\nurl=\"https://rmt.ladydaily.com/fetch/tuishujun/storage/cover/\"+result+\"?fmt=webp&w=150\";\nreturn url;",
+            "parserID": "DOM",
+            "detailUrl": "id||@js:\nreturn \"https://www.tuishujun.com/books/\"+result;",
+            "list": "results",
+            "status": "book_status"
+        }
+    },
+    "sourceUrl": "https://www.tuishujun.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7000",
+    "sourceName": "推书君",
+    "desc": "@",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1638842782.420269",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "tags[0]/name",
+        "author": "book_author_name",
+        "responseFormatType": "json",
+        "bookName": "book_name",
+        "requestInfo": "https://www.tuishujun.com/v1/books?page=%@pageIndex&q=%@keyWord",
+        "host": "https://www.tuishujun.com",
+        "actionID": "searchBook",
+        "detailUrl": "id||@js:\nreturn \"https://www.tuishujun.com/books/\"+result;",
+        "wordCount": "book_words",
+        "validConfig": "",
+        "parserID": "DOM",
+        "cover": "id||@js:\nurl=\"https://rmt.ladydaily.com/fetch/tuishujun/storage/cover/\"+result+\"?fmt=webp&w=150\";\nreturn url;",
+        "list": "results",
+        "status": "book_status"
+    },
+    "chapterList": {
+        "updateTime": "//div[@class=\"sm:hidden\"]/div[1]",
+        "actionID": "chapterList",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}
