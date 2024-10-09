@@ -1,0 +1,306 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "JSParser": "function functionName(config, params, result)\n{\n\nresult = result.match(/jQuery.*?\\((.*)\\)/)[1];\n\nlet res = JSON.parse(result);\n//params.nativeTool.log(res)\nlet timestamp = (new Date()).valueOf();\nlet list = [];\nlet chapter={};\n//chapter.title=res.data.song_name;\n//params.queryInfo.cover=res.data.img\n//params.nativeTool.log(params) \n//chapter.url=res.data.play_url;\n\n//chapter.cover= res.data.img;\n\n//list.push(chapter);\n\nreturn {'cover': res.data.img};\n\n}",
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet hh={\n    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',\n\"cookie\": \"kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6\"\n};\n\nlet url = config.host+ \"/song_search_v2?callback=jQuery112404852453033521309_\"+timestamp+\"&keyword=\"+encodeURI(params.keyWord)+\"&page=\"+params.pageIndex+\"&pagesize=30&userid=-1&clientver=&platform=WebFilter&tag=em&filter=2&iscorrection=1&privilege_filter=0&_=\"+timestamp;\n\nreturn {'url':result,'httpHeaders':config.httpHeader,\"POST\":false,cacheTime:3600};",
+        "host": "https://songsearch.kugou.com",
+        "httpHeaders": {
+            "Referer": "https://songsearch.kugou.com",
+            "user-agent'": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+            "cookie": "kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6"
+        },
+        "parserID": "DOM"
+    },
+    "desc": "👾可听所有，感谢大大的vip",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result)\n{\n\nresult = result.match(/jQuery.*?\\((.*)\\)/)[1];\n\n//params.nativeTool.log(result)\n\nlet res = JSON.parse(result);\n//params.nativeTool.log(res)\nlet timestamp = (new Date()).valueOf();\nlet list = [];\nlet chapter={};\nchapter.title=res.data.song_name;\nparams.queryInfo.cover=res.data.img\nparams.nativeTool.log(params) \nchapter.url=res.data.play_url;\nlist.push(chapter);\nreturn {'list':list};\n\n//return {'config':config, 'params':params, 'result':result}; \n\n}",
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet hh={\n    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',\n\"cookie\": \"kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6\"\n};\n\nlet url = config.host+ \"/song_search_v2?callback=jQuery112404852453033521309_\"+timestamp+\"&keyword=\"+encodeURI(params.keyWord)+\"&page=\"+params.pageIndex+\"&pagesize=30&userid=-1&clientver=&platform=WebFilter&tag=em&filter=2&iscorrection=1&privilege_filter=0&_=\"+timestamp;\n\nreturn {'url':result,'httpHeaders':config.httpHeaders,\"POST\":false};",
+        "host": "https://songsearch.kugou.com",
+        "httpHeaders": {
+            "Referer": "https://songsearch.kugou.com",
+            "user-agent'": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+            "cookie": "kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6"
+        },
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "CoolDogMusic",
+    "sourceType": "audio",
+    "sourceUrl": "https://songsearch.kugou.com",
+    "httpHeaders": {
+        "Referer": "https://songsearch.kugou.com",
+        "user-agent'": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+        "cookie": "kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1648258467.235126",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\nresult = result.match(/jQuery.*?\\((.*)\\)/)[1];\n\n//params.nativeTool.log(result)\n\nlet res = JSON.parse(result);\n//params.nativeTool.log(res)\nlet timestamp = (new Date()).valueOf();\nlet list = [];\nlet SQFileHash ; \nlet AlbumID ;\nfor (var i = 0; i < res['data']['lists'].length; i++) {\n    let bookInfo = {};\n    SQFileHash = res['data']['lists'][i]['FileHash'];\n    AlbumID = res['data']['lists'][i]['AlbumID'];\n\n    bookInfo.detailUrl = \"https://wwwapi.kugou.com/yy/index.php?r=play/getdata&callback=jQuery19103604663965204511_\"+timestamp+\"&hash=\"+SQFileHash+\"&album_id=\"+AlbumID+\"&dfid=3LARt839iuv90cQjCP0QCGCO&mid=bba93f39d313add7dea15367d06ec19d&platid=4&_=\"+timestamp;\n    bookInfo.bookName = res['data']['lists'][i]['SongName'].replace(/<em>/g,\"\").replace(/<\\/em>/g,\"\");\n\n    bookInfo.author = res['data']['lists'][i]['SingerName'].replace(/<em>/g,\"\").replace(/<\\/em>/g,\"\");\n\n    list.push(bookInfo);\n\n    // console.log(list)\n}\n\n\treturn {'list':list};\n\n}",
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet hh={\n\n\"Referer\":\"https:\\/\\/songsearch.kugou.com\",\n\n    \"user-agent'\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36\",\n\"cookie\": \"kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6\"\n};\n\nlet url = config.host+ \"/song_search_v2?callback=jQuery112404852453033521309_\"+timestamp+\"&keyword=\"+encodeURI(params.keyWord)+\"&page=\"+params.pageIndex+\"&pagesize=30&userid=-1&clientver=&platform=WebFilter&tag=em&filter=2&iscorrection=1&privilege_filter=0&_=\"+timestamp;\n\nreturn {'url':url,'httpHeaders':config.httpHeaders,\"POST\":false};",
+        "moreKeys": {
+            "maxPage": 10,
+            "removeHtmlKeys": [
+                "bookName",
+                "author"
+            ]
+        },
+        "host": "https://songsearch.kugou.com",
+        "httpHeaders": {
+            "Referer": "https://songsearch.kugou.com",
+            "user-agent'": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+            "cookie": "kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6"
+        },
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "content": "@js:\n//return params.queryInfo.url\n\n//let timestamp = (new Date()).valueOf();\n\nlet hh={\n    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',\n\"cookie\": \"kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6\"\n};\n\nreturn JSON.stringify({'url':params.queryInfo.url,'httpHeaders':hh,\"POST\":false})",
+        "requestInfo": "@js:\nreturn \"\"",
+        "host": "https://songsearch.kugou.com",
+        "httpHeaders": {
+            "Referer": "https://songsearch.kugou.com",
+            "user-agent'": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+            "cookie": "kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "99mh99",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "特色音乐榜": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result)\n{\n\nlet res = result.match(/global.features\\s+=(.*);/)[1];\nres = eval(res);\n// console.log(typeof(res))\n//console.log(res)\n\n\nlet timestamp = (new Date()).valueOf();\n\nlet list =[];\n\nfor( var i = 0; i < res.length;i++){\n    //let FileName = res[i].FileName;//歌曲名字\n\n    let bookinfo = {};\n\n    let hash = res[i].Hash;\n\n    let AlbumID = res[i].album_id;\n    let url = \"https://wwwapi.kugou.com/yy/index.php?r=play/getdata&callback=jQuery19103604663965204511_\"+timestamp+\"&hash=\"+hash+\"&album_id=\"+AlbumID+\"&dfid=3LARt839iuv90cQjCP0QCGCO&mid=bba93f39d313add7dea15367d06ec19d&platid=4&_=\"+timestamp;\n    bookinfo.bookName= res[i].FileName;\n    bookinfo.author= res[i].author_name;\n    bookinfo.detailUrl= url;\n\n    list.push(bookinfo);\n\n    // console.log(url);\n\n}\nreturn{'list':list};\n\n}",
+            "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet url = \"https://www.kugou.com/yy/rank/home/\"+params.pageIndex+\"-\"+params.filters.type+\".html?from=rank\";\n\nreturn {'url':url,'httpHeaders':config.httpHeaders,\"POST\":false,\"cacheTime\":3600};",
+            "moreKeys": {
+                "pageSize": "20",
+                "maxPage": "15",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "ACG新歌榜",
+                                "value": "33162"
+                            },
+                            {
+                                "title": "电音热歌榜",
+                                "value": "33160"
+                            },
+                            {
+                                "title": "综艺新歌榜",
+                                "value": "46910"
+                            },
+                            {
+                                "title": "说唱先锋榜",
+                                "value": "44412"
+                            },
+                            {
+                                "title": "影视金曲榜",
+                                "value": "33163"
+                            },
+                            {
+                                "title": "粤语金曲榜",
+                                "value": "33165"
+                            },
+                            {
+                                "title": "欧美金曲榜",
+                                "value": "33166"
+                            },
+                            {
+                                "title": "酷狗音乐人原创榜",
+                                "value": "30972"
+                            },
+                            {
+                                "title": "酷狗雷达榜",
+                                "value": "37361"
+                            },
+                            {
+                                "title": "80后热歌榜",
+                                "value": "49225"
+                            },
+                            {
+                                "title": "90后热歌榜",
+                                "value": "49223"
+                            },
+                            {
+                                "title": "00后热歌榜",
+                                "value": "49224"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "host": "https://songsearch.kugou.com",
+            "httpHeaders": {
+                "Referer": "https://songsearch.kugou.com",
+                "user-agent'": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+                "cookie": "kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6"
+            },
+            "_sIndex": 1,
+            "parserID": "DOM"
+        },
+        "热门榜单": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result)\n{\n\nlet res = result.match(/global.features\\s+=(.*);/)[1];\nres = eval(res);\n// console.log(typeof(res))\n//console.log(res)\n\n\nlet timestamp = (new Date()).valueOf();\n\nlet list =[];\n\nfor( var i = 0; i < res.length;i++){\n    //let FileName = res[i].FileName;//歌曲名字\n\n    let bookinfo = {};\n\n    let hash = res[i].Hash;\n\n    let AlbumID = res[i].album_id;\n    let url = \"https://wwwapi.kugou.com/yy/index.php?r=play/getdata&callback=jQuery19103604663965204511_\"+timestamp+\"&hash=\"+hash+\"&album_id=\"+AlbumID+\"&dfid=3LARt839iuv90cQjCP0QCGCO&mid=bba93f39d313add7dea15367d06ec19d&platid=4&_=\"+timestamp;\n    bookinfo.bookName= res[i].FileName;\n    bookinfo.author= res[i].author_name;\n    bookinfo.detailUrl= url;\n\n    list.push(bookinfo);\n\n    // console.log(url);\n\n}\nreturn{'list':list};\n\n}",
+            "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet url = \"https://www.kugou.com/yy/rank/home/\"+params.pageIndex+\"-\"+params.filters.type+\".html?from=rank\";\n\nreturn {'url':url,'httpHeaders':config.httpHeaders,\"POST\":false,\"cacheTime\":3600};",
+            "moreKeys": {
+                "pageSize": "20",
+                "maxPage": "15",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "酷狗飙升榜",
+                                "value": "6666"
+                            },
+                            {
+                                "title": "酷狗TOP500",
+                                "value": "8888"
+                            },
+                            {
+                                "title": "抖音热歌榜",
+                                "value": "52144"
+                            },
+                            {
+                                "title": "快手热歌榜",
+                                "value": "52767"
+                            },
+                            {
+                                "title": "DJ热歌榜",
+                                "value": "24971"
+                            },
+                            {
+                                "title": "酷狗分享榜",
+                                "value": "21101"
+                            },
+                            {
+                                "title": "内地榜",
+                                "value": "31308"
+                            },
+                            {
+                                "title": "香港地区榜",
+                                "value": "31313"
+                            },
+                            {
+                                "title": "台湾地区榜",
+                                "value": "54848"
+                            },
+                            {
+                                "title": "欧美榜",
+                                "value": "31310"
+                            },
+                            {
+                                "title": "韩国榜",
+                                "value": "31311"
+                            },
+                            {
+                                "title": "日本榜",
+                                "value": "31312"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "host": "https://songsearch.kugou.com",
+            "httpHeaders": {
+                "Referer": "https://songsearch.kugou.com",
+                "user-agent'": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+                "cookie": "kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6"
+            },
+            "_sIndex": 0,
+            "parserID": "DOM"
+        },
+        "全球榜": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result)\n{\n\nlet res = result.match(/global.features\\s+=(.*);/)[1];\nres = eval(res);\n// console.log(typeof(res))\n//console.log(res)\n\n\nlet timestamp = (new Date()).valueOf();\n\nlet list =[];\n\nfor( var i = 0; i < res.length;i++){\n    //let FileName = res[i].FileName;//歌曲名字\n\n    let bookinfo = {};\n\n    let hash = res[i].Hash;\n\n    let AlbumID = res[i].album_id;\n    let url = \"https://wwwapi.kugou.com/yy/index.php?r=play/getdata&callback=jQuery19103604663965204511_\"+timestamp+\"&hash=\"+hash+\"&album_id=\"+AlbumID+\"&dfid=3LARt839iuv90cQjCP0QCGCO&mid=bba93f39d313add7dea15367d06ec19d&platid=4&_=\"+timestamp;\n    bookinfo.bookName= res[i].FileName;\n    bookinfo.author= res[i].author_name;\n    bookinfo.detailUrl= url;\n\n    list.push(bookinfo);\n\n    // console.log(url);\n\n}\nreturn{'list':list};\n\n}",
+            "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet url = \"https://www.kugou.com/yy/rank/home/\"+params.pageIndex+\"-\"+params.filters.type+\".html?from=rank\";\n\nreturn {'url':url,'httpHeaders':config.httpHeaders,\"POST\":false,\"cacheTime\":3600};",
+            "moreKeys": {
+                "pageSize": "20",
+                "maxPage": "15",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "美国BillBoard榜",
+                                "value": "4681"
+                            },
+                            {
+                                "title": "英国单曲榜",
+                                "value": "4680"
+                            },
+                            {
+                                "title": "日本公信榜",
+                                "value": "4673"
+                            },
+                            {
+                                "title": "韩国Melon音乐榜",
+                                "value": "38623"
+                            },
+                            {
+                                "title": "joox本地热歌榜",
+                                "value": "42897"
+                            },
+                            {
+                                "title": "KKBOX风云榜",
+                                "value": "42808"
+                            },
+                            {
+                                "title": "日本SPACE SHOWER榜",
+                                "value": "46868"
+                            },
+                            {
+                                "title": "Beatport电子舞曲榜",
+                                "value": "25028"
+                            },
+                            {
+                                "title": "小语种热歌榜",
+                                "value": "36107"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "host": "https://songsearch.kugou.com",
+            "httpHeaders": {
+                "Referer": "https://songsearch.kugou.com",
+                "user-agent'": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+                "cookie": "kg_mid=ae509f23d62a21acd4ef542f166ec26d; kg_dfid=11TOqK2MyJQg0FVsLX1kr1s6; KuGooRandom=66971647950141103; kg_dfid_collect=d41d8cd98f00b204e9800998ecf8427e; ACK_SERVER_10015=%7B%22list%22%3A%5B%5B%22gzlogin-user.kugou.com%22%5D%5D%7D; kg_mid_temp=ae509f23d62a21acd4ef542f166ec26d; ACK_SERVER_10016=%7B%22list%22%3A%5B%5B%22gzreg-user.kugou.com%22%5D%5D%7D; ACK_SERVER_10017=%7B%22list%22%3A%5B%5B%22gzverifycode.service.kugou.com%22%5D%5D%7D; KuGoo=KugooID=1302&KugooPwd=D4DC9EC6C1929E3B5429DC7D61C34CE5&NickName=%u4ee3%u603b&Pic=http://imge.kugou.com/kugouicon/165/20200205/20200205204954278737.jpg&RegState=1&RegFrom=&t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd&t_ts=1648198256&t_key=&a_id=1014&ct=1648198256&UserName=%u0031%u0033%u0030%u0032; KugooID=1302; t=83cb34084dd6cb4a25e6d92a421885b337c11606e4dea62d4d02af26058459fd; a_id=1014; UserName=%u0031%u0033%u0030%u0032; mid=ae509f23d62a21acd4ef542f166ec26d; dfid=11TOqK2MyJQg0FVsLX1kr1s6"
+            },
+            "_sIndex": 2,
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "content": "data/dash/audio[1]/base_url||data/dash/audio[1]/baseUrl",
+        "host": "https://api.bilibili.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "热门": {
+            "responseFormatType": "json",
+            "author": "owner/name",
+            "bookName": "title",
+            "desc": "desc",
+            "requestInfo": "https://api.bilibili.com/x/web-interface/popular?ps=20&pn=%@pageIndex",
+            "host": "https://api.bilibili.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "@js:\nreturn 'http://api.bilibili.com/x/web-interface/view?aid=' + result.aid;",
+            "cover": "pic",
+            "validConfig": "",
+            "parserID": "DOM",
+            "wordCount": "duration",
+            "moreKeys": {
+                "pageSize": 20
+            },
+            "list": "data/list"
+        }
+    },
+    "shudanList": {},
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "哔哩哔哩音频",
+    "sourceUrl": "https://api.bilibili.com/",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637840973.875661",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "styles",
+        "author": "staff",
+        "responseFormatType": "json",
+        "bookName": "title||@js:\nvar one = result.replace('<em class=\\\"keyword\\\">', '');\nreturn one.replace('<\\/em>', '');",
+        "desc": "description",
+        "requestInfo": "@js:\n\nlet httpParams={'keyword':params.keyWord, 'page_num':params.pageIndex};\n\nlet url = 'http://api.bilibili.com/x/web-interface/search/all/v2';\nreturn {'url':url , 'POST':false, 'httpParams':httpParams};",
+        "host": "https://api.bilibili.com/",
+        "actionID": "searchBook",
+        "detailUrl": "@js:\nreturn 'http://api.bilibili.com/x/web-interface/view?aid=' + result.aid;",
+        "cover": "pic",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "data/result[11]/data"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n\tlet chapterInfo = {};\n\tchapterInfo.title = result.data.title;\n\tchapterInfo.url = 'https://api.bilibili.com/x/player/playurl?cid=' + result.data.cid + '&qn=0&type=&otype=json&fnver=0&fnval=80&fourk=1&bvid=' + result.data.bvid;\n\tlist.push(chapterInfo);\n\n\treturn {'list':list};\n}",
+        "host": "https://api.bilibili.com/",
+        "parserID": "DOM",
+        "actionID": "chapterList"
+    }
+}

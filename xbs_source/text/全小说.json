@@ -1,0 +1,74 @@
+{
+    "bookDetail": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar beginIndex = resStr.indexOf('<div class=\"desc');\n\tif(beginIndex>0){\n\t\tvar subStr = resStr.substr(beginIndex);\n\t\tvar endIndex = subStr.indexOf('</div');\n\t\tif(endIndex>0){\n\t\t\tlet bookInfo = params.queryInfo;\n\t\t\tbookInfo.desc = subStr.substr(0, endIndex);;\n\t\t\treturn {'response':bookInfo, 'removeHtmlKeys':'desc'};\n\t\t}\n\t}\n\treturn undefined;\n}",
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://qxs.la",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'https://qxs.la' + params.queryInfo.bookId;\n}",
+        "parserID": "JS"
+    },
+    "bookWorld": {},
+    "weight": "0",
+    "miniAppVersion": "2.15.0",
+    "chapterList": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar subStr = resStr;\n\tvar beginIndex = subStr.indexOf('chapters');\n\tif(beginIndex>0){\n\t\tsubStr = subStr.substr(beginIndex + 8);\n\t\tlet endIndex = subStr.indexOf('chapters');\n\t\tif(endIndex>0)\n\t\t\tsubStr = subStr.substr(0, endIndex);\n\t}\n\n\tvar list = [];\n\tvar reg = /chapter(?:\\S|\\s)*?href=\"(.*?)\".*?>(.*?)</gim;\n\twhile(tem=reg.exec(subStr))\n\t{\n\t\tlet chapterInfo = {};\n\t\tchapterInfo.url = tem[1];\n\t\tchapterInfo.title = tem[2];\n\t\tlist.push(chapterInfo);\n\t}\n\treturn {'list':list};\n}",
+        "validConfig": "",
+        "actionID": "chapterList",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://qxs.la",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'https://qxs.la' + params.queryInfo.bookId;\n}",
+        "parserID": "JS"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "JS"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "JS"
+    },
+    "enable": false,
+    "sourceName": "全小说",
+    "sourceUrl": "https://qxs.la",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "JS"
+    },
+    "lastModifyTime": "1618802633.966436",
+    "searchBook": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar result = {};\n\tvar list = [];\n\tvar reg = /<li(?:\\S|\\s)*?cc2.*?href=\"(.*?)\">(.*?)<(?:\\S|\\s)*?href.*?>(.*?)<(?:\\S|\\s)*?href.*?>(.*?)</gim;\n\twhile(tem=reg.exec(resStr))\n\t{\n\t\tlet bookInfo = {};\n\t\tbookInfo.bookId = tem[1];\n      \t\tbookInfo.bookName = tem[2];\n      \t\tbookInfo.lastChapterTitle = tem[3];\n     \t\tbookInfo.author = tem[4];\n\t\tlist.push(bookInfo);\n    \t}\n\n\tresult.list = list;\n\tresult.more = list.length >= 30 ? true : false;\n\tif(resStr.indexOf('搜索结果')>0)\n\t\tresult.success = true;\n\treturn result;\n}",
+        "validConfig": "",
+        "actionID": "searchBook",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://qxs.la",
+        "requestJavascript": "function functionName(config, params) {\n\tvar url = 'https://qxs.la/s_' + encodeURI(params.keyWord);\n\tif(params.pageIndex>1)\n\t\treturn url + '/' + params.pageIndex + '/';\n\treturn url;\n}",
+        "parserID": "JS"
+    },
+    "chapterContent": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar beginChar1 = '<div id=\"content\"';\n\tvar beginChar2 = '<div style=\"color:#ff6600';\n\tvar endChar = '</div>';\t\n\n\tvar beginIndex = resStr.indexOf(beginChar1);\n\tif(beginIndex>0) \n\t{\n\t\tlet subStr = resStr.substr(beginIndex+10);\n\t\tif(subStr.indexOf(beginChar2)>0){\n\t\t\tbeginIndex = subStr.indexOf('</div>')\n\t\t\tif(beginIndex>0){\n\t\t\t\tsubStr = subStr.substr(beginIndex + 6);\n\t\t\t\tendChar = '<div';\n\t\t\t}\n\t\t}\n\n\t\tlet endIndex = subStr.indexOf(endChar);\n\t\tif(endIndex>0)\n\t\t\treturn {'response':subStr.substr(0, endIndex), 'removeHtmlKeys':'response'};\n\t}\n\n\treturn undefined;\n}",
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://qxs.la",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'https://qxs.la' + params.queryInfo.url;\n}",
+        "parserID": "JS"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "JS"
+    },
+    "desc": "404",
+    "password": "Baby",
+    "authorId": "1600862082.628709",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "JS"
+    },
+    "shudanList": {},
+    "sourceType": "text"
+}

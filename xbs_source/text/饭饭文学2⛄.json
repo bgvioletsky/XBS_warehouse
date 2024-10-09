@@ -1,0 +1,190 @@
+{
+    "bookDetail": {
+        "requestParamsEncode": "2147485234",
+        "JSParser": "function functionName(config,params,result){\n\tlet res = result;\n\tres.detailUrl = res.status;\n\tres.status = '';\n\tparams.nativeTool.log(res);\n\treturn res;\n}",
+        "responseFormatType": "html",
+        "httpHeaders": {
+            "Referer": "https://bbs.fanfanc.com/",
+            "Host": "bbs.fanfanc.com",
+            "Cookie": "",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+        },
+        "requestInfo": "@js:\nlet url = params.queryInfo.detailUrl;\nstr = 'https://bbs.fanfanc.com/login.php'\nlet cookie = params.nativeTool.cookiesByUrl(str)\n\nlet user = params.nativeTool.cookieByKey('906a6_winduser')\n\nlet arr = []\nfor(let i=0;i<cookie.length;i++){\n\tlet item = cookie[i].name + '=' + cookie[i].value;\n\tarr.push(item);\n}\nlet cookiestr = arr.join(';');\n\nlet hh = config.httpHeaders;\n\nhh.Cookie = cookiestr;\n\nif(user){\n\t\n      \tparams.nativeTool.log('已登入')\n}else{\n\n\tparams.nativeTool.log('未登入')\n\n\t\n}\n\n\tparams.nativeTool.log(cookiestr)\n\nreturn {'url':url,'httpHeaders':hh}",
+        "host": "https://bbs.fanfanc.com",
+        "actionID": "bookDetail",
+        "desc": "//div[@id='read_tpc'] ||@js:\nlet user = params.nativeTool.cookieByKey('906a6_winduser')\nif(user){\n\nreturn result;\n\n}else{\n\nreturn '你还没有登入站点，cookie无效，请前往发现页的【登入】进行登入，点击目录，选择登入，进入正文，点击正文页面右上角三个点，点击【站点登录】'\n\n}",
+        "cover": "//ul[@id='imgList_0_all']//li[1]//img/@data-original ||@js:\nreturn result?result:'https://onericetwowine.coding.net/p/Onerice/d/Onerice/git/raw/master/Onerice/other/img/nocover.png';",
+        "validConfig": "",
+        "parserID": "DOM",
+        "status": "//div[@id=\"read_Att_tpc\"]//a[2]/@href"
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config,params,result){\n\tif(params.queryInfo.cat == 'loginpage'){\n\t\tlet list = []\n\t\tlet item = {}\n\t\titem.title = '登入'\n\t\titem.url = params.queryInfo.detailUrl;\n\t\tlist.push(item)\n\t\treturn {'list':list};\n\t}\n\treturn result;\n}",
+        "requestInfo": "@js:\nlet url = params.queryInfo.detailUrl;\nstr = 'https://bbs.fanfanc.com/login.php'\nlet cookie = params.nativeTool.cookiesByUrl(str)\n\nlet user = params.nativeTool.cookieByKey('906a6_winduser')\n\nlet arr = []\nfor(let i=0;i<cookie.length;i++){\n\tlet item = cookie[i].name + '=' + cookie[i].value;\n\tarr.push(item);\n}\nlet cookiestr = arr.join(';');\n\nlet hh = config.httpHeaders;\n\nhh.Cookie = cookiestr;\n\nif(user){\n\n      \tparams.nativeTool.log('已登入')\n}else{\n\n\tparams.nativeTool.log('未登入')\n\n\t\n}\n\n\tparams.nativeTool.log(cookiestr)\n\nreturn {'url':url,'httpHeaders':hh}",
+        "title": "//a",
+        "host": "https://bbs.fanfanc.com",
+        "httpHeaders": {
+            "Referer": "https://bbs.fanfanc.com/",
+            "Host": "bbs.fanfanc.com",
+            "Cookie": "",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+        },
+        "list": "//ul[@class=\"cf\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "loginUrl": "https://bbs.fanfanc.com/login.php",
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "饭饭文学2⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://bbs.fanfanc.com",
+    "httpHeaders": {
+        "Referer": "https://bbs.fanfanc.com/",
+        "Host": "bbs.fanfanc.com",
+        "Cookie": "",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1653888651.200701",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//td[2]/a",
+        "author": "//th/a ||@js:\n\nlet str = result.match(/作者：(.*?)[【（]/);\nreturn str? str[1]: result;",
+        "responseFormatType": "html",
+        "bookName": "//th/a ||@js:\nlet str = result.match(/《(.*?)》/);\n\nreturn str?str[1]:result;",
+        "desc": "//div[@class=\"uptime\"]",
+        "requestInfo": "/search.php?step=2&keyword=%@keyWord&seekfid=all&orderway=lastpost&method=AND&sch_time=all&page=%@pageIndex",
+        "host": "https://bbs.fanfanc.com",
+        "actionID": "searchBook",
+        "detailUrl": "//th/a/@href",
+        "moreKeys": {
+            "pageSize": 40
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//tr[contains(@id,'search')]",
+        "httpHeaders": {
+            "Referer": "https://bbs.fanfanc.com/",
+            "Host": "bbs.fanfanc.com",
+            "Cookie": "",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\tif(params.queryInfo.title=='登入'){\n\t\treturn '该页面用于登入，点击右上角的三个点，点击【站点登录】，进入登入页面完成注册登入，记得勾选【下次自动登入】';\n\t}\n\tlet beginStrReg = /<div class=\"read-content[^>]+>/gi;\n\tlet beginIndex = result.search(beginStrReg);\n\n      function typeSet(str){\n            //str = str.replace(/需要过滤的文本/gi,'');\n\t\tstr = str.replace(/&ldquo;/gi,'\"');\n\t\tstr = str.replace(/&rdquo;/gi,'\"');\n            str = str.replace(/<br[\\s]*[\\/]*>/gi,'\\n');\n            str = str.replace(/<\\/p>/gi,'\\n');\n\t\tstr = str.replace(/&hellip;/gi,'……');\n            str = str.replace(/\\n[\\s]*\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,'');\n            str = str.replace(/<p[^>]*>[\\s\\S]+<\\/[^>]*>/gi,'');\n\t\tstr = str.replace(/<[^>]*>/gi,'');\n\t\tstr = str.replace(/第[\\d]*?章[^\\n]*?\\n/gi,'');\n            return str;\n      }\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex);\n\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n            \n\t\treturn typeSet(tarStr);\n\t}\n\treturn undefined;\n}",
+        "requestInfo": "@js:\nlet url = params.queryInfo.url;\nstr = 'https://bbs.fanfanc.com/login.php'\nlet cookie = params.nativeTool.cookiesByUrl(str)\n\nlet user = params.nativeTool.cookieByKey('906a6_winduser')\n\nlet arr = []\nfor(let i=0;i<cookie.length;i++){\n\tlet item = cookie[i].name + '=' + cookie[i].value;\n\tarr.push(item);\n}\nlet cookiestr = arr.join(';');\n\nlet hh = config.httpHeaders;\n\nhh.Cookie = cookiestr;\n\nif(user){\n\n      \tparams.nativeTool.log('已登入')\n}else{\n\n\tparams.nativeTool.log('未登入')\n\n\t\n}\n\n\tparams.nativeTool.log(cookiestr)\n\nreturn {'url':url,'httpHeaders':hh}",
+        "host": "https://bbs.fanfanc.com",
+        "httpHeaders": {
+            "Referer": "https://bbs.fanfanc.com/",
+            "Host": "bbs.fanfanc.com",
+            "Cookie": "",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "需要登入，发现页的【登入】",
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "bookWorld": {
+        "登入": {
+            "requestParamsEncode": "2147485234",
+            "cat": "@js:\nreturn 'loginpage';",
+            "responseFormatType": "html",
+            "bookName": "@js:\n\nlet user = params.nativeTool.cookieByKey('906a6_winduser')\nif(user){\n\nreturn '你已经登入站点了，cookie有效'\n\n}else{\n\nreturn '你还没有登入站点，cookie无效，选择一个章节，在正文登入站点'\n\n}",
+            "desc": "@js:\n\nlet user = params.nativeTool.cookieByKey('906a6_winduser')\nif(user){\n\nreturn '你已经登入站点了，cookie有效'\n\n}else{\n\nreturn '你还没有登入站点，cookie无效，选择一个章节，在正文登入站点'\n\n}",
+            "requestInfo": "@js:\nreturn config.host;",
+            "host": "https://bbs.fanfanc.com",
+            "actionID": "bookWorld",
+            "detailUrl": "@js:\nreturn params.responseUrl;",
+            "httpHeaders": {
+                "Referer": "https://bbs.fanfanc.com/",
+                "Host": "bbs.fanfanc.com",
+                "Cookie": "",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+            },
+            "validConfig": "",
+            "list": "//body",
+            "_sIndex": 2,
+            "parserID": "DOM"
+        },
+        "分类": {
+            "requestParamsEncode": "2147485234",
+            "cat": "//td[2]//a[1] ||@js:\nlet str = result.match(/\\[(.*?)\\]/);\nreturn str ? str[1]:str;",
+            "author": "//td[2]//a[2] ||@js:\nlet str = result.match(/作者：(.*?)[【（]/);\nreturn str? str[1]: result;",
+            "responseFormatType": "html",
+            "bookName": "//td[2]//a[2] ||@js:\nlet str = result.match(/《(.*?)》/);\n\nreturn str?str[1]:result;",
+            "desc": "//div[@class=\"uptime\"]",
+            "requestInfo": "/thread.php?fid=10&type=%@filter&page=%@pageIndex",
+            "host": "https://bbs.fanfanc.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[2]/a[2]/@href || //td[2]//a[2]/@href",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": "穿越重生::19\n都市情感::16\n玄幻魔法::20\n古装架空::18\n青春校园::17\n女尊天下::536\n网游竞技::21\n无CP文::963"
+            },
+            "validConfig": "",
+            "list": "//tr[contains(@id,'trTopic')]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "httpHeaders": {
+                "Referer": "https://bbs.fanfanc.com/",
+                "Host": "bbs.fanfanc.com",
+                "Cookie": "",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+            }
+        },
+        "热门标签": {
+            "requestParamsEncode": "2147485234",
+            "cat": "//td[3]//a",
+            "author": "//td[2]//a ||@js:\n\nlet str = result.match(/作者：(.*?)[【（]/);\nreturn str? str[1]: result;",
+            "responseFormatType": "html",
+            "bookName": "//td[2]//a ||@js:\nlet str = result.match(/《(.*?)》/);\n\nreturn str?str[1]:result;",
+            "desc": "//div[@class=\"uptime\"]",
+            "requestInfo": "/link.php?action=tag&tagname=%@filter&page=%@pageIndex",
+            "host": "https://bbs.fanfanc.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[2]//a/@href",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "TXT::TXT\n完结::完结\n穿越::穿越\n全本TXT::全本TXT\n生活::生活\n故事::故事\n同人::同人\n爱情::爱情\n耽美::耽美\n小说::小说\n朋友::朋友\n言情::言情\n番外::番外\n感情::感情"
+            },
+            "validConfig": "",
+            "list": "//tr[contains(@class,'f_one')]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "httpHeaders": {
+                "Referer": "https://bbs.fanfanc.com/",
+                "Host": "bbs.fanfanc.com",
+                "Cookie": "",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+            }
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

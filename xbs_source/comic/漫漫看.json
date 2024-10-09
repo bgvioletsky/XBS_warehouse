@@ -1,0 +1,117 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "JS"
+    },
+    "desc": "推荐",
+    "weight": "3900",
+    "miniAppVersion": "2.15.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar beginIndex = resStr.indexOf('mh-chapter-list');\n\tif(beginIndex<0)\n\t\treturn undefined;\t\n\tvar subStr = resStr.substr(beginIndex);\n\n\tbeginIndex = subStr.indexOf('</div');\n\tif(beginIndex<0)\n\t\treturn undefined;\n\tsubStr = subStr.substr(0, beginIndex);\n\n\tvar list = [];\n\tvar reg = /<li.*?href=\"(.*?)\".*?>(.*?)<\\/a/gim;\n\t\n\twhile(tem=reg.exec(subStr))\n\t{\n\t\tlet chapterInfo = {};\n\t\tchapterInfo.url = tem[1];\n\t\tchapterInfo.title = tem[2];\n\t\tlist.push(chapterInfo);\n\t}\n\n\treturn {'list':list.reverse(), 'removeHtmlKeys':'title'};\n}",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://manmankan.cc",
+        "requestJavascript": "function functionName(config, params) {\n\treturn params.queryInfo.bookId;\n}",
+        "parserID": "JS"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "JS"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "JS"
+    },
+    "enable": 1,
+    "sourceType": "comic",
+    "sourceName": "漫漫看",
+    "sourceUrl": "https://manmankan.cc",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "JS"
+    },
+    "lastModifyTime": "1630033993.903434",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar result = {};\n\tif(resStr.indexOf('search')>0)\n\t\tresult.success = true;\n\n\tvar beginStr = 'cy_list_mh';\n\tvar beginIndex = resStr.indexOf(beginStr);\n\tif(beginIndex<0)\n\t\treturn result;\n\tvar subStr = resStr.substr(beginIndex);\n\n\tvar list = [];\n\tvar reg = /src=\"(.*?)\"(?:\\S|\\s)*?title.*?href=\"(.*?)\".*?>(.*?)<(?:\\S|\\s)*?updata.*?span>(.*?)<(?:\\S|\\s)*?info\">(.*?)</gim;\n\n\twhile(tem=reg.exec(subStr))\n\t{\n\t\tlet bookInfo = {};\n\t\tbookInfo.bookId = 'https://manmankan.cc' + tem[2];\n      \t\tbookInfo.bookName = tem[3];\n      \t\tbookInfo.cover = tem[1];\n\t\tbookInfo.lastChapterTitle = tem[4];\n\t\tbookInfo.desc = tem[5];\n\t\tlist.push(bookInfo);\n    \t}\n\n\tresult.list = list;\n\tresult.more = false;\n\tresult.remoeHtmlKeys = 'desc';\n\treturn result;\n}",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://manmankan.cc",
+        "requestJavascript": "function functionName(config, params) {\n\treturn {'url':'https://manmankan.cc/sort/', 'httpParams':{'key':params.keyWord}};\n}",
+        "parserID": "JS"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar reg = /page_url\".*?\"(.*?)\"/gim;\n\tif(tem=reg.exec(resStr))\n\t{\n\t\tvar list = tem[1].split('|72cms|');\n\t\tvar list2 = [];\n\t\tvar length = list.length;\n\t\tfor(let i=0; i<length; i++){\n\t\t\tlist2.push(encodeURI(list[i]));\n\t\t}\n\t\treturn list2.join('\\n');\n\t}\n\treturn undefined;\n}",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://manmankan.cc",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'https://manmankan.cc' + params.queryInfo.url;\n}",
+        "parserID": "JS"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "JS"
+    },
+    "password": "Adam",
+    "shudanList": {},
+    "authorId": "1600845544.856011",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "JS"
+    },
+    "bookWorld": {
+        "排行榜": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar result = {};\n\tvar list = [];\n\t\n\tvar reg = /<li.*?pic.*?href=\"(.*?)\".*?src=\"(.*?)\"(?:\\S|\\s)*?_blank\">(.*?)<(?:\\S|\\s)*?状态：.*?>(.*?)<(?:\\S|\\s)*?dec\">((\\S|\\s)*?)<\\/li/gim;\n\twhile(tem=reg.exec(resStr))\n\t{\n\t\tlet bookInfo = {};\n\t\tbookInfo.bookId = 'https://manmankan.cc' + tem[1];\n      \t\tbookInfo.bookName = tem[3];\n      \t\tbookInfo.cover = tem[2];\n\t\tbookInfo.status = tem[4];\n\t\tbookInfo.desc = tem[5];\n\t\tlist.push(bookInfo);\n    \t}\n\n\tresult.list = list;\n\tresult.more = false;\n\treturn result;\n}",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "host": "https://manmankan.cc",
+            "requestJavascript": "function functionName(config, params) {\n\treturn 'https://manmankan.cc/rank/';\n}",
+            "parserID": "JS"
+        },
+        "地区": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar result = {};\n\tvar list = [];\n\t\n\tvar reg = /<li>.*?href=\"(.*?)\".*?src=\"(.*?)\"(?:\\S|\\s)*?_blank\">(.*?)<(?:\\S|\\s)*?状态：.*?>(.*?)<(?:\\S|\\s)*?info\">((\\S|\\s)*?)</gim;\n\twhile(tem=reg.exec(resStr))\n\t{\n\t\tlet bookInfo = {};\n\t\tbookInfo.bookId = 'https://manmankan.cc' + tem[1];\n      \t\tbookInfo.bookName = tem[3];\n      \t\tbookInfo.cover = tem[2];\n\t\tbookInfo.status = tem[4];\n\t\tbookInfo.desc = tem[5];\n\t\tlist.push(bookInfo);\n    \t}\n\n\tresult.list = list;\n\tif(list.length<30)\n\t\tresult.more = false;\n\treturn result;\n}",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "host": "https://manmankan.cc",
+            "moreKeys": {
+                "requestFilters": {
+                    "港台": "a2/",
+                    "欧美": "a3/",
+                    "韩国": "a5/",
+                    "内地": "a4/",
+                    "日本": "a1/",
+                    "全部": "",
+                    "其他": "a0/"
+                }
+            },
+            "requestJavascript": "function functionName(config, params) {\n\tvar url = 'https://manmankan.cc/sort/' + params.filter;\n\tif(params.pageIndex>1)\n\t\turl = url + params.pageIndex + '.html';\n\treturn url;\n}",
+            "parserID": "JS"
+        },
+        "状态": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar result = {};\n\tvar list = [];\n\t\n\tvar reg = /<li>.*?href=\"(.*?)\".*?src=\"(.*?)\"(?:\\S|\\s)*?_blank\">(.*?)<(?:\\S|\\s)*?状态：.*?>(.*?)<(?:\\S|\\s)*?info\">((\\S|\\s)*?)</gim;\n\twhile(tem=reg.exec(resStr))\n\t{\n\t\tlet bookInfo = {};\n\t\tbookInfo.bookId = 'https://manmankan.cc' + tem[1];\n      \t\tbookInfo.bookName = tem[3];\n      \t\tbookInfo.cover = tem[2];\n\t\tbookInfo.status = tem[4];\n\t\tbookInfo.desc = tem[5];\n\t\tlist.push(bookInfo);\n    \t}\n\n\tresult.list = list;\n\tif(list.length<30)\n\t\tresult.more = false;\n\treturn result;\n}",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "host": "https://manmankan.cc",
+            "moreKeys": {
+                "requestFilters": {
+                    "完结": "s1/",
+                    "连载": "s0/",
+                    "全部": ""
+                }
+            },
+            "requestJavascript": "function functionName(config, params) {\n\tvar url = 'https://manmankan.cc/sort/' + params.filter;\n\tif(params.pageIndex>1)\n\t\turl = url + params.pageIndex + '.html';\n\treturn url;\n}",
+            "parserID": "JS"
+        }
+    }
+}

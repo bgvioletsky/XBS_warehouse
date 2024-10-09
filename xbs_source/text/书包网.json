@@ -1,0 +1,96 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.whbrw.com",
+        "content": "//div[@id=\"content\"]",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.whbrw.com",
+        "cat": "//div[@class=\"detail\"]/p/a[2]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"mod\"]/p[1]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//li/p[1]/a[1]",
+            "responseFormatType": "html",
+            "bookName": "//li/a[2]",
+            "requestInfo": "@js:\nlet {_class,_status,_list,_top}=params.filters\nlet url=`http://www.whbrw.com/sort/${_class}_${_list}_${_status}_${_top}_${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.whbrw.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_class\n全部小说::all\n耽美小说::danmei\n百合小说::baihe\n高辣小说::gaola\n言情小说::yanqing\n种田小说::zhongtian\n高干小说::gaogan\n腹黑小说::fuhei\n玄幻小说::xuanhuan\n都市小说::dushi\n科幻小说::kehuan\n恐怖小说::kongbu\n同人小说::tongren\n修真小说::xiuzhen\n其他类型::qita\n\n_status\n全部::0\n连载中::1\n已完本::2\n\n_list\n全部::0\n500章以下::1\n500章-1000章::2\n1000章以上::3\n\n_top\n总点击::allvisit\n月点击::monthvisit\n周点击::weekvisit\n日点击::dayvisit\n推荐::votenum\n收藏::marknum\n最新::lastupdate\n入库::postdate"
+            },
+            "detailUrl": "//li/a[2]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"library\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//a[1]/img/@src",
+            "status": "//li/span",
+            "wordCount": "//li/p[1]/text()[2]"
+        }
+    },
+    "sourceUrl": "http://www.whbrw.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "书包网",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1656575739.215735",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[1]/a[1]",
+        "lastChapterTitle": "//a[3]",
+        "responseFormatType": "html",
+        "bookName": "//li/a[2]",
+        "requestInfo": "http://www.whbrw.com/so/search.html?searchtype=name&searchkey=%@keyWord",
+        "host": "http://www.whbrw.com",
+        "actionID": "searchBook",
+        "detailUrl": "//li/a[1]/@href",
+        "cover": "//a[1]/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class=\"library\"]/li",
+        "status": "//span"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn result.replace('', 'mulu');",
+        "title": "//a/text()",
+        "host": "http://www.whbrw.com",
+        "list": "//div[@class=\"read\"]/dl[2]/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

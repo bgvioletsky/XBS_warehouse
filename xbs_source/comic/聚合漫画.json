@@ -1,0 +1,316 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet hh  = {\n    \"Accept\": \"*/*\",\n    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\n    \"Accept-Language\": \"zh-CN,zh-Hans;q=0.9\",\n    \"Connection\": \"keep-alive\",\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Host\": \"comic.mkzhan.com\",\n    \"Referer\": \"comic.mkzhan.com\",\n    \"Token\": \"\",\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN\"\n};\n\nlet hp ={\n    \"comic_id\":params.queryInfo.detailUrl,\n    \"app_id\":\"103\"\n};\n\nlet url = config.host+\"/chapter/v1/\";\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+        "title": "title",
+        "host": "https://comic.mkzhan.com",
+        "httpHeaders": {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip,compress,br,deflate",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Referer": "https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html",
+            "Host": "comic.mkzhan.com",
+            "Token": "",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN",
+            "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+        },
+        "list": "data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "chapter_id||@js:\n\nlet url = config.host+\"/chapter/content?comic_id=\"+params.queryInfo.detailUrl+\"&chapter_id=\"+result;\n\nreturn url"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "validConfig": "",
+        "actionID": "relatedWord",
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet hh  = {\n    \"Accept\": \"*/*\",\n    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\n    \"Accept-Language\": \"zh-CN,zh-Hans;q=0.9\",\n    \"Connection\": \"keep-alive\",\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Host\": \"comic.mkzhan.com\",\n    \"Referer\": \"https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html\",\n    \"Token\": \"\",\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN\"\n};\nlet hp ={\n    \"keyword\": params.keyWord,\n    \"page_num\": params.pageIndex,\n    \"page_size\": \"20\"\n};\n\nlet url = config.host+\"/search/keyword\";\n\n\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+        "title": "title",
+        "host": "https://comic.mkzhan.com",
+        "httpHeaders": {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip,compress,br,deflate",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Referer": "https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html",
+            "Host": "comic.mkzhan.com",
+            "Token": "",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN",
+            "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+        },
+        "list": "data/list",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "聚合漫画",
+    "sourceType": "comic",
+    "sourceUrl": "https://comic.mkzhan.com",
+    "httpHeaders": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip,compress,br,deflate",
+        "Connection": "keep-alive",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Referer": "https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html",
+        "Host": "comic.mkzhan.com",
+        "Token": "",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN",
+        "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1648006431.534360",
+    "searchBook": {
+        "author": "author_title",
+        "lastChapterTitle": "chapter_title",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "httpHeaders": {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip,compress,br,deflate",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Referer": "https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html",
+            "Host": "comic.mkzhan.com",
+            "Token": "",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN",
+            "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+        },
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet hh  = {\n    \"Accept\": \"*/*\",\n    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\n    \"Accept-Language\": \"zh-CN,zh-Hans;q=0.9\",\n    \"Connection\": \"keep-alive\",\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Host\": \"comic.mkzhan.com\",\n    \"Referer\": \"https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html\",\n    \"Token\": \"\",\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN\"\n};\nlet hp ={\n    \"keyword\": params.keyWord,\n    \"page_num\": params.pageIndex,\n    \"page_size\": \"20\"\n};\n\nlet url = config.host+\"/search/keyword\";\n\n\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+        "host": "https://comic.mkzhan.com",
+        "actionID": "searchBook",
+        "detailUrl": "comic_id",
+        "cover": "cover||@js:\nreturn result +\"!page-1200-x\"",
+        "validConfig": "",
+        "list": "data/list",
+        "parserID": "DOM",
+        "moreKeys": {
+            "maxPage": 10
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\nlet res = JSON.parse(result.content);\n\nlet urls=\"\";\nfor(let i = 0;i < res['data'].length;i++){\n    urls = urls+res['data'][i]['image']+\"!page-1200-x\\n\";       \n}\nreturn urls\n\n}",
+        "requestInfo": "@js:\nlet hh  = {\n    \"Accept\": \"*/*\",\n    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\n    \"Accept-Language\": \"zh-CN,zh-Hans;q=0.9\",\n    \"Connection\": \"keep-alive\",\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Host\": \"comic.mkzhan.com\",\n    \"Referer\": \"comic.mkzhan.com\",\n    \"Token\": \"\",\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN\"\n};\n\nreturn {'url':result, 'POST':false\n,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+        "host": "https://comic.mkzhan.com",
+        "httpHeaders": {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip,compress,br,deflate",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Referer": "https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html",
+            "Host": "comic.mkzhan.com",
+            "Token": "",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN",
+            "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "👾",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "notice",
+        "requestInfo": "@js:\nlet hh  = {\n    \"Accept\": \"*/*\",\n    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\n    \"Accept-Language\": \"zh-CN,zh-Hans;q=0.9\",\n    \"Connection\": \"keep-alive\",\n    \"Content-Type\": \"application/x-www-form-urlencoded\",\n    \"Host\": \"comic.mkzhan.com\",\n    \"Referer\": \"comic.mkzhan.com\",\n    \"Token\": \"\",\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN\"\n};\n\nlet hp ={\n    \"comic_id\":params.queryInfo.detailUrl\n};\n\nlet url = config.host+\"/comic/info/\";\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+        "host": "https://comic.mkzhan.com",
+        "httpHeaders": {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip,compress,br,deflate",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Referer": "https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html",
+            "Host": "comic.mkzhan.com",
+            "Token": "",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN",
+            "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "data/content"
+    },
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "chapter_title",
+            "responseFormatType": "json",
+            "author": "author_title",
+            "bookName": "title",
+            "httpHeaders": {
+                "Accept": "*/*",
+                "Accept-Encoding": "gzip,compress,br,deflate",
+                "Connection": "keep-alive",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Referer": "https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html",
+                "Host": "comic.mkzhan.com",
+                "Token": "",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN",
+                "Accept-Language": "zh-CN,zh-Hans;q=0.9"
+            },
+            "host": "https://comic.mkzhan.com",
+            "requestInfo": "@js:\n\nlet hh  = {\n    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\n    \"Connection\": \"keep-alive\",\n    \"Host\": \"comic.mkzhan.com\",\n    \"Referer\": \"https://servicewechat.com/wxe08992bc6719406a/29/page-frame.html\",\n    \"Token\": \"\",\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN\",\n    \"content-type\": \"application/x-www-form-urlencoded\"\n};\nlet hp ={\n    \"audience\": \"0\",\n    \"page_num\": params.pageIndex,\n    \"theme_id\": params.filters.type,\n    \"finish\": params.filters.status,\n    \"order\": params.filters.order,\n    \"page_size\": \"30\"\n};\n\nlet url = config.host+\"/search/filter\";\n\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": hh,\"cacheTime\":3600};",
+            "actionID": "bookWorld",
+            "detailUrl": "comic_id",
+            "moreKeys": {
+                "pageSize": "20",
+                "maxPage": "15",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "12"
+                            },
+                            {
+                                "title": "修真",
+                                "value": "2"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "3"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "4"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "5"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "6"
+                            },
+                            {
+                                "title": "生活",
+                                "value": "7"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "8"
+                            },
+                            {
+                                "title": "架空",
+                                "value": "9"
+                            },
+                            {
+                                "title": "后宫",
+                                "value": "10"
+                            },
+                            {
+                                "title": "霸总发",
+                                "value": "1"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "13"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "14"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "15"
+                            },
+                            {
+                                "title": "动作",
+                                "value": "16"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "17"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "18"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "19"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "20"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "21"
+                            },
+                            {
+                                "title": "励志",
+                                "value": "23"
+                            },
+                            {
+                                "title": "同人",
+                                "value": "24"
+                            },
+                            {
+                                "title": "真人",
+                                "value": "26"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载中",
+                                "value": "1"
+                            },
+                            {
+                                "title": "已完结",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "order",
+                        "items": [
+                            {
+                                "title": "按推荐",
+                                "value": "3"
+                            },
+                            {
+                                "title": "按人气",
+                                "value": "1"
+                            },
+                            {
+                                "title": "按更新",
+                                "value": "2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "list": "data/list",
+            "cover": "cover ||@js:\nreturn result +\"!page-1200-x\"",
+            "_sIndex": 0
+        }
+    }
+}

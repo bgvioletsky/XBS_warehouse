@@ -1,0 +1,86 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id='ChapterContents']|@js:\nreturn result.replace('免费小说，无弹窗小说网，txt下载，请记住蚂蚁阅读网www.mayitxt.com', '');",
+        "requestInfo": "@js:\nlet url = params.queryInfo.url;\nif(url.indexOf('http')!=0)\n\treturn 'http://www.imayitxt.com' + url;\nreturn url;",
+        "host": "http://www.imayitxt.com",
+        "httpHeaders": {
+            "Referer": "http://www.imayitxt.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.imayitxt.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "71",
+    "sourceName": "蚂蚁阅读",
+    "httpHeaders": {
+        "Referer": "http://www.imayitxt.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646628012.719395",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "html",
+        "author": "//span",
+        "lastChapterTitle": "//a[@class='chapter']",
+        "bookName": "//a[@class='red']",
+        "httpHeaders": {
+            "Referer": "http://www.imayitxt.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url = config.host + \"/modules/article/search.php\";\nlet key = params.keyWord;\nlet hp= {\"q\":key, \"searchtype\":\"all\"};\n\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\": config.httpHeaders, \"httpParams\":hp};",
+        "host": "http://www.imayitxt.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class='red']/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//tbody/tr",
+        "status": "//td[7]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nvar url = params.queryInfo.detailUrl.replace('/book/', '/showclist/');\nif(url.indexOf('http')!=0)\n\treturn 'http://www.imayitxt.com' + url;\nreturn url;",
+        "title": "//a",
+        "host": "http://www.imayitxt.com",
+        "httpHeaders": {
+            "Referer": "http://www.imayitxt.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "list": "//div[@class='bd']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

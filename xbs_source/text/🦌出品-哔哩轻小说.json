@@ -1,0 +1,311 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://w.linovelib.com",
+        "content": "//div[@id='acontent']/p",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://w.linovelib.com",
+        "desc": "//section[@id='bookSummary']/content",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//div[@class='book-meta-r']//em[1]",
+            "author": "//span[@class='book-author']/text()",
+            "responseFormatType": "html",
+            "bookName": "//h4",
+            "desc": "//p[@class='book-desc']",
+            "requestInfo": "@js:\nreturn 'https://w.linovelib.com/wenku/' + params.filters.sort + '_0_' + params.filters.cat + '_0_' + params.filters.size + '_' + params.filters.update + '_0_' + params.filters.status + '_' + params.pageIndex + '_0' + '.html';",
+            "host": "https://w.linovelib.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "电击文库",
+                                "value": "1"
+                            },
+                            {
+                                "title": "富士见文库",
+                                "value": "2"
+                            },
+                            {
+                                "title": "角川文库",
+                                "value": "3"
+                            },
+                            {
+                                "title": "MF文库J",
+                                "value": "4"
+                            },
+                            {
+                                "title": "Fami通文库",
+                                "value": "5"
+                            },
+                            {
+                                "title": "GA文库",
+                                "value": "6"
+                            },
+                            {
+                                "title": "HJ文库",
+                                "value": "7"
+                            },
+                            {
+                                "title": "一迅社",
+                                "value": "8"
+                            },
+                            {
+                                "title": "集英社",
+                                "value": "9"
+                            },
+                            {
+                                "title": "小学馆",
+                                "value": "10"
+                            },
+                            {
+                                "title": "讲谈社",
+                                "value": "11"
+                            },
+                            {
+                                "title": "少女文库",
+                                "value": "12"
+                            },
+                            {
+                                "title": "其他文库",
+                                "value": "13"
+                            },
+                            {
+                                "title": "华文轻小说",
+                                "value": "14"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "size",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "30万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30-50万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "50-100万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100-200万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "200万以上",
+                                "value": "5"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "update",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "三日内",
+                                "value": "1"
+                            },
+                            {
+                                "title": "七日内",
+                                "value": "2"
+                            },
+                            {
+                                "title": "半月内",
+                                "value": "3"
+                            },
+                            {
+                                "title": "一月内",
+                                "value": "4"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "更新",
+                                "value": "lastupdate"
+                            },
+                            {
+                                "title": "字数",
+                                "value": "words"
+                            },
+                            {
+                                "title": "收藏",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "入库",
+                                "value": "postdate"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "5"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//img/@data-original",
+            "validConfig": "",
+            "list": "//li[@class='book-li']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//a/@href",
+            "wordCount": "//div[@class='book-meta-r']//em[3]",
+            "status": "//div[@class='book-meta-r']//em[2]"
+        },
+        "榜单": {
+            "cat": "//div[@class='book-meta-r']//em[1]",
+            "author": "//span[@class='book-author']/text()",
+            "responseFormatType": "html",
+            "bookName": "//h4",
+            "desc": "//p[@class='book-desc']",
+            "requestInfo": "@js:\nreturn 'https://w.linovelib.com/wenku/' + params.filter + '_0_0_0_0_0_0_0_' + params.pageIndex + '_0.html';",
+            "host": "https://w.linovelib.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "周点击",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "月点击",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "总点击",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "周推荐",
+                                "value": "weekvote"
+                            },
+                            {
+                                "title": "月推荐",
+                                "value": "monthvote"
+                            },
+                            {
+                                "title": "总推荐",
+                                "value": "allvote"
+                            },
+                            {
+                                "title": "总月票",
+                                "value": "allvipvote"
+                            },
+                            {
+                                "title": "编辑推荐",
+                                "value": "toptime"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//img/@data-original",
+            "validConfig": "",
+            "list": "//li[@class='book-li']",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "detailUrl": "//a/@href",
+            "wordCount": "//div[@class='book-meta-r']//em[3]",
+            "status": "//div[@class='book-meta-r']//em[2]"
+        }
+    },
+    "sourceUrl": "https://w.linovelib.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7219",
+    "sourceName": "🦌出品-哔哩轻小说",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1640155052.245231",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class='book-meta-r']//em[1]",
+        "author": "//span[@class='book-author']/text()",
+        "responseFormatType": "html",
+        "bookName": "//h4",
+        "desc": "//p[@class='book-desc']",
+        "requestInfo": "https://w.linovelib.com/sa/?searchkey=%@keyWord&searchtype=all",
+        "host": "https://w.linovelib.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href",
+        "cover": "//img/@data-original",
+        "validConfig": "",
+        "list": "//li[@class='book-li']",
+        "parserID": "DOM",
+        "status": "//div[@class='book-meta-r']//em[3]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet id = /\\d+/.exec(result)[0];\nreturn config.host + '/novel/' + id + '/catalog';",
+        "title": "//a",
+        "host": "https://w.linovelib.com",
+        "list": "//ol[@id='volumes']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

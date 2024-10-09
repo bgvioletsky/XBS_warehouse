@@ -1,0 +1,95 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"chaptercontent\"]/text() ||@js:\nreturn result.replace(/特大好消息[^\\s]+/g,'');",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet httpHeaders = {\n    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1',\n    'Referer': 'https://wap.kanshu5.la/',\n}\nreturn {\n    'url': result,\n    'httpHeaders':httpHeaders,\n}",
+        "moreKeys": {
+            "maxPage": 20
+        },
+        "host": "https://wap.kanshu5.la",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//p[@class=\"Readpage\"][1]/a[@id=\"pt_next\"]/@href || @js:\nif (RegExp(/\\d+_\\d{1,2}/).test(result)) {\n    return result;\n}\nreturn undefined;"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//p[@class=\"author\"]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//p[@class=\"title\"]/text()",
+            "desc": "//p[@class=\"review\"]/text()",
+            "requestInfo": "@js:\nlet httpHeaders = {\n    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1',\n    'Referer': 'https://wap.kanshu5.la/',\n}\nlet url = config.host + params.filters.type + params.pageIndex + '.html';\nlet cacheKey = params.nativeTool.md5Encode(String(new Date().getTime()));\nreturn {\n    'url': url,\n    'httpHeaders':httpHeaders,\n    'cacheKey': cacheKey,\n}",
+            "host": "https://wap.kanshu5.la",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "type\n全部::/xclass/0/\n玄幻小说::/xclass/1/\n仙侠小说::/xclass/2/\n都市小说::/xclass/3/\n军史小说::/xclass/4/\n网游小说::/xclass/5/\n科幻小说::/xclass/6/\n恐怖小说::/xclass/7/\n其它小说::/xclass/8/"
+            },
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//div[@class=\"hot_sale\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//div[@class=\"bookimg\"]/a/@href",
+            "status": "//div[@class=\"score\"]/text() || @js:\nreturn result+'更新';"
+        }
+    },
+    "sourceUrl": "https://wap.kanshu5.la",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "看书啦",
+    "desc": "张益达",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1652263246.536996",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//span[@class=\"s4\"]/a/text()",
+        "lastChapterTitle": "//span[@class=\"s3\"]/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//span[@class=\"s2\"]/a/text()",
+        "requestInfo": "@js:\nlet httpHeaders = {\n    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39',\n    'Referer': 'https://www.kanshu5.la/',\n}\nlet cacheKey = params.nativeTool.md5Encode(String(new Date().getTime()));\nlet url = 'https://www.kanshu5.la/search.php?keyword=' + encodeURI(params.keyWord);\nreturn {\n    'url': url,\n    'httpHeaders': httpHeaders,\n    'cacheKey': cacheKey,\n}",
+        "host": "https://wap.kanshu5.la",
+        "actionID": "searchBook",
+        "detailUrl": "//span[@class=\"s2\"]/a/@href || @js:\nreturn result. replace(/\\/\\d+\\//,'/book/');",
+        "cover": "//span[@class=\"s2\"]/a/@href || @js:\nreturn '/img'+result.substring(0,result.length-1)+'.jpg';",
+        "validConfig": "",
+        "list": "//div[@class=\"novelslist2\"]/ul/li[position()>1]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet httpHeaders = {\n    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1',\n    'Referer': 'https://wap.kanshu5.la/',\n}\n\nlet bookId = result.match(/\\/\\d+/)[0].substring(1);\nlet url = config.host + '/' + parseInt(bookId / 1000) + '/' + bookId + '/';\nlet cacheKey = params.nativeTool.md5Encode(String(new Date().getTime()));\nreturn {\n    'url': url,\n    'httpHeaders':httpHeaders,\n    'cacheKey': cacheKey,\n}",
+        "title": "//a/text()",
+        "host": "https://wap.kanshu5.la",
+        "list": "//div[@id=\"chapterlist\"]/p/a[not(starts-with(@href,'#'))]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

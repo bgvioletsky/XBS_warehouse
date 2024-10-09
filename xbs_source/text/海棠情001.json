@@ -1,0 +1,104 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@itemprop='articleBody']/p/text()",
+        "host": "https://seqing001.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://seqing001.com",
+        "desc": "//meta[@property='og:description']/@content",
+        "actionID": "bookDetail"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "//span[contains(@class, 'cat-title')]/a",
+            "author": "@js:\nreturn '知名不具';",
+            "responseFormatType": "html",
+            "bookName": "//h2[1]/a",
+            "desc": "//div[@class='excerpt']/p",
+            "requestInfo": "/?cat=%@filter&paged=%@pageIndex",
+            "host": "https://seqing001.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2[1]/a/@href",
+            "moreKeys": {
+                "pageSize": "10",
+                "requestFilters": {
+                    "家庭乱伦": "1",
+                    "都市激情": "2",
+                    "强暴虐待": "9",
+                    "性爱技巧": "8",
+                    "另类小说": "10",
+                    "人妻交换": "3",
+                    "武侠科幻": "6",
+                    "校园春色": "5"
+                }
+            },
+            "cover": "//a[1]/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class='column one-third']/article"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://seqing001.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "600",
+    "sourceName": "海棠情001",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "password": "haitang",
+    "lastModifyTime": "1627802450.039995",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[contains(@class, 'cat-title')]/a",
+        "author": "@js:\nreturn '知名不具';",
+        "responseFormatType": "html",
+        "bookName": "//h2[1]/a",
+        "desc": "//div[@class='excerpt']/p",
+        "requestInfo": "/?s=%@keyWord&paged=%@pageIndex",
+        "host": "https://seqing001.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "cover": "//a[1]/img/@src",
+        "detailUrl": "//h2[1]/a/@href",
+        "parserID": "DOM",
+        "validConfig": "",
+        "list": "//div[@class='column half']/article"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "JSParser": "|",
+        "host": "https://seqing001.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nlet cp = {'url':result, 'title':params.queryInfo.bookName};\nreturn {'response':{'list':[cp]}};",
+        "actionID": "chapterList"
+    },
+    "sourceType": "text"
+}

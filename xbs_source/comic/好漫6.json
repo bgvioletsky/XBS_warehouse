@@ -1,0 +1,1021 @@
+{
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//p[@class=\"comic-update\"]/a/text()",
+            "bookName": "//p[@class=\"comic__title\"]/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.haoman6.com/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + '/category/' +\n    params.filters.tags +\n    params.filters.theme +\n    params.filters.quality +\n    params.filters.city +\n    params.filters.copyright +\n    params.filters.pay +\n    params.filters.finish +\n    '/page/' + params.pageIndex;\n\nreturn {\n\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n\n    'url': url,\n    'httpHeaders:': config.httpHeaders,\n}",
+            "host": "https://www.haoman6.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[@class=\"comic__title\"]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "热血",
+                                "value": "/tags/6"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "/tags/7"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "/tags/8"
+                            },
+                            {
+                                "title": "霸总",
+                                "value": "/tags/9"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "/tags/10"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "/tags/11"
+                            },
+                            {
+                                "title": "修真",
+                                "value": "/tags/12"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "/tags/13"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "/tags/14"
+                            },
+                            {
+                                "title": "后宫",
+                                "value": "/tags/15"
+                            },
+                            {
+                                "title": "耽美",
+                                "value": "/tags/16"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "/tags/17"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "/tags/18"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "/tags/19"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "/tags/20"
+                            },
+                            {
+                                "title": "动作",
+                                "value": "/tags/21"
+                            },
+                            {
+                                "title": "同人",
+                                "value": "/tags/22"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "/tags/23"
+                            },
+                            {
+                                "title": "励志",
+                                "value": "/tags/24"
+                            },
+                            {
+                                "title": "架空",
+                                "value": "/tags/25"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "/tags/26"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "/tags/27"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "/tags/28"
+                            },
+                            {
+                                "title": "生活",
+                                "value": "/tags/29"
+                            },
+                            {
+                                "title": "真人",
+                                "value": "/tags/30"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "/tags/31"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "/tags/48"
+                            },
+                            {
+                                "title": "内地",
+                                "value": "/tags/50"
+                            },
+                            {
+                                "title": "彩虹",
+                                "value": "/tags/51"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "/tags/52"
+                            },
+                            {
+                                "title": "猎奇",
+                                "value": "/tags/53"
+                            },
+                            {
+                                "title": "精品",
+                                "value": "/tags/54"
+                            },
+                            {
+                                "title": "推理",
+                                "value": "/tags/55"
+                            },
+                            {
+                                "title": "少女",
+                                "value": "/tags/57"
+                            },
+                            {
+                                "title": "虐恋",
+                                "value": "/tags/58"
+                            },
+                            {
+                                "title": "日更",
+                                "value": "/tags/59"
+                            },
+                            {
+                                "title": "爆笑",
+                                "value": "/tags/60"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "/tags/61"
+                            },
+                            {
+                                "title": "异能",
+                                "value": "/tags/62"
+                            },
+                            {
+                                "title": "漫改",
+                                "value": "/tags/63"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "/tags/64"
+                            },
+                            {
+                                "title": "",
+                                "value": "/tags/65"
+                            },
+                            {
+                                "title": "萌系",
+                                "value": "/tags/67"
+                            },
+                            {
+                                "title": "日常",
+                                "value": "/tags/68"
+                            },
+                            {
+                                "title": "烧脑",
+                                "value": "/tags/70"
+                            },
+                            {
+                                "title": "腹黑",
+                                "value": "/tags/71"
+                            },
+                            {
+                                "title": "新作",
+                                "value": "/tags/72"
+                            },
+                            {
+                                "title": "神魔",
+                                "value": "/tags/73"
+                            },
+                            {
+                                "title": "运动",
+                                "value": "/tags/74"
+                            },
+                            {
+                                "title": "社会",
+                                "value": "/tags/75"
+                            },
+                            {
+                                "title": "治愈",
+                                "value": "/tags/76"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "/tags/77"
+                            },
+                            {
+                                "title": "震撼",
+                                "value": "/tags/78"
+                            },
+                            {
+                                "title": "总裁",
+                                "value": "/tags/81"
+                            },
+                            {
+                                "title": "剧情",
+                                "value": "/tags/82"
+                            },
+                            {
+                                "title": "古装",
+                                "value": "/tags/105"
+                            },
+                            {
+                                "title": "日漫",
+                                "value": "/tags/405"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "/tags/626"
+                            },
+                            {
+                                "title": "少年",
+                                "value": "/tags/627"
+                            },
+                            {
+                                "title": "虐心",
+                                "value": "/tags/628"
+                            },
+                            {
+                                "title": "女尊",
+                                "value": "/tags/629"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "/tags/630"
+                            },
+                            {
+                                "title": "美型",
+                                "value": "/tags/631"
+                            },
+                            {
+                                "title": "校花",
+                                "value": "/tags/632"
+                            },
+                            {
+                                "title": "金手指",
+                                "value": "/tags/634"
+                            },
+                            {
+                                "title": "蔷薇",
+                                "value": "/tags/635"
+                            },
+                            {
+                                "title": "幽默",
+                                "value": "/tags/636"
+                            },
+                            {
+                                "title": "经典",
+                                "value": "/tags/637"
+                            },
+                            {
+                                "title": "异能 奇幻",
+                                "value": "/tags/638"
+                            },
+                            {
+                                "title": "逆袭 热血",
+                                "value": "/tags/639"
+                            },
+                            {
+                                "title": "其它",
+                                "value": "/tags/640"
+                            },
+                            {
+                                "title": "韩国",
+                                "value": "/tags/641"
+                            },
+                            {
+                                "title": "黑暗 热血",
+                                "value": "/tags/643"
+                            },
+                            {
+                                "title": "32",
+                                "value": "/tags/688"
+                            },
+                            {
+                                "title": "38",
+                                "value": "/tags/689"
+                            },
+                            {
+                                "title": "42",
+                                "value": "/tags/690"
+                            },
+                            {
+                                "title": "系统 逆袭",
+                                "value": "/tags/700"
+                            },
+                            {
+                                "title": "逆袭 异能",
+                                "value": "/tags/701"
+                            },
+                            {
+                                "title": "后宫 重生",
+                                "value": "/tags/702"
+                            },
+                            {
+                                "title": "穿越 奇幻",
+                                "value": "/tags/703"
+                            },
+                            {
+                                "title": "异形 重生",
+                                "value": "/tags/704"
+                            },
+                            {
+                                "title": "爱情",
+                                "value": "/tags/706"
+                            },
+                            {
+                                "title": "大女主 重生",
+                                "value": "/tags/707"
+                            },
+                            {
+                                "title": "系统 古风",
+                                "value": "/tags/708"
+                            },
+                            {
+                                "title": "纯爱 古风",
+                                "value": "/tags/709"
+                            },
+                            {
+                                "title": "大女主 剧情",
+                                "value": "/tags/710"
+                            },
+                            {
+                                "title": "恋爱 青春",
+                                "value": "/tags/711"
+                            },
+                            {
+                                "title": "魔法",
+                                "value": "/tags/712"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "/tags/713"
+                            },
+                            {
+                                "title": "TS",
+                                "value": "/tags/715"
+                            },
+                            {
+                                "title": "职场",
+                                "value": "/tags/716"
+                            },
+                            {
+                                "title": "修仙",
+                                "value": "/tags/717"
+                            },
+                            {
+                                "title": "奇幻冒险",
+                                "value": "/tags/718"
+                            },
+                            {
+                                "title": "题材:",
+                                "value": "/tags/719"
+                            },
+                            {
+                                "title": "大女主",
+                                "value": "/tags/720"
+                            },
+                            {
+                                "title": "战斗",
+                                "value": "/tags/721"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "/tags/724"
+                            },
+                            {
+                                "title": "惊奇",
+                                "value": "/tags/723"
+                            },
+                            {
+                                "title": "改编",
+                                "value": "/tags/722"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "/tags/725"
+                            },
+                            {
+                                "title": "魔幻",
+                                "value": "/tags/726"
+                            },
+                            {
+                                "title": "怪物",
+                                "value": "/tags/727"
+                            },
+                            {
+                                "title": "长条",
+                                "value": "/tags/728"
+                            },
+                            {
+                                "title": "权谋",
+                                "value": "/tags/729"
+                            },
+                            {
+                                "title": "逆袭",
+                                "value": "/tags/730"
+                            },
+                            {
+                                "title": "复仇",
+                                "value": "/tags/731"
+                            },
+                            {
+                                "title": "系统",
+                                "value": "/tags/732"
+                            },
+                            {
+                                "title": "末日",
+                                "value": "/tags/733"
+                            },
+                            {
+                                "title": "宫斗",
+                                "value": "/tags/734"
+                            },
+                            {
+                                "title": "明星",
+                                "value": "/tags/736"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "/tags/735"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "/tags/737"
+                            },
+                            {
+                                "title": "唯美",
+                                "value": "/tags/738"
+                            },
+                            {
+                                "title": "浪漫",
+                                "value": "/tags/739"
+                            },
+                            {
+                                "title": "美食",
+                                "value": "/tags/740"
+                            },
+                            {
+                                "title": "橘味",
+                                "value": "/tags/741"
+                            },
+                            {
+                                "title": "女生",
+                                "value": "/tags/742"
+                            },
+                            {
+                                "title": "韩漫",
+                                "value": "/tags/743"
+                            },
+                            {
+                                "title": "格斗",
+                                "value": "/tags/744"
+                            },
+                            {
+                                "title": "惊险",
+                                "value": "/tags/745"
+                            },
+                            {
+                                "title": "神仙",
+                                "value": "/tags/746"
+                            },
+                            {
+                                "title": "高甜",
+                                "value": "/tags/747"
+                            },
+                            {
+                                "title": "机甲",
+                                "value": "/tags/748"
+                            },
+                            {
+                                "title": "妖怪",
+                                "value": "/tags/749"
+                            },
+                            {
+                                "title": "知音漫客",
+                                "value": "/tags/750"
+                            },
+                            {
+                                "title": "BL",
+                                "value": "/tags/751"
+                            },
+                            {
+                                "title": "漫客栈",
+                                "value": "/tags/752"
+                            },
+                            {
+                                "title": "脑洞",
+                                "value": "/tags/753"
+                            },
+                            {
+                                "title": "偶像",
+                                "value": "/tags/754"
+                            },
+                            {
+                                "title": "情感",
+                                "value": "/tags/755"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "/tags/756"
+                            },
+                            {
+                                "title": "男生",
+                                "value": "/tags/757"
+                            },
+                            {
+                                "title": "豪快",
+                                "value": "/tags/758"
+                            },
+                            {
+                                "title": "武侠格斗",
+                                "value": "/tags/759"
+                            },
+                            {
+                                "title": "青年",
+                                "value": "/tags/760"
+                            },
+                            {
+                                "title": "冒险热血",
+                                "value": "/tags/761"
+                            },
+                            {
+                                "title": "致郁",
+                                "value": "/tags/762"
+                            },
+                            {
+                                "title": "电竞",
+                                "value": "/tags/763"
+                            },
+                            {
+                                "title": "美女",
+                                "value": "/tags/764"
+                            },
+                            {
+                                "title": "飒漫画",
+                                "value": "/tags/765"
+                            },
+                            {
+                                "title": "惊悚",
+                                "value": "/tags/766"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "/tags/767"
+                            },
+                            {
+                                "title": "甜宠",
+                                "value": "/tags/768"
+                            },
+                            {
+                                "title": "四格",
+                                "value": "/tags/783"
+                            },
+                            {
+                                "title": "召唤",
+                                "value": "/tags/785"
+                            },
+                            {
+                                "title": "异界",
+                                "value": "/tags/786"
+                            },
+                            {
+                                "title": "正能量",
+                                "value": "/tags/787"
+                            },
+                            {
+                                "title": "国漫",
+                                "value": "/tags/788"
+                            },
+                            {
+                                "title": "条漫",
+                                "value": "/tags/790"
+                            },
+                            {
+                                "title": "宠婚",
+                                "value": "/tags/791"
+                            },
+                            {
+                                "title": "重生",
+                                "value": "/tags/800"
+                            },
+                            {
+                                "title": "鬼怪",
+                                "value": "/tags/801"
+                            },
+                            {
+                                "title": "枪战",
+                                "value": "/tags/802"
+                            },
+                            {
+                                "title": "婚宠",
+                                "value": "/tags/803"
+                            },
+                            {
+                                "title": "短篇",
+                                "value": "/tags/804"
+                            },
+                            {
+                                "title": "LOL",
+                                "value": "/tags/805"
+                            },
+                            {
+                                "title": "现代",
+                                "value": "/tags/807"
+                            },
+                            {
+                                "title": "异世",
+                                "value": "/tags/808"
+                            },
+                            {
+                                "title": "血族",
+                                "value": "/tags/809"
+                            },
+                            {
+                                "title": "大女主 恋爱",
+                                "value": "/tags/810"
+                            },
+                            {
+                                "title": "异形",
+                                "value": "/tags/811"
+                            },
+                            {
+                                "title": "幻想",
+                                "value": "/tags/813"
+                            },
+                            {
+                                "title": "玄幻科幻",
+                                "value": "/tags/814"
+                            },
+                            {
+                                "title": "侦探推理",
+                                "value": "/tags/815"
+                            },
+                            {
+                                "title": "古风穿越",
+                                "value": "/tags/817"
+                            },
+                            {
+                                "title": "萌宠",
+                                "value": "/tags/818"
+                            },
+                            {
+                                "title": "幽默搞笑",
+                                "value": "/tags/819"
+                            },
+                            {
+                                "title": "亲情",
+                                "value": "/tags/821"
+                            },
+                            {
+                                "title": "宅斗",
+                                "value": "/tags/822"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "/tags/824"
+                            },
+                            {
+                                "title": "栏目",
+                                "value": "/tags/825"
+                            },
+                            {
+                                "title": "橘系",
+                                "value": "/tags/826"
+                            },
+                            {
+                                "title": "歌舞",
+                                "value": "/tags/827"
+                            },
+                            {
+                                "title": "图谱",
+                                "value": "/tags/828"
+                            },
+                            {
+                                "title": "投稿",
+                                "value": "/tags/829"
+                            },
+                            {
+                                "title": "真人漫",
+                                "value": "/tags/830"
+                            },
+                            {
+                                "title": "暖萌",
+                                "value": "/tags/832"
+                            },
+                            {
+                                "title": "宫廷",
+                                "value": "/tags/833"
+                            },
+                            {
+                                "title": "福利",
+                                "value": "/tags/834"
+                            },
+                            {
+                                "title": "神豪",
+                                "value": "/tags/835"
+                            },
+                            {
+                                "title": "悬疑/推理/烧脑",
+                                "value": "/tags/963"
+                            },
+                            {
+                                "title": "热血/冒险/仙侠",
+                                "value": "/tags/964"
+                            },
+                            {
+                                "title": "萝莉",
+                                "value": "/tags/965"
+                            },
+                            {
+                                "title": "恋爱/彩虹/萌系/校园/百合",
+                                "value": "/tags/966"
+                            }
+                        ],
+                        "key": "tags"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "故事漫画",
+                                "value": "/theme/32"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "/theme/33"
+                            },
+                            {
+                                "title": "四格",
+                                "value": "/theme/34"
+                            },
+                            {
+                                "title": "绘本",
+                                "value": "/theme/35"
+                            },
+                            {
+                                "title": "单幅",
+                                "value": "/theme/36"
+                            },
+                            {
+                                "title": "条漫",
+                                "value": "/theme/37"
+                            }
+                        ],
+                        "key": "theme"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "签约",
+                                "value": "/quality/38"
+                            },
+                            {
+                                "title": "精品",
+                                "value": "/quality/39"
+                            },
+                            {
+                                "title": "热门",
+                                "value": "/quality/40"
+                            },
+                            {
+                                "title": "新手",
+                                "value": "/quality/41"
+                            }
+                        ],
+                        "key": "quality"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "内地",
+                                "value": "/city/42"
+                            },
+                            {
+                                "title": "港台",
+                                "value": "/city/43"
+                            },
+                            {
+                                "title": "韩国",
+                                "value": "/city/44"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "/city/45"
+                            }
+                        ],
+                        "key": "city"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "首发",
+                                "value": "/copyright/46"
+                            },
+                            {
+                                "title": "推荐",
+                                "value": "/copyright/47"
+                            }
+                        ],
+                        "key": "copyright"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "免费",
+                                "value": "/pay/1"
+                            },
+                            {
+                                "title": "付费",
+                                "value": "/pay/2"
+                            },
+                            {
+                                "title": "VIP",
+                                "value": "/pay/3"
+                            }
+                        ],
+                        "key": "pay"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "连载",
+                                "value": "/finish/1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "/finish/2"
+                            }
+                        ],
+                        "key": "finish"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"common-comic-item\"]",
+            "cover": "//a[@class=\"cover\"]/img/@data-original"
+        },
+        "排行": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//p[4]/a/span/text()",
+            "author": "//p[2]/a/text()",
+            "bookName": "//p[1]/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.haoman6.com/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + params.filters.rank;\n\nreturn {\n\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n\n    'url': url,\n    'httpHeaders:': config.httpHeaders,\n}",
+            "host": "https://www.haoman6.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[1]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "rank\n年度榜::/custom/hot\n本月榜::/custom/month\n本周榜::/custom/week\n今日榜::/custom/day\n上升榜::/custom/ascension\n评分榜::/custom/score\n收藏榜::/custom/fav\n打赏榜::/custom/reward\n月票榜::/custom/ticket\n收费榜::/custom/pay"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@class=\"top-list__box-item\"]",
+            "cover": "//a[@class=\"cover\"]/img/@data-original"
+        }
+    },
+    "weight": "999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a/text()",
+        "host": "https://www.haoman6.com",
+        "httpHeaders": {
+            "Referer": "https://www.haoman6.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+        },
+        "list": "//ul[@class=\"chapter__list-box clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "好漫6",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.haoman6.com",
+    "httpHeaders": {
+        "Referer": "https://www.haoman6.com/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649333112.954903",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "JSParser": "function functionName(config, params, result) {\n    let list = result.data.map(data => {\n        return {\n            'bookName': data.name,\n            'author': data.author,\n            'cover': data.pic,\n            'status': data.serialize,\n            'desc': data.content,\n            'cat': data.tags.map(tag => tag).join('·'),\n            'detailUrl': data.url,\n        };\n    });\n    return { 'list': list };\n}",
+        "requestInfo": "@js:\n\nlet url = config.host + '/index.php/api/data/comic?key=' + encodeURI(params.keyWord) + '&size=30&page=' + params.pageIndex;\nconfig.httpHeaders['X-Requested-With'] = 'XMLHttpRequest';\n\nreturn {\n\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n\n    'url': url,\n    'httpHeaders': config.httpHeaders\n}",
+        "moreKeys": {
+            "pageSize": 30
+        },
+        "host": "https://www.haoman6.com",
+        "httpHeaders": {
+            "Referer": "https://www.haoman6.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class=\"rd-article__pic hide\"]/img/@echo-pc",
+        "actionID": "chapterContent",
+        "host": "https://www.haoman6.com",
+        "httpHeaders": {
+            "Referer": "https://www.haoman6.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "张益达",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.haoman6.com",
+        "httpHeaders": {
+            "Referer": "https://www.haoman6.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36 Edg/100.0.1185.29"
+        },
+        "cat": "//div[@class=\"comic-status\"]/span[1]/b/a/text()  || @js:\nreturn result.replace(/\\n/g,'•');",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class=\"intro-total\"]/text()"
+    }
+}

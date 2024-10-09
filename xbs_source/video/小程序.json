@@ -1,0 +1,115 @@
+{
+    "bookWorld": {
+        "分类": {
+            "cat": "type",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\rlet url = \"https://d.apicloud.com/mcm/api/movieTuijian?filter=%7B%22order%22%3A%22updatedAt%20ASC%22%2C%22fields%22%3A%7B%22title%22%3A1%2C%22id%22%3A1%2C%22label%22%3A1%2C%22img%22%3A1%2C%22type%22%3A1%2C%22originId%22%3A1%7D%2C%22where%22%3A%7B%22movieType%22%3A%22\"+params.filters.type+\"%22%7D%2C%22limit%22%3A200%7D\";\r\nlet hh={\r    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\r    \"Connection\": \"keep-alive\",\r    \"Host\": \"d.apicloud.com\",\r    \"Referer\": \"https://servicewechat.com/\",\r    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.16(0x18001023) NetType/4G Language/zh_CN\",\r    \"X-APICloud-AppId\": \"A6018227749414\",\r    \"X-APICloud-AppKey\": \"073a543e0e360abde1ce2a799be0e9301eca2362.1636467066487\",\r    \"content-type\": \"application/json\"\r};\rreturn {\"url\":url,\"httpHeaders\":hh , 'cacheTime':3600}",
+            "host": "https://d.apicloud.com",
+            "actionID": "bookWorld",
+            "detailUrl": "originId",
+            "moreKeys": {
+                "MaxSize": 1,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "电视剧",
+                                "value": "dsj"
+                            },
+                            {
+                                "title": "动漫",
+                                "value": "dm"
+                            },
+                            {
+                                "title": "电影",
+                                "value": "dy"
+                            },
+                            {
+                                "title": "综艺",
+                                "value": "zy"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "img",
+            "parserID": "DOM",
+            "list": "|",
+            "status": "label"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result)\n{\n\nlet res = [];\rlet resource = [];\rlet list = [];\rfor (var i = 0; i <= 5; i++) {\r\tlet id = \"zy\"\r\tres[i]=result[0]['zy'+i];\r\r}\r// console.log(res)\rres.push(result[0]['wl']);\r\rfor (var i = 0; i < res.length; i++) {\r\tif(res[i]!=null){\r\t\tresource.push(res[i]);\r\t\t// console.log(res[i]);\r\t}\r\t\t\r}\r//console.log(resource.length);\r\rfor (var i = 0; i < resource.length; i++) {\r\ttemp = JSON.parse(resource[i])\r\r\tlet urls = temp[\"mpUrlList\"].reverse();\r\r\r\tfor (var j = 0; j < urls.length; j++) {\r\r    \tlet chapterInfo = {};\r    \tchapterInfo.title = \"线路\"+(i+1)+\":\" +urls[j]['name'];\r    \tchapterInfo.url = urls[j]['url'];\r    \tlist.push(chapterInfo);\r\r\t}\r}\r\r// console.log(list);\rreturn {\"list\":list}\n\n}",
+        "requestInfo": "@js:\n\nlet url = \"https://d.apicloud.com/mcm/api/movieList?filter=%7B%22where%22%3A%7B%22myId%22%3A%22\"+result+\"%22%7D%7D\";\n\nlet hh={\r    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\r    \"Connection\": \"keep-alive\",\r    \"Host\": \"d.apicloud.com\",\r    \"Referer\": \"https://servicewechat.com/\",\r    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.16(0x18001023) NetType/4G Language/zh_CN\",\r    \"X-APICloud-AppId\": \"A6018227749414\",\r    \"X-APICloud-AppKey\": \"073a543e0e360abde1ce2a799be0e9301eca2362.1636467066487\",\r    \"content-type\": \"application/json\"\r}\rreturn {\"url\":url,\"httpHeaders\":hh , 'cacheTime':3600}",
+        "host": "https://d.apicloud.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceType": "video",
+    "sourceName": "小程序",
+    "sourceUrl": "https://d.apicloud.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1644249482.523840",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "status": "label",
+        "requestInfo": "@js:\nlet url = \"https://d.apicloud.com/mcm/api/movieList?filter=%7B%22order%22%3A%22updatedAt%20DESC%22%2C%22fields%22%3A%7B%22title%22%3A1%2C%22type%22%3A1%2C%22id%22%3A1%2C%22label%22%3A1%2C%22myId%22%3A1%7D%2C%22where%22%3A%7B%22or%22%3A%5B%7B%22title%22%3A%7B%22like%22%3A%22%25\"+encodeURI(params.keyWord)+\"%25%22%7D%7D%2C%7B%22stars%22%3A%7B%22like%22%3A%22%25\"+encodeURI(params.keyWord)+\"%25%22%7D%7D%2C%7B%22otherTitle%22%3A%7B%22like%22%3A%22%25\"+encodeURI(params.keyWord)+\"%25%22%7D%7D%5D%7D%2C%22skip%22%3A0%2C%22limit%22%3A100000%7D\"\rlet hh={\r    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\r    \"Connection\": \"keep-alive\",\r    \"Host\": \"d.apicloud.com\",\r    \"Referer\": \"https://servicewechat.com/\",\r    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.16(0x18001023) NetType/4G Language/zh_CN\",\r    \"X-APICloud-AppId\": \"A6018227749414\",\r    \"X-APICloud-AppKey\": \"073a543e0e360abde1ce2a799be0e9301eca2362.1636467066487\",\r    \"content-type\": \"application/json\"\r}\rreturn {\"url\":url,\"httpHeaders\":hh, 'cacheTime':3600}",
+        "bookName": "title",
+        "detailUrl": "myId",
+        "host": "https://d.apicloud.com",
+        "cat": "type",
+        "list": "|",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js: return params.queryInfo.url",
+        "host": "https://d.apicloud.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\n\nreturn \"https://cn.bing.com\"",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "👾",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\n\nlet url = \"https://d.apicloud.com/mcm/api/movieList?filter=%7B%22where%22%3A%7B%22myId%22%3A%22\"+result+\"%22%7D%7D\";\n\nlet hh={\r    \"Accept-Encoding\": \"gzip,compress,br,deflate\",\r    \"Connection\": \"keep-alive\",\r    \"Host\": \"d.apicloud.com\",\r    \"Referer\": \"https://servicewechat.com/\",\r    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.16(0x18001023) NetType/4G Language/zh_CN\",\r    \"X-APICloud-AppId\": \"A6018227749414\",\r    \"X-APICloud-AppKey\": \"073a543e0e360abde1ce2a799be0e9301eca2362.1636467066487\",\r    \"content-type\": \"application/json\"\r}\rreturn {\"url\":url,\"httpHeaders\":hh , 'cacheTime':3600}",
+        "lastChapterTitle": "/[0]/info/label",
+        "host": "https://d.apicloud.com",
+        "cover": "/[0]/img",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "/[0]/info/desc"
+    }
+}

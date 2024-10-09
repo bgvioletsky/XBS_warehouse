@@ -1,0 +1,101 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='YiJianZhan']",
+        "host": "https://m.haitangsi.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://m.haitangsi.com",
+        "desc": "//div[@id='bookintro']",
+        "actionID": "bookDetail"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "排行榜": {
+            "author": "//dd[2]/text()",
+            "responseFormatType": "html",
+            "bookName": "//dd[1]/h3/a",
+            "desc": "//dd[3]/a",
+            "requestInfo": "https://m.haitangsi.com/top/%@filter.html",
+            "host": "https://m.haitangsi.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": {
+                    "点击榜": "rank",
+                    "收藏榜": "collect",
+                    "推荐榜": "vote"
+                }
+            },
+            "detailUrl": "//dd[1]/h3/a/@href",
+            "validConfig": "",
+            "cover": "//dt[1]/a[1]/img[1]/@src",
+            "parserID": "DOM",
+            "list": "//div[@id='sitebox']/dl"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://m.haitangsi.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "600",
+    "sourceName": "海棠寺",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "password": "haitang",
+    "lastModifyTime": "1627802623.521264",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//a[2]",
+        "author": "//dd[@class='book_other']/text()|//meta[@property='og:novel:author']/@content",
+        "responseFormatType": "html",
+        "bookName": "//meta[@property='og:novel:book_name']/@content|//dd[1]/h3/a",
+        "desc": "//dd[@class='book_des']/a|//meta[@property='og:description']/@content",
+        "requestInfo": "@js:\nreturn {'url':'https://m.haitangsi.com/modules/article/search.php', 'POST':true, 'httpParams':{'searchkey':params.keyWord, 'searchtype':'all'}};",
+        "host": "https://m.haitangsi.com",
+        "actionID": "searchBook",
+        "detailUrl": "//dd[1]/h3/a/@href|//meta[@property='og:novel:read_url']/@content",
+        "cover": "//dt[1]/a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@id='sitebox']/dl|//head"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "nextPageUrl": "//div[@class='jump-list']/a[@class='pg-next']/@href|@replace:#",
+        "requestInfo": "@js:\nif(result.indexOf('/book/')>=0)\n\treturn  result.replace('/book/', '/index/').replace('.html', '/asc/1.html');\nreturn result;",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 20
+        },
+        "host": "https://m.haitangsi.com",
+        "list": "//div[@id='readerlist']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

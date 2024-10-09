@@ -1,0 +1,73 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "content": "data/content",
+        "host": "https://nso92.xsafetech.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://nso92.xsafetech.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-新千千小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649606261.469910",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "category",
+        "author": "author",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "requestInfo": "https://nso92.xsafetech.com/api/category-search?name=%@keyWord",
+        "host": "https://nso92.xsafetech.com/",
+        "actionID": "searchBook",
+        "detailUrl": "id|@js:return \"cdn/book/chapterList/\"+result+\".html\"",
+        "cover": "icon",
+        "validConfig": "",
+        "list": "result/list",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "url",
+        "updateTime": "result/book/mtime|@js:\nvar ndate=new Date(parseInt(result)*1000);\n\nvar year= ndate.getFullYear();\n\nvar month= ndate.getMonth()+1;\n\nvar date= ndate.getDate();\n\nvar hours= ndate.getHours();\n\nvar minutes= ndate.getMinutes();\n\nvar seconds= ndate.getSeconds();\n\nvar time=year+\"-\"+month+\"-\"+date+\" \"+hours+\":\"+minutes+\":\"+seconds;\n\nreturn time;",
+        "title": "name",
+        "moreKeys": {
+            "maxPage": 2
+        },
+        "host": "https://nso92.xsafetech.com/",
+        "list": "result/list[1]/list||result/author_book_list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "nextPageUrl": "@js:\nvar url=params.queryInfo.detailUrl;\nreturn url.replace('chapterList','info');"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,125 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//ul[@class=\"tags\"]/li[1]//text()",
+        "requestInfo": "@js:\n\nreturn {'url':result,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+        "host": "https://www.maofly.com",
+        "httpHeaders": {
+            "referer": "https://www.maofly.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "cat": "(//ul[@class=\"tags\"]/li)[2]//text()",
+        "responseFormatType": "html",
+        "desc": "//p[@class=\"comic_story\"]/text()||@js: \nreturn result.replace(\"漫画简介：\",\"\").replace(\"欢迎您到漫画猫畅快阅读。\",\"\")",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+        "title": "//a/text()",
+        "host": "https://www.maofly.com",
+        "httpHeaders": {
+            "referer": "https://www.maofly.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "list": "(//ol[@class=\"links-of-books num_div\"])[1]/li ||@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "👾漫画猫",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.maofly.com",
+    "httpHeaders": {
+        "referer": "https://www.maofly.com/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649401340.447459",
+    "searchBook": {
+        "responseFormatType": "html",
+        "author": "//div[@class=\"one-line comic-author\"]/a/text()",
+        "bookName": "//div[@class=\"comicbook-index mb-2 mb-sm-0\"]/h2/a/text()",
+        "httpHeaders": {
+            "referer": "https://www.maofly.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet url  = config.host +\"/search.html\";\nlet hp={\n   \"page\" : params.pageIndex,\n   \"q\" : params.keyWord,\n\n};\nlet hh = {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36\",\n    \"referer\": \"https://www.maofly.com/\"\n};\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}",
+        "host": "https://www.maofly.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "cover": "//div[@class=\"comicbook-index mb-2 mb-sm-0\"]/a/img/@src",
+        "validConfig": "",
+        "list": "(//div[@class=\"row m-0\"])[2]/div",
+        "parserID": "DOM",
+        "detailUrl": "//div[@class=\"comicbook-index mb-2 mb-sm-0\"]/a/@href"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "@js:\n\nvar LZString = function() {\r    function o(o, r) {\r        if (!t[o]) {\r            t[o] = {};\r            for (var n = 0; n < o.length; n++)\r                t[o][o.charAt(n)] = n\r        }\r        return t[o][r]\r    }\r    var r = String.fromCharCode\r      , n = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\"\r      , e = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$\"\r      , t = {}\r      , i = {\r        compressToBase64: function(o) {\r            if (null == o)\r                return \"\";\r            var r = i._compress(o, 6, function(o) {\r                return n.charAt(o)\r            });\r            switch (r.length % 4) {\r            default:\r            case 0:\r                return r;\r            case 1:\r                return r + \"===\";\r            case 2:\r                return r + \"==\";\r            case 3:\r                return r + \"=\"\r            }\r        },\r        decompressFromBase64: function(r) {\r            return null == r ? \"\" : \"\" == r ? null : i._decompress(r.length, 32, function(e) {\r                return o(n, r.charAt(e))\r            })\r        },\r        compressToUTF16: function(o) {\r            return null == o ? \"\" : i._compress(o, 15, function(o) {\r                return r(o + 32)\r            }) + \" \"\r        },\r        decompressFromUTF16: function(o) {\r            return null == o ? \"\" : \"\" == o ? null : i._decompress(o.length, 16384, function(r) {\r                return o.charCodeAt(r) - 32\r            })\r        },\r        compressToUint8Array: function(o) {\r            for (var r = i.compress(o), n = new Uint8Array(2 * r.length), e = 0, t = r.length; t > e; e++) {\r                var s = r.charCodeAt(e);\r                n[2 * e] = s >>> 8,\r                n[2 * e + 1] = s % 256\r            }\r            return n\r        },\r        decompressFromUint8Array: function(o) {\r            if (null === o || void 0 === o)\r                return i.decompress(o);\r            for (var n = new Array(o.length / 2), e = 0, t = n.length; t > e; e++)\r                n[e] = 256 * o[2 * e] + o[2 * e + 1];\r            var s = [];\r            return n.forEach(function(o) {\r                s.push(r(o))\r            }),\r            i.decompress(s.join(\"\"))\r        },\r        compressToEncodedURIComponent: function(o) {\r            return null == o ? \"\" : i._compress(o, 6, function(o) {\r                return e.charAt(o)\r            })\r        },\r        decompressFromEncodedURIComponent: function(r) {\r            return null == r ? \"\" : \"\" == r ? null : (r = r.replace(/ /g, \"+\"),\r            i._decompress(r.length, 32, function(n) {\r                return o(e, r.charAt(n))\r            }))\r        },\r        compress: function(o) {\r            return i._compress(o, 16, function(o) {\r                return r(o)\r            })\r        },\r        _compress: function(o, r, n) {\r            if (null == o)\r                return \"\";\r            var e, t, i, s = {}, p = {}, u = \"\", c = \"\", a = \"\", l = 2, f = 3, h = 2, d = [], m = 0, v = 0;\r            for (i = 0; i < o.length; i += 1)\r                if (u = o.charAt(i),\r                Object.prototype.hasOwnProperty.call(s, u) || (s[u] = f++,\r                p[u] = !0),\r                c = a + u,\r                Object.prototype.hasOwnProperty.call(s, c))\r                    a = c;\r                else {\r                    if (Object.prototype.hasOwnProperty.call(p, a)) {\r                        if (a.charCodeAt(0) < 256) {\r                            for (e = 0; h > e; e++)\r                                m <<= 1,\r                                v == r - 1 ? (v = 0,\r                                d.push(n(m)),\r                                m = 0) : v++;\r                            for (t = a.charCodeAt(0),\r                            e = 0; 8 > e; e++)\r                                m = m << 1 | 1 & t,\r                                v == r - 1 ? (v = 0,\r                                d.push(n(m)),\r                                m = 0) : v++,\r                                t >>= 1\r                        } else {\r                            for (t = 1,\r                            e = 0; h > e; e++)\r                                m = m << 1 | t,\r                                v == r - 1 ? (v = 0,\r                                d.push(n(m)),\r                                m = 0) : v++,\r                                t = 0;\r                            for (t = a.charCodeAt(0),\r                            e = 0; 16 > e; e++)\r                                m = m << 1 | 1 & t,\r                                v == r - 1 ? (v = 0,\r                                d.push(n(m)),\r                                m = 0) : v++,\r                                t >>= 1\r                        }\r                        l--,\r                        0 == l && (l = Math.pow(2, h),\r                        h++),\r                        delete p[a]\r                    } else\r                        for (t = s[a],\r                        e = 0; h > e; e++)\r                            m = m << 1 | 1 & t,\r                            v == r - 1 ? (v = 0,\r                            d.push(n(m)),\r                            m = 0) : v++,\r                            t >>= 1;\r                    l--,\r                    0 == l && (l = Math.pow(2, h),\r                    h++),\r                    s[c] = f++,\r                    a = String(u)\r                }\r            if (\"\" !== a) {\r                if (Object.prototype.hasOwnProperty.call(p, a)) {\r                    if (a.charCodeAt(0) < 256) {\r                        for (e = 0; h > e; e++)\r                            m <<= 1,\r                            v == r - 1 ? (v = 0,\r                            d.push(n(m)),\r                            m = 0) : v++;\r                        for (t = a.charCodeAt(0),\r                        e = 0; 8 > e; e++)\r                            m = m << 1 | 1 & t,\r                            v == r - 1 ? (v = 0,\r                            d.push(n(m)),\r                            m = 0) : v++,\r                            t >>= 1\r                    } else {\r                        for (t = 1,\r                        e = 0; h > e; e++)\r                            m = m << 1 | t,\r                            v == r - 1 ? (v = 0,\r                            d.push(n(m)),\r                            m = 0) : v++,\r                            t = 0;\r                        for (t = a.charCodeAt(0),\r                        e = 0; 16 > e; e++)\r                            m = m << 1 | 1 & t,\r                            v == r - 1 ? (v = 0,\r                            d.push(n(m)),\r                            m = 0) : v++,\r                            t >>= 1\r                    }\r                    l--,\r                    0 == l && (l = Math.pow(2, h),\r                    h++),\r                    delete p[a]\r                } else\r                    for (t = s[a],\r                    e = 0; h > e; e++)\r                        m = m << 1 | 1 & t,\r                        v == r - 1 ? (v = 0,\r                        d.push(n(m)),\r                        m = 0) : v++,\r                        t >>= 1;\r                l--,\r                0 == l && (l = Math.pow(2, h),\r                h++)\r            }\r            for (t = 2,\r            e = 0; h > e; e++)\r                m = m << 1 | 1 & t,\r                v == r - 1 ? (v = 0,\r                d.push(n(m)),\r                m = 0) : v++,\r                t >>= 1;\r            for (; ; ) {\r                if (m <<= 1,\r                v == r - 1) {\r                    d.push(n(m));\r                    break\r                }\r                v++\r            }\r            return d.join(\"\")\r        },\r        decompress: function(o) {\r            return null == o ? \"\" : \"\" == o ? null : i._decompress(o.length, 32768, function(r) {\r                return o.charCodeAt(r)\r            })\r        },\r        _decompress: function(o, n, e) {\r            var t, i, s, p, u, c, a, l, f = [], h = 4, d = 4, m = 3, v = \"\", w = [], A = {\r                val: e(0),\r                position: n,\r                index: 1\r            };\r            for (i = 0; 3 > i; i += 1)\r                f[i] = i;\r            for (p = 0,\r            c = Math.pow(2, 2),\r            a = 1; a != c; )\r                u = A.val & A.position,\r                A.position >>= 1,\r                0 == A.position && (A.position = n,\r                A.val = e(A.index++)),\r                p |= (u > 0 ? 1 : 0) * a,\r                a <<= 1;\r            switch (t = p) {\r            case 0:\r                for (p = 0,\r                c = Math.pow(2, 8),\r                a = 1; a != c; )\r                    u = A.val & A.position,\r                    A.position >>= 1,\r                    0 == A.position && (A.position = n,\r                    A.val = e(A.index++)),\r                    p |= (u > 0 ? 1 : 0) * a,\r                    a <<= 1;\r                l = r(p);\r                break;\r            case 1:\r                for (p = 0,\r                c = Math.pow(2, 16),\r                a = 1; a != c; )\r                    u = A.val & A.position,\r                    A.position >>= 1,\r                    0 == A.position && (A.position = n,\r                    A.val = e(A.index++)),\r                    p |= (u > 0 ? 1 : 0) * a,\r                    a <<= 1;\r                l = r(p);\r                break;\r            case 2:\r                return \"\"\r            }\r            for (f[3] = l,\r            s = l,\r            w.push(l); ; ) {\r                if (A.index > o)\r                    return \"\";\r                for (p = 0,\r                c = Math.pow(2, m),\r                a = 1; a != c; )\r                    u = A.val & A.position,\r                    A.position >>= 1,\r                    0 == A.position && (A.position = n,\r                    A.val = e(A.index++)),\r                    p |= (u > 0 ? 1 : 0) * a,\r                    a <<= 1;\r                switch (l = p) {\r                case 0:\r                    for (p = 0,\r                    c = Math.pow(2, 8),\r                    a = 1; a != c; )\r                        u = A.val & A.position,\r                        A.position >>= 1,\r                        0 == A.position && (A.position = n,\r                        A.val = e(A.index++)),\r                        p |= (u > 0 ? 1 : 0) * a,\r                        a <<= 1;\r                    f[d++] = r(p),\r                    l = d - 1,\r                    h--;\r                    break;\r                case 1:\r                    for (p = 0,\r                    c = Math.pow(2, 16),\r                    a = 1; a != c; )\r                        u = A.val & A.position,\r                        A.position >>= 1,\r                        0 == A.position && (A.position = n,\r                        A.val = e(A.index++)),\r                        p |= (u > 0 ? 1 : 0) * a,\r                        a <<= 1;\r                    f[d++] = r(p),\r                    l = d - 1,\r                    h--;\r                    break;\r                case 2:\r                    return w.join(\"\")\r                }\r                if (0 == h && (h = Math.pow(2, m),\r                m++),\r                f[l])\r                    v = f[l];\r                else {\r                    if (l !== d)\r                        return null;\r                    v = s + s.charAt(0)\r                }\r                w.push(v),\r                f[d++] = s + v.charAt(0),\r                h--,\r                s = v,\r                0 == h && (h = Math.pow(2, m),\r                m++)\r            }\r        }\r    };\r    return i\r}();\r\"function\" == typeof define && define.amd ? define(function() {\r    return LZString\r}) : \"undefined\" != typeof module && null != module && (module.exports = LZString);\r\r\rlet res = result.match(/let\\s+img_data\\s+=\\s+\"(.*)\"/)[1]\r\rlet imgUrls =  LZString.decompressFromBase64(res).split(',');\rlet imgs = \"\"\rlet tagUrl = \"https://mao.mhtupian.com/uploads/\";\r\nfor(var i = 0;i<imgUrls.length;i++){\n    \n    if (i == imgUrls.length-1) {\n\n        imgs += encodeURI(tagUrl+imgUrls[i]);\n    }else{\n\n        imgs += encodeURI(tagUrl+imgUrls[i])+\"\\n\";\n    }\n\n};\n\rreturn imgs",
+        "JSParser": "function functionName(config, params, result) \n{\n  \n\n\tresult.content = JSON.stringify({'urls':result.content, 'httpHeaders':config.httpHeaders});\n\n\treturn result;\n\r}",
+        "requestInfo": "@js:\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": config.httpHeaders,\"forbidCache\":true};",
+        "host": "https://www.maofly.com",
+        "httpHeaders": {
+            "referer": "https://www.maofly.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "推荐",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "cat": "//div[@class=\"comic-categories\"]/ul/li[position()>1]//span/text() ||@js:\nreturn result.replace(/\\r|\\n|\\s/g,\"\")",
+            "author": "//div[@class=\"comic-creators\"]//a/text()",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"media-body\"]/h2/a/text()",
+            "httpHeaders": {
+                "referer": "https://www.maofly.com/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet url = config.host +\"/list/a-\"+params.filters.area+\"-c-\"+params.filters.type+\"-t-0-y-0-i-0-m-\"+params.filters.order+\"-page-\"+params.pageIndex+\".html\";\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+            "host": "https://www.maofly.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": "type\n全部::0\n热血::1\n冒险::2\n魔幻::3\n神鬼::4\n搞笑::5\n萌系::6\n爱情::7\n科幻::8\n魔法::9\n格斗::10\n武侠::11\n机战::12\n战争::13\n竞技::14\n体育::15\n校园::16\n生活::17\n励志::18\n历史::19\n伪娘::20\n宅男::21\n腐女::22\n耽美::23\n百合::24\n后宫::25\n治愈::26\n美食::27\n推理::28\n悬疑::29\n恐怖::30\n四格::31\n职场::32\n侦探::33\n社会::34\n音乐::35\n舞蹈::36\n杂志::37\n黑道::38\n\narea\n全部::0\n日本漫画::1\n港台漫画::2\n欧美漫画::3\n韩国漫画::4\n内地漫画::5\n其他漫画::6\n\norder\n全部::0\n连载中::1\n已完结::2\n"
+            },
+            "detailUrl": "//div[@class=\"media-body\"]/h2/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"comic-main-section bg-white p-3\"]/div",
+            "parserID": "DOM",
+            "desc": "//div[@class=\"comic-story-intro text-justify mt-3\"]/text()",
+            "cover": "//a//img/@src",
+            "status": "//div[@class=\"comic-categories\"]/ul/li[1]//span/text() ||@js:\nreturn result.replace(/\\r|\\n|\\s/g,\"\")"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

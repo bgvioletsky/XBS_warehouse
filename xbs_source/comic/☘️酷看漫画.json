@@ -1,0 +1,111 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//img[@class='lazy']/@data-original",
+        "actionID": "chapterContent",
+        "host": "https://www.kukk.net",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//p[@class='detail-main-info-author'][2]/a",
+        "host": "https://www.kukk.net",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36"
+        },
+        "cat": "//*[@class='detail-main-info-class']//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class='detail-desc']"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//p[contains(@class, 'tip')]/a",
+            "bookName": "//p[contains(@class, 'title')]/a",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet url = 'https://www.kukk.net/booklist';\nlet hp = params.filters;\nif(params.pageIndex > 1)\n\thp.page = params.pageIndex;\nreturn {'url':url, 'httpParams':hp};",
+            "host": "https://www.kukk.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "18",
+                "requestFilters": "tag\n全部::全部\n恋爱::恋爱\n少年::少年\n古风::古风\n奇幻::奇幻\n搞笑::搞笑\n校园::校园\n都市::都市\n治愈::治愈\n悬疑::悬疑\n励志::励志\n热血::热血\n冒险::冒险\n后宫::后宫\n穿越::穿越\n百合::百合\n推理::推理\n萌系::萌系\n职场::职场\n魔幻::魔幻\n生活::生活\n科幻::科幻\n机战::机战\n战争::战争\n美食::美食\n轻小说::轻小说\n\n\narea\n全部::-1\n国漫::1\n日本::2\n韩漫::3\n欧美::4\n\n\nend\n全部::-1\n连载::0\n完结::1"
+            },
+            "cover": "//img/@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//*[@class='manga-list-2']/li",
+            "detailUrl": "//p[contains(@class, 'title')]/a/@href"
+        }
+    },
+    "sourceUrl": "https://www.kukk.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8596",
+    "sourceName": "☘️酷看漫画",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36"
+    },
+    "lastModifyTime": "1641259321.223011",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "html",
+        "bookName": "//p[contains(@class, 'title')]",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url = 'https://www.kukk.net/search';\nreturn {'url':url, 'POST':true, 'httpParams':{'keyword':params.keyWord}};",
+        "host": "https://www.kukk.net",
+        "actionID": "searchBook",
+        "detailUrl": "//div[1]/a/@href",
+        "cover": "//img/@data-original",
+        "validConfig": "",
+        "list": "//*[@class='book-list']/li",
+        "parserID": "DOM",
+        "desc": "//p[contains(@class, 'desc')]",
+        "wordCount": "//p[contains(@class, 'bottom')]/a/span",
+        "status": "//p[contains(@class, 'bottom')]/span"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "host": "https://www.kukk.net",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36"
+        },
+        "list": "//ul[@id='detail-list-select']/li/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    }
+}

@@ -1,0 +1,179 @@
+{
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//p[@class='chapter']/a",
+            "responseFormatType": "html",
+            "bookName": "//h2[@class='title']/a",
+            "requestInfo": "http://www.kmwu6.com/sort/%@filter-%@pageIndex.html",
+            "host": "http://www.kmwu6.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2[@class='title']/a/@href",
+            "moreKeys": {
+                "pageSize": "35",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "冒险热血",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠格斗",
+                                "value": "2"
+                            },
+                            {
+                                "title": "科幻魔幻",
+                                "value": "3"
+                            },
+                            {
+                                "title": "侦探推理",
+                                "value": "4"
+                            },
+                            {
+                                "title": "耽美爱情",
+                                "value": "5"
+                            },
+                            {
+                                "title": "生活漫画",
+                                "value": "6"
+                            },
+                            {
+                                "title": "推荐漫画",
+                                "value": "11"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "12"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "//p[contains(@class, 'mh-cover')]/@style|@js:\nreturn result.match(/\\((.*?)\\)/)[1];",
+            "parserID": "DOM",
+            "list": "//div[@class='mh-item']"
+        },
+        "榜单": {
+            "lastChapterTitle": "//p[@class='chapter']/a",
+            "responseFormatType": "html",
+            "bookName": "//h2[@class='title']/a",
+            "requestInfo": "http://www.kmwu6.com/rank/%@filter-%@pageIndex.html",
+            "host": "http://www.kmwu6.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2[@class='title']/a/@href",
+            "moreKeys": {
+                "pageSize": "35",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "日阅读榜",
+                                "value": "1"
+                            },
+                            {
+                                "title": "周阅读榜",
+                                "value": "2"
+                            },
+                            {
+                                "title": "月阅读榜",
+                                "value": "3"
+                            },
+                            {
+                                "title": "总阅读榜",
+                                "value": "4"
+                            },
+                            {
+                                "title": "最近更新",
+                                "value": "5"
+                            },
+                            {
+                                "title": "新漫上架",
+                                "value": "6"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "//p[contains(@class, 'mh-cover')]/@style|@js:\nreturn result.match(/\\((.*?)\\)/)[1];",
+            "parserID": "DOM",
+            "list": "//div[@class='mh-item']"
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "http://www.kmwu6.com",
+        "content": "@js:\n\nvar Base64 = {\n\t_keyStr: \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\",\n\tencode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i, s, o, u, a;\n\t\tvar f = 0;\n\t\te = Base64._utf8_encode(e);\n\t\twhile (f < e.length) {\n\t\t\tn = e.charCodeAt(f++);\n\t\t\tr = e.charCodeAt(f++);\n\t\t\ti = e.charCodeAt(f++);\n\t\t\ts = n >> 2;\n\t\t\to = (n & 3) << 4 | r >> 4;\n\t\t\tu = (r & 15) << 2 | i >> 6;\n\t\t\ta = i & 63;\n\t\t\tif (isNaN(r)) {\n\t\t\t\tu = a = 64\n\t\t\t} else if (isNaN(i)) {\n\t\t\t\ta = 64\n\t\t\t}\n\t\t\tt = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)\n\t\t}\n\t\treturn t\n\t},\n\tdecode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i;\n\t\tvar s, o, u, a;\n\t\tvar f = 0;\n\t\te = e.replace(/[^A-Za-z0-9+/=]/g, \"\");\n\t\twhile (f < e.length) {\n\t\t\ts = this._keyStr.indexOf(e.charAt(f++));\n\t\t\to = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tu = this._keyStr.indexOf(e.charAt(f++));\n\t\t\ta = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tn = s << 2 | o >> 4;\n\t\t\tr = (o & 15) << 4 | u >> 2;\n\t\t\ti = (u & 3) << 6 | a;\n\t\t\tt = t + String.fromCharCode(n);\n\t\t\tif (u != 64) {\n\t\t\t\tt = t + String.fromCharCode(r)\n\t\t\t}\n\t\t\tif (a != 64) {\n\t\t\t\tt = t + String.fromCharCode(i)\n\t\t\t}\n\t\t}\n\t\tt = Base64._utf8_decode(t);\n\t\treturn t\n\t},\n\t_utf8_encode: function(e) {\n\t\te = e.replace(/rn/g, \"n\");\n\t\tvar t = \"\";\n\t\tfor (var n = 0; n < e.length; n++) {\n\t\t\tvar r = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r)\n\t\t\t} else if (r > 127 && r < 2048) {\n\t\t\t\tt += String.fromCharCode(r >> 6 | 192);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t} else {\n\t\t\t\tt += String.fromCharCode(r >> 12 | 224);\n\t\t\t\tt += String.fromCharCode(r >> 6 & 63 | 128);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t}\n\t\t}\n\t\treturn t\n\t},\n\t_utf8_decode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n = 0;\n\t\tvar r = c1 = c2 = 0;\n\t\twhile (n < e.length) {\n\t\t\tr = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r);\n\t\t\t\tn++\n\t\t\t} else if (r > 191 && r < 224) {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tt += String.fromCharCode((r & 31) << 6 | c2 & 63);\n\t\t\t\tn += 2\n\t\t\t} else {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tc3 = e.charCodeAt(n + 2);\n\t\t\t\tt += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);\n\t\t\t\tn += 3\n\t\t\t}\n\t\t}\n\t\treturn t\n\t}\n}\n\nlet base64Urls = result.match(/km5_img_url.*?'(.*?)'/)[1];\nlet arrOld = JSON.parse(Base64.decode(base64Urls));\n\nlet string = '';\nlet len = arrOld.length;\nfor(i=0; i<len; i++){\n\tstring = string + arrOld[i].split('|')[1] + '\\n';\n}\nreturn string;",
+        "actionID": "chapterContent"
+    },
+    "weight": "3908",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a/text()",
+        "host": "http://www.kmwu6.com",
+        "list": "//div[contains(@id, 'chapterlist')]//li || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "酷漫屋",
+    "sourceType": "comic",
+    "sourceUrl": "http://www.kmwu6.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641371648.524914",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "http://www.kmwu6.com/search.php?keyword=%@keyWord",
+        "lastChapterTitle": "//p[@class='chapter']/a",
+        "bookName": "//h2[@class='title']/a",
+        "host": "http://www.kmwu6.com",
+        "detailUrl": "//h2[@class='title']/a/@href",
+        "cover": "//p[contains(@class, 'mh-cover')]/@style || @js:\nreturn result.match(/\\((.*?)\\)/)[1];",
+        "responseFormatType": "html",
+        "list": "//div[@class='mh-item']",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "help": "kuman57.com / kuman55.com",
+    "password": "newcomicbmw",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.kmwu6.com",
+        "desc": "//div[@class='info']/p[@class='content']",
+        "actionID": "bookDetail"
+    }
+}

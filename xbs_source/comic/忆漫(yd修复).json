@@ -1,0 +1,106 @@
+{
+    "bookWorld": {
+        "分类": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "JSParser": "function functionName(config, params, result) {\n    return {\n        'list': result.books.map(x => {\n            return {\n                'bookName': x.book_name,\n                'author': x.author_name,\n                'cover': encodeURI(x.cover_url),\n                'desc': x.summary,\n                'cat': x.tags,\n                'detailUrl': config.host + '/book/' + x.unique_id\n            };\n        })\n    };\n}",
+            "requestInfo": "@js:\nlet url = config.host + '/getBooks?tag=' +\n    encodeURI(params.filters.tag) +\n    '&area=' + params.filters.area +\n    '&end=' + params.filters.end +\n    '&page=' + ((params.pageIndex - 1) * 15);\n\nlet httpHeaders = {\n    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1',\n    'Referer': 'https://m.yimmh.com/booklist',\n};\nreturn {\n    'url': url,\n    'httpHeaders': httpHeaders,\n}",
+            "moreKeys": {
+                "pageSize": 15,
+                "requestFilters": "tag\n全部::全部\n耽美::耽美\n热血::热血\n大女主::大女主\n\narea\n全部::-1\n日本::1\n港漫::2\n欧美::3\n国漫::4\n韩漫::5\n\nend\n全部::-1\n连载::2\n完结::1"
+            },
+            "host": "https://m.yimmh.com",
+            "_sIndex": 0,
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+            },
+            "responseFormatType": "json",
+            "parserID": "DOM"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js: \nurl=params.queryInfo.detailUrl;\nreturn {\"url\":url,\"httpHeaders\":{\"UserAgent\":\"Mozilla\\/5.0 (Linux; Android 6.0; Nexus 5 Build\\/MRA58N) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/94.0.4606.81 Mobile Safari\\/537.36 Edg\\/94.0.992.50\"},\"POST\":false}",
+        "title": "//a/@title",
+        "host": "https://m.yimmh.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//ul[@class=\"detail-list-1 detail-list-select\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceType": "comic",
+    "sourceName": "忆漫(yd修复)",
+    "sourceUrl": "https://m.yimmh.com",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647778572.260628",
+    "searchBook": {
+        "author": "(//div[@class=\"book-list-info\"]/p//span)[1]||@js:\nreturn result.replace(/作者：/,\"\");",
+        "responseFormatType": "html",
+        "bookName": "//div[@class=\"book-list-cover\"]/a/@title",
+        "desc": "//div[@class=\"book-list-info\"]/a/p[2]",
+        "requestInfo": "@js: \nurl=\"https://m.yimmh.com/search?keyword=\"+encodeURI(params.keyWord);\nreturn {\"url\":url,\"httpHeaders\":config.httpHeaders}",
+        "host": "https://m.yimmh.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"book-list-cover\"]/a/@href",
+        "cover": "//div[@class=\"book-list-cover\"]/a/img/@data-original|@js:\nreturn encodeURI(result);",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class=\"book-list\"]/li",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+        },
+        "status": "//div[@class=\"book-list-info\"]/p//span[2]"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "content": "//div[@class=\"view-main-1 readForm\"]//img/@data-src || @js:\n\nreturn result.split('\\n').map(x => { return encodeURI(x) }).join('\\n');",
+        "requestInfo": "@js:\n\nreturn {\n    \"cacheKey\":params.nativeTool.md5Encode(new Date().getTime().toString()),\n    \"url\": result,\n    \"httpHeaders\": config.httpHeaders,\n}",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://m.yimmh.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//ul[@class=\"view-bottom-bar\"]/li/a[contains(text(),'下一页')]/@href"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "👾",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

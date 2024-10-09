@@ -1,0 +1,118 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\r\n\neval(result.match(/(eval\\([\\s\\S]+?)<\\/script/)[1]);\n\nreturn JSON.stringify({'url':newImgs, 'httpHeaders':{'Referer':params.responseUrl}});",
+        "host": "http://www.qiximh1.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.qiximh1.com",
+        "cat": "//div[@id='intro_l']/div[4]/span[1] || @replace:类别：",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@id=\"comic-description\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//li[@class='biaoqian'] || @replace:标签：",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//li[4]/a/span",
+            "bookName": "//li[2]/a",
+            "desc": "//li[@class='info']",
+            "requestInfo": "http://www.qiximh1.com/sort/%@filter-%@pageIndex.html",
+            "host": "http://www.qiximh1.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "冒险热血::1\n武侠格斗::2\n科幻魔幻::3\n侦探推理::4\n耽美爱情::5\n生活漫画::6\n完结漫画::12\n连载漫画::13"
+            },
+            "cover": "//img/@src",
+            "detailUrl": "//li[2]/a/@href",
+            "list": "//div[@class='cy_list_mh']/ul",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//li[3] || @replace:状态："
+        },
+        "榜单": {
+            "cat": "//li[@class='biaoqian'] || @replace:标签：",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//li[4]/a/span",
+            "bookName": "//li[2]/a",
+            "desc": "//li[@class='info']",
+            "requestInfo": "http://www.qiximh1.com/rank/%@filter-%@pageIndex.html",
+            "host": "http://www.qiximh1.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "人气榜::1\n周读榜::2\n月读榜::3\n火爆榜::4\n更新榜::5\n新慢榜::6"
+            },
+            "cover": "//img/@src",
+            "detailUrl": "//li[2]/a/@href",
+            "list": "//div[@class='cy_list_mh']/ul",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//li[3] || @replace:状态："
+        }
+    },
+    "sourceUrl": "http://www.qiximh1.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8590",
+    "sourceName": "☘️七夕漫画",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "help": "漫画星球",
+    "lastModifyTime": "1641276329.441587",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "http://www.mhxqiu1.com/search.php?keyword=%@keyWord",
+        "bookName": "//li[2]/a",
+        "detailUrl": "//li[2]/a/@href",
+        "host": "http://www.qiximh1.com",
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "list": "//div[@class='cy_list_mh']/ul",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tif(params.lastResponse == undefined)\n\t\tresult.autoRequestMore = true;\n\treturn result;\n}",
+        "requestInfo": "@js:\n\nif(params.lastResponse)\n\treturn params.queryInfo.detailUrl;\n\nlet hh = {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8', 'Referer':result, 'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.163 Safari/535.1', 'Accept':'application/json, text/javascript, */*; q=0.01'};\n\nlet id = params.queryInfo.detailUrl.match(/\\/(\\d+)/)[1];\nlet url = 'http://www.qiximh1.com/bookchapter/';\n\nlet hp = {'id':id, 'id2':1};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp, 'httpHeaders':hh, 'responseFormatType':'json'};",
+        "title": "//p",
+        "moreKeys": {
+            "maxPage": 2
+        },
+        "host": "http://www.qiximh1.com",
+        "list": "@js:\n\n//params.nativeTool.logWithKey(result, 'list');\n\nif(params.lastResponse)\n\treturn result.queryWithXPath(\"//ul[contains(@id, 'mh-chapter-list')]/li\").reverse();\n\nlet list = [];\nlet len = result.length;\n\nlet urlPre = params.queryInfo.detailUrl;\nfor(i=0; i<len; i++) {\n\tlet cp = result[i];\n\tlet url = urlPre + cp.chapterid + '.html';\n\tlist.push({'title':cp.chaptername, 'url':url});\n}\n\nreturn {'list':list.reverse()};",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

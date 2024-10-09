@@ -1,0 +1,356 @@
+{
+    "bookDetail": {
+        "cat": "results/comic/theme[1]/name|| results/comic/theme[2]/name",
+        "lastChapterTitle": "results/comic/last_chapter/name",
+        "responseFormatType": "json",
+        "httpHeaders": {
+            "Referer": "https://copymanga.com/h5",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\n\nlet url =  config.host+\"/api/v3/comic2/\"+result+\"?platform=1\";\n\n/*let hh =  {\r\n            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36',\r\n            'Referer': 'http://y.qq.com'\r\n        };*/\n\nreturn {'url':url,'httpHeaders':config.httpHeaders,\"POST\":false};",
+        "host": "https://api.copymanga.com",
+        "actionID": "bookDetail",
+        "desc": "results/comic/brief",
+        "cover": "results/cover",
+        "validConfig": "",
+        "parserID": "DOM",
+        "status": "results/comic/status/display"
+    },
+    "desc": "推荐",
+    "weight": "99999",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet url =  config.host+\"/api/v3/comic/\"+result+\"/group/default/chapters?limit=100&offset=0\";\n\n/*let hh =  {\r\n            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36',\r\n            'Referer': 'http://y.qq.com'\r\n        };*/\n\nreturn {'url':url,'httpHeaders':config.httpHeaders,\"POST\":false};",
+        "title": "name",
+        "host": "https://api.copymanga.com",
+        "httpHeaders": {
+            "Referer": "https://copymanga.com/h5",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "list": "results/list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "uuid||@js:\n\nlet url =  config.host+\"/api/v3/comic/\"+params.queryInfo.detailUrl+\"/chapter/\"+result+\"?platform=1&_update=true\";\nreturn url"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "👾拷贝漫画",
+    "sourceType": "comic",
+    "sourceUrl": "https://api.copymanga.com",
+    "httpHeaders": {
+        "Referer": "https://copymanga.com/h5",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1638284136.250536",
+    "searchBook": {
+        "author": "author[1]/name",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "httpHeaders": {
+            "Referer": "https://copymanga.com/h5",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\n\nlet url =  config.host+\"/api/v3/search/comic\";\n\n/*let hh =  {\r\n            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36',\r\n            'Referer': 'http://y.qq.com'\r\n        };*/\n\n//let id =1;\n//id+= params.pageIndex+10;\nlet hp = {\"platform\": 1, \"q\": params.keyWord, \"offset\":params.offset, \"limit\": 20,\"_update\":\"true\"};\n\nreturn {'url':url, 'httpParams':hp ,'httpHeaders':config.httpHeaders,\"POST\":false};",
+        "host": "https://api.copymanga.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "cover": "cover",
+        "validConfig": "",
+        "list": "results/list",
+        "parserID": "DOM",
+        "detailUrl": "path_word"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "@js:\nreturn result",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\r let res = JSON.parse(result.content);\n\n res = res['results']['chapter']['contents'];\n\n let urls = \"\";\n\n for (var i = 0; i < res.length; i++) {\n\turls = urls + res[i]['url']+\"\\n\"\n}\n\n//params.nativeTool.logWithKey(urls,\"链接\") \n\n return JSON.stringify({'urls': urls.split('\\n')});\n}",
+        "requestInfo": "@js:\n\n/*let hh =  {\r\n            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36',\r\n            'Referer': 'http://y.qq.com'\r\n        };*/\n\nreturn {'url':result,'httpHeaders':config.httpHeaders,\"POST\":false};",
+        "host": "https://api.copymanga.com",
+        "httpHeaders": {
+            "Referer": "https://copymanga.com/h5",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "99mh99",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "author": "author[1]/name",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "httpHeaders": {
+                "Referer": "https://copymanga.com/h5",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nif(params.filters.type==\"\"){\n\n\tlet url = config.host+\"/api/v3/comics?free_type=1&limit=24&offset=\"+params.offset+\"&_update=true\"+\"&ordering=\"+params.filters.score;\n//params.nativeTool.log(url)\nreturn {'url':url, 'cacheTime':3600,'httpHeaders':config.httpHeaders};\n\n}else{\n\tlet url = config.host+\"/api/v3/comics?free_type=1&limit=24&offset=\"+params.offset+\"&theme=\"+encodeURI(params.filters.type)+\"&_update=true\"+\"&ordering=\"+params.filters.score;\n\treturn {'url':url, 'cacheTime':3600,'httpHeaders':config.httpHeaders};\n\n}",
+            "host": "https://api.copymanga.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "欢乐",
+                                "value": "huanlexiang"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "xianxia"
+                            },
+                            {
+                                "title": "爱情",
+                                "value": "aiqing"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "maoxian"
+                            },
+                            {
+                                "title": "东方",
+                                "value": "dongfang"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "baihe"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "xiaoyuan"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "qihuan"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "生活",
+                                "value": "shenghuo"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "qingxiaoshuo"
+                            },
+                            {
+                                "title": "格鬥",
+                                "value": "gedou"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "xuanyi"
+                            },
+                            {
+                                "title": "舰娘",
+                                "value": "jianniang"
+                            },
+                            {
+                                "title": "神鬼",
+                                "value": "shengui"
+                            },
+                            {
+                                "title": "治愈",
+                                "value": "zhiyu"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "qita"
+                            },
+                            {
+                                "title": "四格",
+                                "value": "sige"
+                            },
+                            {
+                                "title": "职场",
+                                "value": "zhichang"
+                            },
+                            {
+                                "title": "萌系",
+                                "value": "mengxi"
+                            },
+                            {
+                                "title": "伪娘",
+                                "value": "weiniang"
+                            },
+                            {
+                                "title": "耽美",
+                                "value": "danmei"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "jingji"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "gaoxiao"
+                            },
+                            {
+                                "title": "性转换",
+                                "value": "xingzhuanhuan"
+                            },
+                            {
+                                "title": "节操",
+                                "value": "jiecao"
+                            },
+                            {
+                                "title": "侦探",
+                                "value": "zhentan"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "rexue"
+                            },
+                            {
+                                "title": "美食",
+                                "value": "meishi"
+                            },
+                            {
+                                "title": "音乐舞蹈",
+                                "value": "yinyuewudao"
+                            },
+                            {
+                                "title": "長條",
+                                "value": "changtiao"
+                            },
+                            {
+                                "title": "後宮",
+                                "value": "hougong"
+                            },
+                            {
+                                "title": "彩色",
+                                "value": "COLOR"
+                            },
+                            {
+                                "title": "励志",
+                                "value": "lizhi"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "zhanzheng"
+                            },
+                            {
+                                "title": "异世界",
+                                "value": "yishijie"
+                            },
+                            {
+                                "title": "机战",
+                                "value": "jizhan"
+                            },
+                            {
+                                "title": "AA",
+                                "value": "aa"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "C96",
+                                "value": "comiket96"
+                            },
+                            {
+                                "title": "C97",
+                                "value": "comiket97"
+                            },
+                            {
+                                "title": "宅系",
+                                "value": "zhaixi"
+                            },
+                            {
+                                "title": "C95",
+                                "value": "comiket95"
+                            },
+                            {
+                                "title": "FATE",
+                                "value": "fate"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "恐怖"
+                            },
+                            {
+                                "title": "無修正",
+                                "value": "Uncensored"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "wuxia"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "chuanyue"
+                            },
+                            {
+                                "title": "生存",
+                                "value": "shengcun"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "dushi"
+                            },
+                            {
+                                "title": "转生",
+                                "value": "zhuansheng"
+                            },
+                            {
+                                "title": "LoveLive",
+                                "value": "loveLive"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "score",
+                        "items": [
+                            {
+                                "title": "按热度🔺",
+                                "value": "popular"
+                            },
+                            {
+                                "title": "按热度🔻",
+                                "value": "-popular"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "cover",
+            "validConfig": "",
+            "list": "results/list",
+            "parserID": "DOM",
+            "detailUrl": "path_word"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

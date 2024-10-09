@@ -1,0 +1,90 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "content",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "http://android.jjwxc.net",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 8.0.0; zh-cn; MIX 2 Build/OPR1.170623.027) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "http://android.jjwxc.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "3333",
+    "sourceName": "🦌出品-晋江文学城💯",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Linux; U; Android 8.0.0; zh-cn; MIX 2 Build/OPR1.170623.027) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650358688.149505",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "novelClass",
+        "author": "authorname || authorName",
+        "responseFormatType": "json",
+        "bookName": "novelname || novelName",
+        "desc": "novelintroshort || novelIntroShort",
+        "requestInfo": "http://android.jjwxc.net/androidapi/search?keyword=%@keyWord&type=1&page=%@pageIndex&searchType=1&sortMode=DESC",
+        "host": "http://android.jjwxc.net",
+        "actionID": "searchBook",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 8.0.0; zh-cn; MIX 2 Build/OPR1.170623.027) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+        },
+        "cover": "cover",
+        "validConfig": "",
+        "list": "items || $..*[?(@.novelName)] || $..*[?(@.novelname)]",
+        "parserID": "DOM",
+        "wordCount": "novelsize || novelSize",
+        "detailUrl": "novelid || novelId",
+        "moreKeys": {
+            "pageSize": 20
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "http://app-cdn.jjwxc.net/androidapi/chapterList?novelId=%@result&more=0&whole=1",
+        "title": "chaptername",
+        "host": "http://android.jjwxc.net",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 8.0.0; zh-cn; MIX 2 Build/OPR1.170623.027) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+        },
+        "list": "chapterlist",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn 'http://app-cdn.jjwxc.net/androidapi/chapterContent?novelId=' + params.queryInfo.detailUrl + '&chapterId=' + result.chapterid;"
+    },
+    "sourceType": "text"
+}

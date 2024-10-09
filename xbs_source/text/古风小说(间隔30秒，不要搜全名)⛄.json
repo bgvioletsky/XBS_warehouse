@@ -1,0 +1,214 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.gufengxs.com",
+        "list": "//div[@class=\"chapterlist\"]//ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href ||@js:\nreturn params.queryInfo.detailUrl + result;"
+    },
+    "loginUrl": "https://www.gufengxs.com/login.php",
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "古风小说(间隔30秒，不要搜全名)⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://www.gufengxs.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641298366.632057",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//p[1]/span[1]",
+        "author": "//p[2]//a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//p[1]/span[2]/a",
+        "bookName": "//p[1]/a",
+        "requestInfo": "https://www.gufengxs.com/modules/article/search.php?searchkey=%@keyWord&page=%@pageIndex",
+        "host": "https://www.gufengxs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//p[1]/a//@href",
+        "cover": "//p[1]/a//@href ||@js:\nvar item = result.match(/\\/(\\d+)\\/(\\d+)\\//);\n\nlet id1 = item[1];\nlet id2 = item[2];\nreturn config.host+'/files/article/image/'+id1+'/'+id2+'/'+id2+'s.jpg';",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class=\"searchresult lists\"]/li",
+        "moreKeys": {
+            "pageSize": 30
+        },
+        "status": "//p[2]/span[2]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet beginStr = '<div id=\"content\" class=\"content\">';\n\tlet beginIndex = result.indexOf(beginStr);\n      function typeSet(str){\n            str = str.replace(/思︿路︿客&nbsp;www〝siluke〞info&nbsp;更新最快的小说网，无弹窗！/gi,'');\n            str = str.replace(/思︽路︽客&nbsp;www~siluke~info&nbsp;更新最快的小说网，无弹窗！/gi,'');\n            str = str.replace(/<br[\\s]*\\/>/gi,'\\n');\n            str = str.replace(/<[^>]*>/gi,'');\n            str = str.replace(/\\n[\\s]*\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,'');\n            str = str.replace(/<i>(.*?)<\\/i>/gi,'');\n            str = str.replace(/<[^>]*>(.*?)<\\/[^>]*>/gi,'');\n\t\tstr = str.replace(/[\\s]{2,}/gi,'');\n            //str = str.replace(/\\n/gi,'@');\n            return str;\n      }\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex + beginStr.length);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n            \n\t\treturn typeSet(tarStr);\n\t}\n\treturn undefined;\n}",
+        "host": "https://www.gufengxs.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.gufengxs.com",
+        "desc": "//div[@class=\"articleinfo\"]//p[@class=\"p3\"]",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//div[2]/p[2]//a",
+            "bookName": "//div[2]/p[1]/a",
+            "desc": "//div[2]/p[3]",
+            "requestInfo": "@js:\nlet url = config.host + '/'+params.filters.class + '_'+params.pageIndex+'.html';\nreturn encodeURI(url);",
+            "host": "https://www.gufengxs.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[1]//a//@href",
+            "wordCount": "//div[2]/p[2]/span[2]",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "xuanhuan"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "xianxia"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "dushi"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "wangyou"
+                            },
+                            {
+                                "title": ".科幻",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "lingyi"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "qita"
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "cover": "//img/@data-original",
+            "list": "//div[@class=\"listcon\"]//ul/li",
+            "status": "//div[2]/span[1]",
+            "_sIndex": 0
+        },
+        "排行": {
+            "cat": "//p[1]/span[1]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//p[1]/span[2]/a",
+            "author": "//p[2]//a",
+            "bookName": "//p[1]/a",
+            "requestInfo": "@js:\nlet url = config.host + '/paihang/'+params.filters.order+'_'+params.pageIndex+'.html';\nreturn encodeURI(url);",
+            "host": "https://www.gufengxs.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[1]/a//@href",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "阅读总榜",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "阅读月榜",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "阅读周榜",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "阅读日榜",
+                                "value": "dayvisit"
+                            },
+                            {
+                                "title": "推荐总榜",
+                                "value": "allvote"
+                            },
+                            {
+                                "title": "推荐月榜",
+                                "value": "monthvote"
+                            },
+                            {
+                                "title": "推荐周榜",
+                                "value": "weekvote"
+                            },
+                            {
+                                "title": "推荐日榜",
+                                "value": "dayvote"
+                            },
+                            {
+                                "title": "收藏榜",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "字数榜",
+                                "value": "size"
+                            },
+                            {
+                                "title": "最近更新",
+                                "value": "lastupdate"
+                            },
+                            {
+                                "title": "最新入库",
+                                "value": "postdate"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//ul[@class=\"lists\"]/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//p[1]/a//@href ||@js:\nvar item = result.match(/\\/(\\d+)\\/(\\d+)\\//);\n\nlet id1 = item[1];\nlet id2 = item[2];\nreturn config.host+'/files/article/image/'+id1+'/'+id2+'/'+id2+'s.jpg';",
+            "status": "//p[2]/span[2]"
+        }
+    }
+}

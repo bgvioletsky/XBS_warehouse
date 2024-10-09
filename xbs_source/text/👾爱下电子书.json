@@ -1,0 +1,258 @@
+{
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class=\"list_info\"]/p//span[@class=\"l5\"]/a",
+            "author": "//div[@class=\"list_info\"]/p//span[@class=\"l1\"]/a",
+            "bookName": "//div[@class=\"list_info\"]/h2/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.aixdzs.com/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet url = config.host+\"/sort/\"+params.filters.type+\"/index_\"+params.filters.words+\"_\"+params.filters.sort+\"_\"+params.filters.order+\"_\"+params.pageIndex+\".html\";\n//return url; \nreturn {'url':url, 'cacheTime':3600,'httpHeaders':config.httpHeaders};",
+            "host": "https://www.aixdzs.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"list_info\"]/h2/a/@href||@js:\n\nreturn \"https://read.aixdzs.com/\"+result.match(/(\\d\\S+)/)[1];",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "4"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "5"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "3"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "6"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "7"
+                            },
+                            {
+                                "title": "耽美",
+                                "value": "8"
+                            },
+                            {
+                                "title": "推理",
+                                "value": "12"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "10"
+                            },
+                            {
+                                "title": "台言古言",
+                                "value": "9"
+                            },
+                            {
+                                "title": "古典文学",
+                                "value": "11"
+                            },
+                            {
+                                "title": "外国文学",
+                                "value": "13"
+                            },
+                            {
+                                "title": "当代现代",
+                                "value": "14"
+                            },
+                            {
+                                "title": "童话故事",
+                                "value": "15"
+                            },
+                            {
+                                "title": "传记纪实",
+                                "value": "16"
+                            },
+                            {
+                                "title": "韩流青春",
+                                "value": "17"
+                            },
+                            {
+                                "title": "影视文学",
+                                "value": "18"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "0"
+                            }
+                        ],
+                        "key": "type"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "30万字以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30-50万字",
+                                "value": "2"
+                            },
+                            {
+                                "title": "50-100万字",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100万字以上",
+                                "value": "4"
+                            }
+                        ],
+                        "key": "words"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载中",
+                                "value": "1"
+                            },
+                            {
+                                "title": "已完结",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "sort"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "最新",
+                                "value": "0"
+                            },
+                            {
+                                "title": "最热",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"box_k mt15\"]/ul/li",
+            "parserID": "DOM",
+            "desc": "//p[@class=\"b_intro\"]/text()",
+            "wordCount": "//div[@class=\"list_info\"]/p//span[@class=\"l2\"]/a",
+            "status": "//div[@class=\"list_info\"]/p//span[@class=\"l3\"]/a",
+            "cover": "//div[@class=\"list_img\"]//img/@src"
+        }
+    },
+    "weight": "999",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\n//return params.queryInfo.detailUrl\n\nlet res= params.queryInfo.detailUrl;\nreturn {'url':res,'httpHeaders':config.httpHeaders,\"cacheTime\":3600, forbidCookie: true};",
+        "title": "//a",
+        "host": "https://www.aixdzs.com/",
+        "httpHeaders": {
+            "Referer": "https://www.aixdzs.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"
+        },
+        "list": "//div[@class=\"catalog\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href||@js:\nif(result){\nreturn params.queryInfo.detailUrl +result;}"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "👾爱下电子书",
+    "sourceType": "text",
+    "sourceUrl": "https://www.aixdzs.com/",
+    "httpHeaders": {
+        "Referer": "https://www.aixdzs.com/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1638893448.646518",
+    "searchBook": {
+        "author": "//div[@class=\"list_info\"]/p//span[@class=\"l1\"]/a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class=\"list_info\"]/p//span[@class=\"l5\"]/a",
+        "bookName": "//div[@class=\"list_info\"]/h2/a/text()",
+        "httpHeaders": {
+            "Referer": "https://www.aixdzs.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url =  config.host+\"/bsearch\";\n\n/*let hh =  {\r\n            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36',\r\n            'Referer': 'http://y.qq.com'\r\n        };*/\n\nlet hp = {\"q\":params.keyWord,\"page\":params.pageIndex};\n\nreturn {'url':url, 'httpParams':hp ,'httpHeaders':config.httpHeaders,cacheTime:3600};",
+        "host": "https://www.aixdzs.com/",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "detailUrl": "//div[@class=\"list_info\"]/h2/a/@href||@js:\n\nreturn \"https://read.aixdzs.com/\"+result.match(/(\\d\\S+)/)[1];",
+        "validConfig": "",
+        "list": "//div/ul/li",
+        "parserID": "DOM",
+        "wordCount": "//div[@class=\"list_info\"]/p//span[@class=\"l2\"]/a",
+        "desc": "//p[@class=\"b_intro\"]/text()",
+        "status": "//div[@class=\"list_info\"]/p//span[@class=\"l3\"]/a",
+        "cover": "//div[@class=\"list_img\"]//img/@src"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@class=\"content\"]/p",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result,'httpHeaders':config.httpHeaders,cacheTime:3600};",
+        "host": "https://www.aixdzs.com/",
+        "httpHeaders": {
+            "Referer": "https://www.aixdzs.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "//超时请更换网络",
+    "password": "99mh99",
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "shudanList": {}
+}

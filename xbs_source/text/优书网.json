@@ -1,0 +1,493 @@
+{
+    "bookDetail": {
+        "responseJavascript": "function functionName(config, params, resObj)\n{\n\tif(resObj.data && resObj.data.bookInfo){\n\t\tlet bookInfo = params.queryInfo;\n\t\tbookInfo.desc = resObj.data.bookInfo.introduction;\n\t\treturn {'response':bookInfo, 'removeHtmlKeys':'desc'};\n\t}\n\treturn undefined;\n}",
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.yousuu.com/",
+        "responseFormatType": "json",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params)\n{\n\tvar cacheKey = 'https://api.yousuu.com/api/book/' + params.queryInfo.bookId + '?t=';\n\tvar url = cacheKey + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+    },
+    "bookWorld": {
+        "男频分类": {
+            "actionID": "bookWorld",
+            "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar result = {};\n\n\tif(resObj.data && resObj.data.books)\n\t{\n\t\tif(resObj.data.total)\n\t\t\tresult.total = resObj.data.total;\n\n\t\tvar list = [];\n\t\tvar oldList = resObj.data.books;\n\t\tvar length = oldList.length;\n\t\tfor(let i=0; i<length; i++)\n\t\t{\n\t\t\tlet book = {};\n\t\t\tlet oldBook = oldList[i];\t\n\t\t\tbook.bookId = oldBook.bookId;\n\t\t\tbook.bookName = oldBook.title;\n\t\t\tbook.author = oldBook.author;\n\t\t\tbook.wordCount = oldBook.countWord;\n\t\t\tbook.cover = oldBook.cover;\n\t\t\tbook.status = oldBook.status;\n\t\t\tlist.push(book);\n\t\t}\n\t\tresult.list = list;\n\t}\n\n\tif(resObj.success && resObj.success == true)\n\t\tresult.success = true;\n\treturn result;\n}",
+            "validConfig": "",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "classId",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "2"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "3"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "4"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "5"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "6"
+                            },
+                            {
+                                "title": "现实",
+                                "value": "7"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "8"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "9"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "10"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "11"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "12"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "13"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "15"
+                            },
+                            {
+                                "title": "二次元",
+                                "value": "14"
+                            },
+                            {
+                                "title": "同人",
+                                "value": "16"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "20"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "countWord",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "10万以下",
+                                "value": "0"
+                            },
+                            {
+                                "title": "10万-30万",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30万-60万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "60万-100万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100万-300万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "300万以上",
+                                "value": "5"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "连载",
+                                "value": "0"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "1"
+                            },
+                            {
+                                "title": "太监",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "综合",
+                                "value": ""
+                            },
+                            {
+                                "title": "字数",
+                                "value": "countWord"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "score"
+                            },
+                            {
+                                "title": "评分人数",
+                                "value": "scorer"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "host": "https://www.yousuu.com/",
+            "responseFormatType": "json",
+            "parserID": "JS",
+            "requestJavascript": "function functionName(config, params)\n{\n\tvar url = 'https://api.yousuu.com/api/bookStore/books?channel=0';\n\tif(params.filters.classId.length>0)\n\t\turl = url + '&classId=' + params.filters.classId;\n\tif(params.filters.countWord.length>0)\n\t\turl = url + '&countWord=' + params.filters.countWord;\n\tif(params.filters.status.length>0)\n\t\turl = url + '&status=' + params.filters.status;\n\tif(params.filters.sort.length>0)\n\t\turl = url + '&sort=' + params.filters.sort;\n\turl = url + '&page=' + params.pageIndex;\n\n\tvar cacheKey = url;\n\turl = url + '&t=' + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+        },
+        "女频分类": {
+            "actionID": "bookWorld",
+            "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar result = {};\n\n\tif(resObj.data && resObj.data.books)\n\t{\n\t\tif(resObj.data.total)\n\t\t\tresult.total = resObj.data.total;\n\n\t\tvar list = [];\n\t\tvar oldList = resObj.data.books;\n\t\tvar length = oldList.length;\n\t\tfor(let i=0; i<length; i++)\n\t\t{\n\t\t\tlet book = {};\n\t\t\tlet oldBook = oldList[i];\t\n\t\t\tbook.bookId = oldBook.bookId;\n\t\t\tbook.bookName = oldBook.title;\n\t\t\tbook.author = oldBook.author;\n\t\t\tbook.wordCount = oldBook.countWord;\n\t\t\tbook.cover = oldBook.cover;\n\t\t\tbook.status = oldBook.status;\n\t\t\tlist.push(book);\n\t\t}\n\t\tresult.list = list;\n\t}\n\n\tif(resObj.success && resObj.success == true)\n\t\tresult.success = true;\n\treturn result;\n}",
+            "validConfig": "",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "classId",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "穿越时空",
+                                "value": "17"
+                            },
+                            {
+                                "title": "架空历史",
+                                "value": "18"
+                            },
+                            {
+                                "title": "总裁豪门",
+                                "value": "20"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "21"
+                            },
+                            {
+                                "title": "仙侠奇缘",
+                                "value": "22"
+                            },
+                            {
+                                "title": "幻想言情",
+                                "value": "23"
+                            },
+                            {
+                                "title": "悬疑推理",
+                                "value": "24"
+                            },
+                            {
+                                "title": "耽美纯爱",
+                                "value": "25"
+                            },
+                            {
+                                "title": "衍生同人",
+                                "value": "26"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "27"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "28"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "countWord",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "10万以下",
+                                "value": "0"
+                            },
+                            {
+                                "title": "10万-30万",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30万-60万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "60万-100万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100万-300万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "300万以上",
+                                "value": "5"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "连载",
+                                "value": "0"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "1"
+                            },
+                            {
+                                "title": "太监",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "综合",
+                                "value": ""
+                            },
+                            {
+                                "title": "字数",
+                                "value": "countWord"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "score"
+                            },
+                            {
+                                "title": "评分人数",
+                                "value": "scorer"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "host": "https://www.yousuu.com/",
+            "responseFormatType": "json",
+            "parserID": "JS",
+            "requestJavascript": "function functionName(config, params)\n{\n\tvar url = 'https://api.yousuu.com/api/bookStore/books?channel=1';\n\tif(params.filters.classId.length>0)\n\t\turl = url + '&classId=' + params.filters.classId;\n\tif(params.filters.countWord.length>0)\n\t\turl = url + '&countWord=' + params.filters.countWord;\n\tif(params.filters.status.length>0)\n\t\turl = url + '&status=' + params.filters.status;\n\tif(params.filters.sort.length>0)\n\t\turl = url + '&sort=' + params.filters.sort;\n\turl = url + '&page=' + params.pageIndex;\n\n\tvar cacheKey = url;\n\turl = url + '&t=' + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+        },
+        "排行榜": {
+            "actionID": "bookWorld",
+            "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar result = {};\n\tif(resObj.data)\n\t{\n\t\tvar list = [];\n\t\tvar oldList = resObj.data;\n\t\tif(oldList.books)\n\t\t\toldList = oldList.books;\n\n\t\tvar length = oldList.length;\n\t\tfor(let i=0; i<length; i++)\n\t\t{\n\t\t\tlet book = {};\n\t\t\tlet oldBook = oldList[i];\t\n\t\t\tbook.bookId = oldBook.bookId;\n\t\t\tbook.bookName = oldBook.title;\n\t\t\tbook.author = oldBook.author;\n\t\t\tbook.wordCount = oldBook.countWord;\n\t\t\tbook.status = oldBook.status;\n\t\t\tbook.desc = oldBook.introduction;\n\t\t\tif(oldBook.cover.indexOf('uifQCd.jpg')==-1)\n\t\t\t\tbook.cover = oldBook.cover;\n\t\t\tlist.push(book);\n\t\t}\n\t\tresult.list = list;\n\t\tresult.more = false;\n\t}\n\n\tif(resObj.success && resObj.success == true)\n\t\tresult.success = true;\n\treturn result;\n}",
+            "validConfig": "",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "今日热门",
+                                "value": "hotJumpBoard?"
+                            },
+                            {
+                                "title": "一周热门",
+                                "value": "weekJumpBoard?"
+                            },
+                            {
+                                "title": "优秀新书",
+                                "value": "recomBook?"
+                            },
+                            {
+                                "title": "在读指数",
+                                "value": "readBoard?page=1&"
+                            },
+                            {
+                                "title": "男频周热门",
+                                "value": "channelBooks?channel=male&"
+                            },
+                            {
+                                "title": "女频周热门",
+                                "value": "channelBooks?channel=female&"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "host": "https://www.yousuu.com/",
+            "responseFormatType": "json",
+            "parserID": "JS",
+            "requestJavascript": "function functionName(config, params)\n{\n\tvar url = 'https://api.yousuu.com/api/home/' + params.filters.filter;\n\n\tvar cacheKey = url;\n\turl = url + 't=' + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+        }
+    },
+    "weight": "9978",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "actionID": "chapterList",
+        "parserID": "JS"
+    },
+    "searchShudan": {
+        "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar result = {};\n\tif(resObj.success && resObj.success == true)\n\t\tresult.success = true;\n\tif(resObj.data && resObj.data.booklists)\n\t{\n\t\tvar list = [];\n\t\tvar oldList=resObj.data.booklists;\n\t\tfor(let i=0; i<oldList.length; ++i)\n\t\t{\n\t\t\tlet info = {};\n\t\t\tlet oldInfo = oldList[i];\n\n\t\t\tinfo.id = oldInfo.booklistId;\n\t\t\tinfo.title = oldInfo.title;\n\t\t\tinfo.cover = 'http://statics.zhuishushenqi.com' + oldInfo.cover;\n\n\t\t\tif(oldInfo.covers && oldInfo.covers.length>0)\n\t\t\t\tinfo.cover = oldInfo.covers[0];\n\n\t\t\tif(oldInfo.classes)\n\t\t\t{\n\t\t\t\tlet detail = '';\n\t\t\t\tfor(let j=0; j<oldInfo.classes.length; ++j)\n\t\t\t\t{\n\t\t\t\t\tlet classes = oldInfo.classes[j];\n\t\t\t\t\tdetail = detail + classes.className + '(' + classes.count + ')  ';\n\t\t\t\t}\n\t\t\t\tinfo.detail = detail;\n\t\t\t}\n\n\t\t\tlist.push(info);\n\t\t}\n\n\t\tresult.list = list;\n\t\tresult.total = resObj.data.total;\n\t\tresult.removeHtmlKeys = 'title';\n\t}\n\treturn result;\n}",
+        "actionID": "searchShudan",
+        "validConfig": "",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.yousuu.com/",
+        "responseFormatType": "json",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params) {\n\tvar cacheKey = 'https://api.yousuu.com/api/search?type=booklist&value=' + encodeURI(params.keyWord) + '&page=' + params.pageIndex + '&highlight=1&from=search&t=';\n\tvar url = cacheKey + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "JS"
+    },
+    "enable": 0,
+    "sourceName": "优书网",
+    "sourceUrl": "https://www.yousuu.com/",
+    "shudanDetail": {
+        "responseJavascript": "function functionName(config, params, resObj)\n{\n\tif(resObj.data && resObj.data.books)\n\t{\n\t\tvar list = [];\n\t\tvar oldList=resObj.data.books;\n\t\tfor(let i=0; i<oldList.length; ++i)\n\t\t{\n\t\t\tlet info = {};\n\t\t\tlet oldInfo = oldList[i].bookId;\n\t\t\tinfo.bookName = oldInfo.title;\n\t\t\tinfo.author = oldInfo.author;\n\t\t\tinfo.cover = oldInfo.cover;\n\t\t\tinfo.status = oldInfo.status;\n\t\t\tinfo.wordCount = oldInfo.countWord;\n\t\t\tinfo.detail = oldList[i].content;\n\t\t\tinfo.rate = oldList[i].score;\n\t\t\tlist.push(info);\n\t\t}\n\t\treturn {'list':list, 'total':resObj.data.total, 'removeHtmlKeys':'bookName', 'removeHtmlRegex':'\\\\[.*?\\\\]|【.*?】|（.*?）|(.*?)'};\n\t}\n\treturn undefined;\n}",
+        "actionID": "shudanDetail",
+        "validConfig": "",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.yousuu.com/",
+        "responseFormatType": "json",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params) {\n\tvar cacheKey = 'https://api.yousuu.com/api/booklist/' + params.queryInfo.id + '?page=' + params.pageIndex + '&classId=&t=';\n\tvar url = cacheKey + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+    },
+    "lastModifyTime": "1640156342.214857",
+    "searchBook": {
+        "responseJavascript": "function functionName(config, params, resObj)\n{\n\tvar result = {};\n\n\tif(resObj.data && resObj.data.books)\n\t{\n\t\tif(resObj.data.total)\n\t\t\tresult.total = resObj.data.total;\n\n\t\tvar list = [];\n\t\tvar oldList = resObj.data.books;\n\t\tvar length = oldList.length;\n\t\tfor(let i=0; i<length; i++)\n\t\t{\n\t\t\tlet book = {};\n\t\t\tlet oldBook = oldList[i];\t\n\t\t\tbook.bookId = oldBook._id;\n\t\t\tbook.bookName = oldBook.title;\n\t\t\tbook.author = oldBook.author;\n\t\t\tbook.wordCount = oldBook.countWord;\n\t\t\tbook.cover = oldBook.cover;\n\t\t\tlist.push(book);\n\t\t}\n\t\tresult.list = list;\n\t\tresult.removeHtmlKeys = 'bookName';\n\t}\n\n\tif(resObj.success && resObj.success == true)\n\t\tresult.success = true;\n\treturn result;\n}",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.yousuu.com/",
+        "responseFormatType": "json",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params) {\n\tvar cacheKey = 'https://api.yousuu.com/api/search?type=title&value=' + encodeURI(params.keyWord) + '&page=' + params.pageIndex + '&highlight=1&from=search&t=';\n\tvar url = cacheKey + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "JS"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "responseJavascript": "function functionName(config, params, resObj)\n{\n\tif(resObj.data==undefined)\n\t\treturn undefined;\n\n\tvar result = {};\n\tvar newList = [];\n\tvar defaultCover = 'https://s2.ax1x.com/2019/10/14/KSoO3T.png';\n\n\tif(resObj.data.comments)\n\t{\n\t\t// 一级主题列表\n\t\tresult.listStyle = 1;\n\n\t\tlet oldList = resObj.data.comments;\n\t\tlet length = oldList.length;\n\n\t\tfor(let i=0; i<length; i++)\n\t\t{\n\t\t\tlet oldInfo = oldList[i]\n\t\t\tlet newInfo = {};\n\t\t\tnewInfo.id = oldInfo._id;\n\t\t\tnewInfo.fromUserId = oldInfo.createrId._id;\n\t\t\tnewInfo.fromUserName = oldInfo.createrId.userName;\n\t\t\tnewInfo.fromUserCover = defaultCover;\n\t\t\tnewInfo.detail = oldInfo.content;\n\t\t\tnewInfo.createdTime = oldInfo.updateAt;\n\t\t\tnewInfo.replyCount = oldInfo.replyCount;\n\t\t\tnewInfo.score = oldInfo.score;\n\t\t\tnewInfo.subListType = 1;\t\t\t\n\t\t\tnewList.push(newInfo);\n\t\t}\n\t}\n\telse  if(resObj.data.commentReply)\n\t{\n\t\t// 二级跟贴列表\n\t\tlet oldList = resObj.data.commentReply;\n\t\tlet length = oldList.length;\n\n\t\tfor(let i=0; i<length; i++)\n\t\t{\n\t\t\tlet oldInfo = oldList[i]\n\t\t\tlet newInfo = {};\n\t\t\tnewInfo.id = oldInfo._id;\n\t\t\tnewInfo.detail = oldInfo.content;\n\t\t\tnewInfo.createdTime = oldInfo.createdAt;\n\t\t\tnewInfo.replyCount = oldInfo.replyCount;\n\n\t\t\tif(oldInfo.fromId){\n\t\t\t\tnewInfo.fromUserName = oldInfo.fromId.userName;\n\t\t\t\tnewInfo.fromUserCover = defaultCover;\n\t\t\t}\n\t\t\t\t\n\t\t\tif(oldInfo.toId && oldInfo.toId.userName)\n\t\t\t\tnewInfo.title = '回复@' + oldInfo.toId.userName;\n\n\t\t\tnewList.push(newInfo);\n\t\t}\n\t}\n\n\tif(resObj.data.total)\n\t\tresult.total = resObj.data.total;\n\tif(resObj.success && resObj.success == true)\n\t\tresult.success = true;\n\tresult.list=newList;\n\treturn result;\n}",
+        "validConfig": "",
+        "responseFunction": "functionName",
+        "moreKeys": {
+            "requestFilters": {
+                "热度": "replyAt",
+                "最新": "latest",
+                "综合": ""
+            }
+        },
+        "requestFunction": "functionName",
+        "host": "https://www.yousuu.com/",
+        "responseFormatType": "json",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params) \n{\n\tif(params.queryInfo.bookId) \n\t{\n\t\t// 一级主题列表,queryInfo为book\n\t\tvar filter = params.filter?params.filter:'';\n\t\tvar cacheKey = 'https://api.yousuu.com/api/book/' + params.queryInfo.bookId + '/comment?type=' + filter + '&page=' + params.pageIndex + '&t=';\n\t\tvar url = cacheKey + (new Date()).valueOf();\n\t\treturn {'url':url, 'cacheKey':cacheKey};\n\t}\n\n\t// 二级跟贴列表,queryInfo为shupingInfo\n\tvar cacheKey = 'https://api.yousuu.com/api/comment/' + params.queryInfo.id + '/reply?page=' + params.pageIndex + '&t=';\n\tvar url = cacheKey + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+    },
+    "desc": "索引源",
+    "password": "Baby",
+    "shudanList": {
+        "女频": {
+            "actionID": "shudanList",
+            "responseJavascript": "function functionName(config, params, resObj)\n{\n\tif(resObj.data && resObj.data.booklists)\n\t{\n\t\tvar list = [];\n\t\tvar oldList=resObj.data.booklists;\n\t\tfor(let i=0; i<oldList.length; ++i)\n\t\t{\n\t\t\tlet info = {};\n\t\t\tlet oldInfo = oldList[i];\n\n\t\t\tinfo.id = oldInfo._id;\n\t\t\tinfo.title = oldInfo.title;\n\t\t\tinfo.cover = 'http://statics.zhuishushenqi.com' + oldInfo.cover;\n\n\t\t\tif(oldInfo.covers && oldInfo.covers.length>0)\n\t\t\t\tinfo.cover = oldInfo.covers[0];\n\n\t\t\tif(oldInfo.classes)\n\t\t\t{\n\t\t\t\tlet detail = '';\n\t\t\t\tfor(let j=0; j<oldInfo.classes.length; ++j)\n\t\t\t\t{\n\t\t\t\t\tlet classes = oldInfo.classes[j];\n\t\t\t\t\tdetail = detail + classes.className + '(' + classes.count + ')  ';\n\t\t\t\t}\n\t\t\t\tinfo.detail = detail;\n\t\t\t}\n\n\t\t\tlist.push(info);\n\t\t}\n\t\treturn {'list':list, 'total':resObj.data.total};\n\t}\n\treturn undefined;\n}",
+            "validConfig": "",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "moreKeys": {
+                "requestFilters": {
+                    "精选": "essence",
+                    "最新": "latest",
+                    "综合": "comprehensive"
+                }
+            },
+            "host": "https://www.yousuu.com/",
+            "responseFormatType": "json",
+            "parserID": "JS",
+            "requestJavascript": "function functionName(config, params) {\n\tvar cacheKey = 'https://api.yousuu.com/api/booklists?type=woman&screen=' + params.filter + '&page=' + params.pageIndex + '&t=';\n\tvar url = cacheKey + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+        },
+        "男频": {
+            "actionID": "shudanList",
+            "responseJavascript": "function functionName(config, params, resObj)\n{\n\tif(resObj.data && resObj.data.booklists)\n\t{\n\t\tvar list = [];\n\t\tvar oldList=resObj.data.booklists;\n\t\tfor(let i=0; i<oldList.length; ++i)\n\t\t{\n\t\t\tlet info = {};\n\t\t\tlet oldInfo = oldList[i];\n\n\t\t\tinfo.id = oldInfo._id;\n\t\t\tinfo.title = oldInfo.title;\n\t\t\tinfo.cover = 'http://statics.zhuishushenqi.com' + oldInfo.cover;\n\n\t\t\tif(oldInfo.covers && oldInfo.covers.length>0)\n\t\t\t\tinfo.cover = oldInfo.covers[0];\n\n\t\t\tif(oldInfo.classes)\n\t\t\t{\n\t\t\t\tlet detail = '';\n\t\t\t\tfor(let j=0; j<oldInfo.classes.length; ++j)\n\t\t\t\t{\n\t\t\t\t\tlet classes = oldInfo.classes[j];\n\t\t\t\t\tdetail = detail + classes.className + '(' + classes.count + ')  ';\n\t\t\t\t}\n\t\t\t\tinfo.detail = detail;\n\t\t\t}\n\n\t\t\tlist.push(info);\n\t\t}\n\t\treturn {'list':list, 'total':resObj.data.total};\n\t}\n\treturn undefined;\n}",
+            "validConfig": "",
+            "responseFunction": "functionName",
+            "requestFunction": "functionName",
+            "moreKeys": {
+                "requestFilters": {
+                    "精选": "essence",
+                    "最新": "latest",
+                    "综合": "comprehensive"
+                }
+            },
+            "host": "https://www.yousuu.com/",
+            "responseFormatType": "json",
+            "parserID": "JS",
+            "requestJavascript": "function functionName(config, params) {\n\tvar cacheKey = 'https://api.yousuu.com/api/booklists?type=man&screen=' + params.filter + '&page=' + params.pageIndex + '&t=';\n\tvar url = cacheKey + (new Date()).valueOf();\n\treturn {'url':url, 'cacheKey':cacheKey};\n}"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "responseJavascript": "function functionName(config, params, resObj)\n{\n\tif(resObj.data)\n\t{\n\t\tlet result = {};\n\n\t\tlet newList = [];\n\t\tlet oldList = resObj.data;\n\t\tlet length = oldList.length;\n\t\tlet defaultCover = 'https://s2.ax1x.com/2019/10/14/KSoO3T.png';\n\n\t\tif(params.filter==1)\n\t\t{\n\t\t\t// 评论与书单混合列表\n\t\t\tfor(let i=0; i<length; i++)\n\t\t\t{\n\t\t\t\tlet oldInfo = oldList[i]\n\t\t\t\tlet newInfo = {};\n\n\t\t\t\tif(oldInfo.userId) {\n\t\t\t\t\tnewInfo.fromUserName = oldInfo.userId.userName;\n\t\t\t\t\tnewInfo.fromUserCover = defaultCover;\n\t\t\t\t}\n\n\t\t\t\tif(oldInfo.createdAt)\n\t\t\t\t\tnewInfo.createdTime = oldInfo.createdAt;\n\n\t\t\t\tnewInfo.detail = '';\n\t\t\t\tif(oldInfo.commentId && oldInfo.bookId)\n\t\t\t\t{\n\t\t\t\t\t// 书本评论，由于跟贴太少，设置为不可点击\n\t\t\t\t\tnewInfo.subListType = 0;\n\t\t\t\t\tnewInfo.id = oldInfo.commentId._id;\n\n\t\t\t\t\tnewInfo.detail = '书名：《' + oldInfo.bookId.title + '》\\n';\n\t\t\t\t\tif(oldInfo.bookId.author)\n\t\t\t\t\t\tnewInfo.detail = newInfo.detail + '作者：' + oldInfo.bookId.author + '\\n';\n\t\t\t\t\tnewInfo.detail = newInfo.detail + '评分：' + oldInfo.commentId.score + '分\\n';\n\n\t\t\t\t\tif(oldInfo.commentId.content)\n\t\t\t\t\t\tnewInfo.detail = newInfo.detail + oldInfo.commentId.content;\n\t\t\t\t}\n\t\t\t\telse if(oldInfo.booklistId)\n\t\t\t\t{\n\t\t\t\t\t// 书单，可点击进入书单详情\n\t\t\t\t\t/*\n\t\t\t\t\tnewInfo.subListType = 2;\n\t\t\t\t\tnewInfo.id = oldInfo.booklistId._id;\t\t\t\t\tif(oldInfo.booklistId.title)\n\t\t\t\t\t\tnewInfo.title = oldInfo.booklistId.title;\n\t\t\t\t\tif(oldInfo.booklistId.content)\n\t\t\t\t\t\tnewInfo.detail = '书单简介：' + oldInfo.booklistId.content;\n\t\t\t\t\t*/\n\t\t\t\t\tcontinue; // 书单不用了，一个界面内有些可点击有些不可点击，体验不好\n\t\t\t\t}\n\n\t\t\t\tnewList.push(newInfo);\n\t\t\t}\n\t\t}\n\t\telse\n\t\t{\n\t\t\t// 按时间排序的评论列表\n\t\t\tfor(let i=0; i<length; i++)\n\t\t\t{\n\t\t\t\tlet oldInfo = oldList[i]\n\t\t\t\tlet newInfo = {'nextListType':0};\n\n\t\t\t\tif(oldInfo._id)\n\t\t\t\t\tnewInfo.id = oldInfo._id;\n\n\t\t\t\tif(oldInfo.updateAt)\n\t\t\t\t\tnewInfo.createdTime = oldInfo.updateAt;\n\n\t\t\t\tif(oldInfo.createrId) {\n\t\t\t\t\tif(oldInfo.createrId._id)\n\t\t\t\t\t\tnewInfo.fromUserId = oldInfo.createrId._id;\n\t\t\t\t\tif(oldInfo.createrId.userName)\n\t\t\t\t\t\tnewInfo.fromUserName = oldInfo.createrId.userName;\n\t\t\t\t\tnewInfo.fromUserCover = defaultCover;\n\t\t\t\t}\n\n\t\t\t\tnewInfo.detail = '';\n\t\t\t\tif(oldInfo.bookId && oldInfo.bookId.title) {\n\t\t\t\t\tnewInfo.detail = '书名：《' + oldInfo.bookId.title + '》\\n';\n\t\t\t\t\tif(oldInfo.bookId.author)\n\t\t\t\t\t\tnewInfo.detail = newInfo.detail + '作者：' + oldInfo.bookId.author + '\\n';\n\t\t\t\t\tif(oldInfo.score)\n\t\t\t\t\t\tnewInfo.detail = newInfo.detail + '评分：' + oldInfo.score + '分\\n';\n\t\t\t\t}\n\t\t\t\tif(oldInfo.content)\n\t\t\t\t\tnewInfo.detail = newInfo.detail + oldInfo.content;\n\n\t\t\t\tnewList.push(newInfo);\n\t\t\t}\n\t\t}\n\n\t\tresult.sendResponseOnRequest = true;\n\t\tresult.more = true;\n\t\tresult.list = newList;\n\t\tresult.listStyle = 0;\n\t\tif(resObj.success && resObj.success == true)\n\t\t\tresult.success = true;\n\t\treturn result;\n\t}\n\n\treturn undefined;\n}",
+        "validConfig": "",
+        "responseFunction": "functionName",
+        "moreKeys": {
+            "requestFilters": {
+                "精选": 1,
+                "最新": 2
+            }
+        },
+        "requestFunction": "functionName",
+        "host": "https://www.yousuu.com/",
+        "responseFormatType": "json",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params) \n{\n\tvar cacheTime = 60;\n\tvar lastResponseTime = '';\n\tif(params.lastResponse && params.lastResponse.list && params.lastResponse.list.length>0) {\n\t\tvar lastInfo = params.lastResponse.list[params.lastResponse.list.length-1];\n\t\tif(lastInfo.createdTime){\n\t\t\tlastResponseTime = lastInfo.createdTime;\n\t\t\tcacheTime = 0;\n\t\t}\n\t}\n\n\tvar baseUrl = '';\n\tif(params.filter==1)\n\t\tbaseUrl = 'https://api.yousuu.com/api/home?nextTime=';\n\telse\n\t\tbaseUrl = 'https://api.yousuu.com/api/explore/comment?lastTime=';\n\n\tvar url = baseUrl + lastResponseTime + '&t=' + (new Date()).valueOf();\n\tvar result = {'url':url, 'cacheTime':cacheTime, 'forbidCookie':true};\n\n\tif(cacheTime>0)\n\t\tresult.cacheKey = baseUrl;\n\n\treturn result;\n}"
+    },
+    "authorId": "",
+    "sourceType": "text"
+}

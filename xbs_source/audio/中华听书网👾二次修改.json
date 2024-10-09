@@ -1,0 +1,186 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://m.tingshucn.com",
+        "content": "@js:\nvar  url = result.match(/var\\snow=unescape\\(\"(.*?)\"\\);/)[1];\nurl=unescape(url)\nreturn url",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nlet url = '/book/' + result + '.html';\nreturn {'url':url, 'httpHeaders':{'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 '}};",
+        "host": "https://m.tingshucn.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class='book_intro']"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//div[@class='author']/text()[2]|@replace:播音:",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class='update']/text()",
+            "bookName": "//h4[@class='bookname']",
+            "desc": "//div[contains(@class, 'intro')]/text()",
+            "requestInfo": "@js:\nlet url = '/list/' + params.filter;\nif(params.pageIndex>1)\n\turl = url + '-' + params.pageIndex;\nreturn url + '.html';",
+            "host": "https://m.tingshucn.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//@bookid",
+            "moreKeys": {
+                "pageSize": "10",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "玄幻·网游",
+                                "value": "1"
+                            },
+                            {
+                                "title": "都市·言情",
+                                "value": "2"
+                            },
+                            {
+                                "title": "仙侠·武侠",
+                                "value": "3"
+                            },
+                            {
+                                "title": "恐怖·悬疑",
+                                "value": "4"
+                            },
+                            {
+                                "title": "穿越·同人",
+                                "value": "5"
+                            },
+                            {
+                                "title": "历史·军事",
+                                "value": "6"
+                            },
+                            {
+                                "title": "刑侦·推理",
+                                "value": "7"
+                            },
+                            {
+                                "title": "社会·情感",
+                                "value": "8"
+                            },
+                            {
+                                "title": "人文·社科",
+                                "value": "9"
+                            },
+                            {
+                                "title": "官场·商战",
+                                "value": "10"
+                            },
+                            {
+                                "title": "其他·类别",
+                                "value": "11"
+                            },
+                            {
+                                "title": "儿童·读物",
+                                "value": "12"
+                            },
+                            {
+                                "title": "幽默·笑话",
+                                "value": "13"
+                            },
+                            {
+                                "title": "健康·养生",
+                                "value": "14"
+                            },
+                            {
+                                "title": "文学·名著",
+                                "value": "15"
+                            },
+                            {
+                                "title": "相声·戏剧",
+                                "value": "16"
+                            },
+                            {
+                                "title": "名家·评书",
+                                "value": "17"
+                            },
+                            {
+                                "title": "职业·技能",
+                                "value": "18"
+                            },
+                            {
+                                "title": "外语·学习",
+                                "value": "19"
+                            },
+                            {
+                                "title": "财经·时评",
+                                "value": "20"
+                            },
+                            {
+                                "title": "广播剧",
+                                "value": "21"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "cover": "//div[@class='bookimg']/img/@orgsrc",
+            "list": "//div[@class='bookbox']"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://m.tingshucn.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1523",
+    "sourceName": "中华听书网👾二次修改",
+    "sourceType": "audio",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1636094364.066021",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[@class='author']/text()[2]|@replace:播音:",
+        "responseFormatType": "html",
+        "bookName": "//h4[@class='bookname']",
+        "desc": "//div[contains(@class, 'intro')]/text()",
+        "requestInfo": "@js:\nlet url = '/search.php';\nlet hp = {'page':params.pageIndex, 'searchword':params.keyWord};\nlet hh = {'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 '};\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh};",
+        "host": "https://m.tingshucn.com",
+        "actionID": "searchBook",
+        "detailUrl": "//@bookid",
+        "moreKeys": {
+            "pageSize": 6
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "cover": "//div[@class='bookimg']/img/@orgsrc",
+        "list": "//div[@class='bookbox']"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet url = '/book/' + result + '.html';\nreturn {'url':url, 'httpHeaders':{'User-Agent':'Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 '}};",
+        "title": "//a",
+        "host": "https://m.tingshucn.com",
+        "list": "//div[@id='playlist']//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

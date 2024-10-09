@@ -1,0 +1,205 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "weight": "3910",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "http://www.migudm.cn/comic/%@result.html",
+        "title": "//@title",
+        "host": "http://www.migudm.cn",
+        "list": "//div[@id='negCtSectionListBd']//a || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@data-index || @js:\nreturn 'http://www.migudm.cn/opus/webQueryWatchOpusInfo.html?hwOpusId=' + params.queryInfo.detailUrl + '&index=' + result + '&opusType=2';"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "咪咕圈圈",
+    "sourceType": "comic",
+    "sourceUrl": "http://www.migudm.cn",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637497182.251529",
+    "searchBook": {
+        "cat": "themeList[1]/themeName",
+        "responseFormatType": "json",
+        "lastChapterTitle": "lastItemName",
+        "author": "authorName",
+        "bookName": "opusName",
+        "desc": "opusDesc",
+        "requestInfo": "http://m.migudm.cn/api/searchOpus.html?hintKey=%@keyWord&pageNo=%@pageIndex&pageSize=20&opusType=2&actionSource=02&inputType=01",
+        "host": "http://www.migudm.cn",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "cover": "opusUrl",
+        "validConfig": "",
+        "parserID": "DOM",
+        "detailUrl": "hwOpusId",
+        "list": "data/comicResult/opusDetailList",
+        "status": "statusValue"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "content": "@js:\nlet oldArr = result.data.jpgList;\nlet len = oldArr.length;\nlet str = '';\nfor(i=0; i<len; i++) {\n\tstr = str + oldArr[i].url + '\\n';\n}\nreturn str;",
+        "host": "http://www.migudm.cn",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "付费不能看",
+    "password": "newcomicbmw",
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "cat": "themeList[1]/themeName",
+            "author": "authorName",
+            "lastChapterTitle": "lastItemName",
+            "responseFormatType": "json",
+            "bookName": "opusName",
+            "desc": "opusDesc",
+            "requestInfo": "@js:\nlet url = 'http://m.migudm.cn/api/listOpus.html';\nlet fl = params.filters;\nfl.opusType = 2;\nfl.pageNo = params.pageIndex;\nfl.pageSize = 20;\nreturn {'url':url, 'httpParams':fl};",
+            "host": "http://www.migudm.cn",
+            "actionID": "bookWorld",
+            "detailUrl": "hwOpusId",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "themeId",
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "情感",
+                                "value": "15003"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "15017"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "45000"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "15021"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "15024"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "15012"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "15005"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "15039"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "15004"
+                            },
+                            {
+                                "title": "运动",
+                                "value": "15002"
+                            },
+                            {
+                                "title": "萌系",
+                                "value": "15025"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "15013"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "15020"
+                            },
+                            {
+                                "title": "怀旧",
+                                "value": "15043"
+                            },
+                            {
+                                "title": "资讯",
+                                "value": "15044"
+                            },
+                            {
+                                "title": "亲子",
+                                "value": "15042"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "statusId",
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "7000"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "7001"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "orderType",
+                        "items": [
+                            {
+                                "title": "更新",
+                                "value": "1"
+                            },
+                            {
+                                "title": "月票",
+                                "value": "5"
+                            },
+                            {
+                                "title": "人气",
+                                "value": "3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "cover": "opusUrl",
+            "list": "data/opusList",
+            "status": "statusValue"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,599 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "weight": "9993",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, resObj)\n{\n\tif(resObj.data==undefined || resObj.data.volumes==undefined)\n\t\treturn undefined;\n\n\tlet list = [];\n\tlet bookId=resObj.data.id;\n\tlet volumes=resObj.data.volumes;\n\tlet volLen=volumes.length;\n\tfor(let i=0; i<volLen; i++)\n\t{\n\t\tlet cps=volumes[i].chapters;\n\t\tif(cps==undefined)\n\t\t\tcontinue;\n\t\tlet cpLen=cps.length;\n\n\t\tfor(let j=0; j<cpLen; j++)\n\t\t{\n\t\t\tlet cp=cps[j];\n\t\t\tif(cp.free==1)\n\t\t\t{\n\t\t\t\tlet newCp={};\n\t\t\t\tlet tmpBookId=bookId;\n\t\t\t\tif(cp.book_id != undefined)\n\t\t\t\t\ttmpBookId = cp.book_id;\n\n\t\t\t\tnewCp.title = cp.chapter_name;\n\t\t\t\tnewCp.url = bookId + '/chapter/' + cp.chapter_id;\n\t\t\t\tlist.push(newCp);\n\t\t\t}\n\t\t}\n\t}\n\n\tlet result =  {'list':list};\n\tif(resObj.data.last_update_chapter_date)\n\t\tresult.updateTime = resObj.data.last_update_chapter_date;\n\treturn result;\n}",
+        "requestInfo": "http://api.ali.17k.com:80/v2/book/%@result/volumes?app_type=8&app_key=4037465544&price_extend=1&_versions=979&client_type=10&_filter_data=1&channel=2&merchant=FD-wdj&_access_version=2&cps=0",
+        "host": "http://api.17k.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "17K小说网②",
+    "sourceUrl": "http://api.17k.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1640156146.779640",
+    "searchBook": {
+        "cat": "category_name_2",
+        "author": "author_name",
+        "responseFormatType": "json",
+        "lastChapterTitle": "last_update_chapter_name",
+        "bookName": "book_name",
+        "desc": "intro",
+        "requestInfo": "http://api.ali.17k.com:80/v2/book/search?app_key=4037465544&sort_type=0&page=%@pageIndex&class=0&key=%@keyWord&_versions=971&client_type=1&_filter_data=1&channel=2&merchant=17KH5&_access_version=2&cps=0",
+        "host": "http://api.17k.com",
+        "actionID": "searchBook",
+        "detailUrl": "book_id",
+        "cover": "cover",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "word_count",
+        "list": "data"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "data/content || @js:\nif(result.length>100 && result.indexOf('\\n')<0)\n\treturn result.replace(/\\r/g, '\\n');\nreturn result;",
+        "requestInfo": "/v2/book/%@result/content?app_type=8&app_key=4037465544&_versions=979&client_type=10&_filter_data=1&channel=2&merchant=FD-wdj&_access_version=2&cps=0",
+        "host": "http://api.17k.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "推荐",
+    "password": "Baby",
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "女生分类": {
+            "cat": "bookChannel/name",
+            "author": "authorPenName",
+            "lastChapterTitle": "lastUpdateChapterName",
+            "responseFormatType": "json",
+            "bookName": "bookName",
+            "desc": "introduction",
+            "requestInfo": "@js:\n\nlet httpHeaders = {'Width':1125, 'Height':2436, 'platform':3, 'ClientSource':'K17_APP', 'ClientBrand':'iPhone10,3', 'ClientModel':'iPhone', 'User-Agent':'novelReader/7.6.3 (iPhone; iOS 14.4.2; Scale/3.00)'};\n\nlet httpParams = {'_access_version':2, '_versions':1240, 'appKey':'2222420362', 'chargeStatus':'9223372036854775807', 'clientType':1, 'deviceFlag':'3F96439C7B5E551D7322E62966792EF1', 'deviceId':'3F96439C7B5E551D7322E62966792EF1', 'merchant':'AppStore', 'model':'iPhone', '      platform':'3', 'page':params.pageIndex};\n\nlet filters = params.filters;\nhttpParams.channelId = filters.channelId;\nif(filters.bookStatus.length>0)\n\thttpParams.bookStatus = filters.bookStatus;\nif(filters.wordCount.length>0)\n\thttpParams.wordCount = filters.wordCount;\nif(filters.sort.length>0)\n\thttpParams.sort = filters.sort;\n\nreturn {'url':'http://api.17k.com/book/search', 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+            "host": "http://api.17k.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "coverImg",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "古装言情",
+                                "value": "5"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "17"
+                            },
+                            {
+                                "title": "浪漫青春",
+                                "value": "20"
+                            },
+                            {
+                                "title": "幻想言情",
+                                "value": "18"
+                            }
+                        ],
+                        "key": "channelId"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "30万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30-50万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "50-100万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100-200万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "200万以上",
+                                "value": "5"
+                            }
+                        ],
+                        "key": "wordCount"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": "15"
+                            },
+                            {
+                                "title": "畅销",
+                                "value": "16"
+                            },
+                            {
+                                "title": "推荐",
+                                "value": "17"
+                            },
+                            {
+                                "title": "数字",
+                                "value": "1"
+                            },
+                            {
+                                "title": "时间",
+                                "value": "10"
+                            }
+                        ],
+                        "key": "sort"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "bookStatus"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "wordCount": "wordCount",
+            "list": "data/lists",
+            "status": "bookStatus/name"
+        },
+        "z出版分类": {
+            "cat": "bookChannel/name",
+            "author": "authorPenName|@js:\nlet str = result;\nlet index = str.indexOf('_');\nif(index>0)\n\tstr = str.substr(0, index);\nreturn str.replace('.', '');",
+            "lastChapterTitle": "lastUpdateChapterName",
+            "responseFormatType": "json",
+            "bookName": "bookName",
+            "desc": "introduction",
+            "requestInfo": "@js:\n\nlet httpHeaders = {'Width':1125, 'Height':2436, 'platform':3, 'ClientSource':'K17_APP', 'ClientBrand':'iPhone10,3', 'ClientModel':'iPhone', 'User-Agent':'novelReader/7.6.3 (iPhone; iOS 14.4.2; Scale/3.00)'};\n\nlet httpParams = {'_access_version':2, '_versions':1240, 'appKey':'2222420362', 'chargeStatus':'9223372036854775807', 'clientType':1, 'deviceFlag':'3F96439C7B5E551D7322E62966792EF1', 'deviceId':'3F96439C7B5E551D7322E62966792EF1', 'merchant':'AppStore', 'model':'iPhone', '      platform':'3', 'page':params.pageIndex};\n\nlet filters = params.filters;\nhttpParams.channelId = filters.channelId;\nif(filters.bookStatus.length>0)\n\thttpParams.bookStatus = filters.bookStatus;\nif(filters.wordCount.length>0)\n\thttpParams.wordCount = filters.wordCount;\nif(filters.sort.length>0)\n\thttpParams.sort = filters.sort;\n\nreturn {'url':'http://api.17k.com/book/search', 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+            "host": "http://api.17k.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "coverImg",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "文化社科",
+                                "value": "8"
+                            },
+                            {
+                                "title": "经管励志",
+                                "value": "9"
+                            },
+                            {
+                                "title": "畅销经典",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "channelId"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "30万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30-50万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "50-100万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100-200万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "200万以上",
+                                "value": "5"
+                            }
+                        ],
+                        "key": "wordCount"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": "15"
+                            },
+                            {
+                                "title": "畅销",
+                                "value": "16"
+                            },
+                            {
+                                "title": "推荐",
+                                "value": "17"
+                            },
+                            {
+                                "title": "数字",
+                                "value": "1"
+                            },
+                            {
+                                "title": "时间",
+                                "value": "10"
+                            }
+                        ],
+                        "key": "sort"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "bookStatus"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "wordCount": "wordCount",
+            "list": "data/lists",
+            "status": "bookStatus/name"
+        },
+        "女生排行榜": {
+            "cat": "categoryName",
+            "author": "authorPenName",
+            "lastChapterTitle": "lastUpdateChapterName",
+            "responseFormatType": "json",
+            "bookName": "bookName",
+            "desc": "introduction",
+            "requestInfo": "@js:\n\nlet httpHeaders = {'Width':1125, 'Height':2436, 'platform':3, 'ClientSource':'K17_APP', 'ClientBrand':'iPhone10,3', 'ClientModel':'iPhone', 'User-Agent':'novelReader/7.6.3 (iPhone; iOS 14.4.2; Scale/3.00)'};\n\nlet httpParams = {'_access_version':2, '_versions':1240, 'appKey':'2222420362', 'clientType':1, 'deviceFlag':'3F96439C7B5E551D7322E62966792EF1', 'deviceId':'3F96439C7B5E551D7322E62966792EF1', 'merchant':'AppStore', 'model':'iPhone', 'platform':'3', 'page':params.pageIndex, 'num':20};\n\nlet filters = params.filters;\nhttpParams.classId = 3;\nif(filters.type.length>0)\n\thttpParams.type = filters.type;\nif(filters.orderTime.length>0)\n\thttpParams.orderTime = filters.orderTime;\n\nreturn {'url':'http://api.17k.com/book/rank/client', 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+            "host": "http://api.17k.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "coverImg",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "推荐榜",
+                                "value": "7"
+                            },
+                            {
+                                "title": "人气榜",
+                                "value": "10"
+                            },
+                            {
+                                "title": "完本榜",
+                                "value": "11"
+                            },
+                            {
+                                "title": "畅销榜",
+                                "value": "2"
+                            },
+                            {
+                                "title": "包月榜",
+                                "value": "8"
+                            },
+                            {
+                                "title": "礼物榜",
+                                "value": "15"
+                            },
+                            {
+                                "title": "免费榜",
+                                "value": "14"
+                            },
+                            {
+                                "title": "新人榜",
+                                "value": "16"
+                            },
+                            {
+                                "title": "新书榜",
+                                "value": "9"
+                            },
+                            {
+                                "title": "畅销新书",
+                                "value": "17"
+                            }
+                        ],
+                        "key": "type"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "周榜",
+                                "value": "1"
+                            },
+                            {
+                                "title": "月榜",
+                                "value": "2"
+                            },
+                            {
+                                "title": "总榜",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "orderTime"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "wordCount": "wordCount",
+            "list": "data"
+        },
+        "男生排行榜": {
+            "cat": "categoryName",
+            "author": "authorPenName",
+            "lastChapterTitle": "lastUpdateChapterName",
+            "responseFormatType": "json",
+            "bookName": "bookName",
+            "desc": "introduction",
+            "requestInfo": "@js:\n\nlet httpHeaders = {'Width':1125, 'Height':2436, 'platform':3, 'ClientSource':'K17_APP', 'ClientBrand':'iPhone10,3', 'ClientModel':'iPhone', 'User-Agent':'novelReader/7.6.3 (iPhone; iOS 14.4.2; Scale/3.00)'};\n\nlet httpParams = {'_access_version':2, '_versions':1240, 'appKey':'2222420362', 'clientType':1, 'deviceFlag':'3F96439C7B5E551D7322E62966792EF1', 'deviceId':'3F96439C7B5E551D7322E62966792EF1', 'merchant':'AppStore', 'model':'iPhone', 'platform':'3', 'page':params.pageIndex, 'num':20};\n\nlet filters = params.filters;\nhttpParams.classId = 2;\nif(filters.type.length>0)\n\thttpParams.type = filters.type;\nif(filters.orderTime.length>0)\n\thttpParams.orderTime = filters.orderTime;\n\nreturn {'url':'http://api.17k.com/book/rank/client', 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+            "host": "http://api.17k.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "coverImg",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "推荐榜",
+                                "value": "7"
+                            },
+                            {
+                                "title": "人气榜",
+                                "value": "10"
+                            },
+                            {
+                                "title": "完本榜",
+                                "value": "11"
+                            },
+                            {
+                                "title": "畅销榜",
+                                "value": "2"
+                            },
+                            {
+                                "title": "包月榜",
+                                "value": "8"
+                            },
+                            {
+                                "title": "礼物榜",
+                                "value": "15"
+                            },
+                            {
+                                "title": "免费榜",
+                                "value": "14"
+                            },
+                            {
+                                "title": "新人榜",
+                                "value": "16"
+                            },
+                            {
+                                "title": "新书榜",
+                                "value": "9"
+                            },
+                            {
+                                "title": "畅销新书",
+                                "value": "17"
+                            }
+                        ],
+                        "key": "type"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "周榜",
+                                "value": "1"
+                            },
+                            {
+                                "title": "月榜",
+                                "value": "2"
+                            },
+                            {
+                                "title": "总榜",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "orderTime"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "wordCount": "wordCount",
+            "list": "data"
+        },
+        "男生分类": {
+            "cat": "bookChannel/name",
+            "author": "authorPenName",
+            "lastChapterTitle": "lastUpdateChapterName",
+            "responseFormatType": "json",
+            "bookName": "bookName",
+            "desc": "introduction",
+            "requestInfo": "@js:\n\nlet httpHeaders = {'Width':1125, 'Height':2436, 'platform':3, 'ClientSource':'K17_APP', 'ClientBrand':'iPhone10,3', 'ClientModel':'iPhone', 'User-Agent':'novelReader/7.6.3 (iPhone; iOS 14.4.2; Scale/3.00)'};\n\nlet httpParams = {'_access_version':2, '_versions':1240, 'appKey':'2222420362', 'chargeStatus':'9223372036854775807', 'clientType':1, 'deviceFlag':'3F96439C7B5E551D7322E62966792EF1', 'deviceId':'3F96439C7B5E551D7322E62966792EF1', 'merchant':'AppStore', 'model':'iPhone', '      platform':'3', 'page':params.pageIndex};\n\nlet filters = params.filters;\nhttpParams.channelId = filters.channelId;\nif(filters.bookStatus.length>0)\n\thttpParams.bookStatus = filters.bookStatus;\nif(filters.wordCount.length>0)\n\thttpParams.wordCount = filters.wordCount;\nif(filters.sort.length>0)\n\thttpParams.sort = filters.sort;\n\nreturn {'url':'http://api.17k.com/book/search', 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+            "host": "http://api.17k.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "coverImg",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "都市小说",
+                                "value": "3"
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "21"
+                            },
+                            {
+                                "title": "仙侠武侠",
+                                "value": "24"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "22"
+                            },
+                            {
+                                "title": "游戏竞技",
+                                "value": "23"
+                            },
+                            {
+                                "title": "科幻末世",
+                                "value": "14"
+                            },
+                            {
+                                "title": "悬疑推理",
+                                "value": "29"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "30"
+                            }
+                        ],
+                        "key": "channelId"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "30万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30-50万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "50-100万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100-200万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "200万以上",
+                                "value": "5"
+                            }
+                        ],
+                        "key": "wordCount"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": "15"
+                            },
+                            {
+                                "title": "畅销",
+                                "value": "16"
+                            },
+                            {
+                                "title": "推荐",
+                                "value": "17"
+                            },
+                            {
+                                "title": "数字",
+                                "value": "1"
+                            },
+                            {
+                                "title": "时间",
+                                "value": "10"
+                            }
+                        ],
+                        "key": "sort"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "bookStatus"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "wordCount": "wordCount",
+            "list": "data/lists",
+            "status": "bookStatus/name"
+        }
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,94 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.xs5200.com",
+        "content": "//div[@id=\"content\"]",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.xs5200.com",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@property=\"og:description\"]/@content"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//span[@class=\"s5\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"s3\"]",
+            "bookName": "//span[@class=\"s2\"]",
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\r\nlet url=`http://www.xs5200.com/${_aa}/1_${params.pageIndex}.html`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.xs5200.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_aa\n玄幻::xuanhuanxiaoshuo\n修真::xiuzhenxiaoshuo\n都市::dushixiaoshuo\n穿越::chuanyuexiaoshuo\n网游::wangyouxiaoshuo\n科幻::kehuanxiaoshuo\n"
+            },
+            "validConfig": "",
+            "list": "//ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "http://www.xs5200.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "全本小说5200",
+    "desc": "🦞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1656066168.009164",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[3][@class=\"odd\"]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//td[2][@class=\"even\"]",
+        "bookName": "//td[@class=\"odd\"]/a",
+        "requestInfo": "http://www.xs5200.com/modules/article/search.php?s=10362325638345863231&q=%@keyWord&p=%@pageIndex",
+        "host": "http://www.xs5200.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[@class=\"odd\"]/a/@href",
+        "wordCount": "//td[4][@class=\"even\"]",
+        "validConfig": "",
+        "list": "//tr[@id=\"nr\"]",
+        "parserID": "DOM",
+        "status": "//td[@class=\"odd\"][@align=\"center\"]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "http://www.xs5200.com",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

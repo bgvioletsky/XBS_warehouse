@@ -1,0 +1,189 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "weight": "999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result) {\r    let list = [];\r    if (params.lastResponse == undefined) {\r        let xpath = params.nativeTool.XPathParserWithSource(result);\r        let res = xpath.queryWithXPath(\"//*[@class=\\\"chapter-item\\\"]/a\");\n       \r        res.forEach((x) => {\r            let attr = x.attributes();\r            let url = attr.href.startsWith('/') ? config.host + attr.href : attr.href;\r            let name = x.content();\r            list.push({\r                'title': name,\r                'url': url,\r            });\r        });\n        params.nativeTool.logWithKey(list, 'res');\r        list.reverse();\r        params.nativeTool.setCache('chapter', JSON.stringify(list));\r        let url = config.host + '/bookchapter/';\r        let queryUrl = params.queryInfo.detailUrl;\r        let bookid = queryUrl.substring(queryUrl.lastIndexOf('.')).match(/[0-9]+/)[0];\r        params.nativeTool.logWithKey(bookid, 'bookid');\r        let httpParams = { 'id': bookid, 'id2': '1' }\r        let httpHeaders = {\r            'User-Agent': config.httpHeaders,\r            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',\r            'X-Requested-With': 'XMLHttpRequest',\r        };\r        return {\r            httpHeaders: httpHeaders,\r            httpParams: httpParams,\r            more: true,\r            success: true,\r            autoRequestMore: true,\r            POST: true,\r            url: url,\r        };\r    } else {\r        let queryUrl = params.queryInfo.detailUrl;\r        let bookid = queryUrl.substring(queryUrl.lastIndexOf('.')).match(/[0-9]+/)[0];\r        let bookchapter = JSON.parse(result).map((x) => {\r            return {\r                'title': x.name,\r                'url': config.host + '/' + bookid + '/' + x.id+'.html',\r            }\r        });\r        bookchapter.reverse();\r        let lastchapter = JSON.parse(params.nativeTool.getCache('chapter'));\r        list = bookchapter.concat(lastchapter);\r\r    }\r    return { 'list': list };\r}",
+        "requestInfo": "@js:\nif (params.lastResponse)\n    return params.lastResponse;\n\nconfig.httpHeaders['Referer'] = config.host;\nreturn {\n    'url': result,\n    'httpHeaders': config.httpHeaders,\n};",
+        "host": "http://qiman56.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "奇漫屋api",
+    "sourceType": "comic",
+    "sourceUrl": "http://qiman56.com",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1645368867.859304",
+    "searchBook": {
+        "responseFormatType": "html",
+        "bookName": "//div[@class=\"comic-item-info\"]/p[@class=\"comic-name\"]/a[1]/text()",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\n\nconfig.httpHeaders['Referer'] = config.host;\nreturn {\n    'url': config.host + '/spotlight/?keyword=' + encodeURIComponent(params.keyWord),\n    'httpHeaders': config.httpHeaders,\n}",
+        "host": "http://qiman56.com",
+        "actionID": "searchBook",
+        "detailUrl": "//*[@class=\"cover\"]/@href || @js:\nreturn String(result).startsWith('/') ? config.host + result : result;",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "validConfig": "",
+        "list": "//*[@class=\"comic-list-item clearfix\"]",
+        "parserID": "DOM",
+        "cover": "//*[@class=\"cover\"]/img/@src"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result) {\n    var v_eval = result.match(/eval(.*\\s\\S+)/g)[0].replace(\"return p\", \"res=p\").replace('</script>','').replace(/\\r\\n/g,'');\n    params.nativeTool.logWithKey(v_eval, 'res');\n    eval(eval(\"var res=\\\"\\\";\" + v_eval + \";res\"));\n    return { 'content': JSON.stringify({ 'urls': newImgs }) };\n}",
+        "requestInfo": "@js:\nconfig.httpHeaders['Referer'] = config.host;\nreturn {\n    'url': result,\n    'httpHeaders': config.httpHeaders,\n};",
+        "host": "http://qiman56.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "张益达",
+    "password": "950206@",
+    "authorId": "",
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {
+        "排行榜": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result) {\n    return {\n        'list': result.map(x => {\n            let url = config.host + '/' + x.id + '/';\n            return {\n                'bookName': x.name,\n                'author': x.author,\n                'cover': x.imgurl,\n                'desc': x.intro,\n                'status': x.bookstate,\n                'detailUrl': url,\n                'lastChapterTitle': x.remarks\n            }\n        })\n    };\n}",
+            "requestInfo": "@js:\n\nlet url = config.host + '/ajaxf/?page_num=' + (params.pageIndex == 0 ? 0 : params.pageIndex - 1) + '&type=' + params.filters.rank;\nparams.nativeTool.logWithKey(url, 'url');\nconfig.httpHeaders['Referer'] = config.host;\nconfig.httpHeaders['Accept'] = 'application/json, text/javascript, */*; q=0.01';\nconfig.httpHeaders['Accept-Language'] = 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6';\nconfig.httpHeaders['X-Requested-With'] = 'XMLHttpRequest';\nreturn {\n    'url': url,\n    'caChekey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n    'httpHeaders': config.httpHeaders,\n};",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "人气榜",
+                                "value": "1"
+                            },
+                            {
+                                "title": "周读榜",
+                                "value": "2"
+                            },
+                            {
+                                "title": "月读榜",
+                                "value": "3"
+                            },
+                            {
+                                "title": "火爆榜",
+                                "value": "4"
+                            },
+                            {
+                                "title": "更新榜",
+                                "value": "5"
+                            },
+                            {
+                                "title": "新慢榜",
+                                "value": "6"
+                            }
+                        ],
+                        "key": "rank"
+                    }
+                ]
+            },
+            "host": "http://qiman56.com",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+            },
+            "_sIndex": 1,
+            "responseFormatType": "json",
+            "parserID": "DOM"
+        },
+        "分类": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result) {\n    return {\n        'list': result.map(x => {\n            let url = config.host + '/' + x.id + '/';\n            return {\n                'bookName': x.name,\n                'author': x.author,\n                'cover': x.imgurl,\n                'desc': x.intro,\n                'status': x.bookstate,\n                'detailUrl': url,\n                'lastChapterTitle': x.remarks\n            }\n        })\n    };\n}",
+            "requestInfo": "@js:\n\nlet url = config.host + '/ajaxf/sort/?page_num=' + (params.pageIndex == 0 ? 0 : params.pageIndex - 1) + '&type=' + params.filters.sort;\nparams.nativeTool.logWithKey(url, 'url');\nconfig.httpHeaders['Referer'] = config.host;\nconfig.httpHeaders['Accept'] = 'application/json, text/javascript, */*; q=0.01';\nconfig.httpHeaders['Accept-Language'] = 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6';\nconfig.httpHeaders['X-Requested-With'] = 'XMLHttpRequest';\nreturn {\n    'url': url,\n    'caChekey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n    'httpHeaders': config.httpHeaders,\n};",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "冒险热血",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠格斗",
+                                "value": "2"
+                            },
+                            {
+                                "title": "科幻魔幻",
+                                "value": "3"
+                            },
+                            {
+                                "title": "侦探推理",
+                                "value": "4"
+                            },
+                            {
+                                "title": "耽美爱情",
+                                "value": "5"
+                            },
+                            {
+                                "title": "生活漫画",
+                                "value": "6"
+                            },
+                            {
+                                "title": "推荐漫画",
+                                "value": "11"
+                            },
+                            {
+                                "title": "完结漫画",
+                                "value": "12"
+                            },
+                            {
+                                "title": "连载漫画",
+                                "value": "13"
+                            }
+                        ],
+                        "key": "sort"
+                    }
+                ]
+            },
+            "host": "http://qiman56.com",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+            },
+            "_sIndex": 0,
+            "responseFormatType": "json",
+            "parserID": "DOM"
+        }
+    }
+}

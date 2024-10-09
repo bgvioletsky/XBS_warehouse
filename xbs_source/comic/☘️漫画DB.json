@@ -1,0 +1,92 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://www.manhuadb.com",
+        "content": "@js:\ndata=(String(params.nativeTool.base64Decode(result.match(/img_data = \\'(.*?)\\'/)[1])));\nbid=result.match(/data-img_pre=\\\"(.*?)\\\"/)[1];\nhost=result.match(/data-host=\\\"(.*?)\\\"/)[1];\n\nlet arrOld = JSON.parse(data);\nlet arrImg = [];\n\nlet len = arrOld.length;\nfor(i=0; i<len; i++) {\n\tarrImg.push(host + bid + arrOld[i].img);\n}\n\nreturn arrImg.join('\\n');",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.manhuadb.com",
+        "cat": "//ul[@class=\"tags\"]//a || @js:\nreturn result.replace(/\\n/g, '/');",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class='comic_story']"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//div[@class='comic-categories']//span || @js:\nreturn result.replace(/\\n/g, '/');",
+            "author": "//div[@class='comic-creators']//a",
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "desc": "//div[contains(@class, 'comic-story-intro')]",
+            "requestInfo": "@js:\n\nlet fl = params.filters;\nlet arr = ['list'];\n\nif(fl.r.length>0)\n\tarr.push(fl.r);\nif(fl.s.length>0)\n\tarr.push(fl.s);\nif(fl.c.length>0)\n\tarr.push(fl.c);\nif(params.pageIndex>1)\n\tarr.push('page-'+params.pageIndex);\n\nreturn 'https://www.manhuadb.com/manhua/' + arr.join('-') + '.html';",
+            "host": "https://www.manhuadb.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": "c\n全部::\n爱情::c-26\n搞笑::c-41\n冒险::c-12\n魔幻::c-48\n科幻::c-20\n热血::c-46\n奇幻::c-13\n动作::c-18\n生活::c-33\n喜剧::c-32\n恐怖::c-16\n悬疑::c-27\n校园::c-40\n耽美::c-53\n格斗::c-44\n神鬼::c-52\n百合::c-39\n竞技::c-55\n魔法::c-43\n职业::c-22\n伪娘::c-60\n战争::c-30\n励志::c-47\n体育::c-11\n历史::c-9\n萌系::c-59\n推理::c-19\n职场::c-58\n四格::c-56\n美食::c-45\n料理::c-29\n治愈::c-54\n侦探::c-51\n惊悚::c-21\n音乐::c-17\n武侠::c-23\n社会::c-37\n后宫::c-57\n传记::c-10\n宅男::c-49\n灾难::c-34\n黑道::c-62\n杂志::c-42\n舞蹈::c-50\n机战::c-61\n腐女::c-63\n资料集::c-28\n\nr\n全部::\n大陆漫画::r-8\n香港漫画::r-5\n日本漫画::r-4\n韩国漫画::r-6\n欧美漫画::r-9\n\ns\n全部::\n连载中::s-1\n已完结::s-2"
+            },
+            "cover": "//img/@data-original",
+            "detailUrl": "//h2/a/@href",
+            "list": "//div[contains(@class, 'comic-book-unit')]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5980",
+    "sourceName": "☘️漫画DB",
+    "sourceUrl": "https://www.manhuadb.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "日漫",
+    "lastModifyTime": "1641452421.939711",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "author": "//div/a",
+        "validConfig": "",
+        "requestInfo": "https://www.manhuadb.com/search?q=%@keyWord&p=%@pageIndex",
+        "detailUrl": "//h2/a/@href",
+        "bookName": "//h2/a",
+        "host": "https://www.manhuadb.com",
+        "list": "//div[contains(@class, 'comicbook-index')]",
+        "cover": "//img/@data-original",
+        "parserID": "DOM",
+        "responseFormatType": "html"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.manhuadb.com",
+        "list": "//ol[contains(@class, 'num_div')]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

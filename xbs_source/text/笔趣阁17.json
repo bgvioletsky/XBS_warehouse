@@ -1,0 +1,87 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class=\"content\"]",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 2
+        },
+        "host": "https://www.zjzfcj.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "actionID": "bookDetail",
+        "host": "https://www.zjzfcj.com",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@property=\"og:description\"]/@content"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://www.zjzfcj.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "2222",
+    "sourceName": "笔趣阁17",
+    "desc": "🦞原网页加载很慢",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650359823.965035",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[@class=\"s1\"]",
+        "author": "//span[@class=\"s4\"]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//span[@class=\"s3\"]",
+        "bookName": "//span[@class=\"s2\"]/a",
+        "requestInfo": "https://www.zjzfcj.com/ar.php?keyWord=%@keyWord&p=%@pageIndex",
+        "host": "https://www.zjzfcj.com",
+        "actionID": "searchBook",
+        "detailUrl": "//span[@class=\"s2\"]/a/@href",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "validConfig": "",
+        "list": "//ul[@class=\"txt-list txt-list-row5\"]/li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "nextPageUrl": "//a[contains(text(),'查看完整目录')]/@href || //a[contains(text(),'下一页')]/@href",
+        "title": "//a",
+        "moreKeys": {
+            "pageSize": 20,
+            "skipCount": 9,
+            "maxPage": 500
+        },
+        "host": "https://www.zjzfcj.com",
+        "list": "//ul[@class=\"section-list fix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

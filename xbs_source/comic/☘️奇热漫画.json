@@ -1,0 +1,48 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://m.qiremanhua.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "0",
+    "sourceName": "☘️奇热漫画",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "付费",
+    "lastModifyTime": "1641279203.188741",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "parserID": "DOM"
+    }
+}

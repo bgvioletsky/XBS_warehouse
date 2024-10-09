@@ -1,0 +1,250 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "lastChapterTitle": "//ul[@class=\"chapterlist\"]\u0014/li[1]",
+        "host": "http://m.soudongman.com",
+        "cat": "//span[@class=\"tags-txt\"]|@replace:\\",
+        "cover": "//img/@data-src |@js:\nreturn 'https:'+result；",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class=\"minignore content\"]"
+    },
+    "weight": "6000",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a/@title",
+        "host": "http://m.soudongman.com",
+        "list": "//ul[@class=\"chapterlist\"]//li |@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js:\nvar bid = params.queryInfo.detailUrl.match(/com\\/(.*?)\\/?$/)[1];\nvar cid = result.match(/\\/?(.*?)\\.html/)[1];\nlet url =  \"https://m.soudongman.com/api/getchapterinfov2?product_id=9&productname=soudm&platformname=wap&comic_id=\"+bid+\"&chapter_newid=\"+cid+\"&isWebp=1&quality=high\";\nreturn url;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceType": "comic",
+    "sourceName": "搜动漫",
+    "sourceUrl": "http://m.soudongman.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637594618.729417",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "http://m.soudongman.com/sort/all.html?key=%@keyWord",
+        "lastChapterTitle": "//span[@class=\"chapter\"]",
+        "bookName": "//h3/a",
+        "host": "http://m.soudongman.com",
+        "detailUrl": "//div[@class=\"thumbnail\"]/a/@href|@replace:/|@js:\nreturn config.host +'/'+ result;",
+        "cover": "//img/@data-src |@js:\nreturn 'https:'+result；",
+        "responseFormatType": "html",
+        "list": "//div[@class=\"comic-item\"]",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\nlet urls = \"\"\rlet res = JSON.parse(result)['data']['current_chapter']['chapter_img_list']\r\r// console.log(res);\rfor (var i = 0; i <res.length; i++) {\r    urls = urls +res[i]+\"\\n\"\r};\r// console.log(urls);\rreturn urls;\n\n}",
+        "host": "http://m.soudongman.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "👾",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//span",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "requestInfo": "https://www.soudongman.com/sort/%@filter_p%@pageIndex.html",
+            "host": "http://m.soudongman.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "httpHeaders": {
+                    "UserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"
+                },
+                "maxPage": "30",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "连载",
+                                "value": "99"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "100"
+                            },
+                            {
+                                "title": "全部",
+                                "value": "all"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "23"
+                            },
+                            {
+                                "title": "机战",
+                                "value": "24"
+                            },
+                            {
+                                "title": "运动",
+                                "value": "27"
+                            },
+                            {
+                                "title": "推理",
+                                "value": "28"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "30"
+                            },
+                            {
+                                "title": "耽美",
+                                "value": "31"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "32"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "33"
+                            },
+                            {
+                                "title": "神魔",
+                                "value": "35"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "34"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "41"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "39"
+                            },
+                            {
+                                "title": "忍者",
+                                "value": "38"
+                            },
+                            {
+                                "title": "社会",
+                                "value": "42"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "43"
+                            },
+                            {
+                                "title": "宠物",
+                                "value": "44"
+                            },
+                            {
+                                "title": "萝莉",
+                                "value": "46"
+                            },
+                            {
+                                "title": "吸血",
+                                "value": "45"
+                            },
+                            {
+                                "title": "后宫",
+                                "value": "47"
+                            },
+                            {
+                                "title": "御姐",
+                                "value": "48"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "55"
+                            },
+                            {
+                                "title": "霸总",
+                                "value": "51"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "54"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "58"
+                            },
+                            {
+                                "title": "漫改",
+                                "value": "59"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "60"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "61"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "62"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "66"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "67"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "70"
+                            },
+                            {
+                                "title": "修真",
+                                "value": "71"
+                            },
+                            {
+                                "title": "生活",
+                                "value": "72"
+                            },
+                            {
+                                "title": "动作",
+                                "value": "73"
+                            }
+                        ]
+                    }
+                ],
+                "pageSize": "10"
+            },
+            "cover": "//img/@data-src|@js:\nreturn 'https:'+result",
+            "validConfig": "",
+            "detailUrl": "//img/@data-src|@js:\n\nimgurl = result.match(/\\/\\d+/g)[0];\n\nreturn config.host+imgurl;",
+            "parserID": "DOM",
+            "list": "//ul[@class=\"comic-list col5 clearfix\"]/li"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

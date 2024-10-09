@@ -1,0 +1,114 @@
+{
+    "bookWorld": {
+        "分类": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]/a",
+            "bookName": "//span[1]/a",
+            "requestInfo": "/%@filter/",
+            "host": "https://www.xiaoshuozu.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[1]/a/@href",
+            "cover": "//span[1]/a/@href ||@js:\nvar item = result.match(/(\\d+)\\//);\nlet id1 = item[1];\n\nlet img = ''\n\nimg = config.host+'/files/article/image/' +parseInt(id1/1000)+'/'+id1+'/'+id1+'s.jpg';\n\nreturn img;",
+            "validConfig": "",
+            "list": "//div[contains(@class,\"l\")]/ul//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": "玄幻奇幻::xuanhuan\n仙侠修真::xianxia\n都市言情::dushi\n历史军事::lishi\n侦探推理::zhentan\n网游竞技::wangyou\n科幻小说::kehuan\n同人小说::tongren\n其他小说::othersbooks\n全本小说::quanben"
+            }
+        },
+        "排行": {
+            "responseFormatType": "html",
+            "author": "//span[2]",
+            "bookName": "//span[1]/a",
+            "requestInfo": "/%@filter/",
+            "host": "https://www.xiaoshuozu.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": "玄幻奇幻::xuanhuan\n仙侠修真::xianxia\n都市言情::dushi\n历史军事::lishi\n侦探推理::zhentan\n网游竞技::wangyou\n科幻小说::kehuan\n同人小说::tongren\n其他小说::othersbooks\n全本小说::quanben"
+            },
+            "cover": "//span[1]/a/@href ||@js:\nvar item = result.match(/(\\d+)\\//);\nlet id1 = item[1];\n\nlet img = ''\n\nimg = config.host+'/files/article/image/' +parseInt(id1/1000)+'/'+id1+'/'+id1+'s.jpg';\n\nreturn img;",
+            "validConfig": "",
+            "list": "//div[contains(@class,\"r\")]/ul//li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "detailUrl": "//span[1]/a/@href"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config,params,result){\n\tif(result.list[0].url.indexOf('undefined')>=0){\n\t\tresult.list.shift();\n\t}\n\treturn {'list':result.list};\n}",
+        "title": "//a",
+        "host": "https://www.xiaoshuozu.cc",
+        "list": "//div[@class=\"listmain\"]//dl//dd[position()>6]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "小说族⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://www.xiaoshuozu.cc",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642868977.164147",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//div[2]/div[1] ||@js:\nreturn result.split('：')[1]",
+        "author": "//div[2]/div[2] ||@js:\nreturn result.split('：')[1];",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[2]/div[3]/a",
+        "bookName": "//h4/a",
+        "desc": "//div[2]/p",
+        "requestInfo": "/s.php?ie=gbk&q=%@keyWord",
+        "host": "https://www.xiaoshuozu.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "cover": "//img/@src ||@js:\nreturn config.host + result;",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"bookbox\"]",
+        "wordCount": "//td[4]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet beginStr = 'class=\"showtxt\">';\n\tlet beginIndex = result.indexOf(beginStr);\n\n      function typeSet(str){\n\t\tstr = str.replace(/<br[\\s]*[\\/]*>/gi,'\\n');\n            str = str.replace(/(一秒记住.*免费阅读！|第.*章[\\s\\S]*?\\n|http.*?\\n|天才一秒记住[\\s\\S]+)/gi,'');\n            str = str.replace(/\\n[\\s]*\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,'');\n            //str = str.replace(/<p[^>]*>[\\s\\S]+<\\/[^>]*>/gi,'');\n\t\tstr = str.replace(/<[^>]*>/gi,'');\n\t\tstr = str.replace(/本书由[\\s\\S]+现金红包！/gi,'');\n            return str;\n      }\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex + beginStr.length);\n\t\tparams.nativeTool.log(subStr);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n            \n\t\treturn typeSet(tarStr);\n\t}\n\treturn undefined;\n}",
+        "host": "https://www.xiaoshuozu.cc",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.xiaoshuozu.cc",
+        "cover": "//div[@id=\"fmimg\"]/img/@src ||@js:\nreturn config.host + result;",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]/p"
+    }
+}

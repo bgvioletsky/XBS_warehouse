@@ -1,0 +1,82 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"chaptercontent\"]/text()|@js:\nvar a=result.replace('(飞速小说网 www／feisuxs.com)','');\na=a.replace(params.queryInfo.title,'');\nvar b=a.replace(/\\(第.*?页\\)/,'');\nb=b.replace(/\\（本章.*?继续阅读\\）/,'');\nvar c=b.replace(/读修真.*?org/,'').replace('7017k','');\nreturn c;",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "http://wap.feisuwx.org/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://wap.feisuwx.org/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-飞速文学",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650358065.189143",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//a/p[2]|@js: \nvar j=result.indexOf('|');\nif(j>0){\nresult=result.substring(0,j);\n}\nreturn result.trim();",
+        "author": "//a/p[2]|@js: \nvar j=result.indexOf('作者：');\nif(j>0){\nresult=result.substring(j+3,result.length);\n}\nreturn result.trim();",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//a/p[3]|@js: \nvar j=result.indexOf('更新：');\nif(j>0){\nresult=result.substring(j+3,result.length);\n}\nreturn result.trim();",
+        "bookName": "//a/p[1]|@js: return result.trim()",
+        "requestInfo": "@js:\nlet url = 'http://wap.feisuwx.org/modules/article/waps.php';\nlet hp = {};\nhp.keyword = params.keyWord;\n//hp.pn= params.pageIndex;\nhp.t='1';\nreturn {'POST':true,'url':url, 'httpParams':hp,};",
+        "host": "http://wap.feisuwx.org/",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "detailUrl": "//a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"hot_sale\"]",
+        "status": "//a/p[3]|@js: \nvar j=result.indexOf('|');\nif(j>0){\nresult=result.substring(0,j);\n}\nreturn result.trim();",
+        "updateTime": "//span[6]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href|@js:\nreturn \"http://wap.feisuwx.org\"+result;",
+        "updateTime": "//li[contains(text(),'更新：')]|@js:return result.replace('更新：','')",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 150
+        },
+        "host": "http://wap.feisuwx.org/",
+        "list": "//div[@id=\"chapterlist\"]/p[position()>1]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'查看完整目录')]/@href || //a[contains(text(),'下一页')]/@href"
+    },
+    "sourceType": "text"
+}

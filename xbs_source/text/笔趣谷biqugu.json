@@ -1,0 +1,75 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='content'] || @replace:biqugu.net（笔趣谷无弹窗）提供高速文字无弹窗的小说，让你阅读更清爽，请记住我们的网址。",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": "content"
+        },
+        "host": "http://biqugu.net",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://biqugu.net",
+        "desc": "//div[@class='desc'][1]",
+        "actionID": "bookDetail"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://biqugu.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "120",
+    "sourceName": "笔趣谷biqugu",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649463990.277998",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//li[3]/a",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "http://biqugu.net/s_%@keyWord",
+        "lastChapterTitle": "//li[2]/a",
+        "bookName": "//li[1]/a",
+        "host": "http://biqugu.net",
+        "detailUrl": "//li[1]/a/@href",
+        "list": "//div[@class='main list']/ul",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@class='f_l t_l w4']",
+        "title": "//a",
+        "host": "http://biqugu.net",
+        "list": "//div[@class='chapter']",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

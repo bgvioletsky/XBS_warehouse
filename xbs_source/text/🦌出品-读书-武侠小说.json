@@ -1,0 +1,172 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class='nr_content']",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "http://www.5xxs.net",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.5xxs.net",
+        "desc": "//div[@class='describe-html']/p",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "作者": {
+            "cat": "//span || @js:\nreturn result.split('/')[0];",
+            "author": "//span || @js:\nreturn result.split('/')[1];",
+            "responseFormatType": "html",
+            "bookName": "//a/h2",
+            "requestInfo": "http://m.5xxs.net/%@filter/",
+            "host": "http://www.5xxs.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "金庸",
+                                "value": "jinyong"
+                            },
+                            {
+                                "title": "古龙",
+                                "value": "gulong"
+                            },
+                            {
+                                "title": "黄易",
+                                "value": "huangyi"
+                            },
+                            {
+                                "title": "萧逸",
+                                "value": "xiaoyi"
+                            },
+                            {
+                                "title": "凤歌",
+                                "value": "fengge"
+                            },
+                            {
+                                "title": "小椴",
+                                "value": "xiaoduan"
+                            },
+                            {
+                                "title": "梁羽生",
+                                "value": "liangyusheng"
+                            },
+                            {
+                                "title": "陈青云",
+                                "value": "chenqingyun"
+                            },
+                            {
+                                "title": "卧龙生",
+                                "value": "wolongsheng"
+                            },
+                            {
+                                "title": "柳残阳",
+                                "value": "liucanyang"
+                            },
+                            {
+                                "title": "步非烟",
+                                "value": "bufeiyan"
+                            },
+                            {
+                                "title": "司马翎",
+                                "value": "simaling"
+                            },
+                            {
+                                "title": "诸葛青云",
+                                "value": "zhugeqingyun"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a/img/@src",
+            "detailUrl": "//a[1]/@href",
+            "list": "//li[@class='pop-book']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        },
+        "排行": {
+            "author": "//span[@class='s2']/a",
+            "responseFormatType": "html",
+            "bookName": "//span[@class='s1']/a||@replace:《||@replace:》",
+            "requestInfo": "@js:\nlet url = 'http://m.5xxs.net/paihang/';\nif(params.pageIndex>1)\n\treturn url + params.pageIndex;\nreturn url;",
+            "host": "http://www.5xxs.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class='s1']/a/@href",
+            "moreKeys": {
+                "pageSize": 20
+            },
+            "validConfig": "",
+            "list": "//div[contains(@class, 'booklist')]//li",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "http://www.5xxs.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7303",
+    "sourceName": "🦌出品-读书-武侠小说",
+    "desc": "仅可搜书名不可搜作者",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1640154900.104923",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span || @js:\nreturn result.split('/')[0];",
+        "author": "//span || @js:\nreturn result.split('/')[1];",
+        "responseFormatType": "html",
+        "bookName": "//h2",
+        "requestInfo": "http://www.5xxs.net/mobile/search.html?keyword=%@keyWord&page=%@pageIndex",
+        "host": "http://www.5xxs.net",
+        "actionID": "searchBook",
+        "detailUrl": "//a[1]/@href",
+        "moreKeys": {
+            "pageSize": 15
+        },
+        "validConfig": "",
+        "list": "//div[@class='booklist']//li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://www.5xxs.net",
+        "list": "//div[@class='list_box']//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,68 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='chapter_content']",
+        "host": "http://www.52kanshu.org",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": false,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.52kanshu.org",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "0",
+    "sourceName": "52kanshu",
+    "desc": "404",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637333929.168306",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//li[3]/a",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn 'http://www.52kanshu.org/s_' + encodeURI(params.keyWord);",
+        "lastChapterTitle": "//li[2]/a",
+        "bookName": "//li[1]/a[1]",
+        "host": "http://www.52kanshu.org",
+        "detailUrl": "//li[1]/a[1]/@href",
+        "list": "//div[@class='neirong']/ul",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "http://www.52kanshu.org",
+        "list": "//div[@class='neirong']/div",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

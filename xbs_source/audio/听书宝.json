@@ -1,0 +1,144 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tif(params.lastResponse)\n\t\treturn encodeURI(JSON.parse(result).url);\n\n\tif(result)\n\t\treturn {'autoRequestMore':true, 'success':true, 'more':true, 'url':result};\n\n\treturn undefined;\n}",
+        "host": "http://m.tingshubao.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nif(params.lastResponse)\n\treturn params.lastResponse;\nreturn {'url':result, 'webView':'', 'sourceRegex':'.*\\\\.(mp3|m4a).*', 'webViewSkipUrls':['baidustatic.com']};",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://m.tingshubao.com",
+        "desc": "//div[@class='book-des']",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "cat": "//div[@class='book-meta'] || @js:\nreturn result.split('（著）')[1];",
+            "author": "//div[@class='book-meta'] || @js:\nreturn result.split('（著）')[0];",
+            "responseFormatType": "html",
+            "bookName": "//h4",
+            "desc": "//p[@class='book-desc']",
+            "requestInfo": "@js:\nlet url = 'http://m.tingshubao.com/list/' + params.filters.cat;\nif(params.filters.sort == 2 || params.pageIndex>1){\n\tif(params.filters.sort == 2)\n\t\turl = url + '-';\n\telse\n\t\turl = url + '_';\n\tif(params.filters.sort == 2)\n\t\turl = url + params.filters.cat;\n\tif(params.pageIndex > 1)\n\t\turl = url + params.pageIndex;\n}\nreturn url + '.html';",
+            "host": "http://m.tingshubao.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "有声小说",
+                                "value": "1"
+                            },
+                            {
+                                "title": "玄幻武侠",
+                                "value": "27"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "28"
+                            },
+                            {
+                                "title": "言情小说",
+                                "value": "29"
+                            },
+                            {
+                                "title": "惊悚悬疑",
+                                "value": "31"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "32"
+                            },
+                            {
+                                "title": "网游科幻",
+                                "value": "33"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "最新",
+                                "value": 1
+                            },
+                            {
+                                "title": "人气",
+                                "value": 2
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a/img/@data-original",
+            "detailUrl": "//a/@href",
+            "list": "//li[@class='book-li']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "http://m.tingshubao.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "6091",
+    "sourceName": "听书宝",
+    "sourceType": "audio",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647593648.969325",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//div[@class='book-meta'] || @js:\nreturn result.split('（著）')[1];",
+        "author": "//div[@class='book-meta'] || @js:\nreturn result.split('（著）')[0];",
+        "responseFormatType": "html",
+        "bookName": "//h4",
+        "desc": "//p[@class='book-desc']",
+        "requestInfo": "http://m.tingshubao.com/search.asp?page=%@pageIndex&searchword=%@keyWord&searchtype=-1",
+        "host": "http://m.tingshubao.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href",
+        "cover": "//a/img/@data-original",
+        "validConfig": "",
+        "list": "//li[@class='book-li']",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 20
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://m.tingshubao.com",
+        "list": "//div[@id='playlist']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "songData/singerName",
+            "responseFormatType": "json",
+            "bookName": "songData/relationTitle",
+            "requestInfo": "@js:\nlet hh= {\n'Accept': 'application/json, text/javascript, */*; q=0.01',\n'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',\n'Host': 'm.music.migu.cn',\n'Referer': 'https://m.music.migu.cn/v3/music/crbt/11248351',\n'Sec-Fetch-Dest': 'empty',\n'Sec-Fetch-Mode': 'cors',\n'Sec-Fetch-Site': 'same-origin',\n'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1'\n};\n\n//let url = \"https://m.music.migu.cn/migu/remoting/cms_list_tag?pageSize=30\"+\"&nid=11248351&pageNo=\"+params.pageIndex;\n\nlet url = \"https://m.music.migu.cn/migu/remoting/cms_list_tag?pageSize=30\"+\"&nid=\"+params.filters.type+\"&pageNo=\"+params.pageIndex;\n\nreturn {'url':url, 'httpHeaders':hh,'cacheTime':3600};",
+            "host": "https://m.music.migu.cn",
+            "actionID": "bookWorld",
+            "detailUrl": "songData/songId",
+            "moreKeys": {
+                "maxPage": 15,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "新歌榜",
+                                "value": "11248351"
+                            },
+                            {
+                                "title": "榜单",
+                                "value": "10955383"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "songData/picM",
+            "parserID": "DOM",
+            "list": "result/results"
+        }
+    },
+    "weight": "99999",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\nlet list = [];\nlet chapterInfo = {};\n\nresult = JSON.parse(result);\n//console.log(\"a\");\nlet res = result['data'];\n// console.log(res);\n\nchapterInfo.title = res['songItem']['songName'];\nchapterInfo.url = res['url']\nlist.push(chapterInfo);\n\nreturn {'list':list};\n\n}",
+        "host": "https://m.music.migu.cn",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nlet hh= {\n\n  \"referer\": 'http://music.migu.cn/v3/music/player/audio',\n    \"channel\": '0146951',\n    \"uid\": \"1234\",\n\n};\nlet hp = {\n                \"netType\": '01',\n                \"resourceType\": 'E',\n                \"songId\": result,\n                \"toneFlag\": {\n                    \"128\": 'PQ',\n                    \"320\": 'HQ',\n                    \"flac\": 'SQ',\n                }[\"320\"],\n                \"dataType\": 2,\n            }\n\nlet url = \"https://app.c.nf.migu.cn/MIGUM2.0/v2.0/content/listen-url\";\nreturn {'url':url, 'httpHeaders':hh , 'httpParams':hp};",
+        "actionID": "chapterList"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "👾Mg音乐",
+    "sourceType": "audio",
+    "sourceUrl": "https://m.music.migu.cn",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637893934.313215",
+    "searchBook": {
+        "cat": "albumName",
+        "author": "artist",
+        "responseFormatType": "json",
+        "bookName": "songName",
+        "desc": "mp3||@js:\n\nif (result != null) {\n  return \"\"\n}\nelse{\n  return \"该音乐暂时无法播放!\"\n}",
+        "requestInfo": "@js:\nlet hh= {\n    \"Accept\": \"application/json, text/javascript, */*; q=0.01\",\n    \"Accept-Encoding\": \"gzip, deflate, br\",\n    \"Accept-Language\": \"zh-CN,zh;q=0.9,en;q=0.8\",\n    \"Connection\": \"keep-alive\",\n    \"Host\": \"m.music.migu.cn\",\n    \"Sec-Fetch-Dest\": \"empty\",\n    \"Sec-Fetch-Mode\": \"cors\",\n    \"Sec-Fetch-Site\": \"same-origin\",\n    \"User-Agent\": \"Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1\",\n    \"X-Requested-With\": \"XMLHttpRequest\",\n    \"Referer\": \"https://m.music.migu.cn/v3/search?page=1&type=song&i=eaaabf2729ba6f10feb3b3e92b6533d6888bd832&f=html&s=1607350181&c=001002A&keyword=alan&v=3.13.1\",\n    \"Cookie\": \"JSESSIONID=58AA28AA568D3768A9BEC26ABC912D2B; mg_uem_user_id_3136357ddb6a49f5b317albumca6254e7ea49=bcb0e0f5-2f27-4408-aec4-e27bcdd22d9a; CookieID=YXCMND17B4XMVVT2EGAX6Z8DECB5VP8Q; migu_cookie_id=46c7fddb-4e41-45d9-8166-b06514409472-n41607335451399; migu_cn_cookie_id=b807a829-435a-4560-81a5-f7b270bf9dc3; Hm_lvt_ec5a5474d9d871cb3d82b846d861979d=1607350078; Hm_lpvt_ec5a5474d9d871cb3d82b846d861979d=1607350112; WT_FPC=id=2bf3b1d890e5436462e1607335273662:lv=1607350182649:ss=1607350065320\"\n};\n\nlet url = \"https://m.music.migu.cn/migu/remoting/scr_search_tag?rows=20&type=2&keyword=\"+encodeURI(params.keyWord)+\"&pgc=\"+params.pageIndex;\n\nreturn {'url':url, 'httpHeaders':hh};",
+        "host": "https://m.music.migu.cn",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "cover": "cover",
+        "detailUrl": "id",
+        "parserID": "DOM",
+        "validConfig": "",
+        "list": "musics"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js: \nreturn params.queryInfo.url",
+        "host": "https://m.music.migu.cn",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nreturn \"https://baidu.com\"",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "无损音质",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "password": "99mh99"
+}

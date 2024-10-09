@@ -1,0 +1,525 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "data[0]/content",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet res =result.split(\"#\");\nlet chapter =res[0];\nlet novel_id = res[1];\n//params.nativeTool.log(res) \n\nlet time = Math.round(new Date().getTime()/1000).toString();\n\n/*let url=config.host+\"/v1/ios/resource/do_search?t=\"+time+\"&sign=a2d5bc7305b6327560858bf8cbd36944\";*/\nlet url= config.host+\"/v1/book/chapter_content\"\nlet times= String((new Date).getTime());\n\nlet deviceId =params.nativeTool.deviceId();\n\nlet hh = {\n\"Accept-Encoding\": \"gzip, deflate, br\",\n\"Accept-Language\": \"zh-Hans-CN;q=1\",\n\"Connection\": \"keep-alive\",\n\"Content-Type\": \"application/json\",\n\"Host\": \"ggs.manmeng168.com:4432\",\n\"User-Agent\": \"fan shu xiao shuo/2.0.6 (iPhone; iOS 15.2; Scale/2.00)\"\n};\n\n\n\n//let hp = {\"keyword\":params.keyWord};\n\n\nlet hp = {\n\"t\":time,\n\"sign\":\"a85f844c3c44179bdaa98da787790bcb\",\n\"chapter_id\": chapter,\n\"app_id\":\"mm_reader_ios\",\n\"os_version\":\"15.2\",\n\"net_type\":\"4G\",\n\"api_key\":\"20009008\",\n\"novel_id\": novel_id,\n\"uid\":\"9798271\",\n\"osid\":\"iOS\",\n\"operate_time\":times,\n\"device_id\":deviceId,\n\"api_secret\":\"bc29d82fa268d5a3\",\n\"gender\":2,\n\"model\":\"iPhone11\"\n}\n\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh,cacheTime:3600,POST:false};",
+        "host": "https://ggs.manmeng168.com:4432",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "女频": {
+            "cat": "tag",
+            "author": "author",
+            "responseFormatType": "json",
+            "lastChapterTitle": "newest_chapter_name",
+            "bookName": "name",
+            "desc": "desc_info",
+            "requestInfo": "@js:\n\n//params.nativeTool.log(res) \n\nlet time = Math.round(new Date().getTime()/1000).toString();\n\nlet url=config.host+\"/v1/ios/resource/query_novel_rank?t=\"+time+\"&sign=e71052baf356a47a2a205a66ef1a7f76\";\n\n\nlet times= String((new Date).getTime());\n\nlet deviceId =params.nativeTool.deviceId();\n\nlet hh = {\"Accept\": \"*/*\",\"Accept-Encoding\": \"gzip, deflate, br\",\"Accept-Language\": \"zh-Hans-CN;q=1\",\"Connection\": \"keep-alive\",\"Content-Length\": \"385\",\"Content-Type\": \"application/json\",\"Host\": \"ggs.manmeng168.com:4432\",\"User-Agent\": \"fan shu xiao shuo/2.0.6 (iPhone; iOS 15.2; Scale/2.00)\"}\n\n\n\nlet hp = {\n  \"page_index\": params.pageIndex,\n  \"category_name\": params.filters.type,\n  \"operate_time\": times,\n  \"suit_gender\": 2,\n  \"device_id\": deviceId,\n  \"app_id\": \"mm_reader_ios\",\n  \"net_type\": \"Wifi\",\n  \"count_type\": params.filters.wordsNum,\n  \"gender\": 2,\n  \"uid\": \"9798271\",\n  \"rank_type\": params.filters.update,\n  \"api_secret\": \"bc29d82fa268d5a3\",\n  \"osid\": \"iOS\",\n  \"model\": \"iPhone11\",\n  \"os_version\": \"15.2\",\n  \"complete_type\": params.filters.status,\n  \"api_key\": \"20009008\"\n}\n\n\n\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh,cacheTime:3600,POST:true};",
+            "host": "https://ggs.manmeng168.com:4432",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "image_url",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "全部"
+                            },
+                            {
+                                "title": "现言",
+                                "value": "现言"
+                            },
+                            {
+                                "title": "重生",
+                                "value": "重生"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "穿越"
+                            },
+                            {
+                                "title": "豪门",
+                                "value": "豪门"
+                            },
+                            {
+                                "title": "快穿",
+                                "value": "快穿"
+                            },
+                            {
+                                "title": "年代",
+                                "value": "年代"
+                            },
+                            {
+                                "title": "古言",
+                                "value": "古言"
+                            },
+                            {
+                                "title": "幻言",
+                                "value": "幻言"
+                            },
+                            {
+                                "title": "嫡女",
+                                "value": "嫡女"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "灵异"
+                            },
+                            {
+                                "title": "女尊",
+                                "value": "女尊"
+                            },
+                            {
+                                "title": "兽世",
+                                "value": "兽世"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "纯爱"
+                            },
+                            {
+                                "title": "虐恋",
+                                "value": "虐恋"
+                            },
+                            {
+                                "title": "甜宠",
+                                "value": "甜宠"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "校园"
+                            },
+                            {
+                                "title": "团宠",
+                                "value": "团宠"
+                            },
+                            {
+                                "title": "腹黑",
+                                "value": "腹黑"
+                            },
+                            {
+                                "title": "娱乐圈",
+                                "value": "娱乐圈"
+                            },
+                            {
+                                "title": "清穿",
+                                "value": "清穿"
+                            },
+                            {
+                                "title": "宠妻",
+                                "value": "宠妻"
+                            },
+                            {
+                                "title": "王妃",
+                                "value": "王妃"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "青春"
+                            },
+                            {
+                                "title": "宫斗",
+                                "value": "宫斗"
+                            },
+                            {
+                                "title": "影视",
+                                "value": "影视"
+                            },
+                            {
+                                "title": "萌宝",
+                                "value": "萌宝"
+                            },
+                            {
+                                "title": "庶女",
+                                "value": "庶女"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "wordsNum",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "50万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "50-100万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "100-200万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "200-300万",
+                                "value": "5"
+                            },
+                            {
+                                "title": "300万以上",
+                                "value": "6"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "update",
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": "1"
+                            },
+                            {
+                                "title": "好评",
+                                "value": "2"
+                            },
+                            {
+                                "title": "最新",
+                                "value": "4"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "list": "data",
+            "parserID": "DOM",
+            "wordCount": "word_count",
+            "status": "source"
+        },
+        "男频": {
+            "cat": "tag",
+            "author": "author",
+            "responseFormatType": "json",
+            "lastChapterTitle": "newest_chapter_name",
+            "bookName": "name",
+            "desc": "desc_info",
+            "requestInfo": "@js:\n\n//params.nativeTool.log(res) \n\nlet time = Math.round(new Date().getTime()/1000).toString();\n\nlet url=config.host+\"/v1/ios/resource/query_novel_rank?t=\"+time+\"&sign=e71052baf356a47a2a205a66ef1a7f76\";\n\n\nlet times= String((new Date).getTime());\n\nlet deviceId =params.nativeTool.deviceId();\n\nlet hh = {\"Accept\": \"*/*\",\"Accept-Encoding\": \"gzip, deflate, br\",\"Accept-Language\": \"zh-Hans-CN;q=1\",\"Connection\": \"keep-alive\",\"Content-Length\": \"385\",\"Content-Type\": \"application/json\",\"Host\": \"ggs.manmeng168.com:4432\",\"User-Agent\": \"fan shu xiao shuo/2.0.6 (iPhone; iOS 15.2; Scale/2.00)\"}\n\n\n\nlet hp = {\n  \"page_index\": params.pageIndex,\n  \"category_name\": params.filters.type,\n  \"operate_time\": times,\n  \"suit_gender\": 1,\n  \"device_id\": deviceId,\n  \"app_id\": \"mm_reader_ios\",\n  \"net_type\": \"Wifi\",\n  \"count_type\": params.filters.wordsNum,\n  \"gender\": 2,\n  \"uid\": \"9798271\",\n  \"rank_type\": params.filters.update,\n  \"api_secret\": \"bc29d82fa268d5a3\",\n  \"osid\": \"iOS\",\n  \"model\": \"iPhone11\",\n  \"os_version\": \"15.2\",\n  \"complete_type\": params.filters.status,\n  \"api_key\": \"20009008\"\n}\n\n\n\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh,cacheTime:3600,POST:true};",
+            "host": "https://ggs.manmeng168.com:4432",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "image_url",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "全部"
+                            },
+                            {
+                                "title": "重生",
+                                "value": "重生"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "都市"
+                            },
+                            {
+                                "title": "系统",
+                                "value": "系统"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "历史"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "玄幻"
+                            },
+                            {
+                                "title": "洪荒",
+                                "value": "洪荒"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "仙侠"
+                            },
+                            {
+                                "title": "特种兵",
+                                "value": "特种兵"
+                            },
+                            {
+                                "title": "神豪",
+                                "value": "神豪"
+                            },
+                            {
+                                "title": "末日",
+                                "value": "末日"
+                            },
+                            {
+                                "title": "娱乐圈",
+                                "value": "娱乐圈"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "穿越"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "游戏"
+                            },
+                            {
+                                "title": "签到",
+                                "value": "签到"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "战争"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "武侠"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "科幻"
+                            },
+                            {
+                                "title": "二次元",
+                                "value": "二次元"
+                            },
+                            {
+                                "title": "直播",
+                                "value": "直播"
+                            },
+                            {
+                                "title": "无限流",
+                                "value": "无限流"
+                            },
+                            {
+                                "title": "影视",
+                                "value": "影视"
+                            },
+                            {
+                                "title": "扮猪吃虎",
+                                "value": "扮猪吃虎"
+                            },
+                            {
+                                "title": "大唐",
+                                "value": "大唐"
+                            },
+                            {
+                                "title": "盗墓",
+                                "value": "盗墓"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "体育"
+                            },
+                            {
+                                "title": "僵尸",
+                                "value": "僵尸"
+                            },
+                            {
+                                "title": "异能",
+                                "value": "异能"
+                            },
+                            {
+                                "title": "奶爸",
+                                "value": "奶爸"
+                            },
+                            {
+                                "title": "三国",
+                                "value": "三国"
+                            },
+                            {
+                                "title": "海岛",
+                                "value": "海岛"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "灵异"
+                            },
+                            {
+                                "title": "明朝",
+                                "value": "明朝"
+                            },
+                            {
+                                "title": "神医",
+                                "value": "神医"
+                            },
+                            {
+                                "title": "赘婿",
+                                "value": "赘婿"
+                            },
+                            {
+                                "title": "鉴宝",
+                                "value": "鉴宝"
+                            },
+                            {
+                                "title": "兵王",
+                                "value": "兵王"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "悬疑"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "wordsNum",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "50万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "50-100万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "100-200万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "200-300万",
+                                "value": "5"
+                            },
+                            {
+                                "title": "300万以上",
+                                "value": "6"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "update",
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": "1"
+                            },
+                            {
+                                "title": "好评",
+                                "value": "2"
+                            },
+                            {
+                                "title": "最新",
+                                "value": "4"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "list": "data",
+            "parserID": "DOM",
+            "wordCount": "word_count",
+            "status": "source"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://ggs.manmeng168.com:4432",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "👾番薯",
+    "desc": "推荐",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1638661025.108143",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "tag",
+        "responseFormatType": "json",
+        "lastChapterTitle": "newest_chapter_name",
+        "author": "author",
+        "bookName": "name",
+        "desc": "desc_info",
+        "requestInfo": "@js:\n\nlet time = Math.round(new Date().getTime()/1000).toString();\n\nlet url=config.host+\"/v1/ios/resource/do_search?t=\"+time+\"&sign=a2d5bc7305b6327560858bf8cbd36944\";\n\nlet times= String((new Date).getTime());\n\nlet deviceId =params.nativeTool.deviceId();\n//番薯小说\nlet hh = {\n\"Accept-Encoding\": \"gzip, deflate, br\",\n\"Accept-Language\": \"zh-Hans-CN;q=1\",\n\"Connection\": \"keep-alive\",\n\"Content-Type\": \"application/json\",\n\"Host\": \"ggs.manmeng168.com:4432\",\n\"User-Agent\": \"fan shu xiao shuo/2.0.6 (iPhone; iOS 15.2; Scale/2.00)\"\n};\n\n\n\n//let hp = {\"keyword\":params.keyWord};\n\n\nlet hp = {\n\"app_id\":\"mm_reader_ios\",\n\"os_version\":\"15.2\",\n\"net_type\":\"4G\",\n\"api_key\":\"20009008\",\n\"page_index\":params.pageIndex,\n\"uid\":\"9798271\",\n\"keyword\":params.keyWord,\n\"osid\":\"iOS\",\n\"operate_time\":times,\n\"page_size\":\"20\",\n\"device_id\":deviceId,\n\"api_secret\":\"bc29d82fa268d5a3\",\n\"gender\":2,\n\"model\":\"iPhone11\"\n}\n\n\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh,cacheTime:3600,POST:true};",
+        "host": "https://ggs.manmeng168.com:4432",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "image_url",
+        "validConfig": "",
+        "list": "data/novel_list",
+        "parserID": "DOM",
+        "wordCount": "word_count",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "status": "source"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nlet time = Math.round(new Date().getTime()/1000).toString();\n\n/*let url=config.host+\"/v1/ios/resource/do_search?t=\"+time+\"&sign=a2d5bc7305b6327560858bf8cbd36944\";*/\nlet url= config.host+\"/v1/book/chapter_list\"\nlet times= String((new Date).getTime());\n\nlet deviceId =params.nativeTool.deviceId();\n\nlet hh = {\n\"Accept-Encoding\": \"gzip, deflate, br\",\n\"Accept-Language\": \"zh-Hans-CN;q=1\",\n\"Connection\": \"keep-alive\",\n\"Content-Type\": \"application/json\",\n\"Host\": \"ggs.manmeng168.com:4432\",\n\"User-Agent\": \"fan shu xiao shuo/2.0.6 (iPhone; iOS 15.2; Scale/2.00)\"\n};\n\n\n//let hp = {\"keyword\":params.keyWord};\n\n\nlet hp = {\n\"t\":time,\n\"sign\":\"908053139bada1cde48a197201ec64a8\",\n\"app_id\":\"mm_reader_ios\",\n\"os_version\":\"15.2\",\n\"net_type\":\"4G\",\n\"api_key\":\"20009008\",\n\"novel_id\":result,\n\"uid\":\"9798271\",\n\"osid\":\"iOS\",\n\"operate_time\":times,\n\"device_id\":deviceId,\n\"api_secret\":\"bc29d82fa268d5a3\",\n\"gender\":2,\n\"model\":\"iPhone11\"\n}\n\n\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh,cacheTime:3600,POST:false};",
+        "title": "name",
+        "host": "https://ggs.manmeng168.com:4432",
+        "list": "data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "chapter_id||@js:\n//params.nativeTool.log(params.queryInfo.detailUrl) ;\nreturn result +\"#\"+String(params.queryInfo.detailUrl);"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,193 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.qmtsw.com",
+        "list": "//div[@id=\"yuedu\"]/ul//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "全民听书⛄",
+    "sourceType": "audio",
+    "sourceUrl": "https://www.qmtsw.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642776797.165636",
+    "searchBook": {
+        "responseFormatType": "html",
+        "bookName": "//h2/a",
+        "desc": "//section//p[1]",
+        "requestInfo": "/search.php?page=%@pageIndex&searchword=%@keyWord",
+        "host": "https://www.qmtsw.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h2/a/@href",
+        "cover": "//img/@src || @js:\nreturn config.host + result;",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[contains(@class,'row3')]//li",
+        "moreKeys": {
+            "pageSize": 16
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\n\nlet reg = /now=[\\s\\S]*?;/gi;\nlet tem = result.match(reg)[0];\neval(tem);\n\nreturn now;",
+        "host": "https://www.qmtsw.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "Ks🔍✨",
+    "shudanList": {},
+    "password": "KksnoyunaHonʌ_ə34",
+    "bookDetail": {
+        "parserID": "DOM",
+        "actionID": "bookDetail",
+        "responseFormatType": "html"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "desc": "//section//p[1]",
+            "requestInfo": "/book/%@filter-%@pageIndex.html",
+            "host": "https://www.qmtsw.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "cover": "//img/@src || @js:\nreturn config.host + result;",
+            "moreKeys": {
+                "pageSize": 16,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": 1
+                            },
+                            {
+                                "title": "言情",
+                                "value": 2
+                            },
+                            {
+                                "title": "都市",
+                                "value": 3
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": 4
+                            },
+                            {
+                                "title": "惊悚",
+                                "value": 5
+                            },
+                            {
+                                "title": "推理",
+                                "value": 6
+                            },
+                            {
+                                "title": "武侠",
+                                "value": 7
+                            },
+                            {
+                                "title": "历史",
+                                "value": 8
+                            },
+                            {
+                                "title": "军事",
+                                "value": 9
+                            },
+                            {
+                                "title": "穿越",
+                                "value": 10
+                            },
+                            {
+                                "title": "科幻",
+                                "value": 11
+                            },
+                            {
+                                "title": "网游",
+                                "value": 12
+                            },
+                            {
+                                "title": "评书",
+                                "value": 13
+                            },
+                            {
+                                "title": "戏曲",
+                                "value": 14
+                            },
+                            {
+                                "title": "笑话",
+                                "value": 15
+                            },
+                            {
+                                "title": "儿童",
+                                "value": 16
+                            },
+                            {
+                                "title": "财经",
+                                "value": 17
+                            },
+                            {
+                                "title": "广播",
+                                "value": 18
+                            },
+                            {
+                                "title": "诗歌",
+                                "value": 19
+                            },
+                            {
+                                "title": "文学",
+                                "value": 20
+                            },
+                            {
+                                "title": "粤语",
+                                "value": 21
+                            },
+                            {
+                                "title": "经典",
+                                "value": 22
+                            },
+                            {
+                                "title": "相声小品",
+                                "value": 23
+                            },
+                            {
+                                "title": "百家讲坛",
+                                "value": 24
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "list": "//ul[contains(@class,'row3')]//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    }
+}

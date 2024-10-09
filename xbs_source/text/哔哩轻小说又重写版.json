@@ -1,0 +1,118 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='acontent']/p",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": config.httpHeaders};",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://w.linovelib.com",
+        "httpHeaders": {
+            "Referer": "https://w.linovelib.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//*[@id=\"aread\"]/script[1] || @js:\neval(result);\nlet nextUrl = ReadParams.url_next;\nif (RegExp(/\\d+_\\d{1,2}/).test(nextUrl)) {return nextUrl;\n}\nreturn undefined;"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "//div[@class=\"bookilnk\"]/span[2]",
+            "responseFormatType": "html",
+            "author": "//div[@class=\"bookilnk\"]/span[1]",
+            "bookName": "//@alt",
+            "httpHeaders": {
+                "Referer": "https://w.linovelib.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_class,_new,_size,_date,_cat}=params.filters\nlet url=`https://www.linovelib.com${_class}_0${_size}${_date}${_cat}${_new}_${params.pageIndex}_0.html`;\n\nreturn {url:url}",
+            "host": "https://w.linovelib.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_class\n电击文库::/wenku/weekvisit_0_1\n富士见文库::/wenku/weekvisit_0_2\n角川文库::/wenku/weekvisit_0_3\nMF文库J::/wenku/weekvisit_0_4\nFami通文库::/wenku/weekvisit_0_5\nGA文库::/wenku/weekvisit_0_6\nHJ文库::/wenku/weekvisit_0_7\n一迅社::/wenku/weekvisit_0_8\n集英社::/wenku/weekvisit_0_9\n小学馆::/wenku/weekvisit_0_10\n讲谈社::/wenku/weekvisit_0_11\n少女文库::/wenku/weekvisit_0_12\n其他文库::/wenku/weekvisit_0_13\n华文轻小说::/wenku/weekvisit_0_14\n\n_new\n不限::_0\n新书上传::_1\n情节展开::_2\n精彩纷呈::_3\n接近尾声::_4\n已经完本::_5\n\n_size\n不限::_0\n30万以下::_1\n30-50万::_2\n50-100万::_3\n100-200万::_4\n200万以上::_5\n\n_date\n不限::_0\n三日内::_1\n七日内::_2\n半月内::_3\n一月内::_4\n\n_cat\n不限::_0\n[A]::_A\n[B]::_B\n[C]::_C\n[D]::_D\n[E]::_E\n[F]::_F\n[G]::_G\n[H]::_H\n[I]::_I\n[J]::_J\n[K]::_K\n[L]::_L\n[M]::_M\n[N]::_N\n[O]::_O\n[P]::_P\n[Q]::_Q\n[R]::_R\n[S]::_S\n[T]::_T\n[U]::_U\n[V]::_V\n[W]::_W\n[X]::_X\n[Y]::_Y\n[Z]::_Z"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"store_list_wrap\"]/div[1]/div",
+            "cover": "//img/@data-original",
+            "desc": "//div[@class=\"bookintro\"]",
+            "status": "//div[@class=\"bookilnk\"]/span[3]"
+        }
+    },
+    "shudanList": {},
+    "loginUrl": "https://www.linovelib.com/modules/article/bookcase.php",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "哔哩轻小说又重写版",
+    "sourceUrl": "https://w.linovelib.com",
+    "miniAppVersion": "2.53.2",
+    "httpHeaders": {
+        "Referer": "https://w.linovelib.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651119595.520538",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class='book-meta-r']//em[1]",
+        "author": "//span[@class='book-author']/text()",
+        "responseFormatType": "html",
+        "bookName": "//h4",
+        "desc": "//p[@class='book-desc']",
+        "requestInfo": "@js:\n\nlet url= config.host+\"/S0/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord,\n\"searchtype\":\"all\"};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://w.linovelib.com",
+        "actionID": "searchBook",
+        "httpHeaders": {
+            "Referer": "https://w.linovelib.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//img/@data-original",
+        "validConfig": "",
+        "list": "//li[@class='book-li']",
+        "parserID": "DOM",
+        "detailUrl": "//a/@href",
+        "status": "//div[@class='book-meta-r']//em[3]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet id = /\\d+/.exec(result)[0];\nreturn config.host + '/novel/' + id + '/catalog';",
+        "title": "//a",
+        "host": "https://w.linovelib.com",
+        "httpHeaders": {
+            "Referer": "https://w.linovelib.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//ol[@id='volumes']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

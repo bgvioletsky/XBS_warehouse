@@ -1,0 +1,92 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://m.zuimh.com",
+        "content": "@js:\nimgl=eval(result.match(/var chapterImages = (\\[[\\s\\S]+?\\])/)[1]);\nhost=result.match(/var nodeHost = \"([^\"]*)\";/)[1].replace(/\\\\/g,'');\nhtml='';\nfunction get7ImageUrl(image) {\n    if (image.match(/^(http?)/i)) {\n        return image\n    }\n}\nfor(i in imgl){\nif(host){\nurl=get7ImageUrl(imgl[i]);\n}else{\nurl=host+imgl[i]\n}\nhtml+=url+'\\n'\n}\n\nlet hh = {'Referer':params.responseUrl};\nreturn JSON.stringify({'url':html, 'httpHeaders':hh});",
+        "requestInfo": "@js:\nreturn result.replace('m.zuimh.com', 'www.zuimh.com');",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://m.zuimh.com",
+        "desc": "//p[@id='simple-des']",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//span || @replace:作者:",
+            "responseFormatType": "html",
+            "bookName": "//a[2]",
+            "requestInfo": "@js:\n\nlet arr = [];\nlet fl = params.filters;\n\nif(fl.cat.length>0)\n\tarr.push(fl.cat);\nif(fl.status.length>0)\n\tarr.push(fl.status);\nif(fl.area.length>0)\n\tarr.push(fl.area);\n\nlet url = 'http://m.zuimh.com/list/' + arr.join('-');\nif(arr.length>0)\n\turl += '/';\nurl += fl.sort + '/';\n\nif(params.pageIndex > 1)\n\treturn url + '?page=' + params.pageIndex;\nreturn url;",
+            "host": "https://m.zuimh.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "36",
+                "requestFilters": "cat\n全部::\n玄幻::xuanhuan\n都市::dushi\n恐怖::kongbu\n古风::gufeng\n唯美::weimei\n治愈::zhiyu\n穿越::chuanyue\n恋爱::lianai\n修真::xiuzhen\n后宫::hougong\n冒险::maoxian\n搞笑::gaoxiao\n彩虹::caihong\n热血::rexue\n暧昧::aimei\n少年::shaonian\n逆转::nizhuan\n奇幻::qihuan\n总裁::zongcai\n少女::shaonv\n美型::meixing\n霸总::bazong\n动作::dongzuo\n其他::qita\n少男::shaonan\n生活::shenghuo\n科幻::kehuan\n悬疑::xuanyi\n魔幻::mohuan\n战争::zhanzheng\n惊奇::jingqi\n纯爱::chunai\n独家::dujia\n爆笑::baoxiao\n惊险::jingxian\n校园::xiaoyuan\n大女主::danvzhu\n\narea\n全部::\n大陆::dalu\n日本::riben\n\nstatus\n全部::\n完结::wanjie\n连载::lianzai\n\nsort\n更新::update\n点击::click"
+            },
+            "detailUrl": "//a[2]/@href",
+            "cover": "//img/@src",
+            "list": "//li[@class='list-comic']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://m.zuimh.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5991",
+    "sourceName": "☘️最漫画",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "help": "最漫画/优酷漫画",
+    "lastModifyTime": "1641316737.084810",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//p[2]/span[2]",
+        "author": "//p[1]/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//a[@class='coll']",
+        "bookName": "//a[@class='title']",
+        "requestInfo": "https://m.zuimh.com/search/?keywords=%@keyWord",
+        "host": "https://m.zuimh.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class='title']/@href",
+        "cover": "//a/img/@src",
+        "validConfig": "",
+        "list": "//div[contains(@class, 'itemBox')]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://m.zuimh.com",
+        "list": "//*[contains(@id, 'chapter-list')]/li[position()<last()]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

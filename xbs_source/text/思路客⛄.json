@@ -1,0 +1,191 @@
+{
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//td[2]//a",
+            "responseFormatType": "html",
+            "author": "//td[3]",
+            "bookName": "//td[1]//a",
+            "requestInfo": "https://www.shuquxs.com/%@filter/%@pageIndex/",
+            "host": "https://www.shuquxs.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[1]//a//@href",
+            "wordCount": "//td[4]",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "fenlei1"
+                            },
+                            {
+                                "title": "修真武侠",
+                                "value": "fenlei2"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "fenlei3"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "fenlei4"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "fenlei5"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "fenlei6"
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "cover": "//td[1]//a/@href ||@js:\n//var item = result.match(/\\/(\\d+)\\/(\\d+)\\/(\\d+)\\//);\nlet item = result.split('\\/');\nlet id1 = item[2];\nlet id2 = item[3];\nreturn config.host+'/image/'+id1+'/'+id2+'/'+id2+'s.jpg';",
+            "list": "//div[@id=\"content\"]//tr[position()>1]",
+            "status": "//td[6]"
+        },
+        "排行": {
+            "lastChapterTitle": "//td[2]//a",
+            "responseFormatType": "html",
+            "author": "//td[3]",
+            "bookName": "//td[1]//a",
+            "requestInfo": "https://www.shuquxs.com/paihangbang/%@filter/%@pageIndex/",
+            "host": "https://www.shuquxs.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[1]//a//@href",
+            "wordCount": "//td[4]",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "阅读总榜",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "阅读月榜",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "阅读周榜",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "推荐总榜",
+                                "value": "allvote"
+                            },
+                            {
+                                "title": "推荐月榜",
+                                "value": "monthvote"
+                            },
+                            {
+                                "title": "推荐周榜",
+                                "value": "weekvote"
+                            },
+                            {
+                                "title": "收藏榜",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "字数榜",
+                                "value": "size"
+                            },
+                            {
+                                "title": "最近更新",
+                                "value": "lastupdate"
+                            },
+                            {
+                                "title": "最新入库",
+                                "value": "postdate"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "cover": "//td[1]//a/@href ||@js:\n//var item = result.match(/\\/(\\d+)\\/(\\d+)\\/(\\d+)\\//);\nlet item = result.split('\\/');\nlet id1 = item[2];\nlet id2 = item[3];\nreturn config.host+'/image/'+id1+'/'+id2+'/'+id2+'s.jpg';",
+            "list": "//div[@id=\"content\"]//tr[position()>1]",
+            "status": "//td[6]"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a//@title",
+        "host": "https://www.shuquxs.com",
+        "list": "//div[@id=\"list\"]//dd[position()>6]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href ||@js:\nreturn params.queryInfo.detailUrl + result;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "思路客⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://www.shuquxs.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639980324.433945",
+    "searchBook": {
+        "author": "//td[3]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//td[2]//a",
+        "bookName": "//td[1]//a",
+        "requestInfo": "@js:\nlet url = 'https://www.shuquxs.com/modules/article/search.php';\nlet postpara = {'searchkey':params.keyWord};\nreturn {'url':url, 'httpParams':postpara, 'POST':true}",
+        "host": "https://www.shuquxs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]//a//@href",
+        "cover": "//td[1]//a/@href ||@js:\n//var item = result.match(/\\/(\\d+)\\/(\\d+)\\/(\\d+)\\//);\nlet item = result.split('\\/');\nlet id1 = item[2];\nlet id2 = item[3];\nreturn config.host+'/image/'+id1+'/'+id2+'/'+id2+'s.jpg';",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//td[4]",
+        "list": "//div[@id=\"content\"]//tr[position()>1]",
+        "status": "//td[6]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet beginStr = '<div id=\"content\">';\n\tlet beginIndex = result.indexOf(beginStr);\n      function typeSet(str){\n            str = str.replace(/思︿路︿客&nbsp;www〝siluke〞info&nbsp;更新最快的小说网，无弹窗！/gi,'');\n            str = str.replace(/思︽路︽客&nbsp;www~siluke~info&nbsp;更新最快的小说网，无弹窗！/gi,'');\n            str = str.replace(/<br\\/>/gi,'\\n');\n            str = str.replace(/\\n\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,' ');\n            str = str.replace(/<i>(.*?)<\\/i>/gi,'');\n            str = str.replace(/<[^>]*>(.*?)<\\/[^>]*>/gi,'');\n            return str;\n      }\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex + beginStr.length);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n            \n\t\treturn typeSet(tarStr);\n\t}\n\treturn undefined;\n}",
+        "host": "https://www.shuquxs.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.shuquxs.com",
+        "desc": "//meta[@property=\"og:description\"]//@content",
+        "actionID": "bookDetail"
+    }
+}

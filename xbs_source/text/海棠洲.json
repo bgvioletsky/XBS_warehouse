@@ -1,0 +1,117 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='acontent']",
+        "host": "https://www.haitangzhou.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.haitangzhou.com",
+        "desc": "//div[@class='tabcontent']/div[@class='tabvalue']/div",
+        "actionID": "bookDetail"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "排行榜": {
+            "cat": "//td[1]",
+            "author": "//td[2]/a/span||@replace:/",
+            "responseFormatType": "html",
+            "bookName": "//td[2]/a/text()",
+            "requestInfo": "https://m.haitangzhou.com/top/%@filter/%@pageIndex.html",
+            "host": "https://www.haitangzhou.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "50",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "收藏",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "点击",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "推荐",
+                                "value": "weekvote"
+                            },
+                            {
+                                "title": "数字",
+                                "value": "words"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//td[2]/a/@href||www.haitangzhou.com@replace:m.haitangzhou.com",
+            "validConfig": "",
+            "parserID": "DOM",
+            "list": "//div[@id='content']//tr"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.haitangzhou.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "600",
+    "sourceName": "海棠洲",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "password": "haitang",
+    "lastModifyTime": "1627802599.950543",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class='c_tag'][1]/span[4]",
+        "author": "//div[@class='c_tag'][1]/span[2]",
+        "lastChapterTitle": "//div[@class='c_tag'][2]/span[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//span[@class='c_subject']/a",
+        "desc": "//div[@class='c_description']",
+        "requestInfo": "@js:\nreturn {'url':'https://www.haitangzhou.com/modules/article/search.php', 'POST':true, 'httpParams':{'searchtype':'all', 'searchkey':params.keyWord, 't_btnsearch':''}};",
+        "host": "https://www.haitangzhou.com",
+        "actionID": "searchBook",
+        "detailUrl": "//span[@class='c_subject']/a/@href",
+        "wordCount": "//div[@class='c_tag'][1]/span[6]",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class='c_row']"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//dl[@class='index']/dd[position()=last()]/a/@title",
+        "requestInfo": "@js:\nreturn result.replace('/book/', '/index/');",
+        "title": "//a",
+        "host": "https://www.haitangzhou.com",
+        "list": "//dl[@class='index']/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

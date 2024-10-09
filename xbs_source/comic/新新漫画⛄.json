@@ -1,0 +1,310 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.77mh.xyz",
+        "wordCount": "//ul[@class=\"ar_list_coc\"]//li[4]",
+        "actionID": "bookDetail"
+    },
+    "weight": "10006",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//ul[@class=\"ar_list_coc\"]//li[5]",
+        "JSParser": "function functionName(config, jsparams, result) {\n\n    let emo = ['⛄️','🧸','🐶','☕️','🐣','🐧','🚀', '🦅','🐼','🐷','🐯','🦉','🐮','🐹'];\n\n  \n\n    let list = result.list.reverse();\n  list= list.map(function(item,index,arr){\n\treturn {\"title\":item.title += emo[0],\"url\":item.url};\n});\n    return {\"updateTime\": \"\", \"list\": list};\n}",
+        "title": "//a",
+        "host": "https://www.77mh.xyz",
+        "list": "//ul[@class='ar_rlos_bor ar_list_col']//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "新新漫画⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.77mh.xyz",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639027763.118155",
+    "searchBook": {
+        "cat": "//i[@class=\"status\"]/span",
+        "author": "//i[@class=\"author\"]//a[2]",
+        "responseFormatType": "html",
+        "bookName": "//h1//a",
+        "desc": "//i[@class=\"info\"]",
+        "requestInfo": "https://so.77mh.xyz/k.php?k=%@keyWord&p=%@pageIndex",
+        "host": "https://www.77mh.xyz",
+        "actionID": "searchBook",
+        "detailUrl": "//h1//a//@href",
+        "cover": "//img//@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"ar_list_co\"]//ul//dl",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "status": "//i[@class=\"author\"]//a[1]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\t\n\tlet imgServer = \"https://a16d.gdbyhtl.net:64443/h\";\n\n      let imgFun = function(p, a, c, k, e, d) {\n\te = function(c) {\n\t\treturn (c < a ? '' : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))\n\t};\n\tif (!''.replace(/^/, String)) {\n\t\twhile (c--) {\n\t\t\td[e(c)] = k[c] || e(c)\n\t\t}\n\t\tk = [function(e) {\n\t\t\treturn d[e]\n\t\t}];\n\t\te = function() {\n\t\t\treturn '\\\\w+'\n\t\t};\n\t\tc = 1\n\t};\n\twhile (c--) {\n\t\tif (k[c]) {\n\t\t\tp = p.replace(new RegExp('\\\\b' + e(c) + '\\\\b', 'g'), k[c])\n\t\t}\n\t}\n\treturn p;\n}\nlet reg = /\\}\\((.*?)\\)\\)/gim;\nlet data = reg.exec(result)[1];\nlet dataArr = data.split(\",\");\nlet p = dataArr[0];\nlet a = parseInt(dataArr[1]);\nlet c = parseInt(dataArr[2]);\nlet k = eval(dataArr[3]);\nlet e = parseInt(dataArr[4]);\nlet d = JSON.parse(dataArr[5]);\nlet imgInfo = imgFun(p,a,c,k,e,d);\nlet reg2= /msg=\\\\\\'(.*?)\\\\\\';/gim;\nlet reg3= /img_s=(.*?);/;\nlet imgs = reg2.exec(imgInfo)[1].split('|');\nlet sevid = reg3.exec(imgInfo)[1];\nimgServer += sevid+'/';\n\nimgs=imgs.map(function(item,index,arr){\n\treturn imgServer + item;\n});\nlet imgUrl = '';\n\nfor(let i=0;i<imgs.length;i++){\n\timgUrl += imgs[i] +'\\n';\n}\n\n\t\t//return {'response':imgUrl};\n      return imgUrl;\n\treturn undefined;\n}",
+        "host": "https://www.77mh.xyz",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nlet base = config.host;     \nlet det = params.queryInfo.url.replace(/\\\\/,'');\n\nlet url = base + det;\n\nreturn encodeURI(url);",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "状态": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "@js:\nlet base = config.host;\nlet url = base + params.filters.status.split('.')[0];\nurl += '_'+(params.pageIndex-1)+'.html';\nreturn encodeURI(url);",
+            "bookName": "//span/a",
+            "detailUrl": "//span/a//@href",
+            "host": "https://www.77mh.xyz",
+            "moreKeys": {
+                "pageSize": "36",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "完结漫画",
+                                "value": "/wanjie/index.html"
+                            },
+                            {
+                                "title": "连载漫画",
+                                "value": "/lianzai/index.html"
+                            },
+                            {
+                                "title": "最新上架漫画",
+                                "value": "/new_coc.html"
+                            }
+                        ],
+                        "key": "status"
+                    }
+                ]
+            },
+            "list": "//div[@class=\"ar_list_co\"]//li",
+            "responseFormatType": "html",
+            "cover": "//img//@src",
+            "parserID": "DOM"
+        },
+        "字母索引": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "@js:\nlet base = config.host;\nlet url = base + params.filters.digital.split('.')[0];\nurl += '_'+(params.pageIndex-1)+'.html';\nreturn encodeURI(url);",
+            "bookName": "//span/a",
+            "detailUrl": "//span/a//@href",
+            "host": "https://www.77mh.xyz",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "A",
+                                "value": "/alist_78850.html"
+                            },
+                            {
+                                "title": "B",
+                                "value": "/alist_78849.html"
+                            },
+                            {
+                                "title": "C",
+                                "value": "/alist_78848.html"
+                            },
+                            {
+                                "title": "D",
+                                "value": "/alist_78847.html"
+                            },
+                            {
+                                "title": "E",
+                                "value": "/alist_78846.html"
+                            },
+                            {
+                                "title": "F",
+                                "value": "/alist_78845.html"
+                            },
+                            {
+                                "title": "G",
+                                "value": "/alist_78844.html"
+                            },
+                            {
+                                "title": "H",
+                                "value": "/alist_78843.html"
+                            },
+                            {
+                                "title": "I",
+                                "value": "/alist_78842.html"
+                            },
+                            {
+                                "title": "J",
+                                "value": "/alist_78841.html"
+                            },
+                            {
+                                "title": "K",
+                                "value": "/alist_78840.html"
+                            },
+                            {
+                                "title": "L",
+                                "value": "/alist_78839.html"
+                            },
+                            {
+                                "title": "M",
+                                "value": "/alist_78838.html"
+                            },
+                            {
+                                "title": "N",
+                                "value": "/alist_78837.html"
+                            },
+                            {
+                                "title": "O",
+                                "value": "/alist_78836.html"
+                            },
+                            {
+                                "title": "P",
+                                "value": "/alist_78835.html"
+                            },
+                            {
+                                "title": "Q",
+                                "value": "/alist_78834.html"
+                            },
+                            {
+                                "title": "R",
+                                "value": "/alist_78833.html"
+                            },
+                            {
+                                "title": "S",
+                                "value": "/alist_78832.html"
+                            },
+                            {
+                                "title": "T",
+                                "value": "/alist_78831.html"
+                            },
+                            {
+                                "title": "U",
+                                "value": "/alist_78830.html"
+                            },
+                            {
+                                "title": "V",
+                                "value": "/alist_78829.html"
+                            },
+                            {
+                                "title": "W",
+                                "value": "/alist_78828.html"
+                            },
+                            {
+                                "title": "X",
+                                "value": "/alist_78827.html"
+                            },
+                            {
+                                "title": "Y",
+                                "value": "/alist_78826.html"
+                            },
+                            {
+                                "title": "Z",
+                                "value": "/alist_78817.html"
+                            }
+                        ],
+                        "key": "digital"
+                    }
+                ]
+            },
+            "list": "//div[@class=\"ar_list_co\"]//li",
+            "responseFormatType": "html",
+            "cover": "//img//@src",
+            "parserID": "DOM"
+        },
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//i[@class=\"author\"]//a[2]",
+            "bookName": "//h1//a",
+            "desc": "//i[@class=\"info\"]",
+            "requestInfo": "@js:\n//let base = 'https://w.77mh.de';\nlet base = config.host;\nlet url = base + params.filters.class.split('.')[0];\nurl += '_'+(params.pageIndex-1)+'.html';\nreturn encodeURI(url);",
+            "host": "https://www.77mh.xyz",
+            "actionID": "bookWorld",
+            "detailUrl": "//h1//a//@href",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "热血机战",
+                                "value": "/rexue/index.html"
+                            },
+                            {
+                                "title": "科幻未来",
+                                "value": "/kehuan/index.html"
+                            },
+                            {
+                                "title": "恐怖惊悚",
+                                "value": "/kongbu/index.html"
+                            },
+                            {
+                                "title": "推理悬疑",
+                                "value": "/xuanyi/index.html"
+                            },
+                            {
+                                "title": "滑稽搞笑",
+                                "value": "/gaoxiao/index.html"
+                            },
+                            {
+                                "title": "恋爱生活",
+                                "value": "/love/index.html"
+                            },
+                            {
+                                "title": "纯爱人生",
+                                "value": "/danmei/index.html"
+                            },
+                            {
+                                "title": "体育竞技",
+                                "value": "/tiyu/index.html"
+                            },
+                            {
+                                "title": "纯情少女",
+                                "value": "/chunqing/index.html"
+                            },
+                            {
+                                "title": "魔法奇幻",
+                                "value": "/qihuan/index.html"
+                            },
+                            {
+                                "title": "武侠经典",
+                                "value": "/wuxia/index.html"
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "//img//@src",
+            "parserID": "DOM",
+            "list": "//div[@class=\"ar_list_co\"]//dl",
+            "status": "//i[@class=\"author\"]//a[1]"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

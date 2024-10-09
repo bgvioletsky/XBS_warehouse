@@ -1,0 +1,155 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]/text()",
+        "actionID": "chapterContent",
+        "host": "https://www.bsl666.cc",
+        "httpHeaders": {
+            "Referer": "https://www.bsl666.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//div[@id=\"info\"]/p[2]/text()",
+        "host": "https://www.bsl666.cc",
+        "httpHeaders": {
+            "Referer": "https://www.bsl666.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "cover": "//div[@id=\"fmimg\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]/p/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//span[@class=\"s4\"]/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[@class=\"s2\"]/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.bsl666.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+            },
+            "requestInfo": "@js:\nlet url = config.host+\"/\"+params.filters.type+\".html\"\n\nlet hh = {\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50\"};\n\nreturn{'url':url,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://www.bsl666.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "list5"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "list3"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "list1"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "list7"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "list9"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "list10"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "list11"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "list12"
+                            },
+                            {
+                                "title": "综合",
+                                "value": "list16"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"l bd\"]/ul/li"
+        }
+    },
+    "sourceUrl": "https://www.bsl666.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7888",
+    "sourceName": "百书楼(oaix)",
+    "httpHeaders": {
+        "Referer": "https://www.bsl666.cc",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651133679.714996",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class=\"cat\"]/text()",
+        "author": "//div[@class=\"author\"]/text()",
+        "responseFormatType": "html",
+        "bookName": "//h4/a/text()",
+        "httpHeaders": {
+            "Referer": "https://www.bsl666.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "requestInfo": "https://www.bsl666.cc/s.php?ie=gbk&q=%@keyWord",
+        "host": "https://www.bsl666.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"bookbox\"]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "host": "https://www.bsl666.cc",
+        "httpHeaders": {
+            "Referer": "https://www.bsl666.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "list": "//div[@class=\"listmain\"]/dl/dd [position()>6]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//dd/a/@href"
+    },
+    "sourceType": "text"
+}

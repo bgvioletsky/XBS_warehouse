@@ -1,0 +1,308 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "129",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a[1]/span/text()",
+        "host": "https://www.haoman8.com",
+        "httpHeaders": {
+            "Referer": "https://www.haoman8.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@class=\"catalog-list\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a[1]/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "好漫8",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.haoman8.com",
+    "httpHeaders": {
+        "Referer": "https://www.haoman8.com/",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1658464788.119432",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "JSParser": "function functionName(config, params, result) {\n    let list = result.data.map(data => {\n        return {\n            'bookName': data.name,\n            'author': data.author,\n            'cover': data.pic,\n            'status': data.serialize,\n            'desc': data.content,\n            'cat': data.tags.map(tag => tag).join('·'),\n            'detailUrl': data.url,\n        };\n    });\n    return { 'list': list };\n}",
+        "requestInfo": "@js:\n\nlet pid = params.pageIndex == 1 ? '0' : params.pageIndex;\n\nlet url = config.host + '/index.php/api/data/comic?key=' + encodeURI(params.keyWord) + '&size=30&page=' + pid;\nconfig.httpHeaders['X-Requested-With'] = 'XMLHttpRequest';\n\nreturn {\n\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n\n    'url': url,\n    'httpHeaders': config.httpHeaders\n}",
+        "moreKeys": {
+            "pageSize": 30
+        },
+        "host": "https://www.haoman8.com",
+        "httpHeaders": {
+            "Referer": "https://www.haoman8.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//li[@class=\"comic-page\"]//img/@src",
+        "actionID": "chapterContent",
+        "host": "https://www.haoman8.com",
+        "httpHeaders": {
+            "Referer": "https://www.haoman8.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "张益达",
+    "shudanList": {},
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result) {\n    let list = result.data.map(data => {\n        return {\n            'bookName': data.name,\n            'author': data.author,\n            'cover': data.pic,\n            'status': data.serialize,\n            'desc': data.content,\n            'cat': data.tags.map(tag => tag).join('·'),\n            'detailUrl': data.url,\n        };\n    });\n    return { 'list': list };\n}",
+            "requestInfo": "@js:\nlet pid = params.pageIndex == 1 ? '0' : params.pageIndex;\nlet url = config.host + '/index.php/api/data/comic?' + params.filters.tags +\n    '&' + params.filters.order +\n    '&type[list]=0&type[pay]=0&type[finish]=0&size=12&page=' + pid;\nconfig.httpHeaders['X-Requested-With'] = 'XMLHttpRequest';\n\nconfig.httpHeaders['Referer'] = 'https://www.haoman8.com/';\n\nreturn {\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n    'url': url,\n    'httpHeaders': config.httpHeaders\n}",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "恋爱漫画",
+                                "value": "type[tags]=48"
+                            },
+                            {
+                                "title": "魔幻漫画",
+                                "value": "type[tags]=49"
+                            },
+                            {
+                                "title": "穿越漫画",
+                                "value": "type[tags]=50"
+                            },
+                            {
+                                "title": "其它漫画",
+                                "value": "type[tags]=51"
+                            },
+                            {
+                                "title": "校园漫画",
+                                "value": "type[tags]=52"
+                            },
+                            {
+                                "title": "奇幻漫画",
+                                "value": "type[tags]=53"
+                            },
+                            {
+                                "title": "热血漫画",
+                                "value": "type[tags]=54"
+                            },
+                            {
+                                "title": "古风漫画",
+                                "value": "type[tags]=55"
+                            },
+                            {
+                                "title": "冒险漫画",
+                                "value": "type[tags]=56"
+                            },
+                            {
+                                "title": "后宫漫画",
+                                "value": "type[tags]=57"
+                            },
+                            {
+                                "title": "爆笑漫画",
+                                "value": "type[tags]=58"
+                            },
+                            {
+                                "title": "治愈漫画",
+                                "value": "type[tags]=59"
+                            },
+                            {
+                                "title": "玄幻漫画",
+                                "value": "type[tags]=60"
+                            },
+                            {
+                                "title": "悬疑漫画",
+                                "value": "type[tags]=61"
+                            },
+                            {
+                                "title": "生活漫画",
+                                "value": "type[tags]=62"
+                            },
+                            {
+                                "title": "浪漫漫画",
+                                "value": "type[tags]=63"
+                            },
+                            {
+                                "title": "格斗漫画",
+                                "value": "type[tags]=64"
+                            },
+                            {
+                                "title": "复仇漫画",
+                                "value": "type[tags]=65"
+                            },
+                            {
+                                "title": "科幻漫画",
+                                "value": "type[tags]=66"
+                            },
+                            {
+                                "title": "都市漫画",
+                                "value": "type[tags]=67"
+                            },
+                            {
+                                "title": "战争漫画",
+                                "value": "type[tags]=68"
+                            },
+                            {
+                                "title": "脑洞漫画",
+                                "value": "type[tags]=69"
+                            },
+                            {
+                                "title": "运动漫画",
+                                "value": "type[tags]=70"
+                            },
+                            {
+                                "title": "恶搞漫画",
+                                "value": "type[tags]=71"
+                            },
+                            {
+                                "title": "恐怖漫画",
+                                "value": "type[tags]=72"
+                            },
+                            {
+                                "title": "推理漫画",
+                                "value": "type[tags]=73"
+                            },
+                            {
+                                "title": "动作漫画",
+                                "value": "type[tags]=74"
+                            },
+                            {
+                                "title": "励志漫画",
+                                "value": "type[tags]=75"
+                            },
+                            {
+                                "title": "美食漫画",
+                                "value": "type[tags]=76"
+                            },
+                            {
+                                "title": "虐心漫画",
+                                "value": "type[tags]=77"
+                            },
+                            {
+                                "title": "纯爱漫画",
+                                "value": "type[tags]=78"
+                            },
+                            {
+                                "title": "男生漫画",
+                                "value": "type[tags]=79"
+                            },
+                            {
+                                "title": "历史漫画",
+                                "value": "type[tags]=80"
+                            },
+                            {
+                                "title": "百合漫画",
+                                "value": "type[tags]=81"
+                            },
+                            {
+                                "title": "惊险漫画",
+                                "value": "type[tags]=82"
+                            },
+                            {
+                                "title": "青春漫画",
+                                "value": "type[tags]=83"
+                            },
+                            {
+                                "title": "宫斗漫画",
+                                "value": "type[tags]=84"
+                            },
+                            {
+                                "title": "权谋漫画",
+                                "value": "type[tags]=85"
+                            },
+                            {
+                                "title": "同人漫画",
+                                "value": "type[tags]=86"
+                            },
+                            {
+                                "title": "竞技漫画",
+                                "value": "type[tags]=87"
+                            },
+                            {
+                                "title": "萌系漫画",
+                                "value": "type[tags]=88"
+                            },
+                            {
+                                "title": "蔷薇漫画",
+                                "value": "type[tags]=89"
+                            },
+                            {
+                                "title": "唯美漫画",
+                                "value": "type[tags]=90"
+                            },
+                            {
+                                "title": "明星漫画",
+                                "value": "type[tags]=91"
+                            },
+                            {
+                                "title": "武侠漫画",
+                                "value": "type[tags]=92"
+                            }
+                        ],
+                        "key": "tags"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": "type[order]=hits"
+                            },
+                            {
+                                "title": "更新",
+                                "value": "type[order]=addtime"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "type[order]=score"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "_sIndex": 0,
+            "httpHeaders": {
+                "Referer": "https://www.haoman8.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "host": "https://www.haoman8.com",
+            "responseFormatType": "json",
+            "parserID": "DOM"
+        }
+    }
+}

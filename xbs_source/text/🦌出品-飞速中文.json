@@ -1,0 +1,99 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='content'] || @replace:飞速中文.com 中文域名一键直达",
+        "host": "https://www.feiszw.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.feiszw.com",
+        "cover": "//div[@class='bookimg']//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class='intro']/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//li[@class='tab2']/a",
+            "lastChapterTitle": "//li[@class='tab4']/a",
+            "responseFormatType": "html",
+            "author": "//li[@class='tab5']",
+            "bookName": "//li[@class='tab3']/a",
+            "requestInfo": "@js:\nlet fl = params.filters;\nfl.page = params.pageIndex;\nfl.nclassid = 0;\nreturn {'url':'https://www.feiszw.com/Book/ShowBookList.aspx', 'httpParams':fl};",
+            "host": "https://www.feiszw.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": "tclassid\n奇幻玄幻::1\n武侠仙侠::2\n都市小说::3\n历史军事::4\n游戏竞技::5\n科幻灵异::6\n同人小说::7\n女频言情::8\n其他小说::9\n\norderbyid\n默认::0\n点击::3\n收藏::6\n数字::7"
+            },
+            "detailUrl": "//li[@class='tab3']/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='listbox']/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "//li[@class='tab7']"
+        }
+    },
+    "sourceUrl": "https://www.feiszw.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "6",
+    "sourceName": "🦌出品-飞速中文",
+    "desc": "推荐",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649664617.752523",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//a[2]",
+        "author": "//div[1]/text()[1] || @js:\nreturn result.replace('[', '').replace('|', '');",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//a[4]",
+        "bookName": "//a[1]/b",
+        "desc": "//div[2]",
+        "requestInfo": "https://www.feiszw.com/book/search.aspx?SearchKey=%@keyWord&SearchClass=1&SeaButton=",
+        "host": "https://www.feiszw.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[1]/@href",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "validConfig": "",
+        "list": "//div[@class='listbox']/div",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.feiszw.com",
+        "list": "//div[@class='chapterlist']//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href || @js:\nif(result.indexOf('/')!=0){\n\tlet host = params.responseUrl;\n\tlet index = params.responseUrl.lastIndexOf('/');\n\tif(index > 0)\n\t\thost = params.responseUrl.substr(0, index);\n\treturn host + '/' + result;\n}\nreturn result;"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,104 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.haoman8.com",
+        "cat": "//ul[@class=\"tags\"]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@name=\"description\"]//@content"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "JSParser": "function functionName(config,params,result){\n\tlet reg = /var chapter_list[\\s\\S]+?\\];/gi;\n\tlet tem = result.match(reg)[0];\n\tparams.nativeTool.log(tem);\n\teval(tem);\n\tlet list = [];\n\tfor(let i=0;i<chapter_list.length;i++){\n\t\tlet item = {};\n\t\titem.title = chapter_list[i].name;\n\t\titem.url = chapter_list[i].url;\n\t\tlist.push(item);\n\t}\n\treturn {'list':list};\n}",
+        "host": "https://www.haoman8.com",
+        "parserID": "DOM",
+        "actionID": "chapterList"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "好漫8⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.haoman8.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651808810.157851",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "/index.php/search?key=%@keyWord",
+        "lastChapterTitle": "//div[@class=\"acgn-desc\"]/a",
+        "bookName": "//h3/a",
+        "host": "https://www.haoman8.com",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//img//@style ||@js:\nlet reg = /http.*?jpg/gi;\nreturn result.match(reg)[0];",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "list": "//li[@class=\"acgn-item\"]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.haoman8.com",
+        "content": "//div[@class=\"acgn-reader-chapter\"]//img/@data-echo",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//div[@class=\"acgn-desc\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "requestInfo": "/category/order/%@filter/page/%@pageIndex",
+            "host": "https://www.haoman8.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": "人气::hits\n更新::addtime\n评分::score"
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "cover": "//img//@style ||@js:\nlet reg = /http.*?jpg/gi;\nreturn result.match(reg)[0];",
+            "_sIndex": 0,
+            "list": "//li[@class=\"acgn-item\"]",
+            "parserID": "DOM"
+        },
+        "排行": {
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "text",
+            "requestInfo": "https://www.haoman8.com/index.php/api/comic/hot",
+            "host": "https://www.haoman8.com",
+            "actionID": "bookWorld",
+            "detailUrl": "url",
+            "cover": "pic",
+            "validConfig": "",
+            "list": "data",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class='article-body']",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':'', 'webViewSkipUrls':['cnzz.com', 'hm.baidu.com']};",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "http://jingpin-book.qm989.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "http://jingpin-book.qm989.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "3333",
+    "sourceName": "🦌出品-七猫小说大全",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650358674.111566",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//p[@class='book_intr']/span[1]/a ||  //dd[1]/span",
+        "lastChapterTitle": "//dd[2]/span",
+        "responseFormatType": "html",
+        "bookName": "//div[@class='info']/h2/a || //dt/a",
+        "desc": "//p[@class='book_con'] || //dd[3]/text()",
+        "requestInfo": "http://jingpin-book.qm989.com/search.html?search_type=&keyword=%@keyWord",
+        "host": "http://jingpin-book.qm989.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class='info']/h2/a/@href || //dt/a/@href",
+        "cover": "//div[@class='imgbox']/a/img/@_src || //div[@class='imgbox']/img/@src",
+        "wordCount": "//div[@class='imgbox']/a/span || @js:\nreturn result.split(' ')[1];",
+        "list": "//div[@class='book_list']//li || //div[@class='bd']/div[contains(@class, 'book_info')]",
+        "parserID": "DOM",
+        "validConfig": "",
+        "status": "//div[@class='imgbox']/a/span || @js:\nreturn result.split(' ')[0];"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//div[@class='catalog_hd'][1]/p[1]",
+        "requestInfo": "@js:\nreturn result.replace('/shuku/', '/chapterlist/');",
+        "title": "//a",
+        "host": "http://jingpin-book.qm989.com",
+        "list": "//ul[contains(@class, 'catalog_list')]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

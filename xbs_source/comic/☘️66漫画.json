@@ -1,0 +1,113 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "http://www.sixmh7.com",
+        "content": "@js:\r\ntry{\r\neval(result.match(/(eval\\([\\s\\S]+?)<\\/script/)[1]);\r\n}catch(e){}\nreturn JSON.stringify(newImgs);",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.sixmh7.com",
+        "cat": "//div[@class='cy_xinxi']/span[1]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@id='comic-description']"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//li[@class='biaoqian'] || @replace:标签：",
+            "lastChapterTitle": "//li[@class='updata']/a/span",
+            "responseFormatType": "html",
+            "bookName": "//li[@class='title']/a",
+            "desc": "//li[@class='info']",
+            "requestInfo": "%@filter",
+            "host": "http://www.sixmh7.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "冒险热血::/sort/1-%@pageIndex.html\n武侠格斗::/sort/2-%@pageIndex.html\n科幻魔幻::/sort/3-%@pageIndex.html\n侦探推理::/sort/4-%@pageIndex.html\n耽美爱情::/sort/5-%@pageIndex.html\n生活动漫::/sort/6-%@pageIndex.html\n推荐漫画::/sort/11-%@pageIndex.html\n完结漫画::/sort/12-%@pageIndex.html\n连载漫画::/sort/13-%@pageIndex.html"
+            },
+            "detailUrl": "//li[@class='title']/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='cy_list_mh']/ul",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//li/a/img/@src",
+            "status": "//li[@class='zuozhe'] || @replace:状态："
+        },
+        "榜单": {
+            "cat": "//li[@class='biaoqian'] || @replace:标签：",
+            "lastChapterTitle": "//li[@class='updata']/a/span",
+            "responseFormatType": "html",
+            "bookName": "//li[@class='title']/a",
+            "desc": "//li[@class='info']",
+            "requestInfo": "%@filter",
+            "host": "http://www.sixmh7.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "人气榜单::/rank/1-%@pageIndex.html\n周读榜单::/rank/2-%@pageIndex.html\n月读榜单::/rank/3-%@pageIndex.html\n火爆榜单::/rank/4-%@pageIndex.html\n更新榜单::/rank/5-%@pageIndex.html\n新漫榜单::/rank/6-%@pageIndex.html\n"
+            },
+            "detailUrl": "//li[@class='title']/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='cy_list_mh']/ul",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//li/a/img/@src",
+            "status": "//li[@class='zuozhe'] || @replace:状态："
+        }
+    },
+    "sourceUrl": "http://www.sixmh7.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8593",
+    "sourceName": "☘️66漫画",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641259288.936398",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "http://www.sixmh7.com/search.php?keyword=%@keyWord",
+        "bookName": "//li[@class='title']/a",
+        "detailUrl": "//li[@class='title']/a/@href",
+        "host": "http://www.sixmh7.com",
+        "cover": "//a/img/@src",
+        "list": "//div[@class='cy_list_mh']/ul",
+        "parserID": "DOM",
+        "responseFormatType": "html"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet id = result;\nif(result.indexOf('com')>0)\n\tid = /com.*?(\\d+)/.exec(result)[1];\nelse\n\tid = result.match(/(\\d+)/gim)[0];\n\nreturn {'url':'http://www.sixmh7.com/bookchapter/', 'POST':true, 'httpParams':{'id':id, 'id2':1}};",
+        "title": "chaptername",
+        "host": "http://www.sixmh7.com",
+        "list": "@js:\nreturn result.reverse();",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "chapterid || @js:\nreturn 'http://www.sixmh7.com/' + params.queryInfo.detailUrl + '/' + result + '.html';"
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"nr1\"]/text()",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "moreKeys": {
+            "maxPage": 2
+        },
+        "host": "https://m.bqg34.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@id=\"pb_next\"]/@href ||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"_\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "requestParamsEncode": "2147485234",
+        "actionID": "bookDetail",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "https://m.bqg34.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://m.bqg34.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9982",
+    "sourceName": "笔趣阁18",
+    "desc": "🦞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651463954.478425",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//span[@class=\"mr15\"]",
+        "responseFormatType": "html",
+        "bookName": "//div[@class=\"article\"]/a[1]",
+        "desc": "//span[@class=\"fs12 gray\"]",
+        "requestInfo": "@js:\n\nlet url= config.host+\"/modules/article/search.php\";\n\nlet httpParams = {'searchkey':params.keyWord};\nif(params.pageIndex>1)\n\thttpParams.page = params.pageIndex;\nreturn {'url':url, 'httpParams':httpParams};",
+        "host": "https://m.bqg34.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[@width=\"80\"]/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//table[@class=\"list-item\"]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "nextPageUrl": "//a[contains(text(),'更多章节')]/@href || //a[contains(text(),'下一页')]/@href",
+        "requestParamsEncode": "2147485234",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "requestInfo": "@js:\rlet bookid = result.match(/\\d.\\d+/)[0];\rlet url = config.host + \"/chapters_\"+ bookid+ \"/\" +params.pageIndex;\rreturn url;",
+        "title": "//a",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://m.bqg34.com",
+        "validConfig": "",
+        "list": "//ul[@class=\"last9\"]/li[position()>1]",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

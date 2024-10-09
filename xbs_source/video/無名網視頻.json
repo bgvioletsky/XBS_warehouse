@@ -1,0 +1,138 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet pat=\".*\\\\.(m3u8|mp4).*\";\nreturn {'url':result,'httpHeaders':config.httpHeaders, 'webView':true,'sourceRegex':pat};",
+        "host": "https://wm.wmm44.com",
+        "httpHeaders": {
+            "Referer": "https://wm.wmm44.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\n\nreturn {'url':result,'POST':false,'httpHeaders':config.httpHeaders,forbidCookie:true,cacheTime:3600,};",
+        "host": "https://wm.wmm44.com",
+        "httpHeaders": {
+            "Referer": "https://wm.wmm44.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "/html/body/section[@class=\"section\"]/div/div/div[1]/div/div[@class=\"level-left\"]/nav/ul/li[@class=\"is-active\"]/a/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "国产自拍精品": {
+            "responseFormatType": "html",
+            "bookName": "//a/text() ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")",
+            "httpHeaders": {
+                "Referer": "https://wm.wmm44.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n let url = config.host +\"/viewforum/39\";\n\n\n\nif (params.pageIndex > 1){\n    url = url +\"/page/\"+params.pageIndex;\n} \n\nreturn {'url':url, forbidCookie:true,'POST':false,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+            "host": "https://wm.wmm44.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 41,
+                "requestFilters": ""
+            },
+            "detailUrl": "//a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "/html/body/section[@class=\"section\"]/div/div/div[1]/div[@class=\"box\"]/table/tbody/tr/td",
+            "cover": "@js:\nreturn 'https://lh1.hetaousercontent.com/img/4696122d5b8548e1.jpg?thumbnail=true'"
+        },
+        "国产自拍": {
+            "responseFormatType": "html",
+            "bookName": "//a/text() ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")",
+            "httpHeaders": {
+                "Referer": "https://wm.wmm44.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n let url = config.host +\"/viewforum/38\";\n\n\n\nif (params.pageIndex > 1){\n    url = url +\"/page/\"+params.pageIndex;\n} \n\nreturn {'url':url, forbidCookie:true,'POST':false,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+            "host": "https://wm.wmm44.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 41,
+                "requestFilters": ""
+            },
+            "detailUrl": "//a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "/html/body/section[@class=\"section\"]/div/div/div[1]/div[@class=\"box\"]/table/tbody/tr/td",
+            "cover": "@js:\nreturn 'https://lh1.hetaousercontent.com/img/4696122d5b8548e1.jpg?thumbnail=true'"
+        }
+    },
+    "sourceType": "video",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9",
+    "sourceName": "無名網視頻",
+    "sourceUrl": "https://wm.wmm44.com",
+    "miniAppVersion": "2.53.2",
+    "httpHeaders": {
+        "Referer": "https://wm.wmm44.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1655290325.353826",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "html",
+        "bookName": "//a/text() ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")",
+        "httpHeaders": {
+            "Referer": "https://wm.wmm44.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\n\nlet url = config.host +\"/viewforum/38\";\n\n\n\nreturn {'url':url, forbidCookie:true,'POST':false,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+        "host": "https://wm.wmm44.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "cover": "@js:\nreturn 'https://lh1.hetaousercontent.com/img/4696122d5b8548e1.jpg?thumbnail=true'",
+        "validConfig": "",
+        "list": "/html/body/section[@class=\"section\"]/div/div/div[1]/div[@class=\"box\"]/table/tbody/tr/td",
+        "parserID": "DOM",
+        "detailUrl": "//a/@href"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result,'POST':false,'httpHeaders':config.httpHeaders,forbidCookie:true,cacheTime:3600,};",
+        "title": "//div/div[@class=\"level-left\"]/nav/ul/li[3]/a/text()",
+        "host": "https://wm.wmm44.com",
+        "httpHeaders": {
+            "Referer": "https://wm.wmm44.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"
+        },
+        "list": "/html/body/section[@class=\"section\"]/div/div/div[1]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//*[@id=\"source\"]/@src"
+    }
+}

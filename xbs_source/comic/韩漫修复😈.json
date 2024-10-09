@@ -1,0 +1,196 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "content": "//div[@class=\"charpetBox\"]//img/@data-original",
+        "JSParser": "function functionName(config, params, result) \n{\n  //return {'result':result};\n\tlet hh = {\r            \"UserAgent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1\",\r            \"referer\": \"https://www.hztoon.com/\"\r        };\n\n\t// 生成的内容需添加到response中再返回，因为result里面包含了分页请求等参数，如果无分页时可以直接返回的\n\n\tresult.content = JSON.stringify({'urls':result.content, 'httpHeaders':hh});\n\n//params.nativeTool.log(params)\n\n\treturn result;\n\r}",
+        "requestInfo": "@js:\nlet url = result; //params.queryInfo.url\nreturn {'url':url, \"httpHeaders\":{\"UserAgent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/95.0.4638.54\",\"Referer\": params.queryInfo.detailUrl}};\n\n// 修改：\n// 将params.queryInfo.url换为result，result这个参数在无分页或第一页时是params.queryInfo.url，有分页且在第2页之后是params.lastResponse.nextPageUrl\n// params.queryInfo.detailUrl 需要在目录配置中手动添加，原理：queryInfo是目录配置中生成的item，下版本log功能可以打印试一下\n\n// 搜索配置与分类配置在最顶层，无queryInfo\n// 详情配置与目录配置queryInfo来自上一层响应(搜索配置/分类配置)\n// 章节内容配置queryInfo来自目录配置\n\n// 每个配置都是独立的，上一层会往下一层传递参数(queryInfo)",
+        "moreKeys": {
+            "maxPage": 20
+        },
+        "host": "https://www.hztoon.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(), '下一页')]/@href||@js:\nif(result.indexOf(\"view\")==-1){\n//let id=result.match(/(\\d+)/g)[1];\nlet url =params.queryInfo.url+\"/\"+result;\nreturn url\n\n}\nelse{\n\nreturn result\n\n}"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "authorstr",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nlet url = config.host+\"/api/classify/\"+params.filters.type+\"-0-\"+params.filters.order+\"-\"+params.filters.area+\"-0-\"+params.pageIndex;\nurl = encodeURI(url);\n\nreturn {'url':url,\"httpHeaders\":{\"UserAgent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/95.0.4638.54\",\"Referer\": config.host}};",
+            "host": "https://www.hztoon.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id||@js:\nlet url= config.host+\"/comic/\"+ result\nreturn url;",
+            "moreKeys": {
+                "pageSize": 5,
+                "requestFilters": [
+                    {
+                        "key": "area",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "韩国",
+                                "value": "2"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "3"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "女人",
+                                "value": "24"
+                            },
+                            {
+                                "title": "同居",
+                                "value": "25"
+                            },
+                            {
+                                "title": "暧昧",
+                                "value": "26"
+                            },
+                            {
+                                "title": "魅惑",
+                                "value": "27"
+                            },
+                            {
+                                "title": "大尺度",
+                                "value": "28"
+                            },
+                            {
+                                "title": "巨乳",
+                                "value": "29"
+                            },
+                            {
+                                "title": "刺激",
+                                "value": "30"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "order",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载中",
+                                "value": "1"
+                            },
+                            {
+                                "title": "已完结",
+                                "value": "2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "cover",
+            "parserID": "DOM",
+            "list": "data/comics",
+            "status": "last_volpub_time||@js:\nreturn \"更新时间：\"+result"
+        },
+        "榜单": {
+            "cat": "//span[@class=\"ver-t tag\"]||@js:\nreturn result.replace(/\\n/g,\"•\").replace(/•\\.\\.\\./g,\"\")",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//p",
+            "bookName": "//h3",
+            "requestInfo": "@js:\n\nreturn config.host+\"/\"+params.filters.type",
+            "host": "https://www.hztoon.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 1,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "男生榜",
+                                "value": "nansheng"
+                            },
+                            {
+                                "title": "女生榜",
+                                "value": "nvsheng"
+                            },
+                            {
+                                "title": "人气榜",
+                                "value": "renqi"
+                            },
+                            {
+                                "title": "追更榜",
+                                "value": "zuigeng"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//div[@class=\"img-div relative ver-t\"]/@onclick\n||@js:\nlet url= config.host+\"/comic/\"+ result.match(/(\\d+)/)[1];\nreturn url;",
+            "validConfig": "",
+            "cover": "//img/@src||@js:\nreturn config.host+result",
+            "parserID": "DOM",
+            "list": "//div[@class=\"box2\"]//div[@class=\"items font-0\"]"
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "韩漫修复😈",
+    "sourceUrl": "https://www.hztoon.com",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637560076.532941",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\nlet res = JSON.parse(result.match(/serchArry=(.*?);/)[1]);\r//console.log(res);\rlet list = [];\r//console.log(typeof(res));\rfor (var i = 0; i < res.length; i++) {\r    let bookInfo = {};\r    last_chapter = res[i]['latestVolume']\r    bookInfo.detailUrl = config.host+\"/comic/\"+res[i]['id'];\r    bookInfo.bookName = res[i]['title'];\r    bookInfo.cover = config.host+\"/\"+res[i]['cover'];\r  \r    bookInfo.author = res[i]['authorstr'];\r    bookInfo.lastChapterTitle =last_chapter['title'];\r    list.push(bookInfo);\r\r   //console.log(bookInfo)\r}\n\n\treturn {'list':list};\n}",
+        "host": "https://www.hztoon.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nlet url=config.host+\"/search/\"+encodeURI(params.keyWord);\n\nreturn {'url':url,\"httpHeaders\":{\"UserAgent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/95.0.4638.54\",\"Referer\": \"https://www.hztoon.com/?\"}};",
+        "actionID": "searchBook"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://www.hztoon.com",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet res = JSON.parse(result.match(/,\"data\":(.*?\\])\\}\\]\\);/)[1]);\n//console.log(res);\n let former_url =params.queryInfo.detailUrl.replace(/comic/g,\"view\");\n\nlet list = [];\n\nfor (var i = 0; i < res.length; i++) {\n    let chapterInfo = {};\n    chapterInfo.title = res[i]['chapter_name'];\n    chapterInfo.url = former_url+\"/\" + res[i]['id'];\n\n    // 传递更多参数给下一级\n    chapterInfo.detailUrl = params.queryInfo.detailUrl;\n\n    list.push(chapterInfo);\n\n   //console.log(chapterInfo)\n}\n\treturn {'list':list};\n}",
+        "actionID": "chapterList"
+    }
+}

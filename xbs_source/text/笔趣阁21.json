@@ -1,0 +1,82 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.xbiquge520.com",
+        "desc": "//meta[@name=\"description\"]/@content",
+        "actionID": "bookDetail"
+    },
+    "weight": "9980",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.xbiquge520.com",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "笔趣阁21",
+    "sourceType": "text",
+    "sourceUrl": "https://www.xbiquge520.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651555299.148672",
+    "searchBook": {
+        "cat": "//span[3]",
+        "author": "//span[1]",
+        "responseFormatType": "html",
+        "bookName": "//@alt",
+        "requestInfo": "@js:\nlet url= config.host+\"/search.html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.xbiquge520.com",
+        "actionID": "searchBook",
+        "detailUrl": "//dt/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//div[@id=\"sitembox\"]/dl",
+        "parserID": "DOM",
+        "wordCount": "//span[4]",
+        "status": "//span[2]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 6
+        },
+        "host": "https://www.xbiquge520.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

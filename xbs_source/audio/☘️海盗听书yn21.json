@@ -1,0 +1,144 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "src",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet url = 'http://app.yn21.cn/listen/apiapp/AppGetChapterUrl';\nreturn {'url':url, 'POST':true, 'httpParams':JSON.parse(result)};",
+        "host": "http://app.yn21.cn",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "bookName",
+            "responseFormatType": "json",
+            "bookName": "bookTitle",
+            "desc": "bookDesc",
+            "requestInfo": "http://app.yn21.cn/listen/apptingchina/categoryList?size=10&page=%@pageIndex&categoryId=%@filter",
+            "host": "http://app.yn21.cn",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "奇幻玄幻",
+                                "value": "6"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "7"
+                            },
+                            {
+                                "title": "宫频女斗",
+                                "value": "8"
+                            },
+                            {
+                                "title": "官场商战",
+                                "value": "9"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "10"
+                            },
+                            {
+                                "title": "侦探推理",
+                                "value": "11"
+                            },
+                            {
+                                "title": "探险科幻",
+                                "value": "12"
+                            },
+                            {
+                                "title": "重生穿越",
+                                "value": "13"
+                            },
+                            {
+                                "title": "恐怖惊悚",
+                                "value": "14"
+                            },
+                            {
+                                "title": "文学历史",
+                                "value": "15"
+                            },
+                            {
+                                "title": "两性情感",
+                                "value": "49"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "50"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "bookImage",
+            "validConfig": "",
+            "list": "data/list",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "id"
+        }
+    },
+    "sourceUrl": "http://app.yn21.cn",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "0",
+    "sourceName": "☘️海盗听书yn21",
+    "sourceType": "audio",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649064174.298596",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "bookAnchor",
+        "author": "bookName",
+        "responseFormatType": "json",
+        "bookName": "bookTitle",
+        "desc": "bookDesc",
+        "requestInfo": "http://app.yn21.cn/listen/apptingchina/appSearch?search=%@keyWord",
+        "host": "http://app.yn21.cn",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "bookImage",
+        "validConfig": "",
+        "list": "data/bookData",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "http://app.yn21.cn/listen/apiapp/chapter?uid=1161&size=50000&page=1&sort=asc&type=works&bookId=%@result",
+        "title": "chapterTitle || @replace:.mp3",
+        "host": "http://app.yn21.cn",
+        "list": "data/list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "chapterId || @js:\nlet obj = {'uid':1161, 'bookId':params.queryInfo.detailUrl, 'chapterId':result};\nreturn JSON.stringify(obj);"
+    }
+}

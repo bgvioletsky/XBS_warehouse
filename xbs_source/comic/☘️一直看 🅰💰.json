@@ -1,0 +1,95 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.data.images..name || @js:\nreturn result.map\n(a=>a+'r0').join('\\n');",
+        "actionID": "chapterContent",
+        "requestInfo": "https://yzkapi.yizhikan.cn/v1/chapter/%@result?time=1564715960&sign=90c16ca24727d83aa7dca35204537a05",
+        "host": "https://yzkapi.yizhikan.cn",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "https://yzkapi.yizhikan.cn/v1/comic/%@result?time=1564715936&sign=4634ce19ee6f9b82c4118c8875115705",
+        "host": "https://yzkapi.yizhikan.cn",
+        "responseFormatType": "json",
+        "desc": "data/comic/description",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "author/author",
+            "responseFormatType": "json",
+            "lastChapterTitle": "latest_chapter_name",
+            "bookName": "name",
+            "requestInfo": "https://yzkapi.yizhikan.cn/v1/tag/filter?time=1564714161&sign=8ec6ceef2e2b0d8d27224fdc82f81405&typeid1=0&typeid2=0&typeid3=1&typeid4=0&offset=%@offset&count=30",
+            "host": "https://yzkapi.yizhikan.cn",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "cover",
+            "validConfig": "",
+            "list": "data",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30
+            }
+        }
+    },
+    "sourceUrl": "https://yzkapi.yizhikan.cn",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5983",
+    "sourceName": "☘️一直看 🅰💰",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641401720.137242",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "$.tags..name || @js:\nreturn result.join('/');",
+        "author": "author/author",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "desc": "description",
+        "requestInfo": "https://yzkapi.yizhikan.cn/v1/search?time=1564715218&sign=a49917855efaa12e3ef291dfa40af9b9&word=%@keyWord&offset=0",
+        "host": "https://yzkapi.yizhikan.cn",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "cover",
+        "validConfig": "",
+        "list": "data",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "data/chapters[-1]/publish_at",
+        "requestInfo": "https://yzkapi.yizhikan.cn/v1/comic/%@result?time=1564715936&sign=4634ce19ee6f9b82c4118c8875115705",
+        "title": "name",
+        "host": "https://yzkapi.yizhikan.cn",
+        "list": "data/chapters",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id"
+    }
+}

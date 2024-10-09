@@ -1,0 +1,69 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.b5200.net",
+        "content": "//div[@id='content']",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.b5200.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5463",
+    "sourceName": "笔趣阁b5200",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647077710.131572",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[@class='odd'][2]/text()",
+        "lastChapterTitle": "//td[@class='even']/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//td[@class='odd']/a/text()",
+        "requestInfo": "@js:\n\nlet url = config.host + \"/modules/article/search.php\";\nlet hp = {\"searchkey\":params.keyWord};\n\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":config.httpHeaders, \"httpParams\":hp};",
+        "host": "http://www.b5200.net",
+        "actionID": "searchBook",
+        "detailUrl": "//td[@class='odd']/a/@href",
+        "wordCount": "//td[@class='even'][2]/text()",
+        "validConfig": "",
+        "list": "//table[@class='grid']//tr[not(@align)]",
+        "parserID": "DOM",
+        "status": "//td[@class='even'][3]/text()"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://www.b5200.net",
+        "list": "//div[@id='list']//dt[2]/following::dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

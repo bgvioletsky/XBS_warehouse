@@ -1,0 +1,78 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]/text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "host": "https://www.longtanshuw.cc/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@id='pb_next' and text()='下一章']/@href"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.longtanshuw.cc/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-龙坛书网",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357646.390469",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//td[3]||//meta[@property=\"og:novel:author\"]/@content",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//td[2]/a||//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "bookName": "//td[1]/a||//meta[@property=\"og:novel:book_name\"]/@content",
+        "requestInfo": "modules/article/search.php?searchkey=%@keyWord",
+        "host": "https://www.longtanshuw.cc/",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href||//meta[@property=\"og:novel:read_url\"]/@content",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//tr[@id=\"nr\"]||//html",
+        "status": "//td[6]||//meta[@property=\"og:novel:status\"]/@content"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "nextPageUrl": "//a[text()='下一页']/@href",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "host": "https://www.longtanshuw.cc/",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

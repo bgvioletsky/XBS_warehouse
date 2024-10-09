@@ -1,0 +1,85 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.result.info.content",
+        "actionID": "chapterContent",
+        "host": "https://nso92.xsafetech.com",
+        "httpHeaders": {
+            "Referer": "https://nso92.xsafetech.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://nso92.xsafetech.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "新笔趣阁9x.com",
+    "httpHeaders": {
+        "Referer": "https://nso92.xsafetech.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐲",
+    "lastModifyTime": "1658341196.807175",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "$.category",
+        "author": "$.author",
+        "responseFormatType": "json",
+        "bookName": "$.name",
+        "desc": "$.description",
+        "requestInfo": "https://nso92.xsafetech.com/api/category-search?name=%@keyWord",
+        "host": "https://nso92.xsafetech.com",
+        "actionID": "searchBook",
+        "httpHeaders": {
+            "Referer": "https://nso92.xsafetech.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "$.icon",
+        "validConfig": "",
+        "list": "$..list[*]",
+        "parserID": "DOM",
+        "detailUrl": "@js:\nurl = 'https://nso92.xsafetech.com/cdn/book/chapterList/' + result.id +'.html';\n\nreturn url"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "$.name",
+        "host": "https://nso92.xsafetech.com",
+        "httpHeaders": {
+            "Referer": "https://nso92.xsafetech.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "$.result.list..list[*]",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\n\nvar a = params.queryInfo.detailUrl.replace('92', '');\nvar b= a.match(/\\d+/);\n\nurl = 'https://nso92.xsafetech.com/cdn/book/content/' + b + '/' + result.id +'.html';\n\nreturn url"
+    },
+    "sourceType": "text"
+}

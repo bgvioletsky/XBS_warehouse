@@ -1,0 +1,88 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://m.77mh.xyz",
+        "content": "@js:\n\n//执行eval函数，获取图片列表信息\neval(result.match(/(eval\\([\\s\\S]+?)\\s*<\\/script>/)[1]);\n\n//图片服务器列表，抓包可得\n//server1=[\"https://hws.gdbyhtl.net\",\"https://a16d.gdbyhtl.net:64443\",\"https://imgmum.dm365.top:2096\",\"https://picsh.77dm.top\",\"https://imgsh.dm365.top\"];\nserver=[\"https://a16d.gdbyhtl.net:64443\"];\n\n//拼接img标签\nlet urls = msg.split(\"|\").map(url=>\nserver+\"/h\"+img_s+\"/\"+url+'.webp').join(\"\\n\");\n\n// hh\nlet hh = {'Referer':params.responseUrl};\nreturn JSON.stringify({'url':urls, 'httpHeaders':hh});",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//p[@class='author']/b",
+            "bookName": "//p[@class='title']",
+            "desc": "//p[@class='info']/text()",
+            "requestInfo": "@js:\nlet url = 'https://m.77mh.xyz/' + params.filter + '/index';\nif(params.pageIndex > 1)\n\turl = url + '_' + params.pageIndex;\nreturn url + '.html';",
+            "host": "https://m.77mh.xyz",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "热血机战::rexue\n科幻未来::kehuan\n恐怖惊悚::kongbu\n推理悬疑::xuanyi\n滑稽搞笑::gaoxiao\n恋爱生活::love\n耽美人生::danmei\n体育竞技::tiyu\n纯情少女::chunqing\n魔法奇幻::qihuan\n武侠经典::wuxia\n连载::lianzai\n完结::wanjie"
+            },
+            "cover": "//img/@src",
+            "detailUrl": "//@href",
+            "list": "//div[contains(@class, 'clist')]/ul/a",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//p[@class='status']/text()"
+        }
+    },
+    "sourceUrl": "https://m.77mh.xyz",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8599",
+    "sourceName": "☘️新新漫画",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "loginUrl": "https://m.77mh.in",
+    "lastModifyTime": "1641269517.009028",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[@class='author']/b",
+        "responseFormatType": "html",
+        "bookName": "//p[@class='title']",
+        "desc": "//p[@class='info']/text()",
+        "requestInfo": "https://so.77mh.xyz/m.php?k=%@keyWord",
+        "host": "https://m.77mh.xyz",
+        "actionID": "searchBook",
+        "detailUrl": "//@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//div[contains(@class, 'clist')]/ul/a",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://m.77mh.xyz",
+        "list": "//ul[contains(@class, 'chapLiList')]/li || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

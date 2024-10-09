@@ -1,0 +1,70 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"content\"] /p",
+        "host": "https://www.biqupao.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.biqupao.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-笔趣泡",
+    "desc": "biqupao",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357993.830186",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class=\"name\"]/span[1]|@js:return result.replace('类别：','')",
+        "author": "//div[@class=\"name\"]/span[2]|@js:return result.replace('作者：','')",
+        "responseFormatType": "html",
+        "bookName": "//div[@class=\"name\"]/strong/a",
+        "requestInfo": "https://www.biqupao.com/searchbook.php?search_key=%@keyWord",
+        "host": "https://www.biqupao.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"name\"]/strong/a/@href",
+        "cover": "//div[@class=\"pic\"]/a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//li[@id=\"li1\"]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.biqupao.com/",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

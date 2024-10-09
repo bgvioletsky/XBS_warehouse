@@ -1,0 +1,130 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//*[@id=\"neirong\"]/p",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "moreKeys": {
+            "maxPage": 2
+        },
+        "host": "https://m.dijiubook.net",
+        "httpHeaders": {
+            "Referer": "https://m.dijiubook.net",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//*[@id=\"nr\"]//*[@id=\"pb_next\"]/@href"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "cat": "//*[@class=\"block_txt2\"]/p[3]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//*[@class=\"block_txt2\"]/p[7]/a",
+        "httpHeaders": {
+            "Referer": "https://m.dijiubook.net",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "host": "https://m.dijiubook.net",
+        "desc": "//*[@class=\"intro_info\"]/p",
+        "actionID": "bookDetail",
+        "wordCount": "//*[@class=\"block_txt2\"]/p[5]",
+        "validConfig": "",
+        "cover": "//*[@class=\"block_img2\"]/img/@src",
+        "parserID": "DOM",
+        "status": "//*[@class=\"block_txt2\"]/p[4]"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//div[@class=\"block_txt\"]/p[2]",
+            "bookName": "//div[@class=\"block_txt\"]//h2",
+            "httpHeaders": {
+                "Referer": "https://m.dijiubook.net",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\rlet url = config.host+params.filters.aa+params.pageIndex+\"/\"\r\rlet hh= {\r  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\r}\r\rreturn {'url':url, 'POST':false, \r\"httpHeaders\": config.httpHeaders,\rforbidCookie:true,};",
+            "host": "https://m.dijiubook.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "aa\n玄幻::/sort/1_\n仙侠::/sort/2_\n都市::/sort/3_\n穿越::/sort/4_\n游戏::/sort/5_\n科幻::/sort/6_\n其他::/sort/7_\n爽文::/sort/8_\n国学::/sort/9_\n名著::/sort/10_\n诗歌::/sort/11_\n传记::/sort/12_\n文学::/sort/13_\n"
+            },
+            "detailUrl": "//div[@class=\"block_txt\"]/p[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"block\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//img/@src",
+            "desc": "//*[@class=\"intro_info_full\"]"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://m.dijiubook.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "第九中文",
+    "httpHeaders": {
+        "Referer": "https://m.dijiubook.net",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1653137852.819756",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]/a",
+        "author": "//span[3]/a",
+        "responseFormatType": "html",
+        "bookName": "//span[2]/a",
+        "httpHeaders": {
+            "Referer": "https://m.dijiubook.net",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url=config.host+\"/search/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord,'page':params.pageIndex,'searchtype':\"all\",'submit':\"\",};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "https://m.dijiubook.net",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]/a/@href",
+        "validConfig": "",
+        "list": "//*[@class=\"SHsectionThree-middle\"]/p",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "nextPageUrl": "//*[@class=\"index-container-btn\"][2]/@href",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "Referer": "https://m.dijiubook.net",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\rlet bookid = result.match(/\\d.*\\d/)[0];\rlet url = config.host + \"/book/\"+ bookid + \"/index_\" +params.pageInde+ \".html\";\rreturn url;",
+        "title": "//a",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 50
+        },
+        "host": "https://m.dijiubook.net",
+        "validConfig": "",
+        "list": "//*[@class=\"chapter\"]/li[position() < last()]",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

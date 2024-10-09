@@ -1,0 +1,77 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class='con'] || @js:\nreturn result.replace(/（本章.*）/gim, '');",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://m.suixkan.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://m.suixkan.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "3333",
+    "sourceName": "🦌出品-随心看",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650358625.991221",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[@class='v-author']",
+        "responseFormatType": "html",
+        "bookName": "//div[@class='v-title']",
+        "desc": "//div[@class='v-intro']",
+        "requestInfo": "@js:\nlet url = 'http://m.suixkan.com/s/1.html';\nlet hp = {'keyword':params.keyWord};\nif(params.pageIndex>1)\n\thp.page = params.pageIndex;\nreturn {'url':url, 'httpParams':hp};",
+        "host": "https://m.suixkan.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 5
+        },
+        "wordCount": "//div[contains(@class, 'v-words')]",
+        "cover": "//img[contains(@class, 'cover')]/@src",
+        "list": "//div[@class='v-list']/div",
+        "parserID": "DOM",
+        "detailUrl": "//@onclick || @js:\nreturn /'(.*?)'/.exec(result)[1];",
+        "validConfig": ""
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn result.replace('/b/', '/c/');",
+        "title": "//text()",
+        "host": "https://m.suixkan.com",
+        "list": "//ul[@class='catalog_ls']//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "sourceType": "text"
+}

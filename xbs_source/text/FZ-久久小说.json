@@ -1,0 +1,79 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"content\"]",
+        "moreKeys": {
+            "maxPage": 2
+        },
+        "host": "https://www.99xs.net/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@id=\"next_url\"]/@href"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.99xs.net/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-久久小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649630605.799797",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]",
+        "author": "//span[4]",
+        "responseFormatType": "html",
+        "bookName": "//span[2]/a",
+        "requestInfo": "@js:\nlet url = 'https://www.99xs.net/search/';\nlet hp = {};\nhp.searchkey = params.keyWord;\n//hp.pn= params.pageIndex;\n//hp.searchtype='0';\nreturn {'POST':true,'url':url, 'httpParams':hp,};",
+        "host": "https://www.99xs.net/",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "detailUrl": "//span[2]/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"container\"]/div/div/ul/li"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 1000
+        },
+        "host": "https://www.99xs.net/",
+        "list": "//div[@class=\"section-box\"][2]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class=\"index-container\"]/a[last()]/@href"
+    },
+    "sourceType": "text"
+}

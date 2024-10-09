@@ -1,0 +1,83 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nreturn {url:result,cacheTime:3600};",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://api.mianhuatangxs.cn",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://api.mianhuatangxs.cn",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-棉花糖app",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649606787.258021",
+    "parserID": "DOM",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "categoryName",
+        "responseFormatType": "json",
+        "author": "author",
+        "lastChapterTitle": "chapterName",
+        "bookName": "name",
+        "desc": "info",
+        "requestInfo": "https://api.mianhuatangxs.cn/api/v1/novelsearch?content=%@keyWord&pageIndex=%@pageIndex&pageSize=20&type=2",
+        "host": "https://api.mianhuatangxs.cn",
+        "actionID": "searchBook",
+        "detailUrl": "bookId|@js:\nvar bid= parseInt(result);\nvar subpath= parseInt((1999+bid)/2000)\nreturn \"http://statics.rungean.com/static/book/zip/\"+subpath+\"/\"+bid+\".zip\";",
+        "cover": "picture",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "data/list",
+        "wordCount": "wordNum",
+        "status": "bookStatus",
+        "updateTime": "//td[5]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "@js:\nlet listPath = result + '_uzip/' + 'detail.json';\nlet fileStr = params.nativeTool.readTxtFile(listPath);\nlet oriObj = JSON.parse(fileStr);\nvar tm=oriObj.data.updatedTime;\ntm=tm.replace('T',' ');\nvar j=tm.indexOf('+');\nif(j!=-1){\ntm=tm.substring(0,j);\n}\nreturn tm;",
+        "requestInfo": "@js:\n\nif(result.indexOf(\"zip\")==-1){\n\nlet pic =params.queryInfo.cover;\n\n\nlet res = \"/\"+params.queryInfo.detailUrl+\".zip\";\n\nid = pic.match(/cover\\/(\\d+)/)[1];\nres = id +res;\nlet url =\"http://statics.rungean.com/static/book/zip/\"+res;\n\nreturn {url:url,cacheTime:3600, 'responseFormatType':'filePath'};\n\n}else{\n\nreturn {url:result,cacheTime:3600, 'responseFormatType':'filePath'};}",
+        "title": "name",
+        "host": "https://api.mianhuatangxs.cn",
+        "list": "@js:\n\nlet dirPath = params.nativeTool.unzipFile(result);\n//params.nativeTool.log(\"1:\"+dirPath) \nlet listPath = dirPath + '/' + 'chapter.json';\nlet fileStr = params.nativeTool.readTxtFile(listPath);\n\nlet oriObj = JSON.parse(fileStr);\nreturn oriObj.data;",
+        "responseFormatType": "filePath",
+        "parserID": "DOM",
+        "url": "id||@js:\nres = params.responseUrl.match(/(\\/\\d+\\S+)/)[1];\n\n\nlet url = \"http://statics.rungean.com/static/uploadfile/chapter\"+res.replace(\".zip\",\"/\"+result);\nreturn url +\".txt\";"
+    },
+    "sourceType": "text"
+}

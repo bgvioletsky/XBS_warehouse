@@ -1,0 +1,89 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='content']|@js:\nvar a=result.lastIndexOf('(https://w');\nvar b=result;\nif(a>0){\n      b=b.substring(0,a);\n}\nreturn b;",
+        "host": "https://www.23xsww.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//meta[@property='og:novel:status']/@content",
+        "updateTime": "//div[@id='info']/p[3]",
+        "lastChapterTitle": "//div[@id='info']/p[4]/a",
+        "host": "https://www.23xsww.com/",
+        "cat": "//meta[@property='og:novel:category']/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "desc": "//div[@id='intro']/p",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.23xsww.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-爱上小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357952.391087",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//span[3]",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "http://so.biqusoso.com/s.php",
+        "bookName": "//span[2]/a",
+        "moreKeys": {
+            "POST": false,
+            "skipCount": 1,
+            "httpParams": {
+                "s": "17934470774457639775",
+                "q": "%@keyWord",
+                "siteid": "23xsw.cc",
+                "ie": "utf-8"
+            }
+        },
+        "host": "https://www.23xsww.com/",
+        "detailUrl": "//span[2]/a/@href",
+        "list": "//div[@class=\"search-list\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.23xsww.com/",
+        "list": "//div[@class='listmain']/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

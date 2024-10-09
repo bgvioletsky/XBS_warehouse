@@ -1,0 +1,368 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class='article-body']",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':'', 'webViewSkipUrls':['cnzz.com', 'hm.baidu.com']};",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "http://jingpin-book.qm989.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "女频": {
+            "author": "//dd[1]/span",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//dd[2]/span/a",
+            "bookName": "//dt/a",
+            "desc": "//dd[@class='desc']/text()",
+            "requestInfo": "@js:\nreturn 'http://jingpin-book.qm989.com/shuku_1_' + params.filters.cat + '_' + params.filters.status + '_' + params.filters.pay + '_' + params.filters.word + '_' + params.filters.sort + '_' + params.pageIndex + '.html';",
+            "host": "http://jingpin-book.qm989.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//dt/a/@href",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "11"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "12"
+                            },
+                            {
+                                "title": "穿越架空",
+                                "value": "13"
+                            },
+                            {
+                                "title": "总裁豪门",
+                                "value": "14"
+                            },
+                            {
+                                "title": "青春校园",
+                                "value": "15"
+                            },
+                            {
+                                "title": "幻想言情",
+                                "value": "43"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "word",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "15万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "15-80万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "80万以上",
+                                "value": "3"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "pay",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "免费",
+                                "value": "1"
+                            },
+                            {
+                                "title": "收费",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "推荐",
+                                "value": "0"
+                            },
+                            {
+                                "title": "点击",
+                                "value": "1"
+                            },
+                            {
+                                "title": "更新",
+                                "value": "2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class='imgbox']/a/img/@_src",
+            "list": "//div[contains(@class, 'book_list')]//li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "validConfig": ""
+        },
+        "男频": {
+            "author": "//dd[1]/span",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//dd[2]/span/a",
+            "bookName": "//dt/a",
+            "desc": "//dd[@class='desc']/text()",
+            "requestInfo": "@js:\nreturn 'http://jingpin-book.qm989.com/shuku_0_' + params.filters.cat + '_' + params.filters.status + '_' + params.filters.pay + '_' + params.filters.word + '_' + params.filters.sort + '_' + params.pageIndex + '.html';",
+            "host": "http://jingpin-book.qm989.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//dt/a/@href",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "2"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "3"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "4"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "5"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "7"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "8"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "9"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "10"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "17"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "18"
+                            },
+                            {
+                                "title": "文学",
+                                "value": "19"
+                            },
+                            {
+                                "title": "职场",
+                                "value": "20"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "21"
+                            },
+                            {
+                                "title": "异界",
+                                "value": "26"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "word",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "15万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "15-80万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "80万以上",
+                                "value": "3"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "pay",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "免费",
+                                "value": "1"
+                            },
+                            {
+                                "title": "收费",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "推荐",
+                                "value": "0"
+                            },
+                            {
+                                "title": "点击",
+                                "value": "1"
+                            },
+                            {
+                                "title": "更新",
+                                "value": "2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class='imgbox']/a/img/@_src",
+            "list": "//div[contains(@class, 'book_list')]//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "http://jingpin-book.qm989.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "888",
+    "sourceName": "七猫小说大全",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647442200.944260",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//p[@class='book_intr']/span[1]/a ||  //dd[1]/span",
+        "lastChapterTitle": "//dd[2]/span",
+        "responseFormatType": "html",
+        "bookName": "//div[@class='info']/h2/a || //dt/a",
+        "desc": "//p[@class='book_con'] || //dd[3]/text()",
+        "requestInfo": "http://jingpin-book.qm989.com/search.html?search_type=&keyword=%@keyWord",
+        "host": "http://jingpin-book.qm989.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class='info']/h2/a/@href || //dt/a/@href",
+        "cover": "//div[@class='imgbox']/a/img/@_src || //div[@class='imgbox']/img/@src",
+        "wordCount": "//div[@class='imgbox']/a/span || @js:\nreturn result.split(' ')[1];",
+        "list": "//div[@class='book_list']//li || //div[@class='bd']/div[contains(@class, 'book_info')]",
+        "parserID": "DOM",
+        "validConfig": "",
+        "status": "//div[@class='imgbox']/a/span || @js:\nreturn result.split(' ')[0];"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//div[@class='catalog_hd'][1]/p[1]",
+        "requestInfo": "@js:\nreturn result.replace('/shuku/', '/chapterlist/');",
+        "title": "//a",
+        "host": "http://jingpin-book.qm989.com",
+        "list": "//ul[contains(@class, 'catalog_list')]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

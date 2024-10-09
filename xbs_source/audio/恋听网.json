@@ -1,0 +1,189 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "@js:\nif(result.url.length>0)\n\treturn result.url;\nreturn result.ourl;",
+        "requestInfo": "@js:\n\nlet index = result.lastIndexOf('/');\nlet subStr = result.substr(index+1, result.length);\nlet arr = subStr.split('-');\n\nlet hp = {};\nhp.bookId = parseInt(arr[0]);\nhp.page = parseInt(arr[1]);\nhp.isPay = 0;\n\nlet hd = {};\nhd.Referer = 'https://ting55.com/book/535-1';\nhd.Accept = 'application/json, text/javascript, */*; q=0.01';\nhd['X-Requested-With'] = 'XMLHttpRequest';\nhd.xt = '4bb0a323a294207caad778f5972e31ee';\nhd['l'] = '1';\n\nreturn {'url':'https://ting55.com/nlinka', 'POST':true, 'httpParams':hp, 'httpHeaders':hd, 'forbidCookie':true};",
+        "host": "https://ting55.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nreturn {'url':result, 'forbidCookie':true};",
+        "host": "https://ting55.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class='intro']/p"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "推荐": {
+            "author": "//div[@class='info']/p[2]",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='info']/h4/a",
+            "requestInfo": "@js:\nlet url = 'https://ting55.com/tuijian';\nif(params.pageIndex>1)\n\treturn url + '/page/' + params.pageIndex;\nreturn url;",
+            "host": "https://ting55.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class='info']/h4/a/@href",
+            "moreKeys": {
+                "pageSize": "20"
+            },
+            "cover": "//div[@class='img']//img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class='category-list']/ul/li",
+            "status": "//div[@class='info']/p[5] || @replace:状态："
+        },
+        "分类": {
+            "author": "//div[@class='info']/p[2]",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='info']/h4/a",
+            "requestInfo": "@js:\nlet url = 'https://ting55.com/' + params.filters.sort + '/' + params.filters.cat;\nif(params.pageIndex>1)\n\treturn url + '/page/' + params.pageIndex;\nreturn url;",
+            "host": "https://ting55.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class='info']/h4/a/@href",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "3"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "4"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "6"
+                            },
+                            {
+                                "title": "推理",
+                                "value": "7"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "8"
+                            },
+                            {
+                                "title": "惊悚",
+                                "value": "9"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "10"
+                            },
+                            {
+                                "title": "经典",
+                                "value": "11"
+                            },
+                            {
+                                "title": "相声",
+                                "value": "12"
+                            },
+                            {
+                                "title": "评书",
+                                "value": "14"
+                            },
+                            {
+                                "title": "百家讲坛",
+                                "value": "13"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": "paihang"
+                            },
+                            {
+                                "title": "时间",
+                                "value": "category"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class='img']//img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class='category-list']/ul/li",
+            "status": "//div[@class='info']/p[5] || @replace:状态："
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://ting55.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1528",
+    "sourceName": "恋听网",
+    "sourceType": "audio",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639841578.771900",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[@class='info']/p[1]",
+        "responseFormatType": "html",
+        "bookName": "//div[@class='info']/h4/a",
+        "requestInfo": "@js:\nlet url = '/search/' + encodeURI(params.keyWord) + '/page/' + params.pageIndex;\nreturn {'url':url, 'forbidCookie':true};",
+        "host": "https://ting55.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "detailUrl": "//div[@class='info']/h4/a/@href",
+        "cover": "//div[@class='img']//img/@src",
+        "parserID": "DOM",
+        "validConfig": "",
+        "list": "//div[@class='category-list']/ul/li",
+        "status": "//div[@class='info']/p[4] || @replace:状态："
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':result, 'forbidCookie':true};",
+        "title": "//a",
+        "host": "https://ting55.com",
+        "list": "//div[@class='plist']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

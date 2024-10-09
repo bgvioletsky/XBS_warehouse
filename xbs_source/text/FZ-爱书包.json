@@ -1,0 +1,78 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='book_text']/text()|@js: return result.replace('chaptererror();','');",
+        "host": "https://www.ishubao.org/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.ishubao.org/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-爱书包",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357691.592670",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[3] |@js:return result.trim()",
+        "lastChapterTitle": "//td[2]/a |@js:return result.trim()",
+        "responseFormatType": "html",
+        "bookName": "//td[1]/a |@js:return result.trim()",
+        "requestInfo": "https://www.ishubao.org/modules/article/search.php?s=12839966820499815668&entry=1&ie=gbk&q=%@keyWord",
+        "host": "https://www.ishubao.org/",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "moreKeys": {
+            "maxPage": 1,
+            "skipCount": 1
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table[@class=\"grid\"]/tr",
+        "status": "//td[6]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 1,
+            "skipCount": 0
+        },
+        "host": "https://www.ishubao.org/",
+        "list": "//ul[@id=\"chapterlist\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[@class=\"catalogbtn\"]/@href"
+    },
+    "sourceType": "text"
+}

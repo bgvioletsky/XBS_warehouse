@@ -1,0 +1,194 @@
+{
+    "bookWorld": {
+        "更新": {
+            "cat": "//span[@class=\"pd\"]",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"title\"]",
+            "httpHeaders": {
+                "imgServer": [
+                    "https://res9.xd5s.com",
+                    "https://res8.5freed.com"
+                ]
+            },
+            "requestInfo": "@js:\n\nlet url = config.host.replace('www','m') + '/update/' +params.pageIndex +'/';\n\nlet hh = {'User-Agent':'Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/95.0.4638.69 Safari\\/537.36','Referer':config.host};\n\nreturn {'url':encodeURI(url),'httpHeaders':hh};",
+            "host": "https://www.xd5s.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"title\"]/@href",
+            "cover": "//mip-img//@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[contains(@class,'itemBox')]",
+            "moreKeys": {
+                "pageSize": 50
+            }
+        },
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"txtA\"]",
+            "httpHeaders": {
+                "imgServer": [
+                    "https://res9.xd5s.com",
+                    "https://res8.5freed.com"
+                ]
+            },
+            "requestInfo": "@js:\n\nlet url = config.host.replace('www','m') + '/list/' + params.filter + '/' + params.pageIndex +'/';\n\nlet hh = {'User-Agent':'Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/95.0.4638.69 Safari\\/537.36','Referer':config.host};\n\nreturn {'url':encodeURI(url),'httpHeaders':hh};",
+            "host": "https://www.xd5s.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"txtA\"]/@href",
+            "cover": "//mip-img//@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "list": "//li[contains(@class,'list-comic')]",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "少年漫画",
+                                "value": "shaonian"
+                            },
+                            {
+                                "title": "少女漫画",
+                                "value": "shaonv"
+                            },
+                            {
+                                "title": "青年漫画",
+                                "value": "qingnian"
+                            },
+                            {
+                                "title": "少儿漫画",
+                                "value": "shaoermanhua"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            }
+        },
+        "排行": {
+            "cat": "//span[@class=\"pd\"]",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"title\"]",
+            "httpHeaders": {
+                "imgServer": [
+                    "https://res9.xd5s.com",
+                    "https://res8.5freed.com"
+                ]
+            },
+            "requestInfo": "@js:\n\nlet url = config.host.replace('www','m') + '/rank/';\n\nlet hh = {'User-Agent':'Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/95.0.4638.69 Safari\\/537.36','Referer':config.host};\n\nreturn {'url':encodeURI(url),'httpHeaders':hh};",
+            "host": "https://www.xd5s.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"title\"]/@href",
+            "cover": "//mip-img//@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[contains(@class,'itemBox')]"
+        }
+    },
+    "weight": "10006",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn params.queryInfo.detailUrl.replace(/https:\\/\\/m/gi,'https://www');",
+        "title": "//a",
+        "host": "https://www.xd5s.com",
+        "httpHeaders": {
+            "imgServer": [
+                "https://res9.xd5s.com",
+                "https://res8.5freed.com"
+            ]
+        },
+        "list": "//ul[@id='chapter-list-1']//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "5漫画网⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.xd5s.com",
+    "httpHeaders": {
+        "imgServer": [
+            "https://res9.xd5s.com",
+            "https://res8.5freed.com"
+        ]
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642703427.504762",
+    "searchBook": {
+        "cat": "//span[@class=\"pd\"]",
+        "responseFormatType": "html",
+        "bookName": "//a[@class=\"title\"]",
+        "httpHeaders": {
+            "imgServer": [
+                "https://res9.xd5s.com",
+                "https://res8.5freed.com"
+            ]
+        },
+        "requestInfo": "@js:\n\nlet url = config.host.replace('www','m') + '/search/?keywords=' + params.keyWord + '&page=' + params.pageIndex;\n\nlet hh = {'User-Agent':'Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/95.0.4638.69 Safari\\/537.36','Referer':config.host};\n\nreturn {'url':encodeURI(url),'httpHeaders':hh};",
+        "host": "https://www.xd5s.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class=\"title\"]/@href",
+        "moreKeys": {
+            "pageSize": 50
+        },
+        "validConfig": "",
+        "cover": "//mip-img//@src",
+        "parserID": "DOM",
+        "list": "//div[contains(@class,'itemBox')]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "httpHeaders": {
+            "imgServer": [
+                "https://res9.xd5s.com",
+                "https://res8.5freed.com"
+            ]
+        },
+        "content": "@js:\nlet reg = /chapterImages[\\s\\S]*?\\];/gi;\nlet tem = result.match(reg)[0];\neval(tem);\nlet img = '';\nfor(let i=0;i<chapterImages.length;i++){\n\timg += config.httpHeaders.imgServer[0] + chapterImages[i] + '\\n';\n}\nreturn img;",
+        "host": "https://www.xd5s.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.xd5s.com",
+        "httpHeaders": {
+            "imgServer": [
+                "https://res9.xd5s.com",
+                "https://res8.5freed.com"
+            ]
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[contains(@class,'txtDesc')]"
+    }
+}

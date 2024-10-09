@@ -1,0 +1,93 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.gllmh.com",
+        "content": "//div[contains(@class, 'article-content')]//img/@src",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//div[@class='standpoint']/a",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p",
+            "requestInfo": "http://www.gllmh.com/%@filter/list_%@pageIndex.html",
+            "host": "http://www.gllmh.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "全部::kbmh\n完结::heibaimh"
+            },
+            "cover": "//img/@src",
+            "detailUrl": "//h3/a/@href",
+            "list": "//div[contains(@class, 'newslist')]//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "http://www.gllmh.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "6001",
+    "sourceName": "☘️鬼萝莉漫画💡",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "恐怖",
+    "lastModifyTime": "1641267127.815284",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//span/a",
+        "responseFormatType": "html",
+        "bookName": "//h3/a",
+        "desc": "//p",
+        "requestInfo": "@js:\n\nlet url = 'http://www.gllmh.com/plus/search.php';\nlet hp = {'q':params.keyWord, 'kwtype':0};\nif(params.pageIndex > 1)\n\thp.PageNo = params.pageIndex;\n\nreturn {'url':url, 'forbidCookie':true, 'httpParams':hp};",
+        "host": "http://www.gllmh.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[contains(@class, 'newslist')]//li",
+        "moreKeys": {
+            "pageSize": 10
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "http://www.gllmh.com",
+        "list": "//li/a[text() = '下一页']/@href || @js:\n\nlet obj = {'url':params.responseUrl, 'title':params.pageIndex};\nlet back = {'list':[obj]};\n\nif(result == undefined)\n\treturn back;\n\nlet nextUrl = result[0].content();\nif(nextUrl != undefined && nextUrl.length > 5)\n{\n\tif(result.indexOf('/') != 0)\n\t\tnextUrl = 'http://www.gllmh.com/kbmh/kmzj/' + nextUrl;\n\n\tback.nextPageUrl = nextUrl;\n\tback.autoRequestMore = true;\n\tback.more = true;\n}\n\nreturn back;",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    }
+}

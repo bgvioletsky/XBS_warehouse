@@ -1,0 +1,148 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nif(params.pageIndex==1){\nlet url  = config.host +\"/ajax/getBookMenu\";\nlet hp={\n    \"pageSize\":\"9999\",\n    \"sortType\":\"0\",\n    \"bookId\":result,\n    \"pageNum\":params.pageIndex\n};\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}\n}",
+        "title": "name",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "host": "https://m.lrts.me",
+        "httpHeaders": {
+            "Referer": "https://m.lrts.me",
+            "Cookie": "",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+        },
+        "list": "list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "|@js:\nlet res =params.queryInfo.detailUrl+\"#\"+ result.section;\nreturn res"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "👾LazyManFm",
+    "sourceType": "audio",
+    "sourceUrl": "https://m.lrts.me",
+    "httpHeaders": {
+        "Referer": "https://m.lrts.me",
+        "Cookie": "",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649243764.570673",
+    "searchBook": {
+        "cat": "tags||@js:\n\nlet tags =result\nparams.nativeTool.log(tags) \nlet res = \"\"\nfor(const i  in tags){\n    res += tags[i].name+\" \"\n}\n\nreturn res",
+        "author": "author",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "httpHeaders": {
+            "Referer": "https://m.lrts.me",
+            "Cookie": "",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\n\nlet url  = config.host +\"/ajax/search\";\nlet hp={\n    \"pageSize\":\"40\",\n    \"searchOption\":\"1,2,4\",\n    \"keyWord\":params.keyWord,\n    \"pageNum\":params.pageIndex\n};\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}",
+        "host": "https://m.lrts.me",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "validConfig": "",
+        "list": "data/bookResult/list",
+        "parserID": "DOM",
+        "desc": "desc",
+        "cover": "cover"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "list[0]/path",
+        "requestInfo": "@js:\n\nlet url  = config.host +\"/ajax/getPlayPath\";\nlet tag = result.split(\"#\");\nlet section = \"[\"+tag[1]+\"]\";\nlet hp={\n    \"opType\":1,\n    \"entityType\":\"3\",\n    \"entityId\":tag[0],\n    \"sections\":section,\n    \"type\":0\n};\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'httpParams':hp, 'forbidCache':true}",
+        "host": "https://m.lrts.me",
+        "httpHeaders": {
+            "Referer": "https://m.lrts.me",
+            "Cookie": "",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "可听免费，付费的请在全局请求头加上自己的cookie",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//div[@class=\"book-item-info\"]//text()||@js:\nreturn result.replace(/\\n|\\r|\\t/g,\"\");",
+            "bookName": "//div[@class=\"book-item-r book-flex\"]/a[1]/text()",
+            "httpHeaders": {
+                "Referer": "https://m.lrts.me",
+                "Cookie": "",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet hh ={\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36\",\n    \"Host\":\"www.lrts.me\"\n}\n\nlet url = \"https://www.lrts.me/book/category/\"+params.filters.type+\"/\"+params.filters.order+\"/\"+params.pageIndex+\"/20\";\n\nreturn {'url':url,'POST':false,'httpHeaders':hh,'cacheTime':3600}",
+            "host": "https://m.lrts.me",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": "type\n小说全部::1\n玄幻奇幻::11\n历史幻想::12\n古代言情::10\n都市传说::8\n科幻空间::3021\n穿越架空::3109\n武侠仙侠::14\n青春校园::3106\n网游竞技::9042\n现代言情::3020\n次元专区::9287\n儿童::6\n人文::80\n财经::3085\n文学::78\n外语::7\n健康::3086\n生活::1019\n成功::79\n历史::9049\n曲艺戏曲::4\n相声评书::3\n精  品  课::26\n\norder\n推荐::recommend\n最新::latest\n最热::/hot\n"
+            },
+            "cover": "//div[@class=\"book-item-photo pr\"]//img/@src",
+            "validConfig": "",
+            "list": "//ul[@class=\"clearfix\"]/li",
+            "parserID": "DOM",
+            "detailUrl": "//div[@class=\"book-item-photo pr\"]/a/@href\n||@js:\nlet id=result.match(/(\\d+)/)[1];\nreturn id",
+            "desc": "//p/text()",
+            "_sIndex": 0
+        },
+        "榜单": {
+            "responseFormatType": "html",
+            "author": "//div[@class=\"book-item-info\"]//text()||@js:\nreturn result.replace(/\\n|\\r|\\t/g,\"\");",
+            "bookName": "//div[@class=\"book-item-r book-flex\"]/a[1]/text()",
+            "httpHeaders": {
+                "Referer": "https://m.lrts.me",
+                "Cookie": "",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet hh ={\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36\",\n    \"Host\":\"www.lrts.me\"\n}\n\nlet url = \"https://www.lrts.me/rank/\"+params.filters.type+\"/\"+params.filters.order+\"/\"+params.pageIndex+\"/20\";\n\nreturn {'url':url,'POST':false,'httpHeaders':hh,'cacheTime':3600}",
+            "host": "https://m.lrts.me",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": "type\n热门排行榜::hot\n好评排行榜::comment\n搜索排行榜::search\n下载排行榜::down\n\norder\n周榜::week\n月榜::month\n总榜::all\n"
+            },
+            "cover": "//div[@class=\"book-item-photo pr\"]//img/@src",
+            "validConfig": "",
+            "list": "//ul[@class=\"clearfix\"]/li",
+            "parserID": "DOM",
+            "detailUrl": "//div[@class=\"book-item-photo pr\"]/a/@href\n||@js:\nlet id=result.match(/(\\d+)/)[1];\nreturn id",
+            "desc": "//p/text()",
+            "_sIndex": 1
+        }
+    }
+}

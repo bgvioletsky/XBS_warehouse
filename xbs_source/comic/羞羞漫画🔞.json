@@ -1,0 +1,178 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "3929",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = 'http://sinaappxx6.q236.cn/post/listOnload';\nreturn {'url':url, 'POST':true, 'httpParams':{'bookid':result}};",
+        "title": "Name",
+        "host": "http://sinaappxx6.q236.cn",
+        "list": "lists",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nlet r = {'bookid':result.CartoonId, 'chapterid':result.Id};\nreturn JSON.stringify(r);"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "羞羞漫画🔞",
+    "sourceType": "comic",
+    "sourceUrl": "http://sinaappxx6.q236.cn",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1630034372.585511",
+    "searchBook": {
+        "author": "Author",
+        "responseFormatType": "json",
+        "bookName": "Title",
+        "desc": "Summary",
+        "requestInfo": "@js:\nreturn {'url':'http://sinaappxx6.q236.cn/post/GetInfo', 'POST':true, 'httpParams':{'keyValue':params.keyWord}};",
+        "host": "http://sinaappxx6.q236.cn",
+        "actionID": "searchBook",
+        "detailUrl": "Id",
+        "cover": "ImgUrl",
+        "validConfig": "",
+        "parserID": "DOM",
+        "moreKeys": {
+            "removeHtmlKeys": "bookName"
+        },
+        "list": "data"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "@js:\n\nlet useData = result.message.imgData;\nif(useData==undefined)\n\tuseData = result.message.imgData2;\nlet arrOld = JSON.parse(useData);\nlet len = arrOld.length;\n\nlet string = '';\nfor(i=0; i<len; i++) {\n\tstring = string + arrOld[i]['u'] + '\\n';\n}\nreturn string;",
+        "requestInfo": "@js:\nreturn {'url':'http://sinaappxx6.q236.cn/post/readOnload', 'POST':true, 'httpParams':JSON.parse(result)};",
+        "host": "http://sinaappxx6.q236.cn",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "newcomicbmw",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "f": {
+            "cat": "Tap[1]",
+            "author": "Author",
+            "responseFormatType": "json",
+            "bookName": "Title",
+            "desc": "Summary",
+            "requestInfo": "@js:\n\nlet url = 'http://sinaappxx6.q236.cn/post/allajax';\nlet fl = params.filters;\nfl.channel = 1;\nfl.fullflag = '';\nfl.page = params.pageIndex;\nfl.pageSize = 9;\n\nreturn {'url':url, 'httpParams':fl};",
+            "host": "http://sinaappxx6.q236.cn",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "9",
+                "requestFilters": [
+                    {
+                        "key": "cate",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "伦理",
+                                "value": "伦理"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "恋爱"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "都市"
+                            },
+                            {
+                                "title": "真人",
+                                "value": "真人"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "校园"
+                            },
+                            {
+                                "title": "耽美",
+                                "value": "耽美"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "灵异"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "玄幻"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "热血"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "古风"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "悬疑"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "搞笑"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "穿越"
+                            },
+                            {
+                                "title": "总裁",
+                                "value": "总裁"
+                            },
+                            {
+                                "title": "异能",
+                                "value": "异能"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "order_by",
+                        "items": [
+                            {
+                                "title": "最热",
+                                "value": "hot"
+                            },
+                            {
+                                "title": "最新",
+                                "value": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "ImgUrl",
+            "validConfig": "",
+            "parserID": "DOM",
+            "detailUrl": "LinkUrl|@js:\nreturn result.match(/(\\d+)/)[1];",
+            "list": "lists",
+            "status": "Upstr"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

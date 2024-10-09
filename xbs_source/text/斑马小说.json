@@ -1,0 +1,72 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "chapterinfo/chaptercontent",
+        "requestInfo": "https://content.hytdsm.com/chapter/%@result.html",
+        "host": "https://api.hytdsm.com/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://api.hytdsm.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1111",
+    "sourceName": "斑马小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650361583.615117",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "sortname",
+        "author": "author",
+        "responseFormatType": "json",
+        "bookName": "bookname",
+        "desc": "description",
+        "requestInfo": "@js:\n\nlet hh = {'User-Agent':'斑马快读 4.4 rv:20190523 (iPhone; iOS 13.5.1; zh_CN)', 'Referer':'https://api.hytdsm.com/'};\n\nlet hp = {'key':params.keyWord, 'size':20, 'page':params.pageIndex};\n\nlet url = 'https://api.hytdsm.com/book/search_book';\n\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh};",
+        "host": "https://api.hytdsm.com/",
+        "actionID": "searchBook",
+        "detailUrl": "bookid",
+        "cover": "bookimage",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "booklist",
+        "status": "bookprocess"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh = {'User-Agent':'斑马快读 4.4 rv:20190523 (iPhone; iOS 13.5.1; zh_CN)', 'Referer':'https://api.hytdsm.com/'};\n\nlet url = 'https://content.hytdsm.com/chapter/dir' + params.queryInfo.detailUrl + '///?chaptername=';\n\nreturn {'url':url, 'httpHeaders':hh};",
+        "title": "chaptername",
+        "host": "https://api.hytdsm.com/",
+        "list": "chapterlist",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "chapterid|@js:\nreturn 'b' + params.queryInfo.detailUrl + '/c' + result;"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,72 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://fiction.fengduxiaoshuo.com",
+        "content": "|",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://fiction.fengduxiaoshuo.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5000",
+    "sourceName": "疯读小说",
+    "desc": "推荐",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1627701953.874278",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "bookBClassificationName",
+        "author": "bookAuthor",
+        "responseFormatType": "json",
+        "bookName": "bookTitle",
+        "desc": "bookDesc",
+        "requestInfo": "https://fiction.fengduxiaoshuo.com/doReader/search_book?_token=869b9667-c66c-44d1-bba4-73e82cf2daee&action=search_book&search_keyword=%@keyWord",
+        "host": "https://fiction.fengduxiaoshuo.com",
+        "actionID": "searchBook",
+        "detailUrl": "bookId",
+        "cover": "bookCoverImage",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "book_words_num",
+        "list": "result"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "result/detailedBookInfo/chapters_update_time",
+        "requestInfo": "https://fiction.fengduxiaoshuo.com/doReader/enter_bookinfo_index?_token=869b9667-c66c-44d1-bba4-73e82cf2daee&bookId=%@result",
+        "title": "chapterTitle",
+        "host": "https://fiction.fengduxiaoshuo.com",
+        "list": "result/detailedBookInfo/bookChapterAllInfo",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "content_url"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,232 @@
+{
+    "bookWorld": {
+        "分类": {
+            "author": "//*[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//a[@class='book-item-name']",
+            "requestInfo": "@js:\nreturn '/book/category/' + params.filters.cat + '/' + params.filters.sort + '/' + params.pageIndex + '/20';",
+            "host": "http://www.lrts.me",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class='book-item-name']/@href",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "儿童",
+                                "value": "6"
+                            },
+                            {
+                                "title": "人文",
+                                "value": "80"
+                            },
+                            {
+                                "title": "财经",
+                                "value": "3085"
+                            },
+                            {
+                                "title": "有声小说",
+                                "value": "1"
+                            },
+                            {
+                                "title": "曲艺戏曲",
+                                "value": "4"
+                            },
+                            {
+                                "title": "文学",
+                                "value": "78"
+                            },
+                            {
+                                "title": "相声评书",
+                                "value": "3"
+                            },
+                            {
+                                "title": "健康",
+                                "value": "3086"
+                            },
+                            {
+                                "title": "生活",
+                                "value": "1019"
+                            },
+                            {
+                                "title": "成功",
+                                "value": "79"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "9049"
+                            },
+                            {
+                                "title": "精品课",
+                                "value": "26"
+                            },
+                            {
+                                "title": "党政",
+                                "value": "9339"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "推荐",
+                                "value": "recommend"
+                            },
+                            {
+                                "title": "最新",
+                                "value": "latest"
+                            },
+                            {
+                                "title": "最热",
+                                "value": "hot"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "//img/@src",
+            "parserID": "DOM",
+            "list": "//li[@class='book-item']"
+        },
+        "榜单": {
+            "author": "//*[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//a[@class='book-item-name']",
+            "requestInfo": "@js:\nreturn '/rank/' + params.filters.rank + '/' + params.filters.sort;",
+            "host": "http://www.lrts.me",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class='book-item-name']/@href",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "rank",
+                        "items": [
+                            {
+                                "title": "热门榜",
+                                "value": "hot"
+                            },
+                            {
+                                "title": "好评榜",
+                                "value": "comment"
+                            },
+                            {
+                                "title": "搜索榜",
+                                "value": "search"
+                            },
+                            {
+                                "title": "下载榜",
+                                "value": "down"
+                            },
+                            {
+                                "title": "男生榜",
+                                "value": "male"
+                            },
+                            {
+                                "title": "女生榜",
+                                "value": "female"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "周榜",
+                                "value": "week"
+                            },
+                            {
+                                "title": "月榜",
+                                "value": "month"
+                            },
+                            {
+                                "title": "总榜",
+                                "value": "all"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "//img/@src",
+            "parserID": "DOM",
+            "list": "//li[@class='book-item']"
+        }
+    },
+    "weight": "9998",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet url = 'http://www.lrts.me/ajax/book/' + result.match(/\\d+/)[0]+'/0/9999';\nreturn {'cacheTime':86400, 'url':url};",
+        "title": "resName || @js:\nreturn unescape(String(result).replace(/&#x/g,'%u').replace(/;/g,''));",
+        "host": "http://www.lrts.me",
+        "list": "data/data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn '/ajax/path/4/' + result.fatherResId + '/' + result.resId;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "懒人听书",
+    "sourceType": "audio",
+    "sourceUrl": "http://www.lrts.me",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646533841.841588",
+    "searchBook": {
+        "cat": "announcer",
+        "author": "author",
+        "lastChapterTitle": "sections",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "desc": "desc",
+        "requestInfo": "https://m.lrts.me/ajax/search?keyWord=%@keyWord&pageSize=40&pageNum=%@pageIndex&searchOption=1",
+        "host": "http://www.lrts.me",
+        "actionID": "searchBook",
+        "detailUrl": "id || /book/%@result",
+        "cover": "cover",
+        "validConfig": "",
+        "list": "data/bookResult/list",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 40
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "data",
+        "requestInfo": "@js:\nreturn {'url':result, 'httpHeaders': {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36', 'Referer':'http://www.lrts.me/playlist'}};",
+        "host": "http://www.lrts.me",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "推荐",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

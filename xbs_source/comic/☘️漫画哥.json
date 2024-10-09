@@ -1,0 +1,95 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//p[@class='img']//img/@src || @js:\nlet hh = {'Referer' : params.responseUrl};\nreturn JSON.stringify({'url':result, 'httpHeaders':hh});",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://www.manhuag.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class='chapterpage']/a[text() = '下一页']/@href || @js:\n\nif(result == undefined)\n\treturn undefined;\nif(result.length < 5)\n\treturn undefined;\n\nlet index = params.responseUrl.lastIndexOf('/');\nlet urlPre = params.responseUrl.substr(0, index);\n\nif(result.indexOf('/') != 0)\n\treturn urlPre + '/' + result;\nreturn result;"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.manhuag.com",
+        "desc": "//div[@class='info2']/div/p",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//div[@class='book_author']/a",
+            "responseFormatType": "html",
+            "bookName": "//h4/a",
+            "desc": "//p[contains(@class, 'book-intro')]/text()",
+            "requestInfo": "https://www.manhuag.com/list/%@filter-%@pageIndex.html",
+            "host": "https://www.manhuag.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "科幻魔幻::1\n少年热血::2\n都市爱情::3\n武侠格斗::4\n暴笑喜剧::5\n耽美BL::6\n邪恶漫画::7\n其他类型::8"
+            },
+            "detailUrl": "//h4/a/@href",
+            "cover": "//div[1]/a/img/@src",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class='media']",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://www.manhuag.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5998",
+    "sourceName": "☘️漫画哥",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641293800.667077",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//a[2]",
+        "author": "//a[3]",
+        "responseFormatType": "html",
+        "bookName": "//a[1]",
+        "requestInfo": "@js:\nlet hp = {'s':params.keyWord, 'type':'articlename'};\nreturn {'url': 'https://m.manhuag.com/s.php', 'POST':true, 'httpParams':hp, 'forbidCookie':true};",
+        "host": "https://www.manhuag.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[1]/@href",
+        "validConfig": "",
+        "list": "//p[@class='search_list']",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.manhuag.com",
+        "list": "//ul[@class='list-group list-charts'][1]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

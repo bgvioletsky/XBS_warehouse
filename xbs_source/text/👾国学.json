@@ -1,0 +1,104 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false\n,\"httpHeaders\": config.httpHeaders,'cacheTime':3600};",
+        "title": "//a/text()",
+        "host": "https://www.dushu.com",
+        "httpHeaders": {
+            "Referer": "https://www.dushu.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+        },
+        "list": "//table[@id=\"ctl00_c1_volumes_ctl00_chapters\" ]//tr/td",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "👾国学",
+    "sourceType": "text",
+    "sourceUrl": "https://www.dushu.com",
+    "httpHeaders": {
+        "Referer": "https://www.dushu.com/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654162441.087808",
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@class=\"content_txt\"]/p/text()",
+        "requestInfo": "@js:\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+        "host": "https://www.dushu.com",
+        "httpHeaders": {
+            "Referer": "https://www.dushu.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false\n,\"httpHeaders\": config.httpHeaders,'cacheTime':3600};",
+        "host": "https://www.dushu.com",
+        "httpHeaders": {
+            "Referer": "https://www.dushu.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+        },
+        "cover": "@js:\nreturn \"https://s1.ax1x.com/2022/06/02/Xt7FKO.png\"",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//div[@class=\"book-info\"]/p[1]/text()",
+            "bookName": "//div[@class=\"book-info\"]/h3/a/text()",
+            "desc": "//div[@class=\"book-info\"]/p[@class=\"disc eps\"]/text()",
+            "requestInfo": "@js:\r\nlet {_type}=params.filters\r\nlet url=`${config.host}${_type}_${params.pageIndex}.html`;\r\n\r\n\nreturn {'url':url, 'POST':false,\"httpHeaders\": config.httpHeaders,'cacheTime':3600};",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n小说作品::/lianzai/1115\n经济管理::/lianzai/1116\n成功励志::/lianzai/1117\n历史传记::/lianzai/1118\n两性情感::/lianzai/1119\n生活时尚::/lianzai/1120\n文学艺术::/lianzai/1121\n社会科学::/lianzai/1122\n亲子少儿::/lianzai/1123\n计算机/网络::/lianzai/1124\n科学技术::/lianzai/1125"
+            },
+            "httpHeaders": {
+                "Referer": "https://www.dushu.com/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"bookslist\"]/ul/li",
+            "parserID": "DOM",
+            "cover": "//div[@class=\"book-info\"]//img/@data-original||@js:\n\n\nreturn \"https://s1.ax1x.com/2022/06/02/Xt7FKO.png\"",
+            "detailUrl": "//div[@class=\"book-info\"]/div/a/@href"
+        }
+    }
+}

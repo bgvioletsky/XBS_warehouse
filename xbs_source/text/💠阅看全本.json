@@ -1,0 +1,364 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nreturn {url:result,cacheTime:3600};",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://api.dyuexiaoshuoapp.top",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "男频榜单": {
+            "cat": "categoryName",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "intro",
+            "requestInfo": "@js:\n\nlet url=\"http://statics.rungean.com/static/ranking/66/1/\"+params.filters.type+\".json\"\n\n\n\n\n\n/*let url =\"http://statics.rungean.com/static/book/category/66/13/hot/6.json\"*/\n\nlet DeviceId =params.nativeTool.deviceId();\n\nlet hh = {'User-Agent':'YueKan/1.0.3 (com.yuekanxs.ykqbmfxs; build:4; iOS 15.2.0) Alamofire/1.0.3', 'Referer':config.host};\n\n/*let hp = {\"content\": params.keyWord, \"pkgName\": \"com.yuekanxs.ykqbmfxs\", \"pageIndex\": params.pageIndex, \"pageSize\": 20,\"type\":1,\"device\": DeviceId};*/\n\nreturn {'url':url,'httpHeaders':hh,cacheTime:3600, forbidCookie: true};",
+            "host": "https://api.dyuexiaoshuoapp.top",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 1,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "完结榜",
+                                "value": "finish"
+                            },
+                            {
+                                "title": "热搜榜",
+                                "value": "hotsearch"
+                            },
+                            {
+                                "title": "好评榜",
+                                "value": "praise"
+                            },
+                            {
+                                "title": "收藏榜",
+                                "value": "collect"
+                            },
+                            {
+                                "title": "推荐榜",
+                                "value": "reco"
+                            },
+                            {
+                                "title": "新书榜",
+                                "value": "new"
+                            },
+                            {
+                                "title": "人气榜",
+                                "value": "popularity"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "zipurl",
+            "cover": "picture",
+            "list": "data",
+            "parserID": "DOM",
+            "wordCount": "wordNum",
+            "validConfig": ""
+        },
+        "男频": {
+            "cat": "categoryName",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "intro",
+            "requestInfo": "@js:\n\n/*let url=\"http://statics.rungean.com/static/ranking/66/\"+params.pageIndex+\"/popularity.json\"*/\n\nlet url= \"http://statics.rungean.com/static/book/category/66/\"+params.filters.type+\"/\"+params.filters.order+\"/\"+params.pageIndex+\".json\";\n\n\n\n/*let url =\"http://statics.rungean.com/static/book/category/66/13/hot/6.json\"*/\n\nlet DeviceId =params.nativeTool.deviceId();\n\nlet hh = {'User-Agent':'YueKan/1.0.3 (com.yuekanxs.ykqbmfxs; build:4; iOS 15.2.0) Alamofire/1.0.3', 'Referer':config.host};\n\n/*let hp = {\"content\": params.keyWord, \"pkgName\": \"com.yuekanxs.ykqbmfxs\", \"pageIndex\": params.pageIndex, \"pageSize\": 20,\"type\":1,\"device\": DeviceId};*/\n\nreturn {'url':url,'httpHeaders':hh,cacheTime:3600, forbidCookie: true};",
+            "host": "https://api.dyuexiaoshuoapp.top",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "13"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "17"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "10"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "18"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "12"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "15"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "19"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "11"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "20"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "21"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "22"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "16"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "order",
+                        "items": [
+                            {
+                                "title": "热门",
+                                "value": "hot"
+                            },
+                            {
+                                "title": "新书",
+                                "value": "new"
+                            },
+                            {
+                                "title": "好评",
+                                "value": "praise"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "finish"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "zipurl",
+            "cover": "picture",
+            "list": "data/list",
+            "parserID": "DOM",
+            "wordCount": "wordNum",
+            "validConfig": ""
+        },
+        "女频榜单": {
+            "cat": "categoryName",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "intro",
+            "requestInfo": "@js:\n\nlet url=\"http://statics.rungean.com/static/ranking/66/2/\"+params.filters.type+\".json\"\n\n\n\n\n\n/*let url =\"http://statics.rungean.com/static/book/category/66/13/hot/6.json\"*/\n\nlet DeviceId =params.nativeTool.deviceId();\n\nlet hh = {'User-Agent':'YueKan/1.0.3 (com.yuekanxs.ykqbmfxs; build:4; iOS 15.2.0) Alamofire/1.0.3', 'Referer':config.host};\n\n/*let hp = {\"content\": params.keyWord, \"pkgName\": \"com.yuekanxs.ykqbmfxs\", \"pageIndex\": params.pageIndex, \"pageSize\": 20,\"type\":1,\"device\": DeviceId};*/\n\nreturn {'url':url,'httpHeaders':hh,cacheTime:3600, forbidCookie: true};",
+            "host": "https://api.dyuexiaoshuoapp.top",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 1,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "完结榜",
+                                "value": "finish"
+                            },
+                            {
+                                "title": "热搜榜",
+                                "value": "hotsearch"
+                            },
+                            {
+                                "title": "好评榜",
+                                "value": "praise"
+                            },
+                            {
+                                "title": "收藏榜",
+                                "value": "collect"
+                            },
+                            {
+                                "title": "推荐榜",
+                                "value": "reco"
+                            },
+                            {
+                                "title": "新书榜",
+                                "value": "new"
+                            },
+                            {
+                                "title": "人气榜",
+                                "value": "popularity"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "zipurl",
+            "cover": "picture",
+            "list": "data",
+            "parserID": "DOM",
+            "wordCount": "wordNum",
+            "validConfig": ""
+        },
+        "女频": {
+            "cat": "categoryName",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "intro",
+            "requestInfo": "@js:\n\n/*let url=\"http://statics.rungean.com/static/ranking/66/\"+params.pageIndex+\"/popularity.json\"*/\n\nlet url= \"http://statics.rungean.com/static/book/category/66/\"+params.filters.type+\"/\"+params.filters.order+\"/\"+params.pageIndex+\".json\";\n\n\n\n/*let url =\"http://statics.rungean.com/static/book/category/66/13/hot/6.json\"*/\n\nlet DeviceId =params.nativeTool.deviceId();\n\nlet hh = {'User-Agent':'YueKan/1.0.3 (com.yuekanxs.ykqbmfxs; build:4; iOS 15.2.0) Alamofire/1.0.3', 'Referer':config.host};\n\n/*let hp = {\"content\": params.keyWord, \"pkgName\": \"com.yuekanxs.ykqbmfxs\", \"pageIndex\": params.pageIndex, \"pageSize\": 20,\"type\":1,\"device\": DeviceId};*/\n\nreturn {'url':url,'httpHeaders':hh,cacheTime:3600, forbidCookie: true};",
+            "host": "https://api.dyuexiaoshuoapp.top",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "古代言情",
+                                "value": "8"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "9"
+                            },
+                            {
+                                "title": "玄幻言情",
+                                "value": "7"
+                            },
+                            {
+                                "title": "仙侠奇缘",
+                                "value": "23"
+                            },
+                            {
+                                "title": "浪漫青春",
+                                "value": "6"
+                            },
+                            {
+                                "title": "游戏竞技",
+                                "value": "24"
+                            },
+                            {
+                                "title": "科幻空间",
+                                "value": "25"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "26"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "order",
+                        "items": [
+                            {
+                                "title": "热门",
+                                "value": "hot"
+                            },
+                            {
+                                "title": "新书",
+                                "value": "new"
+                            },
+                            {
+                                "title": "好评",
+                                "value": "praise"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "finish"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "zipurl",
+            "cover": "picture",
+            "list": "data/list",
+            "parserID": "DOM",
+            "wordCount": "wordNum",
+            "validConfig": ""
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://api.dyuexiaoshuoapp.top",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "💠阅看全本",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649163061.697171",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "categoryName",
+        "responseFormatType": "json",
+        "lastChapterTitle": "chapterName",
+        "author": "author",
+        "bookName": "name",
+        "desc": "intro",
+        "requestInfo": "@js:\nlet url=config.host+\"/api/v1/novelsearch\";\n\nlet DeviceId =params.nativeTool.deviceId();\n\nlet hh = {'User-Agent':'YueKan/1.0.3 (com.yuekanxs.ykqbmfxs; build:4; iOS 15.2.0) Alamofire/1.0.3', 'Referer':config.host};\n\nlet hp = {\"content\": params.keyWord, \"pkgName\": \"com.yuekanxs.ykqbmfxs\", \"pageIndex\": params.pageIndex, \"pageSize\": 20,\"type\":1,\"device\": DeviceId};\n\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh,cacheTime:3600};",
+        "host": "https://api.dyuexiaoshuoapp.top",
+        "actionID": "searchBook",
+        "detailUrl": "bookId",
+        "cover": "picture",
+        "validConfig": "",
+        "list": "data/list",
+        "parserID": "DOM",
+        "wordCount": "wordNum",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "status": "bookStatus"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nif(result.indexOf(\"zip\")==-1){\n\nlet pic =params.queryInfo.cover;\n\n\nlet res = \"/\"+params.queryInfo.detailUrl+\".zip\";\n\nid = pic.match(/cover\\/(\\d+)/)[1];\nres = id +res;\nlet url =\"http://statics.rungean.com/static/book/zip/\"+res;\n\nreturn {url:url,cacheTime:3600, 'responseFormatType':'filePath'};\n\n}else{\n\nreturn {url:result,cacheTime:3600, 'responseFormatType':'filePath'};}",
+        "title": "name",
+        "host": "https://api.dyuexiaoshuoapp.top",
+        "list": "@js:\n\nlet dirPath = params.nativeTool.unzipFile(result);\n//params.nativeTool.log(dirPath) \nlet listPath = dirPath + '/' + 'chapter.json';\nlet fileStr = params.nativeTool.readTxtFile(listPath);\n\nlet oriObj = JSON.parse(fileStr);\n\nreturn oriObj.data;",
+        "responseFormatType": "filePath",
+        "parserID": "DOM",
+        "url": "id||@js:\nlet res = params.responseUrl.match(/(\\/\\d+\\S+)/)[1];\n\nlet url = \"http://statics.rungean.com/static/uploadfile/chapter\"+res.replace(\".zip\",\"/\"+result);\nreturn url +\".txt\";"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,76 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "host": "https://www.dongman88.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nlet url=result\nreturn {url:url,webView:true,sourceRegex:\"/https?:\\/\\/.*\\.m3u8/\"};",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.dongman88.com",
+        "desc": "//meta[@name=\"description\"]/@content",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "qw": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        }
+    },
+    "sourceType": "video",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "动漫88",
+    "sourceUrl": "https://www.dongman88.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "lastModifyTime": "1651246117.338644",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "requestInfo": "https://www.dongman88.com/vod/search?wd=%@keyWord&p&csrf=ZGlqZmtqZGZhQCMhISE%3D",
+        "detailUrl": "//h4[@class=\"title\"]/a/@href",
+        "bookName": "//@title",
+        "host": "https://www.dongman88.com",
+        "list": "//ul[@class=\"myui-vodlist__media clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "cover": "//@data-original"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.dongman88.com",
+        "list": "//ul[@class=\"myui-content__list sort-list clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

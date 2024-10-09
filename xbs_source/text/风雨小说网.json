@@ -1,0 +1,139 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='content']|@js:\nreturn result.replace(/风雨小说网.*?最新章节！/,'');",
+        "actionID": "chapterContent",
+        "host": "https://www.fengyu.cc",
+        "httpHeaders": {
+            "Referer": "https://www.fengyu.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//div[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='zp']/a",
+            "httpHeaders": {
+                "Referer": "https://www.fengyu.cc",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + \"/fenlei/\" + params.filters.type + \"_\" + params.pageIndex + \"/\";\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\": config.httpHeaders};",
+            "host": "https://www.fengyu.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class='zp']/a/@href",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "修真",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "4"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "6"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class='zp']/a/@href || @js:\n\nvar id = result.match(/(\\d+)/g)[0]\nvar iid = parseInt(id/1000);\nreturn config.host + \"/files/article/image/\" + iid + \"/\" + id + \"/\" + id + \"s.jpg\";",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul[@class='titlelist']/li",
+            "validConfig": ""
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.fengyu.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "69",
+    "sourceName": "风雨小说网",
+    "httpHeaders": {
+        "Referer": "https://www.fengyu.cc",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646630913.315763",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//td[3]|//div[@id='info']/h1/small/a",
+        "lastChapterTitle": "//td[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//td[1]/a|//div[@id='picbox']/div/img/@title",
+        "httpHeaders": {
+            "Referer": "https://www.fengyu.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url = config.host + \"/modules/article/search.php\";\nlet key = params.keyWord;\nlet hp= {\"searchkey\":key, \"submit\":\"搜索\"};\n\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\": config.httpHeaders, \"httpParams\":hp};",
+        "host": "https://www.fengyu.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href|//div[@class='nav-mbx']/div/a/@href|@js:\nreturn result.replace('m.fengyu', 'www.fengyu');",
+        "wordCount": "//td[4]",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table[@class='grid']/tr|//table[@class='grid']/tbody/tr|//div[@id='bookdetail']",
+        "status": "//td[6]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.fengyu.cc",
+        "httpHeaders": {
+            "Referer": "https://www.fengyu.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36"
+        },
+        "list": "//dl[@class='zjlist']/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js:\nreturn params.queryInfo.detailUrl + result;"
+    },
+    "sourceType": "text"
+}

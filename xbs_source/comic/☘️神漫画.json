@@ -1,0 +1,99 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "content": "@js:\n\nlet index = params.queryInfo.index;\nlet cpInfo = result.data.comic_chapter[index];\n\n//画质可选low middle high\nlet imgSuff = '-smh.middle.webp';\nlet imgHost = 'https://mhpic.manhualang.com';\n\nlet list = [];\nfor(i=cpInfo.start_num; i<=cpInfo.end_num; i++) {\n\tlet url = imgHost + cpInfo.rule.replace(/\\$\\$/g,i) + imgSuff;\n\tlist.push(url);\n}\n\nlet hh = {'Referer':params.responseUrl};\nreturn JSON.stringify({'url':list, 'httpHeaders':hh});",
+        "host": "https://m.taomanhua.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "https://m.taomanhua.com/api/getcomicinfo_body/?comic_id=%@result&productname=smh&platformname=wap",
+        "host": "https://m.taomanhua.com",
+        "responseFormatType": "json",
+        "desc": "data/comic_desc",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "comic_type || sort_typelist",
+            "lastChapterTitle": "last_chapter_name || comic_chapter_name",
+            "responseFormatType": "json",
+            "author": "comic_author",
+            "bookName": "comic_name",
+            "desc": "cartoon_desc",
+            "host": "https://m.taomanhua.com",
+            "requestInfo": "@js:\nreturn 'https://m.taomanhua.com/api/getsortlist/?comic_sort=' + params.filters.comic_sort + '&orderby=' + params.filters.orderby + '&search_type=&search_key=&page=' + params.pageIndex + '&size=30&productname=smh&platformname=wap';",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": "comic_sort\n全部::\n热血::rexue\n机战::jizhan\n运动::yundong\n推理::tuili\n冒险::maoxian\n耽美::liaomei\n百合::baihe\n搞笑::gaoxiao\n战争::zhanzhen\n神魔::shenmo\n忍者::renzhe\n竞技::jingji\n悬疑::xuanyi\n社会::shehui\n恋爱::lianai\n宠物::chongwu\n吸血::xixue\n萝莉::luoli\n后宫::hougong\n御姐::yujie\n霸总::bazong\n玄幻::xuanhuan\n古风::gufeng\n历史::lishi\n漫改::mangai\n游戏::youxi\n穿越::chuanyue\n恐怖::kongbu\n真人::zhenren\n防疫::fangyi\n防疫::fangyi\n科幻::kehuan\n都市::dushi\n武侠::wuxia\n修真::xiuzhen\n生活::shenghuo\n动作::dongzuo\n大陆::dalu\n日本::riben\n港台::gangtai\n欧美::oumei\n韩国::os\n全彩::quancai\n黑白::heibai\n小说::xiaoshuo\n杂志::zazhi\n日更::rigeng\n新作::xinzuo\n精品::jingpin\n连载::lianzai\n完结::wanjie\n\norderby\n人气::click\n更新::date\n评分::score\n收藏::shoucang"
+            },
+            "cover": "comic_id || http://image.mhxk.com/mh/%@result.jpg-600x800.webp",
+            "detailUrl": "comic_id",
+            "list": "$.data.update[*].info[*] || $.data.data[*] || $.data[*]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9951",
+    "sourceName": "☘️神漫画",
+    "sourceUrl": "https://m.taomanhua.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "精品",
+    "lastModifyTime": "1641259141.649416",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "comic_type || sort_typelist",
+        "author": "comic_author",
+        "lastChapterTitle": "last_chapter_name || comic_chapter_name",
+        "responseFormatType": "json",
+        "bookName": "comic_name",
+        "desc": "cartoon_desc",
+        "requestInfo": "https://m.taomanhua.com/api/getsortlist/?search_type=&search_key=%@keyWord&page=%@pageIndex&size=30&productname=smh&platformname=wap",
+        "host": "https://m.taomanhua.com",
+        "actionID": "searchBook",
+        "detailUrl": "comic_id",
+        "cover": "comic_id || http://image.mhxk.com/mh/%@result.jpg-600x800.webp",
+        "validConfig": "",
+        "list": "$.data.update[*].info[*] || $.data.data[*] || $.data[*]",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 30
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://m.taomanhua.com/api/getcomicinfo_body/?comic_id=%@result&productname=smh&platformname=wap",
+        "host": "https://m.taomanhua.com",
+        "list": "data/comic_chapter || @js:\n\nlet list = [];\nlet oldList = result.reverse();\nlet length = oldList.length;\n\nfor(i=0; i<length; i++) {\n\tlist.push({'index':i, 'title':oldList[i].chapter_name, 'url':params.responseUrl});\n}\n\nreturn {'list':list};",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    }
+}

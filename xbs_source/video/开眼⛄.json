@@ -1,0 +1,115 @@
+{
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "$.data.content.data.author.name",
+            "responseFormatType": "json",
+            "bookName": "$.data.content.data.title",
+            "desc": "$.data.content.data.description",
+            "requestInfo": "@js:\nlet url = 'http://baobab.kaiyanapp.com/api/v1/tag/videos?start=%@page&num=10&strategy=date&id=%@filter';\nlet page = (params.pageIndex-1) * 10;\nurl = url.replace('%@page',page);\nurl = url.replace('%@filter',params.filter);\nreturn encodeURI(url);",
+            "host": "https://m.eyepetizer.net",
+            "actionID": "bookWorld",
+            "detailUrl": "$.data.content.data.playUrl",
+            "httpHeaders": {
+                "api_url": "https://api.stacksensei.workers.dev/api/bilibili/",
+                "api_key": "stacksenseiisveryhandsome"
+            },
+            "cover": "$.data.content.data.cover.detail",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "$.itemList",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "广告::16\n运动::1022\n旅行::1019\n记录::24\n科技::1024\n游戏::30\n搞笑::140\n生活::666\n剧情::12\n创意::2\n影视::1025\n音乐::1018\n开胃::1020\n动画::1023\n时尚::26\n综艺::28"
+            }
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn config.host;",
+        "title": "@js:\nreturn params.queryInfo.bookName",
+        "host": "https://m.eyepetizer.net",
+        "httpHeaders": {
+            "api_url": "https://api.stacksensei.workers.dev/api/bilibili/",
+            "api_key": "stacksenseiisveryhandsome"
+        },
+        "list": "//body",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "@js:\nreturn params.queryInfo.detailUrl;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "开眼⛄",
+    "sourceType": "video",
+    "sourceUrl": "https://m.eyepetizer.net",
+    "httpHeaders": {
+        "api_url": "https://api.stacksensei.workers.dev/api/bilibili/",
+        "api_key": "stacksenseiisveryhandsome"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651827721.292868",
+    "searchBook": {
+        "author": "$.data.content.data.author.name",
+        "responseFormatType": "json",
+        "bookName": "$.data.content.data.title",
+        "httpHeaders": {
+            "api_url": "https://api.stacksensei.workers.dev/api/bilibili/",
+            "api_key": "stacksenseiisveryhandsome"
+        },
+        "requestInfo": "@js:\nlet url = 'http://baobab.kaiyanapp.com/api/v1/tag/videos?start=%@page&num=10&strategy=date&id=%@filter';\nlet page = (params.pageIndex-1) * 10;\nurl = url.replace('%@page',page);\nurl = url.replace('%@filter',params.keyWord);\nreturn encodeURI(url);",
+        "host": "https://m.eyepetizer.net",
+        "actionID": "searchBook",
+        "detailUrl": "$.data.content.data.playUrl",
+        "cover": "$.data.content.data.cover.detail",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "$.itemList",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "desc": "$.data.content.data.description"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.url;",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn config.host;",
+        "host": "https://m.eyepetizer.net",
+        "httpHeaders": {
+            "api_url": "https://api.stacksensei.workers.dev/api/bilibili/",
+            "api_key": "stacksenseiisveryhandsome"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "搜索暂不可用",
+    "password": "stack_|TJEj/HzKFbmʌ_ə34",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": ""
+}

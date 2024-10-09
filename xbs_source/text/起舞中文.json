@@ -1,0 +1,145 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]/p/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": config.httpHeaders, forbidCookie:true,cacheTime:3600};",
+        "host": "https://www.75zwz.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "//span[1]/text()||@replace:[||@replace:]",
+            "lastChapterTitle": "//span[3]/a/text()",
+            "responseFormatType": "html",
+            "author": "//span[4]/text() || //span[4]/a/text()",
+            "bookName": "//span[2]/a/text()",
+            "JSParser": "function functionName(config, params, result) {\n  if (params.pageIndex ===1 && result.list.length === 30) {\n     result.more = true;\n  }\n  return result;\n}",
+            "requestInfo": "@js:\n\nlet url = config.host + \"/\" + params.filters.type + \"/\" + params.pageIndex + \".html\";\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":config.httpHeaders};",
+            "host": "https://www.75zwz.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "xuanhuan"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "wuxia"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "dushi"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "youxi"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "xuanyi"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "qita"
+                            },
+                            {
+                                "title": "古言",
+                                "value": "guyan"
+                            },
+                            {
+                                "title": "现言",
+                                "value": "xianyan"
+                            },
+                            {
+                                "title": "幻奇",
+                                "value": "huanqing"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//span[2]/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@id='newscontent']/div[@class='l']//li || //div[@class='novelslist2']/ul/li[position()>1]",
+            "cover": "//span[2]/a/@href || @js:\n\nvar id = result.match(/(\\d+)/g)[0];\nvar iid = parseInt(id/1000);\nreturn \"https://img.75zw.com/files/article/image/\" + iid + \"/\" + id + \"/\" + id + \"s.jpg\";"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.75zwz.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "起舞中文",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647147191.692926",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//dd[@class=\"book_other\"]/span[3]/text()",
+        "author": "//dd[@class=\"book_other\"]/span/a/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//dd[@class=\"book_other\"]/a/text()",
+        "bookName": "//h3/a/text()",
+        "desc": "//dd[@class=\"book_des\"]/text()",
+        "requestInfo": "@js:\n\nlet url = config.host + \"/search.html\";\nlet hp = {\"searchtype\":\"all\", \"searchkey\":params.keyWord};\nlet hh = {\"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.109 Safari/537.36\"};\n\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":hh, \"httpParams\":hp};",
+        "host": "https://www.75zwz.com",
+        "actionID": "searchBook",
+        "detailUrl": "//dd/h3/a/@href",
+        "cover": "//dt//img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@id=\"sitembox\"]/dl",
+        "wordCount": "//dd[@class=\"book_other\"]/span[4]/text()"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": config.httpHeaders, forbidCookie:true,cacheTime:3600};",
+        "title": "//a/text()",
+        "host": "https://www.75zwz.com",
+        "list": "//div[@id='list']/dl/dt[2]/following::dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

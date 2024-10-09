@@ -1,0 +1,98 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://m.qiremanhua.com",
+        "content": "//div[@class='episode-detail']//img/@data-original || @js:\n\nreturn JSON.stringify({'url':result, 'httpHeaders':{'Referer':params.responseUrl}});",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "https://m.qiremanhua.com/book/%@result/",
+        "host": "https://m.qiremanhua.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class='book-container__detail']"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "tags",
+            "lastChapterTitle": "last_chapter_name",
+            "author": "book_author",
+            "responseFormatType": "json",
+            "bookName": "book_name",
+            "desc": "short_title",
+            "requestInfo": "@js:\nlet url = 'https://m.qiremanhua.com/book/book_cate_ajax';\nlet fl = params.filters;\nfl.page = params.pageIndex;\nreturn {'url':url, 'httpParams':fl};",
+            "host": "https://m.qiremanhua.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "tid\n全部::all\n穿越::12\n恋爱::2\n总裁::8\n校园::1\n恐怖::11\n古风::3\n奇幻::13\n热血::4\n悬疑::5\n都市::7\n爆笑::9\n真人::14\n微漫::16\n\nvip\n全部::all\n免费::0\n付费::2\n\nend\n完部::all\n连载::0\n完结::1\n\nsort\n推荐::1\n人气::2\n最新::3"
+            },
+            "cover": "book_unruly || book_cover",
+            "detailUrl": "id || book_id",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "data",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://m.qiremanhua.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5999",
+    "sourceName": "☘️奇热漫画💰",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641288965.380121",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "tags",
+        "author": "book_author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "last_chapter_name",
+        "bookName": "book_name",
+        "desc": "short_title",
+        "requestInfo": "https://m.qiremanhua.com/book/ajax_search?key=%@keyWord&page=%@pageIndex",
+        "host": "https://m.qiremanhua.com",
+        "actionID": "searchBook",
+        "detailUrl": "id || book_id",
+        "cover": "book_unruly || book_cover",
+        "validConfig": "",
+        "list": "data",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 10
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://m.qiremanhua.com/book/chaplist_ajax?sort=1&book_id=%@result",
+        "host": "https://m.qiremanhua.com",
+        "list": "data || @js:\n\nlet len = result.length;\nlet arr = [];\n\nfor(i=0; i<len; i++)\n{\n\tlet cp = result[i];\n\n\tlet title = cp.cName;\n\tlet url = 'https://m.qiremanhua.com/book/' + params.queryInfo.detailUrl + '/' + cp.cId + '/';\n\n\tif(cp.cBS != undefined && cp.cBS == 1)\n\t\ttitle += '💲';\n\n\tarr.push({'title':title, 'url':url});\n}\n\nreturn {'list':arr};",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    }
+}

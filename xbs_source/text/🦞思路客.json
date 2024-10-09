@@ -1,0 +1,178 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.silukew.com",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "🦞思路客",
+    "sourceType": "text",
+    "sourceUrl": "https://www.silukew.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654172986.537677",
+    "searchBook": {
+        "author": "//span[2]",
+        "responseFormatType": "html",
+        "bookName": "//@title",
+        "requestInfo": "https://www.silukew.com/search.php?q=%@keyWord&p=%@pageIndex",
+        "host": "https://www.silukew.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@cpos=\"img\"]/@href",
+        "moreKeys": {
+            "maxPage": 120
+        },
+        "validConfig": "",
+        "cover": "//img/@src",
+        "list": "//div[@class=\"result-list\"]/div",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.silukew.com",
+        "content": "//div[@id=\"content\"]",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "https://www.silukew.com",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@property=\"og:description\"]/@content"
+    },
+    "bookWorld": {
+        "玄幻奇幻": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//*[@target=\"_blank\"]",
+            "requestInfo": "https://www.silukew.com/ny_1/",
+            "host": "https://www.silukew.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "list": "//ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        },
+        "科幻灵异": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//*[@target=\"_blank\"]",
+            "requestInfo": "https://www.silukew.com/ny_5/",
+            "host": "https://www.silukew.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "list": "//ul/li",
+            "_sIndex": 4,
+            "parserID": "DOM"
+        },
+        "都市言情": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//*[@target=\"_blank\"]",
+            "requestInfo": "https://www.silukew.com/ny_3/",
+            "host": "https://www.silukew.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "list": "//ul/li",
+            "_sIndex": 2,
+            "parserID": "DOM"
+        },
+        "女频频道": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//*[@target=\"_blank\"]",
+            "requestInfo": "https://www.silukew.com/ny_7/",
+            "host": "https://www.silukew.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "list": "//ul/li",
+            "_sIndex": 6,
+            "parserID": "DOM"
+        },
+        "历史军事": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//*[@target=\"_blank\"]",
+            "requestInfo": "https://www.silukew.com/ny_4/",
+            "host": "https://www.silukew.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "list": "//ul/li",
+            "_sIndex": 3,
+            "parserID": "DOM"
+        },
+        "武侠仙侠": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//*[@target=\"_blank\"]",
+            "requestInfo": "https://www.silukew.com/ny_2/",
+            "host": "https://www.silukew.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "list": "//ul/li",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        },
+        "网游竞技": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//*[@target=\"_blank\"]",
+            "requestInfo": "https://www.silukew.com/ny_6/",
+            "host": "https://www.silukew.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "list": "//ul/li",
+            "_sIndex": 5,
+            "parserID": "DOM"
+        }
+    }
+}

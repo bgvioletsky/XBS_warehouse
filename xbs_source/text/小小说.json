@@ -1,0 +1,290 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]//text()",
+        "actionID": "chapterContent",
+        "host": "https://www.xiaoxs.com",
+        "httpHeaders": {
+            "Referer": "https://www.xiaoxs.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.xiaoxs.com",
+        "httpHeaders": {
+            "Referer": "https://www.xiaoxs.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"desc xs-hidden\"] ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行": {
+            "cat": "//span[1]",
+            "author": "//div[@class=\"title\"]/span",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class=\"sys\"]/li",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "https://www.xiaoxs.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+params.filters.type+ params.pageIndex+\"/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.xiaoxs.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "总点击榜",
+                                "value": "/allvisit/"
+                            },
+                            {
+                                "title": "月点击榜",
+                                "value": "/monthvisit/"
+                            },
+                            {
+                                "title": "周点击榜",
+                                "value": "/weekvisit/"
+                            },
+                            {
+                                "title": "日点击榜",
+                                "value": "/dayvisit/"
+                            },
+                            {
+                                "title": "总推荐榜",
+                                "value": "/allvote/"
+                            },
+                            {
+                                "title": "月推荐榜",
+                                "value": "/monthvote/"
+                            },
+                            {
+                                "title": "周推荐榜",
+                                "value": "/weekvote/"
+                            },
+                            {
+                                "title": "日推荐榜",
+                                "value": "/dayvote/"
+                            },
+                            {
+                                "title": "总收藏榜",
+                                "value": "/goodnum/"
+                            },
+                            {
+                                "title": "总字数榜",
+                                "value": "/size/"
+                            },
+                            {
+                                "title": "最新入库",
+                                "value": "/postdate/"
+                            },
+                            {
+                                "title": "最近更新",
+                                "value": "/lastupdate/"
+                            },
+                            {
+                                "title": "强推榜",
+                                "value": "/toptime/"
+                            },
+                            {
+                                "title": "新书榜",
+                                "value": "/goodnew/"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//div[@id=\"alistbox\"]",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "cover": "//img/@src",
+            "desc": "//div[@class=\"intro\"]"
+        },
+        "分类": {
+            "cat": "//span[1]",
+            "author": "//div[@class=\"title\"]/span",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class=\"sys\"]/li",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "https://www.xiaoxs.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n\n\nlet url =config.host+params.filters.type+ params.pageIndex+\"/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.xiaoxs.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "/sort/1/"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "/sort/2/"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "/sort/3/"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "/sort/4/"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "/sort/5/"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "/sort/6/"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "/sort/7/"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "/sort/8/"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "/sort/9/"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "/sort/10/"
+                            },
+                            {
+                                "title": "官场",
+                                "value": "/sort/11/"
+                            },
+                            {
+                                "title": "古言",
+                                "value": "/sort/12/"
+                            },
+                            {
+                                "title": "现言",
+                                "value": "/sort/13/"
+                            },
+                            {
+                                "title": "幻言",
+                                "value": "/sort/14/"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "/sort/15/"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "/sort/16/"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "/sort/17/"
+                            },
+                            {
+                                "title": "女生",
+                                "value": "/sort/18/"
+                            },
+                            {
+                                "title": "N次元",
+                                "value": "/sort/19/"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//div[@id=\"alistbox\"]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//img/@src",
+            "desc": "//div[@class=\"intro\"]"
+        }
+    },
+    "sourceUrl": "https://www.xiaoxs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "小小说",
+    "desc": "😍-自用",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "httpHeaders": {
+        "Referer": "https://www.xiaoxs.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "lastModifyTime": "1650453256.549130",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]",
+        "author": "//div[@class=\"title\"]/span",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class=\"sys\"]/li",
+        "bookName": "//h2/a",
+        "httpHeaders": {
+            "Referer": "https://www.xiaoxs.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url= config.host+\"/search.html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.xiaoxs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h2/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//div[@id=\"alistbox\"]",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"intro\"]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.xiaoxs.com",
+        "httpHeaders": {
+            "Referer": "https://www.xiaoxs.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

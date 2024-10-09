@@ -1,0 +1,185 @@
+{
+    "bookWorld": {
+        "cat": {
+            "cat": "clsSecondName",
+            "author": "actorName",
+            "responseFormatType": "json",
+            "bookName": "name || @replace:《||@replace:》",
+            "httpHeaders": {
+                "Seq": "679e666b25d5abde87713565369a06ae",
+                "version": "1.9.5",
+                "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+            },
+            "requestInfo": "http://app.zhoudamozi.com/audio/discover/more?audioModuleId=%@filter&pageNo=%@pageIndex&pageSize=10",
+            "host": "http://app.zhoudamozi.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "本周上新",
+                                "value": "8"
+                            },
+                            {
+                                "title": "爆款热门",
+                                "value": "13"
+                            },
+                            {
+                                "title": "热门免费",
+                                "value": "15"
+                            },
+                            {
+                                "title": "起点经典",
+                                "value": "11"
+                            },
+                            {
+                                "title": "摸金盗墓",
+                                "value": "3"
+                            },
+                            {
+                                "title": "悬疑惊悚",
+                                "value": "5"
+                            },
+                            {
+                                "title": "恐怖特辑",
+                                "value": "27"
+                            },
+                            {
+                                "title": "赘婿合集",
+                                "value": "10"
+                            },
+                            {
+                                "title": "全网精品",
+                                "value": "16"
+                            },
+                            {
+                                "title": "相声小品",
+                                "value": "12"
+                            },
+                            {
+                                "title": "精品历史",
+                                "value": "17"
+                            },
+                            {
+                                "title": "军事题材",
+                                "value": "23"
+                            },
+                            {
+                                "title": "儿童精选",
+                                "value": "9"
+                            },
+                            {
+                                "title": "文学出版",
+                                "value": "19"
+                            },
+                            {
+                                "title": "文化精选",
+                                "value": "18"
+                            },
+                            {
+                                "title": "音乐精选",
+                                "value": "6"
+                            },
+                            {
+                                "title": "女生最爱",
+                                "value": "4"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "photoPath",
+            "desc": "intro",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "data",
+            "detailUrl": "id",
+            "validConfig": ""
+        }
+    },
+    "weight": "0",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "http://app.zhoudamozi.com/audio/chapter/listAll?sortType=0&audioId=%@result",
+        "title": "name",
+        "host": "http://app.zhoudamozi.com",
+        "httpHeaders": {
+            "Seq": "679e666b25d5abde87713565369a06ae",
+            "version": "1.9.5",
+            "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+        },
+        "list": "data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "musicPath || @js:\n\nlet oriObj = JSON.parse(result);\nlet url = 'https://ys.xxhainan.com/klajdfiaoj/music_collect';\nif(oriObj.h != undefined && oriObj.h.addr!=undefined)\n\turl = url + oriObj.h.addr;\nelse if(oriObj.m != undefined && oriObj.m.addr!=undefined)\n\turl = url + oriObj.m.addr;\nelse\n\turl = url + oriObj.l.addr;\n\nlet obj = {'url':url, 'httpHeaders':config.httpHeaders};\nreturn JSON.stringify(obj);"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "sourceType": "audio",
+    "sourceName": "☘️有兔听书②",
+    "sourceUrl": "http://app.zhoudamozi.com",
+    "httpHeaders": {
+        "Seq": "679e666b25d5abde87713565369a06ae",
+        "version": "1.9.5",
+        "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649224912.517354",
+    "searchBook": {
+        "cat": "clsName",
+        "author": "actorName",
+        "responseFormatType": "json",
+        "bookName": "name||@replace:《||@replace:》",
+        "desc": "intro",
+        "requestInfo": "http://app.zhoudamozi.com/es/search/audio?q=%@keyWord&pageNo=%@pageIndex&pageSize=10",
+        "host": "http://app.zhoudamozi.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "httpHeaders": {
+            "Seq": "679e666b25d5abde87713565369a06ae",
+            "version": "1.9.5",
+            "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+        },
+        "cover": "photoPath",
+        "list": "data",
+        "parserID": "DOM",
+        "detailUrl": "id",
+        "validConfig": "",
+        "status": "status"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "404",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

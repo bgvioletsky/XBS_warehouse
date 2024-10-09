@@ -1,0 +1,342 @@
+{
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//p[@class=\"inzhuy\"]/text() || @js:\n\nreturn result. replace(/[$\\s]/g,'').replace(\"主演：\",\"\");",
+            "bookName": "//h3/a[1]/text()",
+            "httpHeaders": {
+                "Referer": "https://czspp.com/",
+                "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + '/movie_bt' + params.filters.cat + params.filters.area + '/page/' + params.pageIndex;\n\nreturn {\n    'url':url,\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n    'httpHeaders':config.httpHeaders,\n}",
+            "host": "https://czspp.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "传记",
+                                "value": "/movie_bt_tags/chuanji"
+                            },
+                            {
+                                "title": "儿童",
+                                "value": "/movie_bt_tags/etet"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "/movie_bt_tags/maoxian"
+                            },
+                            {
+                                "title": "剧情",
+                                "value": "/movie_bt_tags/juqing"
+                            },
+                            {
+                                "title": "动作",
+                                "value": "/movie_bt_tags/dozuo"
+                            },
+                            {
+                                "title": "动漫",
+                                "value": "/movie_bt_tags/doman"
+                            },
+                            {
+                                "title": "动画",
+                                "value": "/movie_bt_tags/dhh"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "/movie_bt_tags/lishi"
+                            },
+                            {
+                                "title": "古装",
+                                "value": "/movie_bt_tags/guzhuang"
+                            },
+                            {
+                                "title": "同性",
+                                "value": "/movie_bt_tags/tongxing"
+                            },
+                            {
+                                "title": "喜剧",
+                                "value": "/movie_bt_tags/xiju"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "/movie_bt_tags/qihuan"
+                            },
+                            {
+                                "title": "家庭",
+                                "value": "/movie_bt_tags/jiating"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "/movie_bt_tags/kubu"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "/movie_bt_tags/xuanyi"
+                            },
+                            {
+                                "title": "情色",
+                                "value": "/movie_bt_tags/qingse"
+                            },
+                            {
+                                "title": "惊悚",
+                                "value": "/movie_bt_tags/kingsong"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "/movie_bt_tags/zhanzheng"
+                            },
+                            {
+                                "title": "歌舞",
+                                "value": "/movie_bt_tags/gw"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "/movie_bt_tags/wuxia"
+                            },
+                            {
+                                "title": "灾难",
+                                "value": "/movie_bt_tags/zainan"
+                            },
+                            {
+                                "title": "爱情",
+                                "value": "/movie_bt_tags/aiqing"
+                            },
+                            {
+                                "title": "犯罪",
+                                "value": "/movie_bt_tags/fanzui"
+                            },
+                            {
+                                "title": "真人秀",
+                                "value": "/movie_bt_tags/zrx"
+                            },
+                            {
+                                "title": "短片",
+                                "value": "/movie_bt_tags/dp"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "/movie_bt_tags/kh"
+                            },
+                            {
+                                "title": "纪录片",
+                                "value": "/movie_bt_tags/jlpp"
+                            },
+                            {
+                                "title": "西部",
+                                "value": "/movie_bt_tags/xb"
+                            },
+                            {
+                                "title": "运动",
+                                "value": "/movie_bt_tags/yd"
+                            },
+                            {
+                                "title": "音乐",
+                                "value": "/movie_bt_tags/yy"
+                            },
+                            {
+                                "title": "鬼怪",
+                                "value": "/movie_bt_tagsundefined"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "area",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "会员专区",
+                                "value": "/movie_bt_series/huiyuanzhuanqu"
+                            },
+                            {
+                                "title": "俄罗斯电影",
+                                "value": "/movie_bt_series/eluosidianying"
+                            },
+                            {
+                                "title": "加拿大电影",
+                                "value": "/movie_bt_series/jianadadianying"
+                            },
+                            {
+                                "title": "动画",
+                                "value": "/movie_bt_series/dohua"
+                            },
+                            {
+                                "title": "华语电影",
+                                "value": "/movie_bt_series/huayudianying"
+                            },
+                            {
+                                "title": "印度电影",
+                                "value": "/movie_bt_series/yindudianying"
+                            },
+                            {
+                                "title": "国产剧",
+                                "value": "/movie_bt_series/guochanju"
+                            },
+                            {
+                                "title": "日剧",
+                                "value": "/movie_bt_series/rj"
+                            },
+                            {
+                                "title": "日本电影",
+                                "value": "/movie_bt_series/ribendianying"
+                            },
+                            {
+                                "title": "欧美电影",
+                                "value": "/movie_bt_series/meiguodianying"
+                            },
+                            {
+                                "title": "法国电影",
+                                "value": "/movie_bt_series/faguodianying"
+                            },
+                            {
+                                "title": "海外剧（其他）",
+                                "value": "/movie_bt_series/hwj"
+                            },
+                            {
+                                "title": "电影",
+                                "value": "/movie_bt_series/dyy"
+                            },
+                            {
+                                "title": "电视剧",
+                                "value": "/movie_bt_series/dianshiju"
+                            },
+                            {
+                                "title": "站长推荐",
+                                "value": "/movie_bt_series/zhanchangtuijian"
+                            },
+                            {
+                                "title": "美剧",
+                                "value": "/movie_bt_series/mj"
+                            },
+                            {
+                                "title": "英国电影",
+                                "value": "/movie_bt_series/yingguodianying"
+                            },
+                            {
+                                "title": "韩剧",
+                                "value": "/movie_bt_series/hj"
+                            },
+                            {
+                                "title": "韩国电影",
+                                "value": "/movie_bt_series/hanguodianying"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//img/@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"bt_img mi_ne_kd mrb\"]/ul/li",
+            "detailUrl": "//h3/a[1]/@href",
+            "status": "//div[@class=\"jidi\"]/span/text()"
+        }
+    },
+    "shudanList": {},
+    "weight": "999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nreturn {\n    'url':result,\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n    'httpHeaders': config.httpHeaders,\n};",
+        "title": "//a/text()",
+        "host": "https://czspp.com",
+        "httpHeaders": {
+            "Referer": "https://czspp.com/",
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@class=\"paly_list_btn\"]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "厂长资源",
+    "sourceType": "video",
+    "sourceUrl": "https://czspp.com",
+    "httpHeaders": {
+        "Referer": "https://czspp.com/",
+        "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651660182.931050",
+    "searchBook": {
+        "responseFormatType": "html",
+        "author": "//p[@class=\"inzhuy\"]/text() || @js:\n\nreturn result. replace(/[$\\s]/g,'').replace(\"主演：\",\"\");",
+        "bookName": "//h3/a/text()",
+        "httpHeaders": {
+            "Referer": "https://czspp.com/",
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\n\nlet url = config.host + '/xssearch?q=' + encodeURI(params.keyWord) + '&f=_all&p=' + params.pageIndex;\nreturn {\n    'url':url,\n    'cacheKey': params.nativeTool.md5Encode(new Date().getTime().toString()),\n    'httpHeaders':config.httpHeaders,\n}",
+        "host": "https://czspp.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//img/@data-original",
+        "validConfig": "",
+        "list": "//div[@class=\"bt_img mi_ne_kd search_list\"]/ul/li",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "status": "//div[@class=\"jidi\"]/span/text()"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\n\nconfig.httpHeaders['origin'] = 'https://czspp.com';\nreturn JSON.stringify({\n    'url': result,\n    'httpHeaders': config.httpHeaders,\n})",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet httpHeaders = {\n    \"Accept\": \"*/*\",\n    \"User-Agent\": \"Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1\",\n};\nreturn {\n    \"url\": result ,\n    \"httpHeaders\": httpHeaders,\n    cacheKey: params.nativeTool.md5Encode(String((new Date).getTime())),\n    webView: true,\n    sourceRegex: \"(?:\\\\.m3u8|\\\\.mp4)\"\n};",
+        "host": "https://czspp.com",
+        "httpHeaders": {
+            "Referer": "https://czspp.com/",
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "950206@",
+    "desc": "张益达",
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "host": "https://czspp.com",
+        "cat": "//ul[@class=\"moviedteail_list\"]/li[1]/a/text()\n || @js:\n\nreturn result. replace(/\\n/g,' • ');",
+        "httpHeaders": {
+            "Referer": "https://czspp.com/",
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"yp_context\"]/p/text()"
+    }
+}

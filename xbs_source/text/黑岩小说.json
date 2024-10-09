@@ -1,0 +1,70 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "JS"
+    },
+    "bookWorld": {},
+    "weight": "7200",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tlet beginIndex = resStr.indexOf('float-list');\n\tif(beginIndex==0)\n\t\treturn undefined;\n\tlet subStr = resStr.substr(beginIndex);\n\tlet vipKey = 'vip';\n\n\tlet list = [];\n\tlet reg = /li.*?createdate(?:\\S|\\s)*?href.*?\"(.*?)\"(.*?)>(.*?)</gim;\n\twhile(tem=reg.exec(subStr))\n\t{\n\t\tlet vip = tem[2];\n\t\tif(vip.indexOf(vipKey)>0)\n\t\t\tbreak;\n\n\t\tlet chapter = {};\n\t\tchapter.url = tem[1];\n\t\tchapter.title = tem[3];\n\t\tlist.push(chapter);\n\t}\n\treturn {'list':list};\n}",
+        "validConfig": "",
+        "actionID": "chapterList",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.heiyan.com",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'https://www.heiyan.com/chapter/' + params.queryInfo.bookId;\n}",
+        "parserID": "JS"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "JS"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "JS"
+    },
+    "enable": 0,
+    "sourceName": "黑岩小说",
+    "sourceUrl": "https://www.heiyan.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "JS"
+    },
+    "lastModifyTime": "1637326443.863514",
+    "searchBook": {
+        "responseJavascript": "function functionName(config, params, resObj)\n{\n\tlet result = {};\n\tif(resObj.data.content)\n\t{\n\t\tlet list = [];\n\t\tfor(i=0; i<resObj.data.content.length; i++)\n\t\t{\n\t\t\tlet b1 = resObj.data.content[i];\n\t\t\tlet b2 = {};\n\t\t\tb2.bookId = b1.id;\n\t\t\tb2.bookName = b1.name;\n\t\t\tb2.author = b1.authorname;\n\t\t\tb2.desc = b1.introduce;\n\t\t\tb2.status = b1.finished;\n\t\t\tb2.cat = b1.tags;\n\t\t\tb2.wordCount = b1.words;\n\t\t\tb2.lastChapterTitle = b1.lastchaptername;\n\n\t\t\tif(b1.iconUrlSmall)\n\t\t\t\tb2.cover = 'https://b.heiyanimg.com' + b1.iconUrlSmall;\n\t\t\tlist.push(b2);\n\t\t}\n\t\tresult.list = list;\n\t\tresult.removeHtmlKeys = ['author', 'bookName'];\n\t}\n\n\tresult.more = false;\n\tresult.success = resObj.success;\n\treturn result;\n}",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.heiyan.com",
+        "responseFormatType": "json",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'https://search.heiyan.com/web/search?queryString=' + encodeURI(params.keyWord);\n}"
+    },
+    "chapterContent": {
+        "responseJavascript": "function functionName(config, params, document)\n{\n\tlet list = document. queryWithXPath(\"//div[@class='page-content']\");\n\tif(list != undefined)\n\t\treturn {'content':list[0].raw(), 'removeHtmlKeys':'content'};\n\treturn undefined;\n}",
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.heiyan.com",
+        "responseFormatType": "html",
+        "parserID": "JS",
+        "requestJavascript": "function functionName(config, params) {\n\treturn params.queryInfo.url;\n}"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "JS"
+    },
+    "password": "Baby",
+    "desc": "©",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "JS"
+    },
+    "authorId": "",
+    "sourceType": "text"
+}

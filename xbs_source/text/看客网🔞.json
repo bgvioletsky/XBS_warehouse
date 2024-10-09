@@ -1,0 +1,164 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "1111",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//dl[@class=\"index\"]/dd[last()]/a/@title",
+        "requestInfo": "@js:\rlet bookid = result.match(/\\d+/)[0];\rlet url = config.host + \"/index/\"+ bookid;\rreturn url;",
+        "title": "//a//text()",
+        "host": "http://www.kankeo.cc",
+        "httpHeaders": {
+            "Referer": "http:www.kankeo.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//dl[@class=\"index\"]/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "看客网🔞",
+    "sourceUrl": "http://www.kankeo.cc",
+    "httpHeaders": {
+        "Referer": "http:www.kankeo.cc",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650361705.496815",
+    "searchBook": {
+        "cat": "//div[2]/span[4]//text()",
+        "author": "//div[2]/span[2]//text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[2]/div[4]/span[2]//text()",
+        "bookName": "//span[@class=\"c_subject\"]/a//text() ||@js: return result.replace(/\\n/g, \"\");",
+        "httpHeaders": {
+            "Referer": "http:www.kankeo.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url=config.host+\"/modules/article/search.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord,'page':params.pageIndex,};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "http://www.kankeo.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//div/span[@class=\"c_subject\"]/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"c_row\"]",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"c_description\"]//text() ||@js:\r\nreturn result.replace(/\\n/g, \"\");",
+        "wordCount": "//div[2]/span[6]//text()",
+        "status": "//div[2]/span[8]//text()",
+        "moreKeys": {
+            "maxPage": 10
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"acontent\"]//text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "http://www.kankeo.cc",
+        "httpHeaders": {
+            "Referer": "http:www.kankeo.cc",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐯新手",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "status": "//div[@class=\"c_tag\"]/span[8]/text()",
+            "author": "//div[@class=\"c_tag\"]/span[2]//text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class=\"c_subject\"]/a[3]//text()",
+            "bookName": "//div[@class=\"c_subject\"]/a[2]//text()",
+            "desc": "//div[@class=\"c_description\"]/text()",
+            "requestInfo": "@js:\rlet url = config.host + \"/sort/\"+params.filters.aa + \"/\" +params.pageIndex+\".html\"\r\rlet hh= {\r  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\r}\r\rreturn {'url':url, 'POST':false, \r\"httpHeaders\": config.httpHeaders,\rforbidCookie:true,};",
+            "host": "http://www.kankeo.cc",
+            "moreKeys": {
+                "pageSize": 15,
+                "requestFilters": [
+                    {
+                        "key": "aa",
+                        "items": [
+                            {
+                                "title": "玄幻·奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠·仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市·言情",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史·军事",
+                                "value": "4"
+                            },
+                            {
+                                "title": "穿越·架空",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻·灵异",
+                                "value": "7"
+                            },
+                            {
+                                "title": "同人·动漫",
+                                "value": "8"
+                            },
+                            {
+                                "title": "夫妻·人妻",
+                                "value": "9"
+                            },
+                            {
+                                "title": "综合·其他",
+                                "value": "10"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//div[@class=\"c_subject\"]/a[1]/@href",
+            "httpHeaders": {
+                "Referer": "http:www.kankeo.cc",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "cover": "//img/@src",
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "_sIndex": 0,
+            "wordCount": "//div[@class=\"c_tag\"]/span[4]/text()",
+            "parserID": "DOM",
+            "list": "//div[@class=\"c_row cf\"]"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

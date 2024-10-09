@@ -1,0 +1,182 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='TextContent']",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://www.qianbiwx.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//dt[1]/span",
+            "lastChapterTitle": "//dd[4]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//dd[3]",
+            "requestInfo": "@js:\nlet fl = params.filters;\nreturn 'https://www.qianbiwx.com/book_' + fl.sort + '_' + fl.cat + '_0_0_0_0_0_0_'+ params.pageIndex + '.html';",
+            "host": "https://www.qianbiwx.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "言情女生",
+                                "value": "1"
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市青春",
+                                "value": "3"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "4"
+                            },
+                            {
+                                "title": "耽美同人",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻灵异",
+                                "value": "6"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "8"
+                            },
+                            {
+                                "title": "轻小说の",
+                                "value": "7"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "推荐",
+                                "value": "allvote"
+                            },
+                            {
+                                "title": "点击",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "鲜花",
+                                "value": "allflower"
+                            },
+                            {
+                                "title": "月票",
+                                "value": "allvipvote"
+                            },
+                            {
+                                "title": "字数",
+                                "value": "words"
+                            },
+                            {
+                                "title": "收藏",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "更新时间",
+                                "value": "lastupdate"
+                            },
+                            {
+                                "title": "入库时间",
+                                "value": "postdate"
+                            },
+                            {
+                                "title": "编辑推荐",
+                                "value": "toptime"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//dl[@id='nr']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//dt[1]/a/img/@_src",
+            "status": "//dd[2]/span[2]",
+            "wordCount": "//dd[2]/span[3]"
+        }
+    },
+    "sourceUrl": "https://www.qianbiwx.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9998",
+    "sourceName": "铅笔小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646909648.996531",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//meta[@property='og:novel:category']/@content || //dt[1]/span",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//meta[@property='og:novel:latest_chapter_name']/@content || //dd[4]/a",
+        "bookName": "//meta[@property='og:novel:book_name']/@content || //div[@class='d_title'] || //h3/a",
+        "desc": "//meta[@property='og:description']/@content || //dd[@class='book_des']",
+        "requestInfo": "@js:\nlet url = 'https://www.qianbiwx.com/modules/article/search.php';\nreturn {'url':url, 'POST':true, 'httpParams':{'searchkey':params.keyWord, 'page':params.pageIndex}};",
+        "host": "https://www.qianbiwx.com",
+        "actionID": "searchBook",
+        "detailUrl": "//meta[@property='og:novel:read_url']/@content || //h3/a/@href",
+        "wordCount": "//dd[2]/span[3]",
+        "cover": "//meta[@property='og:image']/@content || //dt[1]/a/img/@_src",
+        "parserID": "DOM",
+        "list": "//meta[@property='og:novel:book_name']/.. || //dl[@id='nr'] || @js:\nparams.nativeTool.log(result);\nreturn result;",
+        "validConfig": "",
+        "status": "//meta[@property='og:novel:status']/@content || //dd[2]/span[2]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.qianbiwx.com",
+        "list": "//ul[@id='chapterList']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

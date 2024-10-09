@@ -1,0 +1,285 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "weight": "10006",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\tparams.nativeTool.log(result);\n      let contentList = result.updateTime.split('\\n');\n\tfor(let i = 0;i<result.list.length;i++)\n\t{\n\t\tlet chapterInfo = result.list[i];\n\t\tchapterInfo.contentUrl = contentList[i];\n\t\tlist.push(chapterInfo);\n\t}\n\n\treturn {'list':list};\n}",
+        "updateTime": "//div[@class=\"playList\"]//tbody/tr/td[2]/div[1]/input/@value",
+        "title": "//td[1]/span",
+        "host": "https://taopianzy.com",
+        "list": "//div[@class=\"playList\"]//tbody/tr[position()mod2!=0]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "@js:\nreturn params.queryInfo.detailUrl;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "淘片资源网⛄",
+    "sourceType": "video",
+    "sourceUrl": "https://taopianzy.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1640061682.000540",
+    "searchBook": {
+        "cat": "//td[3]/a",
+        "author": "//td[4]/a",
+        "responseFormatType": "html",
+        "bookName": "//td[1]//a",
+        "requestInfo": "https://taopianzy.com/home/search/si1_&ky%@keyWord_&pg%@pageIndex.html",
+        "host": "https://taopianzy.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]//a/@href",
+        "wordCount": "//td[1]/span[2]",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"tableList layout\"]//tbody//tr",
+        "moreKeys": {
+            "pageSize": 50
+        },
+        "status": "//td[2]/font ||@js:\nreturn '豆瓣评分：'+result"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.contentUrl;",
+        "host": "https://taopianzy.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "Ks🔍✨",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://taopianzy.com",
+        "cover": "//img[@id=\"videoPoster\"]/@data-original",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//pre[@id=\"pretags\"]"
+    },
+    "bookWorld": {
+        "动漫": {
+            "cat": "//td[3]/a",
+            "responseFormatType": "html",
+            "author": "//td[4]/a",
+            "bookName": "//td[1]//a",
+            "requestInfo": "https://taopianzy.com/home/vodlist/1/148-1/si1_&pg%@pageIndex_&as%@filter_&cd148.html",
+            "host": "https://taopianzy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "50",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "地区",
+                                "value": ""
+                            },
+                            {
+                                "title": "国产动漫",
+                                "value": "43"
+                            },
+                            {
+                                "title": "日韩动漫",
+                                "value": "44"
+                            },
+                            {
+                                "title": "欧美动漫",
+                                "value": "45"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "-1"
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "wordCount": "//td[1]/span[2]",
+            "validConfig": "",
+            "detailUrl": "//td[1]//a/@href",
+            "list": "//div[@class=\"tableList layout\"]//tbody//tr",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "//td[2]/font ||@js:\nreturn '豆瓣评分：'+result"
+        },
+        "综艺": {
+            "cat": "//td[3]/a",
+            "responseFormatType": "html",
+            "author": "//td[4]/a",
+            "bookName": "//td[1]//a",
+            "requestInfo": "https://taopianzy.com/home/vodlist/1/142-1/si1_&pg%@pageIndex_&as%@filter_&cd142.html",
+            "host": "https://taopianzy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "50",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "地区",
+                                "value": ""
+                            },
+                            {
+                                "title": "国产综艺",
+                                "value": "38"
+                            },
+                            {
+                                "title": "港澳综艺",
+                                "value": "41"
+                            },
+                            {
+                                "title": "日韩综艺",
+                                "value": "39"
+                            },
+                            {
+                                "title": "欧美综艺",
+                                "value": "40"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "-1"
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "wordCount": "//td[1]/span[2]",
+            "validConfig": "",
+            "detailUrl": "//td[1]//a/@href",
+            "list": "//div[@class=\"tableList layout\"]//tbody//tr",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "status": "//td[2]/font ||@js:\nreturn '豆瓣评分：'+result"
+        },
+        "电视剧": {
+            "cat": "//td[3]/a",
+            "responseFormatType": "html",
+            "author": "//td[4]/a",
+            "bookName": "//td[1]//a",
+            "requestInfo": "https://taopianzy.com/home/vodlist/1/20-1/si1_&pg%@pageIndex_&as%@filter_&cd20.html",
+            "host": "https://taopianzy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "50",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "地区",
+                                "value": ""
+                            },
+                            {
+                                "title": "国产剧",
+                                "value": "16"
+                            },
+                            {
+                                "title": "港台剧",
+                                "value": "19"
+                            },
+                            {
+                                "title": "日韩",
+                                "value": "18"
+                            },
+                            {
+                                "title": "欧美",
+                                "value": "17"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "-1"
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "wordCount": "//td[1]/span[2]",
+            "validConfig": "",
+            "detailUrl": "//td[1]//a/@href",
+            "list": "//div[@class=\"tableList layout\"]//tbody//tr",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "status": "//td[2]/font ||@js:\nreturn '豆瓣评分：'+result"
+        },
+        "电影": {
+            "cat": "//td[3]/a",
+            "responseFormatType": "html",
+            "author": "//td[4]/a",
+            "bookName": "//td[1]//a",
+            "requestInfo": "https://taopianzy.com/home/vodlist/1/1-1/si1_&pg%@pageIndex_&as%@filter_&cd1.html",
+            "host": "https://taopianzy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "50",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "地区",
+                                "value": ""
+                            },
+                            {
+                                "title": "中国",
+                                "value": "25"
+                            },
+                            {
+                                "title": "港台",
+                                "value": "24"
+                            },
+                            {
+                                "title": "美国",
+                                "value": "23"
+                            },
+                            {
+                                "title": "日韩",
+                                "value": "22"
+                            },
+                            {
+                                "title": "泰国",
+                                "value": "21"
+                            },
+                            {
+                                "title": "日印度",
+                                "value": "20"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "-1"
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "wordCount": "//td[1]/span[2]",
+            "validConfig": "",
+            "detailUrl": "//td[1]//a/@href",
+            "list": "//div[@class=\"tableList layout\"]//tbody//tr",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "status": "//td[2]/font ||@js:\nreturn '豆瓣评分：'+result"
+        }
+    }
+}

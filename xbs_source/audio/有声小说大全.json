@@ -1,0 +1,275 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "9997",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':'http://yst8-service.iphone2030.com/service/app.php', 'POST':true, 'httpParams':{'cmd':'getlistendetail', 'bookid':result}, 'httpHeaders': {'Content-Type':'application/json; charset=UTF-8', 'User-Agent':'%E6%9C%89%E5%A3%B0%E5%B0%8F%E8%AF%B4%E5%A4%A7%E5%85%A8/13 CFNetwork/1240.0.4 Darwin/20.5.0'}};",
+        "title": "chapter",
+        "host": "http://yst8-service.iphone2030.com/service/app.php",
+        "list": "list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nif(result.href.length == 0)\n\treturn undefined;\nlet url = result.server + result.href;\nif(url.indexOf('http')==-1)\n\treturn 'https://' + url;\nreturn url;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "有声小说大全",
+    "sourceType": "audio",
+    "sourceUrl": "http://yst8-service.iphone2030.com/service/app.php",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639841101.724934",
+    "searchBook": {
+        "author": "voice",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "status": "state",
+        "requestInfo": "@js:\n\nlet info = {};\ninfo.url = 'http://yst8-service.iphone2030.com/service/app.php';\n\ninfo.POST = true;\ninfo.httpParams = {'key':params.keyWord, 'cmd':'search', 'page':params.pageIndex};\n\ninfo.httpHeaders = {'Content-Type':'application/json; charset=UTF-8', 'User-Agent':'%E6%9C%89%E5%A3%B0%E5%B0%8F%E8%AF%B4%E5%A4%A7%E5%85%A8/13 CFNetwork/1240.0.4 Darwin/20.5.0'};\nreturn info;",
+        "bookName": "title",
+        "detailUrl": "bookid",
+        "host": "http://yst8-service.iphone2030.com/service/app.php",
+        "list": "list",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "newsound",
+    "desc": "推荐",
+    "shudanList": {},
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':'http://yst8-service.iphone2030.com/service/app.php', 'POST':true, 'httpParams':{'cmd':'getlistendetail', 'bookid':result}, 'httpHeaders': {'Content-Type':'application/json; charset=UTF-8', 'User-Agent':'%E6%9C%89%E5%A3%B0%E5%B0%8F%E8%AF%B4%E5%A4%A7%E5%85%A8/13 CFNetwork/1240.0.4 Darwin/20.5.0'}};",
+        "host": "http://yst8-service.iphone2030.com/service/app.php",
+        "cat": "category",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "brief"
+    },
+    "bookWorld": {
+        "播音": {
+            "author": "voice",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nreturn {'url':'http://yst8-service.iphone2030.com/service/app.php', 'POST':true, 'httpParams':{'cmd':'getlistenlist', 'categoryid':params.filters.cat, 'page':params.pageIndex}, 'httpHeaders': {'Content-Type':'application/json; charset=UTF-8', 'User-Agent':'%E6%9C%89%E5%A3%B0%E5%B0%8F%E8%AF%B4%E5%A4%A7%E5%85%A8/13 CFNetwork/1240.0.4 Darwin/20.5.0'}};",
+            "host": "http://yst8-service.iphone2030.com/service/app.php",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "单田芳",
+                                "value": "63"
+                            },
+                            {
+                                "title": "刘兰芳",
+                                "value": "64"
+                            },
+                            {
+                                "title": "田连元",
+                                "value": "65"
+                            },
+                            {
+                                "title": "袁阔成",
+                                "value": "66"
+                            },
+                            {
+                                "title": "连丽如",
+                                "value": "67"
+                            },
+                            {
+                                "title": "张少佐",
+                                "value": "68"
+                            },
+                            {
+                                "title": "田战义",
+                                "value": "69"
+                            },
+                            {
+                                "title": "孙一",
+                                "value": "70"
+                            },
+                            {
+                                "title": "关永超",
+                                "value": "71"
+                            },
+                            {
+                                "title": "马长辉",
+                                "value": "72"
+                            },
+                            {
+                                "title": "王玥波",
+                                "value": "73"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "bookid",
+            "validConfig": "",
+            "parserID": "DOM",
+            "list": "list",
+            "_sIndex": 2,
+            "status": "state"
+        },
+        "分类": {
+            "author": "voice",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nreturn {'url':'http://yst8-service.iphone2030.com/service/app.php', 'POST':true, 'httpParams':{'cmd':'getlistenlist', 'categoryid':params.filters.cat, 'page':params.pageIndex}, 'httpHeaders': {'Content-Type':'application/json; charset=UTF-8', 'User-Agent':'%E6%9C%89%E5%A3%B0%E5%B0%8F%E8%AF%B4%E5%A4%A7%E5%85%A8/13 CFNetwork/1240.0.4 Darwin/20.5.0'}};",
+            "host": "http://yst8-service.iphone2030.com/service/app.php",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "网络玄幻",
+                                "value": "77"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "78"
+                            },
+                            {
+                                "title": "恐怖悬疑",
+                                "value": "79"
+                            },
+                            {
+                                "title": "百家讲坛",
+                                "value": "80"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "81"
+                            },
+                            {
+                                "title": "刑侦推理",
+                                "value": "82"
+                            },
+                            {
+                                "title": "官场商战",
+                                "value": "83"
+                            },
+                            {
+                                "title": "武侠小说",
+                                "value": "84"
+                            },
+                            {
+                                "title": "人物纪实",
+                                "value": "85"
+                            },
+                            {
+                                "title": "相声小品",
+                                "value": "86"
+                            },
+                            {
+                                "title": "童话寓言",
+                                "value": "87"
+                            },
+                            {
+                                "title": "英文读物",
+                                "value": "88"
+                            },
+                            {
+                                "title": "广播剧",
+                                "value": "89"
+                            },
+                            {
+                                "title": "有声文学",
+                                "value": "90"
+                            },
+                            {
+                                "title": "今日头条",
+                                "value": "91"
+                            },
+                            {
+                                "title": "健康养生",
+                                "value": "92"
+                            },
+                            {
+                                "title": "综艺娱乐",
+                                "value": "93"
+                            },
+                            {
+                                "title": "汽车音乐",
+                                "value": "94"
+                            },
+                            {
+                                "title": "脱口秀",
+                                "value": "123"
+                            },
+                            {
+                                "title": "商业财经",
+                                "value": "124"
+                            },
+                            {
+                                "title": "地方戏曲",
+                                "value": "125"
+                            },
+                            {
+                                "title": "昊儒书场",
+                                "value": "74"
+                            },
+                            {
+                                "title": "粤语评书",
+                                "value": "75"
+                            },
+                            {
+                                "title": "其他评书",
+                                "value": "76"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "bookid",
+            "validConfig": "",
+            "parserID": "DOM",
+            "list": "list",
+            "_sIndex": 1,
+            "status": "state"
+        },
+        "热门": {
+            "author": "voice",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nreturn {'url':'http://yst8-service.iphone2030.com/service/app.php', 'POST':true, 'httpParams':{'cmd':'hotrank'}, 'httpHeaders': {'Content-Type':'application/json; charset=UTF-8', 'User-Agent':'%E6%9C%89%E5%A3%B0%E5%B0%8F%E8%AF%B4%E5%A4%A7%E5%85%A8/13 CFNetwork/1240.0.4 Darwin/20.5.0'}};",
+            "host": "http://yst8-service.iphone2030.com/service/app.php",
+            "actionID": "bookWorld",
+            "detailUrl": "bookid",
+            "validConfig": "",
+            "list": "list",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "state"
+        }
+    }
+}

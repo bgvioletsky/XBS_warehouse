@@ -1,0 +1,197 @@
+{
+    "bookWorld": {
+        "分类": {
+            "author": "artistName",
+            "responseFormatType": "json",
+            "bookName": "albumName",
+            "requestInfo": "@js:\nreturn 'http://baby.kuwo.cn/tingshu/api//filter/albums?sortType=tsScore' + params.filters.class + '&pn=' + params.pageIndex + '&kweexVersion=1.0.2';",
+            "host": "http://baby.kuwo.cn:80",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "class",
+                        "items": [
+                            {
+                                "title": "都市传说",
+                                "value": "&classifyId=42&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "&classifyId=44&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "悬疑推理",
+                                "value": "&classifyId=45&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "&classifyId=41&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "&classifyId=48&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "穿越架空",
+                                "value": "&classifyId=52&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "经典小说",
+                                "value": "&classifyId=64&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "青春校园",
+                                "value": "&classifyId=55&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "&classifyId=56&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "科幻竞技",
+                                "value": "&classifyId=57&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "&classifyId=207&rn=20&categoryId=2"
+                            },
+                            {
+                                "title": "能力提升",
+                                "value": "&classifyId=82&rn=20&categoryId=4"
+                            },
+                            {
+                                "title": "人文艺术",
+                                "value": "&classifyId=77&rn=20&categoryId=4"
+                            },
+                            {
+                                "title": "国学文化",
+                                "value": "&classifyId=78&rn=20&categoryId=4"
+                            },
+                            {
+                                "title": "成功法则",
+                                "value": "&classifyId=79&rn=20&categoryId=4"
+                            },
+                            {
+                                "title": "外语精通",
+                                "value": "&classifyId=76&rn=20&categoryId=4"
+                            },
+                            {
+                                "title": "养生健康",
+                                "value": "&classifyId=81&rn=20&categoryId=4"
+                            },
+                            {
+                                "title": "酷我读书",
+                                "value": "&classifyId=211&rn=20&categoryId=4"
+                            },
+                            {
+                                "title": "国学经典",
+                                "value": "&classifyId=117&rn=20&categoryId=9"
+                            },
+                            {
+                                "title": "历史小说",
+                                "value": "&classifyId=181&rn=20&categoryId=9"
+                            },
+                            {
+                                "title": "纪实档案",
+                                "value": "&classifyId=118&rn=20&categoryId=9"
+                            },
+                            {
+                                "title": "历史传奇",
+                                "value": "&classifyId=119&rn=20&categoryId=9"
+                            },
+                            {
+                                "title": "人物传奇",
+                                "value": "&classifyId=120&rn=20&categoryId=9"
+                            },
+                            {
+                                "title": "文化讲堂",
+                                "value": "&classifyId=121&rn=20&categoryId=9"
+                            },
+                            {
+                                "title": "百家讲坛",
+                                "value": "&classifyId=212&rn=20&categoryId=9"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "albumId",
+            "validConfig": "",
+            "cover": "coverImg",
+            "parserID": "DOM",
+            "list": "data/data",
+            "status": "finished"
+        }
+    },
+    "authorId": "",
+    "weight": "9998",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = 'http://baby.kuwo.cn/tingshu/api//data/album/songs?albumId=' + result + '&online=0&kweexVersion=1.0.2';\nreturn {'url':url, 'cacheTime':3600};",
+        "title": "name",
+        "host": "http://baby.kuwo.cn:80",
+        "list": "data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id || http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_%@result&response=res&type=convert_url"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "http://baby.kuwo.cn:80",
+        "title": "||",
+        "requestInfo": "@js:\nreturn {'response':['经典老歌']};",
+        "actionID": "relatedWord"
+    },
+    "enable": 0,
+    "sourceName": "酷我听书",
+    "sourceType": "audio",
+    "sourceUrl": "http://baby.kuwo.cn:80",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639841088.548132",
+    "searchBook": {
+        "author": "artistName",
+        "responseFormatType": "json",
+        "bookName": "albumName",
+        "requestInfo": "http://baby.kuwo.cn:80/tingshu/api//search/Search?rn=10&type=album&version=8.5.6.1&wd=%@keyWord&pn=%@pageIndex&kweexVersion=1.0.2",
+        "host": "http://baby.kuwo.cn:80",
+        "actionID": "searchBook",
+        "detailUrl": "albumId",
+        "cover": "coverImg",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "data/data",
+        "status": "finished"
+    },
+    "chapterContent": {
+        "requestInfo": "@js:\nreturn {'response':params.queryInfo.url};",
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "推荐",
+    "password": "newsound",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

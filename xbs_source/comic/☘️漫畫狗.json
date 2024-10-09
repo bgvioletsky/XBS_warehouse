@@ -1,0 +1,91 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://dogemanga.com",
+        "content": "//*[contains(@class, 'site-page-slide')]//img//@data-src",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//ul/li[1]/a",
+            "responseFormatType": "html",
+            "author": "//h5/a",
+            "bookName": "//h4/a/text()",
+            "desc": "//p[contains(@id, 'brief')]",
+            "requestInfo": "https://dogemanga.com/?s=%@filter",
+            "host": "https://dogemanga.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": "热门::0\n最新::1"
+            },
+            "cover": "//img[contains(@class, 'thumbnail')]/@src",
+            "detailUrl": "//h4/a/@href",
+            "list": "//div[@class='row']/div[contains(@class, 'search-result')]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://dogemanga.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8595",
+    "sourceName": "☘️漫畫狗",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1641259308.770446",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//h5/a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//ul/li[1]/a",
+        "bookName": "//h4/a/text()",
+        "desc": "//p[contains(@id, 'brief')]",
+        "requestInfo": "@js:\nlet url = 'https://dogemanga.com/?q=' + encodeURI(params.keyWord);\nif(params.pageIndex > 1)\n\treturn url + '&o=' + ((params.pageIndex - 1) * 12);\nreturn url;",
+        "host": "https://dogemanga.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "cover": "//img[contains(@class, 'thumbnail')]/@src",
+        "validConfig": "",
+        "list": "//div[@class='row']/div[contains(@class, 'search-result')]",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 12
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "host": "https://dogemanga.com",
+        "list": "//select/option || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@value"
+    }
+}

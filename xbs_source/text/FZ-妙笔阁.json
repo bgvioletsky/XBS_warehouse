@@ -1,0 +1,77 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id='content']/p/text()|@js:\nreturn result.replace(/您可以在百度里搜索.*?查找最新章节！/, '');",
+        "requestInfo": "@js:\nlet url = params.queryInfo.url;\nif(url.indexOf('http')!=0)\n\treturn 'https://www.imiaobige.com' + url;\nreturn url;",
+        "host": "https://www.imiaobige.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.imiaobige.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-妙笔阁",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649606893.832856",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "html",
+        "author": "//dd[@class=\"book_other\"]/a[2]",
+        "bookName": "//dd[1]/h3/a",
+        "desc": "//dd[@class=\"book_desq\"]|@js:return result.substring(0,result.length-1)",
+        "requestInfo": "@js:\nlet url = 'https://www.imiaobige.com/search.html';\nlet hp = {};\nhp.searchkey = params.keyWord;\n//hp.pn= params.pageIndex;\n//hp.searchtype='0';\nreturn {'POST':true,'url':url, 'httpParams':hp,};",
+        "host": "https://www.imiaobige.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "cover": "//dt/a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "detailUrl": "//dd[1]/h3/a/@href",
+        "list": "//div[@id='sitembox']/dl"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@id=\"smallcons\"]/span[last()]",
+        "requestInfo": "@js:\nvar url = params.queryInfo.detailUrl.replace('/novel/', '/read/');\nvar loc = url.indexOf('.htm');\nif(loc>0)\n\turl = url.substr(0, loc);\nif(url.indexOf('http')!=0)\n\treturn 'https://www.imiaobige.com' + url;\nreturn url;",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.imiaobige.com",
+        "list": "//div[@id='readerlists']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

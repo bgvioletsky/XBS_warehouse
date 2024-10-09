@@ -1,0 +1,448 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a/text()",
+        "host": "https://www.360xs.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.46"
+        },
+        "list": "//li[@id=\"index_list_li1\"]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "loginUrl": "https://m.360xs.com/index.php?m=user/login",
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "360小说",
+    "sourceUrl": "https://www.360xs.com",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.46"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647789087.499449",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "JSParser": "function functionName(config, params, result) {\r    let list = result.Data.search_response.books.map(book => {\r        return {\r            'bookName': book.bookname,\r            'author': book.authorname,\r            'cover': book.coverurl,\r            'desc': book.description,\r            'status': book.finish_flag,\r            'cat': book.categoryname,\r            'wordCount': book.wordscount,\r            'lastChapterTitle': book.lastchaptername,\r            'detailUrl': 'https://www.360xs.com/modules/article/reader.php?aid=' + book.bookid,\r        };\r    });\r    return { 'list': list };\r}",
+        "requestInfo": "@js:\n\nlet httpParams = {\r    ajaxMethod: 'getsearchbooks',\r    page: params.pageIndex,\r    pagesize: '10',\r    isvip: '-1',\r    cid: '-1',\r    sort: '0',\r    flag: '-1',\r    searchkey: encodeURI(params.keyWord),\r    site: '-1',\r    again: '0',\r    range: '-1',\r};\r\rlet host = config.host.replace('www.', 'm.');\rconfig.httpHeaders['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';\rconfig.httpHeaders['Referer'] = host+ '/';\rconfig.httpHeaders['Origin'] = host;\rconfig.httpHeaders['X-Requested-With'] = 'XMLHttpRequest';\rconfig.httpHeaders['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1'\rreturn {\r    'url': host + '/book/',\r    'POST': true,\r    'httpHeaders': config.httpHeaders,\r    'httpParams': httpParams,\r}",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "host": "https://www.360xs.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.46"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"read_content\"]/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nif (params.lastResponse != undefined) {\n    if (!RegExp(/-\\d{1,2}\\./g).test(result)) {\n        return undefined;\n    }\n}\nreturn {\n    'url': result,\n    'httpHeaders': config.httpHeaders,\n};",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://www.360xs.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.46"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@id=\"read_link\"]/a[contains(text(),\"下一页\")]/@href"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "张益达",
+    "shudanList": {},
+    "help": "首次使用需要登录后才能使用搜索，Cookie保持一个月有效期",
+    "bookWorld": {
+        "分类": {
+            "cat": "//li[@class=\"storelistbt5a\"]/p[1]/text()[2]",
+            "responseFormatType": "html",
+            "author": "//li[@class=\"storelistbt5a\"]/p[1]/a[1]/text()",
+            "lastChapterTitle": "//li[@class=\"storelistbt5a\"]/p[3]/a[1]/text()",
+            "bookName": "//li[@class=\"storelistbt5a\"]/a[2]/text()",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.46"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + '/library/' + params.filters.type +\n    '_' + params.filters.rank +\n    '_' + params.filters.letter +\n    '_' + params.filters.wordCount +\n    '_' + params.filters.tuij +\n    '_' + params.filters.shux +\n    '_' + params.filters.status +\n    '_' + params.filters.order +\n    '_' + params.pageIndex + '.html';\n\n\nreturn {\n    'url': url,\n    'httpHeaders': config.httpHeaders,\n};",
+            "host": "https://www.360xs.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//li[@class=\"storelistbt5b\"]/p[1]/a[1]/@href",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "quanbu"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "xuanhuan"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "qihuan"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "wuxia"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "xianxia"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "yanqing"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "dushi"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "junshi"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "lingyi"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "youxi"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "jingji"
+                            },
+                            {
+                                "title": "美文",
+                                "value": "meiwen"
+                            },
+                            {
+                                "title": "同人",
+                                "value": "tongren"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "qita"
+                            }
+                        ],
+                        "key": "type"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "30万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30万-50万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "50万-100万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100万-200万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "200万以上",
+                                "value": "5"
+                            }
+                        ],
+                        "key": "wordCount"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "[A]",
+                                "value": "a"
+                            },
+                            {
+                                "title": "[B]",
+                                "value": "b"
+                            },
+                            {
+                                "title": "[C]",
+                                "value": "c"
+                            },
+                            {
+                                "title": "[D]",
+                                "value": "d"
+                            },
+                            {
+                                "title": "[E]",
+                                "value": "e"
+                            },
+                            {
+                                "title": "[F]",
+                                "value": "f"
+                            },
+                            {
+                                "title": "[G]",
+                                "value": "g"
+                            },
+                            {
+                                "title": "[H]",
+                                "value": "h"
+                            },
+                            {
+                                "title": "[I]",
+                                "value": "i"
+                            },
+                            {
+                                "title": "[J]",
+                                "value": "j"
+                            },
+                            {
+                                "title": "[K]",
+                                "value": "k"
+                            },
+                            {
+                                "title": "[L]",
+                                "value": "l"
+                            },
+                            {
+                                "title": "[M]",
+                                "value": "m"
+                            },
+                            {
+                                "title": "[N]",
+                                "value": "n"
+                            },
+                            {
+                                "title": "[O]",
+                                "value": "o"
+                            },
+                            {
+                                "title": "[P]",
+                                "value": "p"
+                            },
+                            {
+                                "title": "[R]",
+                                "value": "r"
+                            },
+                            {
+                                "title": "[S]",
+                                "value": "s"
+                            },
+                            {
+                                "title": "[T]",
+                                "value": "t"
+                            },
+                            {
+                                "title": "[Q]",
+                                "value": "q"
+                            },
+                            {
+                                "title": "[U]",
+                                "value": "u"
+                            },
+                            {
+                                "title": "[V]",
+                                "value": "v"
+                            },
+                            {
+                                "title": "[W]",
+                                "value": "w"
+                            },
+                            {
+                                "title": "[X]",
+                                "value": "x"
+                            },
+                            {
+                                "title": "[Y]",
+                                "value": "y"
+                            },
+                            {
+                                "title": "[Z]",
+                                "value": "z"
+                            },
+                            {
+                                "title": "[0]",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "letter"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "默认",
+                                "value": "default"
+                            },
+                            {
+                                "title": "总点击榜",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "月点击榜",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "周点击榜",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "日点击榜",
+                                "value": "dayvisit"
+                            },
+                            {
+                                "title": "总推荐榜",
+                                "value": "allvote"
+                            },
+                            {
+                                "title": "月推荐榜",
+                                "value": "monthvote"
+                            },
+                            {
+                                "title": "周推荐榜",
+                                "value": "weekvote"
+                            },
+                            {
+                                "title": "日推荐榜",
+                                "value": "dayvote"
+                            },
+                            {
+                                "title": "总收藏榜",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "总字数榜",
+                                "value": "size"
+                            },
+                            {
+                                "title": "最新入库",
+                                "value": "postdate"
+                            },
+                            {
+                                "title": "最近更新",
+                                "value": "lastupdate"
+                            }
+                        ],
+                        "key": "rank"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "普通",
+                                "value": "1"
+                            },
+                            {
+                                "title": "精品",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "tuij"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "转载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "原创",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "shux"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "倒序",
+                                "value": "0"
+                            },
+                            {
+                                "title": "正序",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"storelistbt5\"]/ul",
+            "cover": "//li[@class=\"storelistbt5a\"]/a[1]/img[1]/@src",
+            "desc": "//li[@class=\"storelistbt5a\"]/p[2]/text()",
+            "status": "//span[@class=\"bookdata\"]/text()"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

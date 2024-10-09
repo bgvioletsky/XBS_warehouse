@@ -1,0 +1,82 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "999999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js: \nurl=\"http://4kya.net:6969/api.php/v2/video\"\n\nreturn {\"url\":url,\"POST\":true,\"httpHeaders\":{\"UserAgent\":\"okhttp\\/3.11.0\"},\"httpParams\":{\"video_id\":params.queryInfo.detailUrl}}",
+        "title": "text",
+        "host": "http://4kya.net:6969/api.php",
+        "list": "result/players[0]/datas",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "play_url|@js:\nreturn \"\"+result;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceType": "video",
+    "sourceName": "4k",
+    "sourceUrl": "http://4kya.net:6969/api.php",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1634616106.160185",
+    "searchBook": {
+        "cat": "tag",
+        "author": "actors",
+        "lastChapterTitle": "version",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "desc": "blurb",
+        "requestInfo": "http://4kya.net:6969/api.php/v2/videos",
+        "host": "http://4kya.net:6969/api.php",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "POST": true,
+            "maxPage": 2,
+            "httpParams": {
+                "paging": "True",
+                "num": 10,
+                "key": "%@keyWord",
+                "start": 0
+            }
+        },
+        "cover": "pic|@js: \nreturn result.replace(\"mac\",\"https\")",
+        "validConfig": "",
+        "parserID": "DOM",
+        "detailUrl": "id",
+        "list": "result/rows"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js: return params.queryInfo.url",
+        "host": "http://4kya.net:6969/api.php",
+        "parserID": "DOM",
+        "requestInfo": "@js:\n\nreturn \"https://cn.bing.com\"",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "👾4k需网络好",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,166 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://www.56tingshu.com",
+        "content": "@js:\nvar  url = result.match(/var\\snow=unescape\\(\"(.*?)\"\\);/)[1];\nurl=unescape(url)\nreturn url",
+        "requestInfo": "@js:\n\nreturn {'url':result, 'cacheTime':3600}",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.56tingshu.com",
+        "desc": "//ul[@class='introbox']/p",
+        "actionID": "bookDetail"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "//p[starts-with(text(), '类型')]|@replace:类型：",
+            "author": "//p[starts-with(text(), '播音')]/a|@replace:播音：",
+            "responseFormatType": "html",
+            "bookName": "//p[1]/a/b",
+            "requestInfo": "@js:\nlet url = '/list/' + params.filter;\nif(params.pageIndex>1)\n\turl = url + '-' + params.pageIndex;\n\nreturn {'url': url + '.html', 'cacheTime':3600}",
+            "host": "https://www.56tingshu.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[1]/a/@href",
+            "moreKeys": {
+                "pageSize": "16",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "8"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "3"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "20"
+                            },
+                            {
+                                "title": "推理",
+                                "value": "10"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "2"
+                            },
+                            {
+                                "title": "惊悚",
+                                "value": "21"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "5"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "9"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "7"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "14"
+                            },
+                            {
+                                "title": "儿童",
+                                "value": "12"
+                            },
+                            {
+                                "title": "评书",
+                                "value": "6"
+                            },
+                            {
+                                "title": "戏曲",
+                                "value": "16"
+                            },
+                            {
+                                "title": "笑话",
+                                "value": "18"
+                            },
+                            {
+                                "title": "讲坛",
+                                "value": "22"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//img[@class='imgc']/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[contains(@class, 'clist')]//li",
+            "_sIndex": 0
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.56tingshu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1525",
+    "sourceName": "👾56听书网②",
+    "sourceType": "audio",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1648444813.162963",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//p[starts-with(text(), '类型')]|@replace:类型：",
+        "author": "//p[starts-with(text(), '播音')]/a|@replace:播音：",
+        "responseFormatType": "html",
+        "bookName": "//p[1]/b/a",
+        "requestInfo": "/search.php?page=%@pageIndex&searchword=%@keyWord&searchtype=",
+        "host": "https://www.56tingshu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//p[1]/b/a/@href",
+        "cover": "//img[@class='imgc']/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 16
+        },
+        "list": "//div[contains(@class, 'clist')]//li"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nreturn {'url':result, 'cacheTime':3600}",
+        "title": "//a",
+        "host": "https://www.56tingshu.com",
+        "list": "//ul[@class='compress']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

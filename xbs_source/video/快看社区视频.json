@@ -1,0 +1,93 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "data/post/content[0]/hdUrl",
+        "requestInfo": "https://social.51kuaikan.com/v1/graph/share/posts/%@result",
+        "host": "https://social.51kuaikan.com/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "https://social.51kuaikan.com/social/social-fe/user_share?userId=%@result",
+        "host": "https://social.51kuaikan.com/",
+        "responseFormatType": "html",
+        "desc": "//div[@class='intro mask-part']",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "漫剧": {
+            "cat": "cat",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "bookName",
+            "desc": "desc",
+            "host": "https://social.51kuaikan.com/",
+            "requestInfo": "https://gitee.com/haitang-blossoms/xiangsesource/raw/master/otherdependencies/kkcomicdramayonghu.json",
+            "actionID": "bookWorld",
+            "detailUrl": "detailUrl",
+            "cover": "cover",
+            "validConfig": "",
+            "parserID": "DOM",
+            "list": "list"
+        }
+    },
+    "shudanList": {},
+    "sourceType": "video",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "快看社区视频",
+    "sourceUrl": "https://social.51kuaikan.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1644763623.313431",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "json",
+        "bookName": "nickname",
+        "desc": "@js:\nreturn result.intro + ' ' + result.uintro;",
+        "requestInfo": "@js:\nreturn 'https://search.kkmh.com/v1/search/user?q=' + encodeURI(params.keyWord) + '&since=' + ((params.pageIndex-1)*20);",
+        "host": "https://social.51kuaikan.com/",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "detailUrl": "id",
+        "validConfig": "",
+        "list": "data/hit",
+        "parserID": "DOM",
+        "cover": "avatar_url"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://social.51kuaikan.com/v1/graph/share/users/%@result",
+        "title": "post/summary||post/title",
+        "host": "https://social.51kuaikan.com/",
+        "list": "data/posts",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "post/id"
+    }
+}

@@ -1,0 +1,168 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class='con'] || @js:\nreturn result.replace(/（本章.*）/gim, '');",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://m.suixkan.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "author": "//div[@class='v-author']",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='v-title']",
+            "desc": "//div[@class='v-intro']",
+            "requestInfo": "http://m.suixkan.com/l/f/%@filter/%@pageIndex.html",
+            "host": "https://m.suixkan.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "5",
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "都市人生",
+                                "value": "1100"
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1101"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "1102"
+                            },
+                            {
+                                "title": "都市历史",
+                                "value": "1103"
+                            },
+                            {
+                                "title": "科幻末世",
+                                "value": "1104"
+                            },
+                            {
+                                "title": "游戏体育",
+                                "value": "1105"
+                            },
+                            {
+                                "title": "悬疑灵异",
+                                "value": "3100"
+                            },
+                            {
+                                "title": "出版读物",
+                                "value": "3101"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "2100"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "2101"
+                            },
+                            {
+                                "title": "幻想言情",
+                                "value": "2102"
+                            },
+                            {
+                                "title": "穿越时空",
+                                "value": "2104"
+                            },
+                            {
+                                "title": "宫闱争斗",
+                                "value": "2105"
+                            },
+                            {
+                                "title": "豪门总裁",
+                                "value": "2106"
+                            },
+                            {
+                                "title": "婚恋爱情",
+                                "value": "2107"
+                            },
+                            {
+                                "title": "经商种田",
+                                "value": "2108"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//img[contains(@class, 'cover')]/@src",
+            "validConfig": "",
+            "list": "//div[@class='v-list']/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//@onclick || @js:\nreturn /'(.*?)'/.exec(result)[1];",
+            "wordCount": "//div[contains(@class, 'v-words')]"
+        }
+    },
+    "sourceUrl": "https://m.suixkan.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9998",
+    "sourceName": "随心看",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646909733.354569",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[@class='v-author']",
+        "responseFormatType": "html",
+        "bookName": "//div[@class='v-title']",
+        "desc": "//div[@class='v-intro']",
+        "requestInfo": "@js:\nlet url = 'http://m.suixkan.com/s/1.html';\nlet hp = {'keyword':params.keyWord};\nif(params.pageIndex>1)\n\thp.page = params.pageIndex;\nreturn {'url':url, 'httpParams':hp};",
+        "host": "https://m.suixkan.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 5
+        },
+        "wordCount": "//div[contains(@class, 'v-words')]",
+        "cover": "//img[contains(@class, 'cover')]/@src",
+        "list": "//div[@class='v-list']/div",
+        "parserID": "DOM",
+        "detailUrl": "//@onclick || @js:\nreturn /'(.*?)'/.exec(result)[1];",
+        "validConfig": ""
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn result.replace('/b/', '/c/');",
+        "title": "//text()",
+        "host": "https://m.suixkan.com",
+        "list": "//ul[@class='catalog_ls']//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,134 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "http://www.shu05.com",
+        "list": "//div[@id=\"list-chapterAll\"]//dl//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "sourceName": "书屋小说网⛄",
+    "sourceType": "text",
+    "sourceUrl": "http://www.shu05.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642522247.322063",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//div[@class=\"caption\"]/small ||@js:\nreturn result.split('/')[0];",
+        "responseFormatType": "html",
+        "bookName": "//h4/a",
+        "requestInfo": "/modules/article/search.php?searchkey=%@keyWord&page=%@pageIndex",
+        "host": "http://www.shu05.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[contains(@class,\"book-coverlist\")]",
+        "moreKeys": {
+            "pageSize": 30
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet beginStr = 'id=\"htmlContent\">';\n\tlet beginIndex = result.indexOf(beginStr);\n\n      function typeSet(str){\n            //str = str.replace(/需要过滤的文本/gi,'');\n\n            str = str.replace(/<br[\\s]*[\\/]*>/gi,'\\n');\n            str = str.replace(/\\n[\\s]*\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,'');\n            //str = str.replace(/<p[^>]*>[\\s\\S]+<\\/[^>]*>/gi,'');\n\t\tstr = str.replace(/<[^>]*>/gi,'');\n\t\tstr = str.replace(/本书由[\\s\\S]+现金红包！/gi,'');\n            return str;\n      }\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex + beginStr.length);\n\t\tparams.nativeTool.log(subStr);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n            \n\t\treturn typeSet(tarStr);\n\t}\n\treturn undefined;\n}",
+        "host": "http://www.shu05.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "JSParser": "function functionName(config,params,result){\n\t//params.nativeTool.log(result);\n\tlet info = params.queryInfo;\n\tinfo.desc = result.desc;\n\t//info.author = result.lastChapterTitle;\n\n\treturn info;\n}",
+        "lastChapterTitle": "//h1//a",
+        "host": "http://www.shu05.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@id=\"bookIntro\"] ||@js:\nlet str = result.replace(/[\\s]{2,}/gi,'');\nreturn str.replace(/\\(书屋[\\s\\S]+愉快\\）/gi,'');"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//div[@class=\"caption\"]/small ||@js:\nreturn result.split('/')[0];",
+            "responseFormatType": "html",
+            "bookName": "//h4/a",
+            "requestInfo": "/list/%@filter-%@pageIndex.html",
+            "host": "http://www.shu05.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h4/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//div[contains(@class,\"book-coverlist\")]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": 1
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": 2
+                            },
+                            {
+                                "title": "言情",
+                                "value": 3
+                            },
+                            {
+                                "title": "历史",
+                                "value": 4
+                            },
+                            {
+                                "title": "网游",
+                                "value": 5
+                            },
+                            {
+                                "title": "科幻",
+                                "value": 6
+                            },
+                            {
+                                "title": "惊悚",
+                                "value": 7
+                            },
+                            {
+                                "title": "综合",
+                                "value": 8
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            }
+        }
+    }
+}

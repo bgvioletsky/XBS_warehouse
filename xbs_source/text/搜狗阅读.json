@@ -1,0 +1,214 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='content']",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':''};",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://book.sogou.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//div[@class='book-info']/a[@class='book-info-sub']",
+            "author": "//div[@class='book-info']/span[1]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//a[@class='book-chapter']",
+            "bookName": "//h4/a",
+            "desc": "//p[@class='book-summary']",
+            "requestInfo": "@js:\n\nlet hp = params.filters;\nhp['gf'] = 'e-d-pcateList-i';\n\nlet url = 'https://book.sogou.com/dd/cateList';\nreturn {'url':url, 'httpParams':hp};",
+            "host": "https://book.sogou.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "novelType",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "boy"
+                            },
+                            {
+                                "title": "游戏动漫",
+                                "value": "游戏动漫"
+                            },
+                            {
+                                "title": "武侠修仙",
+                                "value": "武侠修仙"
+                            },
+                            {
+                                "title": "都市生活",
+                                "value": "都市生活"
+                            },
+                            {
+                                "title": "科幻悬疑",
+                                "value": "科幻悬疑"
+                            },
+                            {
+                                "title": "奇幻玄幻",
+                                "value": "奇幻玄幻"
+                            },
+                            {
+                                "title": "总裁高干",
+                                "value": "总裁高干"
+                            },
+                            {
+                                "title": "穿越架空",
+                                "value": "穿越架空"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "现代言情"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "古代言情"
+                            },
+                            {
+                                "title": "魔幻情缘",
+                                "value": "魔幻情缘"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "2"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a[@class='book-cover']/img/@src",
+            "detailUrl": "//@bkey || /dd/book/detail?bkey=%@result",
+            "list": "//ul[contains(@class, 'book-list')]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//div[@class='book-info']/span[2]/text()"
+        },
+        "榜单": {
+            "cat": "//div[@class='book-info']/a[@class='book-info-sub']",
+            "author": "//div[@class='book-info']/span[1]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//a[@class='book-chapter']",
+            "bookName": "//a[@class='book-title']",
+            "desc": "//p[@class='book-summary']",
+            "requestInfo": "https://book.sogou.com/dd/rankList?rankType=%@filter&page=1&gf=e-d-prankList-i",
+            "host": "https://book.sogou.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "男生榜",
+                                "value": "boy"
+                            },
+                            {
+                                "title": "女生榜",
+                                "value": "girl"
+                            },
+                            {
+                                "title": "出版榜",
+                                "value": "publication"
+                            },
+                            {
+                                "title": "新书榜",
+                                "value": "newbook"
+                            },
+                            {
+                                "title": "完结榜",
+                                "value": "finish"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a[@class='book-cover']/img/@src",
+            "detailUrl": "//@bkey || /dd/book/detail?bkey=%@result",
+            "list": "//ul[@id='rankList']/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//div[@class='book-info']/span[2]/text()"
+        }
+    },
+    "sourceUrl": "https://book.sogou.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9998",
+    "sourceName": "搜狗阅读",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646908829.866393",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[@class='book-info']/span[1]",
+        "lastChapterTitle": "//a[@class='book-chapter']",
+        "responseFormatType": "html",
+        "bookName": "//a[@class='book-title']",
+        "desc": "//p[@class='book-summary']",
+        "requestInfo": "https://book.sogou.com/dd/search?keyword=%@keyWord&pagenum=%@pageIndex",
+        "host": "https://book.sogou.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class='book-title']/@href",
+        "cover": "//a[@class='book-cover']/img/@src",
+        "validConfig": "",
+        "list": "//ul[contains(@class, 'list-book')]/li",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "status": "//div[@class='book-info']/span[2]/text()"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://book.sogou.com",
+        "list": "//ul[@class='index-list']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

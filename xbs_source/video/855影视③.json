@@ -1,0 +1,200 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "weight": "90000",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.0855p.com",
+        "list": "//ul[@class=\"macplus-content__playlist column8 clearfix fade in active\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "855影视③",
+    "sourceType": "video",
+    "sourceUrl": "https://www.0855p.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1634221735.520961",
+    "searchBook": {
+        "author": "//div[@class=\"detail\"]/p[1]/span/following-sibling::text()",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://www.0855p.com/vod/search.html?wd=%@keyWord",
+        "bookName": "//div[@class=\"detail\"]/h3",
+        "detailUrl": "//div[@class=\"thumb\"]/a/@href",
+        "host": "https://www.0855p.com",
+        "cover": "//div[@class=\"thumb\"]/a/@data-original",
+        "responseFormatType": "html",
+        "list": "//ul[@class=\"macplus-vodlist__media sea col-pd clearfix\"]/li",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://www.0855p.com",
+        "content": "@js:\nlet url = result.match(/\"link_pre\":\"(.*?)\",\"url\":\"(.*?)\"/)[2];\n\nreturn url.replace(/[\\\\]/g,'');",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "99mh99",
+    "desc": "蓝光👾",
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "大全": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class=\"macplus-vodlist__bag\"]//span",
+            "bookName": "//div[@class=\"macplus-vodlist__bag\"]/a/@title",
+            "requestInfo": "@js:\r\rlet url = 'https://www.0855p.com/vod/show/area/' + params.filters.area + '/by/' + params.filters.order + '/id/' + params.filters.id+'/page/'+params.pageIndex+'/year/'+params.filters.year+'.html';\r\r\rurl = encodeURI(url);\r\rreturn {'url':url,\r\r'httpHeaders':{'UserAgent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'\r,\r\r'cookie': 'recente=%5B%7B%22vod_name%22%3A%22%E5%8D%9A%E4%BA%BA%E4%BC%A0%E7%81%AB%E5%BD%B1%E5%BF%8D%E8%80%85%E6%96%B0%E6%97%B6%E4%BB%A3%22%2C%22vod_url%22%3A%22https%3A%2F%2Fwww.0855ss.com%2Fx%2F6169-1-1.html%22%2C%22vod_part%22%3A%22%E7%AC%AC01%E9%9B%86%22%7D%2C%7B%22vod_name%22%3A%22%E7%81%AB%E5%BD%B1%E5%BF%8D%E8%80%85%22%2C%22vod_url%22%3A%22https%3A%2F%2Fwww.0855ss.com%2Fx%2F2194-1-1.html%22%2C%22vod_part%22%3A%22%E7%AC%AC01%E9%9B%86%22%7D%2C%7B%22vod_name%22%3A%22%E6%AD%A6%E7%A5%9E%E4%B8%BB%E5%AE%B0%22%2C%22vod_url%22%3A%22https%3A%2F%2Fwww.0855ss.com%2Fx%2F13616-1-1.html%22%2C%22vod_part%22%3A%22%E7%AC%AC1%E9%9B%86%22%7D%2C%7B%22vod_name%22%3A%22%E6%96%97%E7%A0%B4%E8%8B%8D%E7%A9%B9%E7%AC%AC%E5%9B%9B%E5%AD%A3%22%2C%22vod_url%22%3A%22https%3A%2F%2Fwww.0855ss.com%2Fx%2F15310-1-1.html%22%2C%22vod_part%22%3A%22%E7%AC%AC01%E9%9B%86%22%7D%5D; PHPSESSID=k55hc4rbhse1mhp7ueff9d8jt3'\r\r}\r};",
+            "host": "https://www.0855p.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "电影",
+                                "value": "1"
+                            },
+                            {
+                                "title": "电视剧",
+                                "value": "2"
+                            },
+                            {
+                                "title": "动漫",
+                                "value": "4"
+                            },
+                            {
+                                "title": "综艺",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "id"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "大陆",
+                                "value": "大陆"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "日本"
+                            },
+                            {
+                                "title": "韩国",
+                                "value": "韩国"
+                            },
+                            {
+                                "title": "泰国",
+                                "value": "泰国"
+                            },
+                            {
+                                "title": "香港",
+                                "value": "香港"
+                            },
+                            {
+                                "title": "台湾",
+                                "value": "台湾"
+                            },
+                            {
+                                "title": "美国",
+                                "value": "美国"
+                            },
+                            {
+                                "title": "英国",
+                                "value": "英国"
+                            },
+                            {
+                                "title": "印度",
+                                "value": "印度"
+                            }
+                        ],
+                        "key": "area"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "all"
+                            },
+                            {
+                                "title": "2021",
+                                "value": "2021"
+                            },
+                            {
+                                "title": "2020",
+                                "value": "2020"
+                            },
+                            {
+                                "title": "2019",
+                                "value": "2019"
+                            },
+                            {
+                                "title": "2018",
+                                "value": "2018"
+                            },
+                            {
+                                "title": "2017",
+                                "value": "2017"
+                            },
+                            {
+                                "title": "2016",
+                                "value": "2016"
+                            },
+                            {
+                                "title": "2015",
+                                "value": "2015"
+                            }
+                        ],
+                        "key": "year"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "按时间",
+                                "value": "time"
+                            },
+                            {
+                                "title": "人气",
+                                "value": "hits"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "detailUrl": "//div[@class=\"macplus-vodlist__bag\"]/a/@href",
+            "validConfig": "",
+            "cover": "//div[@class=\"macplus-vodlist__bag\"]/a/@data-original",
+            "parserID": "DOM",
+            "list": "//div[@class=\"macplus-vodlist clearfix\"]/li",
+            "status": "/div[@class=\"macplus-vodlist__bag\"]//span"
+        }
+    }
+}

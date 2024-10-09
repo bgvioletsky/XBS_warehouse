@@ -1,0 +1,75 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://manbo.hongrenshuo.com.cn/",
+        "JSParser": "function functionName(config, params, result)\n{\n\treturn JSON.stringify({'urls':params.queryInfo.url});\n}",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "排行": {
+            "cat": "$..categoryLabels[*].name",
+            "lastChapterTitle": "lastSetTitle",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "desc",
+            "requestInfo": "https://manbo.hongrenshuo.com.cn/api/v1/rank/drama/h5/common/detail",
+            "host": "https://manbo.hongrenshuo.com.cn/",
+            "actionID": "bookWorld",
+            "detailUrl": "radioDramaIdStr",
+            "cover": "largePic",
+            "validConfig": "",
+            "list": "b/radioDramaRespList",
+            "parserID": "DOM"
+        }
+    },
+    "shudanList": {},
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "克拉漫播",
+    "sourceUrl": "https://manbo.hongrenshuo.com.cn/",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1638643073.703706",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://manbo.hongrenshuo.com.cn/api/v11/radio/drama/h5/detail?radioDramaId=%@result",
+        "title": "setTitle",
+        "host": "https://manbo.hongrenshuo.com.cn/",
+        "list": "b/setRespList",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "setAudioUrl"
+    }
+}

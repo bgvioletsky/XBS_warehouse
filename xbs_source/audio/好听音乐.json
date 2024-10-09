@@ -1,0 +1,142 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "content": "//audio[contains(@id, 'audio') and @src]/@src",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':''};",
+        "host": "http://m.htqyy.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "f": {
+            "author": "//em/text()",
+            "responseFormatType": "html",
+            "bookName": "//a/text()",
+            "requestInfo": "%@filter",
+            "host": "http://m.htqyy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "榜单",
+                                "value": "/top"
+                            },
+                            {
+                                "title": "热门",
+                                "value": "/album"
+                            },
+                            {
+                                "title": "纯音乐",
+                                "value": "/album/index/1"
+                            },
+                            {
+                                "title": "新世纪",
+                                "value": "/album/index/2"
+                            },
+                            {
+                                "title": "钢琴曲集",
+                                "value": "/album/index/3"
+                            },
+                            {
+                                "title": "减压放松",
+                                "value": "/album/index/4"
+                            },
+                            {
+                                "title": "中国音乐",
+                                "value": "/album/index/5"
+                            },
+                            {
+                                "title": "天籁之音",
+                                "value": "/album/index/6"
+                            },
+                            {
+                                "title": "影视原声",
+                                "value": "/album/index/7"
+                            },
+                            {
+                                "title": "电子音乐",
+                                "value": "/album/index/8"
+                            },
+                            {
+                                "title": "背景音乐",
+                                "value": "/album/index/9"
+                            },
+                            {
+                                "title": "手机铃声",
+                                "value": "/album/index/10"
+                            },
+                            {
+                                "title": "流行金曲",
+                                "value": "/album/index/11"
+                            },
+                            {
+                                "title": "胎教音乐",
+                                "value": "/album/index/12"
+                            },
+                            {
+                                "title": "佛教音乐",
+                                "value": "/album/index/13"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//a/@href",
+            "validConfig": "",
+            "cover": "//img/@src",
+            "parserID": "DOM",
+            "list": "//li[@class='line']"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "http://m.htqyy.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1501",
+    "sourceName": "好听音乐",
+    "sourceType": "audio",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639702755.787397",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()|@js:\nlet arr = result.split('\\n');\nlet len = arr.length;\nlet arr2 = [];\nfor(i=0; i<len; i++) {\n\tlet str = arr[i].trim();\n\tif(str.length>0)\n\t\tarr2.push(str);\n}\nreturn arr2.join(' - ');",
+        "host": "http://m.htqyy.com",
+        "list": "//div[@class='list']//div[@class='info']",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

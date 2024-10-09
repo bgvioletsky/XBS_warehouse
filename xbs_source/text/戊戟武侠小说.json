@@ -1,0 +1,131 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]//text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 6
+        },
+        "host": "https://ajnnan.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://ajnnan.com",
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@id=\"intro\"]",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//span[1]",
+            "author": "//span[4]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[3]",
+            "bookName": "//span[2]/a",
+            "requestInfo": "@js:\n\n\nlet url =config.host+\"/\"+params.filters.type+ \"_\"+ params.pageIndex+\".html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://ajnnan.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[2]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻小说",
+                                "value": "xuanhuanxiaoshuo/1"
+                            },
+                            {
+                                "title": "修真小说",
+                                "value": "xiuzhenxiaoshuo/2"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "dushixiaoshuo/3"
+                            },
+                            {
+                                "title": "穿越小说",
+                                "value": "chuanyuexiaoshuo/4"
+                            },
+                            {
+                                "title": "网游小说",
+                                "value": "wangyouxiaoshuo/5"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "kehuanxiaoshuo/6"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "qitaxiaoshuo/7"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"l\"]//li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://ajnnan.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "999",
+    "sourceName": "戊戟武侠小说",
+    "desc": "😍-自用",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649256235.227346",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]",
+        "author": "//span[3]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//span[4]",
+        "bookName": "//span[2]/a",
+        "requestInfo": "@js:\nlet url= config.host+\"/search.html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'name':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://ajnnan.com",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"novelslist2\"]//li[position()>1]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://ajnnan.com",
+        "list": "//div[@id=\"list\"]/dl/dd[position()>12]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

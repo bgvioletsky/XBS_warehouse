@@ -1,0 +1,67 @@
+{
+    "chapterContent": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar beginChar = '<div class=\"box_box\">';\n\tvar endChar1 = '扫描下面二维码或者打开微信添加公共号名：';\n\tvar endChar2 = '<div align=\"center\">';\t\n\n\tlet index = resStr.indexOf(beginChar);\n\tif(index>0) \n\t{\n\t\tlet subStr = resStr.substr(index);\t\n\t\tindex = subStr.indexOf(endChar1);\n\t\tif(index<0)\n\t\t\tindex = subStr.indexOf(endChar2);\n\t\tif(index>0)\n\t\t\treturn {'content':subStr.substr(0, index), 'removeHtmlKeys':'content'};\n\t}\n\n\treturn undefined;\n}",
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://www.yunxs.com",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'http://www.yunxs.com' + params.queryInfo.url;\n}",
+        "parserID": "JS"
+    },
+    "enable": 0,
+    "authorId": "1600862082.628709",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "JS"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "JS"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.yunxs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "JS"
+    },
+    "weight": "72",
+    "sourceName": "云中书库",
+    "miniAppVersion": "2.52.0",
+    "password": "Baby",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "JS"
+    },
+    "lastModifyTime": "1637330453.862455",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "JS"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "JS"
+    },
+    "searchBook": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar index = resStr.indexOf('ul_b_list');\n\tif(index<=0)\n\t\treturn undefined;\n\tvar subStr = resStr.substr(index);\n\n\tvar coverPre = 'http://www.yunxs.com';\n\tvar result = {};\n\tvar list = [];\n\tvar reg = /<li(?:\\S|\\s)*?<h2(?:\\S|\\s)*?<span>(.*?)<(?:\\S|\\s)*?<a.*?href=\"(.*?)\">(.*?)<(?:\\S|\\s)*?<img.*? src=\"(.*?)\"(?:\\S|\\s)*?作者：(.*?)&nbsp/gim;\n\twhile(tem=reg.exec(subStr))\n\t{\n\t\tlet bookInfo = {};\n\t\tbookInfo.cat = tem[1];\n\t\tbookInfo.bookId = tem[2];\n      \t\tbookInfo.bookName = tem[3];\n      \t\tbookInfo.cover = coverPre  + tem[4];\n     \t\tbookInfo.author = tem[5];\n\t\tlist.push(bookInfo);\n    \t}\n\n\tresult.list = list;\n\tresult.more = false;\n\tresult.success = true;\n\treturn result;\n}",
+        "validConfig": "",
+        "actionID": "searchBook",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://www.yunxs.com",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'http://www.yunxs.com/plus/search.php?kwtype=0&searchtype=&q=' + encodeURI(params.keyWord);\n}",
+        "parserID": "JS"
+    },
+    "chapterList": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar beginIndex = resStr.indexOf('list_box');\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = resStr.substr(beginIndex + 8);\n\n\t\tvar list = [];\n\t\tvar reg = /<li>(?:\\S|\\s)*?href=\"(.*?)\".*?>(.*?)</gim;\n\t\twhile(tem=reg.exec(subStr))\n\t\t{\n\t\t\tlet chapterInfo = {};\n\t\t\tchapterInfo.url =  params.queryInfo.bookId + tem[1];\n\t\t\tchapterInfo.title = tem[2];\n\t\t\tlist.push(chapterInfo);\n\t\t}\n\t\treturn {'list':list};\n\t}\n\treturn undefined;\n}",
+        "validConfig": "",
+        "actionID": "chapterList",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "http://www.yunxs.com",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'http://www.yunxs.com' + params.queryInfo.bookId;\n}",
+        "parserID": "JS"
+    },
+    "sourceType": "text"
+}

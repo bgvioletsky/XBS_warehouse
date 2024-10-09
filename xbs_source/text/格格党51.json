@@ -1,0 +1,104 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"nr1\"] ||@js: return result. replace(/已改网址.*/, \"\").replace(/51格格党聊.*/, \"\");",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://m.51ggd.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一章')]/@href||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"-\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://m.51ggd.com",
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"intro_info\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//span[1]",
+            "responseFormatType": "html",
+            "bookName": "//td[2]//a[1]",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.51ggd.com/lc/${_type}_${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.51ggd.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[2]//a[1]/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻::1\n修真::2\n言情::3\n穿越::4\n青春::5\n网游::6\n科幻::7\n恐怖::8\n耽美::9"
+            },
+            "cover": "//img/@src",
+            "list": "//div[@style=\"margin-top:45px;\"]/table",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//span[2]"
+        }
+    },
+    "sourceUrl": "https://m.51ggd.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "格格党51",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654951375.328590",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//div[1]/span[3]",
+        "author": "//div[2]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[3]/a",
+        "bookName": "//div[1]/span[2]/a",
+        "requestInfo": "@js:\nlet url = 'https://m.51ggd.com/modules/article/waps.php';\nreturn {'url':url, 'POST':true,'httpParams':{'searchkey':params.keyWord, 't_btnsearch':'','searchtype':'articlename'}};",
+        "host": "https://m.51ggd.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[1]/span[2]/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"waps_one\"]",
+        "parserID": "DOM",
+        "status": "//div[1]/span[1]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "requestInfo": "@js:\n\nlet id = params.queryInfo.detailUrl.match(/(\\d+)(?!.*\\d)/g)[0];\n\nlet url = config.host+\"/xs/\"+id+\"/\"+ params.pageIndex+\"/\";\nreturn url",
+        "title": "//a/text()",
+        "moreKeys": {
+            "maxPage": 70
+        },
+        "host": "https://m.51ggd.com",
+        "list": "//ul[@class=\"chapter\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "sourceType": "text"
+}

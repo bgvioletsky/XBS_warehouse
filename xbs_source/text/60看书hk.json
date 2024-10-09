@@ -1,0 +1,361 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://60ks.net/",
+        "content": "//div[@id='content']",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "书库": {
+            "cat": "//dd[2]/span[3]",
+            "author": "//dd[2]/span[1]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//dd[3]/a[2]",
+            "bookName": "//dd[1]/h3/a",
+            "desc": "//dd[3]",
+            "requestInfo": "@js:\nreturn 'http://www.60ks.net/bookstore/' + params.filters.genre + '/' + params.filters.order + '-' + params.filters.letter + '-' + params.filters.wordcount + '-0-0-' + params.filters.status + '-' + params.filters.sort + '-' + params.pageIndex + '.html';",
+            "host": "http://60ks.net/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "quanbu",
+                                "title": "全部小说"
+                            },
+                            {
+                                "value": "xuanhuan",
+                                "title": "玄幻小说"
+                            },
+                            {
+                                "value": "xianxia",
+                                "title": "仙侠小说"
+                            },
+                            {
+                                "value": "dushi",
+                                "title": "都市小说"
+                            },
+                            {
+                                "value": "lishi",
+                                "title": "历史小说"
+                            },
+                            {
+                                "value": "xuanyi",
+                                "title": "悬疑小说"
+                            },
+                            {
+                                "value": "wangyou",
+                                "title": "网游小说"
+                            },
+                            {
+                                "value": "kehuan",
+                                "title": "科幻小说"
+                            },
+                            {
+                                "value": "jingsong",
+                                "title": "惊悚小说"
+                            },
+                            {
+                                "value": "chuanyue",
+                                "title": "穿越小说"
+                            },
+                            {
+                                "value": "tongren",
+                                "title": "同人小说"
+                            }
+                        ],
+                        "key": "genre"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "0",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "1",
+                                "title": "30万以下"
+                            },
+                            {
+                                "value": "2",
+                                "title": "30万-50万"
+                            },
+                            {
+                                "value": "3",
+                                "title": "50万-100万"
+                            },
+                            {
+                                "value": "4",
+                                "title": "100万-200万"
+                            },
+                            {
+                                "value": "5",
+                                "title": "200万以上"
+                            }
+                        ],
+                        "key": "wordcount"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "0",
+                                "title": "不限"
+                            },
+                            {
+                                "value": "1",
+                                "title": "连载"
+                            },
+                            {
+                                "value": "2",
+                                "title": "完本"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "default",
+                                "title": "默认"
+                            },
+                            {
+                                "value": "allvisit",
+                                "title": "总点击"
+                            },
+                            {
+                                "value": "monthvisit",
+                                "title": "月点击"
+                            },
+                            {
+                                "value": "weekvisit",
+                                "title": "周点击"
+                            },
+                            {
+                                "value": "dayvisit",
+                                "title": "日点击"
+                            },
+                            {
+                                "value": "allvote",
+                                "title": "总推荐"
+                            },
+                            {
+                                "value": "monthvote",
+                                "title": "月推荐"
+                            },
+                            {
+                                "value": "weekvote",
+                                "title": "周推荐"
+                            },
+                            {
+                                "value": "dayvote",
+                                "title": "日推荐"
+                            },
+                            {
+                                "value": "goodnum",
+                                "title": "总收藏"
+                            },
+                            {
+                                "value": "size",
+                                "title": "字数"
+                            },
+                            {
+                                "value": "postdate",
+                                "title": "入站时间"
+                            },
+                            {
+                                "value": "lastupdate",
+                                "title": "更新时间"
+                            }
+                        ],
+                        "key": "order"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "0",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "a",
+                                "title": "A"
+                            },
+                            {
+                                "value": "b",
+                                "title": "B"
+                            },
+                            {
+                                "value": "c",
+                                "title": "C"
+                            },
+                            {
+                                "value": "d",
+                                "title": "D"
+                            },
+                            {
+                                "value": "e",
+                                "title": "E"
+                            },
+                            {
+                                "value": "f",
+                                "title": "F"
+                            },
+                            {
+                                "value": "g",
+                                "title": "G"
+                            },
+                            {
+                                "value": "h",
+                                "title": "H"
+                            },
+                            {
+                                "value": "i",
+                                "title": "I"
+                            },
+                            {
+                                "value": "j",
+                                "title": "J"
+                            },
+                            {
+                                "value": "k",
+                                "title": "K"
+                            },
+                            {
+                                "value": "l",
+                                "title": "L"
+                            },
+                            {
+                                "value": "m",
+                                "title": "M"
+                            },
+                            {
+                                "value": "n",
+                                "title": "N"
+                            },
+                            {
+                                "value": "o",
+                                "title": "O"
+                            },
+                            {
+                                "value": "p",
+                                "title": "P"
+                            },
+                            {
+                                "value": "r",
+                                "title": "R"
+                            },
+                            {
+                                "value": "s",
+                                "title": "S"
+                            },
+                            {
+                                "value": "t",
+                                "title": "T"
+                            },
+                            {
+                                "value": "q",
+                                "title": "Q"
+                            },
+                            {
+                                "value": "u",
+                                "title": "U"
+                            },
+                            {
+                                "value": "v",
+                                "title": "V"
+                            },
+                            {
+                                "value": "w",
+                                "title": "W"
+                            },
+                            {
+                                "value": "x",
+                                "title": "X"
+                            },
+                            {
+                                "value": "y",
+                                "title": "Y"
+                            },
+                            {
+                                "value": "z",
+                                "title": "Z"
+                            }
+                        ],
+                        "key": "letter"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "0",
+                                "title": "倒序"
+                            },
+                            {
+                                "value": "1",
+                                "title": "正序"
+                            }
+                        ],
+                        "key": "sort"
+                    }
+                ]
+            },
+            "cover": "//dt/a/img/@src",
+            "validConfig": "",
+            "list": "//div[@id='sitebox']/dl",
+            "parserID": "DOM",
+            "detailUrl": "//dd[1]/h3/a/@href",
+            "status": "//dd[2]/span[2]"
+        }
+    },
+    "loginUrl": "http://60ks.net/login.php",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1111",
+    "sourceName": "60看书hk",
+    "sourceUrl": "http://60ks.net/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650361431.862235",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "requestInfo": "http://60ks.net/modules/article/search.php",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://60ks.net/",
+        "list": "//div[@id='chapterlist']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

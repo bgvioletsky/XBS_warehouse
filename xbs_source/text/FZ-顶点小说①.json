@@ -1,0 +1,68 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//dd[@id=\"contents\"]",
+        "host": "http://www.ddxsku.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.ddxsku.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-顶点小说①",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357945.024758",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[3]",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "status": "//td[6]",
+        "requestInfo": "search/?searchkey=%@keyWord",
+        "bookName": "//td[1]/a",
+        "detailUrl": "//td[1]/a/@href",
+        "host": "http://www.ddxsku.com",
+        "list": "//dl[@id=\"content\"]/dd/table//tr[position()>1]",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//div[@class=\"bdsub\"]/dl/dd[2]/h3[2]|@js:return result.replace('更新时间：','')",
+        "title": "//a",
+        "host": "http://www.ddxsku.com",
+        "list": "//table[@id=\"at\"]/tr/td",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

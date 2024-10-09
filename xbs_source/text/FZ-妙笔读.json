@@ -1,0 +1,74 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"chaptercontent\"]/text()",
+        "host": "http://www.mbidu.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.mbidu.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-妙笔读",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357856.130054",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class=\"block_txt\"]/p[3]|@js:return result.replace('类型：','').trim()",
+        "author": "//div[@class=\"block_txt\"]/p[2]|@js:return result.replace('作者：','').trim()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class=\"update\"]/a",
+        "bookName": "//div[@class=\"block_txt\"]/p[1]/a/h2|@js:return result.trim()",
+        "requestInfo": "search/result.html?searchkey=%@keyWord",
+        "host": "http://www.mbidu.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"block_txt\"]/p[1]/a/@href",
+        "cover": "//div[@class=\"block_img\"]/a/img/@src|@js:\nreturn config.host+result",
+        "validConfig": "",
+        "list": "//div[@class=\"block\"]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 0
+        },
+        "host": "http://www.mbidu.com/",
+        "list": "//div[@class=\"mulu\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class=\"col-xs-8\"]/ul[@class=\"list-group\"]/li[6]/a[1]/@href"
+    },
+    "sourceType": "text"
+}

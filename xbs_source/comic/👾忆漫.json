@@ -1,0 +1,72 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "content": "//div[@class=\"view-main-1 readForm\"]//img/@data-src",
+        "JSParser": "function functionName(config, jsparams, result) {\n\rlet url=result.content\nlet b =url.split(\"\\n\");\nlet a=\"\";\nfor (let i = 0; i < b.length; i++){\n    a += encodeURI(b[i])+\"\\n\";\n}\n\n\nreturn JSON.stringify({'urls': a.split('\\n'), 'httpHeaders': {\r            \"UserAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36\",\r            \"referer\": config.host \r        }});\n\r}",
+        "requestInfo": "@js: \nurl=params.queryInfo.url;\nreturn {\"url\":url,\"httpHeaders\":{\"UserAgent\":\"Mozilla\\/5.0 (Linux; Android 6.0; Nexus 5 Build\\/MRA58N) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/94.0.4606.81 Mobile Safari\\/537.36 Edg\\/94.0.992.50\"},\"POST\":false}",
+        "host": "https://m.yimmh.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "👾忆漫",
+    "sourceUrl": "https://m.yimmh.com",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637893894.393331",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "(//div[@class=\"book-list-info\"]/p//span)[1]||@js:\nreturn result.replace(/作者：/,\"\");",
+        "responseFormatType": "html",
+        "bookName": "//div[@class=\"book-list-cover\"]/a/@title",
+        "desc": "//div[@class=\"book-list-info\"]/a/p[2]",
+        "requestInfo": "@js: \nurl=\"https://m.yimmh.com/search?keyword=\"+encodeURI(params.keyWord);\nreturn {\"url\":url,\"httpHeaders\":{\"UserAgent\":\"Mozilla\\/5.0 (Linux; Android 6.0; Nexus 5 Build\\/MRA58N) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/94.0.4606.81 Mobile Safari\\/537.36 Edg\\/94.0.992.50\"},\"POST\":false}",
+        "host": "https://m.yimmh.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"book-list-cover\"]/a/@href",
+        "cover": "//div[@class=\"book-list-cover\"]/a/img/@data-original|@js:\nreturn encodeURI(result);",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class=\"book-list\"]/li",
+        "status": "//div[@class=\"book-list-info\"]/p//span[2]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js: \nurl=params.queryInfo.detailUrl;\nreturn {\"url\":url,\"httpHeaders\":{\"UserAgent\":\"Mozilla\\/5.0 (Linux; Android 6.0; Nexus 5 Build\\/MRA58N) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/94.0.4606.81 Mobile Safari\\/537.36 Edg\\/94.0.992.50\"},\"POST\":false}",
+        "title": "//a/@title",
+        "host": "https://m.yimmh.com",
+        "list": "//ul[@class=\"detail-list-1 detail-list-select\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

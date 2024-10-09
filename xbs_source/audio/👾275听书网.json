@@ -1,0 +1,67 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://www.i275.com",
+        "content": "src||@js:\n\nif(result.indexOf(\"m4a\")!=-1 || result.indexOf(\"mp3\")!=-1){\nreturn result;\n}else{\nlet src_url = result.split('*');\n//console.log(src_url);\nlet list = [];\n\nfor (var i = 0; i <src_url.length; i++) {\n\tlet temp = String.fromCharCode(src_url[i]);\n\tlist.push(temp);\n}\n\nres = list.join(\"\");\nreturn res;\n\n}",
+        "actionID": "chapterContent"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1527",
+    "sourceName": "👾275听书网",
+    "sourceUrl": "https://www.i275.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1648444414.868466",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[@class='actor']/text()[1]|@replace:,",
+        "responseFormatType": "html",
+        "bookName": "//p[@class='name']",
+        "desc": "//span[@class='bgb']/p[@class='other']",
+        "requestInfo": "/pc/index/search.html?keyword=%@keyWord",
+        "host": "https://www.i275.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class='yun-link']/@href",
+        "cover": "//div[@class='img']/img/@data-original",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@id='yun-list']/li"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.i275.com",
+        "list": "//ul[@class='playul']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href||@js:\n\nlet res = result.match(/play\\/(\\d+)\\/(\\d+)/)\nlet host=[\"https://m.i275.com\",\"https://www.tingxiaoshuo.cc\"]\n\n//let i=Math.round(Math.random());\n\nlet url = host[0]+\"/pc/index/getchapterurl/bookId/\"+res[1]+\"/chapterId/\"+res[2]+\".html\"\nreturn url"
+    }
+}

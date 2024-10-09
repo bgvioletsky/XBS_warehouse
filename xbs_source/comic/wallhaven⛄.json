@@ -1,0 +1,93 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "desc": "壁纸",
+    "weight": "10005",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://wallhaven.cc",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n\tlet chapterInfo = {};\n\tchapterInfo.title = params.queryInfo.bookName;\n\tchapterInfo.url = params.queryInfo.detailUrl;\n      //chapterInfo.updateTime = params.queryInfo.status;\n\tlist.push(chapterInfo);\n\n\treturn {'list':list};\n}",
+        "actionID": "chapterList"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "wallhaven⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://wallhaven.cc",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642048836.871287",
+    "searchBook": {
+        "responseFormatType": "html",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n      for(let i=0;i<result.list.length;i++){\n            let item = result.list[i];\n            item.bookName = params.keyWord+(config.moreKeys.pageSize*(params.pageIndex-1)+i).toString()\n            list.push(item);\n\n      }\n\t\n\treturn {'list':list};\n}",
+        "requestInfo": "/search?q=%@keyWord&page=%@pageIndex",
+        "host": "https://wallhaven.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//a//@href",
+        "moreKeys": {
+            "pageSize": 24
+        },
+        "validConfig": "",
+        "list": "//section[@class=\"thumb-listing-page\"]/ul//li",
+        "cover": "//img//@data-src",
+        "parserID": "DOM",
+        "status": "//div/span"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//img[@id=\"wallpaper\"]/@src ||@js:\nlet reg = /http[^\\s]+[jpg|png|webp|bmp]/gi;\nlet tem = result.match(reg);\n\nreturn tem;",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\t//params.nativeTool.log(result);\n\treturn result.content.join('\\n');\n}",
+        "host": "https://wallhaven.cc",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://wallhaven.cc",
+        "cat": "//div[@data-storage-id=\"showcase-info\"]//dl/dd[2]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//img[@id=\"wallpaper\"]/@src"
+    },
+    "bookWorld": {
+        "首页": {
+            "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n      for(let i=0;i<result.list.length;i++){\n            let item = result.list[i];\n            item.bookName = params.filter+(config.moreKeys.pageSize*(params.pageIndex-1)+i).toString()\n            list.push(item);\n\n      }\n\t\n\treturn {'list':list};\n}",
+            "responseFormatType": "html",
+            "requestInfo": "/%@filter?page=%@pageIndex",
+            "host": "https://wallhaven.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "//a//@href",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "Latest::latest\nHot::hot\nToplist::toplist\nRandom::random"
+            },
+            "validConfig": "",
+            "cover": "//img//@data-src",
+            "list": "//section[@class=\"thumb-listing-page\"]/ul//li",
+            "parserID": "DOM",
+            "status": "//div/span"
+        }
+    }
+}

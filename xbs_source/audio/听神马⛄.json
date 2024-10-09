@@ -1,0 +1,189 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.tingsm.com",
+        "list": "//ul[@class=\"compress\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceName": "听神马⛄",
+    "sourceType": "audio",
+    "sourceUrl": "https://www.tingsm.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642697776.004847",
+    "searchBook": {
+        "cat": "//p[3]",
+        "author": "//p[2] | //p[4]",
+        "responseFormatType": "html",
+        "bookName": "//p[1]//a",
+        "requestInfo": "/search.php?page=%@pageIndex&searchword=%@keyWord",
+        "host": "https://www.tingsm.com",
+        "actionID": "searchBook",
+        "detailUrl": "//p[1]//a/@href",
+        "cover": "//img[@class=\"imgc\"]/@src ||@js:\nreturn config.host + result;",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[contains(@class,'clist')]//li",
+        "moreKeys": {
+            "pageSize": 16
+        },
+        "status": "//p[5]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\n\nvar Base64 = {\n\t_keyStr: \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\",\n\tencode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i, s, o, u, a;\n\t\tvar f = 0;\n\t\te = Base64._utf8_encode(e);\n\t\twhile (f < e.length) {\n\t\t\tn = e.charCodeAt(f++);\n\t\t\tr = e.charCodeAt(f++);\n\t\t\ti = e.charCodeAt(f++);\n\t\t\ts = n >> 2;\n\t\t\to = (n & 3) << 4 | r >> 4;\n\t\t\tu = (r & 15) << 2 | i >> 6;\n\t\t\ta = i & 63;\n\t\t\tif (isNaN(r)) {\n\t\t\t\tu = a = 64\n\t\t\t} else if (isNaN(i)) {\n\t\t\t\ta = 64\n\t\t\t}\n\t\t\tt = t + this._keyStr.charAt(s) + this._keyStr.charAt(o) + this._keyStr.charAt(u) + this._keyStr.charAt(a)\n\t\t}\n\t\treturn t\n\t},\n\tdecode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n, r, i;\n\t\tvar s, o, u, a;\n\t\tvar f = 0;\n\t\te = e.replace(/[^A-Za-z0-9+/=]/g, \"\");\n\t\twhile (f < e.length) {\n\t\t\ts = this._keyStr.indexOf(e.charAt(f++));\n\t\t\to = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tu = this._keyStr.indexOf(e.charAt(f++));\n\t\t\ta = this._keyStr.indexOf(e.charAt(f++));\n\t\t\tn = s << 2 | o >> 4;\n\t\t\tr = (o & 15) << 4 | u >> 2;\n\t\t\ti = (u & 3) << 6 | a;\n\t\t\tt = t + String.fromCharCode(n);\n\t\t\tif (u != 64) {\n\t\t\t\tt = t + String.fromCharCode(r)\n\t\t\t}\n\t\t\tif (a != 64) {\n\t\t\t\tt = t + String.fromCharCode(i)\n\t\t\t}\n\t\t}\n\t\tt = Base64._utf8_decode(t);\n\t\treturn t\n\t},\n\t_utf8_encode: function(e) {\n\t\te = e.replace(/rn/g, \"n\");\n\t\tvar t = \"\";\n\t\tfor (var n = 0; n < e.length; n++) {\n\t\t\tvar r = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r)\n\t\t\t} else if (r > 127 && r < 2048) {\n\t\t\t\tt += String.fromCharCode(r >> 6 | 192);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t} else {\n\t\t\t\tt += String.fromCharCode(r >> 12 | 224);\n\t\t\t\tt += String.fromCharCode(r >> 6 & 63 | 128);\n\t\t\t\tt += String.fromCharCode(r & 63 | 128)\n\t\t\t}\n\t\t}\n\t\treturn t\n\t},\n\t_utf8_decode: function(e) {\n\t\tvar t = \"\";\n\t\tvar n = 0;\n\t\tvar r = c1 = c2 = 0;\n\t\twhile (n < e.length) {\n\t\t\tr = e.charCodeAt(n);\n\t\t\tif (r < 128) {\n\t\t\t\tt += String.fromCharCode(r);\n\t\t\t\tn++\n\t\t\t} else if (r > 191 && r < 224) {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tt += String.fromCharCode((r & 31) << 6 | c2 & 63);\n\t\t\t\tn += 2\n\t\t\t} else {\n\t\t\t\tc2 = e.charCodeAt(n + 1);\n\t\t\t\tc3 = e.charCodeAt(n + 2);\n\t\t\t\tt += String.fromCharCode((r & 15) << 12 | (c2 & 63) << 6 | c3 & 63);\n\t\t\t\tn += 3\n\t\t\t}\n\t\t}\n\t\treturn t\n\t}\n}\n\nlet base64decode = Base64.decode;\nlet reg = /now=[\\s\\S]*?\\\"([^\"]*)\\\"[\\s\\S]*?;/gi;\nlet tem =  reg.exec(result);\n\nreturn Base64.decode(tem[1]);",
+        "host": "https://www.tingsm.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "desc": "Ks🔍✨",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "//p[3]",
+            "author": "//p[2] | //p[4]",
+            "responseFormatType": "html",
+            "bookName": "//p[1]//a",
+            "requestInfo": "/booklist/%@filter-%@pageIndex.html",
+            "host": "https://www.tingsm.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[1]//a/@href",
+            "cover": "//img/@src ||@js:\nreturn config.host + result.split('\\n')[0];",
+            "moreKeys": {
+                "pageSize": 16,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": 1
+                            },
+                            {
+                                "title": "武侠",
+                                "value": 2
+                            },
+                            {
+                                "title": "都市",
+                                "value": 3
+                            },
+                            {
+                                "title": "言情",
+                                "value": 4
+                            },
+                            {
+                                "title": "科幻",
+                                "value": 5
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": 6
+                            },
+                            {
+                                "title": "惊悚",
+                                "value": 7
+                            },
+                            {
+                                "title": "历史",
+                                "value": 8
+                            },
+                            {
+                                "title": "军事",
+                                "value": 9
+                            },
+                            {
+                                "title": "推理",
+                                "value": 10
+                            },
+                            {
+                                "title": "广播",
+                                "value": 11
+                            },
+                            {
+                                "title": "儿童",
+                                "value": 12
+                            },
+                            {
+                                "title": "财经",
+                                "value": 13
+                            },
+                            {
+                                "title": "评书",
+                                "value": 14
+                            },
+                            {
+                                "title": "相声",
+                                "value": 15
+                            },
+                            {
+                                "title": "网游",
+                                "value": 16
+                            },
+                            {
+                                "title": "诗歌",
+                                "value": 17
+                            },
+                            {
+                                "title": "戏曲",
+                                "value": 18
+                            },
+                            {
+                                "title": "粤语",
+                                "value": 19
+                            },
+                            {
+                                "title": "笑话",
+                                "value": 20
+                            },
+                            {
+                                "title": "通俗",
+                                "value": 21
+                            },
+                            {
+                                "title": "百家讲坛",
+                                "value": 22
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "list": "//div[contains(@class,'clist')]//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//p[5]"
+        }
+    }
+}

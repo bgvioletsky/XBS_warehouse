@@ -1,0 +1,204 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "8999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://18av.mm-cg.com",
+        "JSParser": "function functionName(config, params, result) {\n    let list = [];\n    result.match(/src=\\\"[\\w-.?\\=/_]{50,100}/g).forEach((x, i) => {\n        let urls = x.match(/[^\\\"].[\\w-?.=./]+/g);\n        if (urls[1].startsWith('//18av')) {\n            list.push({ 'title': '线路[' + i + ']', 'url': 'https:' + urls[1] })\n        }\n    });\n    return { 'list': list };\n}",
+        "actionID": "chapterList"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "sourceType": "video",
+    "sourceName": "18av",
+    "sourceUrl": "https://18av.mm-cg.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647575394.265720",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn encodeURI(config.host + '/serch_18av/' + params.keyWord + '_' + params.pageIndex + '.htm');",
+        "bookName": "//img/@alt",
+        "detailUrl": "//@href || @js:return result.startsWith(\"//\") ? \"https:\" + result : result;",
+        "host": "https://18av.mm-cg.com",
+        "list": "//span[@id='main']/a[position()<=100]",
+        "cover": "//img/@src",
+        "parserID": "DOM",
+        "responseFormatType": "html"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nlet url = result.match(/https[\\w+:/.]+m3u8/);\nreturn url[0];",
+        "host": "https://18av.mm-cg.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nlet cacheKey = new Date().getTime();\nreturn { 'url': result,'cacheKey':String(cacheKey)};",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "达益张",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "无修正": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "@js:\n\nreturn encodeURI(config.host + '/serch_18av/無修正全部列表_' + params.pageIndex + '.htm');",
+            "bookName": "//img/@alt",
+            "moreKeys": {
+                "pageSize": 100
+            },
+            "host": "https://18av.mm-cg.com",
+            "detailUrl": "//@href || @js:return result.startsWith(\"//\") ? \"https:\" + result : result;",
+            "list": "//span[@id='main']/a[position()<=100]",
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "cover": "//img/@src"
+        },
+        "中文字幕": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "@js:\n\nreturn encodeURI(config.host + '/serch_18av/' + params.filters.path + params.pageIndex + '.htm');",
+            "bookName": "//img/@alt",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "中文字幕全部列表",
+                                "value": "中文字幕全部列表_"
+                            },
+                            {
+                                "title": "新鮮特殊劇情",
+                                "value": "新鮮特殊劇情_"
+                            },
+                            {
+                                "title": "劇情",
+                                "value": "劇情_"
+                            },
+                            {
+                                "title": "不能動手的對象",
+                                "value": "不能動手的對象_"
+                            },
+                            {
+                                "title": "不能發出聲音",
+                                "value": "不能發出聲音_"
+                            },
+                            {
+                                "title": "經典場景",
+                                "value": "經典場景_"
+                            },
+                            {
+                                "title": "強迫劇情",
+                                "value": "強迫劇情_"
+                            },
+                            {
+                                "title": "教師&家教",
+                                "value": "教師家教_"
+                            },
+                            {
+                                "title": "多名女優",
+                                "value": "多名女優_"
+                            },
+                            {
+                                "title": "正妹美女",
+                                "value": "正妹美女_"
+                            },
+                            {
+                                "title": "制服美女",
+                                "value": "制服美女_"
+                            },
+                            {
+                                "title": "無碼中文",
+                                "value": "無碼中文_"
+                            },
+                            {
+                                "title": "沒劇情直接來",
+                                "value": "沒劇情直接來_"
+                            },
+                            {
+                                "title": "誘惑劇情",
+                                "value": "誘惑劇情_"
+                            },
+                            {
+                                "title": "女優出租",
+                                "value": "女優出租_"
+                            },
+                            {
+                                "title": "單人多名",
+                                "value": "單人多名_"
+                            }
+                        ],
+                        "key": "path"
+                    }
+                ]
+            },
+            "host": "https://18av.mm-cg.com",
+            "detailUrl": "//@href || @js:return result.startsWith(\"//\") ? \"https:\" + result : result;",
+            "list": "//span[@id='main']/a[position()<=100]",
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "cover": "//img/@src"
+        },
+        "H动漫": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "@js:\n\nreturn encodeURI(config.host + '/serch_18av/' + params.filters.path + params.pageIndex + '.htm');",
+            "bookName": "//img/@alt",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "H動畫全部列表",
+                                "value": "H動畫全部列表_"
+                            },
+                            {
+                                "title": "無碼H卡通",
+                                "value": "新無碼H卡通_"
+                            },
+                            {
+                                "title": "有修正H動畫",
+                                "value": "有修正H動畫_"
+                            },
+                            {
+                                "title": "3D_H動畫",
+                                "value": "3D_H動畫_"
+                            }
+                        ],
+                        "key": "path"
+                    }
+                ]
+            },
+            "host": "https://18av.mm-cg.com",
+            "detailUrl": "//@href || @js:return result.startsWith(\"//\") ? \"https:\" + result : result;",
+            "list": "//span[@id='main']/a[position()<=100]",
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "cover": "//img/@src"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

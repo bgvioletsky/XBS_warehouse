@@ -1,0 +1,800 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class='content_txt']",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://www.dushu.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 0,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.dushu.com",
+        "cover": "@js:\nreturn 'https://c-ssl.duitang.com/uploads/item/201801/27/20180127195231_452Tm.thumb.1000_0.jpeg';",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[contains(@class, 'txtsummary')]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "儒部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1005"
+                            },
+                            {
+                                "title": "诗经",
+                                "value": "1053"
+                            },
+                            {
+                                "title": "尚书",
+                                "value": "1054"
+                            },
+                            {
+                                "title": "礼经",
+                                "value": "1055"
+                            },
+                            {
+                                "title": "春秋",
+                                "value": "1056"
+                            },
+                            {
+                                "title": "乐经",
+                                "value": "1057"
+                            },
+                            {
+                                "title": "小学",
+                                "value": "1058"
+                            },
+                            {
+                                "title": "四书",
+                                "value": "1059"
+                            },
+                            {
+                                "title": "五经总义",
+                                "value": "1060"
+                            },
+                            {
+                                "title": "孝经",
+                                "value": "1061"
+                            },
+                            {
+                                "title": "语录",
+                                "value": "1062"
+                            },
+                            {
+                                "title": "蒙学",
+                                "value": "1063"
+                            },
+                            {
+                                "title": "修身治家",
+                                "value": "1064"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 4,
+            "parserID": "DOM"
+        },
+        "诗部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1004"
+                            },
+                            {
+                                "title": "诗集",
+                                "value": "1047"
+                            },
+                            {
+                                "title": "词集",
+                                "value": "1048"
+                            },
+                            {
+                                "title": "剧曲",
+                                "value": "1049"
+                            },
+                            {
+                                "title": "楚辞",
+                                "value": "1050"
+                            },
+                            {
+                                "title": "汉赋",
+                                "value": "1051"
+                            },
+                            {
+                                "title": "对联",
+                                "value": "1052"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 3,
+            "parserID": "DOM"
+        },
+        "佛部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1010"
+                            },
+                            {
+                                "title": "经藏",
+                                "value": "1097"
+                            },
+                            {
+                                "title": "论藏",
+                                "value": "1098"
+                            },
+                            {
+                                "title": "律藏",
+                                "value": "1099"
+                            },
+                            {
+                                "title": "续藏",
+                                "value": "1100"
+                            },
+                            {
+                                "title": "杂藏",
+                                "value": "1101"
+                            },
+                            {
+                                "title": "续藏经",
+                                "value": "1102"
+                            },
+                            {
+                                "title": "乾隆藏",
+                                "value": "1103"
+                            },
+                            {
+                                "title": "嘉兴藏",
+                                "value": "1104"
+                            },
+                            {
+                                "title": "藏外",
+                                "value": "1105"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 9,
+            "parserID": "DOM"
+        },
+        "子部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1002"
+                            },
+                            {
+                                "title": "农家",
+                                "value": "1027"
+                            },
+                            {
+                                "title": "兵家",
+                                "value": "1028"
+                            },
+                            {
+                                "title": "法家",
+                                "value": "1029"
+                            },
+                            {
+                                "title": "诸子",
+                                "value": "1030"
+                            },
+                            {
+                                "title": "道释",
+                                "value": "1031"
+                            },
+                            {
+                                "title": "算法",
+                                "value": "1032"
+                            },
+                            {
+                                "title": "杂论",
+                                "value": "1033"
+                            },
+                            {
+                                "title": "笔记",
+                                "value": "1034"
+                            },
+                            {
+                                "title": "类书",
+                                "value": "1035"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        },
+        "丛部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1009"
+                            },
+                            {
+                                "title": "白话二十四史",
+                                "value": "1093"
+                            },
+                            {
+                                "title": "台湾文献丛刊",
+                                "value": "1094"
+                            },
+                            {
+                                "title": "杂别",
+                                "value": "1095"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "1096"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 8,
+            "parserID": "DOM"
+        },
+        "道部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1011"
+                            },
+                            {
+                                "title": "洞神部",
+                                "value": "1106"
+                            },
+                            {
+                                "title": "洞玄部",
+                                "value": "1107"
+                            },
+                            {
+                                "title": "洞真部",
+                                "value": "1108"
+                            },
+                            {
+                                "title": "太平部",
+                                "value": "1109"
+                            },
+                            {
+                                "title": "太清部",
+                                "value": "1110"
+                            },
+                            {
+                                "title": "太玄部",
+                                "value": "1111"
+                            },
+                            {
+                                "title": "正一部",
+                                "value": "1112"
+                            },
+                            {
+                                "title": "续道部",
+                                "value": "1113"
+                            },
+                            {
+                                "title": "道别",
+                                "value": "1114"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 10,
+            "parserID": "DOM"
+        },
+        "集部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1003"
+                            },
+                            {
+                                "title": "总集",
+                                "value": "1036"
+                            },
+                            {
+                                "title": "别集",
+                                "value": "1037"
+                            },
+                            {
+                                "title": "诗话",
+                                "value": "1038"
+                            },
+                            {
+                                "title": "词话",
+                                "value": "1039"
+                            },
+                            {
+                                "title": "文评",
+                                "value": "1040"
+                            },
+                            {
+                                "title": "小说",
+                                "value": "1041"
+                            },
+                            {
+                                "title": "演义",
+                                "value": "1042"
+                            },
+                            {
+                                "title": "话本",
+                                "value": "1043"
+                            },
+                            {
+                                "title": "宝卷",
+                                "value": "1044"
+                            },
+                            {
+                                "title": "谜语",
+                                "value": "1045"
+                            },
+                            {
+                                "title": "笑话",
+                                "value": "1046"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 2,
+            "parserID": "DOM"
+        },
+        "易部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1006"
+                            },
+                            {
+                                "title": "易经",
+                                "value": "1065"
+                            },
+                            {
+                                "title": "术数",
+                                "value": "1066"
+                            },
+                            {
+                                "title": "奇门遁甲",
+                                "value": "1067"
+                            },
+                            {
+                                "title": "八字预测",
+                                "value": "1068"
+                            },
+                            {
+                                "title": "风水预测",
+                                "value": "1069"
+                            },
+                            {
+                                "title": "六壬预测",
+                                "value": "1070"
+                            },
+                            {
+                                "title": "六爻八卦",
+                                "value": "1071"
+                            },
+                            {
+                                "title": "周易梅花",
+                                "value": "1072"
+                            },
+                            {
+                                "title": "紫微斗数",
+                                "value": "1073"
+                            },
+                            {
+                                "title": "相术其他",
+                                "value": "1074"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 5,
+            "parserID": "DOM"
+        },
+        "史部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1001"
+                            },
+                            {
+                                "title": "正史",
+                                "value": "1012"
+                            },
+                            {
+                                "title": "编年",
+                                "value": "1013"
+                            },
+                            {
+                                "title": "野史",
+                                "value": "1014"
+                            },
+                            {
+                                "title": "别史",
+                                "value": "1015"
+                            },
+                            {
+                                "title": "地理",
+                                "value": "1016"
+                            },
+                            {
+                                "title": "传记",
+                                "value": "1017"
+                            },
+                            {
+                                "title": "杂史",
+                                "value": "1018"
+                            },
+                            {
+                                "title": "史评",
+                                "value": "1019"
+                            },
+                            {
+                                "title": "载记",
+                                "value": "1020"
+                            },
+                            {
+                                "title": "政书",
+                                "value": "1021"
+                            },
+                            {
+                                "title": "职官",
+                                "value": "1022"
+                            },
+                            {
+                                "title": "目录",
+                                "value": "1023"
+                            },
+                            {
+                                "title": "纪事本末",
+                                "value": "1024"
+                            },
+                            {
+                                "title": "诏令奏议",
+                                "value": "1025"
+                            },
+                            {
+                                "title": "志存记录",
+                                "value": "1026"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        },
+        "医部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1008"
+                            },
+                            {
+                                "title": "本草类",
+                                "value": "1086"
+                            },
+                            {
+                                "title": "方药类",
+                                "value": "1087"
+                            },
+                            {
+                                "title": "经论类",
+                                "value": "1088"
+                            },
+                            {
+                                "title": "妇幼类",
+                                "value": "1089"
+                            },
+                            {
+                                "title": "四诊类",
+                                "value": "1090"
+                            },
+                            {
+                                "title": "各论类",
+                                "value": "1091"
+                            },
+                            {
+                                "title": "其他医学",
+                                "value": "1092"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 7,
+            "parserID": "DOM"
+        },
+        "艺部": {
+            "author": "//p[1]",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[2]",
+            "requestInfo": "https://www.dushu.com/guoxue/%@filter_%@pageIndex.html",
+            "host": "https://www.dushu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "1007"
+                            },
+                            {
+                                "title": "书法",
+                                "value": "1075"
+                            },
+                            {
+                                "title": "绘画",
+                                "value": "1076"
+                            },
+                            {
+                                "title": "篆刻",
+                                "value": "1077"
+                            },
+                            {
+                                "title": "音乐",
+                                "value": "1078"
+                            },
+                            {
+                                "title": "综合",
+                                "value": "1079"
+                            },
+                            {
+                                "title": "工艺",
+                                "value": "1080"
+                            },
+                            {
+                                "title": "棋技",
+                                "value": "1081"
+                            },
+                            {
+                                "title": "武术",
+                                "value": "1082"
+                            },
+                            {
+                                "title": "器物",
+                                "value": "1084"
+                            },
+                            {
+                                "title": "饮馔",
+                                "value": "1085"
+                            },
+                            {
+                                "title": "草木鸟兽虫鱼",
+                                "value": "1083"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class='book-info']",
+            "_sIndex": 6,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.dushu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "7310",
+    "sourceName": "🦌出品-读书-国学古籍",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647827501.044191",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[1]",
+        "responseFormatType": "html",
+        "bookName": "//h3/a",
+        "desc": "//p[2]",
+        "requestInfo": "https://www.dushu.com/search.aspx?wd=%@keyWord&f=0&r=2&t=0&p=%@pageIndex",
+        "host": "https://www.dushu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "validConfig": "",
+        "list": "//div[@class='book-info']",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "host": "https://www.dushu.com",
+        "list": "//div[@class='book-summary']//table[contains(@id, 'chapters')]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "sourceType": "text"
+}
