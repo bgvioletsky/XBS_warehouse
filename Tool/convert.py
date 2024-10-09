@@ -10,17 +10,17 @@ def convert(x,y,z):
     arch = platform.machine().lower()
     if os_name == "darwin":
         if arch == "x86_64":
-            binary_path = "./xbs-darwin-amd64"
+            binary_path = "Tool/xbs-darwin-amd64"
         elif arch == "arm64" or arch == "aarch64":
-            binary_path = "./xbs-darwin-arm64"
+            binary_path = "Tool/xbs-darwin-arm64"
         else:
             print(f"Unsupported architecture for Darwin: {arch}")
             return
     elif os_name == "linux":
         if arch == "x86_64":
-            binary_path = "./xbs-linux-amd64"
+            binary_path = "Tool/xbs-linux-amd64"
         elif arch == "arm64" or arch == "aarch64":
-            binary_path = "./xbs-linux-arm64"
+            binary_path = "Tool/xbs-linux-arm64"
         else:
             print(f"Unsupported architecture for Linux: {arch}")
             return
