@@ -27,10 +27,9 @@ jobs:
                    if ! curl -L --silent --output version.sh 'https://raw.githubusercontent.com/bgvioletsky/command/refs/heads/main/version.sh'; then
                       echo "Failed to download the file."
                       exit 1
-                   fi                 
-                   if ! mv Tool/version  version; then
-                      echo "Failed to move the file."
-                      exit 1
+                   fi  
+                   if [ -e "Tool/version" ]; then               
+                       mv Tool/version  version
                    fi
                    
                    echo "version=$(bash version.sh)" >> $GITHUB_ENV
