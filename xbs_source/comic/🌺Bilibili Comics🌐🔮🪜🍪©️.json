@@ -1,0 +1,338 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet data=result.data;\n\tif(params.lastResponse==undefined)\n\t{\n\t\tif(data==undefined || data.images==undefined)\n\t\t\treturn undefined;\n\n\t\tlet pathList=[];\n\t\tlet oldList=data.images;\n\t\tlet len=oldList.length;\n\t\tfor(i=0; i<len; i++) {\n\t\t\tlet path = oldList[i].path;\n\t\t\tif(path && path.length>0)\n\t\t\t\tpathList.push(path + '@748w.jpg');\n\t\t}\n\t\t\n\t\tif(pathList.length==0)\n\t\t\treturn undefined;\n\n\t\tlet httpParams={'urls':JSON.stringify(pathList)};\n\t\tlet httpHeaders = {'Referer':'https://www.bilibilicomics.com/mc'+params.queryInfo.url+'?from=manga_detail', 'user-agent':'comic-universal/1135 Cronet/81.4044.156 Darwin/20.3.0'};\n\n\t\tlet tokenUrl='https://www.bilibilicomics.com/twirp/comic.v1.Comic/ImageToken?device=pc&platform=web';\n\t\treturn {'autoRequestMore':true, 'success':true, 'more':true, 'url':tokenUrl, 'httpHeaders':httpHeaders, 'httpParams':httpParams, 'POST':true};\n\t}\n\n\tif(data && data.length>0)\n\t{\n\t\tlet urlList = [];\n\t\tlet len = data.length;\n\t\tfor(i=0; i<len; i++) {\n\t\t\tlet info = data[i];\n\t\t\tif(info.url && info.token){\n\t\t\t\tlet url = info.url + '?token=' + info.token;\n\t\t\t\turlList.push(url);\n\t\t\t}\n\t\t}\n\n\t\treturn urlList.join('\\n');\n\t}\n\n\treturn undefined;\n}",
+        "requestInfo": "@js:\n\nif(params.lastResponse)\n\treturn params.lastResponse;\n\nlet index = result.indexOf('/');\nif(index<0)\n\treturn undefined;\n\nlet epid=result.substr(index+1);\nlet httpParams={'ep_id':epid};\nlet httpHeaders={'Referer':'https://www.bilibilicomics.com/mc' + result + '?from=manga_detail', 'user-agent':'comic-universal/1135 Cronet/81.4044.156 Darwin/20.3.0'};\n\nlet url='/twirp/comic.v1.Comic/GetImageIndex?device=pc&platform=web';\nreturn {'url':url, 'POST':true, 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+        "host": "https://www.bilibilicomics.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "cat": "data/styles/l",
+        "lastChapterTitle": "data/last_ord",
+        "responseFormatType": "json",
+        "desc": "data/classic_lines",
+        "requestInfo": "@js:\n\nlet httpParams={'comic_id':result};\nlet httpHeaders={'Referer':'https://www.bilibilicomics.com/detail/mc' + result + '?from=manga_serach', 'user-agent':'comic-universal/1135 Cronet/81.4044.156 Darwin/20.3.0'};\n\nlet url = '/twirp/comic.v1.Comic/ComicDetail?device=pc&platform=web';\nreturn {'url':url, 'POST':true, 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+        "host": "https://www.bilibilicomics.com",
+        "actionID": "bookDetail",
+        "wordCount": "data/total",
+        "cover": "data/vertical_cover",
+        "parserID": "DOM",
+        "validConfig": "",
+        "status": "data/isfinish"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\n\nlet fl = params.filters;\nlet hp = {'style_id':fl.styleId, 'area_id':fl.areaId, 'is_finish':fl.isFinish, 'order':fl.order, 'is_free':-1, 'page_num':params.pageIndex, 'page_size':39};\nlet url = 'https://www.bilibilicomics.com/twirp/comic.v1.Comic/ClassPage?device=pc&platform=web&lang=cn&sys_lang=cn';\nreturn {'url':url, 'POST':true, 'httpParams':hp, 'httpHeaders':{'user-agent':'comic-universal/1135 Cronet/81.4044.156 Darwin/20.3.0'}};",
+            "host": "https://www.bilibilicomics.com",
+            "actionID": "bookWorld",
+            "detailUrl": "season_id",
+            "moreKeys": {
+                "pageSize": "38",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "All",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "18"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "13"
+                            },
+                            {
+                                "title": "少女",
+                                "value": "20"
+                            },
+                            {
+                                "title": "耽美",
+                                "value": "3"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "11"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "9"
+                            },
+                            {
+                                "title": "Mystery",
+                                "value": "17"
+                            },
+                            {
+                                "title": "Harem",
+                                "value": "15"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "41"
+                            },
+                            {
+                                "title": "Comedy",
+                                "value": "14"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "12"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "30"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "16"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "19"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "22"
+                            },
+                            {
+                                "title": "Horror",
+                                "value": "23"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "8"
+                            }
+                        ],
+                        "key": "styleId"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "All",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "Ongoing",
+                                "value": "0"
+                            },
+                            {
+                                "title": "Completed",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "isFinish"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "Interest",
+                                "value": "0"
+                            },
+                            {
+                                "title": "Popularity",
+                                "value": "1"
+                            },
+                            {
+                                "title": "Update",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "vertical_cover",
+            "parserID": "DOM",
+            "list": "data",
+            "_sIndex": 1,
+            "status": "is_finish"
+        },
+        "sort": {
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\n\nlet fl = params.filters;\nlet hp = {'style_id':fl.styleId, 'area_id':fl.areaId, 'is_finish':fl.isFinish, 'order':fl.order, 'is_free':-1, 'page_num':params.pageIndex, 'page_size':39};\nlet url = 'https://www.bilibilicomics.com/twirp/comic.v1.Comic/ClassPage';\nreturn {'url':url, 'POST':true, 'httpParams':hp, 'httpHeaders':{'user-agent':'comic-universal/1135 Cronet/81.4044.156 Darwin/20.3.0'}};",
+            "host": "https://www.bilibilicomics.com",
+            "actionID": "bookWorld",
+            "detailUrl": "season_id",
+            "moreKeys": {
+                "pageSize": "38",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "All",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "Romance",
+                                "value": "13"
+                            },
+                            {
+                                "title": "Teen",
+                                "value": "20"
+                            },
+                            {
+                                "title": "BL",
+                                "value": "3"
+                            },
+                            {
+                                "title": "Fantasy",
+                                "value": "11"
+                            },
+                            {
+                                "title": "Mystery",
+                                "value": "17"
+                            },
+                            {
+                                "title": "Harem",
+                                "value": "15"
+                            },
+                            {
+                                "title": "Suspense",
+                                "value": "41"
+                            },
+                            {
+                                "title": "Comedy",
+                                "value": "14"
+                            },
+                            {
+                                "title": "Historical",
+                                "value": "12"
+                            },
+                            {
+                                "title": "Eastern",
+                                "value": "30"
+                            },
+                            {
+                                "title": "GL",
+                                "value": "16"
+                            },
+                            {
+                                "title": "Action",
+                                "value": "19"
+                            },
+                            {
+                                "title": "Adventure",
+                                "value": "22"
+                            },
+                            {
+                                "title": "Slice of Life",
+                                "value": "21"
+                            },
+                            {
+                                "title": "Horror",
+                                "value": "23"
+                            }
+                        ],
+                        "key": "styleId"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "All",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "Ongoing",
+                                "value": "0"
+                            },
+                            {
+                                "title": "Completed",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "isFinish"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "Interest",
+                                "value": "0"
+                            },
+                            {
+                                "title": "Popularity",
+                                "value": "1"
+                            },
+                            {
+                                "title": "Update",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "vertical_cover",
+            "parserID": "DOM",
+            "list": "data",
+            "_sIndex": 0,
+            "status": "is_finish"
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺Bilibili Comics🌐🔮🪜🍪©️",
+    "sourceUrl": "https://www.bilibilicomics.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665942908.858641",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "styles",
+        "responseFormatType": "json",
+        "author": "author_name",
+        "bookName": "title||org_title||@js:\nlet aa = result.replaceAll('<em class=\\\"keyword\\\">', '');\nreturn aa.replaceAll('<\\/em>', '');",
+        "requestInfo": "@js:\n\nlet httpParams={'key_word':params.keyWord, 'page_num':params.pageIndex, 'page_size':9, 'style_id':-1, 'area_id':-1, 'is_finish':-1, 'is_free':-1, 'order':-1, 'need_shield_prefer':true, 'style_prefer':'[]'};\nlet httpHeaders={'Referer':'https://www.bilibilicomics.com/search?keyword='+encodeURI(params.keyWord)};\n\nlet url = '/twirp/comic.v1.Comic/Search?device=pc&platform=web';\nreturn {'url':url , 'POST':true, 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+        "host": "https://www.bilibilicomics.com",
+        "actionID": "searchBook",
+        "detailUrl": "id||comic_id",
+        "moreKeys": {
+            "pageSize": 9
+        },
+        "cover": "vertical_cover",
+        "parserID": "DOM",
+        "validConfig": "",
+        "list": "data/list",
+        "status": "is_finish"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "data/ep_list[-1]/pub_time",
+        "requestInfo": "@js:\n\nlet httpParams={'comic_id':result};\nlet httpHeaders={'Referer':'https://www.bilibilicomics.com/detail/mc' + result + '?from=manga_serach', 'user-agent':'comic-universal/1135 Cronet/81.4044.156 Darwin/20.3.0'};\n\nlet url = '/twirp/comic.v1.Comic/ComicDetail?device=pc&platform=web';\nreturn {'url':url, 'POST':true, 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+        "title": "short_title",
+        "host": "https://www.bilibilicomics.com",
+        "list": "data/ep_list||@js:\nreturn result.reverse();",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id||@js:\nreturn params.queryInfo.detailUrl + '/' + result;"
+    }
+}

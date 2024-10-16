@@ -1,0 +1,104 @@
+{
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    },
+    "weight": "1000",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@class=\"new\"]/span/text()[2]",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "title": "//a",
+        "host": "http://60ks.net",
+        "httpHeaders": {
+            "Referer": "http://60ks.net",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@id=\"chapterlist\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "60看书",
+    "sourceUrl": "http://60ks.net",
+    "httpHeaders": {
+        "Referer": "http://60ks.net",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649606724.277004",
+    "searchBook": {
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "requestParamsEncode": "2147485234",
+        "actionID": "searchBook"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "http://60ks.net",
+        "httpHeaders": {
+            "Referer": "http://60ks.net",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐯新手",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "书库": {
+            "cover": "//img/@src",
+            "cat": "//dd[@class=\"book_other\"]/span[3]/text()",
+            "author": "//dd[@class=\"book_other\"]/span[1]/text()",
+            "responseFormatType": "html",
+            "bookName": "//h3/a/text()",
+            "desc": "//dd[@class=\"book_des\"]/text()",
+            "host": "http://60ks.net",
+            "httpHeaders": {
+                "Referer": "http://60ks.net",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": "aa\n全部小说::/bookstore/quanbu/\n玄幻小说::/bookstore/xuanhuan/\n仙侠小说::/bookstore/xianxia/\n都市小说::/bookstore/dushi/\n历史小说::/bookstore/lishi/\n悬疑小说::/bookstore/xuanyi/\n网游小说::/bookstore/wangyou/\n科幻小说::/bookstore/kehuan/\n惊悚小说::/bookstore/jingsong/\n穿越小说::/bookstore/chuanyue/\n同人小说::/bookstore/tongren/\n\nab\n全部::0-\n30万以下::1-\n30万-50万::2-\n50万-100万::3-\n100万-200万::4-\n200万以上::5-\n\nac\n不限::0-\n连载::1-\n完本::2-\n\nad\n默认::default-\n总点击::allvisit-\n月点击::monthvisit-\n周点击::weekvisit-\n日点击::dayvisit-\n总推荐::allvote-\n月推荐::monthvote-\n周推荐::weekvote-\n日推荐::dayvote-\n总收藏::goodnum-\n字数::size-\n入站时间::postdate-\n更新时间::lastupdate-\n\nae\n全部::0-\nA::a-\nB::b-\nC::c-\nD::d-\nE::e-\nF::f-\nG::g-\nH::h-\nI::i-\nJ::j-\nK::k-\nL::l-\nM::m-\nN::n-\nO::o-\nP::p-\nR::r-\nS::s-\nT::t-\nQ::q-\nU::u-\nV::v-\nW::w-\nX::x-\nY::y-\nZ::z-\n\naf\n倒序::0-\n正序::1-\n"
+            },
+            "requestInfo": "@js:\rlet url = config.host+params.filters.aa+params.filters.ad+params.filters.ae+params.filters.ab+ \"0-0-\" +params.filters.ac+params.filters.af+params.pageIndex+\".html\"\r\rlet hh= {\r  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\r}\r\rreturn {'url':url, 'POST':false, \r\"httpHeaders\": config.httpHeaders,\rforbidCookie:true,cacheTime:3600};",
+            "actionID": "bookWorld",
+            "wordCount": "//dd[@class=\"book_other\"][2]/a[2]/text()",
+            "parserID": "DOM",
+            "list": "//div[@id=\"sitebox\"]/dl",
+            "detailUrl": "//dt/a/@href",
+            "_sIndex": 2,
+            "validConfig": "",
+            "status": "//dd[@class=\"book_other\"]/span[2]/text()"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

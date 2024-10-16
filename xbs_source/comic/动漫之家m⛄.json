@@ -1,0 +1,118 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "chapter_name",
+        "host": "https://m.dmzj.com",
+        "list": "@js:\nlet res = eval(result.match(/initIntroData\\(([\\s\\S]+?)\\)/)[1]);\nreturn res[0].data.reverse();",
+        "parserID": "DOM",
+        "url": "@js:\nreturn '/view/' + result.comic_id + '/' + result.id + '.html';"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "动漫之家m⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://m.dmzj.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665915670.792688",
+    "searchBook": {
+        "cat": "types",
+        "author": "authors",
+        "lastChapterTitle": "last_update_chapter_name",
+        "bookName": "name",
+        "desc": "@js:\nreturn result.description ? '别名：' + result.alias_name + '\\n' + result.description : '';",
+        "requestInfo": "/search/%@keyWord.html",
+        "host": "https://m.dmzj.com",
+        "actionID": "searchBook",
+        "detailUrl": "id||@js:\nreturn '/info/' + result + '.html';",
+        "cover": "cover||@js:\nreturn result.match('http')? result : 'https://images.dmzj.com/' + result;",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "@js:\nlet res = result.match(/serchArry=\\[[\\s\\S]+?\\]/)[0];\neval(res);\nreturn serchArry;",
+        "status": "status"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nlet res = JSON.parse(result.match(/initData\\(([\\s\\S]+?)\\)/)[1].split(', ')[0]);\nlet hh = {\n\t'Host': res.page_url[0].match(/\\/\\/(.*?)\\//)[1]\n}\nlet obj = {\n\t'urls': res.page_url.join('\\n'),\n\t'httpHeaders':hh\n}\nreturn JSON.stringify(obj);",
+        "host": "https://m.dmzj.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "stacksensei",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://m.dmzj.com",
+        "desc": "//p[contains(@class,'txtDesc')]/text() ||@js:\nreturn params.queryInfo.desc ? params.queryInfo.desc :result;",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "types",
+            "lastChapterTitle": "last_update_chapter_name",
+            "author": "authors",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "@js:\nreturn result.description ? '别名：' + result.alias_name + '\\n' + result.description : '';",
+            "requestInfo": "@js:\nlet url = '/classify/' + params.filters.cat + '-0-' + params.filters.status + '-' + params.filters.zoom + '-' + params.filters.sort + '-' + (params.pageIndex-1) + '.json';\nreturn url;",
+            "host": "https://m.dmzj.com",
+            "actionID": "bookWorld",
+            "detailUrl": "id||@js:\nreturn '/info/' + result + '.html';",
+            "cover": "cover||@js:\nreturn result.match('http')? result : 'https://images.dmzj.com/' + result;",
+            "moreKeys": {
+                "pageSize": "15",
+                "requestFilters": "cat\n题材::0\n冒险::1\n欢乐::2\n格斗::3\n科幻::4\n爱情::5\n竞技::6\n魔法::7\n校园::8\n悬疑::9\n恐怖::10\n生活::11\n百合::12\n伪娘::13\n耽美::14\n后宫::15\n萌系::16\n治愈::17\n武侠::18\n职场::19\n奇幻::20\n节操::21\n轻の::22\n搞笑::23\n\nzoom\n地域::0\n日本::1\n内地::2\n欧美::3\n港台::4\n韩国::5\n其他::6\n\nstatus\n进度::0\n连载::1\n完结::2\n\nsort\n人气::0\n更新::1"
+            },
+            "list": "$",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "status"
+        },
+        "排行": {
+            "cat": "types",
+            "responseFormatType": "json",
+            "lastChapterTitle": "last_update_chapter_name",
+            "author": "authors",
+            "bookName": "name",
+            "desc": "@js:\nreturn result.description ? '别名：' + result.alias_name + '\\n' + result.description : '';",
+            "host": "https://m.dmzj.com",
+            "requestInfo": "/rank/%@filter-0-0-%@pageIndex.json",
+            "actionID": "bookWorld",
+            "detailUrl": "id||@js:\nreturn '/info/' + result + '.html';",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "人气排行::0\n吐槽排行::1\n订阅排行::2"
+            },
+            "validConfig": "",
+            "list": "$",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "cover||@js:\nreturn result.match('http')? result : 'https://images.dmzj.com/' + result;",
+            "status": "status"
+        }
+    }
+}

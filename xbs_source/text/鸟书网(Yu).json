@@ -1,0 +1,97 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"content\"] || @js:\nreturn result.replaceAll('请记住本书首发域名：99mk.com。鸟书网手机版阅读网址：m.99mk.com', '').replace(/(\\n[\\s\\t]*\\r*\\n)/g, '\\n').replace(/^[\\n\\r\\n\\t]*|[\\n\\r\\n\\t]*$/g, '')",
+        "validConfig": "",
+        "requestInfo": "@js:\rreturn {'url':result, 'POST':false, 'httpHeaders':config.httpHeaders};",
+        "host": "https://www.99mk.com",
+        "httpHeaders": {
+            "Referer": "https://www.99mk.com/read/search/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "wordCount": "//div[@class=\"small\"]/span[4]",
+        "status": "//div[@class=\"small\"]/span[3]",
+        "requestInfo": "@js:\rreturn {'url':result, 'POST':false, 'httpHeaders':config.httpHeaders};",
+        "host": "https://www.99mk.com",
+        "httpHeaders": {
+            "Referer": "https://www.99mk.com/read/search/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"intro\"]/text()[1] | //div[@class=\"intro\"]/span[@class=\"noshow\"]/text()  || @js: return result.replace(/\\t|\\n|\\v|\\r|\\f/g,'')",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://www.99mk.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9001",
+    "sourceName": "鸟书网(Yu)",
+    "httpHeaders": {
+        "Referer": "https://www.99mk.com/read/search/",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654016335.564817",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div/div[@class=\"bookinfo\"]/div[@class=\"cat\"]",
+        "author": "//div/div[@class=\"bookinfo\"]/div[@class=\"author\"]",
+        "lastChapterTitle": "//div/div[@class=\"bookinfo\"]/div[@class=\"update\"]/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//div/div[@class=\"bookinfo\"]/h4/a/text()",
+        "httpHeaders": {
+            "Referer": "https://www.99mk.com/read/search/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\rlet url = config.host + '/read/search/';\n\rlet hp = {'searchkey':params.keyWord}; \n\rreturn {'url':url, 'POST':true,  'httpParams':hp, 'httpHeaders':config.httpHeaders};",
+        "host": "https://www.99mk.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div/div[@class=\"bookinfo\"]/h4/a/@href",
+        "cover": "//div/div[@class=\"bookimg\"]/a/img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"type_show\"]/div",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\rreturn {'url':result, 'POST':false, 'httpHeaders':config.httpHeaders};",
+        "title": "//a/text()",
+        "host": "https://www.99mk.com",
+        "httpHeaders": {
+            "Referer": "https://www.99mk.com/read/search/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@class=\"listmain\"]/dl/dt[2]/following::dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

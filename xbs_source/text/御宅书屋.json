@@ -1,0 +1,98 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"nr1\"]/text()",
+        "requestParamsEncode": "2147485234",
+        "actionID": "chapterContent",
+        "host": "http://m.yuzwu.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "wordCount": "//td[@class=\"article_info_td\"][2]/div[1]",
+        "lastChapterTitle": "//td[@class=\"article_info_td\"]/div[3]/a/text()",
+        "host": "http://m.yuzwu.com",
+        "cat": "//td[@class=\"article_info_td\"]/div[2]/a/text()",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"novelMain\"]//pre"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//p/strong",
+            "responseFormatType": "html",
+            "bookName": "//h3/a/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://m.yuzwu.com/wapsort/${_type}${params.pageIndex}.html`;\n\nreturn {url:url}",
+            "host": "http://m.yuzwu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n耽美::9_\n高辣文::11_\n言情::3_\n百合::17_"
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@style=\"margin:20px 15px 0px;\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "http://m.yuzwu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "御宅书屋",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1653117304.210667",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[1]/strong",
+        "requestParamsEncode": "2147485234",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = 'http://m.yuzwu.com/s.php';\nreturn {'url':url, 'POST':true, 'httpParams':{'type':'articlename','s': params.keyWord}};",
+        "bookName": "//a/text()",
+        "detailUrl": "//span/a/@href",
+        "host": "http://m.yuzwu.com",
+        "list": "//div[@class=\"common-bookele\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "nextPageUrl": "//div[@class=\"page\"]/a[text()=\"下一页\"]/@href",
+        "requestInfo": "@js:\n\nlet id = params.queryInfo.detailUrl.match(/(\\d+)/g)[0];\n\nlet url = config.host+\"/novel/list/\"+id+\"/\"+params.pageIndex+\".html\";\nreturn{url,url}",
+        "title": "//a/text()",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "http://m.yuzwu.com",
+        "list": "//ul/li ||@js:return result.reverse(20)",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

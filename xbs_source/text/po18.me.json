@@ -1,0 +1,115 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.po18vip.me",
+        "content": "//div[@ondragstart=\"return false\"]",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//div[@class=\"tags clearfixer\"]/a[1]/span",
+        "actionID": "bookDetail",
+        "wordCount": "//div[@class=\"hits\"]/span[1]",
+        "validConfig": "",
+        "lastChapterTitle": "//div[@class=\"title clearfixer\"]/span[1]/a",
+        "host": "https://www.po18vip.me",
+        "cat": "//div[@class=\"tags clearfixer\"]/a[3]/span",
+        "cover": "//span/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class=\"brief_text brief_text_colse\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "author": "//dd/p[1]/span[1]",
+            "responseFormatType": "html",
+            "bookName": "//dd/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.po18vip.me/ranks/${_type}/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.po18vip.me",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n总点击榜::allvisit\n月点击榜::monthvisit\n周点击榜::weekvisit\n总推荐榜::allvote\n总收藏榜::goodnum\n总字数榜::size\n编辑推荐::toptime\n最新入库::postdate\n最近更新::lastupdate"
+            },
+            "detailUrl": "//dd/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"tabs-cont-1\"]/div",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        },
+        "分类": {
+            "author": "//dd/p[1]/a",
+            "responseFormatType": "html",
+            "bookName": "//dd/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.po18vip.me/category/${_type}-${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.po18vip.me",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻奇幻::1\n仙侠武侠::2\n都市言情::3\n穿越历史::4\n科幻灵异::5\n网游竞技::6\n精品综合::7"
+            },
+            "detailUrl": "//dd/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"listboxw\"]/dl",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.po18vip.me",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "999",
+    "sourceName": "po18.me",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1658116456.935256",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//dd/p[1]/span[2]",
+        "author": "//dd/p[1]/span[1]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//dd/p[3]/a[1]",
+        "bookName": "//dd/a[1]",
+        "requestInfo": "https://www.po18vip.me/modules/article/search.php?searchkey=%@keyWord&t_btnsearch=%CC%E1%BD%BB&page=%@pageIndex",
+        "host": "https://www.po18vip.me",
+        "actionID": "searchBook",
+        "detailUrl": "//dd/a/@href",
+        "cover": "//a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"s-b-list\"]/div"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn result.replace('novel', 'chaplist');",
+        "title": "//a",
+        "host": "https://www.po18vip.me",
+        "list": "//div[@class=\"bd\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

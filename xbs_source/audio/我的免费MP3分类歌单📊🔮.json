@@ -1,0 +1,81 @@
+{
+    "bookDetail": {
+        "parserID": "DOM",
+        "actionID": "bookDetail",
+        "responseFormatType": "html"
+    },
+    "desc": "☀️",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "@js:\n\n\n\nreturn result.name +\"-\" + result.artist",
+        "host": "http://tool.liumingye.cn/music/#/",
+        "list": "$.data.list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "$.url_320"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "我的免费MP3分类歌单📊🔮",
+    "sourceType": "audio",
+    "sourceUrl": "http://tool.liumingye.cn/music/#/",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666083716.458898",
+    "searchBook": {
+        "responseFormatType": "json",
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "|",
+        "host": "http://tool.liumingye.cn/music/#/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "111",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "语言": {
+            "responseFormatType": "json",
+            "bookName": "$.name",
+            "desc": "$.description",
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet id = 50 * (params.pageIndex - 1);\nlet url=`https://pl-fe.cn/cloud-music-api/top/playlist?cat=${_type}&offset=${id}&limit=48`\n\n\n\nurl=encodeURI(url);\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://tool.liumingye.cn/music/#/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 48,
+                "requestFilters": "_type\n华语::华语\n欧美::欧美\n日语::日语\n韩语::韩语\n粤语::粤语\n流行::流行\n摇滚::摇滚\n民谣::民谣\n电子::电子\n说唱::说唱\n轻音乐::轻音乐\n乡村::乡村\nR&B/Soul::R&B/Soul\n古典::古典\n民族::民族\n古风::古风\n清晨::清晨\n夜晚::夜晚\n学习::学习\n工作::工作\n午休::午休\n下午茶::下午茶\n地铁::地铁\n驾车::驾车\n运动::运动\n旅行::旅行\n散步::散步\n酒吧::酒吧\n怀旧::怀旧\n清新::清新\n浪漫::浪漫\n伤感::伤感\n治愈::治愈\n放松::放松\n孤独::孤独\n感动::感动\n兴奋::兴奋\n快乐::快乐\n安静::安静\n思念::思念\n综艺::综艺\n影视原声::影视原声\nACG::ACG\n儿童::儿童\n校园::校园\n游戏::游戏\n网络歌曲::网络歌曲\nKTV::KTV\n经典::经典\n翻唱::翻唱\n吉他::吉他\n钢琴::钢琴\n器乐::器乐\n榜单::榜单\n70后::70后\n80后::80后\n90后::90后\n00后::00后"
+            },
+            "cover": "$.coverImgUrl",
+            "validConfig": "",
+            "list": "playlists/subscribers",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "$.id||@js:\n\nreturn \"http://59.110.45.28/m/api/search/playlist&id=d\"+result+\"&page=1\""
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

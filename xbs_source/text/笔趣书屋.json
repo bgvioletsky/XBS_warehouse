@@ -1,0 +1,454 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestParamsEncode": "2147485234",
+        "requestInfo": "@js:\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": config.httpHeaders,'cacheTime':3600};\n/*\nreturn {'url':result, 'POST':false,\"httpHeaders\": config.httpHeaders,'webView':true,'cacheTime':3600};*/",
+        "lastChapterTitle": "//li[@class=\"site\"][1]/a[1]/@href ||@js:\nreturn result.replace(/.*u=/g,\"\"). replace('%3A', ':'). replace('%2F', '/') . replace('%2F', '/') . replace('%2F', '/') . replace('%2F', '/') . replace('%2F', '/') . replace('%2F', '/')",
+        "host": "https://www.henhaoso.org",
+        "httpHeaders": {
+            "Referer": "https://www.henhaoso.org",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "desc": "//section[@class=\"BGsectionTwo\"]//p[1]//text()",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "nextPageUrl": "//div[@class=\"BCsectionTwo-bottom\"]//a[1]/@href",
+        "responseFormatType": "html",
+        "url": "//a/@href ||@js:\nvar patt = new RegExp(\"[0-9]*(?=.html)\");\nvar num = patt.exec(result);\nlet url = params.queryInfo.lastChapterTitle + num +\".html\"\n\nreturn url;",
+        "httpHeaders": {
+            "Referer": "https://www.henhaoso.org",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nreturn params.queryInfo.lastChapterTitle +\"catalog/\";",
+        "title": "//a/text()",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://www.henhaoso.org",
+        "validConfig": "",
+        "list": "//*[@class=\"BCsectionTwo-top\"]/li",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "笔趣书屋",
+    "sourceType": "text",
+    "sourceUrl": "https://www.henhaoso.org",
+    "httpHeaders": {
+        "Referer": "https://www.henhaoso.org",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665727579.312899",
+    "searchBook": {
+        "author": "//span[2]/a//text()",
+        "responseFormatType": "html",
+        "bookName": "//span[1]/a//text()||@js:\n\nlet res= result.replace(/《|》|\\n/g,\"\");\n\nreturn res",
+        "httpHeaders": {
+            "Referer": "https://www.henhaoso.org",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+        },
+        "requestInfo": "https://www.henhaoso.org/s/%@keyWord/%@pageIndex/",
+        "host": "https://www.henhaoso.org",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 30,
+            "removeHtmlKeys": [
+                "bookName",
+                "author"
+            ],
+            "maxPage": 1
+        },
+        "detailUrl": "//span[1]/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"SHsectionThree-middle\"]//p",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"C0NTENT\"] //text()",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':result,'webView': true};",
+        "host": "https://www.henhaoso.org",
+        "httpHeaders": {
+            "Referer": "https://www.henhaoso.org",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "海棠搜书",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "现言": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E7%8E%B0%E8%A8%80/\n最近更新::/s/new/%E7%8E%B0%E8%A8%80/\n最近热门::/s/hot/%E7%8E%B0%E8%A8%80/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 4
+        },
+        "原创": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E5%8E%9F%E5%88%9B%E5%B0%8F%E8%AF%B4/\n最近更新::/s/new/%E5%8E%9F%E5%88%9B%E5%B0%8F%E8%AF%B4/\n最近热门::/s/hot/%E5%8E%9F%E5%88%9B%E5%B0%8F%E8%AF%B4/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 12
+        },
+        "轻小说": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E8%BD%BB%E5%B0%8F%E8%AF%B4/\n最近更新::/s/new/%E8%BD%BB%E5%B0%8F%E8%AF%B4/\n最近热门::/s/hot/%E8%BD%BB%E5%B0%8F%E8%AF%B4/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 11
+        },
+        "综合": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E7%BB%BC%E5%90%88%BA/\n最近更新::/s/new/%E7%BB%BC%E5%90%88/\n最近热门::/s/hot/%E7%BB%BC%E5%90%88%BA/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 13
+        },
+        "都市": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E9%83%BD%E5%B8%82/\n最近更新::/s/new/%E9%83%BD%E5%B8%82/\n最近热门::/s/hot/%E9%83%BD%E5%B8%82/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 3
+        },
+        "言情": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E8%A8%80%E6%83%85/\n最近更新::/s/new/%E8%A8%80%E6%83%85/\n最近热门::/s/hot/%E8%A8%80%E6%83%85/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 0
+        },
+        "仙侠": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E4%BB%99%E4%BE%A0/\n最近更新::/s/new/%E4%BB%99%E4%BE%A0/\n最近热门::/s/hot/%E4%BB%99%E4%BE%A0/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 7
+        },
+        "科幻": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E7%A7%91%E5%B9%BB/\n最近更新::/s/new/%E7%A7%91%E5%B9%BB/\n最近热门::/s/hot/%E7%A7%91%E5%B9%BB/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 8
+        },
+        "PO18": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/PO18/\n最近更新::/s/new/PO18/\n最近热门::/s/hot/PO18/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 14
+        },
+        "耽美": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E8%80%BD%E7%BE%8E/\n最近更新::/s/new/%E8%80%BD%E7%BE%8E/\n最近热门::/s/hot/%E8%80%BD%E7%BE%8E/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 1
+        },
+        "古言": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E5%8F%A4%E8%A8%80/\n最近更新::/s/new/%E5%8F%A4%E8%A8%80/\n最近热门::/s/hot/%E5%8F%A4%E8%A8%80/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 5
+        },
+        "玄幻": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": "_type\n相关度::/s/%E7%8E%84%E5%B9%BB/\n最近更新::/s/new/%E7%8E%84%E5%B9%BB/\n最近热门::/s/hot/%E7%8E%84%E5%B9%BB/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 6
+        },
+        "同人": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E5%90%8C%E4%BA%BA/\n最近更新::/s/new/%E5%90%8C%E4%BA%BA/\n最近热门::/s/hot/%E5%90%8C%E4%BA%BA/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 2
+        },
+        "衍生": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E5%90%8C%E4%BA%BA%E8%A1%8D%E7%94%9F/\n最近更新::/s/new/%E5%90%8C%E4%BA%BA%E8%A1%8D%E7%94%9F/\n最近热门::/s/hot/%E5%90%8C%E4%BA%BA%E8%A1%8D%E7%94%9F/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 10
+        },
+        "奇幻": {
+            "cat": "//span[3]/a/text()",
+            "author": "//span[2]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a/text() ||@js:\n\nlet res= result.replace(/\\n|《|》/g,\"\").replace(/TXT下载/g,\"\").replace(/作者：.*/g,\"\");\n\nreturn res",
+            "httpHeaders": {
+                "Referer": "https://www.henhaoso.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\n\nlet url=`${config.host}${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.henhaoso.org",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "12",
+                "requestFilters": "_type\n相关度::/s/%E5%A5%87%E5%B9%BB/\n最近更新::/s/new/%E5%A5%87%E5%B9%BB/\n最近热门::/s/hot/%E5%A5%87%E5%B9%BB/"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+            "parserID": "DOM",
+            "cover": "@js:\nreturn \"https://fastly.jsdelivr.net/gh/Fantuan-cell/XsRead@main/png/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\"",
+            "_sIndex": 9
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

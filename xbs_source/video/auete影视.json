@@ -1,0 +1,192 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "responseFormatType": "html",
+        "host": "https://auete.com",
+        "httpHeaders": {
+            "Referer": "https://auete.com",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "cat": "//*[@id=\"body\"]/div/div[2]/div[1]/div[1]/div/div[2]/p[8]",
+        "cover": "//div[@class=\"cover\"]/a/img/@src",
+        "desc": "//*[@id=\"body\"]/div/div[2]/div[1]/div[1]/div/div[2]/p[16]/text()",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result) {\n\t\n    let ts = result.updateTime.split(\"\\n\"); //对updateTime获取的数据进行分割为数组\n    \n    let list = [];\n    \n    for (let i = 0; i < ts.length; i++) {\n        if (\"url\" in result[\"list\"][i]) {\n            let title = result[\"list\"][i][\"title\"];\n            let titles = title.split(\"\\n\");\n            let urls = result[\"list\"][i][\"url\"].split(\"\\n\");\n            for (let j = 0; j < titles.length; j++) {\n                list.push({\n                    \"title\": ts[i] + \"-\" + titles[j],\n                    \"url\": urls[j]\n                })\n            }\n        }\n    }\n    return {\n\n        \"list\": list\n    };\n}",
+        "updateTime": "//h2/text()",
+        "title": "//a",
+        "host": "https://auete.com",
+        "httpHeaders": {
+            "Referer": "https://auete.com",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "list": "//*[@id=\"player_list\"]/ul",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "auete影视",
+    "sourceType": "video",
+    "sourceUrl": "https://auete.com",
+    "httpHeaders": {
+        "Referer": "https://auete.com",
+        "Upgrade-Insecure-Requests": "1",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665500099.559020",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet url=config.host+\"/search.php\";\n\nlet hp= {'searchword':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders, forbidCookie:true,cacheTime:3600};",
+        "bookName": "//div[@class=\"subject break-all\"]//span",
+        "detailUrl": "//a/@href",
+        "host": "https://auete.com",
+        "httpHeaders": {
+            "Referer": "https://auete.com",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "list": "//ul[@class=\"list-unstyled threadlist mb-0\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "@js:\nlet urls=params.requestUrls\nlet url=\"重获\";\nfor(let i=urls.length-1;i>=0;i--){\n   if(/m3u8|mp4/.test(urls[i])){\n      url= urls[i]\n      break;\n   }\n}\nreturn url",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':result,'httpHeaders':config.httpHeaders, 'webView':true,cacheTime:0};",
+        "host": "https://auete.com",
+        "httpHeaders": {
+            "Referer": "https://auete.com",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "动漫": {
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "https://auete.com",
+                "Upgrade-Insecure-Requests": "1",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_dm,_dmnf,_dmpx}=params.filters\nlet url=`https://auete.com/search.php?page=${params.pageIndex}&searchtype=5&order=${_dmpx}&tid=${_dm}&year=${_dmnf}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://auete.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_dm\n全部::4\n国漫::21\n日漫::20\n动画::19\n美漫::22\n\n_dmnf\n全部::\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012\n2011::2011\n\n_dmpx\n时间::time\n人气::hit\n推荐::commend"
+            },
+            "cover": "//img/@src",
+            "validConfig": "",
+            "wordCount": "//button",
+            "_sIndex": 0,
+            "list": "//ul[@class=\"threadlist\"]/li",
+            "parserID": "DOM",
+            "detailUrl": "//h2/a/@href"
+        },
+        "电视": {
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "https://auete.com",
+                "Upgrade-Insecure-Requests": "1",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_dsjq,_dsnf,_dspx}=params.filters\nlet url=`https://auete.com/search.php?page=${params.pageIndex}&searchtype=5&order=${_dspx}&tid=${_dsjq}&year=${_dsnf}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://auete.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_dsjq\n全部::2\n美剧::13\n韩剧::14\n日剧::15\n泰剧::16\n网剧::17\n台剧::18\n国产::23\n港剧::29\n英剧::52\n\n_dsnf\n全部::\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012\n2011::2011\n\n_dspx\n时间::time\n人气::hit\n推荐::commend"
+            },
+            "cover": "//img/@src",
+            "validConfig": "",
+            "wordCount": "//button",
+            "_sIndex": 1,
+            "list": "//ul[@class=\"threadlist\"]/li",
+            "parserID": "DOM",
+            "detailUrl": "//h2/a/@href"
+        },
+        "综艺": {
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "https://auete.com",
+                "Upgrade-Insecure-Requests": "1",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_zyjq,_zynf,_zypx}=params.filters\nlet url=`https://auete.com/search.php?page=${params.pageIndex}&searchtype=5&order=${_zypx}&tid=${_zyjq}&year=${_zynf}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://auete.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_zyjq\n全部::3\n国综::47\n韩综::48\n美综::51\n\n_zynf\n全部::\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012\n2011::2011\n\n_zypx\n时间::time\n人气::hit\n推荐::commend"
+            },
+            "cover": "//img/@src",
+            "validConfig": "",
+            "wordCount": "//button",
+            "_sIndex": 3,
+            "list": "//ul[@class=\"threadlist\"]/li",
+            "parserID": "DOM",
+            "detailUrl": "//h2/a/@href"
+        },
+        "电影": {
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "https://auete.com",
+                "Upgrade-Insecure-Requests": "1",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_dyjq,_dynf,_dypx}=params.filters\nlet url=`https://auete.com/search.php?page=${params.pageIndex}&searchtype=5&order=${_dypx}&tid=${_dyjq}&year=${_dynf}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://auete.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_dyjq\n全部::1\n喜剧片::5\n动作片::6\n爱情片::7\n科幻片::8\n恐怖片::9\n惊悚片::10\n战争片::11\n剧情片::12\n\n_dynf\n全部::\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012\n2011::2011\n\n_dypx\n时间::time\n人气::hit\n推荐::commend"
+            },
+            "cover": "//img/@src",
+            "validConfig": "",
+            "wordCount": "//button",
+            "_sIndex": 2,
+            "list": "//ul[@class=\"threadlist\"]/li",
+            "parserID": "DOM",
+            "detailUrl": "//h2/a/@href"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

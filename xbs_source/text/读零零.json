@@ -1,0 +1,95 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.aj233.com",
+        "content": "//div[@class=\"yd_text2\"]",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "actionID": "bookDetail",
+        "lastChapterTitle": "//meta[@property=\"og:novel:lastest_chapter_name\"]/@content",
+        "host": "https://www.aj233.com",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@property=\"og:description\"]/@content"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//span[@class=\"zz\"]",
+            "responseFormatType": "html",
+            "bookName": "//b",
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\nlet url=`https://www.aj233.com/sort/${_aa}/${params.pageIndex}/`;\r\n\r\nreturn {url:url}",
+            "host": "https://www.aj233.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"sm\"]/a/@href",
+            "moreKeys": {
+                "pageSize": 13,
+                "skipCount": 1,
+                "requestFilters": "_aa\n玄幻魔法::1\n武侠修真::2\n都市言情::3\n历史军事::4\n科幻灵异::5\n游戏竞技::6\n女生小说::7\n其他类型::8"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul/li"
+        }
+    },
+    "sourceUrl": "https://www.aj233.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "读零零",
+    "desc": "🦞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665659947.457892",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//span",
+        "responseFormatType": "html",
+        "bookName": "//h3",
+        "desc": "//p",
+        "requestInfo": "@js:\nlet url = '/search/';\nreturn {'url':url, 'httpParams':{'searchkey':params.keyWord}, 'forbidCookie':true};",
+        "host": "https://www.aj233.com",
+        "actionID": "searchBook",
+        "detailUrl": "//dt/a/@href",
+        "cover": "//@data-original",
+        "validConfig": "",
+        "list": "//div[@class=\"fengtui fengtui_top cf\"]/dl",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.aj233.com",
+        "list": "//div[@class=\"mulu\"][2]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

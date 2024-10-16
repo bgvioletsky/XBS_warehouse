@@ -1,0 +1,99 @@
+{
+    "bookWorld": {
+        "分类": {
+            "cat": "$..category_name ||@js:\nreturn result.join(' / ');",
+            "responseFormatType": "json",
+            "author": "$..username ||@js:\nreturn result.join(' / ');",
+            "bookName": "title",
+            "desc": "content",
+            "requestInfo": "/api/xpc/articles?page=%@pageIndex",
+            "host": "https://www.xinpianchang.com",
+            "actionID": "bookWorld",
+            "detailUrl": "vid || media_id || video_library_id",
+            "wordCount": "duration ||@js:\ntime = result;\nlet minute = parseInt(time / 60 % 60)\n      let second = Math.ceil(time % 60)   \nreturn `${minute < 10 ? '0' + minute : minute}:${second < 10 ? '0' + second : second}`",
+            "cover": "cover",
+            "list": "$.data.list",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "publish_time ||@js:\n var date = new Date(1655185405 * 1000);  // 参数需要毫秒数，所以这里将秒数乘于 1000\nY = date.getFullYear() + '-';\nM = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';\nD = date.getDate() + ' ';\nh = date.getHours() + ':';\nm = date.getMinutes() + ':';\ns = date.getSeconds(); \nreturn (Y+M+D+h+m+s);",
+            "moreKeys": {
+                "pageSize": 10
+            }
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet url = 'https://mod-api.xinpianchang.com/mod/api/v2/media/%@url?appKey=61a2f329348b3bf77';\nurl = url.replace('%@url',params.queryInfo.detailUrl);\nreturn encodeURI(url);",
+        "title": "profile",
+        "host": "https://www.xinpianchang.com",
+        "list": "$.data.resource.progressive",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "url || backupurl"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "新片场⛄",
+    "sourceType": "video",
+    "sourceUrl": "https://www.xinpianchang.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1659420303.033635",
+    "searchBook": {
+        "cat": "$..category_name ||@js:\nreturn result.join(' / ');",
+        "author": "$..username ||@js:\nreturn result.join(' / ');",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "desc": "content",
+        "requestInfo": "/_next/data/KP2MLNjGx9-5m2Cfe7P5M/search.json?page=%@pageIndex&kw=%@keyWord",
+        "host": "https://www.xinpianchang.com",
+        "actionID": "searchBook",
+        "detailUrl": "vid || media_id || video_library_id",
+        "cover": "cover",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "$.pageProps.searchData.list",
+        "moreKeys": {
+            "pageSize": 60
+        },
+        "wordCount": "duration ||@js:\ntime = result;\nlet minute = parseInt(time / 60 % 60)\n      let second = Math.ceil(time % 60)   \nreturn `${minute < 10 ? '0' + minute : minute}:${second < 10 ? '0' + second : second}`",
+        "status": "publish_time ||@js:\n var date = new Date(1655185405 * 1000);  // 参数需要毫秒数，所以这里将秒数乘于 1000\nY = date.getFullYear() + '-';\nM = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';\nD = date.getDate() + ' ';\nh = date.getHours() + ':';\nm = date.getMinutes() + ':';\ns = date.getSeconds(); \nreturn (Y+M+D+h+m+s);"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.url;",
+        "host": "https://www.xinpianchang.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nreturn config.host;",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "stack_|TJEj/HzKFbmʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "responseFormatType": "json",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

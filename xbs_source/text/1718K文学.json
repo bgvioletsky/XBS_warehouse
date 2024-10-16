@@ -1,0 +1,126 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"TextContent\"]/p/text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 7
+        },
+        "host": "https://www.1718k.com",
+        "httpHeaders": {
+            "Referer": "https://www.1718k.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//div[@id=\"count\"]/ul/li[3]/span/text()",
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.1718k.com",
+        "httpHeaders": {
+            "Referer": "https://www.1718k.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "status": "//dd[@class=\"book_other\"]/span[2]/text()",
+            "cat": "//dd[@class=\"book_other\"]/span/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//dd[@class=\"book_other\"][2]/a/text()",
+            "bookName": "//dd/h3/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.1718k.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+            },
+            "desc": "//dd[@class=\"book_des\"]/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.1718k.com${_type}${params.pageIndex}/`;\n\nreturn {url:url}",
+            "moreKeys": {
+                "pageSize": 17,
+                "requestFilters": "_type\n玄幻小说::/fenlei1_\n武侠小说::/fenlei2_\n都市小说::/fenlei3_\n历史小说::/fenlei4_\n科幻小说::/fenlei5_\n游戏小说::/fenlei6_\n女生小说::/fenlei7_\n其他小说::/fenlei8_"
+            },
+            "host": "https://www.1718k.com",
+            "detailUrl": "//dd/h3/a/@href",
+            "cover": "//img/@src",
+            "list": "//div[@id=\"sitebox\"]/dl",
+            "actionID": "bookWorld",
+            "_sIndex": 0,
+            "validConfig": "",
+            "wordCount": "//dd[@class=\"book_other\"]/span[3]/text()",
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.1718k.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "4953",
+    "sourceName": "1718K文学",
+    "httpHeaders": {
+        "Referer": "https://www.1718k.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "oaix",
+    "lastModifyTime": "1652239821.943457",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//dd/span[2]/text()",
+        "author": "//dd/span[1]/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//dd[4]/a/text()",
+        "bookName": "//h3/a/text()",
+        "httpHeaders": {
+            "Referer": "https://www.1718k.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+        },
+        "requestInfo": "@js:\nlet url =config.host+\"/search/\";\n\nlet hh={\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39\"};\n\nlet hp={\"searchkey\":params.keyWord,}\n\nreturn{'url':url,'POST':true,'httpParams':hp,\"httpHeaders\":config.httpHeaders};",
+        "host": "https://www.1718k.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "wordCount": "//dd/span[3]/text()",
+        "validConfig": "",
+        "list": "//div[@id=\"sitebox\"]/dl",
+        "parserID": "DOM",
+        "desc": "//dd[3]/text()",
+        "cover": "//img/@src"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a/text()",
+        "host": "https://www.1718k.com",
+        "httpHeaders": {
+            "Referer": "https://www.1718k.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+        },
+        "list": "//ul[@class=\"chaw_c\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

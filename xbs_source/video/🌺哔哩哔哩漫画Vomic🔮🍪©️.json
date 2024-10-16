@@ -1,0 +1,412 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "data/video/resource[4]/path",
+        "requestInfo": "@js:\n\nlet httpParams={'ep_id':params.queryInfo.url};\n\nreturn {'url':'https://manga.bilibili.com/twirp/comic.v1.Comic/GetImageIndex?device=h5&platform=web', 'POST':true, 'httpParams':httpParams};",
+        "host": "https://manga.bilibili.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "cat": "data/styles/l",
+        "responseFormatType": "json",
+        "lastChapterTitle": "data/last_ord",
+        "desc": "data/classic_lines",
+        "requestInfo": "@js:\n\nlet httpParams={'comic_id':result};\nlet httpHeaders={'Referer':'https://manga.bilibili.com/detail/mc' + result + '?from=manga_serach', 'user-agent':'comic-universal/1135 Cronet/81.4044.156 Darwin/20.3.0'};\n\nlet url = '/twirp/comic.v1.Comic/ComicDetail?device=pc&platform=web';\nreturn {'url':url, 'POST':true, 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+        "host": "https://manga.bilibili.com",
+        "actionID": "bookDetail",
+        "cover": "data/vertical_cover",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "data/total",
+        "status": "data/is_finish"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\n\nlet fl = params.filters;\nlet hp = {'style_id':fl.styleId, 'area_id':fl.areaId, 'is_finish':fl.isFinish, 'order':fl.order, 'is_free':fl.prices, 'page_num':params.pageIndex, 'page_size':39};\nlet url = 'https://manga.bilibili.com/twirp/comic.v1.Comic/ClassPage';\nreturn {'url':url, 'POST':true, 'httpParams':hp, 'httpHeaders':{'user-agent':'comic-universal/1135 Cronet/81.4044.156 Darwin/20.3.0'}};",
+            "host": "https://manga.bilibili.com",
+            "actionID": "bookWorld",
+            "detailUrl": "season_id",
+            "moreKeys": {
+                "pageSize": "38",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "正气",
+                                "value": "1028"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "1013"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "999"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "994"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "995"
+                            },
+                            {
+                                "title": "少女",
+                                "value": "1026"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "1022"
+                            },
+                            {
+                                "title": "日常",
+                                "value": "1020"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "1001"
+                            },
+                            {
+                                "title": "运动",
+                                "value": "1010"
+                            },
+                            {
+                                "title": "治愈",
+                                "value": "1007"
+                            },
+                            {
+                                "title": "橘味",
+                                "value": "1006"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "997"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "1016"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "998"
+                            },
+                            {
+                                "title": "后宫",
+                                "value": "1017"
+                            },
+                            {
+                                "title": "惊奇",
+                                "value": "996"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "1023"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "1002"
+                            },
+                            {
+                                "title": "总裁",
+                                "value": "1004"
+                            },
+                            {
+                                "title": "剧情",
+                                "value": "1030"
+                            },
+                            {
+                                "value": 999,
+                                "title": "热血"
+                            },
+                            {
+                                "value": 997,
+                                "title": "古风"
+                            },
+                            {
+                                "value": 1016,
+                                "title": "玄幻"
+                            },
+                            {
+                                "value": 998,
+                                "title": "奇幻"
+                            },
+                            {
+                                "value": 1023,
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": 1002,
+                                "title": "都市"
+                            },
+                            {
+                                "value": 1096,
+                                "title": "历史"
+                            },
+                            {
+                                "value": 1092,
+                                "title": "武侠仙侠"
+                            },
+                            {
+                                "value": 1088,
+                                "title": "游戏竞技"
+                            },
+                            {
+                                "value": 1081,
+                                "title": "悬疑灵异"
+                            },
+                            {
+                                "value": 1063,
+                                "title": "架空"
+                            },
+                            {
+                                "value": 1060,
+                                "title": "青春"
+                            },
+                            {
+                                "value": 1054,
+                                "title": "西幻"
+                            },
+                            {
+                                "value": 1048,
+                                "title": "现代"
+                            },
+                            {
+                                "value": 1028,
+                                "title": "正能量"
+                            },
+                            {
+                                "value": 1015,
+                                "title": "科幻"
+                            }
+                        ],
+                        "key": "styleId"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "大陆",
+                                "value": "1"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "2"
+                            },
+                            {
+                                "title": "韩国",
+                                "value": "6"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "5"
+                            }
+                        ],
+                        "key": "areaId"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "0"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "isFinish"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "免费",
+                                "value": "1"
+                            },
+                            {
+                                "title": "付费",
+                                "value": "2"
+                            },
+                            {
+                                "title": "等就免费",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "prices"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "人气推荐",
+                                "value": "0"
+                            },
+                            {
+                                "title": "更新时间",
+                                "value": "1"
+                            },
+                            {
+                                "title": "追漫人数",
+                                "value": "2"
+                            },
+                            {
+                                "title": "上架时间",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "vertical_cover",
+            "parserID": "DOM",
+            "list": "data",
+            "status": "is_finish"
+        },
+        "榜单": {
+            "cat": "styles[1]/name",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nreturn {'url':'https://manga.bilibili.com/twirp/comic.v1.Comic/GetRankInfo', \"httpHeaders\":{\"user-agent\":\"comic-universal\\/1135 Cronet\\/81.4044.156 Darwin\\/20.3.0\"}, \"POST\":true,\"httpParams\":{\"id\":params.filters.filter,\"offset\":params.offset}};",
+            "host": "https://manga.bilibili.com",
+            "actionID": "bookWorld",
+            "detailUrl": "comic_id",
+            "moreKeys": {
+                "maxPage": "1",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "免费榜",
+                                "value": "8"
+                            },
+                            {
+                                "title": "完结榜",
+                                "value": "13"
+                            },
+                            {
+                                "title": "月票榜",
+                                "value": "4"
+                            },
+                            {
+                                "title": "宝藏榜",
+                                "value": "5"
+                            },
+                            {
+                                "title": "投喂榜",
+                                "value": "3"
+                            },
+                            {
+                                "title": "新作榜",
+                                "value": "7"
+                            },
+                            {
+                                "title": "男生榜",
+                                "value": "11"
+                            },
+                            {
+                                "title": "女生榜",
+                                "value": "12"
+                            },
+                            {
+                                "title": "国漫榜",
+                                "value": "1"
+                            },
+                            {
+                                "title": "日漫榜",
+                                "value": "0"
+                            },
+                            {
+                                "title": "韩漫榜",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "cover": "vertical_cover",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "data/list",
+            "status": "is_finish"
+        }
+    },
+    "sourceType": "video",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺哔哩哔哩漫画Vomic🔮🍪©️",
+    "sourceUrl": "https://manga.bilibili.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666138537.854734",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "styles[1]",
+        "responseFormatType": "json",
+        "bookName": "org_title",
+        "requestInfo": "@js:\n\nlet httpParams={'key_word':params.keyWord, 'page_num':params.pageIndex, 'page_size':9};\nlet httpHeaders={'Referer':'https://manga.bilibili.com/search?from=manga_homepage&keyword='+encodeURI(params.keyWord)};\n\nlet url = '/twirp/comic.v1.Comic/Search?device=h5&platform=web';\nreturn {'url':url , 'POST':true, 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+        "host": "https://manga.bilibili.com",
+        "actionID": "searchBook",
+        "detailUrl": "id||comic_id",
+        "moreKeys": {
+            "pageSize": 9
+        },
+        "cover": "vertical_cover",
+        "parserID": "DOM",
+        "validConfig": "",
+        "list": "data/list",
+        "status": "is_finish"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "data/ep_list[-1]/pub_time",
+        "requestInfo": "@js:\n\nlet httpParams={'comic_id':result};\nlet httpHeaders={'Referer':'https://manga.bilibili.com/detail/mc' + result, 'user-agent':'comic-universal/1135 Cronet/81.4044.156 Darwin/20.3.0'};\n\nlet url = '/twirp/comic.v1.Comic/ComicDetail?device=h5&platform=web';\nreturn {'url':url, 'POST':true, 'httpParams':httpParams, 'httpHeaders':httpHeaders};",
+        "title": "short_title",
+        "host": "https://manga.bilibili.com",
+        "list": "data/ep_list||@js:\nreturn result.reverse();",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id"
+    }
+}

@@ -1,0 +1,113 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet url = \"/book/newcatalog&BookId=$bookid&UpdateTime=0&ChapterNo=0&UserId=&system=android\";\nurl = url.replace('$bookid',params.queryInfo.detailUrl);\nreturn url;",
+        "title": "Title",
+        "host": "http://inf.8kana.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "list": "$.data.ChapterList",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "ChapterId ||@js:\nreturn params.queryInfo.detailUrl + '@' + result;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "不可能的世界⛄",
+    "sourceType": "text",
+    "sourceUrl": "http://inf.8kana.com",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1663495882.819704",
+    "searchBook": {
+        "author": "AuthorName",
+        "responseFormatType": "json",
+        "bookName": "BookName",
+        "desc": "NoteForMobile",
+        "requestInfo": "@js:\nlet obj = {\n\t\"url\":\"/book/search\",\n\t\"POST\":true,\n\t\"httpParams\":{\"Userid\":\"\",\"Keyword\":params.keyWord,\"SearchType\":3,\"Page\":params.pageIndex,\"System\":\"android\"},\n\t\"httpHeaders\":{\"Content-Type\":\"application/x-www-form-urlencoded;charset=UTF-8\",\"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15\"}\n}\nreturn obj;",
+        "host": "http://inf.8kana.com",
+        "actionID": "searchBook",
+        "detailUrl": "BookId",
+        "cover": "BookCover",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "$.data.Books",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.data.chapters.sections ||@js:\nreturn result.join('\\n');",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet bookid = params.queryInfo.url.split('@')[0];\nlet chapterid =  params.queryInfo.url.split('@')[1];\nlet obj = {\n\t\"url\":\"/long/readbook\",\n\t\"POST\":true,\n\t\"httpParams\":{\"userId\":\"\",\"bookId\":bookid,\"chapterId\":chapterid,\"lastModifyTime\":\"0\",\"system\":\"android\"},\n\t\"httpHeaders\":{\"Content-Type\": \"application/x-www-form-urlencoded;charset=UTF-8\",\"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15\"}\n}\n\nreturn obj;",
+        "host": "http://inf.8kana.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "detailUrl": "BookId",
+            "cat": "Class0Name",
+            "author": "AuthorName",
+            "responseFormatType": "json",
+            "bookName": "BookName",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "desc": "Note",
+            "requestInfo": "@js:\nlet obj = {\n\t\"url\":\"/book/channel\",\n\t\"POST\":true,\n\t\"httpParams\":{\"Sex\":1,\"Class0Id\":params.filter,\"VipType\":0,\"SeriesStatus\":0,\"SearchType\":1,\"Page\":params.pageIndex,\"System\":\"android\"},\n\t\"httpHeaders\":{\"Content-Type\":\"application/x-www-form-urlencoded;charset=UTF-8\",\"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15\"}\n}\nreturn obj;",
+            "host": "http://inf.8kana.com",
+            "actionID": "bookWorld",
+            "wordCount": "TotalWords",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "全部::0\n轻幻想::1\n重幻想::2"
+            },
+            "cover": "BookCover",
+            "validConfig": "",
+            "list": "$.data.books",
+            "_sIndex": 0,
+            "status": "SeriesStatusName",
+            "parserID": "DOM"
+        }
+    }
+}

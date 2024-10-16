@@ -1,0 +1,151 @@
+{
+    "chapterContent": {
+        "parserID": "DOM",
+        "responseFormatType": "json",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "host": "https://api.yousuu.com/",
+        "desc": "$..introduction",
+        "actionID": "bookDetail"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "连载总榜": {
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api.yousuu.com/api/bookStore/books?channel&classId=${_type}&tag&countWord&status=0&update&sort=score&page=${params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://api.yousuu.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "bookId |@js:\nreturn '/api/book/' +result;",
+            "moreKeys": {
+                "maxPage": 30,
+                "requestFilters": "_type\n玄幻::2\n奇幻::3\n武侠::4\n仙侠::5\n都市::6\n现实::7\n军事::8\n历史::9\n悬疑::10\n游戏::11\n竞技::12\n科幻::13\n灵异::15\n同人::16\n其他::29\nN次元::14"
+            },
+            "validConfig": "",
+            "list": "data/books",
+            "_sIndex": 4,
+            "parserID": "DOM",
+            "cover": "cover ||@js:\nreturn result.replace(\"qidian.qpic.cn\",\"bookcover.yuewen.com\");",
+            "wordCount": "countWord"
+        },
+        "月榜": {
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api.yousuu.com/api/bookStore/books?channel&classId=${_type}&tag&countWord&status&update=1&sort=score&page=${params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://api.yousuu.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "bookId |@js:\nreturn '/api/book/' +result;",
+            "moreKeys": {
+                "maxPage": 30,
+                "requestFilters": "_type\n玄幻::2\n奇幻::3\n武侠::4\n仙侠::5\n都市::6\n现实::7\n军事::8\n历史::9\n悬疑::10\n游戏::11\n竞技::12\n科幻::13\n灵异::15\n同人::16\n其他::29\nN次元::14"
+            },
+            "validConfig": "",
+            "list": "data/books",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "cover ||@js:\nreturn result.replace(\"qidian.qpic.cn\",\"bookcover.yuewen.com\");",
+            "wordCount": "countWord"
+        },
+        "总书库": {
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api.yousuu.com/api/bookStore/books?sort=${_type}&page=${params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://api.yousuu.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 30,
+                "requestFilters": "_type\n总书库::scorer"
+            },
+            "detailUrl": "bookId |@js:\nreturn '/api/book/' +result;",
+            "validConfig": "",
+            "list": "data/books",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "cover": "cover ||@js:\nreturn result.replace(\"qidian.qpic.cn\",\"bookcover.yuewen.com\");",
+            "wordCount": "countWord"
+        },
+        "热门": {
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "introduction",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api.yousuu.com/api/home/${_type}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://api.yousuu.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n今日热门::hotJumpBoard\n呵护幼苗::weekJumpBoard?countWord=0\n龙粮种草::weekJumpBoard?countWord=1\n在读指数::recomBook"
+            },
+            "detailUrl": "_id |@js:\nreturn '/api/book/' +result;",
+            "validConfig": "",
+            "list": "data",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "cover ||@js:\nreturn result.replace(\"qidian.qpic.cn\",\"bookcover.yuewen.com\");",
+            "wordCount": "countWord"
+        },
+        "完结评分榜": {
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api.yousuu.com/api/bookStore/books?channel&classId=${_type}&tag&countWord&status=1&update&sort=score&page=${params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://api.yousuu.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 30,
+                "requestFilters": "_type\n玄幻::2\n奇幻::3\n武侠::4\n仙侠::5\n都市::6\n现实::7\n军事::8\n历史::9\n悬疑::10\n游戏::11\n竞技::12\n科幻::13\n灵异::15\n同人::16\n其他::29\nN次元::14"
+            },
+            "cover": "cover ||@js:\nreturn result.replace(\"qidian.qpic.cn\",\"bookcover.yuewen.com\");",
+            "validConfig": "",
+            "list": "data/books",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "detailUrl": "bookId |@js:\nreturn '/api/book/' +result;",
+            "wordCount": "countWord"
+        }
+    },
+    "sourceType": "text",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9",
+    "sourceName": "优书网🚗",
+    "sourceUrl": "https://api.yousuu.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665972784.479252",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    }
+}

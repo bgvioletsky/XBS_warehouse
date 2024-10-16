@@ -1,0 +1,129 @@
+{
+    "bookWorld": {
+        "分类": {
+            "author": "//div[@class=\"book_author\"]/a",
+            "responseFormatType": "html",
+            "JSParser": "function functionName(config, params, result){\n\tparams.nativeTool.log(result);\n\tlet list = result.list;\n\tif(list.length>30){\n\t\tfor(let i=0;i<(list.length-30);i++){\n\t\t\tlist.pop()\n\t\t}\n\t}else if(list.length<30){\n\t\tfor(let i=0;i<(30-list.length);i++){\n\t\t\tlist.push(list[i]);\n\t\t}\n\t}\n\treturn {'list':list};\n}",
+            "bookName": "//h4/a",
+            "httpHeaders": {
+                "Referer": "https://k.2kxs.org",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+                "Host": "k.2kxs.org"
+            },
+            "requestInfo": "/list/%@filter-%@pageIndex.html",
+            "host": "https://k.2kxs.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//h4/a/@href",
+            "desc": "//p[@class=\"book-intro-index\"]",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "玄幻::1\n仙侠::2\n言情::3\n历史::4\n网游::5\n科幻::6\n恐怖::7\n其他::8"
+            },
+            "list": "//div[@class=\"media\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "cover": "//img/@src||@js:\n\nif(result.indexOf('nocover')>=0){\n\treturn 'https://onericetwowine.coding.net/p/Onerice/d/Onerice/git/raw/master/Onerice/other/img/nocover.png'\n}else{\nreturn result;\n}"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://k.2kxs.org",
+        "httpHeaders": {
+            "Referer": "https://k.2kxs.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+            "Host": "k.2kxs.org"
+        },
+        "list": "//div[@class='panel-body']//ul[contains(@class,'list-charts')]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "2k小说⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://k.2kxs.org",
+    "httpHeaders": {
+        "Referer": "https://k.2kxs.org",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+        "Host": "k.2kxs.org"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1655457099.875106",
+    "searchBook": {
+        "author": "//td[3]//a",
+        "responseFormatType": "html",
+        "bookName": "//td[2]//a",
+        "desc": "//p[@class=\"intro\"]",
+        "requestInfo": "@js:\nlet url ='/modules/article/search.php';\nlet hp = {'searchkey':params.keyWord}\nlet hh = config.httpHeaders;\nhh.Origin = config.host;\nhh.Referer = config.host + url;\n\nreturn {'url':url, 'httpParams':hp, 'POST':true,'httpHeaders':hh};",
+        "host": "https://k.2kxs.org",
+        "actionID": "searchBook",
+        "detailUrl": "//td[2]//a//@href",
+        "cover": "//td[2]//a/@href ||@js:\nvar item = result.match(/_(\\d+)\\//);\nlet id1 = item[1];\nvar id2 = parseInt(id1/1000);\nreturn config.host+'/files/article/image/'+id2+'/'+id1+'/'+id1+'s.jpg';",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table//tr",
+        "httpHeaders": {
+            "Referer": "https://k.2kxs.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+            "Host": "k.2kxs.org"
+        },
+        "status": "//td[5]//p"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\n\tlet beginStrReg = /<div class=\".*?content-ext\">/gi;\n\tlet beginIndex = result.search(beginStrReg);\n\t//params.nativeTool.log(result);\n      function typeSet(str){\n            str = str.replace(/（本章未完，请点击下一页继续阅读）/gi,'');\n\t\tstr = str.replace(/&ldquo;/gi,'\"');\n\t\tstr = str.replace(/&rdquo;/gi,'\"');\n            str = str.replace(/<br[\\s]*[\\/]*>/gi,'\\n');\n\t\tstr = str.replace(/&hellip;/gi,'……');\n            str = str.replace(/\\n[\\s]*\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,'');\n            str = str.replace(/<p[^>]*>[\\s\\S]+<\\/[^>]*>/gi,'');\n\t\tstr = str.replace(/<[^>]*>/gi,'');\n\t\tstr = str.replace(/第.*?章[^\\n]*?\\n/gi,'');\n            return str;\n      }\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex);\n\t\tparams.nativeTool.log(subStr);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n            text = typeSet(tarStr).trim()\n\t\treturn {'content':text,'autoRequestMore':true};\n\t}\n\treturn undefined;\n}",
+        "requestInfo": "@js:\nlet url = params.queryInfo.url;\nurl = url.replace('.html','_'+params.pageIndex+'.html')\nreturn encodeURI(url);",
+        "host": "https://k.2kxs.org",
+        "httpHeaders": {
+            "Referer": "https://k.2kxs.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+            "Host": "k.2kxs.org"
+        },
+        "parserID": "DOM",
+        "nextPageUrl": "@js:\nlet url = params.queryInfo.url;\nurl = url.replace('.html','_'+(params.pageIndex+1)+'.html')\nreturn encodeURI(url);"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//div[contains(@class,'info3')]/p[1] ||@js:\nreturn result.split('/')[1].split('：')[1];",
+        "lastChapterTitle": "//div[contains(@class,'info3')]/p[3]/a",
+        "host": "https://k.2kxs.org",
+        "httpHeaders": {
+            "Referer": "https://k.2kxs.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+            "Host": "k.2kxs.org"
+        },
+        "cat": "//div[contains(@class,'info3')]/p[1] ||@js:\nreturn result.split('/')[0].split('：')[1];",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"info2\"]/div[1]//p"
+    }
+}

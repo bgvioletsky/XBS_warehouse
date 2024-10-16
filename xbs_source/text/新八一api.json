@@ -1,0 +1,139 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "@js:\nlet listPath = result + '_uzip/' + 'detail.json';\nlet fileStr = params.nativeTool.readTxtFile(listPath);\nlet oriObj = JSON.parse(fileStr);\nvar tm=oriObj.data.updatedTime;\ntm=tm.replace('T',' ');\nvar j=tm.indexOf('+');\nif(j!=-1){\ntm=tm.substring(0,j);\n}\nreturn tm;",
+        "requestInfo": "@js:\n\nif(result.indexOf(\"zip\")==-1){\n\nlet pic =params.queryInfo.cover;\n\n\nlet res = \"/\"+params.queryInfo.detailUrl+\".zip\";\n\nid = pic.match(/cover\\/(\\d+)/)[1];\nres = id +res;\nlet url =\"http://statics.rungean.com/static/book/zip/\"+res;\n\nreturn {url:url,cacheTime:3600, 'responseFormatType':'filePath'};\n\n}else{\n\nreturn {url:result,cacheTime:3600, 'responseFormatType':'filePath'};}",
+        "title": "name",
+        "host": "https://api.81zwapp.com",
+        "httpHeaders": {
+            "Referer": "https://api.81zwapp.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "@js:\n\nlet dirPath = params.nativeTool.unzipFile(result);\n//params.nativeTool.log(\"1:\"+dirPath) \nlet listPath = dirPath + '/' + 'chapter.json';\nlet fileStr = params.nativeTool.readTxtFile(listPath);\n\nlet oriObj = JSON.parse(fileStr);\nreturn oriObj.data;",
+        "responseFormatType": "filePath",
+        "parserID": "DOM",
+        "url": "id||@js:\nres = params.responseUrl.match(/(\\/\\d+\\S+)/)[1];\n\n\nlet url = \"http://statics.rungean.com/static/uploadfile/chapter\"+res.replace(\".zip\",\"/\"+result);\nreturn url +\".txt\";"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "新八一api",
+    "sourceType": "text",
+    "sourceUrl": "https://api.81zwapp.com",
+    "httpHeaders": {
+        "Referer": "https://api.81zwapp.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1662036498.438196",
+    "searchBook": {
+        "cat": "categoryName",
+        "author": "author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "chapterName",
+        "bookName": "name",
+        "desc": "intro",
+        "requestInfo": "https://api.81zwapp.com/api/v1/novelsearch?content=%@keyWord&pageIndex=%@pageIndex&pageSize=20&type=2",
+        "host": "https://api.81zwapp.com",
+        "actionID": "searchBook",
+        "httpHeaders": {
+            "Referer": "https://api.81zwapp.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "picture",
+        "validConfig": "",
+        "list": "data/list",
+        "parserID": "DOM",
+        "detailUrl": "bookId|@js:\nvar bid= parseInt(result);\nvar subpath= parseInt((1999+bid)/2000)\nreturn \"http://statics.rungean.com/static/book/zip/\"+subpath+\"/\"+bid+\".zip\";",
+        "wordCount": "wordNum",
+        "status": "bookStatus"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nreturn {url:result,cacheTime:3600};",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://api.81zwapp.com",
+        "httpHeaders": {
+            "Referer": "https://api.81zwapp.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 15,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "科幻",
+                                "value": "khjj"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "dsxs"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "xuanhuan"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "穿越架空",
+                                "value": "cyjk"
+                            },
+                            {
+                                "title": "鬼怪悬疑",
+                                "value": "guihua"
+                            },
+                            {
+                                "title": "同人",
+                                "value": "tongren"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "actionID": "bookWorld"
+        }
+    }
+}

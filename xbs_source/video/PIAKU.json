@@ -1,0 +1,190 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.piaku.cc",
+        "httpHeaders": {
+            "Referer": " https://www.piaku.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@name=\"description\"]/@content"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.piaku.cc",
+        "httpHeaders": {
+            "Referer": " https://www.piaku.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "list": "//div[@class=\"bd\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "PIAKU",
+    "sourceType": "video",
+    "sourceUrl": "https://www.piaku.cc",
+    "httpHeaders": {
+        "Referer": " https://www.piaku.cc",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1659628806.707791",
+    "searchBook": {
+        "cat": "//p[3]",
+        "responseFormatType": "html",
+        "bookName": "//a",
+        "desc": "//p[6]",
+        "requestInfo": "https://www.piaku.cc/s/-----------%@pageIndex---/?wd=%@keyWord",
+        "host": "https://www.piaku.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//dt/a/@href",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "validConfig": "",
+        "list": "//div[@class=\"sr_lists\"]/dl",
+        "parserID": "DOM",
+        "cover": "//img/@src",
+        "httpHeaders": {
+            "Referer": " https://www.piaku.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "status": "//p[5][@class=\"p0\"]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet pat=\".*(m3u8|mp4).*\"\nreturn {'url':result,'httpHeaders':config.httpHeaders, 'webView':true,'sourceRegex':pat};",
+        "host": "https://www.piaku.cc",
+        "httpHeaders": {
+            "Referer": " https://www.piaku.cc",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "动漫": {
+            "cat": "//div[@class=\"tag\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//@alt",
+            "httpHeaders": {
+                "Referer": " https://www.piaku.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa,_ab,_ac}=params.filters\nlet url=`https://www.piaku.cc/list/DM-${_aa}-${_ac}------${params.pageIndex}---${_ab}/`;\r\n\r\nreturn {url:url}",
+            "host": "https://www.piaku.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"li-img\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 42,
+                "requestFilters": "_aa\n地区::\n日本::%E6%97%A5%E6%9C%AC\n国产::%E5%9B%BD%E4%BA%A7\n\n_ab\n年份::\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012\n2011::2011\n2010::2010\n2009::2009\n2008::2008\n2007::2007\n2006::2006\n2005::2005\n2004::2004\n\n_ac\n时间::time\n人气::hits\n评分::score\n"
+            },
+            "_sIndex": 0,
+            "list": "//ul[@class=\"content-list\"]/li",
+            "parserID": "DOM"
+        },
+        "综艺": {
+            "cat": "//div[@class=\"tag\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//@alt",
+            "httpHeaders": {
+                "Referer": " https://www.piaku.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa,_ab,_ac}=params.filters\nlet url=`https://www.piaku.cc/list/ZY-${_aa}-${_ac}------${params.pageIndex}---${_ab}/`;\r\n\r\nreturn {url:url}",
+            "host": "https://www.piaku.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"li-img\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 42,
+                "requestFilters": "_ab\n年份::\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012\n2011::2011\n2010::2010\n2009::2009\n2008::2008\n2007::2007\n2006::2006\n2005::2005\n2004::2004\n\n_aa\n地区::\n内地::%E5%86%85%E5%9C%B0\n港台::%E6%B8%AF%E5%8F%B0\n日韩::%E6%97%A5%E9%9F%A9\n欧美::%E6%AC%A7%E7%BE%8E\n\n_ac\n时间::time\n人气::hits\n评分::score\n"
+            },
+            "_sIndex": 3,
+            "list": "//ul[@class=\"content-list\"]/li",
+            "parserID": "DOM"
+        },
+        "电视剧": {
+            "cat": "//div[@class=\"tag\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//@alt",
+            "httpHeaders": {
+                "Referer": " https://www.piaku.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa,_ab,_ac,_ad}=params.filters\nlet url=`https://www.piaku.cc/list/${_aa}-${_ad}-${_ac}------${params.pageIndex}---${_ab}/`;\r\n\r\nreturn {url:url}",
+            "host": "https://www.piaku.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"li-img\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 42,
+                "requestFilters": "_aa\n电视剧::DSJ\n国产剧::GC\n港台剧::GT+\n日韩剧::RH\n欧美剧::OM\n泰国剧::tg\n\n_ab\n年份::\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012\n2011::2011\n2010::2010\n2009::2009\n2008::2008\n2007::2007\n2006::2006\n2005::2005\n2004::2004\n\n_ad\n地区::\n大陆::%E5%A4%A7%E9%99%86\n香港::%E9%A6%99%E6%B8%AF\n台湾::%E5%8F%B0%E6%B9%BE\n美国::%E7%BE%8E%E5%9B%BD\n法国::%E6%B3%95%E5%9B%BD\n英国::%E8%8B%B1%E5%9B%BD\n日本::%E6%97%A5%E6%9C%AC\n韩国::%E9%9F%A9%E5%9B%BD\n德国::%E5%BE%B7%E5%9B%BD\n泰国::%E6%B3%B0%E5%9B%BD\n印度::%E5%8D%B0%E5%BA%A6\n意大利::%E6%84%8F%E5%A4%A7%E5%88%A9\n西班牙::%E8%A5%BF%E7%8F%AD%E7%89%99\n加拿大::%E5%8A%A0%E6%8B%BF%E5%A4%A7\n其他::%E5%85%B6%E4%BB%96\n\n_ac\n时间::time\n人气::hits\n评分::score\n"
+            },
+            "_sIndex": 2,
+            "list": "//ul[@class=\"content-list\"]/li",
+            "parserID": "DOM"
+        },
+        "电影": {
+            "cat": "//div[@class=\"tag\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]",
+            "bookName": "//@alt",
+            "httpHeaders": {
+                "Referer": " https://www.piaku.cc",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "requestInfo": "@js:\r\nlet {_aa,_ab,_ac,_ad}=params.filters\nlet url=`https://www.piaku.cc/list/${_aa}-${_ad}-${_ac}------${params.pageIndex}---${_ab}/`;\r\n\r\nreturn {url:url}",
+            "host": "https://www.piaku.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"li-img\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 42,
+                "requestFilters": "_aa\n电影::DY\n动作片::DZ\n喜剧片::XJ\n爱情片::AQ\n科幻片::KH\n恐怖片::KB\n剧情片::JQ\n战争片::ZZ\n犯罪片::FZ\n惊悚片::JS\n冒险片::MX\n悬疑片::XY\n武侠片::WX\n奇幻片::QH\n纪录片::JL\n动画片::DHP\n\n_ab\n年份::\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012\n2011::2011\n2010::2010\n2009::2009\n2008::2008\n2007::2007\n2006::2006\n2005::2005\n2004::2004\n\n_ad\n地区::\n大陆::%E5%A4%A7%E9%99%86\n香港::%E9%A6%99%E6%B8%AF\n台湾::%E5%8F%B0%E6%B9%BE\n美国::%E7%BE%8E%E5%9B%BD\n法国::%E6%B3%95%E5%9B%BD\n英国::%E8%8B%B1%E5%9B%BD\n日本::%E6%97%A5%E6%9C%AC\n韩国::%E9%9F%A9%E5%9B%BD\n德国::%E5%BE%B7%E5%9B%BD\n泰国::%E6%B3%B0%E5%9B%BD\n印度::%E5%8D%B0%E5%BA%A6\n意大利::%E6%84%8F%E5%A4%A7%E5%88%A9\n西班牙::%E8%A5%BF%E7%8F%AD%E7%89%99\n加拿大::%E5%8A%A0%E6%8B%BF%E5%A4%A7\n其他::%E5%85%B6%E4%BB%96\n\n_ac\n时间::time\n人气::hits\n评分::score\n"
+            },
+            "_sIndex": 1,
+            "list": "//ul[@class=\"content-list\"]/li",
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

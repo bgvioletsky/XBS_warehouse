@@ -1,0 +1,115 @@
+{
+    "bookWorld": {
+        "同人誌": {
+            "responseFormatType": "json",
+            "bookName": "title",
+            "httpHeaders": {
+                "Referer": "https://acgbeo.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "requestInfo": "/api/threads/?category=%@filter&list=all&page=%@pageIndex",
+            "host": "https://acgbeo.com",
+            "actionID": "bookWorld",
+            "detailUrl": "$.url.index",
+            "cover": "preview",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "$.results",
+            "desc": "title",
+            "status": "last_post_on",
+            "moreKeys": {
+                "pageSize": 25,
+                "requestFilters": "同人誌::3\n単行本::4\n小雜誌::5\nP站 R18 日榜::6"
+            }
+        }
+    },
+    "password": "ₓKSēnoYuanpro5kycg!@happy134∞",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "@js:\nreturn params.queryInfo.bookName;",
+        "host": "https://acgbeo.com",
+        "httpHeaders": {
+            "Referer": "https://acgbeo.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "list": "//body",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "@js:\nreturn params.queryInfo.detailUrl;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "AB站⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://acgbeo.com",
+    "httpHeaders": {
+        "Referer": "https://acgbeo.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1655630299.677768",
+    "searchBook": {
+        "cat": "//a[contains(@class,'thread-detail-category')] ||@js:\nreturn result.trim()",
+        "responseFormatType": "html",
+        "bookName": "//a[contains(@class,'thread-title')] ||@js:\nreturn result.trim()",
+        "desc": "//a[contains(@class,'thread-title')] ||@js:\nreturn result.trim()",
+        "requestInfo": "@js:\nurl = '/';\nif(params.pageIndex>1){\n\turl += '?page=' + params.pageIndex;\n}\nreturn encodeURI(url);",
+        "host": "https://acgbeo.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[contains(@class,'thread-title')]/@href ||@js:\nreturn result.trim()",
+        "cover": "//img//@src ||@js:\nreturn result.trim().split('\\n')[0];",
+        "validConfig": "",
+        "list": "//ul[@class=\"list-group\"]//li",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 50
+        },
+        "httpHeaders": {
+            "Referer": "https://acgbeo.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//img/@data-src",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result){\n\tparams.nativeTool.log(result);\n\tlet imgs = result.content;\n\tlet hh = config.httpHeaders;\n\thh.Host = imgs.split('\\n')[0].match(/\\/\\/(.*?)\\//)[1];\n\tlet imgObj =  {'urls':imgs,'httpHeaders':hh};\n\treturn JSON.stringify(imgObj);\n}",
+        "host": "https://acgbeo.com",
+        "httpHeaders": {
+            "Referer": "https://acgbeo.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "⚠如果你花钱买的源，说明你被骗了",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "bookWorld": {
+        "s": {
+            "responseFormatType": "html",
+            "bookName": "//div/div/h4/a/text()",
+            "requestInfo": "@js:\nlet {_list1,_list2}=params.filters\nlet url=`http://www.qiruiyaoye.cn${_list1}${_list2}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.qiruiyaoye.cn",
+            "actionID": "bookWorld",
+            "detailUrl": "//div/div/h4/a/@href",
+            "cover": "//div/a/p/@style\n\n|| @replace: background-image: url ||@replace: ( ||@replace: )",
+            "validConfig": "",
+            "list": "//div[@class=\"box-body\"]/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_list1\n恋爱::/category/1/\n热血::/category/2/\n古风::/category/3/\n冒险::/category/4/\n玄幻::/category/5/\n动作::/category/6/\n校园::/category/7/\n修真::/category/8/\n竞技::/category/9/\n生活::/category/10/\n后宫::/category/11/\n霸总::/category/12/\n搞笑::/category/13/\n穿越::/category/14/\n战争::/category/15/\n架空::/category/16/\n悬疑::/category/17/\n灵异::/category/18/\n恐怖::/category/19/\n励志::/category/20/\n科幻::/category/21/\n同人::/category/22/\n其他::/category/23/\n真人::/category/24/\n\n_list2\n连载::/1/end/0/\n完结::/1/end/1/"
+            }
+        }
+    },
+    "weight": "9",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//h2/a",
+        "host": "http://www.qiruiyaoye.cn",
+        "list": "//div[@id=\"chapterlistload\"]/ul/li\n\n||@js: return result.reverse()",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//h2/a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "cc漫画",
+    "sourceType": "comic",
+    "sourceUrl": "http://www.qiruiyaoye.cn",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666803054.969729",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "http://www.qiruiyaoye.cn/search/%@keyWord/",
+        "bookName": "//div/div/h2/a/text()",
+        "detailUrl": "//div/div/h2/a/@href",
+        "host": "http://www.qiruiyaoye.cn",
+        "cover": "//div/a/p/@style\n\n|| @replace: background-image: url ||@replace: ( ||@replace: )",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "list": "//div[@class=\"box-body\"]/ul/li"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@class=\"comicpage\"]//img/@data-original",
+        "host": "http://www.qiruiyaoye.cn",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🌻",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    }
+}

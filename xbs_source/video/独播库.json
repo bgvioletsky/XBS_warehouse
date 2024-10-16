@@ -1,0 +1,1594 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {\n    'url': result,\n    'httpHeaders': config.httpHeaders,\n}",
+        "host": "https://e.duboku.fun",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "cat": "//p[@class=\"data\"][1]/a[1]/text()",
+        "responseFormatType": "html",
+        "desc": "//span[@class=\"sketch content\"]/text()",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "99",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n\nreturn {\n    'url': result,\n    'httpHeaders': config.httpHeaders,\n}",
+        "title": "//a/text()",
+        "host": "https://e.duboku.fun",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//li[@class=\"col-lg-10 col-md-8 col-sm-6 col-xs-4\"]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "独播库",
+    "sourceType": "video",
+    "sourceUrl": "https://e.duboku.fun",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1645890980.545736",
+    "searchBook": {
+        "cat": "//*[@class=\"detail\"]/p[3]/text()",
+        "author": "//*[@class=\"detail\"]/p[2]/text()",
+        "responseFormatType": "html",
+        "bookName": "//h4/a/text()",
+        "desc": "//*[@class=\"detail\"]/p[4]/text()",
+        "requestInfo": "@js:\nlet httpHeaders = {\n    \"Accept\": \"*/*\",\n    \"Cookie\": \"searchneed=ok\",\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.0 Mobile/15E148 Safari/604.1\",\n};\nreturn {\n    'url': config.host + '/vodsearch/' + encodeURIComponent(params.keyWord) + '----------' + params.pageIndex + '---.html',\n    'httpHeaders': httpHeaders,\n};",
+        "host": "https://e.duboku.fun",
+        "actionID": "searchBook",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "cover": "//div[1]/a[1]/@data-original",
+        "validConfig": "",
+        "list": "//*[@class=\"clearfix\"]",
+        "parserID": "DOM",
+        "detailUrl": "//div[1]/a[1]/@href || @js:\nreturn result.startsWith('/')?config.host+result:result;",
+        "moreKeys": {
+            "pageSize": 10
+        }
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "@js:\n\nlet _js = String(result).match(/var player_data?.+}/g)[0];\neval(_js);\nconfig.httpHeaders['Referer'] = \"https://e.duboku.fun/\";\nreturn JSON.stringify({\n    'url': player_data.url,\n    'httpHeaders': config.httpHeaders,\n});",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet httpHeaders = {\n    \"Accept\": \"*/*\",\n    \"User-Agent\": \"Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1\",\n};\n//let url='https://www.o8tv.com/vodplay/344440-1-1.html';\nreturn {\n    \"url\": result ,\n    \"httpHeaders\": httpHeaders,\n    cacheKey: params.nativeTool.md5Encode(String((new Date).getTime())),\n     };",
+        "host": "https://e.duboku.fun",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "950206@",
+    "shudanList": {},
+    "desc": "张益达",
+    "bookWorld": {
+        "动漫": {
+            "author": "//*[@class=\"text text-overflow text-muted hidden-xs\"]/text()",
+            "responseFormatType": "html",
+            "bookName": "//*[@class=\"myui-vodlist__detail\"]/h4/a[1]/text()",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + '/vodshow/' +\n    '4-' +\n    params.filters.area + '-' +\n    params.filters.sort + '-' +\n    params.filters.cat + '-' +\n    params.filters.lang + '-' +\n    params.filters.letter + '---' + params.pageIndex + '---' +\n    params.filters.year + '.html';\n\nreturn {\n    'url': url,\n    'httpHeaders': config.httpHeaders,\n}",
+            "host": "https://e.duboku.fun",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 48,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "%E7%8E%84%E5%B9%BB"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "%E6%AD%A6%E4%BE%A0"
+                            },
+                            {
+                                "title": "情感",
+                                "value": "%E6%83%85%E6%84%9F"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "%E7%A7%91%E5%B9%BB"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "%E7%83%AD%E8%A1%80"
+                            },
+                            {
+                                "title": "推理",
+                                "value": "%E6%8E%A8%E7%90%86"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "%E6%90%9E%E7%AC%91"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "%E5%86%92%E9%99%A9"
+                            },
+                            {
+                                "title": "萝莉",
+                                "value": "%E8%90%9D%E8%8E%89"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "%E6%A0%A1%E5%9B%AD"
+                            },
+                            {
+                                "title": "动作",
+                                "value": "%E5%8A%A8%E4%BD%9C"
+                            },
+                            {
+                                "title": "机战",
+                                "value": "%E6%9C%BA%E6%88%98"
+                            },
+                            {
+                                "title": "运动",
+                                "value": "%E8%BF%90%E5%8A%A8"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "%E6%88%98%E4%BA%89"
+                            },
+                            {
+                                "title": "少年",
+                                "value": "%E5%B0%91%E5%B9%B4"
+                            },
+                            {
+                                "title": "少女",
+                                "value": "%E5%B0%91%E5%A5%B3"
+                            },
+                            {
+                                "title": "社会",
+                                "value": "%E7%A4%BE%E4%BC%9A"
+                            },
+                            {
+                                "title": "亲子",
+                                "value": "%E4%BA%B2%E5%AD%90"
+                            },
+                            {
+                                "title": "益智",
+                                "value": "%E7%9B%8A%E6%99%BA"
+                            },
+                            {
+                                "title": "励志",
+                                "value": "%E5%8A%B1%E5%BF%97"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "%E5%85%B6%E4%BB%96"
+                            }
+                        ],
+                        "key": "cat"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "国产",
+                                "value": "%E5%9B%BD%E4%BA%A7"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "%E6%97%A5%E6%9C%AC"
+                            },
+                            {
+                                "title": "欧美",
+                                "value": "%E6%AC%A7%E7%BE%8E"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "%E5%85%B6%E4%BB%96"
+                            }
+                        ],
+                        "key": "area"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "2021",
+                                "value": "2021"
+                            },
+                            {
+                                "title": "2020",
+                                "value": "2020"
+                            },
+                            {
+                                "title": "2019",
+                                "value": "2019"
+                            },
+                            {
+                                "title": "2018",
+                                "value": "2018"
+                            },
+                            {
+                                "title": "2017",
+                                "value": "2017"
+                            }
+                        ],
+                        "key": "year"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "国语",
+                                "value": "%E5%9B%BD%E8%AF%AD"
+                            },
+                            {
+                                "title": "英语",
+                                "value": "%E8%8B%B1%E8%AF%AD"
+                            },
+                            {
+                                "title": "粤语",
+                                "value": "%E7%B2%A4%E8%AF%AD"
+                            },
+                            {
+                                "title": "闽南语",
+                                "value": "%E9%97%BD%E5%8D%97%E8%AF%AD"
+                            },
+                            {
+                                "title": "韩语",
+                                "value": "%E9%9F%A9%E8%AF%AD"
+                            },
+                            {
+                                "title": "日语",
+                                "value": "%E6%97%A5%E8%AF%AD"
+                            },
+                            {
+                                "title": "其它",
+                                "value": "%E5%85%B6%E5%AE%83"
+                            }
+                        ],
+                        "key": "lang"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "A",
+                                "value": "A"
+                            },
+                            {
+                                "title": "B",
+                                "value": "B"
+                            },
+                            {
+                                "title": "C",
+                                "value": "C"
+                            },
+                            {
+                                "title": "D",
+                                "value": "D"
+                            },
+                            {
+                                "title": "E",
+                                "value": "E"
+                            },
+                            {
+                                "title": "F",
+                                "value": "F"
+                            },
+                            {
+                                "title": "G",
+                                "value": "G"
+                            },
+                            {
+                                "title": "H",
+                                "value": "H"
+                            },
+                            {
+                                "title": "I",
+                                "value": "I"
+                            },
+                            {
+                                "title": "J",
+                                "value": "J"
+                            },
+                            {
+                                "title": "K",
+                                "value": "K"
+                            },
+                            {
+                                "title": "L",
+                                "value": "L"
+                            },
+                            {
+                                "title": "M",
+                                "value": "M"
+                            },
+                            {
+                                "title": "N",
+                                "value": "N"
+                            },
+                            {
+                                "title": "O",
+                                "value": "O"
+                            },
+                            {
+                                "title": "P",
+                                "value": "P"
+                            },
+                            {
+                                "title": "Q",
+                                "value": "Q"
+                            },
+                            {
+                                "title": "R",
+                                "value": "R"
+                            },
+                            {
+                                "title": "S",
+                                "value": "S"
+                            },
+                            {
+                                "title": "T",
+                                "value": "T"
+                            },
+                            {
+                                "title": "U",
+                                "value": "U"
+                            },
+                            {
+                                "title": "V",
+                                "value": "V"
+                            },
+                            {
+                                "title": "W",
+                                "value": "W"
+                            },
+                            {
+                                "title": "X",
+                                "value": "X"
+                            },
+                            {
+                                "title": "Y",
+                                "value": "Y"
+                            },
+                            {
+                                "title": "Z",
+                                "value": "Z"
+                            },
+                            {
+                                "title": "0-9",
+                                "value": "0-9"
+                            }
+                        ],
+                        "key": "letter"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "时间",
+                                "value": "time"
+                            },
+                            {
+                                "title": "人气",
+                                "value": "hits"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "score"
+                            }
+                        ],
+                        "key": "sort"
+                    }
+                ]
+            },
+            "cover": "//a[1]/@data-original",
+            "validConfig": "",
+            "list": "//*[@class=\"myui-vodlist__box\"]",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "detailUrl": "//*[@class=\"myui-vodlist__detail\"]/h4/a[1]/@href\n || @js:\nreturn result.startsWith('/')?config.host+result:result;",
+            "status": "//span[@class=\"pic-text text-right\"]/text()"
+        },
+        "综艺": {
+            "author": "//*[@class=\"text text-overflow text-muted hidden-xs\"]/text()",
+            "responseFormatType": "html",
+            "bookName": "//*[@class=\"myui-vodlist__detail\"]/h4/a[1]/text()",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + '/vodshow/' +\n    '3-' +\n    params.filters.area + '-' +\n    params.filters.sort + '-' +\n    params.filters.cat + '-' +\n    params.filters.lang + '-' +\n    params.filters.letter + '---' + params.pageIndex + '---' +\n    params.filters.year + '.html';\n\nreturn {\n    'url': url,\n    'httpHeaders': config.httpHeaders,\n}",
+            "host": "https://e.duboku.fun",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 48,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "真人秀",
+                                "value": "%E7%9C%9F%E4%BA%BA%E7%A7%80"
+                            },
+                            {
+                                "title": "选秀",
+                                "value": "%E9%80%89%E7%A7%80"
+                            },
+                            {
+                                "title": "竞演",
+                                "value": "%E7%AB%9E%E6%BC%94"
+                            },
+                            {
+                                "title": "情感",
+                                "value": "%E6%83%85%E6%84%9F"
+                            },
+                            {
+                                "title": "访谈",
+                                "value": "%E8%AE%BF%E8%B0%88"
+                            },
+                            {
+                                "title": "播报",
+                                "value": "%E6%92%AD%E6%8A%A5"
+                            },
+                            {
+                                "title": "旅游",
+                                "value": "%E6%97%85%E6%B8%B8"
+                            },
+                            {
+                                "title": "音乐",
+                                "value": "%E9%9F%B3%E4%B9%90"
+                            },
+                            {
+                                "title": "美食",
+                                "value": "%E7%BE%8E%E9%A3%9F"
+                            },
+                            {
+                                "title": "纪实",
+                                "value": "%E7%BA%AA%E5%AE%9E"
+                            },
+                            {
+                                "title": "曲艺",
+                                "value": "%E6%9B%B2%E8%89%BA"
+                            },
+                            {
+                                "title": "生活",
+                                "value": "%E7%94%9F%E6%B4%BB"
+                            },
+                            {
+                                "title": "游戏互动",
+                                "value": "%E6%B8%B8%E6%88%8F%E4%BA%92%E5%8A%A8"
+                            }
+                        ],
+                        "key": "cat"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "内地",
+                                "value": "%E5%86%85%E5%9C%B0"
+                            },
+                            {
+                                "title": "港台",
+                                "value": "%E6%B8%AF%E5%8F%B0"
+                            },
+                            {
+                                "title": "日韩",
+                                "value": "%E6%97%A5%E9%9F%A9"
+                            },
+                            {
+                                "title": "欧美",
+                                "value": "%E6%AC%A7%E7%BE%8E"
+                            }
+                        ],
+                        "key": "area"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "2021",
+                                "value": "2021"
+                            },
+                            {
+                                "title": "2020",
+                                "value": "2020"
+                            },
+                            {
+                                "title": "2019",
+                                "value": "2019"
+                            }
+                        ],
+                        "key": "year"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "国语",
+                                "value": "%E5%9B%BD%E8%AF%AD"
+                            },
+                            {
+                                "title": "英语",
+                                "value": "%E8%8B%B1%E8%AF%AD"
+                            },
+                            {
+                                "title": "粤语",
+                                "value": "%E7%B2%A4%E8%AF%AD"
+                            },
+                            {
+                                "title": "闽南语",
+                                "value": "%E9%97%BD%E5%8D%97%E8%AF%AD"
+                            },
+                            {
+                                "title": "韩语",
+                                "value": "%E9%9F%A9%E8%AF%AD"
+                            },
+                            {
+                                "title": "日语",
+                                "value": "%E6%97%A5%E8%AF%AD"
+                            },
+                            {
+                                "title": "其它",
+                                "value": "%E5%85%B6%E5%AE%83"
+                            }
+                        ],
+                        "key": "lang"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "A",
+                                "value": "A"
+                            },
+                            {
+                                "title": "B",
+                                "value": "B"
+                            },
+                            {
+                                "title": "C",
+                                "value": "C"
+                            },
+                            {
+                                "title": "D",
+                                "value": "D"
+                            },
+                            {
+                                "title": "E",
+                                "value": "E"
+                            },
+                            {
+                                "title": "F",
+                                "value": "F"
+                            },
+                            {
+                                "title": "G",
+                                "value": "G"
+                            },
+                            {
+                                "title": "H",
+                                "value": "H"
+                            },
+                            {
+                                "title": "I",
+                                "value": "I"
+                            },
+                            {
+                                "title": "J",
+                                "value": "J"
+                            },
+                            {
+                                "title": "K",
+                                "value": "K"
+                            },
+                            {
+                                "title": "L",
+                                "value": "L"
+                            },
+                            {
+                                "title": "M",
+                                "value": "M"
+                            },
+                            {
+                                "title": "N",
+                                "value": "N"
+                            },
+                            {
+                                "title": "O",
+                                "value": "O"
+                            },
+                            {
+                                "title": "P",
+                                "value": "P"
+                            },
+                            {
+                                "title": "Q",
+                                "value": "Q"
+                            },
+                            {
+                                "title": "R",
+                                "value": "R"
+                            },
+                            {
+                                "title": "S",
+                                "value": "S"
+                            },
+                            {
+                                "title": "T",
+                                "value": "T"
+                            },
+                            {
+                                "title": "U",
+                                "value": "U"
+                            },
+                            {
+                                "title": "V",
+                                "value": "V"
+                            },
+                            {
+                                "title": "W",
+                                "value": "W"
+                            },
+                            {
+                                "title": "X",
+                                "value": "X"
+                            },
+                            {
+                                "title": "Y",
+                                "value": "Y"
+                            },
+                            {
+                                "title": "Z",
+                                "value": "Z"
+                            },
+                            {
+                                "title": "0-9",
+                                "value": "0-9"
+                            }
+                        ],
+                        "key": "letter"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "时间",
+                                "value": "time"
+                            },
+                            {
+                                "title": "人气",
+                                "value": "hits"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "score"
+                            }
+                        ],
+                        "key": "sort"
+                    }
+                ]
+            },
+            "cover": "//a[1]/@data-original",
+            "validConfig": "",
+            "list": "//*[@class=\"myui-vodlist__box\"]",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "detailUrl": "//*[@class=\"myui-vodlist__detail\"]/h4/a[1]/@href\n || @js:\nreturn result.startsWith('/')?config.host+result:result;",
+            "status": "//span[@class=\"pic-text text-right\"]/text()"
+        },
+        "电视剧": {
+            "author": "//*[@class=\"text text-overflow text-muted hidden-xs\"]/text()",
+            "responseFormatType": "html",
+            "bookName": "//*[@class=\"myui-vodlist__detail\"]/h4/a[1]/text()",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + '/vodshow/' +\n    params.filters.type + '-' +\n    params.filters.area + '-' +\n    params.filters.sort + '-' +\n    params.filters.cat + '-' +\n    params.filters.lang + '-' +\n    params.filters.letter + '---' + params.pageIndex + '---' +\n    params.filters.year + '.html';\n\nreturn {\n    'url': url,\n    'httpHeaders': config.httpHeaders,\n}",
+            "host": "https://e.duboku.fun",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 48,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "2"
+                            },
+                            {
+                                "title": "陆剧",
+                                "value": "13"
+                            },
+                            {
+                                "title": "日韩剧",
+                                "value": "15"
+                            },
+                            {
+                                "title": "英美剧",
+                                "value": "16"
+                            },
+                            {
+                                "title": "台泰剧",
+                                "value": "14"
+                            },
+                            {
+                                "title": "港剧",
+                                "value": "20"
+                            }
+                        ],
+                        "key": "type"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "%E6%82%AC%E7%96%91"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "%E6%AD%A6%E4%BE%A0"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "%E7%A7%91%E5%B9%BB"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "%E9%83%BD%E5%B8%82"
+                            },
+                            {
+                                "title": "爱情",
+                                "value": "%E7%88%B1%E6%83%85"
+                            },
+                            {
+                                "title": "古装",
+                                "value": "%E5%8F%A4%E8%A3%85"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "%E6%88%98%E4%BA%89"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "%E9%9D%92%E6%98%A5"
+                            },
+                            {
+                                "title": "偶像",
+                                "value": "%E5%81%B6%E5%83%8F"
+                            },
+                            {
+                                "title": "喜剧",
+                                "value": "%E5%96%9C%E5%89%A7"
+                            },
+                            {
+                                "title": "家庭",
+                                "value": "%E5%AE%B6%E5%BA%AD"
+                            },
+                            {
+                                "title": "犯罪",
+                                "value": "%E7%8A%AF%E7%BD%AA"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "%E5%A5%87%E5%B9%BB"
+                            },
+                            {
+                                "title": "剧情",
+                                "value": "%E5%89%A7%E6%83%85"
+                            },
+                            {
+                                "title": "乡村",
+                                "value": "%E4%B9%A1%E6%9D%91"
+                            },
+                            {
+                                "title": "年代",
+                                "value": "%E5%B9%B4%E4%BB%A3"
+                            },
+                            {
+                                "title": "警匪",
+                                "value": "%E8%AD%A6%E5%8C%AA"
+                            },
+                            {
+                                "title": "谍战",
+                                "value": "%E8%B0%8D%E6%88%98"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "%E5%86%92%E9%99%A9"
+                            },
+                            {
+                                "title": "罪案",
+                                "value": "%E7%BD%AA%E6%A1%88"
+                            },
+                            {
+                                "title": "宫廷",
+                                "value": "%E5%AE%AB%E5%BB%B7"
+                            },
+                            {
+                                "title": "魔幻",
+                                "value": "%E9%AD%94%E5%B9%BB"
+                            },
+                            {
+                                "title": "BL",
+                                "value": "BL"
+                            }
+                        ],
+                        "key": "cat"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "内地",
+                                "value": "%E5%86%85%E5%9C%B0"
+                            },
+                            {
+                                "title": "韩国",
+                                "value": "%E9%9F%A9%E5%9B%BD"
+                            },
+                            {
+                                "title": "香港",
+                                "value": "%E9%A6%99%E6%B8%AF"
+                            },
+                            {
+                                "title": "台湾",
+                                "value": "%E5%8F%B0%E6%B9%BE"
+                            },
+                            {
+                                "title": "美国",
+                                "value": "%E7%BE%8E%E5%9B%BD"
+                            },
+                            {
+                                "title": "英国",
+                                "value": "%E8%8B%B1%E5%9B%BD"
+                            },
+                            {
+                                "title": "巴西",
+                                "value": "%E5%B7%B4%E8%A5%BF"
+                            },
+                            {
+                                "title": "西班牙",
+                                "value": "%E8%A5%BF%E7%8F%AD%E7%89%99"
+                            },
+                            {
+                                "title": "泰国",
+                                "value": "%E6%B3%B0%E5%9B%BD"
+                            },
+                            {
+                                "title": "德国",
+                                "value": "%E5%BE%B7%E5%9B%BD"
+                            },
+                            {
+                                "title": "法国",
+                                "value": "%E6%B3%95%E5%9B%BD"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "%E6%97%A5%E6%9C%AC"
+                            },
+                            {
+                                "title": "荷兰",
+                                "value": "%E8%8D%B7%E5%85%B0"
+                            },
+                            {
+                                "title": "丹麦",
+                                "value": "%E4%B8%B9%E9%BA%A6"
+                            }
+                        ],
+                        "key": "area"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "2021",
+                                "value": "2021"
+                            },
+                            {
+                                "title": "2020",
+                                "value": "2020"
+                            },
+                            {
+                                "title": "2019",
+                                "value": "2019"
+                            },
+                            {
+                                "title": "2018",
+                                "value": "2018"
+                            },
+                            {
+                                "title": "2017",
+                                "value": "2017"
+                            }
+                        ],
+                        "key": "year"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "国语",
+                                "value": "%E5%9B%BD%E8%AF%AD"
+                            },
+                            {
+                                "title": "英语",
+                                "value": "%E8%8B%B1%E8%AF%AD"
+                            },
+                            {
+                                "title": "粤语",
+                                "value": "%E7%B2%A4%E8%AF%AD"
+                            },
+                            {
+                                "title": "韩语",
+                                "value": "%E9%9F%A9%E8%AF%AD"
+                            },
+                            {
+                                "title": "西班牙语",
+                                "value": "%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD"
+                            },
+                            {
+                                "title": "葡萄牙语",
+                                "value": "%E8%91%A1%E8%90%84%E7%89%99%E8%AF%AD"
+                            },
+                            {
+                                "title": "泰语",
+                                "value": "%E6%B3%B0%E8%AF%AD"
+                            },
+                            {
+                                "title": "德语",
+                                "value": "%E5%BE%B7%E8%AF%AD"
+                            },
+                            {
+                                "title": "法语",
+                                "value": "%E6%B3%95%E8%AF%AD"
+                            },
+                            {
+                                "title": "日语",
+                                "value": "%E6%97%A5%E8%AF%AD"
+                            },
+                            {
+                                "title": "荷兰语",
+                                "value": "%E8%8D%B7%E5%85%B0%E8%AF%AD"
+                            },
+                            {
+                                "title": "挪威语",
+                                "value": "%E6%8C%AA%E5%A8%81%E8%AF%AD"
+                            }
+                        ],
+                        "key": "lang"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "A",
+                                "value": "A"
+                            },
+                            {
+                                "title": "B",
+                                "value": "B"
+                            },
+                            {
+                                "title": "C",
+                                "value": "C"
+                            },
+                            {
+                                "title": "D",
+                                "value": "D"
+                            },
+                            {
+                                "title": "E",
+                                "value": "E"
+                            },
+                            {
+                                "title": "F",
+                                "value": "F"
+                            },
+                            {
+                                "title": "G",
+                                "value": "G"
+                            },
+                            {
+                                "title": "H",
+                                "value": "H"
+                            },
+                            {
+                                "title": "I",
+                                "value": "I"
+                            },
+                            {
+                                "title": "J",
+                                "value": "J"
+                            },
+                            {
+                                "title": "K",
+                                "value": "K"
+                            },
+                            {
+                                "title": "L",
+                                "value": "L"
+                            },
+                            {
+                                "title": "M",
+                                "value": "M"
+                            },
+                            {
+                                "title": "N",
+                                "value": "N"
+                            },
+                            {
+                                "title": "O",
+                                "value": "O"
+                            },
+                            {
+                                "title": "P",
+                                "value": "P"
+                            },
+                            {
+                                "title": "Q",
+                                "value": "Q"
+                            },
+                            {
+                                "title": "R",
+                                "value": "R"
+                            },
+                            {
+                                "title": "S",
+                                "value": "S"
+                            },
+                            {
+                                "title": "T",
+                                "value": "T"
+                            },
+                            {
+                                "title": "U",
+                                "value": "U"
+                            },
+                            {
+                                "title": "V",
+                                "value": "V"
+                            },
+                            {
+                                "title": "W",
+                                "value": "W"
+                            },
+                            {
+                                "title": "X",
+                                "value": "X"
+                            },
+                            {
+                                "title": "Y",
+                                "value": "Y"
+                            },
+                            {
+                                "title": "Z",
+                                "value": "Z"
+                            },
+                            {
+                                "title": "0-9",
+                                "value": "0-9"
+                            }
+                        ],
+                        "key": "letter"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "时间",
+                                "value": "time"
+                            },
+                            {
+                                "title": "人气",
+                                "value": "hits"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "score"
+                            }
+                        ],
+                        "key": "sort"
+                    }
+                ]
+            },
+            "cover": "//a[1]/@data-original",
+            "validConfig": "",
+            "list": "//*[@class=\"myui-vodlist__box\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//*[@class=\"myui-vodlist__detail\"]/h4/a[1]/@href\n || @js:\nreturn result.startsWith('/')?config.host+result:result;",
+            "status": "//span[@class=\"pic-text text-right\"]/text()"
+        },
+        "电影": {
+            "author": "//*[@class=\"text text-overflow text-muted hidden-xs\"]/text()",
+            "responseFormatType": "html",
+            "bookName": "//*[@class=\"myui-vodlist__detail\"]/h4/a[1]/text()",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (iPod; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/87.0.4280.163 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + '/vodshow/' +\n    '1-' +\n    params.filters.area + '-' +\n    params.filters.sort + '-' +\n    params.filters.cat + '-' +\n    params.filters.lang + '-' +\n    params.filters.letter + '---' + params.pageIndex + '---' +\n    params.filters.year + '.html';\n\nreturn {\n    'url': url,\n    'httpHeaders': config.httpHeaders,\n}",
+            "host": "https://e.duboku.fun",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 48,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "喜剧",
+                                "value": "%E5%96%9C%E5%89%A7"
+                            },
+                            {
+                                "title": "爱情",
+                                "value": "%E7%88%B1%E6%83%85"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "%E6%81%90%E6%80%96"
+                            },
+                            {
+                                "title": "动作",
+                                "value": "%E5%8A%A8%E4%BD%9C"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "%E7%A7%91%E5%B9%BB"
+                            },
+                            {
+                                "title": "剧情",
+                                "value": "%E5%89%A7%E6%83%85"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "%E6%88%98%E4%BA%89"
+                            },
+                            {
+                                "title": "警匪",
+                                "value": "%E8%AD%A6%E5%8C%AA"
+                            },
+                            {
+                                "title": "犯罪",
+                                "value": "%E7%8A%AF%E7%BD%AA"
+                            },
+                            {
+                                "title": "动画",
+                                "value": "%E5%8A%A8%E7%94%BB"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "%E5%A5%87%E5%B9%BB"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "%E6%AD%A6%E4%BE%A0"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "%E5%86%92%E9%99%A9"
+                            },
+                            {
+                                "title": "枪战",
+                                "value": "%E6%9E%AA%E6%88%98"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "%E6%82%AC%E7%96%91"
+                            },
+                            {
+                                "title": "惊悚",
+                                "value": "%E6%83%8A%E6%82%9A"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "%E9%9D%92%E6%98%A5"
+                            },
+                            {
+                                "title": "文艺",
+                                "value": "%E6%96%87%E8%89%BA"
+                            },
+                            {
+                                "title": "古装",
+                                "value": "%E5%8F%A4%E8%A3%85"
+                            },
+                            {
+                                "title": "纪录片",
+                                "value": "%E7%BA%AA%E5%BD%95%E7%89%87"
+                            },
+                            {
+                                "title": "歌舞",
+                                "value": "%E6%AD%8C%E8%88%9E"
+                            }
+                        ],
+                        "key": "cat"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "大陆",
+                                "value": "%E5%A4%A7%E9%99%86"
+                            },
+                            {
+                                "title": "香港",
+                                "value": "%E9%A6%99%E6%B8%AF"
+                            },
+                            {
+                                "title": "台湾",
+                                "value": "%E5%8F%B0%E6%B9%BE"
+                            },
+                            {
+                                "title": "美国",
+                                "value": "%E7%BE%8E%E5%9B%BD"
+                            },
+                            {
+                                "title": "英国",
+                                "value": "%E8%8B%B1%E5%9B%BD"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "%E6%97%A5%E6%9C%AC"
+                            },
+                            {
+                                "title": "韩国",
+                                "value": "%E9%9F%A9%E5%9B%BD"
+                            },
+                            {
+                                "title": "印度",
+                                "value": "%E5%8D%B0%E5%BA%A6"
+                            },
+                            {
+                                "title": "西班牙",
+                                "value": "%E8%A5%BF%E7%8F%AD%E7%89%99"
+                            },
+                            {
+                                "title": "加拿大",
+                                "value": "%E5%8A%A0%E6%8B%BF%E5%A4%A7"
+                            },
+                            {
+                                "title": "法国",
+                                "value": "%E6%B3%95%E5%9B%BD"
+                            },
+                            {
+                                "title": "意大利",
+                                "value": "%E6%84%8F%E5%A4%A7%E5%88%A9"
+                            },
+                            {
+                                "title": "荷兰",
+                                "value": "%E8%8D%B7%E5%85%B0"
+                            },
+                            {
+                                "title": "澳大利亚",
+                                "value": "%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A"
+                            },
+                            {
+                                "title": "俄罗斯",
+                                "value": "%E4%BF%84%E7%BD%97%E6%96%AF"
+                            }
+                        ],
+                        "key": "area"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "2021",
+                                "value": "2021"
+                            },
+                            {
+                                "title": "2020",
+                                "value": "2020"
+                            },
+                            {
+                                "title": "2019",
+                                "value": "2019"
+                            },
+                            {
+                                "title": "2018",
+                                "value": "2018"
+                            },
+                            {
+                                "title": "2017",
+                                "value": "2017"
+                            }
+                        ],
+                        "key": "year"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "国语",
+                                "value": "%E5%9B%BD%E8%AF%AD"
+                            },
+                            {
+                                "title": "英语",
+                                "value": "%E8%8B%B1%E8%AF%AD"
+                            },
+                            {
+                                "title": "粤语",
+                                "value": "%E7%B2%A4%E8%AF%AD"
+                            },
+                            {
+                                "title": "韩语",
+                                "value": "%E9%9F%A9%E8%AF%AD"
+                            },
+                            {
+                                "title": "日语",
+                                "value": "%E6%97%A5%E8%AF%AD"
+                            },
+                            {
+                                "title": "西班牙语",
+                                "value": "%E8%A5%BF%E7%8F%AD%E7%89%99%E8%AF%AD"
+                            },
+                            {
+                                "title": "印地语",
+                                "value": "%E5%8D%B0%E5%9C%B0%E8%AF%AD"
+                            },
+                            {
+                                "title": "意大利语",
+                                "value": "%E6%84%8F%E5%A4%A7%E5%88%A9%E8%AF%AD"
+                            },
+                            {
+                                "title": "阿拉伯语",
+                                "value": "%E9%98%BF%E6%8B%89%E4%BC%AF%E8%AF%AD"
+                            },
+                            {
+                                "title": "法语",
+                                "value": "%E6%B3%95%E8%AF%AD"
+                            },
+                            {
+                                "title": "俄语",
+                                "value": "%E4%BF%84%E8%AF%AD"
+                            }
+                        ],
+                        "key": "lang"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "A",
+                                "value": "A"
+                            },
+                            {
+                                "title": "B",
+                                "value": "B"
+                            },
+                            {
+                                "title": "C",
+                                "value": "C"
+                            },
+                            {
+                                "title": "D",
+                                "value": "D"
+                            },
+                            {
+                                "title": "E",
+                                "value": "E"
+                            },
+                            {
+                                "title": "F",
+                                "value": "F"
+                            },
+                            {
+                                "title": "G",
+                                "value": "G"
+                            },
+                            {
+                                "title": "H",
+                                "value": "H"
+                            },
+                            {
+                                "title": "I",
+                                "value": "I"
+                            },
+                            {
+                                "title": "J",
+                                "value": "J"
+                            },
+                            {
+                                "title": "K",
+                                "value": "K"
+                            },
+                            {
+                                "title": "L",
+                                "value": "L"
+                            },
+                            {
+                                "title": "M",
+                                "value": "M"
+                            },
+                            {
+                                "title": "N",
+                                "value": "N"
+                            },
+                            {
+                                "title": "O",
+                                "value": "O"
+                            },
+                            {
+                                "title": "P",
+                                "value": "P"
+                            },
+                            {
+                                "title": "Q",
+                                "value": "Q"
+                            },
+                            {
+                                "title": "R",
+                                "value": "R"
+                            },
+                            {
+                                "title": "S",
+                                "value": "S"
+                            },
+                            {
+                                "title": "T",
+                                "value": "T"
+                            },
+                            {
+                                "title": "U",
+                                "value": "U"
+                            },
+                            {
+                                "title": "V",
+                                "value": "V"
+                            },
+                            {
+                                "title": "W",
+                                "value": "W"
+                            },
+                            {
+                                "title": "X",
+                                "value": "X"
+                            },
+                            {
+                                "title": "Y",
+                                "value": "Y"
+                            },
+                            {
+                                "title": "Z",
+                                "value": "Z"
+                            },
+                            {
+                                "title": "0-9",
+                                "value": "0-9"
+                            }
+                        ],
+                        "key": "letter"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "时间",
+                                "value": "time"
+                            },
+                            {
+                                "title": "人气",
+                                "value": "hits"
+                            },
+                            {
+                                "title": "评分",
+                                "value": "score"
+                            }
+                        ],
+                        "key": "sort"
+                    }
+                ]
+            },
+            "cover": "//a[1]/@data-original",
+            "validConfig": "",
+            "list": "//*[@class=\"myui-vodlist__box\"]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "detailUrl": "//*[@class=\"myui-vodlist__detail\"]/h4/a[1]/@href\n || @js:\nreturn result.startsWith('/')?config.host+result:result;",
+            "status": "//span[@class=\"pic-text text-right\"]/text()"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

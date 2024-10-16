@@ -1,0 +1,71 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "99",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.qinxu.org",
+        "list": "//ul[@class=\"list-group\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "parserID": "DOM",
+    "enable": 1,
+    "sourceName": "秦墟小说",
+    "sourceUrl": "https://www.qinxu.org",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666443514.641661",
+    "searchBook": {
+        "cat": "//div/div/p[2]/span[2]",
+        "author": "//tr/td[3]/a",
+        "lastChapterTitle": "//tr/td[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//tr/td[1]/a/@title",
+        "requestInfo": "https://www.qinxu.org/search?key=%@keyWord",
+        "host": "https://www.qinxu.org",
+        "actionID": "searchBook",
+        "detailUrl": "//tr/td[1]/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//tbody/tr"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='content']/text()",
+        "host": "https://www.qinxu.org",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🌻",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

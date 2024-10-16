@@ -1,0 +1,73 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "data||@js:\nlet dat = JSON.stringify(result);\nreturn dat.replaceAll('\",\"', '\\n').replace('[\"', '').replace('\"]', '');",
+        "actionID": "chapterContent",
+        "requestInfo": "https://api.pingcc.cn/fictionContent/search/%@result",
+        "host": "https://api.pingcc.cn/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://api.pingcc.cn/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "pingcc小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1661871319.034079",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "fictionType",
+        "author": "author",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "desc": "descs",
+        "requestInfo": "https://api.pingcc.cn/fiction/search/title/%@keyWord/%@pageIndex/10",
+        "host": "https://api.pingcc.cn/",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "cover": "cover||@js:\nreturn encodeURI(result);",
+        "detailUrl": "fictionId",
+        "list": "data",
+        "parserID": "DOM",
+        "validConfig": ""
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://api.pingcc.cn/fictionChapter/search/%@result",
+        "title": "title",
+        "host": "https://api.pingcc.cn/",
+        "list": "data/chapterList",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "chapterId"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,358 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//audio//@src",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':''};",
+        "host": "https://m.ishuyin.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//div[@class='book-txt']/p[3]/text()[2]",
+        "host": "https://m.ishuyin.com/",
+        "cat": "//div[@class='book-txt']/p[3]/text()[1]",
+        "cover": "//a[@class=''img-box Jhref']/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@id=\"foldtxt\"]"
+    },
+    "bookWorld": {
+        "评书": {
+            "author": "//a/div[@class='info']/div[@class='box']/span[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//a/div[@class='info']/h3",
+            "desc": "//a/div[@class='info']/p",
+            "requestInfo": "@js:\nreturn 'https://m.ishuyin.com/listinfo-' + encodeURI(params.filters.filter) + '-' + (params.pageIndex-1) + '.html';",
+            "host": "https://m.ishuyin.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "65",
+                                "title": "王传林"
+                            },
+                            {
+                                "value": "62",
+                                "title": "关永超"
+                            },
+                            {
+                                "value": "57",
+                                "title": "郭德纲"
+                            },
+                            {
+                                "value": "55",
+                                "title": "王玥波"
+                            },
+                            {
+                                "value": "53",
+                                "title": "袁田"
+                            },
+                            {
+                                "value": "50",
+                                "title": "其他"
+                            },
+                            {
+                                "value": "49",
+                                "title": "孙一"
+                            },
+                            {
+                                "value": "48",
+                                "title": "田战义"
+                            },
+                            {
+                                "value": "47",
+                                "title": "张少佐"
+                            },
+                            {
+                                "value": "46",
+                                "title": "连丽如"
+                            },
+                            {
+                                "value": "45",
+                                "title": "袁阔成"
+                            },
+                            {
+                                "value": "44",
+                                "title": "田连元"
+                            },
+                            {
+                                "value": "43",
+                                "title": "刘兰芳"
+                            },
+                            {
+                                "value": "42",
+                                "title": "单田芳"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "cover": "//a/div[@class='img']/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//ul[@id=\"showajaxnews\"]/li"
+        },
+        "有声小说": {
+            "author": "//a/div[@class='info']/div[@class='box']/span[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//a/div[@class='info']/h3",
+            "desc": "//a/div[@class='info']/p",
+            "requestInfo": "@js:\nreturn 'https://m.ishuyin.com/listinfo-' + encodeURI(params.filters.filter) + '-' + (params.pageIndex-1) + '.html';",
+            "host": "https://m.ishuyin.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "92",
+                                "title": "武侠"
+                            },
+                            {
+                                "value": "63",
+                                "title": "网游"
+                            },
+                            {
+                                "value": "60",
+                                "title": "修真"
+                            },
+                            {
+                                "value": "58",
+                                "title": "人物"
+                            },
+                            {
+                                "value": "56",
+                                "title": "反腐"
+                            },
+                            {
+                                "value": "41",
+                                "title": "职场"
+                            },
+                            {
+                                "value": "40",
+                                "title": "军事"
+                            },
+                            {
+                                "value": "39",
+                                "title": "推理"
+                            },
+                            {
+                                "value": "38",
+                                "title": "文学"
+                            },
+                            {
+                                "value": "36",
+                                "title": "穿越"
+                            },
+                            {
+                                "value": "33",
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": "16",
+                                "title": "历史"
+                            },
+                            {
+                                "value": "8",
+                                "title": "都市"
+                            },
+                            {
+                                "value": "7",
+                                "title": "穿越"
+                            },
+                            {
+                                "value": "5",
+                                "title": "恐怖"
+                            },
+                            {
+                                "value": "2",
+                                "title": "玄幻"
+                            },
+                            {
+                                "value": "1",
+                                "title": "言情"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "cover": "//a/div[@class='img']/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//ul[@id=\"showajaxnews\"]/li"
+        },
+        "广播剧": {
+            "author": "//a/div[@class='info']/div[@class='box']/span[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//a/div[@class='info']/h3",
+            "desc": "//a/div[@class='info']/p",
+            "requestInfo": "@js:\nreturn 'https://m.ishuyin.com/listinfo-' + encodeURI(params.filters.filter) + '-' + (params.pageIndex-1) + '.html';",
+            "host": "https://m.ishuyin.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "54",
+                                "title": "现代剧"
+                            },
+                            {
+                                "value": "51",
+                                "title": "古风剧"
+                            },
+                            {
+                                "value": "12",
+                                "title": "爱情剧"
+                            },
+                            {
+                                "value": "10",
+                                "title": "耽美剧"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "cover": "//a/div[@class='img']/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//ul[@id=\"showajaxnews\"]/li"
+        },
+        "车载": {
+            "author": "//a/div[@class='info']/div[@class='box']/span[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//a/div[@class='info']/h3",
+            "desc": "//a/div[@class='info']/p",
+            "requestInfo": "@js:\nreturn 'https://m.ishuyin.com/listinfo-' + encodeURI(params.filters.filter) + '-' + (params.pageIndex-1) + '.html';",
+            "host": "https://m.ishuyin.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "77",
+                                "title": "旅游"
+                            },
+                            {
+                                "value": "76",
+                                "title": "生活"
+                            },
+                            {
+                                "value": "75",
+                                "title": "公开课"
+                            },
+                            {
+                                "value": "74",
+                                "title": "汽车"
+                            },
+                            {
+                                "value": "73",
+                                "title": "相声小品"
+                            },
+                            {
+                                "value": "72",
+                                "title": "搞笑"
+                            },
+                            {
+                                "value": "71",
+                                "title": "情感"
+                            },
+                            {
+                                "value": "70",
+                                "title": "音乐"
+                            },
+                            {
+                                "value": "69",
+                                "title": "娱乐"
+                            },
+                            {
+                                "value": "68",
+                                "title": "短剧"
+                            },
+                            {
+                                "value": "67",
+                                "title": "资讯"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "cover": "//a/div[@class='img']/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//ul[@id=\"showajaxnews\"]/li"
+        }
+    },
+    "shudanList": {},
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺ishuyin",
+    "sourceUrl": "https://m.ishuyin.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666213955.289683",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//a/div[@class='info']/div[@class='box']/span[@class='author']",
+        "responseFormatType": "html",
+        "bookName": "//a/div[@class='info']/h3",
+        "desc": "//a/div[@class='info']/p",
+        "requestInfo": "@js:\nlet url = 'https://m.ishuyin.com/e/search/index.php';\nlet hp = {'keyboard':params.keyWord, 'show':'title,newstext,player,playadmin', 'submit':'搜索'};\nreturn {'url':url, 'httpParams':hp, 'POST':true};",
+        "host": "https://m.ishuyin.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href",
+        "cover": "//a/div[@class='img']/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@id=\"showajaxnews\"]/li"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//p[@class='de-time']",
+        "title": "//h3/a/span",
+        "host": "https://m.ishuyin.com/",
+        "list": "//li[@class='chapter-item js_chapter_item']",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//h3/a/@href"
+    }
+}

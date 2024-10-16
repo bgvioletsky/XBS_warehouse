@@ -1,0 +1,101 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.1biqug.com/",
+        "content": "//div[@id=\"content\"] ||@js:\nreturn result.replace(/一秒[\\s\\S]*】/,\"\") .replace(/水印[\\s\\S]*试/,\"\") .replace(/本站[\\s\\S]*m/,\"\") .replace(/手机用户.*/, '');",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//meta[@property=\"og:novel:status\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "https://www.1biqug.com/",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "desc": "//meta[@property=\"og:description\"]/@content",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//span[4]",
+            "responseFormatType": "html",
+            "bookName": "//span[2]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.1biqug.com/biquge_${_type}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.1biqug.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻奇幻::1\n武侠仙侠::2\n都市言情::3\n历史军事::4\n科幻灵异::5\n网游竞技::6\n女频频道::7"
+            },
+            "detailUrl": "//span[2]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"l\"]//li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.1biqug.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "笔趣阁1biqug",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1660802117.241673",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]",
+        "author": "//span[4]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//span[3]/a",
+        "bookName": "//span[2]/a",
+        "requestInfo": "https://www.1biqug.com/searchbook.php?keyword=%@keyWord",
+        "host": "https://www.1biqug.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]/a/@href",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "validConfig": "",
+        "list": "//div[@class=\"novelslist2\"]//li",
+        "parserID": "DOM",
+        "status": "//span[7]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.1biqug.com/",
+        "list": "//div[@id=\"list\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

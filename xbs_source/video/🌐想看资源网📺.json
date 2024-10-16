@@ -1,0 +1,66 @@
+{
+    "chapterContent": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://xiangkanzy.com",
+        "cover": "//div[@class='vodImg']/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class='vodplayinfo']/text()",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://xiangkanzy.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "sourceType": "video",
+    "sourceName": "🌐想看资源网📺",
+    "weight": "1111",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1646839662.088708",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://xiangkanzy.com/index.php/vod/search.html?wd=%@keyWord&submit=search",
+        "detailUrl": "//span[@class='xing_vb4']/a/@href",
+        "bookName": "//span[@class='xing_vb4']/a|@js:return result.replace(/(.+) (.+)/, '$1');",
+        "host": "https://xiangkanzy.com",
+        "list": "//div[@class='xing_vb']/ul",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()|@js: return result.replace(/(.+)\\$(.+)/, '$1');",
+        "host": "https://xiangkanzy.com",
+        "list": "//div[@class='vodplayinfo']/div/ul[2]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//text()|@js: return result.replace(/(.+)\\$(.+)/, '$2');"
+    }
+}

@@ -1,0 +1,128 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result,'httpHeaders':config.httpHeaders,cacheTime:3600};",
+        "host": "https://m.i275.com",
+        "httpHeaders": {
+            "Referer": "http://m.i275.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+        },
+        "cover": "//div[@class=\"book clearfix\"]/img/@data-cfsrc",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"book-intro tab-cont\"]/text()"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//dl/dd[7]/text()",
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\n\nreturn {'url':result, 'POST':false,'httpHeaders':config.httpHeaders,'cahceTime':3600};",
+        "title": "//a/@title",
+        "host": "https://m.i275.com",
+        "httpHeaders": {
+            "Referer": "http://m.i275.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@class=\"book-list clearfix\"]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "loginUrl": "https://m.i275.com/pc/login/index.html",
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "I275自用004",
+    "sourceType": "audio",
+    "sourceUrl": "https://m.i275.com",
+    "httpHeaders": {
+        "Referer": "http://m.i275.com",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666938666.700212",
+    "searchBook": {
+        "author": "//div[@class=\"broadcaster\"]/text()[1]",
+        "responseFormatType": "html",
+        "bookName": "//h2[@class=\"name\"]/text()",
+        "httpHeaders": {
+            "Referer": "http://m.i275.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\n\nlet url = config.host +\"/pc/index/search.html?keyword=\" + encodeURI(params.keyWord)\n\n\nreturn {'url':url, 'POST':false,'httpHeaders': config.httpHeaders,'cahceTime':3600};",
+        "host": "https://m.i275.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 1000
+        },
+        "detailUrl": "//a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"list-wrapper\"]/ul/a",
+        "parserID": "DOM",
+        "cover": "//div[@class=\"icon\"]/img/@data-cfsrc",
+        "desc": "//div[@class=\"desc\"]/text()",
+        "wordCount": "//div[@class=\"broadcaster\"]/text(2)"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "@js:\n\n\nfunction abc(u) {\n    var tArr = u.split(\"*\")\n        , str = '';\n    for (var i = 0, n = tArr.length; i < n; i++) {\n        str += String.fromCharCode(tArr[i]);\n    }\n    return str;\n}\n\nif (result.jsjm == 0) {\n    let src = result.src;\n    return JSON.stringify({\n        'url': src,\n        'httpHeaders': config.httpHeaders,\n        'forbidCache': true\n    });\n}\n\nif (result.jsjm == 1) {\n    let src = abc(result.src);\n    return JSON.stringify({\n        'url': src,\n        'httpHeaders': config.httpHeaders,\n        'forbidCache': true\n    });\n}\n\n\nreturn undefined;",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet url = params.queryInfo.url;\nlet ids = url.match(/\\/\\d+/g);\nlet bid = ids[0];\nlet cid = ids[1];\nlet t = new Date().getTime();\nurl = `/pc/index/getchapterurl/bookId${bid}/chapterId${cid}/timestamp/${t}.html`\nreturn { \"url\": url };",
+        "host": "https://m.i275.com",
+        "httpHeaders": {
+            "Referer": "http://m.i275.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "手机端(张益达帮忙改的)",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "测试": {
+            "author": "//div[@class=\"broadcaster\"]/text()[1]",
+            "responseFormatType": "html",
+            "bookName": "//h2[@class=\"name\"]/text()",
+            "httpHeaders": {
+                "Referer": "http://m.i275.com",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://m.i275.com${_type}/2/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.i275.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_type\n玄幻奇幻::/category/6\n都市言情::/category/7\n宫斗女频::/category/8\n官场商战::/category/9\n武侠仙侠::/category/10\n刑侦推理::/category/11\n探险科幻::/category/12\n重生穿越::/category/13\n恐怖惊悚::/category/14\n文学历史::/category/15\n两性情感::/category/49\n网游竞技::/category/50"
+            },
+            "cover": "//div[@class=\"icon\"]/img/@src",
+            "validConfig": "",
+            "list": "//div[@class=\"list-wrapper\"]/ul/a",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "desc": "//div[@class=\"desc\"]/text()",
+            "wordCount": "//div[@class=\"broadcaster\"]/text()[2]",
+            "detailUrl": "//a/@href"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

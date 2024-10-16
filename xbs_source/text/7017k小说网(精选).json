@@ -1,0 +1,106 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//*[@id=\"content\"]",
+        "actionID": "chapterContent",
+        "host": "https://www.7017k.com",
+        "httpHeaders": {
+            "Referer": "https://www.7017k.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[2]/a",
+            "bookName": "//span[1]/a",
+            "httpHeaders": {
+                "Referer": "https://www.7017k.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.7017k.com${_type}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.7017k.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[1]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻奇幻::/xuanhuan\n武侠修真::/xianxia\n都市言情::/dushi\n穿越历史::/chuanyue\n网游竞技::/wangyou\n科幻小说::/kehuan\n恐怖灵异::/kongbu\n其他小说::/othersbooks\n全本小说::/over\n"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"l bd\"]/ul/li"
+        }
+    },
+    "sourceUrl": "https://www.7017k.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "7017k小说网(精选)",
+    "httpHeaders": {
+        "Referer": "https://www.7017k.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1656392397.347261",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div/div[2]/div[2]",
+        "lastChapterTitle": "//div/div[2]//div[3]/a",
+        "responseFormatType": "html",
+        "bookName": "//div/div[2]//h4/a",
+        "httpHeaders": {
+            "Referer": "https://www.7017k.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url=config.host+\"/s.php?\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'q':params.keyWord,\n\"ie\":\"gbk\"};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.7017k.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div/div[2]//h4/a/@href",
+        "cover": "//div//img/@src",
+        "validConfig": "",
+        "list": "//*[@class=\"type_show\"]/div",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.7017k.com",
+        "httpHeaders": {
+            "Referer": "https://www.7017k.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//*[@class=\"listmain\"]/dl/dt[2]/following-sibling::dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

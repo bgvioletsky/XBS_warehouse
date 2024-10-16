@@ -1,0 +1,92 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "5",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@ property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.360wxw.com",
+        "httpHeaders": {
+            "Cookie": "Hm_lvt_7fcb840f05292022d7891ede141cc33d=1625028707"
+        },
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceType": "text",
+    "sourceName": "FZ-360文学网",
+    "sourceUrl": "https://www.360wxw.com",
+    "httpHeaders": {
+        "Cookie": "Hm_lvt_7fcb840f05292022d7891ede141cc33d=1625028707"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1648691185.589392",
+    "searchBook": {
+        "cat": "//dd[@class=\"book_other\"][1]/span[3]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//dd[@class=\"book_other\"][2]/a",
+        "author": "//dd[@class=\"book_other\"][1]/span[1]",
+        "bookName": "//h3/a",
+        "httpHeaders": {
+            "Cookie": "Hm_lvt_7fcb840f05292022d7891ede141cc33d=1625028707"
+        },
+        "host": "https://www.360wxw.com",
+        "requestInfo": "@js:\nlet url = 'search.html';\nlet hp = {};\nhp.searchkey = params.keyWord;\nhp.searchtype='all';\nreturn {'POST':true,'url':url, 'httpParams':hp,};",
+        "moreKeys": {
+            "skipCount": 0
+        },
+        "detailUrl": "//h3/a/@href",
+        "wordCount": "//dd[@class=\"book_other\"][1]/span[4]",
+        "validConfig": "",
+        "parserID": "DOM",
+        "cover": "//dt/a/img/@src",
+        "list": "//div[@id=\"sitembox\"]/dl",
+        "desc": "//dd[@class=\"book_des\"]",
+        "status": "//dd[@class=\"book_other\"][1]/span[2]",
+        "actionID": "searchBook"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]/p/text()|@js:\nreturn result.trim();",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "host": "https://www.360wxw.com",
+        "httpHeaders": {
+            "Cookie": "Hm_lvt_7fcb840f05292022d7891ede141cc33d=1625028707"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@id=\"read_link\"]/a[contains(text(),'下一页')]/@href|@js:\nvar h=result.lastIndexOf('-');\nvar g=result.lastIndexOf('.');\nvar u=result.substring(h,g);\nif(u.length<3){\nreturn result;\n}\nreturn;"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {}
+}

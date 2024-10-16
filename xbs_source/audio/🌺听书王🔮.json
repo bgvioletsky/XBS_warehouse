@@ -1,0 +1,143 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://mff.wukongks.com/",
+        "JSParser": "function functionName(config, params, result)\n{\n\treturn JSON.stringify({'urls':params.queryInfo.url});\n}",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "classify",
+            "responseFormatType": "json",
+            "author": "@js:\nreturn '作者：' + result.bookauthor + ' ; 播音：' + result.announcer;",
+            "bookName": "bookname",
+            "desc": "profile",
+            "requestInfo": "@js:\nreturn {'url':'https://mff.wukongks.com/classifylist-ios.php', 'POST':true, 'httpParams':{'bookclassifyid':params.filters.filter, 'endpos':100000, 'startpos':0}};",
+            "host": "https://mff.wukongks.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "bookid",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "1"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "3"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "4"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "5"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "6"
+                            },
+                            {
+                                "title": "盗墓",
+                                "value": "7"
+                            },
+                            {
+                                "title": "冥婚",
+                                "value": "8"
+                            },
+                            {
+                                "title": "古言",
+                                "value": "9"
+                            },
+                            {
+                                "title": "阴阳五行",
+                                "value": "10"
+                            },
+                            {
+                                "title": "风水相术",
+                                "value": "11"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "data/collectsarray",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "bookpic"
+        }
+    },
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "sourceUrl": "https://mff.wukongks.com/",
+    "sourceName": "🌺听书王🔮",
+    "weight": "1",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666103734.064234",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "classify",
+        "author": "@js:\nreturn '作者：' + result.bookauthor + ' ; 播音：' + result.announcer;",
+        "responseFormatType": "json",
+        "bookName": "bookname",
+        "desc": "profile",
+        "requestInfo": "@js:\nreturn {'url':'https://mff.wukongks.com/searchbook1.4.0-ios.php', 'POST':true, 'httpParams':{'bookname':params.keyWord, 'endpos':20, 'startpos':0}};",
+        "host": "https://mff.wukongks.com/",
+        "actionID": "searchBook",
+        "detailUrl": "bookid",
+        "cover": "bookpic",
+        "validConfig": "",
+        "list": "data/bookarray",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn {'url':'https://mff.wukongks.com/bookchapterlist-ios.php', 'POST':true, 'httpParams':{'asc':0, 'bookid':params.queryInfo.detailUrl, 'endpos':1000000, 'startpos':0, 'version':'1.0.0'}};",
+        "title": "chaptername",
+        "host": "https://mff.wukongks.com/",
+        "list": "data/chapter_array",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "mp3Filepath||@js:\nreturn encodeURI(result);"
+    }
+}

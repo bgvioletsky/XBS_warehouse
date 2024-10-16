@@ -1,0 +1,85 @@
+{
+    "bookWorld": {
+        "测试": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        }
+    },
+    "password": "0155",
+    "weight": "11",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "nextPageUrl": "@js:\nvar id = params.queryInfo.detailUrl\nid = id.match(/&albumid=(\\d+)&/)[1];\nparams.nativeTool.log(id)\r\nfor(var i= params.pageIndex; i<100; i++){\nvar url = \"http://search.kuwo.cn/r.s?stype=albuminfo&albumid=\" + id + \"&mobi=1&vipver=kwbook_ip_9.2.3.0&pn=\" + i +\"&iskwbook=1&rn=50&user=8bf6bcd38b434d7095e122bc6e08995c&idfa=00000000-0000-0000-0000-000000000000&openudid=a55364b37dfe1a1a0193447f73eb8277cc27b492&uuid=8bf6bcd38b434d7095e122bc6e08995c&idfv=33337609-2147-4EAD-8209-ADD825D33941&prod=kwbook_ip_9.2.3.0&corp=kuwo&source=kwbook_ip_9.2.3.0_WY.ipa&tmeapp=1&newver=2&bkprod=kwbook_ip_9.2.3.0&bksource=kwbook_ip_9.2.3.0_WY.ipa&locationid=1&loginUid=0&uid=2512145072&loginSid=&province=&city=&notrace=0\";\n\nreturn url;\n\n}",
+        "JSParser": "function functionName(config, params, result)\n{\n      if(!params.lastResponse){\n         params.nativeTool.setCache(params.queryInfo.detailUrl ,JSON.stringify([]));\n      }\n      let tmp=params.nativeTool.getCache(params.queryInfo.detailUrl);\nlet lists=tmp?JSON.parse(tmp):[];\nlists=lists.concat(result.list?result.list:[]);\n     if(result.nextPageUrl&&params.pageIndex<result.maxPage){\n      params.nativeTool.setCache(params.queryInfo.detailUrl ,JSON.stringify(lists));\n     result.list=[]\n     }\n     else{\n      result.list=lists.reverse();\n    }\n   return result;\n}",
+        "title": "name",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "http://tingshu.kuwo.cn",
+        "list": "$.musiclist[*]",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "$.musicrid||@js:\n\nreturn \"http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_\"+ result +\"&response=res&type=convert_url&\";"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "酷我畅听app",
+    "sourceType": "audio",
+    "sourceUrl": "http://tingshu.kuwo.cn",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665853486.321821",
+    "searchBook": {
+        "author": "artistName",
+        "responseFormatType": "json",
+        "bookName": "albumName",
+        "desc": "title",
+        "requestInfo": "http://tingshu.kuwo.cn/tingshu/api/search/Search?rn=10&type=album&version=8.5.6.1&wd=%@keyWord&pn=%@pageIndex&kweexVersion=1.0.2",
+        "host": "http://tingshu.kuwo.cn",
+        "actionID": "searchBook",
+        "detailUrl": "$.albumId||@js:\nvar url = \"http://search.kuwo.cn/r.s?stype=albuminfo&albumid=\"+ result +\"&mobi=1&vipver=kwbook_ip_9.2.3.0&pn=0&iskwbook=1&rn=50&user=8bf6bcd38b434d7095e122bc6e08995c&idfa=00000000-0000-0000-0000-000000000000&openudid=a55364b37dfe1a1a0193447f73eb8277cc27b492&uuid=8bf6bcd38b434d7095e122bc6e08995c&idfv=33337609-2147-4EAD-8209-ADD825D33941&prod=kwbook_ip_9.2.3.0&corp=kuwo&source=kwbook_ip_9.2.3.0_WY.ipa&tmeapp=1&newver=2&bkprod=kwbook_ip_9.2.3.0&bksource=kwbook_ip_9.2.3.0_WY.ipa&locationid=1&loginUid=0&uid=2512145072&loginSid=&province=&city=&notrace=0\";\n\nreturn url;",
+        "cover": "coverImg",
+        "validConfig": "",
+        "list": "$.data.data",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 10
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://tingshu.kuwo.cn",
+        "content": "|",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐲",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    }
+}

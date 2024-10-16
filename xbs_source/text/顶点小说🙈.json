@@ -1,0 +1,93 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.ddxs.com",
+        "list": "//table[@id=\"at\"][2]/tr/td",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "顶点小说🙈",
+    "sourceType": "text",
+    "sourceUrl": "https://www.ddxs.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1660988875.328892",
+    "searchBook": {
+        "cat": "//td[1]",
+        "author": "//td[4]",
+        "lastChapterTitle": "//td[3]/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//td[2]",
+        "requestInfo": "@js:\n\n\nlet url=config.host+\"/search.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'keyword':params.keyWord,};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders, forbidCookie:true,cacheTime:3600};",
+        "host": "https://www.ddxs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[2]/a/@href",
+        "validConfig": "",
+        "list": "//tr[position()>1]",
+        "parserID": "DOM",
+        "status": "//td[6]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.ddxs.com",
+        "content": "//dd[@id=\"contents\"]/p/text()[last()]",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "111",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.ddxs.com",
+        "cover": "//div[@class=\"pic\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"intro\"]/text()"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//dd/text()\n||@js: \nreturn result.replace(/\\//,\"\")",
+            "responseFormatType": "html",
+            "bookName": "//a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.ddxs.com${_type}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.ddxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 5000,
+                "requestFilters": "_type\n玄幻小说::/xuanhuan/\n武侠小说::/wuxia/\n军事小说::/junshi/\n都市小说::/dushi/\n游戏小说::/youxi/\n科幻小说::/kehuan/\n言情小说::/yanqin/\n次元小说::/ciyuan/"
+            },
+            "detailUrl": "//a/@href",
+            "validConfig": "",
+            "list": "//dl[@id=\"content\"]/dd",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    }
+}

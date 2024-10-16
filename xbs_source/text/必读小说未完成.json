@@ -1,0 +1,73 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "wordCount": "modelData/book/marks/wordCount",
+        "lastChapterTitle": "modelData/book/lastChapterTitle",
+        "host": "http://api.biduwenxue.com/",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "modelData/book/intro"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://api.biduwenxue.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "999",
+    "sourceName": "必读小说未完成",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1633693579.467321",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "categoryname",
+        "author": "authorname",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "desc": "intro",
+        "requestInfo": "http://api.biduwenxue.com/api/search/info.shtml?s=%@keyWord&pageNo=%@pageIndex",
+        "host": "http://api.biduwenxue.com/",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 30
+        },
+        "cover": "cover|@js:\nreturn 'http://biduwenxue-img.oss-cn-beijing.aliyuncs.com/'+result;",
+        "validConfig": "",
+        "parserID": "DOM",
+        "detailUrl": "id|@js:\n\nreturn 'http://biduwenxue.com/api/book/chapterList.shtml?bookId='+result;",
+        "list": "modelData/content/pageList"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "title",
+        "host": "http://api.biduwenxue.com/",
+        "list": "modelData/chapterList",
+        "parserID": "DOM",
+        "url": "@js:\nreturn \"http://biduwenxue.com/api/chapter/info.shtml?chapterId=\"{$.id}+\"&bookId=\"+{$.bookId}；"
+    },
+    "sourceType": "text"
+}

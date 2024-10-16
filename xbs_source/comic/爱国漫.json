@@ -1,0 +1,90 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.aiguoman.com",
+        "content": "//img/@src",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.aiguoman.com",
+        "desc": "//p[@class=\"detail-info-content\"]",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//p[@class=\"chapter\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.aiguoman.com/category/tags/${_type}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.aiguoman.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n科幻魔幻::135\n武侠格斗::136\n少年热血::137\n恐怖灵异::138\n竞技体育::139\n爆笑喜剧::140\n侦探推理::141\n少女爱情::142\n耽美人生::143\n生活漫画::144\n其他漫画::145\n战争漫画::146\n故事漫画::147\n百合女性::148\n恋爱生活::149\n伪娘漫画::150\n搞笑::151\n恋爱::152\n热血::153\n战争::154\n科幻::155\n推理::156\n其他::158\n其他::157\n格斗::159\n竞技::160\n少女::161\n恐怖::162\n百合::163\n耽美::164\n生活::165\n伪娘::166\n故事::167\n少年漫画::168\n冒险::169\n玄幻::170\n动作::171\n修真::172\n神魔::173\n后宫::174\n古风::175\n霸总::176\n都市::177\n穿越::178\n漫改::179\n精品::180\n历史::181\n新作::182\n少女漫画::183\n魔幻::184\n惊奇::185\n爆更::186\n游戏::187\n少年::188\n悬疑::189\n校园::190\n御姐::191\n体育::192\n励志::193\n同人::194\n架空::195\n社会::196\n青年漫画::197\n真人::198\n::199\n机战::200\n运动::201\n武侠::202\n灵异::203\n宠物::204\n日更::205\n吸血::206\n小说改编::207\n防疫::208\n萝莉::209\n忍者::210\n玄幻科幻::211\n冒险热血::212\n耽美爱情::213\n真人漫画::214"
+            },
+            "cover": "//img/@src",
+            "list": "//ul[@class=\"mh-list\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "爱国漫",
+    "sourceUrl": "https://www.aiguoman.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "asaoge",
+    "lastModifyTime": "1663083202.172946",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://www.aiguoman.com/search?key=%@keyWord",
+        "bookName": "//h2/a",
+        "lastChapterTitle": "//p[@class=\"chapter\"]/a",
+        "host": "https://www.aiguoman.com",
+        "detailUrl": "//h2/a/@href",
+        "cover": "//img/@src",
+        "list": "//ul[@class=\"mh-list\"]/li",
+        "parserID": "DOM",
+        "responseFormatType": "html"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a/text()",
+        "host": "https://www.aiguoman.com",
+        "list": "//div[@id=\"chapterlistload\"]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

@@ -1,0 +1,95 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "chapterContent||@js:\nreturn result.replace(/<.*?>/g, '');",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn params.queryInfo.url;",
+        "host": "https://neovel.io/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nreturn {'webView':'', 'url':'https://neovel.io/book/' + params.queryInfo.detailUrl + '/EN'};",
+        "host": "https://neovel.io/",
+        "cat": "//div[@class='tags-container rowNeovelFlexStart ng-tns-c147-0']/a",
+        "cover": "//app-root/div/app-book-page/div/div/div[2]/div/div[2]/div/picture/source[1]/@lazyload",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "all": {
+            "author": "authors",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "bookDescription",
+            "requestInfo": "@js:\nreturn 'https://neovel.io/V2/books/search?language=EN&filter=0&name=&sort=6&page=' + (params.pageIndex-1) + '&onlyOffline=true&genreIds=0&genreCombining=0&tagIds=0&tagCombining=0&minChapterCount=0&maxChapterCount=9999&completion=5&onlyPremium=false';",
+            "host": "https://neovel.io/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "moreKeys": {
+                "pageSize": 25
+            },
+            "validConfig": "",
+            "list": "l",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://neovel.io/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺neovel 🌐🔮🔞🍪©️",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666143773.399751",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "authors",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "desc": "bookDescription",
+        "requestInfo": "@js:\nreturn 'https://neovel.io/V2/books/search?language=EN&filter=0&name=' + params.nativeTool.base64Encode(params.keyWord) + '&sort=6&page=' + (params.pageIndex-1) + '&onlyOffline=true&genreIds=0&genreCombining=0&tagIds=0&tagCombining=0&minChapterCount=0&maxChapterCount=9999&completion=5&onlyPremium=false';",
+        "host": "https://neovel.io/",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "moreKeys": {
+            "pageSize": 25
+        },
+        "validConfig": "",
+        "list": "l",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://neovel.io/V5/chapters?bookId=%@result&language=EN",
+        "title": "chapterName",
+        "host": "https://neovel.io/",
+        "list": "l",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn {'url':'https://neovel.io/V2/chapter/content?chapterId='+result.chapterId, 'httpHeaders':{'referer':'https://neovel.io/read/'+params.queryInfo.detailUrl+'/EN/'+result.chapterId}};"
+    },
+    "sourceType": "text"
+}

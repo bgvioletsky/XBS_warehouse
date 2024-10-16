@@ -1,0 +1,100 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://zwhxs.com",
+        "content": "//div[@id=\"nr1\"]",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//p[3]/text()[2]",
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'webView':true};",
+        "lastChapterTitle": "//div[@class=\"block_txt2\"]/p[6]/a/text()",
+        "host": "https://zwhxs.com",
+        "cat": "//p[3]/a/text()",
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"intro_info\"]/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "author": "//p[2]/a",
+            "responseFormatType": "html",
+            "bookName": "//div//h2",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://zwhxs.com/sort/${_type}${params.pageIndex}/`;\n\nreturn {url:url}",
+            "host": "https://zwhxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_type\n玄幻::1_\n仙侠::2_\n都市::3_\n历史::4_\n网游::5_\n科幻::6_\n其他::7_"
+            },
+            "detailUrl": "//p[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"block2\"]",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://zwhxs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "新海棠书屋",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1653886768.518179",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//a[3]/text()",
+        "requestParamsEncode": "2147485234",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = 'https://zwhxs.com/s.php';\nreturn {'url':url, 'POST':true, 'httpParams':{'s':params.keyWord,'submit':'', 'type':'articlename'}};",
+        "bookName": "//a[2]/text()",
+        "detailUrl": "//a[2]/@href",
+        "host": "https://zwhxs.com",
+        "list": "//div[@class=\"cover\"]/p",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "nextPageUrl": "//div[@class=\"page\"]/a[text()=\"下一页\"]/@href",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "requestInfo": "@js:\n\nlet id = params.queryInfo.detailUrl\n\nlet url = id+\"_\"+params.pageIndex +\"/\";\n\nreturn url.replace('/_', '_');\n\nreturn url",
+        "title": "//a/text()",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://zwhxs.com",
+        "validConfig": "",
+        "list": "//div[@class=\"cover\"]/ul/li [position()<last()]",
+        "parserID": "DOM",
+        "updateTime": "//div[@class=\"block_txt2\"]/p[5]"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,60 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://www.69shu.com",
+        "JSParser": "function functionName(config, params, result)\n{\n\t// const begin = /bar/.exec(//gmi);\n\t// if (begin) {\n\t// \t\tconsole.log(\"begin found at \" + begin.index);\n\t// }\n\tlet beginStr = '<div id=\"txtright\">';\n\tlet beginIndex = result.indexOf(beginStr);\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex + beginStr.length);\n\t\tlet endIndex = subStr.indexOf('<div class=\"bottom-ad\">');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n\t\tif (tarStr) {\n\t\t\ttarStr = tarStr.replace(/第.*?章.*?<br\\s*\\/>/, '').replace('(本章完)', '')\n\t\t}\n\t\treturn {'content':tarStr, 'removeHtmlKeys':'content'};\n\t}\n\treturn undefined;\n}",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://www.69shu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "xream 69书吧",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1663913898.887801",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "actionID": "searchBook",
+        "requestInfo": "@js:\nreturn { 'url': config.host + '/modules/article/search.php', 'POST':false, 'httpParams':{searchkey:params.keyWord, searchtype: 'all'}, 'forbidCookie':true }",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\tlet reg = /<li>(?:\\S|\\s)*?<img(?:\\S|\\s)*?data-src=\"(.*?)\"(?:\\S|\\s)*?<h3><a(?:\\S|\\s)*?href=\"(.*?)\".*?>(.*?)<\\/a>(?:\\S|\\s)*?<label>(.*?)<\\/label>/gim;\n\n\twhile(tem=reg.exec(result))\n\t{\n\t\tlet bookInfo = {};\n\t\tbookInfo.cover = tem[1];\n\t\tbookInfo.detailUrl = tem[2];\n\t\tbookInfo.bookName = tem[3];\n\t\tbookInfo.author = tem[4];\n\t\t// bookInfo.lastChapterTitle = tem[5];\n\t\tlist.push(bookInfo);\n\t}\n\n  if (list.length === 0) {\n    reg = /bookimg2(?:\\S|\\s)*?<img(?:\\S|\\s)*?src=\"(.*?)\"(?:\\S|\\s)*?<h1><a(?:\\S|\\s)*?href=\"(.*?)\".*?>(.*?)<\\/a(?:\\S|\\s)*?作者(?:\\S|\\s)*?>(.*?)</gim;\n\n    while(tem=reg.exec(result))\n    {\n      let bookInfo = {};\n      bookInfo.cover = tem[1];\n      bookInfo.detailUrl = tem[2];\n      bookInfo.bookName = tem[3];\n      bookInfo.author = tem[4];\n      // bookInfo.lastChapterTitle = tem[5];\n      list.push(bookInfo);\n    }\n  }\n\n  \n\n\treturn {'list':list, 'more':false};\n}",
+        "host": "https://www.69shu.com",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n  let list = [];\n  let reg = /<li(?:\\S|\\s)*?data-num(?:\\S|\\s)*?a\\s*href=\"(.*?)\">(.*?)</gim;\n\n  while(tem = reg.exec(result))\n  {\n    let chapterInfo = {};\n    chapterInfo.title = tem[2];\n    chapterInfo.url = tem[1];\n    list.push(chapterInfo);\n  }\n\n  return {'list':list};\n}",
+        "host": "https://www.69shu.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nreturn result.replace('/txt', '').replace('.htm', '/')",
+        "actionID": "chapterList"
+    },
+    "sourceType": "text"
+}

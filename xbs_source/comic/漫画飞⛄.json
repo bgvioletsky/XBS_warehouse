@@ -1,0 +1,119 @@
+{
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//div[@class=\"video-duration\"]",
+            "responseFormatType": "html",
+            "bookName": "//h2",
+            "httpHeaders": {
+                "Referer": "https://m.manhuafei.com/"
+            },
+            "requestInfo": "/list/a-%@filter-c-0-t-0-y-0-i-0-m-0-page-%@pageIndex.html",
+            "host": "https://m.manhuafei.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"video-link\"]/@href",
+            "cover": "//div[contains(@class,'_item-pic')]/@data-echo",
+            "validConfig": "",
+            "list": "//ul[contains(@class,'video-list')]//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "地区::0\n内地::5\n日本::1\n港台::2\n欧美::3\n韩国::4\n其他::6"
+            },
+            "status": "//div[contains(@class,'video-tips')]"
+        }
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result){\n\tlet tem = result.updateTime.trim();\n\tlet emo = ['⛄️','🧸','🐶','☕️','🐣','🐧','🚀', '🦅','🐼','🐷','🐯','🦉','🐮','🐹','🦄','🐘','🐬','🎄','🍁','🌏'];\n\tlet title = tem.split(/\\s+/);\n\t\n\ttitle.shift();\n\ttitle.pop();\n    let list = [];\n\tfor(let i=0;i<title.length;i++){\n\t\tlet titles = result.list[i].title.split('\\n').reverse();\n\t\tlet urls = result.list[i].url.split('\\n').reverse();\n\t\tfor(let j=0;j<titles.length;j++){\n\t\t\tlet item = {}\n\t\t\titem.title = emo[i] + title[i]+' : '+titles[j];\n\t\t\titem.url = urls[j];\n\t\t\tlist.push(item);\n\t\t}\n\t}\n\treturn {'updateTime':'', 'list':list};\n\n}",
+        "updateTime": "//span[@class=\"mod-head-name\"]",
+        "title": "//a",
+        "host": "https://m.manhuafei.com",
+        "httpHeaders": {
+            "Referer": "https://m.manhuafei.com/"
+        },
+        "list": "//div[@class=\"filmSelectNum\"]//ul",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "漫画飞⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://m.manhuafei.com",
+    "httpHeaders": {
+        "Referer": "https://m.manhuafei.com/"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1655185878.861644",
+    "searchBook": {
+        "cat": "//ul[@class='desc']//li[3]/a ||@js:\nreturn result.replace(/\\n/gi, ' / ');",
+        "responseFormatType": "html",
+        "author": "//ul[@class='desc']//li[2]/a",
+        "bookName": "//h1",
+        "desc": "//ul[@class='desc']//li[last()]",
+        "requestInfo": "/search.html?q=%@keyWord&page=%@pageIndex",
+        "host": "https://m.manhuafei.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class='detail-wrap']/a/@href",
+        "moreKeys": {
+            "pageSize": 12
+        },
+        "validConfig": "",
+        "cover": "//div[contains(@class,'detail-img')]/@data-echo",
+        "parserID": "DOM",
+        "list": "//div[contains(@class,'detail-search')]",
+        "httpHeaders": {
+            "Referer": "https://m.manhuafei.com/"
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "httpHeaders": {
+            "Referer": "https://m.manhuafei.com/"
+        },
+        "JSParser": "function functionName(config, params, result){\n\tlet reg =/img_data = [\\s\\S]+?\\\"/gi;\n\tlet tem = result.match(reg)[0];\n\tlet reg1= /data-chapter-domain=\\\"(.*?)\\\"/;\n\tlet reg2 = /data-chapter-key=\\\"(.*?)\\\"/;\n\tlet img_domain = result.match(reg1)[1];\n\tlet img_key = result.match(reg2)[1];\n\n\teval(tem);\n\tvar LZString = function() {\n    function f(h, e) {\n        if (!b[h]) {\n            b[h] = {};\n            for (var i = 0; i < h.length; i++) {\n                b[h][h.charAt(i)] = i\n            }\n        }\n        return b[h][e]\n    }\n \n    var c = String.fromCharCode,\n        g = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\",\n        d = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$\",\n        b = {},\n        a = {\n            compressToBase64: function(h) {\n                if (null == h) {\n                    return \"\"\n                }\n                var e = a._compress(h, 6,\n                    function(i) {\n                        return g.charAt(i)\n                    });\n                switch (e.length % 4) {\n                    default:\n                    case 0:\n                        return e;\n                    case 1:\n                        return e + \"===\";\n                    case 2:\n                        return e + \"==\";\n                    case 3:\n                        return e + \"=\"\n                }\n            },\n            decompressFromBase64: function(e) {\n                return null == e ? \"\": \"\" == e ? null: a._decompress(e.length, 32,\n                    function(h) {\n                        return f(g, e.charAt(h))\n                    })\n            },\n            compressToUTF16: function(e) {\n                return null == e ? \"\": a._compress(e, 15,\n                    function(h) {\n                        return c(h + 32)\n                    }) + \" \"\n            },\n            decompressFromUTF16: function(e) {\n                return null == e ? \"\": \"\" == e ? null: a._decompress(e.length, 16384,\n                    function(h) {\n                        return e.charCodeAt(h) - 32\n                    })\n            },\n            compressToUint8Array: function(l) {\n                for (var j = a.compress(l), m = new Uint8Array(2 * j.length), k = 0, h = j.length; h > k; k++) {\n                    var i = j.charCodeAt(k);\n                    m[2 * k] = i >>> 8,\n                        m[2 * k + 1] = i % 256\n                }\n                return m\n            },\n            decompressFromUint8Array: function(k) {\n                if (null === k || void 0 === k) {\n                    return a.decompress(k)\n                }\n                for (var l = new Array(k.length / 2), j = 0, h = l.length; h > j; j++) {\n                    l[j] = 256 * k[2 * j] + k[2 * j + 1]\n                }\n                var i = [];\n                return l.forEach(function(e) {\n                    i.push(c(e))\n                }),\n                    a.decompress(i.join(\"\"))\n            },\n            compressToEncodedURIComponent: function(e) {\n                return null == e ? \"\": a._compress(e, 6,\n                    function(h) {\n                        return d.charAt(h)\n                    })\n            },\n            decompressFromEncodedURIComponent: function(e) {\n                return null == e ? \"\": \"\" == e ? null: (e = e.replace(/ /g, \"+\"), a._decompress(e.length, 32,\n                    function(h) {\n                        return f(d, e.charAt(h))\n                    }))\n            },\n            compress: function(e) {\n                return a._compress(e, 16,\n                    function(h) {\n                        return c(h)\n                    })\n            },\n            _compress: function(q, j, w) {\n                if (null == q) {\n                    return \"\"\n                }\n                var C, I, z, J = {},\n                    k = {},\n                    H = \"\",\n                    E = \"\",\n                    F = \"\",\n                    y = 2,\n                    B = 3,\n                    A = 2,\n                    D = [],\n                    x = 0,\n                    G = 0;\n                for (z = 0; z < q.length; z += 1) {\n                    if (H = q.charAt(z), Object.prototype.hasOwnProperty.call(J, H) || (J[H] = B++, k[H] = !0), E = F + H, Object.prototype.hasOwnProperty.call(J, E)) {\n                        F = E\n                    } else {\n                        if (Object.prototype.hasOwnProperty.call(k, F)) {\n                            if (F.charCodeAt(0) < 256) {\n                                for (C = 0; A > C; C++) {\n                                    x <<= 1,\n                                        G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++\n                                }\n                                for (I = F.charCodeAt(0), C = 0; 8 > C; C++) {\n                                    x = x << 1 | 1 & I,\n                                        G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++,\n                                        I >>= 1\n                                }\n                            } else {\n                                for (I = 1, C = 0; A > C; C++) {\n                                    x = x << 1 | I,\n                                        G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++,\n                                        I = 0\n                                }\n                                for (I = F.charCodeAt(0), C = 0; 16 > C; C++) {\n                                    x = x << 1 | 1 & I,\n                                        G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++,\n                                        I >>= 1\n                                }\n                            }\n                            y--,\n                            0 == y && (y = Math.pow(2, A), A++),\n                                delete k[F]\n                        } else {\n                            for (I = J[F], C = 0; A > C; C++) {\n                                x = x << 1 | 1 & I,\n                                    G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++,\n                                    I >>= 1\n                            }\n                        }\n                        y--,\n                        0 == y && (y = Math.pow(2, A), A++),\n                            J[E] = B++,\n                            F = String(H)\n                    }\n                }\n                if (\"\" !== F) {\n                    if (Object.prototype.hasOwnProperty.call(k, F)) {\n                        if (F.charCodeAt(0) < 256) {\n                            for (C = 0; A > C; C++) {\n                                x <<= 1,\n                                    G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++\n                            }\n                            for (I = F.charCodeAt(0), C = 0; 8 > C; C++) {\n                                x = x << 1 | 1 & I,\n                                    G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++,\n                                    I >>= 1\n                            }\n                        } else {\n                            for (I = 1, C = 0; A > C; C++) {\n                                x = x << 1 | I,\n                                    G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++,\n                                    I = 0\n                            }\n                            for (I = F.charCodeAt(0), C = 0; 16 > C; C++) {\n                                x = x << 1 | 1 & I,\n                                    G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++,\n                                    I >>= 1\n                            }\n                        }\n                        y--,\n                        0 == y && (y = Math.pow(2, A), A++),\n                            delete k[F]\n                    } else {\n                        for (I = J[F], C = 0; A > C; C++) {\n                            x = x << 1 | 1 & I,\n                                G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++,\n                                I >>= 1\n                        }\n                    }\n                    y--,\n                    0 == y && (y = Math.pow(2, A), A++)\n                }\n                for (I = 2, C = 0; A > C; C++) {\n                    x = x << 1 | 1 & I,\n                        G == j - 1 ? (G = 0, D.push(w(x)), x = 0) : G++,\n                        I >>= 1\n                }\n                for (;;) {\n                    if (x <<= 1, G == j - 1) {\n                        D.push(w(x));\n                        break\n                    }\n                    G++\n                }\n                return D.join(\"\")\n            },\n            decompress: function(e) {\n                return null == e ? \"\": \"\" == e ? null: a._decompress(e.length, 32768,\n                    function(h) {\n                        return e.charCodeAt(h)\n                    })\n            },\n            _decompress: function(B, C, I) {\n                var r, F, x, z, q, K, L, E, H = [],\n                    G = 4,\n                    J = 4,\n                    D = 3,\n                    k = \"\",\n                    j = [],\n                    y = {\n                        val: I(0),\n                        position: C,\n                        index: 1\n                    };\n                for (F = 0; 3 > F; F += 1) {\n                    H[F] = F\n                }\n                for (z = 0, K = Math.pow(2, 2), L = 1; L != K;) {\n                    q = y.val & y.position,\n                        y.position >>= 1,\n                    0 == y.position && (y.position = C, y.val = I(y.index++)),\n                        z |= (q > 0 ? 1 : 0) * L,\n                        L <<= 1\n                }\n                switch (r = z) {\n                    case 0:\n                        for (z = 0, K = Math.pow(2, 8), L = 1; L != K;) {\n                            q = y.val & y.position,\n                                y.position >>= 1,\n                            0 == y.position && (y.position = C, y.val = I(y.index++)),\n                                z |= (q > 0 ? 1 : 0) * L,\n                                L <<= 1\n                        }\n                        E = c(z);\n                        break;\n                    case 1:\n                        for (z = 0, K = Math.pow(2, 16), L = 1; L != K;) {\n                            q = y.val & y.position,\n                                y.position >>= 1,\n                            0 == y.position && (y.position = C, y.val = I(y.index++)),\n                                z |= (q > 0 ? 1 : 0) * L,\n                                L <<= 1\n                        }\n                        E = c(z);\n                        break;\n                    case 2:\n                        return \"\"\n                }\n                for (H[3] = E, x = E, j.push(E);;) {\n                    if (y.index > B) {\n                        return \"\"\n                    }\n                    for (z = 0, K = Math.pow(2, D), L = 1; L != K;) {\n                        q = y.val & y.position,\n                            y.position >>= 1,\n                        0 == y.position && (y.position = C, y.val = I(y.index++)),\n                            z |= (q > 0 ? 1 : 0) * L,\n                            L <<= 1\n                    }\n                    switch (E = z) {\n                        case 0:\n                            for (z = 0, K = Math.pow(2, 8), L = 1; L != K;) {\n                                q = y.val & y.position,\n                                    y.position >>= 1,\n                                0 == y.position && (y.position = C, y.val = I(y.index++)),\n                                    z |= (q > 0 ? 1 : 0) * L,\n                                    L <<= 1\n                            }\n                            H[J++] = c(z),\n                                E = J - 1,\n                                G--;\n                            break;\n                        case 1:\n                            for (z = 0, K = Math.pow(2, 16), L = 1; L != K;) {\n                                q = y.val & y.position,\n                                    y.position >>= 1,\n                                0 == y.position && (y.position = C, y.val = I(y.index++)),\n                                    z |= (q > 0 ? 1 : 0) * L,\n                                    L <<= 1\n                            }\n                            H[J++] = c(z),\n                                E = J - 1,\n                                G--;\n                            break;\n                        case 2:\n                            return j.join(\"\")\n                    }\n                    if (0 == G && (G = Math.pow(2, D), D++), H[E]) {\n                        k = H[E]\n                    } else {\n                        if (E !== J) {\n                            return null\n                        }\n                        k = x + x.charAt(0)\n                    }\n                    j.push(k),\n                        H[J++] = x + k.charAt(0),\n                        G--,\n                        x = k,\n                    0 == G && (G = Math.pow(2, D), D++)\n                }\n            }\n        };\n    return a\n} ();\nvar cdnImage = function(path, asset_domain, asset_key) {\n\ttime_exp = Math.round(new Date() / 1000);\n\tks_md5_path = path+asset_key+time_exp;\n\tks_md5 = params.nativeTool.md5Encode(ks_md5_path);\n     //return asset_domain + path + '?_KS=' + ks_md5 + '&_KE=' + time_exp;\n\treturn asset_domain + path;\n}\n\nvar img_pre = \"/uploads/\";\n\nlet imgdata = LZString.decompressFromBase64(img_data).split(',');\nparams.nativeTool.log(imgdata);\nimgs = '';\nfor(let i=0;i<imgdata.length;i++){\n\tif(imgdata[i].indexOf('招募')>=0){\n\t\tcontinue;\n\t}\n\timgs += cdnImage(img_pre+imgdata[i],img_domain,img_key)+ '\\n';\n}\n hh = config.httpHeaders;\nhh.Host = img_domain.split('//')[1]\nlet imgObj = {'urls':imgs.trim(),'httpHeaders':hh};\nreturn JSON.stringify(imgObj);\n}",
+        "host": "https://m.manhuafei.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "比较推荐",
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "JSParser": "function functionName(config, params, result){\n\tlet res = params.queryInfo;\n\tres.author = result.author;\n\tres.desc = result.desc;\n\tparams.nativeTool.log(res);\n\n\tres.wordCount = '';\n\n\treturn res;\n}",
+        "host": "https://m.manhuafei.com",
+        "cat": "//ul[@class=\"desc\"]//li[3]//a ||@js:\nreturn result.replace(/\\n/gi, ' / ');",
+        "httpHeaders": {
+            "Referer": "https://m.manhuafei.com/"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class=\"detail-intro-txt\"]"
+    }
+}

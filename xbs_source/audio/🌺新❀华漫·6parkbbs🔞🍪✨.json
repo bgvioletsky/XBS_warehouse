@@ -1,0 +1,88 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.url;",
+        "actionID": "chapterContent",
+        "requestInfo": "https://web.6parkbbs.com/index.php?act=bbs&bbsid=2032",
+        "host": "https://web.6parkbbs.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://web.6parkbbs.com/",
+        "cover": "//center[1]/center/img/@mydatasrc",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {
+        "主页": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://web.6parkbbs.com/index.php?app=forum&act=gold&p=%@pageIndex&bbsid=2032",
+            "bookName": "//a",
+            "detailUrl": "//a/@href",
+            "host": "https://web.6parkbbs.com/",
+            "_sIndex": 0,
+            "list": "//ul[@id='thread_list']/li",
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 200
+            }
+        }
+    },
+    "shudanList": {},
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺新❀华漫·6parkbbs🔞🍪✨",
+    "sourceUrl": "https://web.6parkbbs.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "登录获取资源；音频没有有章节名称",
+    "lastModifyTime": "1666192777.453225",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://web.6parkbbs.com/index.php?act=search&app=forum&bbsid=2032&keywords=%@keyWord&submit=%E6%9F%A5%E8%AF%A2&p=%@pageIndex",
+        "bookName": "//span/a/b",
+        "detailUrl": "//span/a/@href",
+        "host": "https://web.6parkbbs.com/",
+        "moreKeys": {
+            "pageSize": 100
+        },
+        "list": "//div[@class='t_l']",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "host": "https://web.6parkbbs.com/",
+        "list": "//audio",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//audio/@src"
+    }
+}

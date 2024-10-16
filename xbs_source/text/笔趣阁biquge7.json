@@ -1,0 +1,114 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.biquge7.cc",
+        "content": "//div[@id=\"content\"] ||@js: return result.replace(/笔趣阁.*/, \"\");",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//div[@id=\"info\"]/p/span[2]",
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "lastChapterTitle": "//div[@class=\"update\"]/a/text()",
+        "host": "http://www.biquge7.cc",
+        "cat": "//div[@class=\"nav-mbx\"]/a[2]/text()",
+        "cover": "//div[@class=\"img_in\"]//@src",
+        "responseFormatType": "html",
+        "desc": "//div[@id=\"intro\"]",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "bookName": "//span[2]/a/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.biquge7.cc/top/${_type}/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.biquge7.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": "_type\n总排行榜::allvisit\n总推荐榜::allvote\n月排行榜::monthvisit\n月推荐榜::monthvote\n周排行榜::weekvisit\n周推荐榜::weekvote\n最新入库::postdate\n最近更新::lastupdate\n本站推荐::toptime\n总收藏榜::goodnum\n字数排行::size"
+            },
+            "detailUrl": "//span[2]/a/@href",
+            "validConfig": "",
+            "list": "//div[@id=\"articlelist\"]/ul[2]/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "wordCount": "//span[7]"
+        },
+        "分类": {
+            "author": "//div[3]",
+            "responseFormatType": "html",
+            "bookName": "//div[1]/a/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.biquge7.cc/fenlei/${_type}_${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.biquge7.cc",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": "_type\n玄幻小说::1\n修真小说::2\n都市小说::3\n历史小说::4\n网游小说::5\n科幻小说::6"
+            },
+            "detailUrl": "//div[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@id=\"tlist\"]//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "wordCount": "//div[4]"
+        }
+    },
+    "sourceUrl": "http://www.biquge7.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "笔趣阁biquge7",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654576327.960518",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//td[3]",
+        "responseFormatType": "html",
+        "bookName": "//td[1]/a/text()",
+        "requestInfo": "@js:\nlet url = 'http://www.biquge7.cc/modules/article/search.php?';\nreturn {'url':url, 'POST':true, 'httpParams':{'searchkey':params.keyWord,'submit':''}};",
+        "host": "http://www.biquge7.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "wordCount": "//td[4]",
+        "validConfig": "",
+        "list": "//div[@id=\"main\"]//tr",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@class=\"update\"]/text()[2]",
+        "title": "//a/text()",
+        "host": "http://www.biquge7.cc",
+        "list": "//dl[@class=\"zjlist\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href ||@js:\nreturn params.queryInfo.detailUrl +result;"
+    },
+    "sourceType": "text"
+}

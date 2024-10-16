@@ -1,0 +1,213 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.url;",
+        "actionID": "chapterContent",
+        "requestInfo": "https://www.google.com/",
+        "host": "https://www.himehear.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "广播剧": {
+            "cat": "@js:\nreturn result.radioStyle + ' ' + result.category;",
+            "author": "studioName",
+            "responseFormatType": "json",
+            "lastChapterTitle": "latestName",
+            "bookName": "radioDramaName",
+            "desc": "introduction",
+            "requestInfo": "@js:\nreturn 'https://www.himehear.com/tjapp/v1/works/list?category=drama' + params.filters.radioStyle + params.filters.processState + params.filters.feeType + params.filters.radioType + params.filters.timeState;",
+            "host": "https://www.himehear.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "radioImg||@js:\nreturn 'https://tingjifm-pub.oss-cn-shenzhen.aliyuncs.com/' +result;",
+            "validConfig": "",
+            "list": "result",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "key": "radioStyle",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "现代",
+                                "value": "&radioStyle=xiandai"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "&radioStyle=gufeng"
+                            },
+                            {
+                                "title": "民国",
+                                "value": "&radioStyle=minguo"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "&radioStyle=qita"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "processState",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "已完结",
+                                "value": "&processState=2"
+                            },
+                            {
+                                "title": "更新中",
+                                "value": "&processState=1"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "feeType",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "免费",
+                                "value": "&feeType=free"
+                            },
+                            {
+                                "title": "付费",
+                                "value": "&feeType=fee"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "radioType",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "橘气",
+                                "value": "&radioType=bh"
+                            },
+                            {
+                                "title": "大女主",
+                                "value": "&radioType=dnz"
+                            },
+                            {
+                                "title": "无CP",
+                                "value": "&radioType=wcp"
+                            },
+                            {
+                                "title": "BH",
+                                "value": "&radioType=bh3"
+                            },
+                            {
+                                "title": "全年龄",
+                                "value": "&radioType=qn3"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "&radioType=yq3"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "&radioType=qt3"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "timeState",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "最近更新",
+                                "value": "&timeState=latest_update"
+                            },
+                            {
+                                "title": "最新上架",
+                                "value": "&timeState=latest_create"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "status": "radioState"
+        }
+    },
+    "sourceUrl": "https://www.himehear.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':'https://www.himehear.com/tjapp/v1/hotkey/search/hotkey', 'POST':true, 'httpParams':{'pageNum':params.pageIndex, 'category':'drama', 'pageSize':20}};",
+        "title": "keyName",
+        "host": "https://www.himehear.com/",
+        "list": "result",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺听姬🔮🍪©️",
+    "sourceType": "audio",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666103255.792315",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "@js:\nreturn result.radioStyle + ' ' + result.category;",
+        "author": "@js:\nreturn result.author + ' ' + result.studioName;",
+        "responseFormatType": "json",
+        "bookName": "radioDramaName",
+        "desc": "introduction",
+        "requestInfo": "@js:\nreturn {'url':'https://www.himehear.com/tjapp/v1/home/drama/searching', 'POST':true, 'httpParams':{'key':params.keyWord, 'pageSize':20, 'category':'drama', 'pageNum':params.pageIndex}, 'httpHeaders':{'accept':'application/json', 'content-type':'application/json;charset=UTF-8'}};",
+        "host": "https://www.himehear.com/",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "radioImg||@js:\nreturn 'https://tingjifm-pub.oss-cn-shenzhen.aliyuncs.com/' +result;",
+        "validConfig": "",
+        "list": "result",
+        "parserID": "DOM",
+        "status": "radioState"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://www.himehear.com/tjapp/v1/works/detail?radioId=%@result",
+        "title": "dramaName",
+        "host": "https://www.himehear.com/",
+        "list": "result/partDramas",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "dramaPath||@js:\nreturn 'https://tingjifm-pub.oss-cn-shenzhen.aliyuncs.com/' + result;"
+    }
+}

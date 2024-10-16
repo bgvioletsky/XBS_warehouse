@@ -1,0 +1,104 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet updateTime = result.update_time;\n\tparams.queryInfo.desc += '，更新于'+updateTime;\n\treturn params.queryInfo;\n}",
+        "host": "https://tianqiapi.com",
+        "httpHeaders": {
+            "appid": "72538887",
+            "appsecret": "XN35gQ3O",
+            "imgUrl": "https://cdn.jsdelivr.net/gh/Uyukisan/onericetwowine/"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "天气api(七日) ⛄",
+    "sourceUrl": "https://tianqiapi.com",
+    "httpHeaders": {
+        "appid": "72538887",
+        "appsecret": "XN35gQ3O",
+        "imgUrl": "https://cdn.jsdelivr.net/gh/Uyukisan/onericetwowine/"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649593055.996717",
+    "searchBook": {
+        "author": "wea",
+        "responseFormatType": "json",
+        "bookName": "@js:\nreturn params.keyWord+ result.date+'的天气'",
+        "httpHeaders": {
+            "appid": "72538887",
+            "appsecret": "XN35gQ3O",
+            "imgUrl": "https://cdn.jsdelivr.net/gh/Uyukisan/onericetwowine/"
+        },
+        "requestInfo": "@js:\nlet url = config.host + '/free/week?appid=' + config.httpHeaders.appid + '&appsecret=' + config.httpHeaders.appsecret + '&city=' + params.keyWord;\nreturn encodeURI(url);",
+        "host": "https://tianqiapi.com",
+        "actionID": "searchBook",
+        "desc": "@js:\nlet str = '天气：' + result.wea + '，最高温度：'+result.tem_day+'℃，最低温度：'+result.tem_night+'℃，'+result.win+'：'+result.win_speed;\n//params.nativeTool.log(result)\nreturn str;",
+        "cover": "wea_img ||@js:\nreturn config.httpHeaders.imgUrl+result + '.png';",
+        "validConfig": "",
+        "list": "$.data",
+        "parserID": "DOM",
+        "detailUrl": "@js:\nreturn params.responseUrl;",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "status": "date"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "支持市区县天气查询，如：上海",
+    "shudanList": {},
+    "help": "如果查询次数用完，前往https://tianqiapi.com注册账号，复制appid和appsecret，更改全局httpHeaders里的appid和appsecret的值即可。",
+    "bookWorld": {
+        "分类": {
+            "author": "wea",
+            "responseFormatType": "json",
+            "bookName": "@js:\nreturn '你所在的城市'+ result.date+'的天气'",
+            "desc": "@js:\nlet str = '天气：' + result.wea + '，最高温度：'+result.tem_day+'℃，最低温度：'+result.tem_night+'℃，'+result.win+'：'+result.win_speed;\n//params.nativeTool.log(result)\nreturn str;",
+            "requestInfo": "@js:\nlet url = config.host + '/free/week?appid=' + config.httpHeaders.appid + '&appsecret=' + config.httpHeaders.appsecret;\nreturn encodeURI(url);",
+            "host": "https://tianqiapi.com",
+            "actionID": "bookWorld",
+            "detailUrl": "@js:\nreturn params.responseUrl;",
+            "httpHeaders": {
+                "appid": "72538887",
+                "appsecret": "XN35gQ3O",
+                "imgUrl": "https://cdn.jsdelivr.net/gh/Uyukisan/onericetwowine/"
+            },
+            "cover": "wea_img ||@js:\nreturn config.httpHeaders.imgUrl+result + '.png';",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "$.data",
+            "validConfig": "",
+            "status": "date"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

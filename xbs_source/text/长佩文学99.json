@@ -1,0 +1,518 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.data..content ||@js:\nreturn result.join(\"\\n\")\nvar key=\"u0LRrbu$Enm84koA\";\nvar iv=\"$h$b3!iGzsYnnshj\"\nvar result= params.nativeTool.Base64DecodeToString(result, key, \"AES/CBC/PKCS5Padding\", iv);\nreturn result",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n        let iv=\"$h$b3!iGzsYnnshj\";\n        let key=\"u0LRrbu$Enm84koA\";\n      let re_data=params.nativeTool.dataByAesDecryptWithBase64StringWithKeyWithIv(result.content,key,iv)\n     return params.nativeTool.stringByObject(re_data)\n}",
+        "requestInfo": "@js:\nreturn {'url':result, 'httpHeaders': {\"Cookie\": \"你的Cookie\"}};\n\n//1.网站限制频繁访问\n2.因为香色会预下载大概率会频繁访问，频繁访问后如果出现乱码或空，请隔十多分钟再刷新\n3.尽量第一章开始(点一下分类我的书架再用)\n4.太频繁可能IP不可用，所以最好不要离线缓存，正文出现乱码过空登录了并且隔十几分钟还是一直显示乱码正文，这时可以试试换个网络』\n5.能不能看随缘",
+        "host": "https://webapi.gongzicp.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "新书速递": {
+            "cat": "novel_all_tag||novel_tag",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_desc",
+            "requestInfo": "https://webapi.gongzicp.com/home/initPcType?pid=75&id=%@filter",
+            "host": "https://webapi.gongzicp.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover",
+            "wordCount": "novel_wordnumber",
+            "list": "data/recList/newbookslt/list",
+            "_sIndex": 5,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": 3,
+                                "title": "古代"
+                            },
+                            {
+                                "value": 1,
+                                "title": "现代"
+                            },
+                            {
+                                "value": 4,
+                                "title": "幻想"
+                            },
+                            {
+                                "value": 6,
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": 66,
+                                "title": "短佩"
+                            },
+                            {
+                                "value": 9,
+                                "title": "架空"
+                            },
+                            {
+                                "value": 73,
+                                "title": "无CP"
+                            },
+                            {
+                                "value": 17,
+                                "title": "百合"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "status": "novel_status",
+            "validConfig": ""
+        },
+        "原创分频": {
+            "cat": "novel_all_tag||novel_tag",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_desc",
+            "requestInfo": "@js:\nreturn 'https://webapi.gongzicp.com/novel/novelList?tid=' + params.filters.fen + '&process=' + params.filters.status + '&number=' + params.filters.wordcnt + '&sell=' + params.filters.price + '&pre=' + params.pageIndex;",
+            "host": "https://webapi.gongzicp.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover",
+            "wordCount": "novel_wordnumber",
+            "list": "data/list",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "75",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "3",
+                                "title": "古代"
+                            },
+                            {
+                                "value": "1",
+                                "title": "现代"
+                            },
+                            {
+                                "value": "4",
+                                "title": "幻想"
+                            },
+                            {
+                                "value": "6",
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": "66",
+                                "title": "短佩"
+                            },
+                            {
+                                "value": "9",
+                                "title": "架空"
+                            },
+                            {
+                                "value": "73",
+                                "title": "无CP"
+                            },
+                            {
+                                "value": "17",
+                                "title": "百合"
+                            }
+                        ],
+                        "key": "fen"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "免费",
+                                "value": "1"
+                            },
+                            {
+                                "title": "付费",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "price"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "5万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "10完以下",
+                                "value": "2"
+                            },
+                            {
+                                "title": "10-30万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "30--50万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "50-100万",
+                                "value": "5"
+                            },
+                            {
+                                "title": "100万以上",
+                                "value": "6"
+                            }
+                        ],
+                        "key": "wordcnt"
+                    }
+                ]
+            },
+            "status": "novel_status",
+            "validConfig": ""
+        },
+        "完结推荐": {
+            "cat": "novel_all_tag||novel_tag",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_desc",
+            "requestInfo": "https://webapi.gongzicp.com/home/initPcType?pid=75&id=%@filter",
+            "host": "https://webapi.gongzicp.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover",
+            "wordCount": "novel_wordnumber",
+            "list": "data/recList/finishrec/list",
+            "_sIndex": 4,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": 3,
+                                "title": "古代"
+                            },
+                            {
+                                "value": 1,
+                                "title": "现代"
+                            },
+                            {
+                                "value": 4,
+                                "title": "幻想"
+                            },
+                            {
+                                "value": 6,
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": 66,
+                                "title": "短佩"
+                            },
+                            {
+                                "value": 9,
+                                "title": "架空"
+                            },
+                            {
+                                "value": 73,
+                                "title": "无CP"
+                            },
+                            {
+                                "value": 17,
+                                "title": "百合"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "status": "novel_status",
+            "validConfig": ""
+        },
+        "12": {
+            "validConfig": "",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "host": "https://webapi.gongzicp.com",
+            "requestInfo": "true",
+            "actionID": "bookWorld"
+        },
+        "我的书架": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "requestInfo": "@js:\nvar url = \"https://webapi.gongzicp.com/usercoll/getList?page=1&filter=0&sort_key=3&sort_flag=2\"return {'url':url,'webView': true};",
+            "_sIndex": 1,
+            "host": "https://webapi.gongzicp.com",
+            "responseFormatType": "json",
+            "parserID": "DOM"
+        },
+        "强推": {
+            "cat": "novel_all_tag||novel_tag",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_desc",
+            "requestInfo": "https://webapi.gongzicp.com/home/initPcType?pid=75&id=%@filter",
+            "host": "https://webapi.gongzicp.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover",
+            "wordCount": "novel_wordnumber",
+            "list": "data/recList/weekrec/list",
+            "_sIndex": 7,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": 3,
+                                "title": "古代"
+                            },
+                            {
+                                "value": 1,
+                                "title": "现代"
+                            },
+                            {
+                                "value": 4,
+                                "title": "幻想"
+                            },
+                            {
+                                "value": 6,
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": 66,
+                                "title": "短佩"
+                            },
+                            {
+                                "value": 9,
+                                "title": "架空"
+                            },
+                            {
+                                "value": 73,
+                                "title": "无CP"
+                            },
+                            {
+                                "value": 17,
+                                "title": "百合"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "status": "novel_status",
+            "validConfig": ""
+        },
+        "淘一淘": {
+            "cat": "novel_all_tag||novel_tag",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_desc",
+            "requestInfo": "https://webapi.gongzicp.com/home/initPcType?pid=75&id=%@filter",
+            "host": "https://webapi.gongzicp.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover",
+            "wordCount": "novel_wordnumber",
+            "list": "data/recList/threelt/list",
+            "_sIndex": 6,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": 3,
+                                "title": "古代"
+                            },
+                            {
+                                "value": 1,
+                                "title": "现代"
+                            },
+                            {
+                                "value": 4,
+                                "title": "幻想"
+                            },
+                            {
+                                "value": 6,
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": 66,
+                                "title": "短佩"
+                            },
+                            {
+                                "value": 9,
+                                "title": "架空"
+                            },
+                            {
+                                "value": 73,
+                                "title": "无CP"
+                            },
+                            {
+                                "value": 17,
+                                "title": "百合"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "status": "novel_status",
+            "validConfig": ""
+        },
+        "分类精选": {
+            "cat": "novel_all_tag||novel_tag",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_desc",
+            "requestInfo": "https://webapi.gongzicp.com/home/initPcType?pid=75&id=%@filter",
+            "host": "https://webapi.gongzicp.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover",
+            "wordCount": "novel_wordnumber",
+            "list": "data/recList/sortslt/list",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": 3,
+                                "title": "古代"
+                            },
+                            {
+                                "value": 1,
+                                "title": "现代"
+                            },
+                            {
+                                "value": 4,
+                                "title": "幻想"
+                            },
+                            {
+                                "value": 6,
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": 66,
+                                "title": "短佩"
+                            },
+                            {
+                                "value": 9,
+                                "title": "架空"
+                            },
+                            {
+                                "value": 73,
+                                "title": "无CP"
+                            },
+                            {
+                                "value": 17,
+                                "title": "百合"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "status": "novel_status",
+            "validConfig": ""
+        }
+    },
+    "shudanList": {},
+    "sourceType": "text",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "长佩文学99",
+    "sourceUrl": "https://webapi.gongzicp.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665400920.895866",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "novel_ all_tag",
+        "author": "novel_author",
+        "responseFormatType": "json",
+        "bookName": "novel_name",
+        "desc": "novel_desc",
+        "requestInfo": "https://webapi.gongzicp.com/search/novels?k=%@keyWord",
+        "host": "https://webapi.gongzicp.com",
+        "actionID": "searchBook",
+        "detailUrl": "novel_id",
+        "cover": "novel_cover",
+        "validConfig": "",
+        "list": "data/list",
+        "parserID": "DOM",
+        "wordCount": "novel_wordnumber"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://webapi.gongzicp.com/novel/chapterGetList?nid=%@result",
+        "title": "$.name",
+        "host": "https://webapi.gongzicp.com",
+        "list": "$.data.list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "$.id||@js:\nvar url = \"https://webapi.gongzicp.com/novel/chapterGetInfo?cid=\"+ result +\"&server=0\";\nreturn url"
+    }
+}

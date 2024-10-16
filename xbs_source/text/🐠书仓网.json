@@ -1,0 +1,185 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//*[@id=\"content\"]/p|| @js:\nreturn result.replace(/.*最新章节.*/,\"\").replace(/.*温馨提示.*/,\"\").replace(/.*请大家收藏.*/,\"\")",
+        "moreKeys": {
+            "maxPage": 3
+        },
+        "host": "https://www.shucangxs.com",
+        "httpHeaders": {
+            "Referer": "https://www.shucangxs.com/",
+            "upgrade-insecure-requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.shucangxs.com",
+        "httpHeaders": {
+            "Referer": "https://www.shucangxs.com/",
+            "upgrade-insecure-requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+        },
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "全本": {
+            "cat": "//span||@js:return result.replace(/\\[|\\]/g,'')",
+            "author": "//span[4]/a",
+            "lastChapterTitle": "//span[3]/a",
+            "responseFormatType": "html",
+            "bookName": "//span[2]/a",
+            "httpHeaders": {
+                "Referer": "https://www.shucangxs.com/",
+                "upgrade-insecure-requests": "1",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`${config.host}/shucang/over_${_type}/${params.pageIndex+1}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.shucangxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "skipCount": 1,
+                "requestFilters": "_type\n现代言情::xianyan\n幻想奇缘::huanqing\n游戏情缘::zongcai\n浪漫青春::qingchun\n言情美文::wangluo\n科幻灵异::mmkehuan\n其他类型::mmqita\n玄幻奇幻::xuanhuan\n武侠仙侠::wuxia\n都市生活::dushi\n历史军事::lishi\n游戏竞技::youxi\n科幻未来::kehuan\n恐怖悬疑::xuanyi\n其他类型::qita\n古代言情::guyan"
+            },
+            "wordCount": "//span[5]",
+            "validConfig": "",
+            "detailUrl": "//span[2]/a/@href",
+            "parserID": "DOM",
+            "list": "//*[@class='novelslist2']//li",
+            "_sIndex": 2,
+            "status": "//span[6]"
+        },
+        "分类": {
+            "author": "//dd[2]/span",
+            "lastChapterTitle": "//dd[4]/a",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "httpHeaders": {
+                "Referer": "https://www.shucangxs.com/",
+                "upgrade-insecure-requests": "1",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+            },
+            "requestInfo": "@js:\rlet {_aa,_ac,_ad}=params.filters\rlet url=`${config.host}/library/${_ac}_${_aa}_${_ad}_${params.pageIndex}.html`;\r\rreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.shucangxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_aa\n分类::0\n玄幻奇幻::1\n武侠仙侠::2\n都市生活::3\n历史军事::4\n游戏竞技::5\n科幻未来::6\n恐怖悬疑::7\n其他类型::8\n古代言情::9\n现代言情::10\n幻想奇缘::11\n游戏情缘::12\n浪漫青春::13\n言情美文::14\n科幻灵异::15\n其他类型::16\n\n_ac\n排序::0\n总点击::allvisit\n月点击::monthvisit\n周点击::weekvisit\n日点击::dayvisit\n总推荐::allvote\n月推荐::monthvote\n周推荐::weekvote\n日推荐::dayvote\n总收藏::goodnum\n字数::size\n入库::postdat\n\n_ad\n状态::0\n连载::1\n完本::2"
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "list": "//*[@class=\"novelslist2\"]//dl",
+            "desc": "//dd[3]",
+            "_sIndex": 0
+        },
+        "榜单": {
+            "cat": "//span||@js:return result.replace(/\\[|\\]/g,'')",
+            "author": "//span[4]/a",
+            "lastChapterTitle": "//span[3]/a",
+            "responseFormatType": "html",
+            "bookName": "//span[2]/a",
+            "httpHeaders": {
+                "Referer": "https://www.shucangxs.com/",
+                "upgrade-insecure-requests": "1",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+            },
+            "requestInfo": "@js:\rlet {_type}=params.filters\rlet url=`${config.host}/shucang/rank_${_type}_${params.pageIndex}.html`;\r\rreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.shucangxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "skipCount": 1,
+                "requestFilters": "_type\n热门榜::allvisit\n推荐榜::allvote\n收藏榜::goodnum\n"
+            },
+            "wordCount": "//span[5]",
+            "validConfig": "",
+            "detailUrl": "//span[2]/a/@href",
+            "parserID": "DOM",
+            "list": "//*[@class='novelslist2']//li",
+            "_sIndex": 1,
+            "status": "//span[6]"
+        }
+    },
+    "sourceUrl": "https://www.shucangxs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🐠书仓网",
+    "httpHeaders": {
+        "Referer": "https://www.shucangxs.com/",
+        "upgrade-insecure-requests": "1",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666956826.066566",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//dd[2]/span[3]",
+        "author": "//dd[2]/span[1]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//dd[4]/a",
+        "bookName": "//h3/a",
+        "httpHeaders": {
+            "Referer": "https://www.shucangxs.com/",
+            "upgrade-insecure-requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url = '/search.html';\n\nlet hp = {'searchkey':params.keyWord,'searchtype':'all'};\n\nreturn {'url':url,'POST':true,'forbidCookie':false, 'httpParams':hp, 'httpHeaders':config.httpHeaders};",
+        "host": "https://www.shucangxs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "wordCount": "//dd[2]/span[4]",
+        "validConfig": "",
+        "list": "//*[@id=\"sitembox\"]/dl",
+        "parserID": "DOM",
+        "desc": "//dd[3]",
+        "cover": "//dt/a/img/@src",
+        "status": "//dd[2]/span[2]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//*[@id=\"info\"]/p[3]",
+        "title": "//a",
+        "host": "https://www.shucangxs.com",
+        "httpHeaders": {
+            "Referer": "https://www.shucangxs.com/",
+            "upgrade-insecure-requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36"
+        },
+        "list": "//*[@id=\"list\"]//dt[2]/following-sibling::*",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,172 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.lzizy.com",
+        "cover": "//div[@class=\"people\"]//div[@class=\"left\"]//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"people\"]//div[@class=\"right\"]//p[3] | //div[@class=\"people\"]//div[@class=\"right\"]//p[7] | //div[@class=\"vod_content\"]//p"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//input/@value ||@js:\nreturn result.split('$')[0];",
+        "host": "http://www.lzizy.com",
+        "list": "//div[contains(@class,'lzm3u8')]//input[@name=\"copy_lzm3u8[]\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//input/@value ||@js:\nreturn result.split('$')[1];"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "量子影视⛄",
+    "sourceType": "video",
+    "sourceUrl": "http://www.lzizy.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665916667.134149",
+    "searchBook": {
+        "cat": "//span[2]",
+        "responseFormatType": "html",
+        "bookName": "//a[@class=\"videoName\"]/text()",
+        "desc": "//p[3]",
+        "requestInfo": "/index.php/vod/search/page/%@pageIndex/wd/%@keyWord.html",
+        "host": "http://www.lzizy.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class=\"videoName\"]/@href",
+        "moreKeys": {
+            "pageSize": "24"
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class=\"videoContent\"]//li",
+        "status": "//a[@class=\"videoName\"]//i"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.url;",
+        "host": "http://www.lzizy.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nreturn config.host;",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "动漫": {
+            "cat": "//span[2]",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"videoName\"]/text()",
+            "desc": "//p[3]",
+            "requestInfo": "/index.php/vod/type/id/%@filter/page/%@pageIndex.html",
+            "host": "http://www.lzizy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": "🇨🇳国产动漫::29\n日韩动漫::30\n欧美动漫::31\n🇨🇳港台动漫::32\n海外动漫::33"
+            },
+            "detailUrl": "//a[@class=\"videoName\"]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"videoContent\"]//li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "status": "//a[@class=\"videoName\"]//i"
+        },
+        "综艺": {
+            "cat": "//span[2]",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"videoName\"]/text()",
+            "desc": "//p[3]",
+            "requestInfo": "/index.php/vod/type/id/%@filter/page/%@pageIndex.html",
+            "host": "http://www.lzizy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": "🇨🇳大陆综艺::25\n🇨🇳港台综艺::26\n日韩综艺::27\n欧美综艺::28"
+            },
+            "detailUrl": "//a[@class=\"videoName\"]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"videoContent\"]//li",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "status": "//a[@class=\"videoName\"]//i"
+        },
+        "电视剧": {
+            "cat": "//span[2]",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"videoName\"]/text()",
+            "desc": "//p[3]",
+            "requestInfo": "/index.php/vod/type/id/%@filter/page/%@pageIndex.html",
+            "host": "http://www.lzizy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": "🇨🇳国产剧::13\n欧美剧::16\n🇨🇳香港剧::14\n韩国剧::15\n🇨🇳台湾剧::21\n日本剧::22\n海外剧::23\n泰国剧::24"
+            },
+            "detailUrl": "//a[@class=\"videoName\"]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"videoContent\"]//li",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "status": "//a[@class=\"videoName\"]//i"
+        },
+        "电影": {
+            "cat": "//span[2]",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"videoName\"]/text()",
+            "desc": "//p[3]",
+            "requestInfo": "/index.php/vod/type/id/%@filter/page/%@pageIndex.html",
+            "host": "http://www.lzizy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": "动作片::6\n喜剧片::7\n科幻片::9\n恐怖片::10\n爱情片::8\n剧情片::11\n战争片::12\n纪录片::20"
+            },
+            "detailUrl": "//a[@class=\"videoName\"]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"videoContent\"]//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "//a[@class=\"videoName\"]//i"
+        },
+        "电影解说": {
+            "cat": "//span[2]",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"videoName\"]/text()",
+            "desc": "//p[3]",
+            "requestInfo": "/index.php/vod/type/id/35/page/%@pageIndex.html",
+            "host": "http://www.lzizy.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50
+            },
+            "detailUrl": "//a[@class=\"videoName\"]/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"videoContent\"]//li",
+            "_sIndex": 4,
+            "parserID": "DOM",
+            "status": "//a[@class=\"videoName\"]//i"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,229 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://boylove.cc/",
+        "content": "//section[@class='reader-cartoon-chapter reader-cartoon-chapter_no-center']/div/text()",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//div[@class='stui-content__detail']/p[1]",
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "lastChapterTitle": "//div[@class='stui-content__detail']/p[5]",
+        "host": "https://boylove.cc/",
+        "cat": "//div[@class='stui-content__detail']/p[7]/a",
+        "cover": "//span[@class='pic']/a",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "fen": {
+            "cat": "keyword",
+            "author": "auther",
+            "responseFormatType": "json",
+            "lastChapterTitle": "last_chapter_title",
+            "bookName": "title",
+            "desc": "desc",
+            "requestInfo": "@js:\nreturn 'https://boylove.cc/home/api/cate/tp/2-' + encodeURI(params.filters.type) + '-' + params.filters.status + '-1-' + params.pageIndex + '-' + params.filters.rou + '-2-2';",
+            "host": "https://boylove.cc/",
+            "actionID": "bookWorld",
+            "detailUrl": "id||@js:\nreturn 'https://boylove.cc/home/book/index/id/' + result;",
+            "cover": "image",
+            "validConfig": "",
+            "list": "result/list",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "2"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "0"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "清水",
+                                "value": "1"
+                            },
+                            {
+                                "title": "有肉",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "rou"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "甜文",
+                                "value": "甜文"
+                            },
+                            {
+                                "title": "耽美",
+                                "value": "耽美"
+                            },
+                            {
+                                "title": "穿越｜快穿",
+                                "value": "穿越｜快穿"
+                            },
+                            {
+                                "title": "娱乐圈",
+                                "value": "娱乐圈"
+                            },
+                            {
+                                "title": "重逢｜重生",
+                                "value": "重逢｜重生"
+                            },
+                            {
+                                "title": "架空",
+                                "value": "架空"
+                            },
+                            {
+                                "title": "男孕",
+                                "value": "男孕"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "校园"
+                            },
+                            {
+                                "title": "豪门",
+                                "value": "豪门"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "灵异"
+                            },
+                            {
+                                "title": "星际",
+                                "value": "星际"
+                            },
+                            {
+                                "title": "ABO",
+                                "value": "ABO"
+                            },
+                            {
+                                "title": "现代都市",
+                                "value": "现代都市"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "仙侠"
+                            },
+                            {
+                                "title": "古代｜非现代",
+                                "value": "古代｜非现代"
+                            },
+                            {
+                                "title": "年下攻",
+                                "value": "年下攻"
+                            },
+                            {
+                                "title": "待分类",
+                                "value": "待分类"
+                            },
+                            {
+                                "title": "耽美工口",
+                                "value": "耽美工口"
+                            },
+                            {
+                                "title": "腹黑攻",
+                                "value": "腹黑攻"
+                            },
+                            {
+                                "title": "总裁系列",
+                                "value": "总裁系列"
+                            },
+                            {
+                                "title": "兽耳",
+                                "value": "兽耳"
+                            }
+                        ],
+                        "key": "type"
+                    }
+                ]
+            },
+            "status": "status"
+        }
+    },
+    "sourceUrl": "https://boylove.cc/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺香香腐宅novel 🔞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665937184.343344",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "keyword",
+        "author": "auther",
+        "responseFormatType": "json",
+        "lastChapterTitle": "last_chapter_title",
+        "bookName": "title",
+        "desc": "desc",
+        "requestInfo": "https://boylove.house/home/api/searchk?keyword=%@keyWord&type=2&pageNo=%@pageIndex",
+        "host": "https://boylove.cc/",
+        "actionID": "searchBook",
+        "detailUrl": "id||@js:\nreturn 'https://boylove.cc/home/book/index/id/' + result;",
+        "cover": "image",
+        "validConfig": "",
+        "list": "result/list",
+        "parserID": "DOM",
+        "status": "status"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':params.queryInfo.detailUrl, 'webView':''};",
+        "title": "//a",
+        "host": "https://boylove.cc/",
+        "list": "//ul[@class='stui-play__list clearfix']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

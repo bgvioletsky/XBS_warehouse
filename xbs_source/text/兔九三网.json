@@ -1,0 +1,131 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//*[@id=\"htmlContent\"]/p",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true};",
+        "moreKeys": {
+            "maxPage": 4
+        },
+        "host": "https://www.tu93.com",
+        "httpHeaders": {
+            "Referer": "https://www.tu93.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url;\n\nurl = url+\"?page=\"+pageid;\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//*[@class=\"booktag\"]//*[@class=\"blue\"][3]",
+        "wordCount": "//*[@class=\"booktag\"]//*[@class=\"blue\"][1]",
+        "validConfig": "",
+        "cat": "//*[@class=\"booktag\"]/a[2]",
+        "host": "https://www.tu93.com",
+        "httpHeaders": {
+            "Referer": "https://www.tu93.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//*[@class=\"col-md-2 col-xs-4 hidden-xs\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//*[@id=\"bookIntro\"]"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//td[@class=\"text-muted\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//td[@class=\"hidden-xs\"]/a",
+            "bookName": "//td[1]/a",
+            "httpHeaders": {
+                "Referer": "https://www.tu93.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\rlet {_aa,_ab}=params.filters\rlet url=`https://www.tu93.com${_aa}${_ab}&page=${params.pageIndex}`;\r\rurl=encodeURI(url);\rreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.tu93.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_aa\n玄幻奇幻::/xuanhuan/\n武侠仙侠::/xianxia/\n都市言情::/dushi/\n历史军事::/lishi/\n科幻传奇::/kehuan/\n恐怖灵异::/kongbu/\n其他类型::/qita/\n完本小说::/quanben/\n\n_ab\n更新时间新::?order=update\n入库时间::?order=post\n阅读总榜热::?order=all\n阅读周榜::?order=week\n推荐总榜::?order=vote"
+            },
+            "detailUrl": "//td[1]/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//*[@class=\"mytable table\"]//tr[position()>1]",
+            "status": "//*[@class=\"text-nowrap\"]"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.tu93.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9",
+    "sourceName": "兔九三网",
+    "httpHeaders": {
+        "Referer": "https://www.tu93.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654408368.404914",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//*[@class=\"booktag\"]/a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div/p[3]/a",
+        "bookName": "//div/h4/a",
+        "JSParser": "function functionName(config, jsparams, result) {\r   \r    let list = [];\r       var urls = result.list[0].detailUrl.split(\"\\n\");\r       var titles=result.list[0].bookName.split(\"\\n\");\r\rvar authors = result.list[0].author.split(\"\\n\");\r\rvar lastChapterTitles=result.list[0]. lastChapterTitle.split(\"\\n\");\r       var covers=result.list[0].cover.split(\"\\n\");\r         \r            for (let j = 0; j < titles.length; j++) {\r                list.push({\"bookName\": titles[j], \"author\": authors[j], \"lastChapterTitle\": lastChapterTitles[j], \"detailUrl\": urls[j], \"cover\": covers[j]})\r            }\r        \r    \r    return { \"list\": list};}",
+        "httpHeaders": {
+            "Referer": "https://www.tu93.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url=config.host+\"/search\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'keyword':params.keyWord,'page':params.pageIndex,};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "https://www.tu93.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div/h4/a/@href",
+        "cover": "//img[1]/@src",
+        "validConfig": "",
+        "list": "//*[@class=\"panel-body\"]/div",
+        "parserID": "DOM",
+        "desc": "//*[@id=\"bookIntro\"]",
+        "moreKeys": {
+            "maxPage": 20
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,'webView':true};",
+        "title": "//a",
+        "host": "https://www.tu93.com",
+        "httpHeaders": {
+            "Referer": "https://www.tu93.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//*[@id=\"list-chapterAll\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

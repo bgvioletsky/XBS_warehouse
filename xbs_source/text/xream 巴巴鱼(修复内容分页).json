@@ -1,0 +1,190 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='BookText']/p",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 5
+        },
+        "host": "https://www.babayu.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[text() = '下一页']/@href || @js:\nlet url = result.split('\\n')[0];\nif(url.indexOf('kanshu/') >=0 )\n\treturn url;\nreturn '/kanshu/' + url;"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "author": "//p[2]/text()",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "desc": "//p[@class='intro']/text()",
+            "requestInfo": "@js:\nlet fl = params.filters;\nlet url = 'https://www.babayu.com/all' + fl.cat + fl.sort + fl.status + '.html';\nif(params.pageIndex>1)\n\treturn url + '?page=' + params.pageIndex;\nreturn url;",
+            "host": "https://www.babayu.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3/a/@href",
+            "cover": "//a/img/@src",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "/id/42"
+                            },
+                            {
+                                "title": "武侠修真",
+                                "value": "/id/43"
+                            },
+                            {
+                                "title": "都市异能",
+                                "value": "/id/44"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "/id/45"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "/id/46"
+                            },
+                            {
+                                "title": "科幻灭世",
+                                "value": "/id/47"
+                            },
+                            {
+                                "title": "惊悚悬疑",
+                                "value": "/id/49"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "/id/52"
+                            },
+                            {
+                                "title": "女生频道",
+                                "value": "/id/48"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "sort",
+                        "items": [
+                            {
+                                "title": "更新",
+                                "value": "/order/update_time+desc"
+                            },
+                            {
+                                "title": "入库时间",
+                                "value": "/order/id+desc"
+                            },
+                            {
+                                "title": "周人气",
+                                "value": "/order/hits_week+desc"
+                            },
+                            {
+                                "title": "月人气",
+                                "value": "/order/hits_month+desc"
+                            },
+                            {
+                                "title": "总人气",
+                                "value": "/order/hits+desc"
+                            },
+                            {
+                                "title": "推荐数",
+                                "value": "/order/up+desc"
+                            },
+                            {
+                                "title": "字数",
+                                "value": "/order/word+desc"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "连载",
+                                "value": "/serialize/0"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "/serialize/1"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "list": "//ul[@class='search-list']/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//p[1]/text()"
+        }
+    },
+    "sourceUrl": "https://www.babayu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "xream 巴巴鱼(修复内容分页)",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1663951291.432236",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[2]/text()",
+        "responseFormatType": "html",
+        "bookName": "//h3/a",
+        "desc": "//p[@class='intro']/text()",
+        "requestInfo": "https://www.babayu.com/soshu.html?ss=%@keyWord",
+        "host": "https://www.babayu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//a/img/@src",
+        "validConfig": "",
+        "list": "//ul[@class='search-list']/li",
+        "parserID": "DOM",
+        "status": "//p[1]/text()"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn result.replace('kanshu/book', 'book_other');",
+        "title": "//a",
+        "host": "https://www.babayu.com",
+        "list": "//div[@class='chapter-con']//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

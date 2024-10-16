@@ -1,0 +1,95 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "host": "https://www.x23us.us",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.x23us.us",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "顶点小说-移动网不可用",
+    "sourceType": "text",
+    "sourceUrl": "https://www.x23us.us",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666870459.457420",
+    "searchBook": {
+        "author": "//td[3]",
+        "lastChapterTitle": "//td[2]",
+        "responseFormatType": "html",
+        "bookName": "//td[1]",
+        "requestInfo": "https://www.x23us.us/modules/article/search.php?q=%@keyWord",
+        "host": "https://www.x23us.us",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "wordCount": "//td[4]",
+        "validConfig": "",
+        "list": "//tr",
+        "parserID": "DOM",
+        "status": "//td[5]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.x23us.us",
+        "content": "//div[@id=\"content\"]||@js:\nres =result.replace(/最新网址：www.23uswx.com    /g,\"\").replace(/最新网址：www.23uswx.com/g,\"\");\nreturn res;",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "author": "//span[@class=\"s5\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"s3\"]",
+            "bookName": "//span[@class=\"s2\"]",
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\r\nlet url=`https://www.x23us.us/${_aa}/`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.x23us.us",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "moreKeys": {
+                "requestFilters": "_aa\n玄幻::xuanhuanxiaoshuo\n修真::xiuzhenxiaoshuo\n都市::dushixiaoshuo\n穿越::chuanyuexiaoshuo\n网游::wangyouxiaoshuo\n科幻::kehuanxiaoshuo\n"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"l\"]/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

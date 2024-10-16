@@ -1,0 +1,75 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//*[@id=\"comic\"]//img/@src",
+        "host": "https://francisbonnet.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://francisbonnet.com/",
+        "desc": "//description",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {
+        "all suburban fairy tales": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result) {\nlet list = [\n  {\n    \"detailUrl\" : \"https:\\/\\/francisbonnet.com\\/archive\\/sft\\/\",\n    \"bookName\" : \"Suburban Fairy Tales\",\n    \"author\" : \"Francis Bonnet\",\n    \"cover\" : \"https:\\/\\/francisbonnet.com\\/archive\\/sft\\/wp-content\\/uploads\\/2020\\/08\\/Suburban-Fairy-Tales-cover-wraparound_8x10-240x300.jpg\"\n  }\n]\nreturn {'list':list};\n}",
+            "requestInfo": "https://francisbonnet.com/",
+            "host": "https://francisbonnet.com/",
+            "responseFormatType": "html",
+            "parserID": "DOM"
+        }
+    },
+    "shudanList": {},
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺Francis Bonnet🌐📊©️",
+    "sourceUrl": "https://francisbonnet.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666018418.636690",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//text()",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "host": "https://francisbonnet.com/",
+        "list": "//form[@class='comic-list-dropdown-form']/select/option",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@value"
+    }
+}

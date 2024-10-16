@@ -1,0 +1,73 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\treturn JSON.stringify({'urls':params.queryInfo.url});\n}",
+        "requestInfo": "https://www.google.com/",
+        "host": "https://drive.google.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "天官赐福": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "@js:\nreturn {'url':'https://drive.google.com/drive/mobile/folders/12VvpITTssyRLmkGoqb-aqfMG_RwmQJmL', 'httpHeaders':{'user-agent':'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Mobile Safari/537.36'}};",
+            "detailUrl": "@js:\nreturn params.responseUrl;",
+            "bookName": "//title",
+            "host": "https://drive.google.com/",
+            "_sIndex": 0,
+            "list": "//head",
+            "responseFormatType": "html",
+            "parserID": "DOM"
+        }
+    },
+    "sourceType": "video",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺Google Drive自定义🌐📊",
+    "sourceUrl": "https://drive.google.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "自行修改",
+    "lastModifyTime": "1666185615.095046",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':params.queryInfo.detailUrl, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Mobile Safari/537.36'}, 'webView':''};",
+        "title": "//div[@class='a-N-Pf-V']/@aria-label",
+        "host": "https://drive.google.com/",
+        "list": "//div[@class='a-s-tb-sc-Ja a-N-Pf-Ja a-s-tb-sc-Ja-J']/div[@class='a-s-tb-sc-Ja-Q a-s-tb-sc-Ja-Q-Nm ']",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//div[@data-target='doc']/@data-id||@js:\nreturn 'https://drive.google.com/u/0/uc?id=' + result + '&export=download&confirm=t';"
+    }
+}

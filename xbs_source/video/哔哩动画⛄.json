@@ -1,0 +1,119 @@
+{
+    "bookDetail": {
+        "parserID": "DOM",
+        "actionID": "bookDetail",
+        "responseFormatType": "html"
+    },
+    "bookWorld": {
+        "国创": {
+            "cat": "styles",
+            "author": "staff",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "subTitle",
+            "requestInfo": "https://api.bilibili.com/pgc/season/index/result?season_version=-1&is_finish=-1&copyright=-1&season_status=-1&year=-1&style_id=-1&order=%@filter&st=4&sort=0&page=%@pageIndex&season_type=4&pagesize=20&type=1",
+            "host": "https://www.bilibili.com",
+            "actionID": "bookWorld",
+            "detailUrl": "season_id ||@js:\nlet url ='http://api.bilibili.com/pgc/view/web/season?season_id=' + result;\nreturn url;",
+            "cover": "cover",
+            "validConfig": "",
+            "list": "$.data.list",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "追番人数::3\n更新时间::0\n最高评分::4\n播放数量::2\n开播时间::5"
+            },
+            "status": "order"
+        },
+        "番剧": {
+            "cat": "styles",
+            "author": "staff",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "subTitle",
+            "requestInfo": "https://api.bilibili.com/pgc/season/index/result?season_version=-1&spoken_language_type=-1&area=-1&is_finish=-1&copyright=-1&season_status=-1&season_month=-1&year=-1&style_id=-1&order=%@filter&st=1&sort=0&page=%@pageIndex&season_type=1&pagesize=20&type=1",
+            "host": "https://www.bilibili.com",
+            "actionID": "bookWorld",
+            "detailUrl": "season_id ||@js:\nlet url ='http://api.bilibili.com/pgc/view/web/season?season_id=' + result;\nreturn url;",
+            "cover": "cover",
+            "validConfig": "",
+            "list": "$.data.list",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "追番人数::3\n更新时间::0\n最高评分::4\n播放数量::2\n开播时间::5"
+            },
+            "status": "order"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "share_copy  ||title",
+        "host": "https://www.bilibili.com",
+        "list": "$.result.episodes",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "link"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "哔哩动画⛄",
+    "sourceType": "video",
+    "sourceUrl": "https://www.bilibili.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665146199.162116",
+    "searchBook": {
+        "cat": "styles",
+        "author": "staff",
+        "responseFormatType": "json",
+        "lastChapterTitle": "$.eps ||@js:\nreturn  '第'+result.pop().title + '话 '+result.pop().long_title;",
+        "bookName": "title ||@js:\nreturn result.replace(/<.*?>/gi,'');",
+        "desc": "$ ||@js:\nlet score = '评分：' + result.media_score.score+'（'+result.media_score.user_count+'人评分）';\nlet desc = result.desc;\nlet list = [];\nlist.push(score);\nlist.push(desc);\nreturn list.join('\\n');",
+        "requestInfo": "https://api.bilibili.com/x/web-interface/search/type?__refresh__=true&_extra=&context=&page=%@pageIndex&page_size=12&platform=pc&single_column=0&keyword=%@keyWord&search_type=media_bangumi&preload=true&com2co=true",
+        "host": "https://www.bilibili.com",
+        "actionID": "searchBook",
+        "detailUrl": "season_id ||@js:\nlet url ='http://api.bilibili.com/pgc/view/web/season?season_id=' + result;\nreturn url;",
+        "cover": "cover",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "$.data.result",
+        "moreKeys": {
+            "pageSize": 12
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nlet reg = /var config[\\s\\S]+?\\}/gi;\nlet tem = result.match(reg)[0];\neval(tem);\nreturn config.url;",
+        "host": "https://www.bilibili.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nlet url = 'https://pl.klyingshi.com/mz-ak/?url=' + params.queryInfo.url;\nreturn url;",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34l-GM|6{|",
+    "desc": "Ks🔍✨",
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "shudanList": {}
+}

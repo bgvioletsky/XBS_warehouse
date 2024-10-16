@@ -1,0 +1,258 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result) {\n  let fromIndex = result.lastIndexOf('player_video embed-responsive embed-responsive-16by9 author-qq362695000 clearfix');\n  if (fromIndex === -1) {\n    return undefined;\n  }\n  let content = parseLabel(result, '<script type=\"text/javascript\">', '</script>', fromIndex);\n  if (!content) {\n    return undefined;\n  }\n  content = JSON.parse(\"{\" + content.split(/{|}/)[1] + \"}\").url\n  return {'success':true, 'content':content};\n}\n\n\nfunction parseLabel(source, startLabel, endLabel, fromIndex) {\n  let startIndex = source.indexOf(startLabel, fromIndex || 0);\n  let endIndex = source.indexOf(endLabel, startIndex);\n  if (startIndex === -1 || endIndex === -1) {\n    return undefined\n  }\n  return source.substring(startIndex + startLabel.length, endIndex);\n}",
+        "host": "https://www.biqujia.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\n\nreturn {\"url\":result, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":config.httpHeaders};",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "动漫": {
+            "author": "//p[@class='vodlist_sub']/text()",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='vodlist_title']/a/@title",
+            "requestInfo": "@js:\n\nlet url = config.host + \"/vodshow/\" + params.filters.type + \"-------\" + params.pageIndex + \"---.html\";\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":config.httpHeaders};",
+            "host": "https://www.biqujia.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[@class='vodlist_title']/a/@href",
+            "moreKeys": {
+                "pageSize": 60,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "国产",
+                                "value": "4-%E5%9B%BD%E4%BA%A7"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "4-%E6%97%A5%E6%9C%AC"
+                            },
+                            {
+                                "title": "美国",
+                                "value": "4-%E7%BE%8E%E5%9B%BD"
+                            },
+                            {
+                                "title": "英国",
+                                "value": "4-%E8%8B%B1%E5%9B%BD"
+                            },
+                            {
+                                "title": "法国",
+                                "value": "4-%E6%B3%95%E5%9B%BD"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a/@data-original",
+            "list": "//div[@class='pannel clearfix']/ul[1]/li",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "validConfig": ""
+        },
+        "综艺": {
+            "author": "//p[@class='vodlist_sub']/text()",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='vodlist_title']/a/@title",
+            "requestInfo": "@js:\n\nlet url = config.host + \"/vodshow/\" + params.filters.type + \"-------\" + params.pageIndex + \"---.html\";\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":config.httpHeaders};",
+            "host": "https://www.biqujia.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[@class='vodlist_title']/a/@href",
+            "moreKeys": {
+                "pageSize": 60,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "内地",
+                                "value": "3-%E5%86%85%E5%9C%B0"
+                            },
+                            {
+                                "title": "香港",
+                                "value": "3-%E9%A6%99%E6%B8%AF"
+                            },
+                            {
+                                "title": "日本",
+                                "value": "3-%E6%97%A5%E6%9C%AC"
+                            },
+                            {
+                                "title": "台湾",
+                                "value": "3-%E5%8F%B0%E6%B9%BE"
+                            },
+                            {
+                                "title": "韩国",
+                                "value": "3-%E9%9F%A9%E5%9B%BD"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a/@data-original",
+            "list": "//div[@class='pannel clearfix']/ul[1]/li",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "validConfig": ""
+        },
+        "电视剧": {
+            "author": "//p[@class='vodlist_sub']/text()",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='vodlist_title']/a/@title",
+            "requestInfo": "@js:\n\nlet url = config.host + \"/vodshow/\" + params.filters.type + \"--------\" + params.pageIndex + \"---.html\";\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":config.httpHeaders};",
+            "host": "https://www.biqujia.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[@class='vodlist_title']/a/@href",
+            "moreKeys": {
+                "pageSize": 60,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "国产剧",
+                                "value": "13"
+                            },
+                            {
+                                "title": "港台剧",
+                                "value": "14"
+                            },
+                            {
+                                "title": "日韩剧",
+                                "value": "15"
+                            },
+                            {
+                                "title": "欧美剧",
+                                "value": "16"
+                            },
+                            {
+                                "title": "海外剧",
+                                "value": "21"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a/@data-original",
+            "list": "//div[@class='pannel clearfix']/ul[1]/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "validConfig": ""
+        },
+        "电影": {
+            "author": "//p[@class='vodlist_sub']/text()",
+            "responseFormatType": "html",
+            "bookName": "//p[@class='vodlist_title']/a/@title",
+            "requestInfo": "@js:\n\nlet url = config.host + \"/vodshow/\" + params.filters.type + \"--------\" + params.pageIndex + \"---.html\";\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":config.httpHeaders};",
+            "host": "https://www.biqujia.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[@class='vodlist_title']/a/@href",
+            "moreKeys": {
+                "pageSize": 60,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "动作片",
+                                "value": "6"
+                            },
+                            {
+                                "title": "喜剧片",
+                                "value": "7"
+                            },
+                            {
+                                "title": "爱情片",
+                                "value": "8"
+                            },
+                            {
+                                "title": "科幻片",
+                                "value": "9"
+                            },
+                            {
+                                "title": "恐怖片",
+                                "value": "10"
+                            },
+                            {
+                                "title": "剧情片",
+                                "value": "11"
+                            },
+                            {
+                                "title": "战争片",
+                                "value": "12"
+                            },
+                            {
+                                "title": "纪录片",
+                                "value": "20"
+                            },
+                            {
+                                "title": "微电影",
+                                "value": "22"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//a/@data-original",
+            "list": "//div[@class='pannel clearfix']/ul[1]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://www.biqujia.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "6653",
+    "sourceName": "皮皮影视",
+    "sourceType": "video",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647095337.112105",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "author": "//p[@class='vodlist_sub']/text()",
+        "validConfig": "",
+        "requestInfo": "/vodsearch/-------------.html?wd=%@keyWord&submit=",
+        "bookName": "//h4/a/text()",
+        "detailUrl": "//h4/a/@href",
+        "host": "https://www.biqujia.com",
+        "list": "//ul[@class='vodlist clearfix']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.biqujia.com",
+        "list": "//div[@id='playlistbox']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"booktxt\"]/p",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://www.bloodmaple.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class=\"readpage\"]/a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//dd[2]/a",
+            "responseFormatType": "html",
+            "bookName": "//dt/a",
+            "desc": "//dd[1]||@js:\nreturn result.replace(/\\n/,\"\")",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.bloodmaple.com/sort/${_type}/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.bloodmaple.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 6,
+                "requestFilters": "_type\n玄幻::1\n武侠::2\n都市::3\n历史::4\n科幻::5\n游戏::6\n女生::7\n综合::8"
+            },
+            "cover": "//img/@src",
+            "wordCount": "//span[2]",
+            "list": "//div[@class=\"content\"]/dl",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//dt/a/@href",
+            "status": "//span[1]",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://www.bloodmaple.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "五月天小说网",
+    "desc": "asaoge",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665755534.634106",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//dd[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//dt/a",
+        "desc": "//dd[1]\n||@js:\nreturn result.replace(/\\n/,\"\")",
+        "requestInfo": "https://www.bloodmaple.com/search/?searchkey=%@keyWord",
+        "host": "https://www.bloodmaple.com",
+        "actionID": "searchBook",
+        "detailUrl": "//dt/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"content\"]/dl",
+        "parserID": "DOM",
+        "wordCount": "//span[2]",
+        "status": "//span[1]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.bloodmaple.com",
+        "list": "//div[@class=\"all\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

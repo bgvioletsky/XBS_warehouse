@@ -1,0 +1,595 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://music.163.com/",
+        "JSParser": "function functionName(config, params, result)\n{\n\treturn JSON.stringify({'urls': params.responseUrl});\n}",
+        "actionID": "chapterContent"
+    },
+    "enable": true,
+    "shupingList": {
+        "detail": "content",
+        "createdTime": "time||timestr",
+        "fromUserName": "user/nickname",
+        "responseFormatType": "json",
+        "url": "commentId",
+        "requestInfo": "@js:\nreturn 'http://music.163.com/api/v1/resource/comments/R_SO_4_' + params.queryInfo.detailUrl + '?limit=20&offset=0';",
+        "host": "https://music.163.com/",
+        "actionID": "shupingList",
+        "validConfig": "",
+        "list": "comments",
+        "parserID": "DOM",
+        "fromUserCover": "user/avatarUrl"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "https://music.163.com/api/song/lyric?id=%@result&lv=1&kv=1&tv=-1",
+        "host": "https://music.163.com/",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "lrc/lyric"
+    },
+    "bookWorld": {
+        "榜单": {
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "https://api.i-meto.com/meting/api?server=netease&type=playlist&id=%@filter",
+            "host": "https://music.163.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "url||@js:\nlet dat = result.replace(/&auth=.*/, '');\nlet index = dat.indexOf('&id=');\nreturn dat.substr(index+4);",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "19723756",
+                                "title": "飙升榜"
+                            },
+                            {
+                                "value": "3779629",
+                                "title": "新歌榜"
+                            },
+                            {
+                                "value": "2884035",
+                                "title": "原创榜"
+                            },
+                            {
+                                "value": "3778678",
+                                "title": "热歌榜"
+                            },
+                            {
+                                "value": "5453912201",
+                                "title": "黑胶VIP爱听榜"
+                            },
+                            {
+                                "value": "991319590",
+                                "title": "云音乐说唱榜"
+                            },
+                            {
+                                "value": "71384707",
+                                "title": "云音乐古典榜"
+                            },
+                            {
+                                "value": "1978921795",
+                                "title": "云音乐电音榜"
+                            },
+                            {
+                                "value": "71385702",
+                                "title": "云音乐ACG榜"
+                            },
+                            {
+                                "value": "745956260",
+                                "title": "云音乐韩语榜"
+                            },
+                            {
+                                "value": "10520166",
+                                "title": "云音乐国电榜"
+                            },
+                            {
+                                "value": "180106",
+                                "title": "UK排行榜周榜"
+                            },
+                            {
+                                "value": "60198",
+                                "title": "美国Billboard榜"
+                            },
+                            {
+                                "value": "3812895",
+                                "title": "Beatport全球电子舞曲榜"
+                            },
+                            {
+                                "value": "21845217",
+                                "title": "KTV唛榜"
+                            },
+                            {
+                                "value": "60131",
+                                "title": "日本Oricon榜"
+                            },
+                            {
+                                "value": "2809513713",
+                                "title": "云音乐欧美热歌榜"
+                            },
+                            {
+                                "value": "2809577409",
+                                "title": "云音乐欧美新歌榜"
+                            },
+                            {
+                                "value": "27135204",
+                                "title": "法国 NRJ Vos Hits 周榜"
+                            },
+                            {
+                                "value": "3001835560",
+                                "title": "云音乐ACG动画榜"
+                            },
+                            {
+                                "value": "3001795926",
+                                "title": "云音乐ACG游戏榜"
+                            },
+                            {
+                                "value": "3001890046",
+                                "title": "云音乐ACG VOCALOID榜"
+                            },
+                            {
+                                "value": "3112516681",
+                                "title": "中国新乡村音乐排行榜"
+                            },
+                            {
+                                "value": "5059644681",
+                                "title": "云音乐日语榜"
+                            },
+                            {
+                                "value": "5059633707",
+                                "title": "云音乐摇滚榜"
+                            },
+                            {
+                                "value": "5059642708",
+                                "title": "云音乐古风榜"
+                            },
+                            {
+                                "value": "5338990334",
+                                "title": "潜力爆款榜"
+                            },
+                            {
+                                "value": "5059661515",
+                                "title": "云音乐民谣榜"
+                            },
+                            {
+                                "value": "6688069460",
+                                "title": "听歌识曲榜"
+                            },
+                            {
+                                "value": "6723173524",
+                                "title": "网络热歌榜"
+                            },
+                            {
+                                "value": "6732051320",
+                                "title": "俄语榜"
+                            },
+                            {
+                                "value": "6732014811",
+                                "title": "越南语榜"
+                            },
+                            {
+                                "value": "6886768100",
+                                "title": "中文DJ榜"
+                            },
+                            {
+                                "value": "6939992364",
+                                "title": "俄罗斯top hit流行音乐榜"
+                            },
+                            {
+                                "value": "7095271308",
+                                "title": "泰语榜"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "l",
+            "parserID": "DOM",
+            "cover": "pic"
+        }
+    },
+    "shudanList": {
+        "热门歌单": {
+            "detail": "description",
+            "responseFormatType": "json",
+            "url": "id",
+            "requestInfo": "@js:\nreturn {'url':'http://music.163.com/api/playlist/list', 'POST':true, 'httpParams':{'cat':params.filters.cat, 'offset':0, 'limit':100, 'total':true, 'order':params.filters.order}};",
+            "title": "name",
+            "actionID": "shudanList",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "全部",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "华语",
+                                "title": "华语"
+                            },
+                            {
+                                "value": "欧美",
+                                "title": "欧美"
+                            },
+                            {
+                                "value": "日语",
+                                "title": "日语"
+                            },
+                            {
+                                "value": "韩语",
+                                "title": "韩语"
+                            },
+                            {
+                                "value": "粤语",
+                                "title": "粤语"
+                            },
+                            {
+                                "value": "小语种",
+                                "title": "小语种"
+                            },
+                            {
+                                "value": "流行",
+                                "title": "流行"
+                            },
+                            {
+                                "value": "摇滚",
+                                "title": "摇滚"
+                            },
+                            {
+                                "value": "民谣",
+                                "title": "民谣"
+                            },
+                            {
+                                "value": "电子",
+                                "title": "电子"
+                            },
+                            {
+                                "value": "舞曲",
+                                "title": "舞曲"
+                            },
+                            {
+                                "value": "说唱",
+                                "title": "说唱"
+                            },
+                            {
+                                "value": "轻音乐",
+                                "title": "轻音乐"
+                            },
+                            {
+                                "value": "爵士",
+                                "title": "爵士"
+                            },
+                            {
+                                "value": "乡村",
+                                "title": "乡村"
+                            },
+                            {
+                                "value": "R&B/Soul",
+                                "title": "R&B/Soul"
+                            },
+                            {
+                                "value": "古典",
+                                "title": "古典"
+                            },
+                            {
+                                "value": "民族",
+                                "title": "民族"
+                            },
+                            {
+                                "value": "英伦",
+                                "title": "英伦"
+                            },
+                            {
+                                "value": "金属",
+                                "title": "金属"
+                            },
+                            {
+                                "value": "朋克",
+                                "title": "朋克"
+                            },
+                            {
+                                "value": "蓝调",
+                                "title": "蓝调"
+                            },
+                            {
+                                "value": "雷鬼",
+                                "title": "雷鬼"
+                            },
+                            {
+                                "value": "世界音乐",
+                                "title": "世界音乐"
+                            },
+                            {
+                                "value": "拉丁",
+                                "title": "拉丁"
+                            },
+                            {
+                                "value": "另类/独立",
+                                "title": "另类/独立"
+                            },
+                            {
+                                "value": "New Age",
+                                "title": "New Age"
+                            },
+                            {
+                                "value": "古风",
+                                "title": "古风"
+                            },
+                            {
+                                "value": "后摇",
+                                "title": "后摇"
+                            },
+                            {
+                                "value": "Bossa Nova",
+                                "title": "Bossa Nova"
+                            },
+                            {
+                                "value": "清晨",
+                                "title": "清晨"
+                            },
+                            {
+                                "value": "夜晚",
+                                "title": "夜晚"
+                            },
+                            {
+                                "value": "学习",
+                                "title": "学习"
+                            },
+                            {
+                                "value": "工作",
+                                "title": "工作"
+                            },
+                            {
+                                "value": "午休",
+                                "title": "午休"
+                            },
+                            {
+                                "value": "下午茶",
+                                "title": "下午茶"
+                            },
+                            {
+                                "value": "地铁",
+                                "title": "地铁"
+                            },
+                            {
+                                "value": "驾车",
+                                "title": "驾车"
+                            },
+                            {
+                                "value": "运动",
+                                "title": "运动"
+                            },
+                            {
+                                "value": "旅行",
+                                "title": "旅行"
+                            },
+                            {
+                                "value": "散步",
+                                "title": "散步"
+                            },
+                            {
+                                "value": "酒吧",
+                                "title": "酒吧"
+                            },
+                            {
+                                "value": "怀旧",
+                                "title": "怀旧"
+                            },
+                            {
+                                "value": "清新",
+                                "title": "清新"
+                            },
+                            {
+                                "value": "浪漫",
+                                "title": "浪漫"
+                            },
+                            {
+                                "value": "性感",
+                                "title": "性感"
+                            },
+                            {
+                                "value": "伤感",
+                                "title": "伤感"
+                            },
+                            {
+                                "value": "治愈",
+                                "title": "治愈"
+                            },
+                            {
+                                "value": "放松",
+                                "title": "放松"
+                            },
+                            {
+                                "value": "孤独",
+                                "title": "孤独"
+                            },
+                            {
+                                "value": "感动",
+                                "title": "感动"
+                            },
+                            {
+                                "value": "兴奋",
+                                "title": "兴奋"
+                            },
+                            {
+                                "value": "快乐",
+                                "title": "快乐"
+                            },
+                            {
+                                "value": "安静",
+                                "title": "安静"
+                            },
+                            {
+                                "value": "思念",
+                                "title": "思念"
+                            },
+                            {
+                                "value": "影视原声",
+                                "title": "影视原声"
+                            },
+                            {
+                                "value": "ACG",
+                                "title": "ACG"
+                            },
+                            {
+                                "value": "儿童",
+                                "title": "儿童"
+                            },
+                            {
+                                "value": "校园",
+                                "title": "校园"
+                            },
+                            {
+                                "value": "游戏",
+                                "title": "游戏"
+                            },
+                            {
+                                "value": "70后",
+                                "title": "70后"
+                            },
+                            {
+                                "value": "80后",
+                                "title": "80后"
+                            },
+                            {
+                                "value": "90后",
+                                "title": "90后"
+                            },
+                            {
+                                "value": "网络歌曲",
+                                "title": "网络歌曲"
+                            },
+                            {
+                                "value": "KTV",
+                                "title": "KTV"
+                            },
+                            {
+                                "value": "经典",
+                                "title": "经典"
+                            },
+                            {
+                                "value": "翻唱",
+                                "title": "翻唱"
+                            },
+                            {
+                                "value": "吉他",
+                                "title": "吉他"
+                            },
+                            {
+                                "value": "钢琴",
+                                "title": "钢琴"
+                            },
+                            {
+                                "value": "器乐",
+                                "title": "器乐"
+                            },
+                            {
+                                "value": "榜单",
+                                "title": "榜单"
+                            },
+                            {
+                                "value": "00后",
+                                "title": "00后"
+                            }
+                        ],
+                        "key": "cat"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "hot",
+                                "title": "热门"
+                            },
+                            {
+                                "value": "new",
+                                "title": "最新"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "cover": "coverImgUrl",
+            "validConfig": "",
+            "host": "https://music.163.com/",
+            "list": "playlists",
+            "parserID": "DOM"
+        }
+    },
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "validConfig": "",
+        "requestInfo": "http://music.163.com/api/playlist/hottags",
+        "title": "name",
+        "host": "https://music.163.com/",
+        "list": "tags/playlistTag",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺网易云音乐🔮🍪©️",
+    "sourceUrl": "https://music.163.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "author": "author",
+        "actionID": "shudanDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn 'https://api.i-meto.com/meting/api?server=netease&type=playlist&id=' + params.queryInfo.url;",
+        "bookName": "title",
+        "detailUrl": "url||@js:\nlet dat = result.replace(/&auth=.*/, '');\nlet index = dat.indexOf('&id=');\nreturn dat.substr(index+4);",
+        "host": "https://music.163.com/",
+        "cover": "pic",
+        "list": "l",
+        "parserID": "DOM",
+        "responseFormatType": "json"
+    },
+    "lastModifyTime": "1666183774.205080",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "validConfig": "",
+        "actionID": "searchShudan",
+        "detail": "description",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nreturn {'url':'http://music.163.com/api/search/pc', 'POST':true, 'httpParams':{'s':params.keyWord, 'offset':0, 'limit':100, 'type':1000}};",
+        "title": "name",
+        "host": "https://music.163.com/",
+        "cover": "coverImgUrl",
+        "list": "result/playlists",
+        "responseFormatType": "json",
+        "url": "id"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "author": "$..artists[*].name",
+        "requestInfo": "@js:\nreturn {'url':'http://music.163.com/api/search/pc', 'POST':true, 'httpParams':{'s':params.keyWord, 'offset':0, 'limit':100, 'type':1}};",
+        "bookName": "name",
+        "detailUrl": "id",
+        "host": "https://music.163.com/",
+        "list": "result/songs",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\tlet chapterInfo = {};\n\tchapterInfo.title = params.queryInfo.bookName;\n\tchapterInfo.url = 'http://music.163.com/song/media/outer/url?id=' + params.queryInfo.detailUrl + '.mp3';\n\tlist.push(chapterInfo);\n\n\treturn {'list':list};\n}",
+        "requestInfo": "https://music.163.com/#/song?id=%@result",
+        "host": "https://music.163.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    }
+}

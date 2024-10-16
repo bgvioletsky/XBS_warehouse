@@ -1,0 +1,133 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "11",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://js.jsxsapp.com/catalog/%@result?view=chapters&appName=zsxs.reader.note&https=1&language=zh_cn",
+        "title": "$..t",
+        "host": "https://js.jsxsapp.com",
+        "httpHeaders": {
+            "vn": "1.0.5",
+            "channel": "def_channel",
+            "Cache-Control": "no-cache",
+            "ts": "1644577257",
+            "User-Agent": "okhttp/3.14.9",
+            "language": "zh_cn",
+            "app_name": "androidx.multidex",
+            "vc": "50105"
+        },
+        "list": "$.data.chapters",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "$..l||@js:\nvar id =params.queryInfo.wordCount\n\nvar id= id.replace(\"-\",\"\")\n\nparams.nativeTool.log(id)\n\nvar url =\"https://yd.jsxsapp.com/\"+id+\"/\"+ result;;\n\nreturn url;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "追书小说(api)",
+    "sourceType": "text",
+    "sourceUrl": "https://js.jsxsapp.com",
+    "httpHeaders": {
+        "vn": "1.0.5",
+        "channel": "def_channel",
+        "Cache-Control": "no-cache",
+        "ts": "1644577257",
+        "User-Agent": "okhttp/3.14.9",
+        "language": "zh_cn",
+        "app_name": "androidx.multidex",
+        "vc": "50105"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1664737062.711965",
+    "searchBook": {
+        "author": "$.author",
+        "responseFormatType": "json",
+        "bookName": "$.bookName",
+        "desc": "$.intro",
+        "requestInfo": "https://js.jsxsapp.com/search/result?query=%@keyWord&language=zh_cn",
+        "host": "https://js.jsxsapp.com",
+        "actionID": "searchBook",
+        "httpHeaders": {
+            "vn": "1.0.5",
+            "channel": "def_channel",
+            "Cache-Control": "no-cache",
+            "ts": "1644577257",
+            "User-Agent": "okhttp/3.14.9",
+            "language": "zh_cn",
+            "app_name": "androidx.multidex",
+            "vc": "50105"
+        },
+        "cover": "$.cover",
+        "detailUrl": "$._id",
+        "list": "$.books",
+        "parserID": "DOM",
+        "validConfig": ""
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.chapter.body",
+        "actionID": "chapterContent",
+        "host": "https://js.jsxsapp.com",
+        "httpHeaders": {
+            "vn": "1.0.5",
+            "channel": "def_channel",
+            "Cache-Control": "no-cache",
+            "ts": "1644577257",
+            "User-Agent": "okhttp/3.14.9",
+            "language": "zh_cn",
+            "app_name": "androidx.multidex",
+            "vc": "50105"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐲",
+    "password": "0155",
+    "shudanList": {},
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "wordCount": "$..x_id||@js:\nvar id = result+\"-\";\n\nreturn id",
+        "requestInfo": "https://js.jsxsapp.com/info/%@result?language=zh_cn",
+        "host": "https://js.jsxsapp.com",
+        "httpHeaders": {
+            "vn": "1.0.5",
+            "channel": "def_channel",
+            "Cache-Control": "no-cache",
+            "ts": "1644577257",
+            "User-Agent": "okhttp/3.14.9",
+            "language": "zh_cn",
+            "app_name": "androidx.multidex",
+            "vc": "50105"
+        },
+        "cat": "$..bigClass",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "测试": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        }
+    }
+}

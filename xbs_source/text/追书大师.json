@@ -1,0 +1,82 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='novelcontent']",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 3
+        },
+        "host": "https://m.zhuishudashi.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//div[@class=\"info_t3\"]||@js:\nreturn result.replace(/状态：/g,\"\");",
+        "requestParamsEncode": "2147485234",
+        "lastChapterTitle": "//div[@class=\"info_t6\"]/a/text()",
+        "host": "https://m.zhuishudashi.com",
+        "cat": "//div[@class=\"info_t2\"]||@js:\nreturn result.replace(/类别：/g,\"\");",
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"info_intro\"]/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://m.zhuishudashi.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "2222",
+    "sourceName": "追书大师",
+    "desc": "🦞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650359908.828952",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p/span",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url=config.host+\"/s.php\"\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url, 'POST':true, 'httpParams':{'search_key':params.keyWord}\n,\"httpHeaders\":hh};",
+        "bookName": "//p/a/text()",
+        "detailUrl": "//p/a/@href",
+        "host": "https://m.zhuishudashi.com",
+        "list": "//div[@class=\"searchresult\"]/p",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "cover": "//img/@src"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn \"https://www.zhuishudashi.com\"+result",
+        "title": "//a",
+        "host": "https://m.zhuishudashi.com",
+        "list": "//div[@id='list']/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

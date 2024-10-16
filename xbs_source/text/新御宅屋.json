@@ -1,0 +1,147 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//p[4]/text()",
+        "actionID": "chapterContent",
+        "host": "https://www.xyuzhaiwu5.com",
+        "httpHeaders": {
+            "Referer": "https://www.xyuzhaiwu5.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "desc": "//div[@id=\"aboutbook\"]/text()",
+        "host": "https://www.xyuzhaiwu5.com",
+        "httpHeaders": {
+            "Referer": "https://www.xyuzhaiwu5.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+        },
+        "cover": "//div[@class=\"img_in\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "cat": "//a[@class=\"typename\"]/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "cat": "//ul[2]/li/span",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//ul[2]/li/span[4]/a",
+            "bookName": "//span[@class=\"l02\"]/a[2]/text()",
+            "httpHeaders": {
+                "Referer": "https://www.xyuzhaiwu5.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.xyuzhaiwu5.com${_type}${params.pageIndex}/`;\n\nreturn {url:url}",
+            "host": "https://www.xyuzhaiwu5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n总排行榜::/top/allvisit_\n总推荐榜::/top/allvote_\n月排行榜::/top/monthvisit_\n月推荐榜::/top/monthvote_\n周排行榜::/top/weekvisit_\n周推荐榜::/top/weekvote_\n最新入库::/top/postdate_\n最近更新::/top/lastupdate_\n原创更新::/top/authorupdate_\n转载更新::/top/masterupdate_\n总收藏榜::/top/goodnum_\n字数排行::/top/size_"
+            },
+            "wordCount": "//ul[2]/li/span[5]/text()",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@id=\"articlelist\"]/ul[2]/li",
+            "detailUrl": "//span[@class=\"l02\"]/a[2]/@href"
+        },
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//div[@class=\"title\"]/span/text()",
+            "bookName": "//h2/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.xyuzhaiwu5.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.xyuzhaiwu5.com${_type}${params.pageIndex}/`;\n\nreturn {url:url}",
+            "host": "https://www.xyuzhaiwu5.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻奇幻::/sort1/\n武侠仙侠::/sort2/\n都市言情::/sort3/\n科幻网游::/sort4/\n惊悚悬疑::/sort5/\n耽美同人::/sort6/\n穿越架空::/sort7/\n高辣浓情::/sort8/\n禁忌百合::/sort9/\n精品文学::/sort10/"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@id=\"alistbox\"]",
+            "cover": "//img/@src",
+            "desc": "//div[@class=\"intro\"]/text()",
+            "wordCount": "//li/text()"
+        }
+    },
+    "sourceUrl": "https://www.xyuzhaiwu5.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5789",
+    "sourceName": "新御宅屋",
+    "httpHeaders": {
+        "Referer": "https://www.xyuzhaiwu5.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "oaix",
+    "lastModifyTime": "1663402303.658893",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//tr/td[3]/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//tr/td[2]/a/text()",
+        "bookName": "//td[1]/a",
+        "httpHeaders": {
+            "Referer": "https://www.xyuzhaiwu5.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+        },
+        "requestInfo": "http://www.xyuzhaiwu5.com/modules/article/search.php?searchtype=articlename&searchkey=%@keyWord&page=%@pageIndex",
+        "host": "https://www.xyuzhaiwu5.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "wordCount": "//tr/td[4]/text()",
+        "validConfig": "",
+        "list": "//table[@class='grid']//tr",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 30
+        },
+        "status": "//tr/td[6]/text()"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//dd[@class=\"chapter_list\"]/a/text()",
+        "host": "https://www.xyuzhaiwu5.com",
+        "httpHeaders": {
+            "Referer": "https://www.xyuzhaiwu5.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39"
+        },
+        "list": "//dd[@class=\"chapter_list\"][position()>8]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//dd[@class=\"chapter_list\"]/a/@href"
+    },
+    "sourceType": "text"
+}

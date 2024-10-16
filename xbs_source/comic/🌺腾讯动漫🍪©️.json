@@ -1,0 +1,223 @@
+{
+    "bookWorld": {
+        "检索": {
+            "cat": "//div[@class='ret-works-info']/p[@class='ret-works-tags]/span",
+            "author": "//div[@class='ret-works-info']/p[@class='ret-works-author']",
+            "lastChapterTitle": "//div[@class='ret-works-cover']/p/a/span",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='ret-works-info']/h3/a",
+            "desc": "//div[@class='ret-works-info']/p[@class='ret-works-decs']",
+            "host": "https://m.ac.qq.com/",
+            "requestInfo": "@js:\nreturn 'https://ac.qq.com/Comic/all/theme/' + params.filters.theme + '/finish/' + params.filters.finish + '/search/' + params.filters.sort + '/vip/' + params.filters.vip + '/page/' + params.pageIndex;",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3/a/@href||@js:\nlet index = result.indexOf('/id/');\nif(index>0)\n    return result.substr(index+4);\nreturn undefined;",
+            "cover": "//div[@class='ret-works-cover']/a/img/@data-original",
+            "moreKeys": {
+                "pageSize": 12,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "105"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "101"
+                            },
+                            {
+                                "title": "异能",
+                                "value": "103"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "110"
+                            },
+                            {
+                                "title": "剧情",
+                                "value": "106"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "108"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "112"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "102"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "104"
+                            },
+                            {
+                                "title": "犯罪",
+                                "value": "111"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "107"
+                            },
+                            {
+                                "title": "动作",
+                                "value": "109"
+                            },
+                            {
+                                "title": "日常",
+                                "value": "113"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "114"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "115"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "116"
+                            },
+                            {
+                                "title": "战争",
+                                "value": "117"
+                            }
+                        ],
+                        "key": "theme"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "finish"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "付费",
+                                "value": "2"
+                            },
+                            {
+                                "title": "免费",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "vip"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "热门人气",
+                                "value": "hot"
+                            },
+                            {
+                                "title": "更新时间",
+                                "value": "time"
+                            }
+                        ],
+                        "key": "sort"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//li[@class='ret-search-item clearfix']"
+        }
+    },
+    "weight": "1",
+    "miniAppVersion": "2.53.2",
+    "loginUrl": "https://m.ac.qq.com/Home/login",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://m.ac.qq.com/comic/index/id/%@result",
+        "title": "//a/div[2]/span",
+        "host": "https://m.ac.qq.com/",
+        "list": "//ul[@class='chapter-wrap-list normal']/li[@class='bottom-chapter-item']",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "🌺腾讯动漫🍪©️",
+    "sourceType": "comic",
+    "sourceUrl": "https://m.ac.qq.com/",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666018491.033921",
+    "searchBook": {
+        "cat": "//a/div[2]/small[@class='comic-tag']",
+        "responseFormatType": "html",
+        "bookName": "//a/div[2]/strong[@class='comic-title']",
+        "desc": "//a/div[2]/small[@class='comic-desc']",
+        "requestInfo": "https://m.ac.qq.com/search/result?word=%@keyWord",
+        "host": "https://m.ac.qq.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href||@js:\nlet index = result.indexOf('/id/');\nif(index>0)\n    return result.substr(index+4);\nreturn undefined;",
+        "cover": "//img[@class='cover-image']/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//*[@id=\"lst_searchResult\"]/li",
+        "status": "//a/div[2]/small[@class='comic-update']"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@class='comic-pic-box']//img/@data-src",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':''};",
+        "host": "https://m.ac.qq.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "https://m.ac.qq.com/comic/index/id/%@result",
+        "host": "https://m.ac.qq.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//article[@class='main']/div[@class='lay-content']/section[@class='head-info']/div[@class='head-info-desc']"
+    }
+}

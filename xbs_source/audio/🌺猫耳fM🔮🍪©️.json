@@ -1,0 +1,529 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "info/sound/soundurl",
+        "requestInfo": "@js:\nreturn {'url':'https://www.missevan.com/sound/getsound?soundid='+params.queryInfo.url, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'}};",
+        "host": "https://www.missevan.com/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "info/drama/serialize",
+        "requestInfo": "@js:\nreturn {'url':result, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'}};",
+        "lastChapterTitle": "info/drama/newest",
+        "host": "https://www.missevan.com/",
+        "cat": "info/drama/type||info/drama/catalog_name",
+        "cover": "info/drama/cover||info/album/front_cover",
+        "responseFormatType": "json",
+        "desc": "info/drama/abstract||info/album/intro",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "author",
+            "lastChapterTitle": "newest",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "abstract",
+            "requestInfo": "@js:\nreturn {'url':'https://www.missevan.com/dramaapi/search?s=' + encodeURI(params.filter) + '&page=' + params.pageIndex, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'}};",
+            "host": "https://www.missevan.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id||@js:\nreturn 'https://www.missevan.com/dramaapi/getdrama?drama_id=' + result;",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": {
+                    "广播剧": "广播剧",
+                    "有声漫画": "有声漫画",
+                    "有声小说": "有声小说"
+                }
+            },
+            "cover": "cover",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "info/Datas",
+            "_sIndex": 0
+        },
+        "有声漫画": {
+            "cat": "type_name",
+            "responseFormatType": "json",
+            "lastChapterTitle": "newest||last_ord_str",
+            "author": "username",
+            "bookName": "name",
+            "requestInfo": "@js:\nreturn {'url':'https://www.missevan.com/mobileWeb/catalogdrama?catalog_id=96&type=' + params.filters.status + '&order=1&page=' + params.pageIndex + '&page_size=36', 'httpHeaders':{'user-agent':'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'}};",
+            "host": "https://www.missevan.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id||@js:\nreturn 'https://www.missevan.com/dramaapi/getdrama?drama_id=' + result;",
+            "cover": "cover||front_cover",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 36,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "完结",
+                                "value": "8"
+                            },
+                            {
+                                "title": "未完结",
+                                "value": "7"
+                            },
+                            {
+                                "title": "全一期",
+                                "value": "9"
+                            }
+                        ],
+                        "key": "status"
+                    }
+                ]
+            },
+            "list": "info/Datas",
+            "_sIndex": 3
+        },
+        "听书": {
+            "cat": "type_name",
+            "responseFormatType": "json",
+            "lastChapterTitle": "newest||last_ord_str",
+            "author": "username",
+            "bookName": "name",
+            "requestInfo": "@js:\nreturn {'url':'https://www.missevan.com/mobileWeb/catalogdrama?catalog_id=86&type=' + params.filters.type + '&order=1&page=' + params.pageIndex + '&page_size=36', 'httpHeaders':{'user-agent':'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'}};",
+            "host": "https://www.missevan.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id||@js:\nreturn 'https://www.missevan.com/dramaapi/getdrama?drama_id=' + result;",
+            "cover": "cover||front_cover",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 36,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "轻小说",
+                                "value": "1091"
+                            },
+                            {
+                                "title": "网络小说",
+                                "value": "1093"
+                            },
+                            {
+                                "title": "儿童",
+                                "value": "1098"
+                            }
+                        ],
+                        "key": "type"
+                    }
+                ]
+            },
+            "list": "info/Datas",
+            "_sIndex": 4
+        },
+        "音单": {
+            "responseFormatType": "json",
+            "author": "username",
+            "bookName": "title",
+            "requestInfo": "@js:\nreturn {'url':'https://www.missevan.com/explore/tagalbum?order=' + params.filters.sort + '&tid=' + params.filters.cat, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'}};",
+            "host": "https://www.missevan.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id||@js:\nreturn '/sound/soundalllist?albumid=' + result;",
+            "cover": "front_cover",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "0",
+                                "value": "0"
+                            },
+                            {
+                                "title": "1",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "sort"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "170"
+                            },
+                            {
+                                "title": "治愈",
+                                "value": "28"
+                            },
+                            {
+                                "title": "抖腿",
+                                "value": "4421"
+                            },
+                            {
+                                "title": "玩游戏",
+                                "value": "26310"
+                            },
+                            {
+                                "title": "运动听",
+                                "value": "26311"
+                            },
+                            {
+                                "title": "作业向",
+                                "value": "25"
+                            },
+                            {
+                                "title": "OP",
+                                "value": "370"
+                            },
+                            {
+                                "title": "ED",
+                                "value": "376"
+                            },
+                            {
+                                "title": "翻唱",
+                                "value": "273"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "5"
+                            },
+                            {
+                                "title": "同人音乐",
+                                "value": "850"
+                            },
+                            {
+                                "title": "游戏原声",
+                                "value": "13349"
+                            },
+                            {
+                                "title": "广播剧",
+                                "value": "4"
+                            }
+                        ],
+                        "key": "cat"
+                    }
+                ]
+            },
+            "list": "albums",
+            "_sIndex": 1
+        },
+        "广播剧": {
+            "cat": "type_name",
+            "responseFormatType": "json",
+            "lastChapterTitle": "newest",
+            "bookName": "name",
+            "requestInfo": "@js:\nreturn {'url':'https://www.missevan.com/dramaapi/filter?filters=' + params.filters.tag + '_' + params.filters.sex + '_' + params.filters.status + '_' + params.filters.timeperiod + '_0&page=' + params.pageIndex + '&order=' + params.filters.order, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'}};",
+            "host": "https://www.missevan.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id||@js:\nreturn 'https://www.missevan.com/dramaapi/getdrama?drama_id=' + result;",
+            "cover": "cover",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "全一期",
+                                "value": "3"
+                            },
+                            {
+                                "title": "微小剧",
+                                "value": "4"
+                            },
+                            {
+                                "title": "长篇未完结",
+                                "value": "1"
+                            },
+                            {
+                                "title": "长篇完结",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "现代",
+                                "value": "1"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "2"
+                            },
+                            {
+                                "title": "民国",
+                                "value": "3"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "4"
+                            }
+                        ],
+                        "key": "timeperiod"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "4"
+                            },
+                            {
+                                "title": "橘气",
+                                "value": "5"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "6"
+                            },
+                            {
+                                "title": "全年龄",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "sex"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "甜",
+                                "value": "201"
+                            },
+                            {
+                                "title": "虐",
+                                "value": "37"
+                            },
+                            {
+                                "title": "HE",
+                                "value": "40"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "28"
+                            },
+                            {
+                                "title": "架空",
+                                "value": "192"
+                            },
+                            {
+                                "title": "宫廷",
+                                "value": "157"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "203"
+                            },
+                            {
+                                "title": "网配",
+                                "value": "26"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "44"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "27"
+                            },
+                            {
+                                "title": "治愈",
+                                "value": "1005"
+                            },
+                            {
+                                "title": "暗恋",
+                                "value": "42"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "46"
+                            },
+                            {
+                                "title": "BE",
+                                "value": "39"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "47"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "823"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "50"
+                            },
+                            {
+                                "title": "日常",
+                                "value": "948"
+                            },
+                            {
+                                "title": "强强",
+                                "value": "45"
+                            },
+                            {
+                                "title": "同居",
+                                "value": "111"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "112"
+                            },
+                            {
+                                "title": "欢脱",
+                                "value": "190"
+                            },
+                            {
+                                "title": "温馨",
+                                "value": "213"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "48"
+                            },
+                            {
+                                "title": "娱乐圈",
+                                "value": "25"
+                            },
+                            {
+                                "title": "情有独钟",
+                                "value": "193"
+                            },
+                            {
+                                "title": "相爱相杀",
+                                "value": "32"
+                            },
+                            {
+                                "title": "多角关系",
+                                "value": "195"
+                            },
+                            {
+                                "title": "恩怨情仇",
+                                "value": "199"
+                            },
+                            {
+                                "title": "职场精英",
+                                "value": "204"
+                            }
+                        ],
+                        "key": "tag"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "创建时间晚到早",
+                                "value": "1"
+                            },
+                            {
+                                "title": "创建时间早到晚",
+                                "value": "2"
+                            },
+                            {
+                                "title": "热度",
+                                "value": "3"
+                            },
+                            {
+                                "title": "4",
+                                "value": "4"
+                            },
+                            {
+                                "title": "最多追剧",
+                                "value": "5"
+                            },
+                            {
+                                "title": "6",
+                                "value": "6"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "list": "info/Datas",
+            "_sIndex": 2
+        }
+    },
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺猫耳fM🔮🍪©️",
+    "sourceUrl": "https://www.missevan.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666214454.335605",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "type_name||catalog_name",
+        "author": "author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "newest",
+        "bookName": "name",
+        "desc": "abstract",
+        "requestInfo": "@js:\nreturn {'url':'https://www.missevan.com/dramaapi/search?s=' +encodeURI(params.keyWord)+ '&p=' +params.pageIndex, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'}};",
+        "host": "https://www.missevan.com/",
+        "actionID": "searchBook",
+        "detailUrl": "id||@js:\nreturn 'https://www.missevan.com/dramaapi/getdrama?drama_id=' + result;",
+        "cover": "cover",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "info/Datas",
+        "status": "serialize"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':result, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'}};",
+        "title": "name||soundstr",
+        "host": "https://www.missevan.com/",
+        "list": "info/episodes/episode||info/episodes/music|Iinfo/sounds",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "sound_id||id"
+    }
+}

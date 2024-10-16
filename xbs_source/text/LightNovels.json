@@ -1,0 +1,91 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://lightnovels.me/",
+        "content": "//div[@class='chapter-content']/div",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "genres": {
+            "lastChapterTitle": "chapter_name",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "requestInfo": "https://lightnovels.me/api/novel/all-novels-by-genre?genreSlug=%@filter&index=%@offset&limit=20",
+            "host": "https://lightnovels.me/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "type\nAction::action\nAdult::adult\nAdventure::adventure\nBillionaire::billionaire\nBillionaires::billionaires\nCEO::ceo\nComedy::comedy\nCompleted::completed\nRomance::contemporary-romance\nDrama::drama\nFantasy::eastern-fantasy\nEcchi::ecchi\nErciyuan::erciyuan\nFan-Fiction::fan-fiction\nFanfiction::fanfiction\nFantasy::fantasy\nRomance::fantasy-romance\nFarming::farming\nGame::game\nGames::games\nRomance::gay-romance\nBender::gender-bender\nHarem::harem\nHentai::hentai\nHistorical::historical\nRomance::historical-romance\nHistory::history\nHorro::horro\nHorror::horror\nIsekai::isekai\nJosei::josei\nLGBT+::lgbt\nLolicon::lolicon\nM.a.t.u.r.e::m-a-t-u-r-e\nRealism::magical-realism\nMartial::martial\nArt::martial-art\nArts::martial-arts\nMature::mature\nMecha::mecha\nMilitary::military\nLife::modern-life\nRomance::modern-romance\nModern&::modern\nMystery::mystery\nPsychological::psychological\nRealistic::realistic\nFiction::realistic-fiction\nReincarnation::reincarnation\nRomance::romance\nRomantic::romantic\nroyalroad::royalroad\nLife::school-life\nSci-fi::sci-fi\nSeinen::seinen\nShoujo::shoujo\nShounen::shounen\nAi::shounen-ai\nLife::slice-of-life\nSmut::smut\nSon-In-Law::son-in-law\nSports::sports\nSupernatural::supernatural\nTeen::teen\nThriller::thriller\nTragedy::tragedy\nTwo-dimensional::two-dimensional\nUrban::urban\nLife::urban-life\nGames::video-games\nWar&::war\nWuxia::wuxia\nXianxia::xianxia\nXuanhuan::xuanhuan\nYaoi::yaoi\nYuri::yuri",
+                "offset": 20
+            },
+            "validConfig": "",
+            "list": "results",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "status"
+        }
+    },
+    "sourceUrl": "https://lightnovels.me/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "LightNovels",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1657896714.189860",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "lastChapterTitle": "chapter_name",
+        "responseFormatType": "json",
+        "bookName": "novel_name",
+        "requestInfo": "https://lightnovels.me/api/search?keyword=%@keyWord&index=%@offset&limit=20",
+        "host": "https://lightnovels.me/",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 20,
+            "offset": 20
+        },
+        "detailUrl": "id",
+        "validConfig": "",
+        "list": "results",
+        "parserID": "DOM",
+        "status": "status"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://lightnovels.me/api/chapters?id=%@result&index=0&limit=100000000000",
+        "title": "chapter_name",
+        "host": "https://lightnovels.me/",
+        "list": "results",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "slug"
+    },
+    "sourceType": "text"
+}

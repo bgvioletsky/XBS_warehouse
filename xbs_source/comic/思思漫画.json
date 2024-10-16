@@ -1,0 +1,119 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//*[@class=\"erPag\"]//mip-img/@src",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 300
+        },
+        "host": "https://m.sisimanhua.com",
+        "httpHeaders": {
+            "Referer": "https://m.sisimanhua.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//mip-link[contains(text(), '下一页')]/@href||@js:\nurl = result\nreturn url;"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://m.sisimanhua.com",
+        "httpHeaders": {
+            "Referer": "https://m.sisimanhua.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+        },
+        "cover": "//mip-img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class=\"txtDesc autoHeight\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//a[2]/text()",
+            "httpHeaders": {
+                "Referer": "https://m.sisimanhua.com",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.sisimanhua.com${_type}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.sisimanhua.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"ImgA\"]/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n其他漫画::/list/qitamanhua/\n爆笑喜剧::/list/baoxiaoxiju/\n科幻魔幻::/list/kehuanmohuan/\n热血::/list/rexue/\n武侠格斗::/list/wuxiagedou/\n恋爱生活::/list/lianaishenghuo/\n百合女性::/list/baihenvxing/\n生活漫画::/list/shenghuomanhua/\n少女爱情::/list/shaonvaiqing/\n搞笑::/list/gaoxiao/\n战争::/list/zhanzheng/\n动作::/list/dongzuo/\n爆笑::/list/baoxiao/\n恋爱::/list/lianai/\n校园::/list/xiaoyuan/\n生活::/list/shenghuo/\n古风::/list/gufeng/\n都市::/list/dushi/\n冒险::/list/maoxian/\n悬疑::/list/xuanyi/\n恐怖::/list/kongbu/\n剧情::/list/juqing/\n后宫::/list/hougong/\n励志::/list/lizhi/\n灵异::/list/lingyi/\n防疫::/list/fangyi/\n社会::/list/shehui/\n霸总::/list/bazong/\n科幻::/list/kehuan/\n玄幻::/list/xuanhuan/\n神魔::/list/shenmo/\n吸血::/list/xixie/\n穿越::/list/chuanyue/\n同人::/list/tongren/\n架空::/list/jiakong/\n竞技::/list/jingji/\n耽美::/list/danmei/\n蔷薇::/list/qiangwei/\n修真::/list/xiuzhen/\n治愈::/list/zhiyu/\n真人::/list/zhenren/\n魔幻::/list/mohuan/\n小说改编::/list/xiaoshuogaibian/\n历史::/list/lishi/\n武侠::/list/wuxia/\n奇幻::/list/qihuan/\n萝莉::/list/luoli/\n漫改::/list/mangai/\n运动::/list/yundong/\n日更::/list/rigeng/\n游戏::/list/youxi/\n青春::/list/qingchun/\n萌系::/list/mengxi/\n御姐::/list/yujie/\n复仇::/list/fuchou/\n新作::/list/xinzuo/\n虐心::/list/nuexin/\n纯爱::/list/chunai/\n精品::/list/jingpin/\n推理::/list/tuili/\n格斗::/list/gedou/\n震撼::/list/zhenhan/\n僵尸::/list/jiangshi/\n恶搞::/list/egao/\n唯美::/list/weimei/\n轻松::/list/qingsong/\n宠物::/list/chongwu/\n职场::/list/zhichang/\n未来::/list/weilai/\n异世界::/list/yishijie/\n惊奇::/list/jingqi/\n宫廷::/list/gongting/\n爽流::/list/shuangliu/\n逆袭::/list/nixi/\n仙侠::/list/xianxia/\n机甲::/list/jijia/\n美食::/list/meishi/\n脑洞::/list/naodong/\n明星::/list/mingxing/\n惊险::/list/jingxian/\n宫斗::/list/gongdou/\n日常::/list/richang/\n感动::/list/gandong/\n浪漫::/list/langman/\n史诗::/list/shishi/\n家庭::/list/jiating/\n正剧::/list/zhengju/\n段子::/list/duanzi/\n温馨::/list/wenxin/\n乡村::/list/xiangcun/\n高智商::/list/gaozhishang/\n悬疑推理::/list/xuanyituili/\n机智::/list/jizhi/\n召唤兽::/list/zhaohuanshou/\n装逼::/list/zhuangbi/\n战斗::/list/zhandou/\n豪门::/list/haomen/\n异能::/list/yineng/\n神话::/list/shenhua/\n重口味::/list/zhongkouwei/\n血腥::/list/xuexing/\n逗比::/list/doubi/\n丧尸::/list/sangshi/\n娱乐圈::/list/yulequan/\n科技::/list/keji/\n烧脑::/list/shaonao/\n侦探推理::/list/zhentantuili/\n其它::/list/qita/\n末世::/list/moshi/\n体育::/list/tiyu/\n权谋::/list/quanmou/\n商战::/list/shangzhan/\n内涵::/list/neihan/\n欢乐向::/list/huanlexiang/\n爱情::/list/aiqing/\n轻小说::/list/qingxiaoshuo/\n音乐舞蹈::/list/yinyuewudao/\n百合::/list/baihe/\n性转换::/list/xingzhuanhuan/\n四格::/list/sige/\n东方::/list/dongfang/\n神鬼::/list/shengui/\n修真恋爱架空::/list/xiuzhenlianaijiakong/\n轻松搞笑::/list/qingsonggaoxiao/\n同人漫画::/list/tongrenmanhua/\n彩虹::/list/caihong/\n侦探::/list/zhentan/\n魔法::/list/mofa/\n纠结::/list/jiujie/\n婚姻::/list/hunyin/\n搞笑喜剧::/list/gaoxiaoxiju/\n恐怖灵异::/list/kongbulingyi/\n伪娘::/list/weiniang/\n其他::/list/qita2/\n宅系::/list/zhaixi/\n战争漫画::/list/zhanzhengmanhua/\n竞技体育::/list/jingjitiyu/\n节操::/list/jiecao/\n耽美人生::/list/danmeirensheng/\n故事漫画::/list/gushimanhua/\n快看漫画::/list/kuaikanmanhua/\n韩国漫画::/list/hanguomanhua/\n少女::/list/shaonv/\nAA::/list/AA/\n惊悚::/list/jingsong/\n西方魔幻::/list/xifangmohuan/\n性转::/list/xingzhuan/\n舰娘::/list/jianniang/\n机战::/list/jizhan/\n改编::/list/gaibian/\n绘本::/list/huiben/\n少年::/list/shaonian/\n恐怖悬疑::/list/kongbuxuanyi/\n正能量::/list/zhengnengliang/\n致郁::/list/zhiyu2/\n秀吉::/list/xiuji/\n总裁::/list/zongcai/\n伦理::/list/lunli/\n橘味::/list/juwei/\n暗黑::/list/anhei/\n青年::/list/qingnian/\n耽美BL::/list/danmeiBL/\n颜艺::/list/yanyi/\n智斗::/list/zhidou/\n高清单行::/list/gaoqingdanxing/\n主仆::/list/zhupu/\n猎奇::/list/lieqi/\n乙女::/list/yinv/\n麦萌::/list/maimeng/\n黑道::/list/heidao/\n热血冒险::/list/rexuemaoxian/\n儿童::/list/ertong/\n投稿::/list/tougao/\n漫画岛::/list/manhuadao/\n热血动作::/list/rexuedongzuo/\nmhuaquan::/list/mhuaquan/\n动画::/list/donghua/\n四格多格::/list/sigeduoge/\n重生::/list/zhongsheng/\n逆转::/list/nizhuan/\n暧昧::/list/aimei/\n大女主::/list/danvzhu/\n生化::/list/shenghua/\n异族::/list/yizu/\n偶像::/list/ouxiang/\n奇闻::/list/qiwen/\n美少女::/list/meishaonv/\n独家::/list/dujia/\n古装::/list/guzhuang/\n宠爱::/list/chongai/\n幻想::/list/huanxiang/\n怪谈::/list/guaitan/\n叛逆::/list/panni/\n怀旧::/list/huaijiu/\n情感::/list/qinggan/\n女尊::/list/nvzun/\n探案::/list/tanan/\n宅斗::/list/zhaidou/\n血族::/list/xuezu/\n言情::/list/yanqing/\n女强::/list/nvqiang/\n种田::/list/zhongtian/\n魔王::/list/mowang/\n美型::/list/meixing/\n福利::/list/fuli/\n狐仙::/list/huxian/\n宠婚::/list/chonghun/\n悬疑、惊悚::/list/xuanyijingsong/\n鬼怪::/list/guiguai/\n兽耳::/list/shouer/\n少儿::/list/shaoer/\n小僵尸::/list/xiaojiangshi/\n狠西游::/list/henxiyou/\n西游记::/list/xiyouji/\n青青树::/list/qingqingshu/\n男神::/list/nanshen/\n甜宠::/list/tianchong/\n病娇::/list/bingjiao/\n绅士::/list/shenshi/\n死后世界::/list/sihoushijie/\n墨瞳::/list/motong/\n日漫::/list/riman/\n末日::/list/mori/\n系统::/list/xitong/\n修仙::/list/xiuxian/\n神仙::/list/shenxian/\n怪物::/list/guaiwu/\n神豪::/list/shenhao/\n虐恋::/list/nuelian/\n霸总.都市::/list/bazongdushi/\n妖怪::/list/yaoguai/\n高甜::/list/gaotian/\n完结::/list/wanjie/\n电竞::/list/dianjing/\nゆり::/list/unknown/\n兄弟情::/list/xiongdiqing/\n豪快::/list/haokuai/\n暖萌::/list/nuanmeng/\n少男::/list/shaonan/\n幽默::/list/youmo/\n亲情::/list/qinqing/\n橘系::/list/juxi/\n女生::/list/nvsheng/\n男生::/list/nansheng/\n扶她::/list/futa/\n故事::/list/gushi/\n养成::/list/yangcheng/\n欢喜::/list/huanxi/\n北欧::/list/beiou/\n腹黑::/list/fuhei/\n西幻::/list/xihuan/\n古代::/list/gudai/\n限制级::/list/xianzhiji/\n基腐::/list/jifu/\n幽默搞笑::/list/youmogaoxiao/\n奇幻冒险::/list/qihuanmaoxian/\n浪漫爱情::/list/langmanaiqing/\nBL::/list/BL/\n古风穿越::/list/gufengchuanyue/\n综合其它::/list/zongheqita/\nTS::/list/TS/\n韩漫::/list/hanman/\n有妖气::/list/youyaoqi/\n搞笑恶搞::/list/gaoxiaoegao/\n氪金::/list/kejin/\n福瑞::/list/furui/\n宫廷东方::/list/gongtingdongfang/\n泛爱::/list/fanai/\n生存::/list/shengcun/\n2021大赛::/list/2021dasai/\n知音漫客::/list/zhiyinmanke/\n漫画一番::/list/manhuayifan/\n女王点坑::/list/nvwangdiankeng/\n现代::/list/xiandai/\n超级英雄::/list/chaojiyingxiong/\n武侠仙侠::/list/wuxiaxianxia/\n悬疑灵异::/list/xuanyilingyi/\n军阀::/list/junfa/\n婚恋::/list/hunlian/\n神界漫画::/list/shenjiemanhua/\n天上空::/list/tianshangkong/\n渡之鸟::/list/duzhiniao/\n燃向::/list/ranxiang/\n长篇::/list/changpian/\n陈岚::/list/chenlan/\n漫画会::/list/manhuahui/\n龙刃::/list/longren/\n片玉::/list/pianyu/\n毒鸡汤::/list/dujitang/\n阴暗::/list/yinan/\n国漫::/list/guoman/\n开挂::/list/kaigua/\n婚宠::/list/hunchong/\n条漫::/list/tiaoman/\n有趣岛::/list/youqudao/\n兄妹::/list/xiongmei/\n三次元::/list/sanciyuan/\n经典::/list/jingdian/\n吃鸡::/list/chiji/\n枪战::/list/qiangzhan/\n特种兵::/list/tezhongbing/\n新妻::/list/xinqi/\n日本::/list/riben/\n萌宠::/list/mengchong/\n短篇::/list/duanpian/\nLOL::/list/LOL/\n女神::/list/nvshen/\n未来漫画家::/list/weilaimanhuajia/\n欧风::/list/oufeng/"
+            },
+            "validConfig": "",
+            "list": "//div[@id=\"w0\"]/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//mip-img/@src"
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "99",
+    "sourceName": "思思漫画",
+    "sourceUrl": "https://m.sisimanhua.com",
+    "miniAppVersion": "2.53.2",
+    "httpHeaders": {
+        "Referer": "https://m.sisimanhua.com",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1657188866.598245",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//p[2]/span/text()",
+        "author": "//p[1]",
+        "lastChapterTitle": "//a[@class=\"coll\"]/text()",
+        "responseFormatType": "html",
+        "bookName": "//a[@class=\"title\"]",
+        "httpHeaders": {
+            "Referer": "https://m.sisimanhua.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "/search/?keywords=%@keyWord",
+        "host": "https://m.sisimanhua.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class=\"title\"]/@href",
+        "cover": "//mip-img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"itemBox\"]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://m.sisimanhua.com",
+        "httpHeaders": {
+            "Referer": "https://m.sisimanhua.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@class=\"list\"]/ul/li || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

@@ -1,0 +1,125 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class=\"neirong\"]/text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 20
+        },
+        "host": "https://www.3158gk.com",
+        "httpHeaders": {
+            "Referer": "https://www.3158gk.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(), \"下一篇\")]/@href ||@js:\nif(result){\n    //params.pageIndex=0;\n    let pageid=params.pageIndex;\n    //let url = params.queryInfo.url;\n    let url = params.queryInfo.url.replace(/.html/,\"\");\n    url = url+\"_\"+pageid+\".html\";\n    params.nativeTool.log(url) ;\n    return url;\n    }\nelse{\n    return \"\"\n    }"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "lastChapterTitle": "//p/a",
+        "host": "https://www.3158gk.com",
+        "httpHeaders": {
+            "Referer": "https://www.3158gk.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[4]/ul || @js:\nreturn result.replace(/<br>/g, \"\")",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行": {
+            "cat": "//span || @js: return result.match(/\\[(\\S*)]/)[1]",
+            "responseFormatType": "html",
+            "bookName": "//a",
+            "httpHeaders": {
+                "Referer": "https://www.3158gk.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_tpye,_select}=params.filters\nlet url=`${config.host}/${_select}${_tpye}_${params.pageIndex}.html`;\nreturn {url:url,\"httpHeaders\":config.httpHeaders}",
+            "host": "https://www.3158gk.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_tpye\n言情::/1\n仙侠::/2\n玄幻::/3\n剧情::/4\n都市::/5\n\n_select\n分类::wap_fenlei\n排行::wap_pai\n完本::wap_all"
+            },
+            "validConfig": "",
+            "list": "//ul[@class]/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.3158gk.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "x-苦瓜",
+    "httpHeaders": {
+        "Referer": "https://www.3158gk.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1662802518.265256",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span || @js: return result.match(/\\[(\\S*)]/)[1]",
+        "responseFormatType": "html",
+        "bookName": "//a",
+        "httpHeaders": {
+            "Referer": "https://www.3158gk.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url=\"/index.php\";\nlet hp= {\"name\":params.keyWord, \"so\":\"yes\", \"do\":\"wap_sea\"};\nreturn {\"url\":url, \"httpParams\":hp, \"httpHeaders\":config.httpHeaders};",
+        "host": "https://www.3158gk.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href",
+        "moreKeys": {
+            "maxPage": 50
+        },
+        "validConfig": "",
+        "list": "//ul[@class]/li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "nextPageUrl": "//a[contains(text(), \"下页\")]/@href \n||@js:\nif(result){\n    let pageid=params.pageIndex+1;\n    let url = params.queryInfo.url;\n    //let url = params.queryInfo.url.replace(/.html/,\"\");\n    url = url+\"_\"+pageid+\".html\";\n    //params.nativeTool.log(url) ;\n    return url;\n    }\nelse{\n    return \"\"\n    }",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "Referer": "https://www.3158gk.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js: return result.replace(\"_shu\", \"_mulu\")",
+        "title": "//a",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://www.3158gk.com",
+        "validConfig": "",
+        "list": "//ul[@class]/li",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

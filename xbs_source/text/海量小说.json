@@ -1,0 +1,78 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='content']/text()",
+        "host": "http://www.massxs.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "http://www.massxs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "海量小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665897735.871499",
+    "parserID": "DOM",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class=\"cat\"]|@js:return result.replace('分类：','');",
+        "author": "//div[@class=\"author\"]|@js:return result.replace('作者：','');",
+        "lastChapterTitle": "//div[@class=\"update\"]/a",
+        "responseFormatType": "html",
+        "bookName": "//h4/a",
+        "requestInfo": "@js:\nlet url = 's.php?';\nlet hp = {};\nhp.ie = 'gbk';\nhp.q = params.keyWord;\nreturn {'url':url, 'httpParams':hp};",
+        "host": "http://www.massxs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "moreKeys": {
+            "skipCount": 0
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"bookbox\"]",
+        "cover": "//div[@class=\"bookimg\"]/a/img/@src|@js:return \"https://www.yunxuange.com\"+result;"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "requestInfo": "@js:\nreturn params.queryInfo.detailUrl;",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 0
+        },
+        "host": "http://www.massxs.com",
+        "list": "//div[@class=\"listmain\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

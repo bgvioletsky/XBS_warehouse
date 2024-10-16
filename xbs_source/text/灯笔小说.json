@@ -1,0 +1,112 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//article[@id=\"article\"]/p ||@js: return result.replace(/(全网免费热门小说,更新快:【APP安卓版】).*/, \"\").replace(/(继续阅读本书最新章节，进入灯笔小说网址：www.DengBi.com).*/, \"\");",
+        "actionID": "chapterContent",
+        "host": "https://www.dengbi.com",
+        "httpHeaders": {
+            "Referer": " https://www.dengbi.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "actionID": "bookWorld",
+            "author": "//i[@class=\"fa fa-user-circle-o\"]",
+            "responseFormatType": "html",
+            "bookName": "//@title",
+            "httpHeaders": {
+                "Referer": " https://www.dengbi.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+            },
+            "desc": "//p[@class=\"indent\"]",
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\nlet url=`https://www.dengbi.com${_aa}_${params.pageIndex}.html`;\r\n\r\nreturn {url:url}",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_aa\n玄幻魔法::/fenlei/1\n仙侠修真::/fenlei/2\n都市言情::/fenlei/3\n历史穿越::/fenlei/4\n网游竞技::/fenlei/5\n科幻未来::/fenlei/6\n恐怖灵异::/fenlei/7"
+            },
+            "detailUrl": "//div[@class=\"img_span\"]/a/@href",
+            "wordCount": "//em[@class=\"orange\"]",
+            "host": "https://www.dengbi.com",
+            "validConfig": "",
+            "_sIndex": 0,
+            "cover": "//@data-original",
+            "parserID": "DOM",
+            "status": "//em[@class=\"blue\"]",
+            "list": "//ul[@class=\"flex\"]/li"
+        }
+    },
+    "sourceUrl": "https://www.dengbi.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "灯笔小说",
+    "httpHeaders": {
+        "Referer": " https://www.dengbi.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "lastModifyTime": "1663323859.473337",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[@class=\"hot\"]",
+        "author": "//p[1]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//p[3]",
+        "bookName": "//@title",
+        "desc": "//p[@class=\"searchresult_p\"]",
+        "requestInfo": "@js:\n\nlet url=config.host+\"/search/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord,'page':params.pageIndex,};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "host": "https://www.dengbi.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"img_span\"]/a/@href",
+        "cover": "//@data-original",
+        "validConfig": "",
+        "list": "//ul[@class=\"flex\"]/li",
+        "parserID": "DOM",
+        "httpHeaders": {
+            "Referer": " https://www.dengbi.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        }
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.dengbi.com",
+        "httpHeaders": {
+            "Referer": " https://www.dengbi.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.82 Safari/537.36"
+        },
+        "list": "//ul[@id=\"ul_all_chapters\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

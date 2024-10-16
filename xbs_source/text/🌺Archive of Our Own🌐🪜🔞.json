@@ -1,0 +1,114 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@role='article']",
+        "requestInfo": "@js:\nreturn {'url':result+'?view_adult=true', 'webView':''};",
+        "host": "https://archiveofourown.org/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "recent works": {
+            "cat": "//h5[@class='fandoms heading']",
+            "author": "//div[@class='header module']/h4/a[@rel='author']",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='header module']/h4/a[1]",
+            "desc": "//ul[@class='tags commas']|//blockquote[@class='userstuff summary']",
+            "requestInfo": "https://archiveofourown.org/works/search?page=%@pageIndex&utf8=%E2%9C%93&work_search%5Bquery%5D=%@keyWord",
+            "host": "https://archiveofourown.org/",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class='header module']/h4/a[1]/@href||@js:\nreturn result + '/navigate';",
+            "moreKeys": {
+                "pageSize": 20
+            },
+            "validConfig": "",
+            "list": "//ol/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "//dl[@class='stats']"
+        },
+        "popular tags": {
+            "cat": "//h5[@class='fandoms heading']",
+            "author": "//div[@class='header module']/h4/a[@rel='author']",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='header module']/h4/a[1]",
+            "desc": "//ul[@class='tags commas']|//blockquote[@class='userstuff summary']",
+            "requestInfo": "https://archiveofourown.org/tags/%@filter/works?page=%@pageIndex",
+            "host": "https://archiveofourown.org/",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class='header module']/h4/a[1]/@href||@js:\nreturn result + '/navigate';",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "type\nAbduction::Abduction\nAbuse::Abuse\nAction/Adventure::Action*s*Adventure\nDifference::Age%20Difference\nCharacter(s)::Aged-Up%20Character(s)\nAlcohol::Alcohol\nDynamics::Alpha*s*Beta*s*Omega%20Dynamics\nCanon::Alternate%20Canon\nUniverse::Alternate%20Universe\nAmbiguity::Ambiguity\nAngst::Angst\nAnxiety::Anxiety\nFreeform::AO3%20Tags%20-%20Freeform\nArt::Art\nSpectrum::Asexuality%20Spectrum\nAsphyxiation::Asphyxiation\nContent::Audio%20Content\nAwkwardness::Awkwardness\nBadass::Badass\nBathing/Washing::Bathing*s*Washing\nBDSM::BDSM\nBeds::Beds\nBirthday::Birthday\nBiting::Biting\nBlood::Blood\nFluids::Bodily%20Fluids\nBonding::Bonding\nBottoming::Bottoming\nUp::Break%20Up\nRelated::Canon%20Related\nUniverse::Canon%20Universe\nStudy::Character%20Study\nChildren::Children\nClothing::Clothing\nCoercion::Coercion\nComfort::Comfort\nConfessions::Confessions\nConsent::Consent\nCrack::Crack\nCriminals::Crimes%20*a*%20Criminals\nFusions::Crossovers%20*a*%20Fandom%20Fusions\nCrushes::Crushes\nCrying::Crying\nSnuggling::Cuddling%20*a*%20Snuggling\nKink::Daddy%20Kink\nSinging::Dancing%20and%20Singing\nDark::Dark\nDating::Dating\nDeath::Death\nCanon::Deviates%20From%20Canon\nDisability::Disability\nDomestic::Domestic\nDrabble::Drabble\nDrama::Drama\nNightmares::Dreams%20and%20Nightmares\nDrugs::Drugs\nEducation::Education\nEnemies::Enemies\nAlive::Everyone%20Is%20Alive\nLove::Falling%20In%20Love\nFamily::Family\nFeelings::Feelings\nFeels::Feels\nCharacters::Female%20Characters\nRelationships::Female%20Relationships\nFiclet::Ficlet\nFights::Fights\nFingerfucking::Fingerfucking\nFirsts::Firsts\nFix-It::Fix-It\nFlashbacks::Flashbacks\nFlirting::Flirting\nFluff::Fluff\nFood::Food\nFriendship::Friendship\nFuture::Future\nRelated::Gender%20Related\nTogether::Getting%20Together\nGore::Gore\nGuilt::Guilt\nEnding::Happy%20Ending\nChildren::Harm%20to%20Children\nHatred::Hatred\nHeroines::Heroes%20*a*%20Heroines\nEducation::Higher%20Education\nHistorical::Historical\nHolidays::Holidays\nHomophobia::Homophobia\nHorror::Horror\nHugs::Hugs\nHuman::Human\nHumiliation::Humiliation\nHumor::Humor\nHurt::Hurt\nHurt/Comfort::Hurt*s*Comfort\nSleeping::I%20Wrote%20This%20Instead%20of%20Sleeping\nSorry::I\nLove::Idiots%20in%20Love\nIllnesses::Illnesses\nDeath::Implied*s*Referenced%20Character%20Death\nPublic::In%20Public\nIncest::Incest\nInfidelity::Infidelity\nInjury::Injury\nby...::Inspired%20by*d**d**d*\nIntoxication::Intoxication\nIntrospection::Introspection\nIssues::Issues\nJealousy::Jealousy\nKinks::Kinks\nKissing::Kissing\nLanguage::Language\nThemes::LGBTQ%20Themes\nLight-Hearted::Light-Hearted\nLoss::Loss\nLove::Love\nOut::Making%20Out\nManipulation::Manipulation\nMarriage::Marriage\nMedical::Medical\nRelated::Memory%20Related\nIssues::Mental%20Health%20Issues\nMisunderstandings::Misunderstandings\nEra::Modern%20Era\nMusic::Music\nFirst...::My%20First*d**d**d*\nMystery::Mystery\nCreatures::Mythical%20Beings%20*a*%20Creatures\nSmut::No%20Smut\nNon-Consensual::Non-Consensual\nNon-Sexual::Non-Sexual\nRead::Not%20Beta%20Read\nOblivious::Oblivious\nShot::One%20Shot\nOrgasm::Orgasm\nCharacter(s)::Original%20Character(s)\nCharacter::Out%20of%20Character\nPain::Pain\nPanic::Panic\nPenises::Penises\nPining::Pining\nPlot::Plot\nWorks::Podfic%20*a*%20Podficced%20Works\nPoetry::Poetry\nPolyamory::Polyamory\nPorn::Porn\nBehavior::Possessive%20Behavior\nPost-Canon::Post-Canon\nElsewhere::Posted%20Elsewhere\nMultiple::POV%20Multiple\nKink::Praise%20Kink\nPre-Canon::Pre-Canon\nPregnancy::Pregnancy\nFill::Prompt%20Fill\nProtectiveness::Protectiveness\nReader-Insert::Reader-Insert\nRelationship(s)::Relationship(s)\nReligion::Religion\nRestaurants::Restaurants\nRomance::Romance\nRoughness::Roughness\nRoyalty::Royalty\nSad::Sad\nFantasy::Science%20Fiction%20*a*%20Fantasy\nSecrets::Secrets\nSelf-Esteem::Self-Esteem\nSelf-Harm::Self-Harm\nContent::Sexual%20Content\nInexperience::Sexual%20Inexperience\nShapeshifting::Shapeshifting\nSharing::Sharing\nShort::Short\nSlash::Slash\nLife::Slice%20of%20Life\nBuild::Slow%20Build\nSmut::Smut\nSoulmates::Soulmates\nSpoilers::Spoilers\nSports::Sports\nAbuse::Substance%20Abuse\nSuicide::Suicide\nElements::Supernatural%20Elements\nTeam::Team\nTeasing::Teasing\nTeenagers::Teenagers\nTension::Tension\nThreesome::Threesome\nTravel::Time%20Travel\nTopping::Topping\nTorture::Torture\nTrauma::Trauma\nTumblr::Tumblr\nFreeform::Underage%20-%20Freeform\nUnrequited::Unrequited\nViolence::Violence\nVoyeurism::Voyeurism\nWar::War\nWeapons::Weapons\nWeather::Weather\nWhump::Whump"
+            },
+            "validConfig": "",
+            "list": "//ol/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "status": "//dl[@class='stats']"
+        }
+    },
+    "loginUrl": "https://archiveofourown.org/users/login",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺Archive of Our Own🌐🪜🔞",
+    "sourceUrl": "https://archiveofourown.org/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665931673.175900",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//h5[@class='fandoms heading']",
+        "author": "//div[@class='header module']/h4/a[@rel='author']",
+        "responseFormatType": "html",
+        "bookName": "//div[@class='header module']/h4/a[1]",
+        "desc": "//ul[@class='tags commas']|//blockquote[@class='userstuff summary']",
+        "requestInfo": "https://archiveofourown.org/works/search?page=%@pageIndex&utf8=%E2%9C%93&work_search%5Bquery%5D=%@keyWord",
+        "host": "https://archiveofourown.org/",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class='header module']/h4/a[1]/@href||@js:\nreturn result + '/navigate';",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ol/li",
+        "status": "//dl[@class='stats']"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://archiveofourown.org/",
+        "list": "//ol[@class='chapter index group']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

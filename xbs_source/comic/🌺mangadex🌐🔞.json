@@ -1,0 +1,93 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@class=' reader-image-wrapper col-auto my-auto justify-content-center align-items-center noselect nodrag row no-gutters']//img/@data-src",
+        "host": "https://mangadex.tv/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": true,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//*[@id=\"content\"]/div[1]/div/div/div[2]/div[6]/div[2]",
+        "lastChapterTitle": "(//a[@class='text-truncate'])[1]",
+        "host": "https://mangadex.tv/",
+        "cat": "//a[@class='badge badge-secondary']",
+        "cover": "//a[@title='See covers']/img/@src",
+        "responseFormatType": "html",
+        "desc": "//*[@id=\"content\"]/div[1]/div/div/div[2]/div[8]/div[2]",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "all": {
+            "responseFormatType": "html",
+            "bookName": "//div[2]/a",
+            "desc": "//div[3]",
+            "requestInfo": "https://mangadex.tv/titles?page=%@pageIndex",
+            "host": "https://mangadex.tv/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 16
+            },
+            "detailUrl": "//div[2]/a/@href",
+            "cover": "//div[@class=''rounded large_logo mr-2]/a/img/@src",
+            "list": "//div[@class='row mt-1 mx-0']/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺mangadex🌐🔞",
+    "sourceUrl": "https://mangadex.tv/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665943624.724977",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "parserID": "DOM",
+        "requestInfo": "https://mangadex.tv/search?type=titles&title=%@keyWord&submit=&page=%@pageIndex",
+        "bookName": "//div[2]/a",
+        "detailUrl": "//div[2]/a/@href",
+        "host": "https://mangadex.tv/",
+        "cover": "//div[@class=''rounded large_logo mr-2]/a/img/@src",
+        "responseFormatType": "html",
+        "list": "//div[@class='row mt-1 mx-0']/div",
+        "desc": "//div[3]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://mangadex.tv/",
+        "list": "//div[@class='row no-gutters']||@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

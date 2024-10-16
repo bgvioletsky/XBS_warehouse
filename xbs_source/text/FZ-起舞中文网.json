@@ -1,0 +1,145 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id='content']/p[position()<last()]/text()",
+        "moreKeys": {
+            "maxPage": 4
+        },
+        "host": "https://www.75zw.com",
+        "httpHeaders": {
+            "Cookie": "75zworg_sex=; UM_distinctid=;"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.75zw.com",
+        "httpHeaders": {
+            "Cookie": "75zworg_sex=; UM_distinctid=;"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]/p[1]"
+    },
+    "bookWorld": {
+        "女频": {
+            "responseFormatType": "html",
+            "author": "//dd[2]/span",
+            "lastChapterTitle": "//dd[4]/a",
+            "bookName": "//h3/a",
+            "httpHeaders": {
+                "Cookie": "75zworg_sex=; UM_distinctid=;"
+            },
+            "requestInfo": "@js:\nlet {_class,_top,_status}=params.filters\nlet url=`https://www.75zw.com/shuku/${_top}_${_class}_${_status}_${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.75zw.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_class\n全部分类::0\n现代言情::10\n幻想奇缘::11\n游戏情缘::12\n浪漫青春::13\n言情美文::14\n科幻灵异::15\n其他类型::16\n\n_top\n默认::0\n总点击::allvisit\n月点击::monthvisit\n周点击::weekvisit\n日点击::dayvisit\n总推荐::allvote\n月推荐::monthvote\n周推荐::weekvote\n日推荐::dayvote\n总收藏::goodnum\n字数::size\n入库::postdate\n\n_status\n全部::0\n连载::1\n完本::2"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@class='sitebox']/dl",
+            "cover": "//dt[1]/a/img/@src",
+            "desc": "//dd[3]"
+        },
+        "男频": {
+            "responseFormatType": "html",
+            "author": "//dd[2]/span",
+            "lastChapterTitle": "//dd[4]/a",
+            "bookName": "//h3/a",
+            "httpHeaders": {
+                "Cookie": "75zworg_sex=; UM_distinctid=;"
+            },
+            "requestInfo": "@js:\nlet {_class,_top,_status}=params.filters\nlet url=`https://www.75zw.com/shuku/${_top}_${_class}_${_status}_${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.75zw.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_class\n全部分类::0\n玄幻奇幻::1\n武侠仙侠::2\n都市生活::3\n历史军事::4\n游戏竞技::5\n科幻未来::6\n恐怖悬疑::7\n其他类型::8\n古代言情::9\n\n_top\n默认::0\n总点击::allvisit\n月点击::monthvisit\n周点击::weekvisit\n日点击::dayvisit\n总推荐::allvote\n月推荐::monthvote\n周推荐::weekvote\n日推荐::dayvote\n总收藏::goodnum\n字数::size\n入库::postdate\n\n_status\n全部::0\n连载::1\n完本::2"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class='sitebox']/dl",
+            "cover": "//dt[1]/a/img/@src",
+            "desc": "//dd[3]"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.75zw.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9968",
+    "sourceName": "FZ-起舞中文网",
+    "httpHeaders": {
+        "Cookie": "75zworg_sex=; UM_distinctid=;"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1657516656.978068",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//dd[2]/span[3]",
+        "responseFormatType": "html",
+        "author": "//dd[2]/span[1]",
+        "lastChapterTitle": "//dd[4]/a",
+        "bookName": "//dd[1]/h3/a",
+        "httpHeaders": {
+            "Cookie": "75zworg_sex=; UM_distinctid=;"
+        },
+        "requestInfo": "@js:\nlet url = '/search.html';\nlet hp = {};\nhp.searchkey = params.keyWord;\n//hp.pn= params.pageIndex;\nhp.searchtype='all';\nreturn {'POST':true,'url':url, 'httpParams':hp,};",
+        "host": "https://www.75zw.com",
+        "actionID": "searchBook",
+        "detailUrl": "//dd[1]/h3/a/@href",
+        "cover": "//dt[1]/a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@id='sitembox']/dl",
+        "wordCount": "//dd[2]/span[4]",
+        "status": "//dd[2]/span[2]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.75zw.com",
+        "httpHeaders": {
+            "Cookie": "75zworg_sex=; UM_distinctid=;"
+        },
+        "list": "//div[@id='list']/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

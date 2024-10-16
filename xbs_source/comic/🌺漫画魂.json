@@ -1,0 +1,89 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@class='comicpage']/div//img/@data-original",
+        "host": "https://www.manhuahun.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class='fanye']/a[2]/@href"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "parserID": "DOM",
+        "actionID": "bookDetail",
+        "responseFormatType": "html"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "desc": "//p[@class='chapter']",
+            "requestInfo": "@js:\nreturn 'http://manhuahun.com/booklist?page=' + params.pageIndex + '&tag=' + encodeURI(params.filters.type) + '&area=' + params.filters.region + '&end=' + params.filters.progress;",
+            "host": "https://www.manhuahun.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "cover": "//p[1]/@style||@replace:background-image: url(||@replace:)||@replace:\\nwidth: 181px;",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul/li",
+            "moreKeys": {
+                "pageSize": 28,
+                "requestFilters": "type\n全部::\n奇幻::奇幻\n恋爱::恋爱\n后宫::后宫\n热血::热血\n伦理::伦理\n爱情::爱情\n青春::青春\n恐怖::恐怖\n豪门::豪门\n纯爱::纯爱\n职场::职场\n真人::真人\n冒险::冒险\n悬疑::悬疑\n日常::日常\n治愈::治愈\n少女::少女\n都市::都市\n校园::校园\n科幻::科幻\n古风::古风\n玄幻::玄幻\n魔法::魔法\n异能::异能\n搞笑::搞笑\n运动::运动\n彩虹::彩虹\n架空::架空\nregion\n全部::-1\n韩漫::1\n日漫::2\n国漫::3\nprogress\n全部::-1\n连载::0\n完结::1\n"
+            }
+        }
+    },
+    "shudanList": {},
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺漫画魂",
+    "sourceUrl": "https://www.manhuahun.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666525675.494278",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://www.manhuahun.com/search?keyword=%@keyWord",
+        "lastChapterTitle": "//p/a",
+        "bookName": "//h2/a",
+        "host": "https://www.manhuahun.com/",
+        "detailUrl": "//h2/a/@href",
+        "cover": "//a/img/@data-src",
+        "responseFormatType": "html",
+        "list": "//ul/li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//span[@class='date']",
+        "title": "//a",
+        "host": "https://www.manhuahun.com/",
+        "list": "//ul[@id='detail-list-select']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

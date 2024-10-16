@@ -1,0 +1,238 @@
+{
+    "bookWorld": {
+        "Manga（漫画）": {
+            "responseFormatType": "html",
+            "bookName": "//img//@alt",
+            "desc": "//img/@alt",
+            "requestInfo": "/s/manga/%@filter/page/2",
+            "host": "https://nyahentai.info",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "httpHeaders": {
+                "Referer": "https://nyahentai.info",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "cover": "//img//@data-src",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@class=\"gallery\"]",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "Date::\nPopular::popular\nChinese::chinese\nEnglish::english\nJapanese::japanese"
+            },
+            "validConfig": "",
+            "status": "//div[@class=\"caption\"]//span/@class ||@js:\n\nlet res = result;\n\nif(res == 'ci cn'){\n\treturn '🇨🇳'\n}else if(res == 'ci us'){\n\treturn '🇬🇧';\n}else{\n\treturn '🇯🇵';\n}"
+        },
+        "Chinese（中文）": {
+            "responseFormatType": "html",
+            "bookName": "//img//@alt",
+            "desc": "//img/@alt",
+            "requestInfo": "/s/chinese/%@filter/page/%@pageIndex",
+            "host": "https://nyahentai.info",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "httpHeaders": {
+                "Referer": "https://nyahentai.info",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "cover": "//img//@data-src",
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "list": "//div[@class=\"gallery\"]",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "Date::\nPopular::popular\nChinese::chinese\nEnglish::english\nJapanese::japanese"
+            },
+            "validConfig": "",
+            "status": "//div[@class=\"caption\"]//span/@class ||@js:\n\nlet res = result;\n\nif(res == 'ci cn'){\n\treturn '🇨🇳'\n}else if(res == 'ci us'){\n\treturn '🇬🇧';\n}else{\n\treturn '🇯🇵';\n}"
+        },
+        "English（英文）": {
+            "responseFormatType": "html",
+            "bookName": "//img//@alt",
+            "desc": "//img/@alt",
+            "requestInfo": "/s/english/%@filter/page/%@pageIndex",
+            "host": "https://nyahentai.info",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "httpHeaders": {
+                "Referer": "https://nyahentai.info",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "cover": "//img//@data-src",
+            "parserID": "DOM",
+            "_sIndex": 3,
+            "list": "//div[@class=\"gallery\"]",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "Date::\nPopular::popular\nChinese::chinese\nEnglish::english\nJapanese::japanese"
+            },
+            "validConfig": "",
+            "status": "//div[@class=\"caption\"]//span/@class ||@js:\n\nlet res = result;\n\nif(res == 'ci cn'){\n\treturn '🇨🇳'\n}else if(res == 'ci us'){\n\treturn '🇬🇧';\n}else{\n\treturn '🇯🇵';\n}"
+        },
+        "Full Color（全彩）": {
+            "responseFormatType": "html",
+            "bookName": "//img//@alt",
+            "desc": "//img/@alt",
+            "requestInfo": "/s/full-color/%@filter/page/%@pageIndex",
+            "host": "https://nyahentai.info",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "httpHeaders": {
+                "Referer": "https://nyahentai.info",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "cover": "//img//@data-src",
+            "parserID": "DOM",
+            "_sIndex": 5,
+            "list": "//div[@class=\"gallery\"]",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "Date::\nPopular::popular\nChinese::chinese\nEnglish::english\nJapanese::japanese"
+            },
+            "validConfig": "",
+            "status": "//div[@class=\"caption\"]//span/@class ||@js:\n\nlet res = result;\n\nif(res == 'ci cn'){\n\treturn '🇨🇳'\n}else if(res == 'ci us'){\n\treturn '🇬🇧';\n}else{\n\treturn '🇯🇵';\n}"
+        },
+        "Japanese（日文）": {
+            "responseFormatType": "html",
+            "bookName": "//img//@alt",
+            "desc": "//img/@alt",
+            "requestInfo": "/s/japanese/%@filter/page/%@pageIndex",
+            "host": "https://nyahentai.info",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "httpHeaders": {
+                "Referer": "https://nyahentai.info",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "cover": "//img//@data-src",
+            "parserID": "DOM",
+            "_sIndex": 4,
+            "list": "//div[@class=\"gallery\"]",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "Date::\nPopular::popular\nChinese::chinese\nEnglish::english\nJapanese::japanese"
+            },
+            "validConfig": "",
+            "status": "//div[@class=\"caption\"]//span/@class ||@js:\n\nlet res = result;\n\nif(res == 'ci cn'){\n\treturn '🇨🇳'\n}else if(res == 'ci us'){\n\treturn '🇬🇧';\n}else{\n\treturn '🇯🇵';\n}"
+        },
+        "Doujinshi（同人）": {
+            "responseFormatType": "html",
+            "bookName": "//img//@alt",
+            "desc": "//img/@alt",
+            "requestInfo": "/s/doujinshi/%@filter/page/%@pageIndex",
+            "host": "https://nyahentai.info",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "httpHeaders": {
+                "Referer": "https://nyahentai.info",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "cover": "//img//@data-src",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"gallery\"]",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "Date::\nPopular::popular\nChinese::chinese\nEnglish::english\nJapanese::japanese"
+            },
+            "validConfig": "",
+            "status": "//div[@class=\"caption\"]//span/@class ||@js:\n\nlet res = result;\n\nif(res == 'ci cn'){\n\treturn '🇨🇳'\n}else if(res == 'ci us'){\n\treturn '🇬🇧';\n}else{\n\treturn '🇯🇵';\n}"
+        }
+    },
+    "shudanList": {},
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://nyahentai.info",
+        "httpHeaders": {
+            "Referer": "https://nyahentai.info",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "list": "//div[@id=\"info\"]/div[@class=\"buttons\"]//a[2]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "NYAHENTAI⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://nyahentai.info",
+    "httpHeaders": {
+        "Referer": "https://nyahentai.info",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1655459366.203691",
+    "searchBook": {
+        "cat": "//div[@class=\"caption\"]//span/@class ||@js:\n\nlet res = result;\n\nif(res == 'ci cn'){\n\treturn '🇨🇳'\n}else if(res == 'ci us'){\n\treturn '🇬🇧';\n}else{\n\treturn '🇯🇵';\n}",
+        "responseFormatType": "html",
+        "bookName": "//img//@alt",
+        "desc": "//img/@alt",
+        "requestInfo": "/search/?s=%@keyWord",
+        "host": "https://nyahentai.info",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href",
+        "cover": "//img//@data-src",
+        "validConfig": "",
+        "list": "//div[@class=\"gallery\"]",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 24
+        },
+        "httpHeaders": {
+            "Referer": "https://nyahentai.info",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//textarea[@id=\"listImgH\"] ||@js:\nlet res = result.trim();\nimgList =  eval(res);\nreturn imgList.join('\\n');",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result){\n\tparams.nativeTool.log(result);\n\tlet imgs = result.content;\n\tlet hh = config.httpHeaders;\n\thh.Host = imgs.split('\\n')[0].match(/\\/\\/(.*?)\\//)[1];\n\tlet imgObj =  {'urls':imgs,'httpHeaders':hh};\n\treturn JSON.stringify(imgObj);\n}",
+        "host": "https://nyahentai.info",
+        "httpHeaders": {
+            "Referer": "https://nyahentai.info",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "ₓKSēnoYuanpro5kycg!@happy134∞",
+    "desc": "⚠如果你花钱买的源，说明你被骗了",
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://nyahentai.info",
+        "httpHeaders": {
+            "Referer": "https://nyahentai.info",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "cat": "//section[@id=\"tags\"]/div[1]//a/@title ||@js:\nreturn result.replace(/\\n/gi, ' / ');",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//section[@id=\"tags\"]/div[1]//a/@title ||@js:\nlet tags = result.replace(/\\n/gi, ' / ');\nlet desc = '标签：' + tags + '@' + params.queryInfo.desc;"
+    }
+}

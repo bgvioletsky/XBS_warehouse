@@ -1,0 +1,90 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "desc": "日本文学",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "@js:\nreturn params.queryInfo.bookName;",
+        "host": "http://www.aozoraroudoku.jp",
+        "list": "//body",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "@js:\nreturn params.queryInfo.detailUrl;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "青空朗読(音)⛄",
+    "sourceType": "audio",
+    "sourceUrl": "http://www.aozoraroudoku.jp",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1656938354.840304",
+    "searchBook": {
+        "author": "//span[@class=\"listData\"] ||@js:\nreturn result.split('　')[0] + '｜'+result.split('　')[1]",
+        "JSParser": "function functionName(config, params, result){\n\tlet list = result.list;\n\tlet filterList = [];\n\tfor(let i=0;i<list.length;i++){\n\t\tlet item = list[i];\n\t\tif(item.bookName.indexOf(params.keyWord)>=0){\n\t\t\t//item.author = '作者';\n\t\t\tfilterList.push(item);\n\t\t}\n\t}\n\treturn {'list':filterList};\n}",
+        "responseFormatType": "html",
+        "bookName": "//span[@class=\"listTitle\"]",
+        "desc": "//span[@class=\"listData\"] ||@js:\nreturn result.split('　')[2]",
+        "requestInfo": "/kensaku/kensaku-01.html",
+        "host": "http://www.aozoraroudoku.jp",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href ||@js:\nreturn result.replace('..','');",
+        "cover": "@js:\nreturn config.host+'/voice/images/sky_background.jpg'",
+        "validConfig": "",
+        "list": "//div[@class=\"sakuhinList\"]//li",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.aozoraroudoku.jp",
+        "content": "//audio/@src ||@js:\nreturn result.replace('..', config.host+'/voice')",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "JSParser": "function functionName(config, params, result){\n\tlet res = result;\n\tlet index = params.filter-1;\n\tlet data = res.list[index];\n\tlet books = data['bookName'].split('\\n');\n\tlet urls = data['detailUrl'].split('\\n');\n\tlet authors = data['author'].split('\\n');\n\tlet list = [];\n\tfor(let i=0;i<books.length;i++){\n\t\tlet item = {};\n\t\titem.bookName = books[i];\n\t\titem.detailUrl = urls[i].replace('..','');\n\t\titem.cover = config.host+'/voice/images/sky_background.jpg'\n\t\titem.author = authors[i].split('　')[0] + '｜'+authors[i].split('　')[1];\n\t\titem.desc = authors[i].split('　')[2]\n\t\tlist.push(item);\n\t}\n\treturn {'list':list};\n}",
+            "responseFormatType": "html",
+            "author": "//span[@class=\"listData\"]",
+            "bookName": "//span[@class=\"listTitle\"]",
+            "requestInfo": "/kensaku/kensaku-01.html",
+            "host": "http://www.aozoraroudoku.jp",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "requestFilters": "あ行::1\nか行::2\nさ行::3\nた行::4\nな行::5\nは行::6\nま行::7\nや行::8\nら行::9\nわ行::10"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"sakuhinList\"]",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

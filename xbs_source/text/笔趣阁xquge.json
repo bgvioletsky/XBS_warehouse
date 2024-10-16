@@ -1,0 +1,314 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//p[@class='bodytext']",
+        "host": "https://www.xquge.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "男生": {
+            "cat": "//div[2]/div[2]/span[2]",
+            "author": "//div[2]/div[2]/span[1]",
+            "responseFormatType": "html",
+            "bookName": "//div[2]/div[1]/a",
+            "desc": "//div[2]/div[3]",
+            "requestInfo": "@js:\nlet url = 'https://www.xquge.com/booklist/';\nif(params.pageIndex>1)\n\tparams.filters.page = params.pageIndex;\nreturn {'url':url, 'httpParams':params.filters};",
+            "host": "https://www.xquge.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "cid",
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "1004"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "1005"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "1002"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "1003"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "1006"
+                            },
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1001"
+                            },
+                            {
+                                "title": "游戏竞技",
+                                "value": "1007"
+                            },
+                            {
+                                "title": "军事历史",
+                                "value": "1008"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "order",
+                        "items": [
+                            {
+                                "title": "热度"
+                            },
+                            {
+                                "title": "上架",
+                                "value": "2"
+                            },
+                            {
+                                "title": "更新",
+                                "value": "3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[1]/a/img/@src|https:%@result",
+            "detailUrl": "//div[2]/div[1]/a/@href",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//ul[@class='v_books']/li",
+            "status": "//div[2]/div[2]/span[3]"
+        },
+        "男生榜单": {
+            "cat": "//div[@class='rank_bkinfo']/span[2]/text()",
+            "author": "//span[@class='author']/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class='rank_newpage']/a",
+            "bookName": "//div[2]/div[1]/a",
+            "desc": "//div[@class='rank_bkbrief']",
+            "requestInfo": "https://www.xquge.com/top/man/%@filter?page=%@pageIndex",
+            "host": "https://www.xquge.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": {
+                    "日点击榜": "day",
+                    "完结人气榜": "finish",
+                    "收藏榜": "collect",
+                    "周点击榜": "week",
+                    "最新入库": "newinsert",
+                    "阅读人数": "readnum",
+                    "人气总榜": "all",
+                    "点赞榜": "like",
+                    "月点击榜": "month"
+                }
+            },
+            "detailUrl": "//div[2]/div[1]/a/@href",
+            "cover": "//div[1]/a/img/@src|https:%@result",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class='rank_items']",
+            "status": "//div[@class='rank_bkinfo']/span[3]"
+        },
+        "女生": {
+            "cat": "//div[2]/div[2]/span[2]",
+            "author": "//div[2]/div[2]/span[1]",
+            "responseFormatType": "html",
+            "bookName": "//div[2]/div[1]/a",
+            "desc": "//div[2]/div[3]",
+            "requestInfo": "@js:\nlet url = 'https://www.xquge.com/booklist/nvsheng';\nif(params.pageIndex>1)\n\tparams.filters.page = params.pageIndex;\nreturn {'url':url, 'httpParams':params.filters};",
+            "host": "https://www.xquge.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "key": "cid",
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "2000"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "2001"
+                            },
+                            {
+                                "title": "玄幻言情",
+                                "value": "2002"
+                            },
+                            {
+                                "title": "仙侠言情",
+                                "value": "2003"
+                            },
+                            {
+                                "title": "青春浪漫",
+                                "value": "2004"
+                            },
+                            {
+                                "title": "科幻空间",
+                                "value": "2005"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "status",
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "order",
+                        "items": [
+                            {
+                                "title": "热度"
+                            },
+                            {
+                                "title": "上架",
+                                "value": "2"
+                            },
+                            {
+                                "title": "更新",
+                                "value": "3"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[1]/a/img/@src|https:%@result",
+            "detailUrl": "//div[2]/div[1]/a/@href",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//ul[@class='v_books']/li",
+            "status": "//div[2]/div[2]/span[3]"
+        },
+        "女生榜单": {
+            "cat": "//div[@class='rank_bkinfo']/span[2]/text()",
+            "author": "//span[@class='author']/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class='rank_newpage']/a",
+            "bookName": "//div[2]/div[1]/a",
+            "desc": "//div[@class='rank_bkbrief']",
+            "requestInfo": "https://www.xquge.com/top/woman/%@filter?page=%@pageIndex",
+            "host": "https://www.xquge.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": {
+                    "日点击榜": "day",
+                    "完结人气榜": "finish",
+                    "收藏榜": "collect",
+                    "周点击榜": "week",
+                    "最新入库": "newinsert",
+                    "阅读人数": "readnum",
+                    "人气总榜": "all",
+                    "点赞榜": "like",
+                    "月点击榜": "month"
+                }
+            },
+            "detailUrl": "//div[2]/div[1]/a/@href",
+            "cover": "//div[1]/a/img/@src|https:%@result",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class='rank_items']",
+            "status": "//div[@class='rank_bkinfo']/span[3]"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.xquge.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1200",
+    "sourceName": "笔趣阁xquge",
+    "desc": "推荐",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637656636.179428",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//span[@class='author']/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class='rank_newpage']/a",
+        "bookName": "//div[@class='rank_bkname']/a",
+        "desc": "//div[@class='rank_bkbrief']",
+        "requestInfo": "@js:\nlet url = 'https://www.xquge.com/search';\nreturn {'url':url, 'httpParams':{'keyword':params.keyWord}, 'forbidCookie':true};",
+        "host": "https://www.xquge.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class='rank_bkname']/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class='rank_items']"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//dd[@class='bk_fontinfo']/span[2]",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 20
+        },
+        "host": "https://www.xquge.com",
+        "list": "//ul[@class='catelog_list']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,303 @@
+{
+    "bookWorld": {
+        "女频": {
+            "_sIndex": 1,
+            "cat": "second_type_name",
+            "author": "author_nickname",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "httpHeaders": {
+                "Referer": "https://www.tuishujun.com/",
+                "Host": "pre-api.tuishujun.com",
+                "Origin": "https://www.tuishujun.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "desc": "$ ||@js:\nlet list = [];\nlist.push('书籍来源：'+result.source_name);\nresult.tag.length > 0 ? list.push('书籍标签：'+result.tag.join(' / ')) : list.push('书籍标签：暂无');\nlist.push('书籍评分：'+result.score+'(评分人数:' + result.score_people_number+')');\nlist.push('书籍简介：' +result.info);\n\nreturn list.join('\\n');",
+            "requestInfo": "@js:\nlet url ='/api/listBookRank?rank_type=$rank&first_type_id=2&second_type_id=$type&date_type=all&page=$page&pageSize=10';\nurl = url.replace('$rank',params.filters.rank);\n\nurl = url.replace('$type',params.filters.type);\n\nurl = url.replace('$page',params.pageIndex);\nreturn url;",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "rank\n畅销榜::best_sell\n人气榜::popular\n收藏榜::coll\n完本榜::finish\n字数榜::word_number\n新书榜::new_book\ntype\n奇幻仙侠::22\n古代言情::18\n现代言情::19\n幻想言情::20\n未来言情::21\n游戏竞技::23\n衍生言情::24\n古代纯爱::25\n现代纯爱::26\n幻想纯爱::27\n衍生纯爱::28\n百合小说::29\n女尊::30\n无cp::31\n悬疑::32\n现实::33\n魔幻::34\n短篇::35\n综合::38"
+            },
+            "wordCount": "word_number_name",
+            "cover": "cover",
+            "host": "https://pre-api.tuishujun.com",
+            "validConfig": "",
+            "detailUrl": "book_id",
+            "parserID": "DOM",
+            "list": "$.data.data",
+            "status": "process_name"
+        },
+        "关于": {
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "brief_msg",
+            "requestInfo": "@js:\nlet obj = {\n\t\"url\":\"https://openbooksourcemsg.stackblog.eu.org\",\n\t\"httpHeaders\":{\n\t\t\"Host\": \"openbooksourcemsg.stackblog.eu.org\",\n\t\t\"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15\"\n\t}\n}\nreturn obj;",
+            "host": "https://pre-api.tuishujun.com",
+            "actionID": "bookWorld",
+            "httpHeaders": {
+                "Referer": "https://www.tuishujun.com/",
+                "Host": "pre-api.tuishujun.com",
+                "Origin": "https://www.tuishujun.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "cover": "avatar",
+            "detailUrl": "@js:\nreturn params.responseUrl;",
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "list": "$.data",
+            "validConfig": ""
+        },
+        "男频": {
+            "_sIndex": 0,
+            "cat": "second_type_name",
+            "author": "author_nickname",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "httpHeaders": {
+                "Referer": "https://www.tuishujun.com/",
+                "Host": "pre-api.tuishujun.com",
+                "Origin": "https://www.tuishujun.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "desc": "$ ||@js:\nlet list = [];\nlist.push('书籍来源：'+result.source_name);\nresult.tag.length > 0 ? list.push('书籍标签：'+result.tag.join(' / ')) : list.push('书籍标签：暂无');\nlist.push('书籍评分：'+result.score+'(评分人数:' + result.score_people_number+')');\nlist.push('书籍简介：' +result.info);\n\nreturn list.join('\\n');",
+            "requestInfo": "@js:\nlet url ='/api/listBookRank?rank_type=$rank&first_type_id=1&second_type_id=$type&date_type=all&page=$page&pageSize=10';\nurl = url.replace('$rank',params.filters.rank);\n\nurl = url.replace('$type',params.filters.type);\n\nurl = url.replace('$page',params.pageIndex);\nreturn url;",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "rank\n畅销榜::best_sell\n人气榜::popular\n收藏榜::coll\n完本榜::finish\n字数榜::word_number\n新书榜::new_book\ntype\n玄幻::3\n奇幻::4\n武侠::5\n仙侠::6\n都市::7\n军事::8\n历史::9\n游戏::10\n体育::11\n科幻::12\n同人::13\n悬疑::14\n轻小说::15\n诸天无限::16\n综合::17"
+            },
+            "wordCount": "word_number_name",
+            "cover": "cover",
+            "host": "https://pre-api.tuishujun.com",
+            "validConfig": "",
+            "detailUrl": "book_id",
+            "parserID": "DOM",
+            "list": "$.data.data",
+            "status": "process_name"
+        }
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet obj = {\n\t\"url\":\"https://openbooksourcemsg.stackblog.eu.org\",\n\t\"httpHeaders\":{\n\t\t\"Host\": \"openbooksourcemsg.stackblog.eu.org\",\n\t\t\"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15\"\n\t}\n}\nreturn obj;",
+        "title": "title",
+        "host": "https://pre-api.tuishujun.com",
+        "httpHeaders": {
+            "Referer": "https://www.tuishujun.com/",
+            "Host": "pre-api.tuishujun.com",
+            "Origin": "https://www.tuishujun.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "list": "$.data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn params.queryInfo.detailUrl;"
+    },
+    "searchShudan": {
+        "detail": "info",
+        "responseFormatType": "json",
+        "url": "booklist_id",
+        "httpHeaders": {
+            "Referer": "https://www.tuishujun.com/",
+            "Host": "pre-api.tuishujun.com",
+            "Origin": "https://www.tuishujun.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "requestInfo": "/api/searchBooklist?search_value=%@keyWord&sort_field=hot_value&page=%@pageIndex&pageSize=10",
+        "title": "title",
+        "actionID": "searchShudan",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "cover": "image[0]",
+        "validConfig": "",
+        "host": "https://pre-api.tuishujun.com",
+        "list": "$.data.data",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "validConfig": "",
+        "requestInfo": "https://www.tuishujun.com/hot-tags",
+        "title": "//a",
+        "host": "https://pre-api.tuishujun.com",
+        "httpHeaders": {
+            "Referer": "https://www.tuishujun.com/",
+            "Host": "pre-api.tuishujun.com",
+            "Origin": "https://www.tuishujun.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "list": "//div[@class=\"words-list\"]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "推书君⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://pre-api.tuishujun.com",
+    "httpHeaders": {
+        "Referer": "https://www.tuishujun.com/",
+        "Host": "pre-api.tuishujun.com",
+        "Origin": "https://www.tuishujun.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+    },
+    "shudanDetail": {
+        "detail": "$ ||@js:\nlet list = [];\nlist.push('推荐评论：'+result.remark);\nlist.push('书籍来源：'+result.book.source_name);\nresult.book.tag.length > 0 ? list.push('书籍标签：'+result.book.tag.join(' / ')) : list.push('书籍标签：暂无');\nlist.push('书籍评分：'+result.book.score+'(评分人数:' + result.book.score_people_number+')');\nlist.push('书籍信息：' +result.book.info);\n\nreturn list.join('\\n');",
+        "cat": "$.book.second_type_name",
+        "author": "$.book.author_nickname",
+        "responseFormatType": "json",
+        "bookName": "$.book.title",
+        "desc": "$.book.info",
+        "requestInfo": "@js:\nlet url = \"/api/listBookInBooklist?booklist_id=$listid&page=$page&pageSize=10\";\nurl = url.replace('$listid',params.queryInfo.url);\nurl = url.replace('$page',params.pageIndex);\nreturn url;",
+        "host": "https://pre-api.tuishujun.com",
+        "actionID": "shudanDetail",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "wordCount": "$.book.word_number_name",
+        "validConfig": "",
+        "list": "$.data.data",
+        "parserID": "DOM",
+        "cover": "$.book.cover",
+        "detailUrl": "$.book.book_id",
+        "status": "$.book.process_name",
+        "httpHeaders": {
+            "Referer": "https://www.tuishujun.com/",
+            "Host": "pre-api.tuishujun.com",
+            "Origin": "https://www.tuishujun.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        }
+    },
+    "lastModifyTime": "1663509953.574417",
+    "searchBook": {
+        "cat": "second_type_name",
+        "author": "author_nickname",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "desc": "$ ||@js:\nlet list = [];\nlist.push('书籍来源：'+result.source_name);\nresult.tag.length > 0 ? list.push('书籍标签：'+result.tag.join(' / ')) : list.push('书籍标签：暂无');\nlist.push('书籍评分：'+result.score+'(评分人数:' + result.score_people_number+')');\nlist.push('书籍简介：' +result.info);\n\nreturn list.join('\\n');",
+        "requestInfo": "/api/searchBook?search_value=%@keyWord&sort_field=hot_value&page=%@pageIndex&pageSize=10",
+        "host": "https://pre-api.tuishujun.com",
+        "actionID": "searchBook",
+        "detailUrl": "book_id",
+        "cover": "cover",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "$.data.data",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "wordCount": "word_number_name",
+        "status": "process_name",
+        "httpHeaders": {
+            "Referer": "https://www.tuishujun.com/",
+            "Host": "pre-api.tuishujun.com",
+            "Origin": "https://www.tuishujun.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.data..message ||@js:\nreturn result.join('\\n');",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet obj = {\n\t\"url\":\"https://openbooksourcemsg.stackblog.eu.org\",\n\t\"httpHeaders\":{\n\t\t\"Host\": \"openbooksourcemsg.stackblog.eu.org\",\n\t\t\"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15\"\n\t}\n}\nreturn obj;",
+        "host": "https://pre-api.tuishujun.com",
+        "httpHeaders": {
+            "Referer": "https://www.tuishujun.com/",
+            "Host": "pre-api.tuishujun.com",
+            "Origin": "https://www.tuishujun.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "detail": "content",
+        "createdTime": "create_time",
+        "fromUserName": "$.user.nickname",
+        "responseFormatType": "json",
+        "httpHeaders": {
+            "Referer": "https://www.tuishujun.com/",
+            "Host": "pre-api.tuishujun.com",
+            "Origin": "https://www.tuishujun.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "requestInfo": "@js:\nlet url = '/api/listBookScoreByBook?book_id=$bookid&type=$filter&page=$page&pageSize=10&sort_field=create_time&sort_value=desc';\nurl = url.replace('$bookid',params.queryInfo.detailUrl);\n\nurl = url.replace('$filter',params.filter);\n\nurl = url.replace('$page',params.pageIndex);\nreturn url;",
+        "host": "https://pre-api.tuishujun.com",
+        "actionID": "shupingList",
+        "moreKeys": {
+            "pageSize": 10,
+            "requestFilters": "综合::all\n长评::long\n热门::hot"
+        },
+        "validConfig": "",
+        "list": "$.data.data",
+        "parserID": "DOM",
+        "score": "score",
+        "replyCount": "reply_number",
+        "fromUserCover": "$.user.avatar"
+    },
+    "password": "stackopensource",
+    "desc": "索引源",
+    "shudanList": {
+        "书单": {
+            "detail": "info",
+            "responseFormatType": "json",
+            "url": "booklist_id",
+            "httpHeaders": {
+                "Referer": "https://www.tuishujun.com/",
+                "Host": "pre-api.tuishujun.com",
+                "Origin": "https://www.tuishujun.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "requestInfo": "@js:\nlet url = '/api/listBooklist?type=$filter&page=$page&pageSize=10';\nurl = url.replace('$filter',params.filter);\nurl = url.replace('$page',params.pageIndex);\nlet obj = {\n\t\"url\":url,\n\t\"httpHeaders\":{\n\t\t\"Origin\": \"https://www.tuishujun.com\",\n\t\t\"Host\": \"pre-api.tuishujun.com\",\n\t\t\"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15\",\n\t\t\"Referer\": \"https://www.tuishujun.com/\",\n\t}\n}\nreturn obj;",
+            "title": "title",
+            "actionID": "shudanList",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "最新::most_new\n热门::hot"
+            },
+            "host": "https://pre-api.tuishujun.com",
+            "validConfig": "",
+            "list": "$.data.data",
+            "_sIndex": 0,
+            "cover": "image ||@js:\nreturn result[0];",
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "detail": "@js:\nif(params.filter==\"1\"){\nreturn result.info;\n}else if(params.filter==\"2\"){\n\treturn '评分：'+result.book.score+'\\n用户评分：'+result.score+ '\\n用户评论：'+result.content+'\\n评论时间：'+result.create_time;\n}",
+        "createdTime": "create_time",
+        "fromUserName": "$.user.nickname",
+        "responseFormatType": "json",
+        "url": "@js:\nif(params.filter==\"1\"){\n\treturn '/api/getThreadDetail?thread_id=' + result.thread_id;\n}else if(params.filter==\"2\"){\n\treturn result.score_id;\n}",
+        "httpHeaders": {
+            "Referer": "https://www.tuishujun.com/",
+            "Host": "pre-api.tuishujun.com",
+            "Origin": "https://www.tuishujun.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "requestInfo": "@js:\nlet filter = params.filter;\nlet url = \"\";\nif(filter==\"1\"){\n\turl = \"/api/listThread?\";\n}else if(filter ==\"2\"){\n\turl = \"/api/appHomePage?\";\n}\nurl += \"type=all&page=$page&pageSize=10\";\nurl = url.replace('$page',params.pageIndex);\nreturn {\n\t\"url\":url,\n\t\"cacheTime\":10\n};",
+        "title": "@js:\nif(params.filter==\"1\"){\nreturn result.title;\n}else if(params.filter==\"2\"){\n\treturn '书籍：'+'《'+result.book.title+'》';\n}",
+        "actionID": "shupingHome",
+        "host": "https://pre-api.tuishujun.com",
+        "moreKeys": {
+            "pageSize": 10,
+            "requestFilters": "论坛::1\n推书点评::2"
+        },
+        "validConfig": "",
+        "list": "$.data.data",
+        "parserID": "DOM",
+        "score": "@js:\nif(params.filter==\"1\"){\nreturn \"\";\n}else if(params.filter==\"2\"){\n\treturn result.book.score;\n}",
+        "replyCount": "reply_number",
+        "fromUserCover": "$.user.avatar"
+    },
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"YiJianZhan\"]",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders, cacheTime:3600};",
+        "host": "https://m.po18vip.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//div[@class=\"xq_bookne\"]/div[4] ||@js:\nreturn result.replace(/状态：/, '');",
+        "actionID": "bookDetail",
+        "wordCount": "//div[@class=\"xq_bookne\"]/div[5] ||@js:\nreturn result.replace(/字数：/, '');",
+        "validConfig": "",
+        "host": "https://m.po18vip.com",
+        "cat": "//div[@class=\"xq_bookne\"]/div[3] ||@js:\nreturn result.replace(/类别：/, '');",
+        "cover": "//div/img/src",
+        "responseFormatType": "html",
+        "desc": "//div[@id=\"bookintro\"]",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "author": "//dd[2]/text()",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "requestInfo": "@js:\nlet {_class,_status,_size,_top}=params.filters\nlet url=`https://m.po18vip.com/shuku/0/${_class}/0/${_size}/4/${_status}/${_top}/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.po18vip.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3/a/@href",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_class\n全部::0\n玄幻奇幻::1\n武侠仙侠::2\n都市言情::3\n历史穿越::4\n网游竞技::5\n科幻灵异::6\n恐怖惊悚::7\n其他类型::8\n\n_status\n不限::0\n新书上传::1\n情节展开::2\n精彩纷呈::3\n接近尾声::4\n已经完本::5\n\n_size\n不限::0\n30万以下::1\n30-50万::2\n50-100万::3\n100-200万::4\n200万以上::5\n\n_top\n周点击::weekvisit\n月点击::monthvisit\n总点击::allvisit\n周推荐::weekvote\n月推荐::monthvote\n总推荐::allvote\n周鲜花::weekflower\n月鲜花::monthflower\n总鲜花::allflower\n总月票::allvipvote\n字数::words\n收藏数::goodnum\n更新时间::lastupdate\n入库时间::postdate\n编辑推荐::toptime"
+            },
+            "cover": "//a/img/@src",
+            "list": "//div[@id=\"sitebox\"]/dl",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://m.po18vip.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "888",
+    "sourceName": "po18",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1657961101.358763",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//dd[2]/text()",
+        "responseFormatType": "html",
+        "bookName": "//h3/a",
+        "requestInfo": "https://m.po18vip.com/modules/article/search.php?searchkey=%@keyWord&searchtype=all&page=%@pageIndex",
+        "host": "https://m.po18vip.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//a/img/@src",
+        "validConfig": "",
+        "list": "//div[@id=\"sitebox\"]/dl",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "status": "//dd[2]/span[1]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href",
+        "requestInfo": "@js:\n\nlet id = params.queryInfo.detailUrl.match(/(\\d+)(?!.*\\d)/g)[0];\n\nlet url = config.host+\"/index/\"+id+\"/asc/\"+ params.pageIndex+\".html\";\nreturn url",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 700
+        },
+        "host": "https://m.po18vip.com",
+        "list": "//div[@id=\"readerlist\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

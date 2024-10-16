@@ -1,0 +1,114 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@class=\"chapter_content\"]",
+        "host": "https://www.futaxs.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "wordCount": "//div[@class=\"catalognovel_type\"]/p[3]",
+        "host": "https://www.futaxs.com",
+        "cat": "//div[@class=\"catalognovel_type\"]/p[2]",
+        "cover": "//div[@class=\"catalog_pic\"]/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"catalognovel_intro\"]",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "lastChapterTitle": "//p[2]/a/text()",
+            "author": "//p[3]",
+            "responseFormatType": "html",
+            "bookName": "//p[1]/a/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.futaxs.com/ph/${_type}${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.futaxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n总点击榜::allvisit_\n月点击榜::monthvisit_\n周点击榜::weekvisit_\n总推荐榜::allvote_\n月推荐榜::monthvote_\n周推荐榜::weekvote_\n收藏榜::goodnum_\n字数榜::size_\n最新入库::postdate_\n最近更新::lastupdate_"
+            },
+            "detailUrl": "//p[1]/a/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"list_ul\"]/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "status": "//p[6]"
+        },
+        "分类": {
+            "author": "//div[@class=\"novel_info\"]/p[2]/a/text()",
+            "lastChapterTitle": "//div[@class=\"novel_info\"]/p[3]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"novel_info\"]/p[1]/a/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.futaxs.com${_type}${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.futaxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻奇幻::/xuanhuan/\n武侠修真::/xiuzhen/\n都市言情::/yanqing/\n耽美同人::/danmei/\n高辣小说::/gaola/\n其他类型::/qita/\n完结小说::/wanben/"
+            },
+            "detailUrl": "//div[@class=\"novel_info\"]/p[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"sort_list\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.futaxs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "扶她小说",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1653565532.836872",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//li/p[3]",
+        "lastChapterTitle": "//li/p[2]/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//li/p[1]/a/text()",
+        "requestInfo": "@js:\nlet url =config.host+\"/modules/article/search.php\";\n\nlet hh={\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36 Edg/101.0.1210.53\"};\n\nlet hp={\"searchkey\":params.keyWord,\"an\":\"\",}\n\nreturn{'url':url,'POST':true,'httpParams':hp,\"httpHeaders\":config.httpHeaders};",
+        "host": "https://www.futaxs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//li/p[1]/a/@href",
+        "validConfig": "",
+        "list": "//ul[@class=\"list_ul\"]/li",
+        "parserID": "DOM",
+        "status": "//li/p[6]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//li/a/text()",
+        "host": "https://www.futaxs.com",
+        "list": "//div[@class=\"index_listbox\"][2]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href||@js:\nreturn params.queryInfo.detailUrl +result;"
+    },
+    "sourceType": "text"
+}

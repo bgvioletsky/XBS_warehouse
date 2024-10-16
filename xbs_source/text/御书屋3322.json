@@ -1,0 +1,127 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"novelcontent\"]/p",
+        "actionID": "chapterContent",
+        "host": "https://m.3322t.com",
+        "httpHeaders": {
+            "Referer": "https://m.3322t.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//div[@class=\"infotype\"]/p[3] ||@js:\nreturn result.replace(/更新时间：/, '');",
+        "desc": "//div[@class=\"intro\"]/p",
+        "lastChapterTitle": "//div[@class=\"infotype\"]/p[4]/a",
+        "host": "https://m.3322t.com",
+        "httpHeaders": {
+            "Referer": "https://m.3322t.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+        },
+        "cat": "//div[@class=\"infotype\"]/p[2] ||@js:\nreturn result.replace(/类型：/, '');",
+        "cover": "//div[@class=\"pic\"]//@src",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "搜索用": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        },
+        "分类": {
+            "author": "//p[@class=\"author\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//h6/a",
+            "httpHeaders": {
+                "Referer": "https://m.3322t.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.3322t.com/sort/${_type}_${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.3322t.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h6/a/@href",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n玄幻奇幻::1\n武侠仙侠::2\n都市言情::3\n科幻网游::4\n惊悚悬疑::5\n耽美同人::6\n穿越架空::7\n高辣浓情::8\n禁忌百合::9\n精品文学::10"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@class=\"article\"]"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://m.3322t.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "899",
+    "sourceName": "御书屋3322",
+    "httpHeaders": {
+        "Referer": "https://m.3322t.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐮",
+    "lastModifyTime": "1658388829.421214",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//span/a",
+        "responseFormatType": "html",
+        "bookName": "//p/a",
+        "httpHeaders": {
+            "Referer": "https://m.3322t.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+        },
+        "requestInfo": "@js:\nlet url = 'https://m.3322t.com/s.php';\nreturn {'url':url, 'POST':true, cacheTime:3600, 'httpParams':{'s':params.keyWord,'type':'articlename'}};",
+        "host": "https://m.3322t.com",
+        "actionID": "searchBook",
+        "detailUrl": "//p/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"searchresult\"]/p",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "Referer": "https://m.3322t.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+        },
+        "requestInfo": "@js:\n\nlet id = params.queryInfo.detailUrl.match(/(\\d+)(?!.*\\d)/g)[0];\n\nlet preId = parseInt(id/1000); \n\nlet page= params.pageIndex; \r\n\nlet url = config.host+\"/\"+preId+\"/\"+id+\"_\"+page+\"/\"\nreturn{'url':url, cacheTime:3600}",
+        "title": "//a",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 70
+        },
+        "host": "https://m.3322t.com",
+        "validConfig": "",
+        "list": "//ul[@class=\"chapters\"]/li",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

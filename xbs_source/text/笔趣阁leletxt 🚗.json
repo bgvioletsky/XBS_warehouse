@@ -1,0 +1,81 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//article [@class=\"content\"] ||@js:\nreturn result.replace(/「/g,\"\\\"\").replace(/」/g,\"\\\"\");",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "http://leletxt.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(), '下一页')]/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://leletxt.com",
+        "cover": "//img/@src",
+        "actionID": "bookDetail"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceType": "text",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "笔趣阁leletxt 🚗",
+    "sourceUrl": "http://leletxt.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665972656.269824",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "author": "//div [@class=\"flex flex-between commend-title\"]//span",
+        "requestInfo": "@js:\nlet url= \"http://leletxt.com/search/\";\nlet hp= {'searchkey':params.keyWord,'Submit':''};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600\n};",
+        "bookName": "//h3",
+        "detailUrl": "//div [@class=\"flex flex-between commend-title\"]/a/@href",
+        "host": "http://leletxt.com",
+        "list": "//div [@class=\"category-div\"]/div",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div [@class=\"intro indent\"]"
+    },
+    "chapterList": {
+        "nextPageUrl": "//a[contains(text(), '下一页')]/@href",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "requestInfo": "@js:\nreturn result.replace(\"book\",\"info\")",
+        "title": "//a",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 50
+        },
+        "host": "http://leletxt.com",
+        "validConfig": "",
+        "list": "//div [@class=\"info-chapters flex flex-wrap\"]/a",
+        "parserID": "DOM",
+        "updateTime": "//meta [@property=\"og:novel:update_time\" ]/@content"
+    }
+}

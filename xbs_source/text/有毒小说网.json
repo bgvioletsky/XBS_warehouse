@@ -1,0 +1,243 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "data/content",
+        "requestInfo": "@js:\nlet url = 'https://pre-api.youdubook.com/api/readNew';\nlet hp = JSON.parse(result);\nreturn {'url':url, 'httpParams':hp};",
+        "host": "https://pre-api.youdubook.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "月票榜": {
+            "cat": "second_type_name",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_info",
+            "requestInfo": "@js:\nlet url = config.host+\"/api/monthTicketListNew?page=\"+params.pageIndex+\"&pageSize=20&novel_sex=1&year=\"+ params.filters.year+\"&month=\"+ params.filters.month+\"&second_types=\"+params.filters.filter;\n\nreturn{'url':url,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://pre-api.youdubook.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover|https://alioss.youdubook.com%@result",
+            "validConfig": "",
+            "list": "data/data",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "2022年",
+                                "value": "2022"
+                            },
+                            {
+                                "title": "2021年",
+                                "value": "2021"
+                            },
+                            {
+                                "title": "2020年",
+                                "value": "2020"
+                            }
+                        ],
+                        "key": "year"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "01月",
+                                "value": "01"
+                            },
+                            {
+                                "title": "02月",
+                                "value": "02"
+                            },
+                            {
+                                "title": "03月",
+                                "value": "03"
+                            },
+                            {
+                                "title": "04月",
+                                "value": "04"
+                            },
+                            {
+                                "title": "05月",
+                                "value": "05"
+                            },
+                            {
+                                "title": "06月",
+                                "value": "06"
+                            },
+                            {
+                                "title": "07月",
+                                "value": "07"
+                            },
+                            {
+                                "title": "08月",
+                                "value": "08"
+                            },
+                            {
+                                "title": "09月",
+                                "value": "09"
+                            },
+                            {
+                                "title": "10月",
+                                "value": "10"
+                            },
+                            {
+                                "title": "11月",
+                                "value": "11"
+                            },
+                            {
+                                "title": "12月",
+                                "value": "12"
+                            }
+                        ],
+                        "key": "month"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "军史",
+                                "value": "4,7"
+                            },
+                            {
+                                "title": "幻想",
+                                "value": "1,5,6"
+                            },
+                            {
+                                "title": "古典",
+                                "value": "2,14"
+                            },
+                            {
+                                "title": "现代",
+                                "value": "3,11"
+                            },
+                            {
+                                "title": "娱乐",
+                                "value": "9,12,13"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "status": "novel_process_name"
+        },
+        "女频": {
+            "cat": "second_type_name",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_info",
+            "requestInfo": "@js:\nlet {_class,_cat}=params.filters\nlet url=`https://pre-api.youdubook.com/api/getTypeNovel?novel_process=&novel_sell=&novel_sign_id=&time_type=&word_type=&second_type=${_class}&page=${params.pageIndex}&novel_sex=2&type_id=&pageSize=20&order=${_cat}&tag=`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://pre-api.youdubook.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover|https://alioss.youdubook.com%@result",
+            "validConfig": "",
+            "list": "data/data",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_class\n全部::\n衍生::135\n魔幻::134\n现言::77\n古言::80\n幻言::81\n纯爱::82\n\n_cat\n热度::novel_hotvalue\n收藏::novel_allcoll\n字数::novel_wordnumber\n评论::novel_replay"
+            },
+            "status": "novel_process_name"
+        },
+        "男频": {
+            "cat": "second_type_name",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_info",
+            "requestInfo": "@js:\nlet {_class,_cat}=params.filters\nlet url=`https://pre-api.youdubook.com/api/getTypeNovel?novel_process=&novel_sell=&novel_sign_id=&time_type=&word_type=&second_type=${_class}&page=${params.pageIndex}&novel_sex=1&type_id=&pageSize=20&order=${_cat}&tag=`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://pre-api.youdubook.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover|https://alioss.youdubook.com%@result",
+            "validConfig": "",
+            "list": "data/data",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_class\n全部::\n玄幻::1\n仙侠::2\n都市::3\n历史::4\n科幻::5\n奇幻::6\n军史::7\n轻小说::9\n悬疑::11\n体育::12\n游戏::13\n武侠::14\n\n_cat\n热度::novel_hotvalue\n收藏::novel_allcoll\n字数::novel_wordnumber\n评论::novel_replay"
+            },
+            "status": "novel_process_name"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://pre-api.youdubook.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "有毒小说网",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1657353758.836956",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "second_type_name",
+        "author": "novel_author",
+        "lastChapterTitle": "novel_newcname",
+        "responseFormatType": "json",
+        "bookName": "novel_name",
+        "desc": "novel_info",
+        "requestInfo": "@js:\nlet url = 'https://pre-api.youdubook.com/api/searchAll';\nlet hp = {'page':params.pageIndex, 'pageSize':10, 'search_value':params.keyWord, 'search_type':'novel'};\nreturn {'url':url, 'httpParams':hp};",
+        "host": "https://pre-api.youdubook.com",
+        "actionID": "searchBook",
+        "detailUrl": "novel_id",
+        "cover": "novel_cover|https://alioss.youdubook.com%@result",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "parserID": "DOM",
+        "validConfig": "",
+        "wordCount": "novel_wordnumber",
+        "list": "data/data",
+        "status": "novel_process_name"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "data/data[-1]/chapter_time",
+        "requestInfo": "https://pre-api.youdubook.com/api/directoryList?nid=%@result&orderBy=0",
+        "title": "chapter_name",
+        "host": "https://pre-api.youdubook.com",
+        "list": "data/data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "|@js:\nlet ret = {};\nret.nid = result.chapter_nid;\nret.vid = result.chapter_vid;\nret.chapter_id = result.chapter_id;\nret.chapter_order = result.chapter_order;\nret.showpic = false;\nreturn JSON.stringify(ret);"
+    },
+    "sourceType": "text"
+}

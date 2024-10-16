@@ -1,0 +1,673 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div/p",
+        "requestInfo": "https:%@result",
+        "host": "https://www.qidian.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "wordCount": "//div[@class='book-detail-info']//p[@class='book-meta'][2]/text()[1]",
+        "requestInfo": "https://m.qidian.com/book/%@result",
+        "host": "https://www.qidian.com",
+        "cover": "//img[@class='book-cover']/@src",
+        "responseFormatType": "html",
+        "desc": "//*[@id='bookSummary']/content",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "排行": {
+            "cat": "//div[2]/p[1]/a[2]",
+            "author": "//div[2]/p[1]/a[1]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[2]/p[3]/a",
+            "bookName": "//div[2]/h2/a",
+            "desc": "//div[2]/p[2]",
+            "requestInfo": "@js:\nlet url = 'https://www.qidian.com/rank/' + params.filters.filter + '/' + params.filters.type;\nif(params.pageIndex>1)\n\turl = url + '/page' + params.pageIndex;\nreturn {'url':url, 'forbidCookie':true};",
+            "host": "https://www.qidian.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[2]/h2/a/@data-bid",
+            "cover": "//div[1]/a[1]/img/@src",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "月票榜",
+                                "value": "yuepiao"
+                            },
+                            {
+                                "title": "推荐榜",
+                                "value": "recom"
+                            },
+                            {
+                                "title": "畅销榜",
+                                "value": "hotsales"
+                            },
+                            {
+                                "title": "收藏榜",
+                                "value": "collect"
+                            },
+                            {
+                                "title": "vip收藏榜",
+                                "value": "vipcollect"
+                            },
+                            {
+                                "title": "打赏榜",
+                                "value": "vipreward"
+                            },
+                            {
+                                "title": "更新榜",
+                                "value": "vipup"
+                            },
+                            {
+                                "title": "粉丝榜",
+                                "value": "newfans"
+                            },
+                            {
+                                "title": "签约作者新书榜",
+                                "value": "signnewbook"
+                            },
+                            {
+                                "title": "公众作者新书榜",
+                                "value": "pubnewbook"
+                            },
+                            {
+                                "title": "新人签约新书榜",
+                                "value": "newsign"
+                            },
+                            {
+                                "title": "新人作者新书榜",
+                                "value": "newauthor"
+                            }
+                        ],
+                        "key": "filter"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "chn21"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "chn1"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "chn2"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "chn22"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "chn4"
+                            },
+                            {
+                                "title": "现实",
+                                "value": "chn15"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "chn6"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "chn5"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "chn7"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "chn8"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "chn9"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "chn10"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "chn12"
+                            }
+                        ],
+                        "key": "type"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@id='rank-view-list']//li",
+            "status": "//div[2]/p[1]/span[1]"
+        },
+        "男频": {
+            "cat": "cat",
+            "author": "bAuth",
+            "responseFormatType": "json",
+            "bookName": "bName",
+            "desc": "desc",
+            "requestInfo": "@js:\n\nvar url = 'https://m.qidian.com/majax/category/list';\nvar hp = params.filters;\nhp.gender = 'male';\nhp.subCatId = '';\nhp.pageNum = params.pageIndex;\n\nreturn {'url':url, 'httpParams':hp, 'forbidCookie':true};",
+            "host": "https://www.qidian.com",
+            "actionID": "bookWorld",
+            "detailUrl": "bid",
+            "cover": "bid || https://bookcover.yuewen.com/qdbimg/349573/%@result/150",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "21"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "22"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "4"
+                            },
+                            {
+                                "title": "现实",
+                                "value": "15"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "6"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "5"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "7"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "8"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "9"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "10"
+                            },
+                            {
+                                "title": "短篇",
+                                "value": "20076"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "12"
+                            }
+                        ],
+                        "key": "catId"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "30万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30-50万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "50-100万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100-200万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "200万以上",
+                                "value": "5"
+                            }
+                        ],
+                        "key": "size"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": ""
+                            },
+                            {
+                                "title": "收藏",
+                                "value": "11"
+                            },
+                            {
+                                "title": "推荐",
+                                "value": "9"
+                            },
+                            {
+                                "title": "数字",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "orderBy"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "0"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "isfinish"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "wordCount": "cnt",
+            "list": "data/records",
+            "status": "state"
+        },
+        "女频": {
+            "cat": "cat",
+            "author": "bAuth",
+            "responseFormatType": "json",
+            "bookName": "bName",
+            "desc": "desc",
+            "requestInfo": "@js:\n\nvar url = 'https://m.qidian.com/majax/category/list';\n\nvar hp = params.filters;\nhp.gender = 'female';\nhp.pageNum = params.pageIndex;\n\nreturn {'url':url, 'httpParams':hp, 'forbidCookie':true};",
+            "host": "https://www.qidian.com",
+            "actionID": "bookWorld",
+            "detailUrl": "bid",
+            "cover": "bid || https://bookcover.yuewen.com/qdbimg/349573/%@result/150",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "-1"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "80"
+                            },
+                            {
+                                "title": "仙侠奇缘",
+                                "value": "81"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "82"
+                            },
+                            {
+                                "title": "浪漫青春",
+                                "value": "83"
+                            },
+                            {
+                                "title": "玄幻言情",
+                                "value": "84"
+                            },
+                            {
+                                "title": "悬疑推理",
+                                "value": "85"
+                            },
+                            {
+                                "title": "科幻空间",
+                                "value": "86"
+                            },
+                            {
+                                "title": "游戏竞技",
+                                "value": "88"
+                            },
+                            {
+                                "title": "现实生活",
+                                "value": "30120"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "87"
+                            },
+                            {
+                                "title": "短篇",
+                                "value": "30083"
+                            }
+                        ],
+                        "key": "catId"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "30万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "30-50万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "50-100万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "100-200万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "200万以上",
+                                "value": "5"
+                            }
+                        ],
+                        "key": "size"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": ""
+                            },
+                            {
+                                "title": "收藏",
+                                "value": "11"
+                            },
+                            {
+                                "title": "推荐",
+                                "value": "9"
+                            },
+                            {
+                                "title": "数字",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "orderBy"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "0"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "isfinish"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "wordCount": "cnt",
+            "list": "data/records",
+            "status": "state"
+        },
+        "月票": {
+            "cat": "//div[2]/p[1]/a[2]",
+            "author": "//div[2]/p[1]/a[1]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[2]/p[3]/a",
+            "bookName": "//div[2]/h2/a",
+            "desc": "//div[2]/p[2]",
+            "requestInfo": "@js:\nlet url = 'https://www.qidian.com/rank/yuepiao/' + params.filters.filter;\nif(params.pageIndex>0)\n\turl = url + '/year'+params.filters.year+'-month'+ params.filters.month+'-page' + params.pageIndex;\nreturn {'url':url, 'forbidCookie':true};",
+            "host": "https://www.qidian.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[2]/h2/a/@data-bid",
+            "cover": "//div[1]/a[1]/img/@src",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "2022年",
+                                "value": "2022"
+                            },
+                            {
+                                "title": "2021年",
+                                "value": "2021"
+                            },
+                            {
+                                "title": "2020年",
+                                "value": "2020"
+                            }
+                        ],
+                        "key": "year"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "01月",
+                                "value": "01"
+                            },
+                            {
+                                "title": "02月",
+                                "value": "02"
+                            },
+                            {
+                                "title": "03月",
+                                "value": "03"
+                            },
+                            {
+                                "title": "04月",
+                                "value": "04"
+                            },
+                            {
+                                "title": "05月",
+                                "value": "05"
+                            },
+                            {
+                                "title": "06月",
+                                "value": "06"
+                            },
+                            {
+                                "title": "07月",
+                                "value": "07"
+                            },
+                            {
+                                "title": "08月",
+                                "value": "08"
+                            },
+                            {
+                                "title": "09月",
+                                "value": "09"
+                            },
+                            {
+                                "title": "10月",
+                                "value": "10"
+                            },
+                            {
+                                "title": "11月",
+                                "value": "11"
+                            },
+                            {
+                                "title": "12月",
+                                "value": "12"
+                            }
+                        ],
+                        "key": "month"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "chn21"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "chn1"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "chn2"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "chn22"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "chn4"
+                            },
+                            {
+                                "title": "现实",
+                                "value": "chn15"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "chn6"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "chn5"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "chn7"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "chn8"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "chn9"
+                            },
+                            {
+                                "title": "诸天",
+                                "value": "chn20109"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "chn10"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "chn12"
+                            },
+                            {
+                                "title": "vip新作",
+                                "value": "chn0"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ],
+                "maxPage": 10
+            },
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@id='rank-view-list']//li",
+            "status": "//div[2]/p[1]/span[1]"
+        }
+    },
+    "sourceUrl": "https://www.qidian.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9998",
+    "sourceName": "起点中文(修改自用版)",
+    "desc": "©添加月票发现，修复章节目录",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1656923874.339488",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[2]/p[1]/a[1]",
+        "lastChapterTitle": "//div[2]/p[3]/a",
+        "responseFormatType": "html",
+        "bookName": "//div[2]/h2/a",
+        "desc": "//div[2]/p[2]",
+        "requestInfo": "@js:\nlet url = 'https://www.qidian.com/search?kw=' + encodeURI(params.keyWord);\nif(params.pageIndex>1)\n\turl = url + '&page=' + params.pageIndex;\nreturn {'url':url, 'forbidCookie':true};",
+        "host": "https://www.qidian.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[2]/h2/a/@data-bid",
+        "cover": "//div[1]/a/img/@src || https:%@result",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//div[3]/div[1]/p[1]/span",
+        "list": "//li[@class='res-book-item']",
+        "status": "//div[2]/p[1]/span[1]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//a/p/time",
+        "requestInfo": "@js:\nlet url = 'https://m.qidian.com/book/' + result + '/catalog/';\nreturn {'url':url, 'forbidCookie':true};",
+        "title": "//a/span[1]",
+        "host": "https://www.qidian.com",
+        "list": "//ol/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

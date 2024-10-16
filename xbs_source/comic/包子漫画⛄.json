@@ -1,0 +1,117 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.baozimh.com",
+        "desc": "//p[contains(@class,'comics-detail__desc')]",
+        "actionID": "bookDetail"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.baozimh.com",
+        "list": "//div[@id=\"chapter-items\"]/div | //div[@id=\"chapters_other_list\"]/div || //div[contains(@class,\"comics-chapters\")]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "包子漫画⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.baozimh.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665768533.645349",
+    "searchBook": {
+        "cat": "//div[contains(@class,'cls')]//span ||@js:\nlet res = result.trim();\nreturn res.replace(/\\s+/gi,' / ');",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//span[@class=\"tt\"]",
+        "author": "//a[@class=\"comics-card__info\"]//small ||@js:\nreturn result.trim();",
+        "bookName": "//a[@class=\"comics-card__info\"]//div[1]",
+        "requestInfo": "/search?q=%@keyWord",
+        "host": "https://www.baozimh.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class=\"comics-card__info\"]/@href",
+        "moreKeys": {
+            "pageSize": 100
+        },
+        "validConfig": "",
+        "cover": "//amp-img/@src ||@js:\nreturn result.split('\\n')[0];",
+        "list": "//div[contains(@class,'comics-card')]",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//ul[@class=\"comic-contain\"]/div[2]//amp-img/@src | //ul[@class=\"comic-contain\"]/div[2]//div ||@js:\nlet res = result.trim().split(/\\s+/);\nlet img = res[0].match(/src=[\\'\\\"]?([^\\'\\\"]*)[\\'\\\"]?/)[1];\nlet len = res[1].split('/')[1].trim();\nlet list = [];\nfor(let i=0;i<len;i++){\n\tlet item = img.replace(/(.*)\\d+/,'$1'+(i+1));\n\tlist.push(item);\n}\nlet h = img.split('\\n')[0].match(/\\/\\/(.*?)\\//)[1];\nlet hh ={\n\t'Host':h,\n\t'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15'\n}\nlet obj = {\n\t'urls':list.join('\\n'),\n\t'httpHeaders':hh\n}\nreturn JSON.stringify(obj);",
+        "host": "https://www.baozimh.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "stacksensei",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "最新上架": {
+            "cat": "//div[contains(@class,'cls')]//span ||@js:\nlet res = result.trim();\nreturn res.replace(/\\s+/gi,' / ');",
+            "lastChapterTitle": "//span[@class=\"tt\"]",
+            "author": "//a[@class=\"comics-card__info\"]//small ||@js:\nreturn result.trim();",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"comics-card__info\"]//div[1]",
+            "requestInfo": "/list/new",
+            "host": "https://www.baozimh.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50
+            },
+            "cover": "//amp-img/@src ||@js:\nreturn result.split('\\n')[0];",
+            "detailUrl": "//a[@class=\"comics-card__info\"]/@href",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[contains(@class,'comics-card')]",
+            "validConfig": ""
+        },
+        "分类": {
+            "cat": "//div[contains(@class,'cls')]//span ||@js:\nlet res = result.trim();\nreturn res.replace(/\\s+/gi,' / ');",
+            "lastChapterTitle": "//span[@class=\"tt\"]",
+            "author": "//a[@class=\"comics-card__info\"]//small ||@js:\nreturn result.trim();",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"comics-card__info\"]//div[1]",
+            "requestInfo": "@js:\nlet url = '/classify?type=' + params.filters.type + '&region=' + params.filters.region + '&state=' + params.filters.state + '&filter=' + params.filters.filter + '&page=' + params.pageIndex;\nreturn url;",
+            "host": "https://www.baozimh.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 36,
+                "requestFilters": "region\n地区::all\n国漫::cn\n日本::jp\n韩国::kr\n欧美::en\nstate\n状态::all\n连载中::serial\n已完结::pub\ntype\n类别::all\n恋爱::lianai\n纯爱::chunai\n古风::gufeng\n异能::yineng\n悬疑::xuanyi\n剧情::juqing\n科幻::kehuan\n奇幻::qihuan\n玄幻::xuanhuan\n穿越::chuanyue\n冒险::mouxian\n推理::tuili\n武侠::wuxia\n格斗::gedou\n战争::zhanzheng\n热血::rexie\n搞笑::gaoxiao\n大女主::danuzhu\n都市::dushi\n总裁::zongcai\n后宫::hougong\n日常::richang\n韩漫::hanman\n少年::shaonian\n其他::qita\nfilter\n首字母::%2a\nABCD::ABCD\nEFGH::EFGH\nIJKL::IJKL\nMNOP::MNOP\nQRST::QRST\nUVW::UVW\nXYZ::XYZ\n0-9::0-9"
+            },
+            "cover": "//amp-img/@src ||@js:\nreturn result.split('\\n')[0];",
+            "detailUrl": "//a[@class=\"comics-card__info\"]/@href",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[contains(@class,'comics-card')]",
+            "validConfig": ""
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

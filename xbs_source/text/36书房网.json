@@ -1,0 +1,119 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "content": "//div[@id=\"content\"] ||@js:\nreturn result.replace(/有的人死了[\\s\\S]*御兽师？/,\"\").replace(/章节错误[\\s\\S]*耐心等待/,\"\");",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'cacheTime':3600};",
+        "host": "https://www.x36sfw.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "responseFormatType": "html",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "host": "https://www.x36sfw.com",
+        "desc": "//meta[@property=\"og:description\"]/@content",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'cacheTime':3600};",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "validConfig": "",
+        "parserID": "DOM",
+        "status": "//meta[@property=\"og:novel:status\"]/@content"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "author": "//span[4]/a",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[3]/a",
+            "bookName": "//span[2]/a",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.x36sfw.com/${_type}/${params.pageIndex}.html`;\n\nreturn{'url':url,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://www.x36sfw.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[2]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻奇幻::xuanhuan\n武侠仙侠::wuxia\n都市言情::dushi\n历史军事::lishi\n游戏竞技::youxi\n科幻灵异::kehuan\n其它类型::qita"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"l\"]//li"
+        }
+    },
+    "sourceUrl": "https://www.x36sfw.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "899",
+    "sourceName": "36书房网",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐮",
+    "lastModifyTime": "1666004110.127026",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "html",
+        "author": "//span[3]/a",
+        "lastChapterTitle": "//span[4]/a",
+        "bookName": "//span[2]/a",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "requestInfo": "@js:\nlet url =config.host+\"/search.php\";\n\nlet hh={\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.42\"};\n\nlet hp={\"keyword\":params.keyWord};\n\nreturn{'url':url,'POST':false,'httpParams':hp,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "host": "https://www.x36sfw.com",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]/a/@href",
+        "cover": "//span[2]/a/@href||@js:\nvar id = result.match(/(\\d+)/)[1];\nvar iid = parseInt(id/1000);\n\n\n\nreturn 'https://www.x36sfw.com/img/'+iid+'/'+id+'.jpg';",
+        "validConfig": "",
+        "list": "//div[@class=\"novelslist2\"]//li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn{'url':result,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 15
+        },
+        "host": "https://www.x36sfw.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "list": "//div[@id=\"list\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,326 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$..image||@js:\nreturn JSON.stringify({'urls':result});",
+        "actionID": "chapterContent",
+        "requestInfo": "https://api.mangaowl.to/v1/chapters/%@result/images?page_size=1000",
+        "host": "https://mangaowl.to/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "status",
+        "lastChapterTitle": "latest_chapter/name",
+        "host": "https://mangaowl.to/",
+        "cat": "$.genres..name",
+        "cover": "thumbnail",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "description"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "ranking": {
+            "responseFormatType": "json",
+            "lastChapterTitle": "latest_chapter/name",
+            "bookName": "name",
+            "requestInfo": "https://api.mangaowl.to/v1/ranking?rank_type=%@filter",
+            "host": "https://mangaowl.to/",
+            "actionID": "bookWorld",
+            "detailUrl": "slug||@js:\nreturn 'https://api.mangaowl.to/v1/stories/'+result;",
+            "moreKeys": {
+                "requestFilters": "all::all\ndaily::daily\nweekly::weekly\nmonthly::monthly\n"
+            },
+            "validConfig": "",
+            "cover": "thumbnail",
+            "list": "l",
+            "parserID": "DOM"
+        },
+        "search": {
+            "lastChapterTitle": "latest_chapter/name",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "requestInfo": "@js:\nreturn 'https://api.mangaowl.to/v1/stories?page=' + params.pageIndex + params.filters.genre + params.filters.status + params.filters.sort",
+            "host": "https://mangaowl.to/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "default",
+                                "value": ""
+                            },
+                            {
+                                "title": "most view",
+                                "value": "&ordering=view_count"
+                            },
+                            {
+                                "title": "added",
+                                "value": "&ordering=created_at"
+                            },
+                            {
+                                "title": "last update",
+                                "value": "&ordering=modified_at"
+                            },
+                            {
+                                "title": "high rating",
+                                "value": "&ordering=rating"
+                            }
+                        ],
+                        "key": "sort"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "all",
+                                "value": ""
+                            },
+                            {
+                                "title": "ongoing",
+                                "value": "&status=ongoing"
+                            },
+                            {
+                                "title": "completed",
+                                "value": "&status=completed"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "All"
+                            },
+                            {
+                                "value": "&genres=1",
+                                "title": "One shot"
+                            },
+                            {
+                                "value": "&genres=2",
+                                "title": "Yaoi"
+                            },
+                            {
+                                "value": "&genres=3",
+                                "title": "School life"
+                            },
+                            {
+                                "value": "&genres=4",
+                                "title": "Shounen ai"
+                            },
+                            {
+                                "value": "&genres=5",
+                                "title": "Shoujo ai"
+                            },
+                            {
+                                "value": "&genres=6",
+                                "title": "Yuri"
+                            },
+                            {
+                                "value": "&genres=7",
+                                "title": "Mystery"
+                            },
+                            {
+                                "value": "&genres=8",
+                                "title": "Psychological"
+                            },
+                            {
+                                "value": "&genres=9",
+                                "title": "Shounen"
+                            },
+                            {
+                                "value": "&genres=10",
+                                "title": "Romance"
+                            },
+                            {
+                                "value": "&genres=12",
+                                "title": "Shoujo"
+                            },
+                            {
+                                "value": "&genres=13",
+                                "title": "Action"
+                            },
+                            {
+                                "value": "&genres=14",
+                                "title": "Comedy"
+                            },
+                            {
+                                "value": "&genres=15",
+                                "title": "Ecchi"
+                            },
+                            {
+                                "value": "&genres=16",
+                                "title": "Fantasy"
+                            },
+                            {
+                                "value": "&genres=17",
+                                "title": "Drama"
+                            },
+                            {
+                                "value": "&genres=18",
+                                "title": "Historical"
+                            },
+                            {
+                                "value": "&genres=19",
+                                "title": "Sci fi"
+                            },
+                            {
+                                "value": "&genres=20",
+                                "title": "Mature"
+                            },
+                            {
+                                "value": "&genres=21",
+                                "title": "Sports"
+                            },
+                            {
+                                "value": "&genres=22",
+                                "title": "Tragedy"
+                            },
+                            {
+                                "value": "&genres=23",
+                                "title": "Josei"
+                            },
+                            {
+                                "value": "&genres=24",
+                                "title": "Supernatural"
+                            },
+                            {
+                                "value": "&genres=25",
+                                "title": "Seinen"
+                            },
+                            {
+                                "value": "&genres=26",
+                                "title": "Slice of life"
+                            },
+                            {
+                                "value": "&genres=27",
+                                "title": "Harem"
+                            },
+                            {
+                                "value": "&genres=28",
+                                "title": "Horror"
+                            },
+                            {
+                                "value": "&genres=29",
+                                "title": "Adult"
+                            },
+                            {
+                                "value": "&genres=30",
+                                "title": "Martial arts"
+                            },
+                            {
+                                "value": "&genres=31",
+                                "title": "Adventure"
+                            },
+                            {
+                                "value": "&genres=32",
+                                "title": "Smut"
+                            },
+                            {
+                                "value": "&genres=33",
+                                "title": "Mecha"
+                            },
+                            {
+                                "value": "&genres=34",
+                                "title": "Webtoons"
+                            },
+                            {
+                                "value": "&genres=35",
+                                "title": "Gender bender"
+                            },
+                            {
+                                "value": "&genres=36",
+                                "title": "Manhwa"
+                            },
+                            {
+                                "value": "&genres=37",
+                                "title": "Cooking"
+                            },
+                            {
+                                "value": "&genres=38",
+                                "title": "Manhua"
+                            },
+                            {
+                                "value": "&genres=39",
+                                "title": "Doujinshi"
+                            },
+                            {
+                                "value": "&genres=40",
+                                "title": "Isekai"
+                            },
+                            {
+                                "value": "&genres=41",
+                                "title": "Medical"
+                            }
+                        ],
+                        "key": "genre"
+                    }
+                ]
+            },
+            "detailUrl": "slug||@js:\nreturn 'https://api.mangaowl.to/v1/stories/'+result;",
+            "validConfig": "",
+            "cover": "thumbnail",
+            "parserID": "DOM",
+            "list": "results"
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "responseFormatType": "json",
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "mangaowl",
+    "sourceUrl": "https://mangaowl.to/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1656285661.656481",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "lastChapterTitle": "latest_chapter/name",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "requestInfo": "https://api.mangaowl.to/v1/search?q=%@keyWord&page=%@pageIndex",
+        "host": "https://mangaowl.to/",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 24
+        },
+        "detailUrl": "slug||@js:\nreturn 'https://api.mangaowl.to/v1/stories/'+result;",
+        "validConfig": "",
+        "cover": "thumbnail",
+        "parserID": "DOM",
+        "list": "results"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "name",
+        "host": "https://mangaowl.to/",
+        "list": "chapters",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id"
+    }
+}

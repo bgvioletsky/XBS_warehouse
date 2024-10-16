@@ -1,0 +1,141 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div/img/@data-src",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n    return {\"url\":result, \"webView\":\"\"}",
+        "host": "http://www.kumw5.com",
+        "httpHeaders": {
+            "Referer": "https: //www.kumw5.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//span/span",
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "host": "http://www.kumw5.com",
+        "cat": "//p[2]/span[2] || \n@js:\r\nreturn result.match(/：(\\S*)/)[1]",
+        "httpHeaders": {
+            "Referer": "https: //www.kumw5.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div/p[4]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行": {
+            "lastChapterTitle": "//span",
+            "responseFormatType": "html",
+            "bookName": "//a[1]/p",
+            "httpHeaders": {
+                "Referer": "https: //www.kumw5.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+            },
+            "requestInfo": "@js:\nlet { _type } = params.filters\nlet url = `${config.host}/rank/${_type}-${params.pageIndex}.html`;\nreturn { url: url, \"httpHeaders\": config.httpHeaders, \"cacheTime\": 600 }",
+            "host": "http://www.kumw5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 35,
+                "requestFilters": "_type\n日阅读榜::1\n周阅读榜::2\n月阅读榜::3\n总阅读榜::4\n最近更新::5\n新漫上架::6"
+            },
+            "detailUrl": "//a[1]/@href",
+            "cover": "//img/@data-src",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//section[2]//li",
+            "validConfig": ""
+        },
+        "分类": {
+            "lastChapterTitle": "//span",
+            "responseFormatType": "html",
+            "bookName": "//a[1]/p",
+            "httpHeaders": {
+                "Referer": "https: //www.kumw5.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+            },
+            "requestInfo": "@js:\nlet { _type } = params.filters\nlet url = `${config.host}/sort/${_type}-${params.pageIndex}.html`;\nreturn { url: url, \"httpHeaders\": config.httpHeaders, \"cacheTime\": 600 }",
+            "host": "http://www.kumw5.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 35,
+                "requestFilters": "_type\n冒险热血::1\n武侠格斗::2\n科幻魔幻::3\n侦探推理::4\n耽美爱情::5\n生活漫画::6\n推荐漫画::11\n完结::12\n连载::13"
+            },
+            "detailUrl": "//a[1]/@href",
+            "cover": "//img/@data-src",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//section[2]//li",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "http://www.kumw5.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "x-酷漫屋",
+    "httpHeaders": {
+        "Referer": "https: //www.kumw5.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "sourceType": "comic",
+    "lastModifyTime": "1663324760.979588",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "html",
+        "lastChapterTitle": "//span",
+        "bookName": "//a[1]/p",
+        "httpHeaders": {
+            "Referer": "https: //www.kumw5.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+        },
+        "requestInfo": "@js:\r\n    let url = \"/search\";\r\n    let hp = {\r\n      \"keyword\": params.keyWord\r\n    };\r\n    return {\r\n      \"url\": url,\r\n      \"httpParams\": hp,\r\n      \"httpHeaders\": config.httpHeaders,\r\n      \"forbidCookie\": true,\r\n      \"cacheTime\": 600\r\n    };",
+        "host": "http://www.kumw5.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[1]/@href",
+        "cover": "//img/@data-src",
+        "validConfig": "",
+        "list": "//section[2]//li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "JSParser": "function functionName(config, params, result) {\n\n    if (!params.lastResponse) {\n        let list = [];\n        //params.nativeTool.log(1); \n        let res = result.data.list\n        for (var i = 0; i < res.length; i++) {\n            let chapterInfo = {};\n            chapterInfo.title = res[i].name;\n            chapterInfo.url = params.queryInfo.detailUrl + res[i].id + \".html\";\n            list.push(chapterInfo);\n        }\n        return { 'list': list.reverse(), \"more\": true, \"success\": true, \"autoRequestMore\": true }\n    }\n    else {\n        //params.nativeTool.log(2)\n        return { \"list\": result.list.reverse(), \"more\": false }\n    }\n}",
+        "responseFormatType": "json",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "Referer": "https: //www.kumw5.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+        },
+        "requestInfo": "@js:\nif (!params.lastResponse) {\n    url = \"/chapterlist\" + params.queryInfo.detailUrl\n    return { \"url\": url };\n}\nelse {\n    url = params.queryInfo.detailUrl\n    return { \"url\": url, \"responseFormatType\": \"html\" };\n}",
+        "title": "//a",
+        "actionID": "chapterList",
+        "host": "http://www.kumw5.com",
+        "validConfig": "",
+        "list": "//div[@id]//li",
+        "parserID": "DOM",
+        "updateTime": "//span[3] || js@:\r\n    return result.match(/：(\\S*)/)[1]"
+    }
+}

@@ -1,0 +1,119 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"txt\"]/text()",
+        "actionID": "chapterContent",
+        "host": "https://www.biquge365.net",
+        "httpHeaders": {
+            "Referer": "https://www.biquge365.net",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//div[@class=\"xinxi\"]/span[3] ||@js:\nreturn result.replace(/状态：/, '');",
+        "desc": "//div[@class=\"x3\"]",
+        "lastChapterTitle": "//div[@class=\"xinxi\"]/span[8]/a",
+        "host": "https://www.biquge365.net",
+        "httpHeaders": {
+            "Referer": "https://www.biquge365.net",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+        },
+        "cover": "//div/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "cat": "//div[@class=\"xinxi\"]/span[2] ||@js:\nreturn result.replace(/类型：/, '');"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "responseFormatType": "html",
+            "author": "//span[3]",
+            "bookName": "//span[1]/a",
+            "httpHeaders": {
+                "Referer": "https://www.biquge365.net",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.biquge365.net/sort/${_type}_${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.biquge365.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[1]/a/@href",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "_type\n玄幻魔法::1\n仙侠修真::2\n都市言情::3\n网游动漫::4\n科幻小说::5\n恐怖灵异::6\n历史军事::7\n其他小说::8"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul[@class=\"gengxin\"]/li"
+        }
+    },
+    "sourceUrl": "https://www.biquge365.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "99",
+    "sourceName": "笔趣阁365",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "httpHeaders": {
+        "Referer": "https://www.biquge365.net",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+    },
+    "lastModifyTime": "1658221234.726734",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]/a",
+        "lastChapterTitle": "//span[3]/a",
+        "responseFormatType": "html",
+        "author": "//span[4]/a",
+        "bookName": "//span[2]/a",
+        "httpHeaders": {
+            "Referer": "https://www.biquge365.net",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+        },
+        "requestInfo": "@js:\nlet url =config.host+\"/s.php\";\n\nlet hh={\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62\"};\n\nlet hp={\"s\":params.keyWord,\"type\":\"articlename\",\"submit\":\"\"}\n\nreturn{'url':url,'POST':true,'httpParams':hp,\"httpHeaders\":config.httpHeaders};",
+        "host": "https://www.biquge365.net",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]/a/@href",
+        "validConfig": "",
+        "list": "//ul[@class=\"search\"]/li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn result.replace('book', 'newbook');",
+        "title": "//a",
+        "host": "https://www.biquge365.net",
+        "httpHeaders": {
+            "Referer": "https://www.biquge365.net",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62"
+        },
+        "list": "//ul[@class=\"info\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

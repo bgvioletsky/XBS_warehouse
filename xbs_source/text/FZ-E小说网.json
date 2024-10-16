@@ -1,0 +1,69 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"content\"]/text()",
+        "host": "https://www.eexiaoshuo.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.eexiaoshuo.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-E小说网",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357669.406391",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class=\"result-game-item-info\"]/p[2]/span[2]",
+        "author": "//div[@class=\"result-game-item-info\"]/p[1]/span[2]",
+        "responseFormatType": "html",
+        "bookName": "//div[@class=\"result-game-item-detail\"]/h3/a/span",
+        "requestInfo": "https://m.eexiaoshuo.com/search.php?q=%@keyWord&p=%@pageIndex",
+        "host": "https://www.eexiaoshuo.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"result-game-item-detail\"]/h3/a/@href",
+        "cover": "//div[@class=\"result-game-item-pic\"]/a/img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"result-list\"]/div",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.eexiaoshuo.com/",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    },
+    "sourceType": "text"
+}

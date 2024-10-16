@@ -1,0 +1,135 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "title",
+        "host": "https://api5-normal-lf.fqnovel.com/",
+        "httpHeaders": {
+            "user-agent": "okhttp/3.10.0.1",
+            "x-vc-bdturing-sdk-version": "2.0.0",
+            "accept": "application/json; charset=utf-8",
+            "sdk-version": "2",
+            "passport-sdk-version": "21",
+            "gender": "2"
+        },
+        "list": "data/item_data_list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "item_id||@js:\nlet url = 'https://novel.snssdk.com/api/novel/book/reader/full/v1/?group_id='+result+'&item_id='+result;\nreturn url;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "番茄小说api",
+    "sourceType": "text",
+    "sourceUrl": "https://api5-normal-lf.fqnovel.com/",
+    "httpHeaders": {
+        "user-agent": "okhttp/3.10.0.1",
+        "x-vc-bdturing-sdk-version": "2.0.0",
+        "accept": "application/json; charset=utf-8",
+        "sdk-version": "2",
+        "passport-sdk-version": "21",
+        "gender": "2"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1657787340.134788",
+    "searchBook": {
+        "cat": "book_data[1]/category",
+        "author": "book_data[1]/author",
+        "responseFormatType": "json",
+        "JSParser": "function functionName(config, params, result)\n{\n\tresult.more = true;\n      return result;\n}",
+        "bookName": "book_data[1]/book_name",
+        "desc": "book_data[1]/abstract",
+        "requestInfo": "@js:\nlet url = '';\nif(params.pageIndex==1){\n  url = config.host + 'reading/bookapi/search/tab/v/?bookshelf_search_plan=0&query=' + encodeURIComponent(params.keyWord) + '&tab_type=3&aid=1967&gender=2&passback=&search_id=&iid=2274251124268568&aid=1967&app_name=novelapp&version_code=&version_name=5.1.3.32&device_platform=android';\n}else{\n  url = config.host + 'reading/bookapi/search/tab/v/?query=' + encodeURIComponent(params.keyWord) + '&tab_type=3&aid=1967&gender=2&passback=' + (params.pageIndex - 1) + '0&search_id=&iid=2274251124268568&aid=1967&app_name=novelapp&version_code=&version_name=5.1.3.32&device_platform=android';\n}\nreturn {'url':url};",
+        "host": "https://api5-normal-lf.fqnovel.com/",
+        "actionID": "searchBook",
+        "httpHeaders": {
+            "user-agent": "okhttp/3.10.0.1",
+            "x-vc-bdturing-sdk-version": "2.0.0",
+            "accept": "application/json; charset=utf-8",
+            "sdk-version": "2",
+            "passport-sdk-version": "21",
+            "gender": "2"
+        },
+        "cover": "book_data[1]/thumb_url",
+        "wordCount": "book_data[1]/word_number",
+        "list": "search_tabs[3]/data",
+        "parserID": "DOM",
+        "detailUrl": "book_data[1]/book_id||@js:\nlet url = 'https://api5-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&book_id='+result+'&iid=3562849177700253&aid=1967&app_name=novelapp&version_code=504';\nreturn url;",
+        "validConfig": ""
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result){\n  let res = JSON.parse(result);\n  let content = res.data.content;\n  let regex = /<article>(.*)<\\/article>/;\n  res = regex.exec(content)[1];\n  res = res.replace(/p/g, 'br');\n  res = res.replace(/<\\/br>/g, '');\n  res = res.replace(/<br><br>/g, '<br>');\n  res = res.replace(/<br>/g,'\\n')\n  return { 'content': res, 'removeHtmlKey':'content'};\n}",
+        "requestInfo": "@js:\nreturn {'url':result,'httpHeaders':config.httpHeaders};",
+        "host": "https://api5-normal-lf.fqnovel.com/",
+        "httpHeaders": {
+            "user-agent": "okhttp/3.10.0.1",
+            "x-vc-bdturing-sdk-version": "2.0.0",
+            "accept": "application/json; charset=utf-8",
+            "sdk-version": "2",
+            "passport-sdk-version": "21",
+            "gender": "2"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "jinmailang123",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "男频主题": {
+            "cat": "tags",
+            "author": "author",
+            "responseFormatType": "json",
+            "JSParser": "function functionName (config, params, result){\n  result.more = true;\n  return result;\n}",
+            "bookName": "book_name||original_book_name",
+            "desc": "abstract",
+            "requestInfo": "@js:\nlet { _category, _word_type, _book_status, _sort_by } = params.filters\nlet page = (params.pageIndex-1)*10;\nlet url = `https://api5-normal-lf.fqnovel.com/reading/bookapi/new_category/landing/v/?source=front_category&genre_type=0&offset=`+page+`&no_need_all_tag=true&sub_category_id=&category_id=${_category}&query_gender=1&limit=10&front_page_selected_category=&iid=2643688679027960&device_id=1658525382088733&ac=wifi&channel=reading_yunying_PC1&aid=1967&app_name=novelapp&version_code=53732&version_name=5.3.7.32&device_platform=android&os=android&ssmix=a&device_type=LIO-AN00&device_brand=HUAWEI&language=zh&os_api=25&os_version=7.1.2&manifest_version_code=53732&gender=2&cdid=4af63abb-e1da-4634-8797-c4d76d69676d&word_number=${_word_type}&book_status=${_book_status}&sort_by=${_sort_by}`;\nreturn { url: url,'httpHeaders':config.httpHeaders,'cacheTime':0};",
+            "host": "https://api5-normal-lf.fqnovel.com/",
+            "actionID": "bookWorld",
+            "httpHeaders": {
+                "user-agent": "okhttp/3.10.0.1",
+                "x-vc-bdturing-sdk-version": "2.0.0",
+                "accept": "application/json; charset=utf-8",
+                "sdk-version": "2",
+                "passport-sdk-version": "21",
+                "gender": "2"
+            },
+            "cover": "thumb_url",
+            "wordCount": "word_number",
+            "list": "data/book_info",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "book_id||@js:\nlet url = 'https://api5-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&book_id='+result+'&iid=3562849177700253&aid=1967&app_name=novelapp&version_code=504';\nreturn url;",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_category\n游戏动漫::57\n灵气复苏::514\n末日求生::515\n悬疑::10\n综漫::465\n都市异能::516\n都市脑洞::262\n异世大陆::512\n玄幻::7\n开局::453\n架空::452\n电竞::508\n科幻::8\n东方玄幻::511\n历史::12\n国运::496\n高武世界::513\n影视小说::45\n都市::1\n都市生活::2\n武侠::16\n历史脑洞::272\n断层::500\n武将::497\n都市种田::263\n玄幻脑洞::257\n体育::15\n悬疑脑洞::539\n历史古代::273\n奇幻仙侠::259\n谍战::507\n宋朝::501\n四合院::495\n都市日常::261\n\n_word_type\n全部::0\n30万字以下::4\n30-100万字::5\n100-300万字::2\n300万字以上::3\n\n_book_status\n全部::2\n完结::0\n连载中::1\n今日更新::3\n\n_sort_by\n综合::0\n热门::24\n最新::76\n评分::12"
+            },
+            "validConfig": ""
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

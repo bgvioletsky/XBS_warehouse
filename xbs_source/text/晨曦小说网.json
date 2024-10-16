@@ -1,0 +1,123 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//p[@id=\"content\"]",
+        "actionID": "chapterContent",
+        "host": "https://m.chenxixsw.com",
+        "httpHeaders": {
+            "Referer": "https://m.chenxixsw.com/search.php",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//ul[@class=\"article\"]/li[5] ||@js:\nreturn result.replace(/进度：/, '');",
+        "wordCount": "//ul[@class=\"article\"]/li[4] ||@js:\nreturn result.replace(/字数：/, '');",
+        "validConfig": "",
+        "desc": "//div[@class=\"last9\"][2]/text()",
+        "host": "https://m.chenxixsw.com",
+        "httpHeaders": {
+            "Referer": "https://m.chenxixsw.com/search.php",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Mobile/15E148 Safari/604.1"
+        },
+        "cover": "//a/img/@src",
+        "cat": "//ul[@class=\"article\"]/li[3] ||@js:\nreturn result.replace(/分类：/, '');",
+        "parserID": "DOM",
+        "responseFormatType": "html"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//a/p[1]/text()",
+            "responseFormatType": "html",
+            "bookName": "//h2",
+            "httpHeaders": {
+                "Referer": "https://m.chenxixsw.com/search.php",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet {_class,_top,_size,_status}=params.filters\nlet url=`https://m.chenxixsw.com/shuku/${_class}-${_top}-0-${_size}-${_status}-${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.chenxixsw.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//li/a/@href",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_class\n全部::0\n玄幻奇幻::1\n仙侠武侠::2\n都市言情::3\n军事历史::4\n游戏竞技::5\n科幻灵异::6\n青春言情::7\n耽美同人::8\n其他类型::9\n\n_top\n默认::default\n总点击::allvisit\n月点击::monthvisit\n周点击::weekvisit\n日点击::dayvisit\n\n_size\n全部::0\n30万以下::1\n30万-50万::2\n50万-100万::3\n100万-200万::4\n200万以上::5\n\n_status\n不限::0\n连载::1\n完本::2"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul[@id=\"ulist\"]/li"
+        }
+    },
+    "sourceUrl": "https://m.chenxixsw.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9642",
+    "sourceName": "晨曦小说网",
+    "httpHeaders": {
+        "Referer": "https://m.chenxixsw.com/search.php",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Mobile/15E148 Safari/604.1"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐮",
+    "lastModifyTime": "1659165592.167275",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//li[2]/a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//li[3]/span/a",
+        "bookName": "//h3/a",
+        "httpHeaders": {
+            "Referer": "https://m.chenxixsw.com/search.php",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "https://m.chenxixsw.com/search.php?type=articlename&s=%@keyWord&submit=gbk",
+        "host": "https://m.chenxixsw.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"searchcon\"]/ul",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "Referer": "https://m.chenxixsw.com/search.php",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\nreturn params.queryInfo.detailUrl +\"list/\"+ params.pageIndex+\".html\"",
+        "title": "//a",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 70
+        },
+        "host": "https://m.chenxixsw.com",
+        "validConfig": "",
+        "list": "//ul[@class=\"clist\"]/li",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

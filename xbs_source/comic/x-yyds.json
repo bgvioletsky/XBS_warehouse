@@ -1,0 +1,136 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//img[@class=\"calwh lazy\"]/@data-src",
+        "validConfig": "",
+        "moreKeys": {
+            "maxPage": 50
+        },
+        "host": "http://www.kxmh.cc",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/104.0.5112.102"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//span[@id=\"nextINFO\"][contains(text(),\"下一页\")] || @js:\nif(result){\n    var pageid=params.pageIndex+1;\n    var url = params.queryInfo.url.replace(/.html/,\"\");\n    url = url+\"_\"+pageid+\".html\";\n    params.nativeTool.log(url) ;\n    return url;\n    }\nelse{\n    return \"\"\n    }"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "desc": "//p[@id=\"js_desc_content\"]/text()",
+        "host": "http://www.kxmh.cc",
+        "cat": "//a[@class=\"type\"]/text() || @js:\nreturn result.replace(/\\n/g, \" \")",
+        "cover": "//div[@class=\"thumbnail\"]/img/@src",
+        "responseFormatType": "html",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/104.0.5112.102"
+        },
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行": {
+            "responseFormatType": "html",
+            "bookName": "//a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.baidu.com",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/104.0.5112.102"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters;\nlet url=`${config.host}/toplist/${_type}.html`;\n\nreturn {url:url,\"httpHeaders\":config.httpHeaders}",
+            "host": "http://www.kxmh.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "requestFilters": "_type\n总点击::alldj\n月点击::ydj\n周点击::zdj\n日点击::rdj\n总收藏::allfav"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//h3"
+        },
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//h3/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.baidu.com",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/104.0.5112.102"
+            },
+            "requestInfo": "@js:\nlet hh= {\n    \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63\"\n    };\nlet {_type,_area,_status}=params.filters\nlet url=`${config.host}/manga-lists/${_area}/${_type}/${_status}/${params.pageIndex}.html`;\n\nreturn {url:encodeURI(url),\"httpHeaders\":hh}",
+            "host": "http://www.kxmh.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3/a/@href",
+            "moreKeys": {
+                "pageSize": 48,
+                "requestFilters": "_type\n全部::全部\n长条::长条\n大女主::大女主\n百合::百合\n耽美::耽美\n纯爱::纯爱\n後宫::後宫\n奇幻::奇幻\n轻小说::轻小说\n生活::生活\n悬疑::悬疑\n格斗::格斗\n搞笑::搞笑\n伪娘::伪娘\n竞技::竞技\n职场::职场\n萌系::萌系\n冒险::冒险\n治愈::治愈\n都市::都市\n霸总::霸总\n神鬼::神鬼\n侦探::侦探\n爱情::爱情\n古风::古风\n欢乐向::欢乐向\n科幻::科幻\n穿越::穿越\n性转换::性转换\n校园::校园\n美食::美食\n剧情::剧情\n热血::热血\n节操::节操\n励志::励志\n异世界::异世界\n历史::历史\n战争::战争\n恐怖::恐怖\n\n_area\n全部::9\n日漫::1\n港台::2\n美漫::3\n国漫::4\n韩漫::5\n未分类::6\n\n_status\n全部::3\n连载中::4\n已完结::1"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//ul[@id=\"J_comicList\"]/li"
+        }
+    },
+    "sourceUrl": "http://www.kxmh.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "x-yyds",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "httpHeaders": {
+        "Referer": "https://www.baidu.com",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/104.0.5112.102"
+    },
+    "lastModifyTime": "1661739591.756721",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "lastChapterTitle": "//span/text()",
+        "responseFormatType": "html",
+        "bookName": "//p/text()",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/104.0.5112.102"
+        },
+        "requestInfo": "@js:\nlet url=\"/search\";\nlet hp= {\"searchkey\":params.keyWord};\nreturn {\"url\":url, \"POST\":false, \"httpParams\":hp, \"httpHeaders\":config.httpHeaders, \"forbidCookie\":true, \"cacheTime\":600};",
+        "host": "http://www.kxmh.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//ul/li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a/@title",
+        "host": "http://www.kxmh.cc",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/104.0.5112.102"
+        },
+        "list": "//div[@id=\"js_chapter_list\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

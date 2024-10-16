@@ -1,0 +1,65 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet beginStr = '<div id=\"content\">';\n\tlet beginIndex = result.indexOf(beginStr);\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex + beginStr.length);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n\n\t\tif (tarStr) {\n\t\t\ttarStr = tarStr.replace(/为您提供.*?请务必保存好书签.*?com/,\"\").replace(/「/g,\"\").replace(/」/g,\"\").replace(/最快更新请浏览器输入.*精华书阁进行查看/g,\"\").replace(/百度搜索[\\s\\S]*最新章节。/g,\"\").replace(/<a.*?<\\/a>/,\"\");\n\t\t}\n\t\treturn {'content':tarStr, 'removeHtmlKeys':'content'};\n\t}\n\treturn undefined;\n}",
+        "host": "http://www.b5200.org",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.b5200.org",
+        "desc": "//meta[@property=\"og:description\"]/@content",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceType": "text",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "🚗笔趣阁b5200",
+    "sourceUrl": "http://www.b5200.org",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666846558.683883",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\tlet reg = /<td class=\"odd\"><a href=\"(.*?)\">(.*?)<(?:\\S|\\s)*?<td class=\"even\"><a href=\"(.*?)\"(?:\\S|\\s)*?blank\">(.*?)<(?:\\S|\\s)*?<td class=\"odd\">(.*?)<(?:\\S|\\s)*?align=\"center\">(.*?)</gim;\n\n\twhile(tem=reg.exec(result))\n\t{\n\t\tlet bookInfo = {};\n\t\tbookInfo.detailUrl = tem[1];\n\t\tbookInfo.bookName = tem[2];\n\t\tbookInfo.author = tem[5];\n            bookInfo.lastChapterTitle = tem[6];\n\t\tlist.push(bookInfo);\n\t}\n\n\treturn {'list':list, 'more':false};\n}",
+        "host": "http://www.b5200.org",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nlet url=config.host+\"/modules/article/search.php?\";\nlet hp= {'searchkey':params.keyWord};\nreturn {'url':url, 'GET':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "actionID": "searchBook"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\tlet reg = /<dd><a href=\"(.*?)\">(.*?)<\\/a><\\/dd>/gim;\n\tlet reg1 = /update_time.*?=\"(.*?)\"/gim;\n\twhile(tem1 = reg1.exec(result))\n\twhile(tem = reg.exec(result))\n\t{\n\t\tlet chapterInfo = {};\n\t\tchapterInfo.title = tem[2];\n\t\tchapterInfo.url = tem[1];\n            updateTime = tem1[1];\n\t\tlist.push(chapterInfo);\n\t}\n\n\treturn {'list':list,'updateTime': updateTime};\n}",
+        "moreKeys": {
+            "skipCount": 9
+        },
+        "host": "http://www.b5200.org",
+        "parserID": "DOM",
+        "actionID": "chapterList"
+    }
+}

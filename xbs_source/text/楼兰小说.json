@@ -1,0 +1,117 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://m.xjfxs.com",
+        "content": "//div[@id=\"novelcontent\"] ||@js:\nreturn result.replace(/&am.*/,\"\");",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//div[@class=\"tab1\"]/p[2]",
+        "wordCount": "//div[@class=\"tab1\"]/p[3]",
+        "lastChapterTitle": "//div[@class=\"tab\"]/p[4]/a/text()",
+        "host": "https://m.xjfxs.com",
+        "cat": "//div[@class=\"tab1\"]/p[1]",
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"jj\"]/p",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "author": "//p[3]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//p[2]/a/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.xjfxs.com/top/${_type}_${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.xjfxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n日点击榜::dayvisit\n周点击榜::weekvisit\n月点击榜::monthvisit\n总点击榜::allvisit\n总收藏榜::goodnum\n字数排行::size\n日推荐榜::dayvote\n周推荐榜::weekvote\n月推荐榜::monthvote\n总推荐榜::allvote\n最新入库::postdate\n最近更新::lastupdate"
+            },
+            "detailUrl": "//p[2]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"content_link\"]",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        },
+        "分类": {
+            "author": "//div[@class=\"label\"]/p[3]/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//p[1]/a/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.xjfxs.com/sort/${_type}_${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.xjfxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 19,
+                "requestFilters": "_type\n玄幻魔法::1\n仙侠修真::2\n都市言情::3\n历史军事::4\n网游竞技::5\n科幻灵异::6\n其他小说::8\n耽美小说::9\n女频小说::10\n高辣::11\n腹黑::12\n种田::13"
+            },
+            "detailUrl": "//p[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"tt\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//img/@src"
+        }
+    },
+    "sourceUrl": "https://m.xjfxs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "楼兰小说",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654244006.096189",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//a[3]/text()",
+        "requestParamsEncode": "2147485234",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = 'https://m.xjfxs.com/s.php';\nreturn {'url':url, 'POST':true, 'httpParams':{'s':params.keyWord,'type':'articlename'}};",
+        "bookName": "//a[1]/text()",
+        "detailUrl": "//a[1]/@href",
+        "host": "https://m.xjfxs.com",
+        "list": "//p[@class=\"search_list\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href",
+        "requestInfo": "@js:\n\nlet id = params.queryInfo.detailUrl;\n\nlet url = id+\"_\"+params.pageIndex +\"/#all\";\n\nreturn url.replace('/_', '_');\n\nreturn url;",
+        "title": "//a/text()",
+        "moreKeys": {
+            "maxPage": 70
+        },
+        "host": "https://m.xjfxs.com",
+        "list": "//ul[@class=\"p2\"][2]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

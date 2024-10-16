@@ -1,0 +1,102 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.52shuku.vip",
+        "content": "//article[@class=\"article-content\"]/p||@js: return result.replace(/PS：如果.*/, \"\") .replace(/传送门.*/, \"\");",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.52shuku.vip",
+        "desc": "//p[2]",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "其他": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.52shuku.vip${_type}`;\n\nif(params.pageIndex>1)\nurl=url+\"index_\"+params.pageIndex+\".html\"\n\nreturn {url:url}",
+            "bookName": "//h2/a/text()",
+            "moreKeys": {
+                "pageSize": 25,
+                "requestFilters": "_type\n恐怖灵异::/kongbulingyi/\n侦探推理::/tuili/\n文学著作::/wenxue/\n言情小说::/yanqing/\n现代耽美::/xiandaidushi/\n穿越耽美::/chongsheng/\n古架耽美::/jiakong/\nGL百合::/gl/\n综漫同人::/bl/"
+            },
+            "host": "https://www.52shuku.vip",
+            "_sIndex": 1,
+            "list": "//div[@class=\"content\"]/article",
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "detailUrl": "//h2/a/@href"
+        },
+        "男频": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.52shuku.vip${_type}`;\n\nif(params.pageIndex>1)\nurl=url+\"index_\"+params.pageIndex+\".html\"\n\nreturn {url:url}",
+            "bookName": "//h2/a/text()",
+            "moreKeys": {
+                "pageSize": 25,
+                "requestFilters": "_type\n现代都市::/xiandai/\n武侠玄幻::/wuxia/\n穿越重生::/chuanyue/\n架空历史::/jiakonglishi/\n网游竞技::/wangyou/\n科幻小说::/KeHuan/\n言情精选::/yanqing/"
+            },
+            "host": "https://www.52shuku.vip",
+            "_sIndex": 0,
+            "list": "//div[@class=\"content\"]/article",
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "detailUrl": "//h2/a/@href"
+        }
+    },
+    "sourceUrl": "https://www.52shuku.vip",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "52书库vip",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1653369975.364494",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "requestInfo": "@js:\nlet url = 'https://www.52shuku.vip/e/search/';\nreturn {'url':url, 'POST':true, 'httpParams':{'keyboard':params.keyWord, 'show':'title,writer', 'tempid':1, 'tbname':'article'}};",
+        "bookName": "//h2/a||@js:\nreturn result.replace(/作者：.*/, '');",
+        "detailUrl": "//h2/a/@href",
+        "host": "https://www.52shuku.vip",
+        "list": "//div[@class=\"content\"]/article",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a/text()",
+        "host": "https://www.52shuku.vip",
+        "list": "//ul[@class=\"list clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

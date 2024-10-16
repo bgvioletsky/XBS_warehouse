@@ -1,0 +1,92 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.chinadra.com/",
+        "content": "//table[@class='table table-striped staff_type Resources_href_Allhref text-center']/tbody/tr| //table[@class='table table-striped staff_type Resources_href_Allhref text-center']/tbody/tr//a/@href",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.chinadra.com/",
+        "cover": "//div[@class='poster-main-img']/mip-img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class='audiodrama_introduction_contain text-center']/section/p",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "广播剧": {
+            "cat": "//td[2]/dl/dd||@js:\nreturn result.replace(/\\r\\n/g, '');",
+            "responseFormatType": "html",
+            "bookName": "//td[2]/dl/dt/a",
+            "requestInfo": "@js:\nreturn 'https://www.chinadra.com/guangboju/guangBoJuList.jsp?loadPrePublic=&gbj_year='+params.filters.year+'&gbj_leixing='+params.filters.leixing+'&gbj_ticai='+params.filters.ticai+'&gbj_xingshi='+params.filters.xingshi+'&gbj_chuangzuoxingshi='+params.filters.chuangzuoxingshi+'&gopage'+params.pageIndex;",
+            "host": "https://www.chinadra.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "year\n全部::\n即将发布::&loadPrePublic=yes\n2022年::2022\n2021年::2021\n2020年::2020\n2019年::2019\n2018年::2018\n2017年::2017\n2016年::2016\n2015年::2015\n2014年::2014\n2013年::2013\n2012年::2012\n2011年::2011\n2010年::2010\n2009年::2009\n2008年::2008\n2007年::2007\n2006年::2006\n2005年::2005\n2005年以前::2004\n\nleixing\n全部::\n耽美/纯爱::DANMEI\n言情::YANQING\n百合::BAIHE\n全年龄::QUANNIANLING\n无性向::WUXINGXIANG\n其他::QITA\n\nticai\n全部::\n现代::XIANDAI\n古风::GUFENG\n恶搞::EGAO\n盗墓::DAOMU\n民国::MINGUO\n游戏::GONGYI\n欢脱::HUANTUO\n惊悚::JINGSONG\n警匪::JINGFEI\n虚拟::XUNI\n科幻::KEHUAN\n穿越::CHUANYUE\n军旅::ZHANZHENG\n都市::DUSHI\n历史::LISHI\n灵异::LINYI\n轻松::QINGSONG\n探险::TANXIAN\n同人::TONGREN\n童话::TONGHUA\n温馨::WENXIN\n武侠::WUXIA\n喜剧::XIJU\n校园::XIAOYUAN\n爱情::AIQING\n刑侦::XINGZHEN\n玄幻::XUANHUAN\n悬疑::XUANYI\n其他::QITA\n\nxingshi\n全部::\n长篇::CHANGPIAN\n预告::YUGAO\n楔子::XIEZI\n全一期::QUANYIQI\nFT::FT\n剧情歌::JUQINGGE\n生日歌::SHENGRIGE\n歌会活动::HUODONG\n生日剧::SHENGRIJU\n微小剧::WEIXIAOJU\n番外::FANWAI\n全集::QUANJI\n翻唱::FANCHANG\n视频剧::SHIPINJU\n有声漫画::YOUSHENMANHUA\n其他::QITA\n\nchuangzuoxingshi\n全部::\n原创::YUANCHUANG\n改编::GAIBIAN\n译制::YIZHI\n其他::QITA\n"
+            },
+            "detailUrl": "//td[2]/dl/dt/a/@href||@js:\nreturn 'https://www.chinadra.com/guangboju/'+result;",
+            "cover": "//td[1]/a/img/@src",
+            "list": "//div[@class='bm_c xld']/table",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceType": "text",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "无限中抓",
+    "sourceUrl": "https://www.chinadra.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "广播剧索引，正文仅资源链接",
+    "lastModifyTime": "1661807922.718796",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//td[2]/dl/dd||@js:\nreturn result.replace(/\\r\\n/g, '');",
+        "responseFormatType": "html",
+        "bookName": "//td[2]/dl/dt/a",
+        "requestInfo": "https://www.chinadra.com/guangboju/guangBoJuList.jsp?srchtxtget=%@keyWord&gopage=%@pageIndex",
+        "host": "https://www.chinadra.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//td[2]/dl/dt/a/@href||@js:\nreturn 'https://www.chinadra.com/guangboju/'+result;",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "validConfig": "",
+        "cover": "//td[1]/a/img/@src",
+        "parserID": "DOM",
+        "list": "//div[@class='bm_c xld']/table"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.chinadra.com/",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n\tlet chapterInfo = {};\n\tchapterInfo.title = '查看资源链接';\n\tchapterInfo.url = params.queryInfo.detailUrl;\n\tlist.push(chapterInfo);\n\n\treturn {'list':list};\n}",
+        "actionID": "chapterList"
+    }
+}

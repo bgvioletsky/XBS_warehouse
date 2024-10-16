@@ -1,0 +1,140 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "data/url",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn params.queryInfo.url;",
+        "host": "https://api.hanwujinian.net/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "书库": {
+            "responseFormatType": "json",
+            "bookName": "aname",
+            "desc": "message",
+            "requestInfo": "@js:\nreturn {'url':'https://api.hanwujinian.net/api.php/api/soundapp/soundType', 'POST':true, 'httpParams':{'iscome':params.filters.origin, 'isend':params.filters.status, 'limit':20, 'offset':((params.pageIndex-1)*20), 'soundType':params.filters.type, 'type':4, 'typeid':''}};",
+            "host": "https://api.hanwujinian.net/",
+            "actionID": "bookWorld",
+            "detailUrl": "lid",
+            "cover": "image",
+            "validConfig": "",
+            "list": "data",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "寒武出品",
+                                "value": "1"
+                            },
+                            {
+                                "title": "个人上传",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "origin"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "广播剧",
+                                "value": "1"
+                            },
+                            {
+                                "title": "有声书",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "type"
+                    }
+                ]
+            },
+            "status": "status"
+        }
+    },
+    "sourceUrl": "https://api.hanwujinian.net/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺寒武纪年有声🔮🍪©️",
+    "sourceType": "audio",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666214371.901133",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "author": "author",
+        "requestInfo": "@js:\nreturn {'url':'https://api.hanwujinian.net/api.php/api/search_app/searchResult', 'POST':true, 'httpParams':{'limit':20, 'offset':((params.pageIndex-1)*20), 'search':params.keyWord, 'type':2}};",
+        "bookName": "bookname",
+        "detailUrl": "bookid",
+        "host": "https://api.hanwujinian.net/",
+        "list": "data/book",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "cover": "pic"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn {'url':'https://api.hanwujinian.net/api.php/api/soundapp/chapterList', 'POST':true, 'httpParams':{'lastupdate':0, 'soundId':params.queryInfo.detailUrl}};",
+        "title": "chapterName",
+        "host": "https://api.hanwujinian.net/",
+        "list": "data/chapterlist",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn {'url':'https://api.hanwujinian.net/api.php/api/soundapp/soundChapterInfos', 'POST':true, 'httpParams':{'chapterId':result.chapterId, 'soundId':result.soundId}};"
+    }
+}

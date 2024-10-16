@@ -1,0 +1,1117 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.guomanla.com/",
+        "content": "//div[@class='acgn-reader-chapter__swiper-box']/img/@src",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.guomanla.com/",
+        "cat": "//ul[@class='tags']/a",
+        "cover": "//div[@class='detail-cover']/img/@style||@js:\nreturn result.replace(\"background: url('\", \"\").replace(\"') center center / cover no-repeat; opacity: 1;\", \"\");",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class='desc-content']"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "漫画大全": {
+            "lastChapterTitle": "//div/div/a[@class='latest-cartoon']",
+            "responseFormatType": "html",
+            "bookName": "//div/h3/a",
+            "requestInfo": "@js:\nreturn 'https://www.guomanla.com/category/' + params.filters.list + params.filters.tags + params.filters.theme + params.filters.quality + params.filters.city + params.filters.copyright + params.filters.pay + params.filters.finish + params.filters.order + 'page/' + params.pageIndex;",
+            "host": "https://www.guomanla.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 48,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "list/1/",
+                                "title": "少年漫画"
+                            },
+                            {
+                                "value": "list/2/",
+                                "title": "少女漫画"
+                            },
+                            {
+                                "value": "list/3/",
+                                "title": "青年漫画"
+                            },
+                            {
+                                "value": "list/4/",
+                                "title": "少儿漫画"
+                            },
+                            {
+                                "value": "list/5/",
+                                "title": "日本漫画"
+                            },
+                            {
+                                "value": "list/6/",
+                                "title": "港台漫画"
+                            },
+                            {
+                                "value": "list/7/",
+                                "title": "欧美漫画"
+                            }
+                        ],
+                        "key": "list"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "tags/6/",
+                                "title": "热血"
+                            },
+                            {
+                                "value": "tags/7/",
+                                "title": "冒险"
+                            },
+                            {
+                                "value": "tags/8/",
+                                "title": "科幻"
+                            },
+                            {
+                                "value": "tags/9/",
+                                "title": "霸总"
+                            },
+                            {
+                                "value": "tags/10/",
+                                "title": "玄幻"
+                            },
+                            {
+                                "value": "tags/11/",
+                                "title": "校园"
+                            },
+                            {
+                                "value": "tags/12/",
+                                "title": "修真"
+                            },
+                            {
+                                "value": "tags/13/",
+                                "title": "搞笑"
+                            },
+                            {
+                                "value": "tags/14/",
+                                "title": "穿越"
+                            },
+                            {
+                                "value": "tags/15/",
+                                "title": "后宫"
+                            },
+                            {
+                                "value": "tags/16/",
+                                "title": "耽美"
+                            },
+                            {
+                                "value": "tags/17/",
+                                "title": "恋爱"
+                            },
+                            {
+                                "value": "tags/18/",
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": "tags/19/",
+                                "title": "恐怖"
+                            },
+                            {
+                                "value": "tags/20/",
+                                "title": "战争"
+                            },
+                            {
+                                "value": "tags/21/",
+                                "title": "动作"
+                            },
+                            {
+                                "value": "tags/22/",
+                                "title": "同人"
+                            },
+                            {
+                                "value": "tags/23/",
+                                "title": "竞技"
+                            },
+                            {
+                                "value": "tags/24/",
+                                "title": "励志"
+                            },
+                            {
+                                "value": "tags/25/",
+                                "title": "架空"
+                            },
+                            {
+                                "value": "tags/26/",
+                                "title": "灵异"
+                            },
+                            {
+                                "value": "tags/27/",
+                                "title": "百合"
+                            },
+                            {
+                                "value": "tags/28/",
+                                "title": "古风"
+                            },
+                            {
+                                "value": "tags/29/",
+                                "title": "生活"
+                            },
+                            {
+                                "value": "tags/30/",
+                                "title": "真人"
+                            },
+                            {
+                                "value": "tags/31/",
+                                "title": "都市"
+                            },
+                            {
+                                "value": "tags/48/",
+                                "title": "ゆり"
+                            },
+                            {
+                                "value": "tags/49/",
+                                "title": "少年"
+                            },
+                            {
+                                "value": "tags/50/",
+                                "title": "三国"
+                            },
+                            {
+                                "value": "tags/51/",
+                                "title": "杀必死"
+                            },
+                            {
+                                "value": "tags/52/",
+                                "title": "格斗"
+                            },
+                            {
+                                "value": "tags/53/",
+                                "title": "纯爱"
+                            },
+                            {
+                                "value": "tags/54/",
+                                "title": "连载"
+                            },
+                            {
+                                "value": "tags/55/",
+                                "title": "中"
+                            },
+                            {
+                                "value": "tags/57/",
+                                "title": "爱情"
+                            },
+                            {
+                                "value": "tags/58/",
+                                "title": "魔法"
+                            },
+                            {
+                                "value": "tags/59/",
+                                "title": "AA"
+                            },
+                            {
+                                "value": "tags/60/",
+                                "title": "武术"
+                            },
+                            {
+                                "value": "tags/61/",
+                                "title": "卖肉"
+                            },
+                            {
+                                "value": "tags/62/",
+                                "title": "虐心"
+                            },
+                            {
+                                "value": "tags/63/",
+                                "title": "机甲"
+                            },
+                            {
+                                "value": "tags/64/",
+                                "title": "青春"
+                            },
+                            {
+                                "value": "tags/65/",
+                                "title": "唯美"
+                            },
+                            {
+                                "value": "tags/66/",
+                                "title": "喜剧"
+                            },
+                            {
+                                "value": "tags/67/",
+                                "title": "家庭"
+                            },
+                            {
+                                "value": "tags/68/",
+                                "title": "仙侠"
+                            },
+                            {
+                                "value": "tags/69/",
+                                "title": "日常"
+                            },
+                            {
+                                "value": "tags/70/",
+                                "title": "治愈"
+                            },
+                            {
+                                "value": "tags/71/",
+                                "title": "魔幻"
+                            },
+                            {
+                                "value": "tags/72/",
+                                "title": "战斗"
+                            },
+                            {
+                                "value": "tags/73/",
+                                "title": "异能"
+                            },
+                            {
+                                "value": "tags/74/",
+                                "title": "史诗"
+                            },
+                            {
+                                "value": "tags/75/",
+                                "title": "正剧"
+                            },
+                            {
+                                "value": "tags/76/",
+                                "title": "爽流"
+                            },
+                            {
+                                "value": "tags/77/",
+                                "title": "逆袭"
+                            },
+                            {
+                                "value": "tags/78/",
+                                "title": "轻松"
+                            },
+                            {
+                                "value": "tags/79/",
+                                "title": "少年"
+                            },
+                            {
+                                "value": "tags/80/",
+                                "title": "重口味"
+                            },
+                            {
+                                "value": "tags/81/",
+                                "title": "血腥"
+                            },
+                            {
+                                "value": "tags/82/",
+                                "title": "丧尸"
+                            },
+                            {
+                                "value": "tags/83/",
+                                "title": "逗比"
+                            },
+                            {
+                                "value": "tags/84/",
+                                "title": "游戏"
+                            },
+                            {
+                                "value": "tags/85/",
+                                "title": "美食"
+                            },
+                            {
+                                "value": "tags/86/",
+                                "title": "未来"
+                            },
+                            {
+                                "value": "tags/87/",
+                                "title": "科技"
+                            },
+                            {
+                                "value": "tags/88/",
+                                "title": "推理"
+                            },
+                            {
+                                "value": "tags/89/",
+                                "title": "运动"
+                            },
+                            {
+                                "value": "tags/90/",
+                                "title": "欢乐"
+                            },
+                            {
+                                "value": "tags/91/",
+                                "title": "向"
+                            },
+                            {
+                                "value": "tags/92/",
+                                "title": "职业"
+                            },
+                            {
+                                "value": "tags/93/",
+                                "title": "异世界"
+                            },
+                            {
+                                "value": "tags/94/",
+                                "title": "历史"
+                            },
+                            {
+                                "value": "tags/95/",
+                                "title": "神话"
+                            },
+                            {
+                                "value": "tags/96/",
+                                "title": "故事"
+                            },
+                            {
+                                "value": "tags/97/",
+                                "title": "少女"
+                            },
+                            {
+                                "value": "tags/98/",
+                                "title": "基情满满"
+                            },
+                            {
+                                "value": "tags/99/",
+                                "title": "呆萌御猫"
+                            },
+                            {
+                                "value": "tags/100/",
+                                "title": "鼠猫"
+                            },
+                            {
+                                "value": "tags/101/",
+                                "title": "基友"
+                            },
+                            {
+                                "value": "tags/102/",
+                                "title": "社会"
+                            },
+                            {
+                                "value": "tags/103/",
+                                "title": "调酒"
+                            },
+                            {
+                                "value": "tags/104/",
+                                "title": "师"
+                            },
+                            {
+                                "value": "tags/105/",
+                                "title": "宫廷"
+                            },
+                            {
+                                "value": "tags/106/",
+                                "title": "浪漫"
+                            },
+                            {
+                                "value": "tags/107/",
+                                "title": "露营"
+                            },
+                            {
+                                "value": "tags/108/",
+                                "title": "旅行"
+                            },
+                            {
+                                "value": "tags/109/",
+                                "title": "温馨"
+                            },
+                            {
+                                "value": "tags/110/",
+                                "title": "体育"
+                            },
+                            {
+                                "value": "tags/111/",
+                                "title": "装逼"
+                            },
+                            {
+                                "value": "tags/112/",
+                                "title": "娱乐圈"
+                            },
+                            {
+                                "value": "tags/113/",
+                                "title": "召唤兽"
+                            },
+                            {
+                                "value": "tags/114/",
+                                "title": "宠物"
+                            },
+                            {
+                                "value": "tags/115/",
+                                "title": "其他"
+                            },
+                            {
+                                "value": "tags/116/",
+                                "title": "职场"
+                            },
+                            {
+                                "value": "tags/117/",
+                                "title": "节操全无"
+                            },
+                            {
+                                "value": "tags/118/",
+                                "title": "冷笑话"
+                            },
+                            {
+                                "value": "tags/119/",
+                                "title": "夭寿啦"
+                            },
+                            {
+                                "value": "tags/120/",
+                                "title": "屌丝"
+                            },
+                            {
+                                "value": "tags/122/",
+                                "title": "西方"
+                            },
+                            {
+                                "value": "tags/123/",
+                                "title": "神鬼"
+                            },
+                            {
+                                "value": "tags/124/",
+                                "title": "奇幻"
+                            },
+                            {
+                                "value": "tags/125/",
+                                "title": "东方"
+                            },
+                            {
+                                "value": "tags/126/",
+                                "title": "秀吉"
+                            },
+                            {
+                                "value": "tags/127/",
+                                "title": "轻小"
+                            },
+                            {
+                                "value": "tags/128/",
+                                "title": "说"
+                            },
+                            {
+                                "value": "tags/129/",
+                                "title": "舰娘"
+                            },
+                            {
+                                "value": "tags/130/",
+                                "title": "萌系"
+                            },
+                            {
+                                "value": "tags/131/",
+                                "title": "惊悚"
+                            },
+                            {
+                                "value": "tags/132/",
+                                "title": "音乐"
+                            },
+                            {
+                                "value": "tags/133/",
+                                "title": "舞蹈"
+                            },
+                            {
+                                "value": "tags/134/",
+                                "title": "性转"
+                            },
+                            {
+                                "value": "tags/135/",
+                                "title": "换"
+                            },
+                            {
+                                "value": "tags/136/",
+                                "title": "机战"
+                            },
+                            {
+                                "value": "tags/137/",
+                                "title": "武侠"
+                            },
+                            {
+                                "value": "tags/138/",
+                                "title": "颜艺"
+                            },
+                            {
+                                "value": "tags/139/",
+                                "title": "侦探"
+                            },
+                            {
+                                "value": "tags/140/",
+                                "title": "节操"
+                            },
+                            {
+                                "value": "tags/141/",
+                                "title": "伪娘"
+                            },
+                            {
+                                "value": "tags/142/",
+                                "title": "人工"
+                            },
+                            {
+                                "value": "tags/143/",
+                                "title": "智能"
+                            },
+                            {
+                                "value": "tags/144/",
+                                "title": "宅系"
+                            },
+                            {
+                                "value": "tags/145/",
+                                "title": "高清"
+                            },
+                            {
+                                "value": "tags/146/",
+                                "title": "单行"
+                            },
+                            {
+                                "value": "tags/147/",
+                                "title": "动画"
+                            },
+                            {
+                                "value": "tags/148/",
+                                "title": "医生"
+                            },
+                            {
+                                "value": "tags/149/",
+                                "title": "料理"
+                            },
+                            {
+                                "value": "tags/150/",
+                                "title": "法国"
+                            },
+                            {
+                                "value": "tags/151/",
+                                "title": "神魔"
+                            },
+                            {
+                                "value": "tags/152/",
+                                "title": "漫改"
+                            },
+                            {
+                                "value": "tags/153/",
+                                "title": "萝莉"
+                            },
+                            {
+                                "value": "tags/154/",
+                                "title": "吸血"
+                            },
+                            {
+                                "value": "tags/155/",
+                                "title": "17"
+                            },
+                            {
+                                "value": "tags/156/",
+                                "title": "37"
+                            },
+                            {
+                                "value": "tags/157/",
+                                "title": "38"
+                            },
+                            {
+                                "value": "tags/158/",
+                                "title": "42"
+                            },
+                            {
+                                "value": "tags/159/",
+                                "title": "46"
+                            },
+                            {
+                                "value": "tags/160/",
+                                "title": "27"
+                            },
+                            {
+                                "value": "tags/161/",
+                                "title": "34"
+                            },
+                            {
+                                "value": "tags/162/",
+                                "title": "39"
+                            },
+                            {
+                                "value": "tags/163/",
+                                "title": "10,,24,,13"
+                            },
+                            {
+                                "value": "tags/164/",
+                                "title": "32"
+                            },
+                            {
+                                "value": "tags/165/",
+                                "title": "41"
+                            },
+                            {
+                                "value": "tags/166/",
+                                "title": "47"
+                            },
+                            {
+                                "value": "tags/167/",
+                                "title": "6,27,,13"
+                            },
+                            {
+                                "value": "tags/168/",
+                                "title": "35"
+                            },
+                            {
+                                "value": "tags/169/",
+                                "title": ",,10"
+                            },
+                            {
+                                "value": "tags/170/",
+                                "title": "33"
+                            },
+                            {
+                                "value": "tags/171/",
+                                "title": "8"
+                            },
+                            {
+                                "value": "tags/172/",
+                                "title": "36"
+                            },
+                            {
+                                "value": "tags/173/",
+                                "title": ",17"
+                            },
+                            {
+                                "value": "tags/174/",
+                                "title": "40"
+                            },
+                            {
+                                "value": "tags/175/",
+                                "title": "23"
+                            },
+                            {
+                                "value": "tags/176/",
+                                "title": "6,20"
+                            },
+                            {
+                                "value": "tags/177/",
+                                "title": "21,10,,13"
+                            },
+                            {
+                                "value": "tags/178/",
+                                "title": "10"
+                            },
+                            {
+                                "value": "tags/179/",
+                                "title": "6,,13"
+                            },
+                            {
+                                "value": "tags/180/",
+                                "title": ",,13"
+                            },
+                            {
+                                "value": "tags/181/",
+                                "title": ",13"
+                            },
+                            {
+                                "value": "tags/182/",
+                                "title": "16,7"
+                            },
+                            {
+                                "value": "tags/183/",
+                                "title": "16,29"
+                            },
+                            {
+                                "value": "tags/184/",
+                                "title": "11"
+                            },
+                            {
+                                "value": "tags/185/",
+                                "title": "29,,13"
+                            },
+                            {
+                                "value": "tags/186/",
+                                "title": ",18,11"
+                            },
+                            {
+                                "value": "tags/187/",
+                                "title": "27,,13"
+                            },
+                            {
+                                "value": "tags/188/",
+                                "title": "17,,13"
+                            },
+                            {
+                                "value": "tags/189/",
+                                "title": "16,29"
+                            },
+                            {
+                                "value": "tags/190/",
+                                "title": ",,18,"
+                            },
+                            {
+                                "value": "tags/191/",
+                                "title": "7"
+                            },
+                            {
+                                "value": "tags/192/",
+                                "title": ",13,21,7"
+                            },
+                            {
+                                "value": "tags/193/",
+                                "title": ",21"
+                            },
+                            {
+                                "value": "tags/194/",
+                                "title": ",13,7"
+                            },
+                            {
+                                "value": "tags/195/",
+                                "title": ",11,,13"
+                            },
+                            {
+                                "value": "tags/196/",
+                                "title": "6,"
+                            },
+                            {
+                                "value": "tags/197/",
+                                "title": ""
+                            },
+                            {
+                                "value": "tags/198/",
+                                "title": "13"
+                            },
+                            {
+                                "value": "tags/199/",
+                                "title": "8,,13"
+                            },
+                            {
+                                "value": "tags/200/",
+                                "title": ",13,10,7"
+                            },
+                            {
+                                "value": "tags/201/",
+                                "title": ",,17,,13"
+                            },
+                            {
+                                "value": "tags/202/",
+                                "title": "10,,13"
+                            },
+                            {
+                                "value": "tags/203/",
+                                "title": "6,,,13"
+                            },
+                            {
+                                "value": "tags/204/",
+                                "title": "27,16,,13"
+                            },
+                            {
+                                "value": "tags/205/",
+                                "title": "10,,7"
+                            },
+                            {
+                                "value": "tags/206/",
+                                "title": "10,17,,13"
+                            },
+                            {
+                                "value": "tags/207/",
+                                "title": "11,,13"
+                            },
+                            {
+                                "value": "tags/208/",
+                                "title": "23,17,,13"
+                            },
+                            {
+                                "value": "tags/209/",
+                                "title": ",,,13"
+                            },
+                            {
+                                "value": "tags/210/",
+                                "title": ",7"
+                            },
+                            {
+                                "value": "tags/211/",
+                                "title": ","
+                            },
+                            {
+                                "value": "tags/212/",
+                                "title": "6,17,,13"
+                            },
+                            {
+                                "value": "tags/213/",
+                                "title": ",13,17,7"
+                            },
+                            {
+                                "value": "tags/214/",
+                                "title": "16,29"
+                            },
+                            {
+                                "value": "tags/215/",
+                                "title": ",,10,17"
+                            },
+                            {
+                                "value": "tags/216/",
+                                "title": ",11"
+                            },
+                            {
+                                "value": "tags/217/",
+                                "title": "17,11,,13"
+                            },
+                            {
+                                "value": "tags/218/",
+                                "title": ",,10,7"
+                            },
+                            {
+                                "value": "tags/219/",
+                                "title": ",,17"
+                            },
+                            {
+                                "value": "tags/220/",
+                                "title": "6"
+                            },
+                            {
+                                "value": "tags/221/",
+                                "title": ",8,7"
+                            },
+                            {
+                                "value": "tags/222/",
+                                "title": "27,27,,13"
+                            },
+                            {
+                                "value": "tags/223/",
+                                "title": "29"
+                            },
+                            {
+                                "value": "tags/224/",
+                                "title": "新作"
+                            },
+                            {
+                                "value": "tags/225/",
+                                "title": ",13,16,7"
+                            },
+                            {
+                                "value": "tags/226/",
+                                "title": ",8"
+                            },
+                            {
+                                "value": "tags/227/",
+                                "title": "爆更"
+                            }
+                        ],
+                        "key": "tags"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "theme/32/",
+                                "title": "故事漫画"
+                            },
+                            {
+                                "value": "theme/33/",
+                                "title": "轻小说"
+                            },
+                            {
+                                "value": "theme/34/",
+                                "title": "四格"
+                            },
+                            {
+                                "value": "theme/35/",
+                                "title": "绘本"
+                            },
+                            {
+                                "value": "theme/36/",
+                                "title": "单幅"
+                            },
+                            {
+                                "value": "theme/37/",
+                                "title": "条漫"
+                            }
+                        ],
+                        "key": "theme"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "quality/38/",
+                                "title": "签约"
+                            },
+                            {
+                                "value": "quality/39/",
+                                "title": "精品"
+                            },
+                            {
+                                "value": "quality/40/",
+                                "title": "热门"
+                            },
+                            {
+                                "value": "quality/41/",
+                                "title": "新手"
+                            }
+                        ],
+                        "key": "quality"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "city/42/",
+                                "title": "内地"
+                            },
+                            {
+                                "value": "city/43/",
+                                "title": "港台"
+                            },
+                            {
+                                "value": "city/44/",
+                                "title": "韩国"
+                            },
+                            {
+                                "value": "city/45/",
+                                "title": "日本"
+                            }
+                        ],
+                        "key": "city"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "copyright/46/",
+                                "title": "首发"
+                            },
+                            {
+                                "value": "copyright/47/",
+                                "title": "独家"
+                            },
+                            {
+                                "value": "copyright/56/",
+                                "title": "欧美"
+                            },
+                            {
+                                "value": "copyright/121/",
+                                "title": "香港"
+                            }
+                        ],
+                        "key": "copyright"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "pay/1/",
+                                "title": "免费"
+                            },
+                            {
+                                "value": "pay/2/",
+                                "title": "付费"
+                            },
+                            {
+                                "value": "pay/2/",
+                                "title": "Vip"
+                            }
+                        ],
+                        "key": "pay"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "finish/1/",
+                                "title": "连载"
+                            },
+                            {
+                                "value": "finish/2/",
+                                "title": "完结"
+                            }
+                        ],
+                        "key": "finish"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "order/hits",
+                                "title": "人气"
+                            },
+                            {
+                                "value": "order/addtime/",
+                                "title": "更新"
+                            },
+                            {
+                                "value": "order/score/",
+                                "title": "评分"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            },
+            "detailUrl": "//div/h3/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//li[contains(@class, 'acgn-item')]"
+        }
+    },
+    "sourceUrl": "https://www.guomanla.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺国漫吧",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665953884.789361",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://www.guomanla.com/index.php/search?key=%@keyWord",
+        "bookName": "//div/h3/a",
+        "lastChapterTitle": "//div/div/a[@class='latest-cartoon']",
+        "host": "https://www.guomanla.com/",
+        "detailUrl": "//div/h3/a/@href",
+        "list": "//li[contains(@class, 'acgn-item')]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "cover": "//a/img/@style||@js:\nreturn result.match(/http.*?\\.jpg/);"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn {'url':result, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Mobile Safari/537.36'}};",
+        "title": "//a/span[@class='name']",
+        "host": "https://www.guomanla.com/",
+        "list": "//ul[@id='js_chapter_list']/li[@class='item']",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

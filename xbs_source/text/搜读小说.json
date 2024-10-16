@@ -1,0 +1,106 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 6
+        },
+        "host": "https://www.sodu777.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.sodu777.com",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@property=\"og:description\"]/@content"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//dd[@class=\"book_other\"][1]",
+            "lastChapterTitle": "//dd[@class=\"book_other\"][2]",
+            "bookName": "//@alt",
+            "requestInfo": "@js:\r\nlet {_aa,_ab,_ac}=params.filters\r\nlet url=`https://www.sodu777.com/shuku/${_ac}_${_aa}_${_ab}_${params.pageIndex}.html`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.sodu777.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//dt/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_aa\n全部::0\n玄幻奇幻::1\n武侠仙侠::2\n都市生活::3\n历史军事::4\n游戏竞技::5\n科幻未来::6\n恐怖悬疑::7\n其他类型::8\n古代言情::9\n现代言情::10\n玄想奇缘::11\n游戏情缘::12\n浪漫青春::14\n言情美文::15\n科幻灵异::16\n其他类型::17\n\n_ac\n默认::0\n总点击::allvisit\n月点击::monthvisit\n周点击::weekvisit\n日点击::dayvisit\n总推荐::allvote\n月推荐::monthvote\n周推荐::weekvote\n日推荐::dayvote\n总收藏::goodnum\n字数::size\n入库::postdate\n\n_ab\n全部::0\n连载::1\n完本::2\n"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"sitebox\"]/dl",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//img/@src",
+            "status": "//span[@class=\"uptime\"]"
+        }
+    },
+    "sourceType": "text",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9",
+    "sourceName": "搜读小说",
+    "sourceUrl": "https://www.sodu777.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1657683570.862914",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//dd[@class=\"book_other\"]/span[3]",
+        "author": "//dd[@class=\"book_other\"]/span[1]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//dd[@class=\"book_other\"]/a",
+        "bookName": "//@alt",
+        "desc": "//dd[@class=\"book_des\"]",
+        "requestInfo": "@js:\nlet url= config.host+\"/search.html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.sodu777.com",
+        "actionID": "searchBook",
+        "detailUrl": "//dt/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//div[@id=\"sitembox\"]/dl",
+        "parserID": "DOM",
+        "wordCount": "//dd[@class=\"book_other\"]/span[4]",
+        "status": "//dd[@class=\"book_other\"]/span[2]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.sodu777.com",
+        "list": "//div[@class=\"box_con\"]//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

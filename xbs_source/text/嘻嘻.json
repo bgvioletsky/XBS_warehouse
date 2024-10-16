@@ -1,0 +1,183 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "1111",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "title",
+        "host": "https://api5-normal-lf.fqnovel.com/chuban",
+        "httpHeaders": {
+            "user-agent": "com.dragon.read/307 (Linux; U; Android 10; zh_CN; RMX2117; Build/QP1A.190711.020; Cronet/TTNetVersion:4df3ca9d 2019-11-25)"
+        },
+        "list": "$..item_data_list[*]",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn \"https://novel.snssdk.com/api/novel/book/reader/full/v1/?group_id=\"+ result.item_id+\"&item_id=\"+ result.item_id+\"&aid=1976\";"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "嘻嘻",
+    "sourceType": "text",
+    "sourceUrl": "https://api5-normal-lf.fqnovel.com/chuban",
+    "httpHeaders": {
+        "user-agent": "com.dragon.read/307 (Linux; U; Android 10; zh_CN; RMX2117; Build/QP1A.190711.020; Cronet/TTNetVersion:4df3ca9d 2019-11-25)"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665398642.520132",
+    "searchBook": {
+        "cat": "$.complete_category",
+        "author": "$.author",
+        "responseFormatType": "json",
+        "bookName": "$.book_name",
+        "desc": "$.abstract",
+        "requestInfo": "https://api5-normal-lf.fqnovel.com/reading/bookapi/search/tab/v/?offset=0&passback=&query=%@keyWord&search_id=&iid=308323375917453&aid=1967&app_name=novelapp&version_code=&version_name=5.0.4.32&device_platform=android",
+        "host": "https://api5-normal-lf.fqnovel.com/chuban",
+        "actionID": "searchBook",
+        "detailUrl": "@js: \nreturn \"https://api3-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&book_id=\"+result.book_id+\"&iid=2665637677906061&aid=1967&app_name=novelapp&version_code=100103\";",
+        "httpHeaders": {
+            "user-agent": "com.dragon.read/307 (Linux; U; Android 10; zh_CN; RMX2117; Build/QP1A.190711.020; Cronet/TTNetVersion:4df3ca9d 2019-11-25)"
+        },
+        "cover": "@js:\nvar cover = result.thumb_uri\n\nreturn \"https://p6-novel.byteimg.com/\"+cover+\"~tplv-shrink:640:0.image\"",
+        "list": "$..book_data[*]",
+        "parserID": "DOM",
+        "validConfig": ""
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "data/content",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\nreturn {'url': result, 'POST':false,\n\"httpHeaders\": config.httpHeaders};",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://api5-normal-lf.fqnovel.com/chuban",
+        "httpHeaders": {
+            "user-agent": "com.dragon.read/307 (Linux; U; Android 10; zh_CN; RMX2117; Build/QP1A.190711.020; Cronet/TTNetVersion:4df3ca9d 2019-11-25)"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐲",
+    "password": "0155",
+    "shudanList": {},
+    "bookDetail": {
+        "parserID": "DOM",
+        "actionID": "bookDetail",
+        "responseFormatType": "html"
+    },
+    "bookWorld": {
+        "男生": {
+            "cat": "$.complete_category",
+            "author": "$.author",
+            "responseFormatType": "json",
+            "bookName": "$.book_name",
+            "httpHeaders": {
+                "user-agent": "com.dragon.read/307 (Linux; U; Android 10; zh_CN; RMX2117; Build/QP1A.190711.020; Cronet/TTNetVersion:4df3ca9d 2019-11-25)"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api5-normal-lf.fqnovel.com/reading/bookapi/new_category/landing/v/?genre_type=0&limit=10&source=front_category&${_type}&offset=${params.pageIndex}&query_gender=1&iid=1099935039893805&aid=1967&app_name=novelapp&version_code=287`;\n\nreturn {url: encodeURI(url),'httpHeaders':config.httpHeaders}",
+            "host": "https://api5-normal-lf.fqnovel.com/chuban",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_type\n都市::category_id=1\n社交::category_id=2\n玄幻::category_id=7\n科幻::category_id=8\n悬疑::category_id=10\n历史::category_id=12\n体育::category_id=15\n武侠::category_id=16\n鉴宝::category_id=17\n系统::category_id=19\n神豪::category_id=20\n种田::category_id=23\n赘婿::category_id=25\n神医::category_id=26\n战神::category_id=27\n重生::category_id=36\n穿越::category_id=37\n次元::category_id=39\n海岛::category_id=40\n奶爸::category_id=42\n娱乐::category_id=43\n空间::category_id=44\n影视::category_id=45\n诗歌::category_id=46\n生活::category_id=48\n励志::category_id=56\n动漫::category_id=57\n推理::category_id=61\n文史::category_id=62\n洪荒::category_id=66\n三国::category_id=67\n末世::category_id=68\n直播::category_id=69\n无限::category_id=70\n诸天::category_id=71\n大唐::category_id=73\n宠物::category_id=74\n外卖::category_id=75\n星际::category_id=77\n美食::category_id=78\n年代::category_id=79\n剑道::category_id=80\n盗墓::category_id=81\n学霸::category_id=82\n天才::category_id=90\n腹黑::category_id=92\n扮猪::category_id=93\n战争::category_id=97\n灵异::category_id=100\n修真::category_id=124\n家庭::category_id=125\n明朝::category_id=126\n职场::category_id=127\n爽文::category_id=257\n传统::category_id=258\n奇幻::category_id=259\n日常::category_id=261\n脑洞::category_id=262\n都种::category_id=263\n架空::category_id=272\n古代::category_id=273\n奥特::category_id=367\n火影::category_id=368\n反派::category_id=369\n海贼::category_id=370\n宝可::category_id=371\n网游::category_id=372\n西游::category_id=373\n漫威::category_id=374\n特种::category_id=375\n龙珠::category_id=376\n大秦::category_id=377\n女帝::category_id=378\n求生::category_id=379\n聊天::category_id=381\n九叔::category_id=383\n无敌::category_id=384\n校花::category_id=385\n武魂::category_id=386\n单女::category_id=389\n无女::category_id=391\n青春::category_id=396"
+            },
+            "cover": "@js:\nvar cover = result.thumb_uri\n\nreturn \"https://p6-novel.byteimg.com/\"+cover+\"~tplv-shrink:640:0.image\"",
+            "validConfig": "",
+            "list": "$..book_info[*]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "@js: \nreturn \"https://api3-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&book_id=\"+result.book_id+\"&iid=2665637677906061&aid=1967&app_name=novelapp&version_code=100103\";",
+            "desc": "$.abstract"
+        },
+        "女生": {
+            "cat": "$.complete_category",
+            "author": "$.author",
+            "responseFormatType": "json",
+            "bookName": "$.book_name",
+            "httpHeaders": {
+                "user-agent": "com.dragon.read/307 (Linux; U; Android 10; zh_CN; RMX2117; Build/QP1A.190711.020; Cronet/TTNetVersion:4df3ca9d 2019-11-25)"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api5-normal-lf.fqnovel.com/reading/bookapi/new_category/landing/v/?genre_type=0&limit=10&source=front_category&${_type}&offset=${params.pageIndex}&query_gender=0&iid=1099935039893805&aid=1967&app_name=novelapp&version_code=287`;\n\nreturn {url: encodeURI(url),'httpHeaders':config.httpHeaders}",
+            "host": "https://api5-normal-lf.fqnovel.com/chuban",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_type\n都市::category_id=2\n现言::category_id=3\n校园::category_id=4\n古言::category_id=5\n科幻::category_id=8\n悬疑::category_id=10\n武侠::category_id=16\n系统::category_id=19\n种田::category_id=23\n快穿::category_id=24\n萌宝::category_id=28\n豪门::category_id=29\n宠妻::category_id=30\n幻言::category_id=32\n重生::category_id=36\n穿越::category_id=37\n次元::category_id=39\n娱乐::category_id=43\n空间::category_id=44\n影视::category_id=45\n诗歌::category_id=46\n生活::category_id=48\n励志::category_id=56\n动漫::category_id=57\n推理::category_id=61\n文史::category_id=62\n末世::category_id=68\n直播::category_id=69\n兽世::category_id=72\n清穿::category_id=76\n星际::category_id=77\n美食::category_id=78\n年代::category_id=79\n盗墓::category_id=81\n学霸::category_id=82\n公主::category_id=83\n皇后::category_id=84\n王妃::category_id=85\n女强::category_id=86\n皇叔::category_id=87\n嫡女::category_id=88\n精灵::category_id=89\n天才::category_id=90\n腹黑::category_id=92\n扮猪::category_id=93\n团宠::category_id=94\n虐文::category_id=95\n甜宠::category_id=96\n灵异::category_id=100\n家庭::category_id=125\n职场::category_id=127\n医术::category_id=247\n玄言::category_id=248\n萌宝::category_id=249\n脑洞::category_id=253\n社交::category_id=261\n婚爱::category_id=265\n马甲::category_id=266\n现脑::category_id=267\n复仇::category_id=268\n日常::category_id=269\n双男主::category_id=275\n反派::category_id=369\n病娇::category_id=380\n穿书::category_id=382\n无敌::category_id=384\n青梅::category_id=387\n男装::category_id=388\n民国::category_id=390\n无cp::category_id=392\n甜宠::category_id=394\n现宠::category_id=395"
+            },
+            "cover": "@js:\nvar cover = result.thumb_uri\n\nreturn \"https://p6-novel.byteimg.com/\"+cover+\"~tplv-shrink:640:0.image\"",
+            "validConfig": "",
+            "list": "$..book_info[*]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "detailUrl": "@js: \nreturn \"https://api3-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&book_id=\"+result.book_id+\"&iid=2665637677906061&aid=1967&app_name=novelapp&version_code=100103\";",
+            "desc": "$.abstract"
+        },
+        "短篇": {
+            "cat": "$.complete_category",
+            "author": "$.author",
+            "responseFormatType": "json",
+            "bookName": "$.book_name",
+            "httpHeaders": {
+                "user-agent": "com.dragon.read/307 (Linux; U; Android 10; zh_CN; RMX2117; Build/QP1A.190711.020; Cronet/TTNetVersion:4df3ca9d 2019-11-25)"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api5-normal-lf.fqnovel.com/reading/bookapi/new_category/landing/v/?genre_type=180&limit=10&source=front_category&category_id=${_type}&offset=${params.pageIndex}&query_gender=-1&iid=1662886704841607&aid=1967&app_name=novelapp&version_code=500`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://api5-normal-lf.fqnovel.com/chuban",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_type\n都市::1\n古代言情::5\n历史段故事::323\n幻想言情::32\n悬疑::10\n科幻::8\n现实生活::326\n武侠::16\n现代言情::3\n双男主::275"
+            },
+            "cover": "@js:\nvar cover = result.thumb_uri\n\nreturn \"https://p6-novel.byteimg.com/\"+cover+\"~tplv-shrink:640:0.image\"",
+            "validConfig": "",
+            "list": "$..book_info[*]",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "detailUrl": "@js: \nreturn \"https://api3-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&book_id=\"+result.book_id+\"&iid=2665637677906061&aid=1967&app_name=novelapp&version_code=100103\";",
+            "desc": "$.abstract"
+        },
+        "出版": {
+            "cat": "$.complete_category",
+            "author": "$.author",
+            "responseFormatType": "json",
+            "bookName": "$.book_name",
+            "httpHeaders": {
+                "user-agent": "com.dragon.read/307 (Linux; U; Android 10; zh_CN; RMX2117; Build/QP1A.190711.020; Cronet/TTNetVersion:4df3ca9d 2019-11-25)"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api5-normal-lf.fqnovel.com/reading/bookapi/new_category/landing/v/?genre_type=160&limit=10&source=front_category&${_type}&offset=${params.pageIndex}&query_gender=2&iid=1662886704841607&aid=1967&app_name=novelapp&version_code=500`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://api5-normal-lf.fqnovel.com/chuban",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_type\n科学幻想::category_id=8\n悬疑解密::category_id=10\n历史纪实::category_id=12\n现代武侠::category_id=16\n影视小说::category_id=45\n诗歌散文::category_id=46\n生活日常::category_id=48\n社会科学::category_id=50\n科技探索::category_id=52\n经济管理::category_id=53\n成功励志::category_id=56\n文化历史::category_id=62\n军事战争::category_id=97\n中国名著::category_id=98\n外国名著::category_id=99"
+            },
+            "cover": "@js:\nvar cover = result.thumb_uri\n\nreturn \"https://p6-novel.byteimg.com/\"+cover+\"~tplv-shrink:640:0.image\"",
+            "validConfig": "",
+            "list": "$..book_info[*]",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "detailUrl": "@js: \nreturn \"https://api3-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&book_id=\"+result.book_id+\"&iid=2665637677906061&aid=1967&app_name=novelapp&version_code=100103\";",
+            "desc": "$.abstract"
+        }
+    }
+}

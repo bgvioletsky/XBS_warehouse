@@ -1,0 +1,166 @@
+{
+    "bookWorld": {
+        "f": {
+            "cat": "clsFirstName",
+            "author": "actorName",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "intro",
+            "requestInfo": "/audio/discover/more?audioModuleId=%@filter&pageNo=%@pageIndex&pageSize=10",
+            "host": "http://app.zhoudamozi.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "10",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "本周上新",
+                                "value": "8"
+                            },
+                            {
+                                "title": "爆款热门",
+                                "value": "13"
+                            },
+                            {
+                                "title": "热门免费",
+                                "value": "15"
+                            },
+                            {
+                                "title": "起点经典",
+                                "value": "11"
+                            },
+                            {
+                                "title": "摸金盗墓",
+                                "value": "3"
+                            },
+                            {
+                                "title": "悬疑惊悚",
+                                "value": "5"
+                            },
+                            {
+                                "title": "恐怖特辑",
+                                "value": "27"
+                            },
+                            {
+                                "title": "赘婿合集",
+                                "value": "10"
+                            },
+                            {
+                                "title": "全网精品",
+                                "value": "16"
+                            },
+                            {
+                                "title": "相声小品",
+                                "value": "12"
+                            },
+                            {
+                                "title": "精品历史",
+                                "value": "17"
+                            },
+                            {
+                                "title": "军事题材",
+                                "value": "23"
+                            },
+                            {
+                                "title": "儿童精选",
+                                "value": "9"
+                            },
+                            {
+                                "title": "文学出版",
+                                "value": "19"
+                            },
+                            {
+                                "title": "文化精选",
+                                "value": "18"
+                            },
+                            {
+                                "title": "音乐精选",
+                                "value": "6"
+                            },
+                            {
+                                "title": "女生最爱",
+                                "value": "4"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "photoPath || https://img.dayouzh.com/klajdfiaoj/music_collect%@result",
+            "validConfig": "",
+            "parserID": "DOM",
+            "detailUrl": "id",
+            "list": "data"
+        }
+    },
+    "password": "newsound",
+    "weight": "1",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet url = '/audio/chapter/listAll?sortType=0&audioId=' + result;\nlet hh = {'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)',\n'Seq':'bfa2354f3387c57840e83138cc6456a4'};\nreturn {'url':url, 'httpHeaders':hh, 'cacheTime':86400};",
+        "title": "name",
+        "host": "http://app.zhoudamozi.com/",
+        "list": "data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "musicPath || @js:\nlet obj = JSON.parse(result);\n\nlet addr = undefined;\nif(obj.m != undefined)\n\taddr = obj.m.addr;\nelse if(obj.l != undefined)\n\taddr = obj.l.addr;\nelse if(obj.h != undefined)\n\taddr = obj.h.addr;\n\nif(addr != undefined)\n\treturn 'http://ys.mayiyunxinxi.com/klajdfiaoj/music_collect' + addr;\nreturn undefined;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "有兔听书",
+    "sourceType": "audio",
+    "sourceUrl": "http://app.zhoudamozi.com/",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639841008.424768",
+    "searchBook": {
+        "cat": "clsName",
+        "author": "actorName",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "desc": "intro",
+        "requestInfo": "@js:\nlet hh = {'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)',\n'Seq':'bfa2354f3387c57840e83138cc6456a4'};\nlet hp = {'q':params.keyWord, 'pageNo':params.pageIndex, 'pageSize':10};\nlet url = '/es/search/audio';\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh};",
+        "host": "http://app.zhoudamozi.com/",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "photoPath || https://img.dayouzh.com/klajdfiaoj/music_collect%@result",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "data"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "host": "http://app.zhoudamozi.com/",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nlet url = result;\nlet hh = {'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)',\n'Seq':'bfa2354f3387c57840e83138cc6456a4'};\nlet ret = {'url':url, 'httpHeaders':hh};\nreturn {'response':JSON.stringify(ret)};",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "有些听不了",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

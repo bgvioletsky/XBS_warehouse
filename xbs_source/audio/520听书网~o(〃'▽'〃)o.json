@@ -1,0 +1,100 @@
+{
+    "bookWorld": {},
+    "weight": "8888",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//dl/dd[7]/text()",
+        "title": "//a/@title",
+        "host": "https://www.520tingshu.net",
+        "httpHeaders": {
+            "Referer": "http://m.i275.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//ul[@class=\"ul-36 clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "520听书网~o(〃'▽'〃)o",
+    "sourceType": "audio",
+    "sourceUrl": "https://www.520tingshu.net",
+    "httpHeaders": {
+        "Referer": "http://m.i275.com",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666602332.275236",
+    "searchBook": {
+        "author": "//div[@class=\"style-img clearfix\"]//span/text()",
+        "responseFormatType": "html",
+        "bookName": "//a/span/img/@alt",
+        "httpHeaders": {
+            "Referer": "http://m.i275.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+        },
+        "requestInfo": "@js:\n\n\nlet url = config.host +\"/search.php?searchword=\" +encodeURI(params.keyWord)\n\n\nreturn {'url':url, 'POST':false,'httpHeaders': config.httpHeaders,'cahceTime':3600};",
+        "host": "https://www.520tingshu.net",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "detailUrl": "//div[@class=\"style-img clearfix\"]/a/@href",
+        "validConfig": "",
+        "list": "//ul[@class=\"row3 row-b\"]/li",
+        "parserID": "DOM",
+        "cover": "//a/span/img/@src",
+        "desc": "//div[@class=\"style-img clearfix\"]//p/text()",
+        "wordCount": "//div[@class=\"broadcaster\"]/text(2)"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "|",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\n\nlet pat=\".*\\\\.(m4a|mp3).*\";\n\n\n/*let hh= {\"Referer\":\"https:\\/\\/m.i275.com\",\"User-Agent\":\"Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25}*/\n\n\n\nreturn {'url':result,'httpHeaders': config.httpHeaders,'webView':true,'sourceRegex':pat};",
+        "host": "https://www.520tingshu.net",
+        "httpHeaders": {
+            "Referer": "http://m.i275.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result,'httpHeaders':config.httpHeaders,cacheTime:3600};",
+        "host": "https://www.520tingshu.net",
+        "httpHeaders": {
+            "Referer": "http://m.i275.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+        },
+        "cover": "//div[@class=\"book clearfix\"]/img/@data-cfsrc",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"book-intro tab-cont\"]/text()"
+    }
+}

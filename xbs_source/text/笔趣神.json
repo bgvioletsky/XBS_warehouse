@@ -1,0 +1,67 @@
+{
+    "chapterContent": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tif(resStr.indexOf('{')==0)\n\t{\n\t\tlet info=JSON.parse(resStr);\n\t\tif(info.status && info.status=='success')\n\t\t\treturn {'response':info.info.content, 'success':true, 'removeHtmlKeys':'response'};\n\t\treturn undefined;\n\t}\n\n\tif(resStr.indexOf('class=\"preload')>0)\n\t{\n\t\tlet reg = /article_id.*?\"(.*?)\"(?:\\S|\\s)*?chapter_id.*?\"(.*?)\"(?:\\S|\\s)*?hash.*?\"(.*)\"/gim;\n\t\twhile(tem=reg.exec(resStr))\n\t\t{\n\t\t\tlet nextParams = {'id':tem[1], 'cid':tem[2], 'eKey':tem[3], 'basecid':tem[2]};\n\t\t\tlet nextUrl = 'https://www.biqushen.cc/home/index/ajaxchapter';\n\t\t\tlet nextQueryInfo = {'url':nextUrl, 'httpParams':nextParams, 'POST':true};\n\t\t\treturn {'nextQueryInfo':nextQueryInfo, 'autoRequestMore':true, 'more':true, 'success':true};\n\t\t}\n\t\treturn undefined;\n\t}\n\n\tvar beginChar = 'id=\"BookText\">';\n\tvar endChar = '<\\/div>';\n\tvar beginIndex = resStr.indexOf(beginChar);\n\tif(beginIndex>0) \n\t{\n\t\tlet subStr = resStr.substr(beginIndex+beginChar.length);\n\t\tlet endIndex = subStr.indexOf(endChar);\n\t\tif(endIndex>0)\n\t\t{\n\t\t\tsubStr = subStr.substr(0, endIndex);\n\n\t\t\tlet nextPageUrl = undefined;\n\t\t\tlet nextPageChar = 'to_nextpage\">';\n\t\t\tendIndex = subStr.indexOf(nextPageChar);\n\t\t\tif(endIndex>0){\n\t\t\t\tlet lastStr = subStr.substr(endIndex);\n\t\t\t\tsubStr = subStr.substr(0, endIndex+nextPageChar.length);\n\n\t\t\t\tbeginChar = 'href=\"';\n\t\t\t\tbeginIndex = lastStr.indexOf(beginChar);\n\t\t\t\tif(beginIndex>0){\n\t\t\t\t\tlastStr = lastStr.substr(beginIndex + beginChar.length);\n\t\t\t\t\tendIndex = lastStr.indexOf('\"');\n\t\t\t\t\tif(endIndex>0)\n\t\t\t\t\t\tnextPageUrl = lastStr.substr(0, endIndex);\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tlet result = {'response':subStr, 'removeHtmlKeys':'response'};\n\t\t\tif(nextPageUrl){\n\t\t\t\tresult.nextPageUrl = nextPageUrl;\n\t\t\t\tresult.autoRequestMore = true;\n\t\t\t\tresult.more = true;\n\t\t\t}\n\t\t\treturn result;\n\t\t}\n\t}\n\n\treturn undefined;\n}",
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.biqushen.cc",
+        "requestJavascript": "function functionName(config, params) \n{\n\tvar hostUrl = 'https://www.biqushen.cc';\n\tif(params.lastResponse)\n\t{\n\t\tvar lastRes=params.lastResponse;\n\t\tif(lastRes.nextQueryInfo)\n\t\t\treturn lastRes.nextQueryInfo;\n\n\t\tif(lastRes.nextPageUrl)\n\t\t\treturn hostUrl + lastRes.nextPageUrl;\n\t}\t\t\n\treturn hostUrl + params.queryInfo.url;\n}",
+        "parserID": "JS"
+    },
+    "enable": false,
+    "authorId": "1600862082.628709",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "JS"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "JS"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.biqushen.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "JS"
+    },
+    "weight": "80",
+    "sourceName": "笔趣神",
+    "miniAppVersion": "2.15.0",
+    "password": "Baby",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "JS"
+    },
+    "lastModifyTime": "1619745005.334859",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "JS"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "JS"
+    },
+    "searchBook": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar hostUrl = 'https://www.biqushen.cc';\n\tvar result = {};\n\tvar list = [];\n\n\tif(resStr.indexOf('og:title')>0)\n\t{\n\t\tlet reg = /canonical.*?href=\"(.*?)\"(?:\\S|\\s)*?og:title\".*?\"(.*?)\"(?:\\S|\\s)*?description\".*?\"(.*?)\"(?:\\S|\\s)*?og:image\".*?\"(.*?)\"(?:\\S|\\s)*?author\".*?\"(.*?)\"(?:\\S|\\s)*?chapter_name\".*?\"(.*?)\"/gim;\n\t\twhile(tem=reg.exec(resStr))\n\t\t{\n\t\t\tlet bookInfo = {};\n\t\t\tbookInfo.bookId = tem[1].replace(hostUrl, '');\n\t\t\tbookInfo.bookName = tem[2];\n\t\t\tbookInfo.desc = tem[3];\n\t\t\tbookInfo.cover = hostUrl + tem[4];\n\t\t\tbookInfo.author = tem[5];\n\t\t\tbookInfo.lastChapterTitle = tem[6];\n\t\t\tlist = [bookInfo];\n\t\t\tbreak;\n\t\t}\n\t}\n\telse\n\t{\n\t\tlet reg = /<dt>.*?href=\"(.*?)\".*?src=\"(.*?)\".*?alt=\"(.*?)\"(?:\\S|\\s)*?book_other.*?title=\"(.*?)\"(?:\\S|\\s)*?book_des\">(.*?)<a(?:\\S|\\s)*?book_other.*?<a.*?>(.*?)</gim;\n\t\twhile(tem=reg.exec(resStr))\n\t\t{\n\t\t\tlet bookInfo = {};\n\t\t\tbookInfo.cover = hostUrl + tem[2];\n\t\t\tbookInfo.bookId = tem[1];\n      \t\t\tbookInfo.bookName = tem[3];\n      \t\t\tbookInfo.desc = tem[5];\n     \t\t\tbookInfo.author = tem[4];\n\t\t\tbookInfo.lastChapterTitle = tem[6];\n\t\t\tlist.push(bookInfo);\n    \t\t}\n\t}\n\n\tresult.list = list;\n\tresult.more = false;\n\tresult.removeHtmlKeys = 'desc';\n\tif(resStr.indexOf('search')>0)\n\t\tresult.success = true;\n\treturn result;\n}",
+        "validConfig": "",
+        "actionID": "searchBook",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.biqushen.cc",
+        "requestJavascript": "function functionName(config, params) {\n\tvar url = 'https://www.biqushen.cc/home/search';\n\tvar httpParams = {'action':'search', 'q':params.keyWord};\n\treturn {'requestCreateType':'2', 'url':url, 'POST':true, 'httpParams':httpParams, 'forbidCookie':true};\n}",
+        "parserID": "JS"
+    },
+    "chapterList": {
+        "responseJavascript": "function functionName(config, params, resStr)\n{\n\tvar subStr = resStr;\n\tvar beginIndex = subStr.indexOf('chapterlist\">');\n\tif(beginIndex>0){\n\t\tsubStr = subStr.substr(beginIndex);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tif(endIndex>0)\n\t\t\tsubStr = subStr.substr(0, endIndex);\n\t}\n\n\tvar list = [];\n\tvar reg = /<li(?:|\\S|\\s)*?href=\"(.*?)\".*?>(.*?)</gim;\n\twhile(tem=reg.exec(subStr))\n\t{\n\t\tlet chapterInfo = {};\n\t\tchapterInfo.url = tem[1];\n\t\tchapterInfo.title = tem[2];\n\t\tlist.push(chapterInfo);\n\t}\n\t\n\tif(list.length==0)\n\t{\n\t\treg = /<dd(?:|\\S|\\s)*?href=\"(.*?)\".*?>(.*?)</gim;\n\t\twhile(tem=reg.exec(subStr))\n\t\t{\n\t\t\tlet chapterInfo = {};\n\t\t\tchapterInfo.url = tem[1];\n\t\t\tchapterInfo.title = tem[2];\n\t\t\tlist.push(chapterInfo);\n\t\t}\n\t}\n\n\treturn {'list':list};\n}",
+        "validConfig": "",
+        "actionID": "chapterList",
+        "responseFunction": "functionName",
+        "requestFunction": "functionName",
+        "host": "https://www.biqushen.cc",
+        "requestJavascript": "function functionName(config, params) {\n\treturn 'https://www.biqushen.cc' + params.queryInfo.bookId;\n}",
+        "parserID": "JS"
+    },
+    "sourceType": "text"
+}

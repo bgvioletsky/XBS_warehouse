@@ -1,0 +1,273 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//*[@id=\"cp_img\"]//img/@data-src",
+        "host": "https://www.fumanmi.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class='fanye']/a[2]/@href"
+    },
+    "enable": true,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//a[@class='status']",
+        "lastChapterTitle": "//span[@class='num']",
+        "host": "https://www.fumanmi.com/",
+        "cat": "//div[@class='ctdbRightInner']/h1/span/a",
+        "cover": "//div[@class='ctdbLeft ']/a/img/@src",
+        "responseFormatType": "html",
+        "desc": "//*[@id=\"worksDesc\"]",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "lastChapterTitle": "//p/a",
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "requestInfo": "https://www.fumanmi.com/top/%@filter.html",
+            "host": "https://www.fumanmi.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "总点击",
+                                "value": "alldj"
+                            },
+                            {
+                                "title": "月点击",
+                                "value": "ydj"
+                            },
+                            {
+                                "title": "周点击",
+                                "value": "zdj"
+                            },
+                            {
+                                "title": "日点击",
+                                "value": "rdj"
+                            },
+                            {
+                                "title": "总收藏",
+                                "value": "allfav"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "detailUrl": "//h2/a/@href",
+            "validConfig": "",
+            "cover": "//a/img/@data-src",
+            "parserID": "DOM",
+            "list": "//div[@class='classification']"
+        },
+        "分类": {
+            "lastChapterTitle": "//p/a",
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "requestInfo": "@js:\nreturn 'https://www.fumanmi.com/libiao/' + params.filters.area + '/' + params.filters.tag + '/' + params.filters.status + '/' + params.pageIndex + '.html';",
+            "host": "https://www.fumanmi.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "9"
+                            },
+                            {
+                                "title": "韩漫",
+                                "value": "1"
+                            },
+                            {
+                                "title": "国漫",
+                                "value": "2"
+                            },
+                            {
+                                "title": "日漫",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "area"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "%E5%85%A8%E9%83%A8"
+                            },
+                            {
+                                "title": "热血",
+                                "value": "%E7%83%AD%E8%A1%80"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "%E6%81%8B%E7%88%B1"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "%E9%9D%92%E6%98%A5"
+                            },
+                            {
+                                "title": "彩虹",
+                                "value": "%E5%BD%A9%E8%99%B9"
+                            },
+                            {
+                                "title": "冒险",
+                                "value": "%E5%86%92%E9%99%A9"
+                            },
+                            {
+                                "title": "后宫",
+                                "value": "%E5%90%8E%E5%AE%AB"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "%E6%82%AC%E7%96%91"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "%E7%8E%84%E5%B9%BB"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "%E7%A9%BF%E8%B6%8A"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "%E9%83%BD%E5%B8%82"
+                            },
+                            {
+                                "title": "腹黑",
+                                "value": "%E8%85%B9%E9%BB%91"
+                            },
+                            {
+                                "title": "爆笑",
+                                "value": "%E7%88%86%E7%AC%91"
+                            },
+                            {
+                                "title": "少年",
+                                "value": "%E5%B0%91%E5%B9%B4"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "%E5%A5%87%E5%B9%BB"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "%E5%8F%A4%E9%A3%8E"
+                            },
+                            {
+                                "title": "妖恋",
+                                "value": "%E5%A6%96%E6%81%8B"
+                            },
+                            {
+                                "title": "元气",
+                                "value": "%E5%85%83%E6%B0%94"
+                            },
+                            {
+                                "title": "治愈",
+                                "value": "%E6%B2%BB%E6%84%88"
+                            },
+                            {
+                                "title": "励志",
+                                "value": "%E5%8A%B1%E5%BF%97"
+                            },
+                            {
+                                "title": "日常",
+                                "value": "%E6%97%A5%E5%B8%B8"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "%E7%99%BE%E5%90%88"
+                            }
+                        ],
+                        "key": "tag"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "3"
+                            },
+                            {
+                                "title": "连载中",
+                                "value": "4"
+                            },
+                            {
+                                "title": "已完结",
+                                "value": "1"
+                            },
+                            {
+                                "title": "已太监",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "status"
+                    }
+                ]
+            },
+            "detailUrl": "//h2/a/@href",
+            "validConfig": "",
+            "cover": "//a/img/@data-src",
+            "parserID": "DOM",
+            "list": "//div[@class='classification']"
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺腐漫漫画",
+    "sourceUrl": "https://www.fumanmi.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665953981.116348",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':'https://www.fumanmi.com/search?searchkey='+encodeURI(params.keyWord), 'forbidCookie':true};",
+        "lastChapterTitle": "//p/a",
+        "bookName": "//h2/a",
+        "host": "https://www.fumanmi.com/",
+        "detailUrl": "//h2/a/@href",
+        "cover": "//a/img/@data-src",
+        "responseFormatType": "html",
+        "list": "//div[@class='classification']",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//span[@class='date']",
+        "title": "//a",
+        "host": "https://www.fumanmi.com/",
+        "list": "//*[@id=\"detail-list-select-1\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

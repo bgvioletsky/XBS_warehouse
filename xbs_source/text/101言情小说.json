@@ -1,0 +1,136 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//tr[1]/td[4]",
+        "wordCount": "//tr[3]/td[2]",
+        "host": "https://www.txt101.com",
+        "cat": "//tr[1]/td[2]",
+        "cover": "//td/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"CrbsSum\"]/text()"
+    },
+    "weight": "9954",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "nextPageUrl": "//meta[@property=\"og:novel:read_url\"]/@content|@js:return result.replace('.html','/');",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 2,
+            "skipCount": 1
+        },
+        "host": "https://www.txt101.com",
+        "list": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content|//div[@id=\"defaulthtml4\"]/div[@class=\"chaper0\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "parserID": "DOM",
+    "enable": 1,
+    "sourceName": "101言情小说",
+    "sourceUrl": "https://www.txt101.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1658309513.738872",
+    "searchBook": {
+        "author": "//div[@class=\"author\"]|@js: return result.replace('作者：','');",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "book/search.aspx?key=%@keyWord",
+        "bookName": "//h4/a",
+        "detailUrl": "//h4/a/@href",
+        "host": "https://www.txt101.com",
+        "cat": "//div[@class=\"update\"]/text()",
+        "list": "//div[@class=\"bookbox\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='content']/text()",
+        "host": "https://www.txt101.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐮",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "排行榜": {
+            "cat": "//td[1]",
+            "lastChapterTitle": "//td[3]/a",
+            "responseFormatType": "html",
+            "author": "//td[5]",
+            "bookName": "//td[2]/a",
+            "requestInfo": "https://www.txt101.com/top.php",
+            "host": "https://www.txt101.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[2]/a/@href",
+            "validConfig": "",
+            "list": "//table[@class=\"sf-grid\"]//tbody/tr",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "status": "//td[8]"
+        },
+        "分类": {
+            "cat": "//td[1]",
+            "lastChapterTitle": "//td[3]/a",
+            "responseFormatType": "html",
+            "author": "//td[5]",
+            "bookName": "//td[2]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.txt101.com/class/${_type}_${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.txt101.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[2]/a/@href",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": "_type\n古代言情::1\n现代言情::2\n纯爱耽美::3\n仙侠玄幻::4\n科幻未来::5\n悬疑鬼怪::6\n游戏人生::7\n百合GL::8\n其他类型::56"
+            },
+            "validConfig": "",
+            "list": "//table[@class=\"sf-grid\"]//tbody/tr",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "//td[8]"
+        },
+        "最新入库": {
+            "cat": "//td[1]",
+            "lastChapterTitle": "//td[3]/a",
+            "responseFormatType": "html",
+            "author": "//td[5]",
+            "bookName": "//td[2]/a",
+            "requestInfo": "https://www.txt101.com/top/postdate_%@pageIndex.html",
+            "host": "https://www.txt101.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[2]/a/@href",
+            "validConfig": "",
+            "list": "//table[@class=\"sf-grid\"]//tbody/tr",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "status": "//td[8]"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

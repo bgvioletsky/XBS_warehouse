@@ -1,0 +1,122 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"content1\"]/text()",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\nlet url = config.host + params.preview_page + result;\nreturn {'url': result, 'POST':false, \"httpHeaders\": hh ,'forbidCookie':true ,cacheTime:3600};",
+        "host": "https://www.xuanshu.com",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "desc": "//div[@class=\"info_cont\"]/div[2]/div/text()",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url': result, 'POST':false, \"httpHeaders\": hh ,'forbidCookie':true ,cacheTime:3600};",
+        "lastChapterTitle": "//div[@class=\"info_cont\"]/div/dl[4]/a/text()",
+        "host": "https://www.xuanshu.com",
+        "cat": "//div[@id=\"info\"]/dd/a[2]/text()",
+        "cover": "//div[@class=\"info_cont\"]/div/a/img/@src",
+        "responseFormatType": "html",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "//div[1]/text()",
+            "author": "//div[4]/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[3]/a/text()",
+            "bookName": "//div[2]/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.baidu.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.xuanshu.com${_type}${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.xuanshu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻魔法::/sort1/1\n武侠修真::/sort2/1\n都市言情::/sort3/1\n历史军事::/sort4/1\n网游动漫::/sort6/1\n科幻小说::/sort7/1\n恐怖灵异::/sort8/1\n综合其他::/sort10/1"
+            },
+            "cover": "//div[2]/a/@href ||@js:\nlet preUrl='https://www.xuanshu.com/tupian/';\nlet sufUel='s.jpg';\nlet res = result;\nlet array = res.split(\"/\");\nlet num = array[2];\nlet preNum = num/1000;\nlet trNum = Math.trunc(preNum);\nlet resUrl = preUrl+trNum+\"/\"+num+\"/\"+num+sufUel;\nreturn resUrl;",
+            "validConfig": "",
+            "parserID": "DOM",
+            "list": "//div[@class=\"zuixin\"]/ul/li[position()>1]",
+            "detailUrl": "//div[2]/a/@href ||@js:\nreturn \"https://www.xuanshu.com/\"+result;"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.xuanshu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "👾选书网_rootmanLHQ",
+    "httpHeaders": {
+        "Referer": "https://www.baidu.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1664686007.608768",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[3]/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//td[2]/a/text()",
+        "bookName": "//td[1]/a/text()",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url=config.host+\"/search.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.xuanshu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "cover": "//td[1]/a/@href ||@js:\nlet preUrl='https://www.xuanshu.com/tupian/';\nlet sufUrl='s.jpg';\nlet res = result;\nlet array = res.split(\"/\");\nlet num = array[4];\nlet preNum = num/1000;\nlet trNum = Math.trunc(preNum);\nlet resUrl = preUrl+trNum+\"/\"+num+\"/\"+num+sufUrl;\nreturn resUrl;",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//table/tr"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nreturn {'url': result, 'POST':false, \"httpHeaders\": hh ,'forbidCookie':true ,cacheTime:3600};",
+        "title": "//a/text()",
+        "host": "https://www.xuanshu.com",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@class=\"pc_list\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href||@js:\n\n//params.nativeTool.log(params.nativeTool.getCache(\"bookUrl4\"));\n\nreturn params.queryInfo.detailUrl +result;"
+    },
+    "sourceType": "text"
+}

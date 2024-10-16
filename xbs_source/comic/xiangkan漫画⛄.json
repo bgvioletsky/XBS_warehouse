@@ -1,0 +1,181 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.2kju.com",
+        "desc": "//p[@class=\"detail-info-content\"]",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//p[1]",
+            "desc": "//p[2]",
+            "requestInfo": "@js:\n\tlet url = config.host + '/filter-';\n\turl += params.filters.type1 +'-'+ params.filters.type2 + '-' + params.filters.type0;\n\turl += '/?page=' + params.pageIndex + '& querystring_key=page'\n\treturn encodeURI(url);",
+            "host": "https://www.2kju.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "cover": "//img/@src",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "类型",
+                                "value": 0
+                            },
+                            {
+                                "title": "熱血",
+                                "value": 1
+                            },
+                            {
+                                "title": "戀愛",
+                                "value": 2
+                            },
+                            {
+                                "title": "校園",
+                                "value": 3
+                            },
+                            {
+                                "title": "冒險",
+                                "value": 4
+                            },
+                            {
+                                "title": "科幻",
+                                "value": 5
+                            },
+                            {
+                                "title": "生活",
+                                "value": 6
+                            },
+                            {
+                                "title": "懸疑",
+                                "value": 7
+                            },
+                            {
+                                "title": "魔法",
+                                "value": 8
+                            },
+                            {
+                                "title": "運動",
+                                "value": 9
+                            },
+                            {
+                                "title": "韓國",
+                                "value": 10
+                            }
+                        ],
+                        "key": "type0"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "状态",
+                                "value": 0
+                            },
+                            {
+                                "title": "連載中",
+                                "value": 2
+                            },
+                            {
+                                "title": "完結",
+                                "value": 3
+                            }
+                        ],
+                        "key": "type1"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "人氣",
+                                "value": 0
+                            },
+                            {
+                                "title": "更新時間",
+                                "value": 2
+                            },
+                            {
+                                "title": "上架時間",
+                                "value": 3
+                            }
+                        ],
+                        "key": "type2"
+                    }
+                ]
+            },
+            "list": "//div[@class=\"manga-i-list-item\"]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "weight": "10006",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.2kju.com",
+        "list": "//div[@id=\"chapterlistload\"]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "xiangkan漫画⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.2kju.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1655024293.298278",
+    "searchBook": {
+        "cat": "//p/span[2]",
+        "responseFormatType": "html",
+        "bookName": "//h2/a",
+        "requestInfo": "/search?title=%@keyWord&page=%@pageIndex",
+        "host": "https://www.2kju.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h2/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class=\"mh-list\"]//li",
+        "moreKeys": {
+            "pageSize": 12
+        },
+        "status": "//p/span[1]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[contains(@class,\"rd-article-w\")]//img/@data-original",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config,params,result){\n\tlet list = result.content.split('\\n');\n\tlet ad = list.pop();\n\tif(ad.indexOf('http')>=0){\n\t\tad = config.host + ad;\n\t\tlist.push(ad);\n\t}\n\treturn list.join('\\n');\n\n}",
+        "host": "https://www.2kju.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "desc": "Ks🔍✨",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": ""
+}

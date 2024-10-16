@@ -1,0 +1,89 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.xinqimh.com",
+        "content": "//img/@data-original",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//span[@class=\"block\"]/span",
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.xinqimh.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class=\"content\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "全部": {
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "desc": "//p[@class=\"chapter\"]",
+            "requestInfo": "https://www.xinqimh.com/booklist?page=%@pageIndex",
+            "host": "https://www.xinqimh.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "cover": "//p/@style\n||@js:\nreturn result.match(/(https.*jpg)/)[1];",
+            "validConfig": "",
+            "list": "//ul[@class=\"mh-list col7\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "maxPage": 20
+            }
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "新奇漫画",
+    "sourceUrl": "https://www.xinqimh.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "asaoge",
+    "lastModifyTime": "1665759875.921266",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://www.xinqimh.com/search?keyword=%@keyWord",
+        "bookName": "//h2/a\n||@js:\nreturn result.replace(/\\n|\\s/g,\"\")",
+        "detailUrl": "//h2/a/@href",
+        "host": "https://www.xinqimh.com",
+        "cover": "//p/@style\n||@js:\nreturn result.match(/(https.*jpg)/)[1];",
+        "list": "//ul[@class=\"mh-list col7\"]/li",
+        "parserID": "DOM",
+        "responseFormatType": "html"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.xinqimh.com",
+        "list": "//ul[@id=\"detail-list-select\"]/li\n||@js:\nreturn result.reverse()",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

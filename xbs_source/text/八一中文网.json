@@ -1,0 +1,152 @@
+{
+    "bookWorld": {
+        "分类": {
+            "author": "//span[@class=\"s5\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"s3\"]/a/text()",
+            "bookName": "//span[@class=\"s2\"]/a/text()",
+            "httpHeaders": {
+                "Referer": "http://www.zwduxs.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+            },
+            "requestInfo": "@js:\n\nlet url =config.host+\"/\"+params.filters.type+\"/\"\n\n\nlet hh = {\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50\"};\n\nreturn{'url':url,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "http://www.zwduxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻小说",
+                                "value": "xuanhuanxiaoshuo"
+                            },
+                            {
+                                "title": "修真小说",
+                                "value": "xiuzhenxiaoshuo"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "dushixiaoshuo"
+                            },
+                            {
+                                "title": "穿越小说",
+                                "value": "chuanyuexiaoshuo"
+                            },
+                            {
+                                "title": "网游小说",
+                                "value": "wangyouxiaoshuo"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "kehuanxiaoshuo"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//div[@class=\"image\"]/a/img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"l\"]/ul/li",
+            "desc": "//div[@class=\"item\"]/dl/dd/text()",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href"
+        }
+    },
+    "weight": "9988",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "requestInfo": "@js:\nreturn params.queryInfo.detailUrl;",
+        "title": "//a",
+        "host": "http://www.zwduxs.com",
+        "httpHeaders": {
+            "Referer": "http://www.zwduxs.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|http://www.zwduxs.com%@result"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "parserID": "DOM",
+    "enable": 1,
+    "sourceName": "八一中文网",
+    "sourceUrl": "http://www.zwduxs.com",
+    "httpHeaders": {
+        "Referer": "http://www.zwduxs.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1652240414.067051",
+    "searchBook": {
+        "responseFormatType": "html",
+        "author": "//td[3]",
+        "bookName": "//td[1]/a",
+        "httpHeaders": {
+            "Referer": "http://www.zwduxs.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "requestInfo": "http://www.zwduxs.com/modules/article/search.php?searchtype=all&searchkey=%@keyWord",
+        "host": "http://www.zwduxs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//tr[@id=\"nr\"]",
+        "status": "//td[6]",
+        "updateTime": "//td[5]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]|@js:return result.replace('7017k','')",
+        "actionID": "chapterContent",
+        "host": "http://www.zwduxs.com",
+        "httpHeaders": {
+            "Referer": "http://www.zwduxs.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "oaix",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "host": "http://www.zwduxs.com",
+        "httpHeaders": {
+            "Referer": "http://www.zwduxs.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "cover": "//div[@id=\"fmimg\"]/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@id=\"intro\"]/p/text()",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

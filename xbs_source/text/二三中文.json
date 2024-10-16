@@ -1,0 +1,95 @@
+{
+    "bookWorld": {
+        "分类": {
+            "author": "//p[@class=\"author\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//p[@class=\"title\"]/a\n||@js:\nif(result==\"深空彼岸\"){\n\nreturn \"深🈳️彼岸\";\n}else{\nreturn result;\n}",
+            "desc": "//p[@class=\"review\"]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.23uswx.com/xclass/${_type}/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.23uswx.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[@class=\"title\"]/a/@href||@js:\n\nlet id =result.match(/\\d+/)\n\nlet idd = parseInt(id/1000)\n\nurl = config.host+\"/\"+ idd + \"_\" + id +\"/\"\nreturn url",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_type\n玄幻::1\n修真::2\n都市::3\n穿越::4\n网游::5\n科幻::6"
+            },
+            "validConfig": "",
+            "list": "//div[@id=\"main\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//img/@data-original"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.23uswx.com",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "二三中文",
+    "sourceType": "text",
+    "sourceUrl": "https://www.23uswx.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666935126.753783",
+    "searchBook": {
+        "author": "//td[3]",
+        "lastChapterTitle": "//td[2]",
+        "responseFormatType": "html",
+        "bookName": "//td[1]\n||@js:\nif(result==\"深空彼岸\"){\n\nreturn \"深🈳️彼岸\";\n}else{\nreturn result;\n}",
+        "requestInfo": "/modules/article/search.php?q=%@keyWord",
+        "host": "https://www.23uswx.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "wordCount": "//td[4]",
+        "validConfig": "",
+        "list": "//tr",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.23uswx.com",
+        "content": "//div[@id=\"content\"]||@js:\nres =result.replace(/最新网址：www.23uswx.com    /g,\"\").replace(/最新网址：www.23uswx.com/g,\"\");\nreturn res;",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.23uswx.com",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]"
+    }
+}

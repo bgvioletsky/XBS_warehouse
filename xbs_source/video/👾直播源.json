@@ -1,0 +1,101 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url=\"https://www.baidu.com\"\nreturn url",
+        "title": "@js:\nreturn params.queryInfo.bookName",
+        "host": "https://gitee.com/BigFanTu/XsRead",
+        "httpHeaders": {
+            "Referer": "https://gitee.com/BigFanTu/XsRead",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "list": "|",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "@js:\nreturn params.queryInfo.detailUrl"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "👾直播源",
+    "sourceType": "video",
+    "sourceUrl": "https://gitee.com/BigFanTu/XsRead",
+    "httpHeaders": {
+        "Referer": "https://gitee.com/BigFanTu/XsRead",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1651208289.627739",
+    "searchBook": {
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "requestInfo": "@js:\n\nlet url =  config.host+\"/soso/fcgi-bin/client_search_cp\";\n\n/*let hh =  {\r\n            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36',\r\n            'Referer': 'http://y.qq.com'\r\n        };*/\n\nlet hp = {\"w\": params.keyWord, \"format\": \"json\", \"p\": params.pageIdex, \"n\": 60};\n\nreturn {'url':url, 'httpParams':hp ,'httpHeaders':config.httpHeaders,\"POST\":false};",
+        "actionID": "searchBook"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "@js:\nlet url = params.queryInfo.url\nreturn url",
+        "requestInfo": "@js:\n\nlet url  =\"https://www.baidu.com\";\n\nreturn url",
+        "host": "https://gitee.com/BigFanTu/XsRead",
+        "httpHeaders": {
+            "Referer": "https://gitee.com/BigFanTu/XsRead",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "99mh99.",
+    "desc": "直播源",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "json",
+            "bookName": "title",
+            "httpHeaders": {
+                "Referer": "https://gitee.com/BigFanTu/XsRead",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\n\nlet url  = config.host+\"/raw/master/UpDate/m3u8/\"+params.filters.type\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+            "host": "https://gitee.com/BigFanTu/XsRead",
+            "actionID": "bookWorld",
+            "detailUrl": "url",
+            "cover": "cover||@js:\n\nlet url= \"https://gitee.com/BigFanTu/PictureBed/raw/master/Img/d97e55e80e5d03d77ba6d846a5da9ebd.jpg\";\n\nif(result){\r\n\treturn result\r\n}else{\n\n\n\r\n\treturn url\r\n}",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 4,
+            "list": "|",
+            "moreKeys": {
+                "maxPage": 1,
+                "requestFilters": "type\nIPTV::iptv.json\nHuYa::1.json\nIPTV2::IPTV2.json\n影视剧::juji.json"
+            }
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

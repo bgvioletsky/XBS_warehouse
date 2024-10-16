@@ -1,0 +1,92 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.ffxs8.com",
+        "content": "//div[@class=\"content\"]/p",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//div[@class=\"descTip\"]/p[2]/span[1]",
+        "wordCount": "//div[@class=\"descTip\"]/p[1]/span[2]",
+        "validConfig": "",
+        "host": "https://www.ffxs8.com",
+        "cat": "//div[@class=\"descTip\"]/p[1]/span[1]",
+        "cover": "//div[@class=\"cover\"]/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"descInfo\"]/p",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "author": "//span/span",
+            "responseFormatType": "html",
+            "bookName": "//strong/a/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.ffxs8.com${_type}`;\n\nif(params.pageIndex>1)\nurl=url+\"index_\"+params.pageIndex+\".html\"\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.ffxs8.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 15,
+                "requestFilters": "_type\n都市言情::/dsyq/\n玄幻魔法::/xhmf/\n武侠修真::/wxxz/\n穿越架空::/cyjk/\n科幻竞技::/khjj/\n军事历史::/jsls/\n鬼话悬疑::/ghxy/\n耽美小说::/smtr/\n同人小说::/trxs/\n官场商战::/gcsz/\n乡土风情::/xtfq/\n总排行榜::/sort/"
+            },
+            "detailUrl": "//strong/a/@href",
+            "validConfig": "",
+            "list": "//ul[@class=\"clearfix\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.ffxs8.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "饭饭小说",
+    "desc": "搜索要大于6个字",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1663399486.915168",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestParamsEncode": "2147485234",
+        "requestInfo": "@js:\nlet url = 'https://www.ffxs8.com/e/search/index.php';\nreturn {'url':url, 'POST':true, 'httpParams':{'keyboard':params.keyWord, 'show':'title', 'classid':0}};",
+        "bookName": "//strong/a/text()",
+        "detailUrl": "//strong/a/@href",
+        "host": "https://www.ffxs8.com",
+        "list": "//div[@class=\"list\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a/text()",
+        "host": "https://www.ffxs8.com",
+        "list": "//div[@class=\"catalog\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

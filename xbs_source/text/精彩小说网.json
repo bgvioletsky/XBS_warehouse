@@ -1,0 +1,194 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id=\"htmlContent\"]//text()",
+        "host": "https://www.jingcaiyuedu6.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//span[@class=\"tag\"]/i ||@js:\n\ntitles=result.split(\"\\n\");\nreturn titles[0];",
+        "host": "https://www.jingcaiyuedu6.com",
+        "cat": "//span[@class=\"tag\"]/i ||@js:\n\ntitles=result.split(\"\\n\");\nreturn titles[1];",
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"desc xs-hidden\"] ||@js:\nreturn result.replace(/[\\r\\n\\t]/g,\"\")",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//div[2]/p[@class=\"author\"]/a[2]",
+            "author": "//div[2]/p[@class=\"author\"]/a[1]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[2]/p[@class=\"update\"]/a",
+            "bookName": "//div[2]/h4/a",
+            "desc": "//div[2]/p[@class=\"intro\"]",
+            "requestInfo": "@js:\n\n\nlet url =config.host+\"/novel/type/\"+params.filters.type+ \".html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.jingcaiyuedu6.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[2]/h4/a/@href",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "仙侠修真",
+                                "value": "wuxiaxiuzhen"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "dushiyanqing"
+                            },
+                            {
+                                "title": "军事科幻",
+                                "value": "junshikehuan"
+                            },
+                            {
+                                "title": "幻想异能",
+                                "value": "huanxiangyineng"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "lishijunshi"
+                            },
+                            {
+                                "title": "网游竞技",
+                                "value": "wangyoujingji"
+                            },
+                            {
+                                "title": "玄幻魔法",
+                                "value": "xuanhuanmofa"
+                            },
+                            {
+                                "title": "穿越架空",
+                                "value": "穿越架空"
+                            },
+                            {
+                                "title": "青春校园",
+                                "value": "qingchunxiaoyuan"
+                            },
+                            {
+                                "title": "恐怖悬疑",
+                                "value": "kongbuxuanyi"
+                            },
+                            {
+                                "title": "综合类型",
+                                "value": "zongheleixing"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"book-img-text\"]/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//div[1]//img/@data-original",
+            "status": "//div[2]/p[@class=\"author\"]/span"
+        },
+        "排行": {
+            "cat": "//div[2]/p[@class=\"author\"]/a[2]",
+            "author": "//div[2]/p[@class=\"author\"]/a[1]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[2]/p[@class=\"update\"]/a",
+            "bookName": "//div[2]/h4/a",
+            "desc": "//div[2]/p[@class=\"intro\"]",
+            "requestInfo": "@js:\n\n\nlet url =config.host+\"/novel/\"+params.filters.type+ \".html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n}\nreturn {'url':url,\"httpHeaders\":hh};",
+            "host": "https://www.jingcaiyuedu6.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[2]/h4/a/@href",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "更新",
+                                "value": "latest"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "done"
+                            },
+                            {
+                                "title": "排行",
+                                "value": "topbook_top"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"book-img-text\"]/ul/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//div[1]//img/@data-original",
+            "status": "//div[2]/p[@class=\"author\"]/span"
+        }
+    },
+    "sourceUrl": "https://www.jingcaiyuedu6.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1000",
+    "sourceName": "精彩小说网",
+    "desc": "😍-自用",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1649606735.581307",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[2]/p[2]/span[1]/a/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[2]/p[2]/span[3]",
+        "bookName": "//div[2]/h3/a",
+        "desc": "//div[2]/p[1]",
+        "requestInfo": "@js:\nlet url= config.host+\"/search.html\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'q':params.keyWord, 'page':params.pageIndex};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.jingcaiyuedu6.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[2]/h3/a/@href",
+        "cover": "//div[1]//img/@data-original",
+        "validConfig": "",
+        "list": "//div[@class=\"media\"]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "nextPageUrl": "@js:\nif(result){\nvar url =params.queryInfo.detailUrl.replace(/\\/$/,\"\");\nlet page= params.pageIndex+1;\nparams.nativeTool.log(result)\n\nlet nexpage = url+\"_\" +page+\"/\";\n\nreturn nexpage\n}else{\nreturn \"\"}",
+        "requestInfo": "@js:\n\nlet url= params.queryInfo.detailUrl.replace(/\\.html/g,\"\");\n  url=url+ \"/list.html\";\nreturn url;",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 300
+        },
+        "host": "https://www.jingcaiyuedu6.com",
+        "list": "//dl[@class=\"panel-body panel-chapterlist\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

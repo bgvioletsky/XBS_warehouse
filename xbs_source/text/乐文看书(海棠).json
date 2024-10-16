@@ -1,0 +1,118 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "content": "//div[@id=\"C0NTENT\"]",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders, 'webView':true};",
+        "host": "https://www.lewenkanshu.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "responseFormatType": "html",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "host": "https://www.lewenkanshu.com",
+        "desc": "//meta[@property=\"og:description\"]/@content",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'cacheTime':3600};",
+        "cover": "//div/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "status": "//meta[@property=\"og:novel:status\"]/@content"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//p[2]/span",
+            "responseFormatType": "html",
+            "bookName": "//p/a[1]",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.lewenkanshu.com/category/${_type}/${params.pageIndex}.html`;\n\nreturn{'url':url,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://www.lewenkanshu.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p/a[1]/@href",
+            "moreKeys": {
+                "pageSize": 13,
+                "requestFilters": "_type\n全部::0\n耽美::1\n言情::3\n百合::4\n精品::27\n辣文::9\n高辣::2\n种田::6\n玄幻::8\n都市::16\n穿越::26\n科幻::20\n仙侠::18\n历史::23\n网游::21\n悬疑::19\n武侠::22\n灵异::17\n军事::25\n竞技::24\n修真::13\n私密::11\n腹黑::7\n其他::10\n情欲::28\n其他2::5"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"CGsectionTwo-right-content-unit\"]"
+        }
+    },
+    "sourceUrl": "https://www.lewenkanshu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "899",
+    "sourceName": "乐文看书(海棠)",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐮",
+    "lastModifyTime": "1666064679.488718",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]/a",
+        "responseFormatType": "html",
+        "author": "//span[3]/a",
+        "bookName": "//span[2]/a",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "requestInfo": "https://www.lewenkanshu.com/search/%@keyWord",
+        "host": "https://www.lewenkanshu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "requestInfo": "@js:\n\nlet id = params.queryInfo.detailUrl.match(/(\\d+)/g)[0];\n\nlet url =config.host+\"/book/\"+id +\"/catalog/\";\n\nif(params.pageIndex>1)\nurl= url +params.pageIndex+\".html\";\n\nreturn{'url':url,'POST':false,\"httpHeaders\":config.httpHeaders,cacheTime:3600};",
+        "title": "//a",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 700
+        },
+        "host": "https://www.lewenkanshu.com",
+        "validConfig": "",
+        "list": "//ol[@class=\"BCsectionTwo-top\"]/li",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

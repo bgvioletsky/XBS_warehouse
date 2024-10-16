@@ -1,0 +1,130 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "detail": "//div[@class='bookReviewBody']/span[2]",
+        "createdTime": "//div[@class='updateTimestamp']",
+        "fromUserName": "//a[@class='reviewersName']",
+        "responseFormatType": "html",
+        "requestInfo": "@js:\nlet url = config.host+params.queryInfo.detailUrl;\nlet url1 = url.replace(/\\?.*/, '') + '?page='+params.pageIndex;\nreturn {'url':url1, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Mobile Safari/537.36'}}",
+        "host": "https://www.goodreads.com/",
+        "actionID": "shupingList",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "validConfig": "",
+        "list": "//div[@class='bookReviews']/article",
+        "parserID": "DOM",
+        "score": "//span[@class=' staticStars notranslate']/@title",
+        "fromUserCover": "//img[@class='userIcon']/@src"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.goodreads.com/",
+        "cover": "//div[@class='bookCoverPrimary']/a/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id='description']"
+    },
+    "shudanList": {
+        "tag": {
+            "detail": "//div[@class='listFullDetails']",
+            "responseFormatType": "html",
+            "url": "//a[@class='listTitle']/@href",
+            "requestInfo": "https://www.goodreads.com/list/%@filter?page=%@pageIndex",
+            "title": "//a[@class='listTitle']",
+            "actionID": "shudanList",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "popular lists::popular_lists\nromance::tag/romance\nfiction::tag/fiction\nyoung-adult::tag/young-adult\nfantasy::tag/fantasy\nscience-fiction::tag/science-fiction\nnon-fiction::tag/non-fiction\nchildren::tag/children\nhistory::tag/history\ncovers::tag/covers\nmystery::tag/mystery\nhorror::tag/horror\nhistorical-fiction::tag/historical-fiction\nbest::tag/best\ngay::tag/gay\nparanormal::tag/paranormal\nlove::tag/love\ntitles::tag/titles\ncontemporary::tag/contemporary\nmiddle-grade::tag/middle-grade\nhistorical-romance::tag/historical-romance\nbiography::tag/biography\nthriller::tag/thriller\nseries::tag/series\nwomen::tag/women\nnonfiction::tag/nonfiction\nclassics::tag/classics\nlgbt::tag/lgbt\ngraphic-novels::tag/graphic-novels\nmemoir::tag/memoir\nqueer::tag/queer"
+            },
+            "host": "https://www.goodreads.com/",
+            "validConfig": "",
+            "list": "//div[@class='cell']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//div[@class='listImgs']/a[1]/img/@src"
+        }
+    },
+    "bookWorld": {
+        "空": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.goodreads.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺Goodreads🌐🔍🔭",
+    "desc": "可能会让app崩溃",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "detail": "//div[@class='leftContainer']/div[@class='mediumText']",
+        "responseFormatType": "html",
+        "author": "//a[@class='authorName']/span",
+        "bookName": "//a[@class='bookTitle']/span",
+        "desc": "//span[@class='greyText smallText uitext']/text()",
+        "requestInfo": "@js:\nreturn config.host+params.queryInfo.url+'?page='+params.pageIndex;",
+        "host": "https://www.goodreads.com/",
+        "actionID": "shudanDetail",
+        "moreKeys": {
+            "pageSize": 100
+        },
+        "detailUrl": "//a[@class='bookTitle']/@href",
+        "validConfig": "",
+        "list": "//tr[@itemtype='http://schema.org/Book']",
+        "parserID": "DOM",
+        "cover": "//td[1]/a/img/@src"
+    },
+    "lastModifyTime": "1666179355.424977",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "detail": "//div[@class='listFullDetails']",
+        "responseFormatType": "html",
+        "url": "//a[@class='listTitle']/@href",
+        "requestInfo": "https://www.goodreads.com/search?page=%@pageIndex&q=%@keyWord&search%5Bsource%5D=goodreads&search_type=lists&tab=lists",
+        "title": "//a[@class='listTitle']",
+        "actionID": "searchShudan",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "cover": "//div[@class='listImgs']/a[1]/img/@src",
+        "validConfig": "",
+        "host": "https://www.goodreads.com/",
+        "list": "//tr",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//a[@class='authorName']/span",
+        "responseFormatType": "html",
+        "bookName": "//a[@class='bookTitle']/span",
+        "desc": "//span[@class='greyText smallText uitext']/text()",
+        "requestInfo": "https://www.goodreads.com/search?page=%@pageIndex&q=%@keyWord&search_type=books&tab=books&utf8=%E2%9C%93",
+        "host": "https://www.goodreads.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class='bookTitle']/@href",
+        "cover": "//td[1]/a/img/@src",
+        "validConfig": "",
+        "list": "//tr[@itemtype='http://schema.org/Book']",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 20
+        }
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

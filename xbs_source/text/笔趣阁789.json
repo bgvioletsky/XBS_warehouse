@@ -1,0 +1,149 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@class=\"novelcontent\"] ||@js: return result.replace(/&amp.*/, \"\") .replace(/如果浏览不正.*/, \"\") .replace(/-->>本章.*/, \"\") .replace(/退出阅读模.*/, \"\");",
+        "validConfig": "",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://m.bqg789.com",
+        "httpHeaders": {
+            "Referer": "https://m.bqg789.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"_\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "cat": "//div[@class=\"tab1\"]/p[1]",
+        "lastChapterTitle": "//div[@class=\"tab\"]/p[3]/a",
+        "responseFormatType": "html",
+        "httpHeaders": {
+            "Referer": "https://m.bqg789.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+        },
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'webView':true};",
+        "host": "https://m.bqg789.com",
+        "actionID": "bookDetail",
+        "desc": "//div[@class=\"jj\"]/p[1]",
+        "wordCount": "//div[@class=\"tab1\"]/p[3]",
+        "validConfig": "",
+        "cover": "//mip-img/@src",
+        "parserID": "DOM",
+        "status": "//div[@class=\"tab1\"]/p[2]"
+    },
+    "bookWorld": {
+        "排行榜": {
+            "author": "//p[3]/a",
+            "responseFormatType": "html",
+            "bookName": "//p[2]/a",
+            "httpHeaders": {
+                "Referer": "https://m.bqg789.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.bqg789.com/top/${_type}_${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.bqg789.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[2]/a/@href",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n日点击榜::dayvisit\n周点击榜::weekvisit\n月点击榜::monthvisit\n总点击榜::allvisit\n总收藏榜::goodnum\n字数排行::size\n日推荐榜::dayvote\n周推荐榜::weekvote\n月推荐榜::monthvote\n总推荐榜::allvote\n最新入库::postdate\n最近更新::lastupdate"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@class=\"user_content\"]/div"
+        },
+        "分类": {
+            "author": "//p[@class=\"p4\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"right\"]/p[1]/a",
+            "httpHeaders": {
+                "Referer": "https://m.bqg789.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.bqg789.com/sort/${_type}_${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.bqg789.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"right\"]/p[1]/a/@href",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n玄幻小说::1\n修真小说::2\n都市小说::3\n穿越小说::4\n网游小说::5\n科幻小说::6\n其他小说::7"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"tt\"]",
+            "cover": "//mip-img/@src"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://m.bqg789.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "99",
+    "sourceName": "笔趣阁789",
+    "httpHeaders": {
+        "Referer": "https://m.bqg789.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐮",
+    "lastModifyTime": "1656565242.122739",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//a[2]",
+        "author": "//a[3]",
+        "responseFormatType": "html",
+        "bookName": "//a[1]",
+        "httpHeaders": {
+            "Referer": "https://m.bqg789.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+        },
+        "requestInfo": "@js:\nlet url =config.host+\"/s.php\";\n\nlet hh={\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37\"};\n\nlet hp={\"s\":params.keyWord,\"type\":\"articlename\",}\n\nreturn{'url':url,'POST':true,'httpParams':hp,\"httpHeaders\":config.httpHeaders};",
+        "host": "https://m.bqg789.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[1]/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"search_box\"]/p",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 700
+        },
+        "host": "https://m.bqg789.com",
+        "httpHeaders": {
+            "Referer": "https://m.bqg789.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.53 Safari/537.36 Edg/103.0.1264.37"
+        },
+        "list": "//ul[@class=\"p2\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

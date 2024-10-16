@@ -1,0 +1,90 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet pat=\".*(m3u8|mp4)$\"\nreturn {'url':result,'httpHeaders':config.httpHeaders, 'webView':true,'sourceRegex':pat};",
+        "host": "http://www.silisili.tv",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//div[@class=\"entry-meta\"]",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"entry-title\"][1]/a/text()",
+            "desc": "//div[@class=\"entry-summary\"]",
+            "requestInfo": "@js:\r\nlet {_aa,_ab,_ac,_ad}=params.filters\nlet url=`https://www.silisili.tv/vodshow${_ad}${_aa}/id/${_ab}${_ac}/page/${params.pageIndex}`;\r\n\r\nreturn {url:url}",
+            "host": "http://www.silisili.tv",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"entry-title\"]/a/@href",
+            "cover": "//img/@srcset",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_aa\n剧情::\n情感::/class/%E6%83%85%E6%84%9F\n科幻::/class/%E7%A7%91%E5%B9%BB\n热血::/class/%E7%83%AD%E8%A1%80\n推理::/class/%E6%8E%A8%E7%90%86\n搞笑::/class/%E6%90%9E%E7%AC%91\n冒险::/class/%E5%86%92%E9%99%A9\n萝莉::/class/%E8%90%9D%E8%8E%89\n校园::/class/%E6%A0%A1%E5%9B%AD\n动作::/class/%E5%8A%A8%E4%BD%9C\n机战::/class/%E6%9C%BA%E6%88%98\n运动::/class/%E8%BF%90%E5%8A%A8\n战争::/class/%E6%88%98%E4%BA%89\n少年::/class/%E5%B0%91%E5%B9%B4\n少女::/class/%E5%B0%91%E5%A5%B3\n社会::/class/%E7%A4%BE%E4%BC%9A\n原创:: /class/%E5%8E%9F%E5%88%9B\n亲子::/class/%E4%BA%B2%E5%AD%90\n益智::/class/%E7%9B%8A%E6%99%BA\n励志::/class/%E5%8A%B1%E5%BF%97\n后宫::/class/%E5%90%8E%E5%AE%AB\n其他::/class/%E5%85%B6%E4%BB%96\n\n_ab\n日漫::riman\n国漫::guoman\n剧场版::juchang\n\n_ac\n年份::\n2022::/year/2022\n2021::/year/2021\n2020::/year/2020\n2019::/year/2019\n2018::/year/2018\n2017::/year/2017\n2016::/year/2016\n2015::/year/2015\n2014::/year/2014\n2013::/year/2013\n2012::/year/2012\n2011::/year/2011\n2010::/year/2010\n2009::/year/2009\n2008::/year/2008\n2007::/year/2007\n2006::/year/2006\n2005::/year/2005\n2004::/year/2004\n\n_ad\n排序::\n时间::/by/time/\n热门::/by/hits/\n评分::/by/score/"
+            },
+            "_sIndex": 0,
+            "list": "//article[@class=\"post hentry bg_cl article\"]",
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "http://www.silisili.tv",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "嘶哩嘶哩",
+    "sourceType": "video",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "lastModifyTime": "1666871241.561012",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "parserID": "DOM",
+        "requestInfo": "http://www.silisili.tv/vodsearch/?wd=%@keyWord",
+        "bookName": "//@title",
+        "detailUrl": "//div[@class=\"search-image\"]/a/@href",
+        "host": "http://www.silisili.tv",
+        "list": "//article[@class=\"post-list\"]/div",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"entry-summary\"]/p",
+        "cover": "//img/@srcset"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, jsparams, result) {\n    let ts = result.updateTime.split(\"\\n\");\n    let list = [];\n    for (let i = 0; i < ts.length; i++) {\n        if (\"url\" in result[\"list\"][i]) {\n            let title = result[\"list\"][i][\"title\"];\n            let titles = title.split(\"\\n\");\n            let urls = result[\"list\"][i][\"url\"].split(\"\\n\");\n            for (let j = 0; j < titles.length; j++) {\n                list.push({\"title\": ts[i] + \"-\" + titles[j], \"url\": urls[j]})\n            }\n        }\n    }\n    return {\"updateTime\": \"\", \"list\": list};}",
+        "updateTime": "//span[@class=\"nore text-muted pull-right\"]",
+        "title": "//a",
+        "host": "http://www.silisili.tv",
+        "list": "//div[@class=\"play-pannel-list\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

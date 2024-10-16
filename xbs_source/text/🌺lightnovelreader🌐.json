@@ -1,0 +1,111 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://lightnovelreader.org/",
+        "content": "//div[@id='chapterText']/p",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//div[@class='novels-detail-right']/ul/li[2]/div[2]",
+        "validConfig": "",
+        "lastChapterTitle": "//div[@class='novels-detail-right']/ul/li[9]/div[2]/a[1]",
+        "host": "https://lightnovelreader.org/",
+        "cat": "//div[@class='novels-detail-right']/ul/li[3]/div[2]/a",
+        "cover": "//div[@class='novels-detail-left']/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class='col-md-12 mb-3']/div[@class='empty-box']/p",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "category": {
+            "cat": "//div[@class='category-feature-content']/ul/li[2]/a",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='category-name']/a",
+            "desc": "//div[@class='category-feature-content-text']/a/span",
+            "requestInfo": "@js:\nreturn 'https://lightnovelreader.org/category/' + params.filters.cat + '/' + params.pageIndex + '?change_type=' + params.filters.sort;",
+            "host": "https://lightnovelreader.org/",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class='category-name']/a/@href",
+            "cover": "//div[@class='category-img']/a/img/@src",
+            "validConfig": "",
+            "list": "//div[@class='category-items cm-list']/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "cat\nAction::action\nAdventure::adventure\nLove::boys-love\nCelebrity::celebrity\nComedy::comedy\nFantasy::dark-fantasy\nDrama::drama\nEcchi::ecchi\nFantasy::fantasy\nBender::gender-bender\nHarem::harem\nHistorical::historical\nHorror::horror\nIsekai::isekai\nJosei::josei\nLitRPG::litrpg\nArts::martial-arts\nMature::mature\nMecha::mecha\nMystery::mystery\nPsychological::psychological\nRomance::romance\nLife::school-life\nSci-fi::sci-fi\nSeinen::seinen\nShotacon::shotacon\nShoujo::shoujo\nAi::shoujo-ai\nShounen::shounen\nAi::shounen-ai\nLife::slice-of-life\nSmut::smut\nSports::sports\nSupernatural::supernatural\nTragedy::tragedy\nWuxia::wuxia\nXianxia::xianxia\nXuanhuan::xuanhuan\nYaoi::yaoi\nYuri::yuri\nsort\nVIEWED::view\nRATED::top_rated\nBOOKMARKS::subscribers\nNEW::new"
+            },
+            "status": "//div[@class='category-feature-content']/ul/li[1]/span"
+        },
+        "directory": {
+            "responseFormatType": "html",
+            "bookName": "//div[@class='list-items-details-name']/a",
+            "desc": "//div[@class='list-items-details-text']/a/span",
+            "requestInfo": "https://lightnovelreader.org/directory/%@filter",
+            "host": "https://lightnovelreader.org/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": "filter\n#::\nA::A\nB::B\nC::C\nD::D\nE::E\nF::F\nG::G\nH::H\nI::I\nJ::J\nK::K\nL::L\nM::M\nN::N\nO::O\nP::P\nQ::Q\nR::R\nS::S\nT::T\nU::U\nV::V\nW::W\nX::X\nY::Y\nZ::Z"
+            },
+            "cover": "//div[@class='list-items-details-img']/a/img/@src",
+            "validConfig": "",
+            "list": "//div[@class='list-items']/ul/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "detailUrl": "//div[@class='list-items-details-name']/a/@href"
+        }
+    },
+    "sourceUrl": "https://lightnovelreader.org/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺lightnovelreader🌐",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666144612.479493",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://lightnovelreader.org/search/autocomplete?dataType=json&query=%@keyWord",
+        "bookName": "overview",
+        "detailUrl": "link",
+        "host": "https://lightnovelreader.org/",
+        "list": "results",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "cover": "image"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://lightnovelreader.org/",
+        "list": "//div[contains(@id, 'cmtb')]/ul/li||@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

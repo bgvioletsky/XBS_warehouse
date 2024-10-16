@@ -1,0 +1,210 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"BookText\"]/p/text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 50
+        },
+        "host": "https://www.babayu.tv",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),\"下一页\")]/@href || @js:\n\nif(result){\n    var pageid=params.pageIndex+1;\n    var url = params.queryInfo.url.replace(/.html/,\"\");\n    url = url+\"_\"+pageid+\".html\";\n    params.nativeTool.log(url) ;\n    return url;\n    }\nelse{\n    return \"\"\n    }"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "wordCount": "//div[@class=\"booktitle\"]/p/text()[2] || @js: return result.replace(\"字数：\",\"\");",
+        "parserID": "DOM",
+        "lastChapterTitle": "//ul[@class=\"lastchapter\"]/li[1]/a/text()",
+        "host": "https://www.babayu.tv",
+        "cat": "//div[@class=\"booktitle\"]//a/text()",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+        },
+        "responseFormatType": "html",
+        "cover": "//div[@class=\"bigpic\"]/img/@src",
+        "desc": "//div[@class=\"book-intro\"]/text()"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "分类周榜": {
+            "responseFormatType": "html",
+            "bookName": "//p/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.baidu.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+            },
+            "requestInfo": "@js:\n\nlet {_type}=params.filters\n\nlet url=`${config.host}/lists/book_${_type}.html`;\n\nreturn {url:url,\"httpHeaders\":config.httpHeaders}",
+            "host": "https://www.babayu.tv",
+            "actionID": "bookWorld",
+            "detailUrl": "//p/a/@href",
+            "moreKeys": {
+                "requestFilters": "_type\n玄幻奇幻::42\n武侠修真::43\n都市异能::44\n历史军事::45\n网游竞技::46\n科幻灭世::47\n惊悚悬疑::49\n轻小说::52\n女生频道::48"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"ranking-tabcon clickranking-tabcon\"]/ul[1]/li",
+            "_sIndex": 3,
+            "parserID": "DOM"
+        },
+        "分类月榜": {
+            "responseFormatType": "html",
+            "bookName": "//p/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.baidu.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+            },
+            "requestInfo": "@js:\n\nlet {_type}=params.filters\n\nlet url=`${config.host}/lists/book_${_type}.html`;\n\nreturn {url:url,\"httpHeaders\":config.httpHeaders}",
+            "host": "https://www.babayu.tv",
+            "actionID": "bookWorld",
+            "detailUrl": "//p/a/@href",
+            "moreKeys": {
+                "requestFilters": "_type\n玄幻奇幻::42\n武侠修真::43\n都市异能::44\n历史军事::45\n网游竞技::46\n科幻灭世::47\n惊悚悬疑::49\n轻小说::52\n女生频道::48"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"ranking-tabcon clickranking-tabcon\"]/ul[2]/li",
+            "_sIndex": 2,
+            "parserID": "DOM"
+        },
+        "分类汇总": {
+            "_sIndex": 4,
+            "cat": "//em[@class=\"type\"]/text()",
+            "responseFormatType": "html",
+            "author": "//span/text()",
+            "bookName": "//a/text()",
+            "desc": "//p[@class=\"intro\"]/text()",
+            "host": "https://www.babayu.tv",
+            "requestInfo": "@js:\n\nlet hh= {\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/104.0.5112.102\"\n    };\n\nlet {_type}=params.filters;\n\nlet mm=config.host.replace(/w{3}/,\"m\");\n\nlet url=`${mm}/lists/book_${_type}_${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':hh}",
+            "httpHeaders": {
+                "Referer": "https://www.baidu.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+            },
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "cover": "//img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 24,
+                "requestFilters": "_type\n玄幻奇幻::42\n武侠修真::43\n都市异能::44\n历史军事::45\n网游竞技::46\n科幻灭世::47\n惊悚悬疑::49\n轻小说::52\n女生频道::48"
+            },
+            "wordCount": "//em[@class=\"word\"]/text()",
+            "status": "//em[@class=\"finish\"]/text()",
+            "list": "//div[@class=\"book-list\"]//li"
+        },
+        "小说榜单": {
+            "cat": "//span[@class=\"type\"]/text()",
+            "responseFormatType": "html",
+            "author": "//p[@class=\"x-info_author\"]/span[2]/text()",
+            "bookName": "//p[@class=\"x-info_name\"]/text()",
+            "httpHeaders": {
+                "Referer": "https://www.baidu.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+            },
+            "requestInfo": "@js:\n\nlet hh= {\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/104.0.5112.102\"\n    };\n\nlet {_type}=params.filters\n\nlet mm=config.host.replace(/w{3}/,\"m\");\n\nlet url= `${mm}/histp/rank/${_type}`;\n\nreturn {url:url,'httpHeaders':hh}",
+            "host": "https://www.babayu.tv",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "moreKeys": {
+                "requestFilters": "_type\n总榜::order/hits.html\n月榜::order/hits_month.html\n周榜::order/hits_week.html\n日榜::order/hits_day.html\n新书榜::newbook/1.html\n完结榜::over/1.html"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"x-book x-rank_book van-hairline-bottom\"]",
+            "cover": "//img/@src",
+            "desc": "//p[@class=\"x-info_intro\"]/text()"
+        },
+        "分类总榜": {
+            "responseFormatType": "html",
+            "bookName": "//p/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.baidu.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+            },
+            "requestInfo": "@js:\n\nlet {_type}=params.filters\n\nlet url=`${config.host}/lists/book_${_type}.html`;\n\nreturn {url:url,\"httpHeaders\":config.httpHeaders}",
+            "host": "https://www.babayu.tv",
+            "actionID": "bookWorld",
+            "detailUrl": "//p/a/@href",
+            "moreKeys": {
+                "requestFilters": "_type\n玄幻奇幻::42\n武侠修真::43\n都市异能::44\n历史军事::45\n网游竞技::46\n科幻灭世::47\n惊悚悬疑::49\n轻小说::52\n女生频道::48"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"ranking-tabcon clickranking-tabcon\"]/ul[3]/li",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.babayu.tv",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "x-巴巴鱼",
+    "httpHeaders": {
+        "Referer": "https://www.baidu.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1661423784.061523",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[2]/text()",
+        "responseFormatType": "html",
+        "bookName": "//h3/a/@title",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+        },
+        "requestInfo": "@js:\nlet url=config.host + \"/soshu.html\";\nlet hp= {\"ss\":params.keyWord};\n\nreturn {\"url\":url, \"POST\":false, \"httpParams\":hp, \"httpHeaders\":config.httpHeaders, \"forbidCookie\":true, \"cacheTime\":600};",
+        "host": "https://www.babayu.tv",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//ul[@class=\"search-list\"]/li",
+        "parserID": "DOM",
+        "desc": "//p[3]/text()",
+        "status": "//p[1]/text()"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//em[@class=\"articleval\"]/text()",
+        "requestInfo": "@js:\nreturn result.replace(\"kanshu/book\", \"book_other\");",
+        "title": "//a/text()",
+        "host": "https://www.babayu.tv",
+        "httpHeaders": {
+            "Referer": "https://www.baidu.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36 Edg/104.0.1293.63"
+        },
+        "list": "//ul[@class=\"clearfix chapter-list\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,122 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "content": "//article[@class=\"content\"]/p",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'cacheTime':3600};",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://www.txt97.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href\n||@js:\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"_\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "responseFormatType": "html",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "host": "https://www.txt97.com",
+        "desc": "//meta[@property=\"og:description\"]/@content",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'cacheTime':3600};",
+        "cover": "//div/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "status": "//meta[@property=\"og:novel:status\"]/@content"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "cat": {
+            "author": "//div[@class=\"li_bottom\"]/a/i",
+            "responseFormatType": "html",
+            "bookName": "//h2",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.txt97.com/html/${_type}/list_${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.txt97.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[2]/a[1]/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n武侠::wuxiaxianxia\n言情::yanqing\n玄幻::xuanhuan\n都市::dushi\n穿越::chuanyue\n科幻::kehuanxiaoshuo\n网游::wangyou\n同人::tongren\n历史::lishi\n惊悚::jingsong\n重生::chongsheng\n耽美::danmei"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul[@class=\"flex\"]/li",
+            "wordCount": "//div[@class=\"li_bottom\"]/div/em[1]"
+        }
+    },
+    "sourceUrl": "https://www.txt97.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8999",
+    "sourceName": "无限小说网",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐮",
+    "lastModifyTime": "1665728627.263581",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[2]/p[1]/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[2]/p[3]/a",
+        "bookName": "//h3",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "requestInfo": "@js:\nlet url =config.host+\"/search/\";\n\nlet hh={\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.42\"};\n\nlet hp={\"searchkey\":params.keyWord,\"searchtype\":\"all\",\"Submit\":\"\"};\n\nreturn{'url':url,'POST':true,'httpParams':hp,\"httpHeaders\":config.httpHeaders, 'webView':true,forbidCookie:true,cacheTime:3600};",
+        "host": "https://www.txt97.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[2]/a[1]/@href",
+        "wordCount": "//span[@class=\"s_gray\"] ||@js:\nreturn result.replace(/\\  .*/, '');",
+        "validConfig": "",
+        "list": "//ul[@class=\"flex\"]/li",
+        "parserID": "DOM",
+        "cover": "//a/img/@data-original",
+        "desc": "//p[@class=\"searchresult_p\"]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn{'url':result,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "title": "//a",
+        "host": "https://www.txt97.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.50"
+        },
+        "list": "//ul[@id=\"ul_all_chapters\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

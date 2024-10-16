@@ -1,0 +1,133 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.haomanwu.com",
+        "cat": "//ul[@class=\"tags\"]//a",
+        "httpHeaders": {
+            "Referer": "https://www.haomanwu.com/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@name=\"description\"]//@content"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "httpHeaders": {
+            "Referer": "https://www.haomanwu.com/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "JSParser": "function functionName(config,params,result){\n\tlet reg = /var chapter_list[\\s\\S]+?\\];/gi;\n\tlet tem = result.match(reg)[0];\n\tparams.nativeTool.log(tem);\n\teval(tem);\n\tlet list = [];\n\tfor(let i=0;i<chapter_list.length;i++){\n\t\tlet item = {};\n\t\titem.title = chapter_list[i].name;\n\t\titem.url = chapter_list[i].url;\n\t\tlist.push(item);\n\t}\n\treturn {'list':list};\n}",
+        "host": "https://www.haomanwu.com",
+        "parserID": "DOM",
+        "actionID": "chapterList"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "好漫8 ② ⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://www.haomanwu.com",
+    "httpHeaders": {
+        "Referer": "https://www.haomanwu.com/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1656841093.874673",
+    "searchBook": {
+        "lastChapterTitle": "//div[@class=\"acgn-desc\"]/a",
+        "responseFormatType": "html",
+        "bookName": "//h3/a",
+        "httpHeaders": {
+            "Referer": "https://www.haomanwu.com/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "requestInfo": "/index.php/search?key=%@keyWord",
+        "host": "https://www.haomanwu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//img//@style ||@js:\nlet reg = /http.*?jpg/gi;\nreturn result.match(reg)[0];",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//li[@class=\"acgn-item\"]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class=\"acgn-reader-chapter\"]//img/@data-echo",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result){\n\tlet ihost = result.content.split('\\n')[0].match(/\\/\\/(.*?)\\//)[1];\n\n\tlet hh = { 'Host':ihost}\n\tlet imgObj = {'urls':result.content,'httpHeaders':hh}\n\treturn JSON.stringify(imgObj);\n}",
+        "host": "https://www.haomanwu.com",
+        "httpHeaders": {
+            "Referer": "https://www.haomanwu.com/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//div[@class=\"acgn-desc\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "httpHeaders": {
+                "Referer": "https://www.haomanwu.com/",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "requestInfo": "/category/order/%@filter/page/%@pageIndex",
+            "host": "https://www.haomanwu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 40,
+                "requestFilters": "人气::hits\n更新::addtime\n评分::score"
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "cover": "//img//@style ||@js:\nlet reg = /http.*?jpg/gi;\nreturn result.match(reg)[0];",
+            "_sIndex": 0,
+            "list": "//li[@class=\"acgn-item\"]",
+            "parserID": "DOM"
+        },
+        "排行": {
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "text",
+            "requestInfo": "https://www.haoman8.com/index.php/api/comic/hot",
+            "host": "https://www.haomanwu.com",
+            "actionID": "bookWorld",
+            "detailUrl": "url",
+            "cover": "pic",
+            "validConfig": "",
+            "list": "data",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "httpHeaders": {
+                "Referer": "https://www.haomanwu.com/",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            }
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,147 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//article[@class=\"weui_article article font-18 js-article\"]//p ||@js: return result.replace(/下一章/, \"\") .replace(/看小说就用.*/, \"\").replace(/上一页/, \"\") .replace(/上一章/, \"\");",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'webView':true};",
+        "host": "https://gfnormal05at.com",
+        "httpHeaders": {
+            "Referer": "https://gfnormal05at.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//p[@class=\"tag\"]/span[2]",
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "cat": "//p[@class=\"tag\"]/span[1]",
+        "lastChapterTitle": "//p[@class=\"name\"]",
+        "host": "https://gfnormal05at.com",
+        "httpHeaders": {
+            "Referer": "https://gfnormal05at.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+        },
+        "cover": "//div[@class=\"cover\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p[@class=\"desc\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "cat": "category",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "httpHeaders": {
+                "Referer": "https://gfnormal05at.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+            },
+            "requestInfo": "@js:\nlet {_top,_cat}=params.filters\nlet url=`https://gfnormal05at.com/h5/category-rank2-rank_type-${_top}-date_type-${_cat}?page=${params.pageIndex==1?0:params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://gfnormal05at.com",
+            "actionID": "bookWorld",
+            "detailUrl": "url",
+            "desc": "description",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_top\n最热榜::zuire\n新书榜::xinshu\n完结榜::over\n评分榜::pingfen\n推荐榜::tuijian\n\n_cat\n周榜::week\n月榜::month\n总榜::all"
+            },
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "$.result.list",
+            "validConfig": "",
+            "cover": "icon"
+        },
+        "分类": {
+            "cat": "category",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "httpHeaders": {
+                "Referer": "https://gfnormal05at.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+            },
+            "requestInfo": "@js:\nlet {_class,_top}=params.filters\nlet url=`https://gfnormal05at.com/h5/category-rank-category_id-${_class}-rank_type-${_top}?page=${params.pageIndex==1?0:params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://gfnormal05at.com",
+            "actionID": "bookWorld",
+            "detailUrl": "url",
+            "desc": "description",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_class\n玄幻::1\n武侠::2\n都市::3\n历史::4\n科幻::5\n网游::6\n女生::7\n同人::66\n\n_top\n最热::zuire\n最新::xinshu\n完结::wanjie\n评分::pingfen"
+            },
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "$.result.list",
+            "validConfig": "",
+            "cover": "icon"
+        }
+    },
+    "sourceUrl": "https://gfnormal05at.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "笔趣阁9x",
+    "httpHeaders": {
+        "Referer": "https://gfnormal05at.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐮",
+    "lastModifyTime": "1663415685.698989",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//p[@class=\"type\"]/span[2]",
+        "author": "//p[@class=\"type\"]/span[1]",
+        "responseFormatType": "html",
+        "bookName": "//h3",
+        "httpHeaders": {
+            "Referer": "https://gfnormal05at.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+        },
+        "requestInfo": "https://gfnormal05at.com/h5/search?word=%@keyWord",
+        "host": "https://gfnormal05at.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"weui-cell__hd cover\"]/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//ul[@class=\"weui-flex books-list\"]/li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn result.replace('/book', '/book-catalog');",
+        "title": "//a/span",
+        "host": "https://gfnormal05at.com",
+        "httpHeaders": {
+            "Referer": "https://gfnormal05at.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.33"
+        },
+        "list": "//ul[@class=\"child-title\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

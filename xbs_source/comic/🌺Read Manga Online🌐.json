@@ -1,0 +1,92 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//center/img/@src",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, jsparams, result) {\n\nlet dat = result.content.split('\\n').map(s => `https://readm.org${s}`);\r \nreturn JSON.stringify({'urls': dat});\n\r}",
+        "host": "https://readm.org/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "lastChapterTitle": "//table[@class='ui unstackable single line celled table']/tbody/tr/td[2]/div[2]",
+        "host": "https://readm.org/",
+        "cat": "//div[@class='item']/a",
+        "cover": "//a[@id='series-profile-image-wrapper']/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class='series-summary-wrapper']/p[2]/span",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "manga list": {
+            "responseFormatType": "html",
+            "bookName": "//h2[@class='truncate']",
+            "requestInfo": "https://readm.org/manga-list/%@filter",
+            "host": "https://readm.org/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": "#::\nA::a\nB::b\nC::c\nD::d\nE::e\nF::f\nG::g\nH::h\nI::i\nJ::j\nK::k\nL::l\nM::m\nN::n\nO::o\nP::p\nQ::q\nR::r\nS::s\nT::t\nU::u\nV::v\nW::w\nX::x\nY::y\nZ::z"
+            },
+            "detailUrl": "//a/@href",
+            "cover": "//img/@data-src",
+            "list": "//ul[@class='clearfix manga-list']/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "//span[@class='episode-no']"
+        }
+    },
+    "sourceUrl": "https://readm.org/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺Read Manga Online🌐",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666007070.403419",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nreturn {'url':'https://readm.org/service/search', 'POST':true, 'httpParams':{'dataType':'json', 'phrase':params.keyWord}, 'httpHeaders':{'referer':config.host, 'x-requested-with':'XMLHttpRequest'}};",
+        "bookName": "title",
+        "detailUrl": "url",
+        "host": "https://readm.org/",
+        "cover": "image",
+        "list": "manga",
+        "desc": "alternative_title",
+        "responseFormatType": "json"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//h6/a",
+        "host": "https://readm.org/",
+        "list": "//div[@class='item season_start']||@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//h6/a/@href"
+    }
+}

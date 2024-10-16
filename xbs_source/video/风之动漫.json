@@ -1,0 +1,88 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "JSParser": "function functionName(config, jsparams, result) {\n  let emo = ['⛄️','🧸','🐶','☕️','🐣','🐧','🚀', '🦅','🐼','🐷','🐯','🦉','🐮','🐹'];\n\n    let list = [];\n    for (let i = 0; i < result.list.length; i++) {\n        let titles = result.list[i][\"title\"].split(\"\\n\");\n        let urls = result.list[i][\"url\"].split(\"\\n\");\n        for (let j = 0; j < titles.length; j++) {\n            list.push({\"title\": \"线路\"+emo[i]+\": \" + titles[j], \"url\": urls[j]})\n        }\n\n    }\n    return {\"updateTime\": \"\", \"list\": list};\n}",
+        "title": "//a",
+        "host": "http://fzdm.org",
+        "list": "//div[@class=\"swiper-wrapper\"]\n\n||@js: return result.slice(0,-1)",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "风之动漫",
+    "sourceType": "video",
+    "sourceUrl": "http://fzdm.org",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666957781.106598",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "http://fzdm.org/search.php?page=%@pageIndex&searchword=%@keyWord&searchtype=",
+        "bookName": "//li/a/@title",
+        "detailUrl": "//li/a/@href",
+        "host": "http://fzdm.org",
+        "list": "//ul[@class=\"video-contain clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "cover": "//a/@data-original"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "@js:\nlet urls=params.requestUrls\nlet url=\"重获\";\nfor(let i=urls.length-1;i>=0;i--){\n   if(/m3u8|mp4/.test(urls[i])){\n      url= urls[i]\n      break;\n   }\n}\nreturn url",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':result,'httpHeaders':config.httpHeaders, 'webView':true,cacheTime:0};",
+        "host": "http://fzdm.org",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🌻",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//li/a/@title",
+            "requestInfo": "@js:\nlet {_aa,_bb,_cc,_dd}=params.filters\nlet url=`http://fzdm.org/search.php?page=${params.pageIndex}&searchtype=5&tid=${_aa}&area=${_bb}&year=${_cc}&state=${_dd}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://fzdm.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//li/a/@href",
+            "cover": "//a/@data-original",
+            "validConfig": "",
+            "list": "//ul[@class=\"video-contain clearfix\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 35,
+                "requestFilters": "_aa\n频道::\n国产动漫::1\n日韩动漫::2\n欧美动漫::3\n港台动漫::4\n海外动漫::5\n\n_bb\n地区::\n大陆::%E5%A4%A7%E9%99%86\n香港::%E9%A6%99%E6%B8%AF\n台湾::%E5%8F%B0%E6%B9%BE\n日本::%E6%97%A5%E6%9C%AC\n韩国::%E9%9F%A9%E5%9B%BD\n欧美::%E6%AC%A7%E7%BE%8E\n泰国::%E6%B3%B0%E5%9B%BD\n其他::%E5%85%B6%E4%BB%96\n\n_cc\n时间::\n2022::2022\n2021::2021\n2020::2020\n2019::2019\n2018::2018\n2017::2017\n2016::2016\n2015::2015\n2014::2014\n2013::2013\n2012::2012\n2011::2011\n2010::2010\n2009::2009\n更早::more\n\n_dd\n状态::\n完结::w\n连载中::l"
+            }
+        }
+    }
+}

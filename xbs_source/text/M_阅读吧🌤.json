@@ -1,0 +1,82 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@class='content']//p",
+        "validConfig": "",
+        "moreKeys": {
+            "maxPage": 2
+        },
+        "host": "http://www.yuedu8.cc",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "(//div[@class='section-opt m-bottom-opt']//a)[3]/@href"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "wordCount": "(//div[@class='fix']//span)[2]",
+        "host": "http://www.yuedu8.cc",
+        "cover": "//div[@class=\"detailTopLeft\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class='desc xs-hidden']"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "http://www.yuedu8.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "M_阅读吧🌤",
+    "desc": "推荐",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1663419931.785747",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "(//span[@class='s1'])",
+        "author": "(//span[@class='s4'])",
+        "responseFormatType": "html",
+        "lastChapterTitle": "(//span[@class='s3']//a)",
+        "bookName": "(//span[@class='s2']//a)",
+        "requestInfo": "@js:\nlet url = 'http://www.yuedu8.cc/search/';\nreturn {'url':url, 'POST':true, 'httpParams':{'searchkey':params.keyWord}, 'forbidCookie':true};",
+        "host": "http://www.yuedu8.cc",
+        "actionID": "searchBook",
+        "detailUrl": "(//span[@class='s2']//a)/@href||@js:\nreturn result.replace('yuedu','index');",
+        "validConfig": "",
+        "list": "(//ul[@class='txt-list txt-list-row5']//li[position()>1])",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 1000
+        },
+        "host": "http://www.yuedu8.cc",
+        "list": "(//ul[@class='section-list fix'])[1]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "(//div[@class='index-container']//a)[2]/@href"
+    },
+    "sourceType": "text"
+}

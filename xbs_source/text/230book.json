@@ -1,0 +1,114 @@
+{
+    "bookWorld": {
+        "1": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        }
+    },
+    "weight": "9991",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.230book.net",
+        "httpHeaders": {
+            "Referer": "https://www.230book.net",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "list": "//*[@id=\"list\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href||@js:\n\nreturn params.queryInfo.detailUrl +result;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "230book",
+    "sourceType": "text",
+    "sourceUrl": "https://www.230book.net",
+    "httpHeaders": {
+        "Referer": "https://www.230book.net",
+        "Upgrade-Insecure-Requests": "1",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666689909.943781",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//td[2]/a",
+        "author": "//td[3]",
+        "bookName": "//td[1]/a\n\n\n||@js:\nif(result==\"深空彼岸\"){\n\nreturn \"深🈳️彼岸\";\n}else{\nreturn result;\n}",
+        "httpHeaders": {
+            "Referer": "https://www.230book.net",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet url=config.host+\"/modules/article/search.php\";\n\nlet hp= {\n'searchkey':params.keyWord,\n'searchtype':'articlename'\n};\n\nreturn {\n'url':url, \n'POST':true,\n'httpParams':hp,\n\"httpHeaders\": config.httpHeaders,\ncacheTime:600\n};",
+        "host": "https://www.230book.net",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 30
+        },
+        "detailUrl": "//td[1]/a/@href",
+        "validConfig": "",
+        "list": "//tr[@id=\"nr\"]",
+        "parserID": "DOM",
+        "wordCount": "//td[4]",
+        "status": "//td[6]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//*[@id=\"content\"]/text()",
+        "actionID": "chapterContent",
+        "host": "https://www.230book.net",
+        "httpHeaders": {
+            "Referer": "https://www.230book.net",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "☀️",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//meta[@property=\"og:novel:status\"]/@content",
+        "validConfig": "",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "https://www.230book.net",
+        "httpHeaders": {
+            "Referer": "https://www.230book.net",
+            "Upgrade-Insecure-Requests": "1",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "responseFormatType": "html",
+        "desc": "//meta[@property=\"og:description\"]/@content",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,262 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result){\n\t\n\tlet res = result.list.pop();\n\tlet titles = res.title.split('\\n');\n\tlet urls = res.url.split('\\n');\n\tlet list = []\n\tfor(let i=0;i<titles.length;i++){\n\t\tlet item = {};\n\t\titem.title = titles[i];\n\t\titem.url = urls[i];\n\t\tlist.push(item);\n\t}\n\treturn {'list':list};\n}",
+        "title": "//a",
+        "host": "https://www.biqusk.org",
+        "httpHeaders": {
+            "Referer": "https://www.biqusk.org/",
+            "Host": "www.biqusk.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "list": "//ul[contains(@class,'dirlist')] ||@js:\nreturn result;",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "必去读书库⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://www.biqusk.org",
+    "httpHeaders": {
+        "Referer": "https://www.biqusk.org/",
+        "Host": "www.biqusk.org",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1660814534.502695",
+    "searchBook": {
+        "cat": "//p[@class=\"info\"]//span[3]/a",
+        "author": "//p[@class=\"info\"]//span[2]/a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//p[@class=\"last\"]/a",
+        "bookName": "//a[@class=\"novelname\"]",
+        "httpHeaders": {
+            "Referer": "https://www.biqusk.org/",
+            "Host": "www.biqusk.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "requestInfo": "/search.html?searchtype=novelname&searchkey=%@keyWord",
+        "host": "https://www.biqusk.org",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class=\"novelname\"]/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//ul[@class='librarylist']//li"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "info",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet str = result.content;\n\tparams.nativeTool.log(str);\n      function typeSet(str){\n            //str = str.replace(/\\[笔趣阁.*?\\]/gi,'');\n\n            str = str.replace(/<br[\\s]*[\\/]*>/gi,'\\n');\n            str = str.replace(/\\n[\\s]*\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,'');\n            //str = str.replace(/<p[^>]*>[\\s\\S]+<\\/[^>]*>/gi,'');\n\t\tstr = str.replace(/<[^>]*>/gi,'');\n\t\t//str = str.replace(/[\\s]{2,}/gi,'');\n            //str = str.replace(/\\n/gi,'@');\n\t\tstr = str.replace(/第[\\d]+章[^\\n]+\\n/gi,'');\n            return str;\n      }\n\treturn typeSet(str);\n}",
+        "requestInfo": "@js:\nlet id1 = params.queryInfo.url.split('_')[1];\nlet id = id1.split('.')[0];\nlet url = '/novelsearch/reader/transcode/siteid/%@id/'\nurl = url.replace('%@id',id);\nreturn encodeURI(url);",
+        "host": "https://www.biqusk.org",
+        "httpHeaders": {
+            "Referer": "https://www.biqusk.org/",
+            "Host": "www.biqusk.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "status": "//div[@class=\"novelinfo-l\"]/ul/li[last()]",
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.biqusk.org",
+        "httpHeaders": {
+            "Referer": "https://www.biqusk.org/",
+            "Host": "www.biqusk.org",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[contains(@class,'novelintro')]"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "//p[@class=\"info\"]//span[3]/a",
+            "author": "//p[@class=\"info\"]//span[2]/a",
+            "lastChapterTitle": "//p[@class=\"last\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"novelname\"]",
+            "httpHeaders": {
+                "Referer": "https://www.biqusk.org/",
+                "Host": "www.biqusk.org",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "requestInfo": "/sort/%@filter/%@pageIndex.html",
+            "host": "https://www.biqusk.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"novelname\"]/@href",
+            "cover": "//img/@src",
+            "moreKeys": {
+                "pageSize": 15,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部小说",
+                                "value": "all"
+                            },
+                            {
+                                "title": "玄幻小说",
+                                "value": "xuanhuan"
+                            },
+                            {
+                                "title": "奇幻小说",
+                                "value": "qihuan"
+                            },
+                            {
+                                "title": "武侠小说",
+                                "value": "wuxia"
+                            },
+                            {
+                                "title": "仙侠小说",
+                                "value": "xianxia"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "dushi"
+                            },
+                            {
+                                "title": "历史小说",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "军事小说",
+                                "value": "junshi"
+                            },
+                            {
+                                "title": "游戏小说",
+                                "value": "youxi"
+                            },
+                            {
+                                "title": "竞技小说",
+                                "value": "jingji"
+                            },
+                            {
+                                "title": "科幻小说",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "灵异小说",
+                                "value": "lingyi"
+                            },
+                            {
+                                "title": "同人小说",
+                                "value": "tongren"
+                            },
+                            {
+                                "title": "女生小说",
+                                "value": "nvsheng"
+                            },
+                            {
+                                "title": "其他小说",
+                                "value": "qita"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "list": "//ul[@class='librarylist']//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        },
+        "排行": {
+            "cat": "//p[@class=\"info\"]//span[3]/a",
+            "author": "//p[@class=\"info\"]//span[2]/a",
+            "lastChapterTitle": "//p[@class=\"last\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//a[@class=\"novelname\"]",
+            "httpHeaders": {
+                "Referer": "https://www.biqusk.org/",
+                "Host": "www.biqusk.org",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15"
+            },
+            "requestInfo": "/top/%@filter/%@pageIndex.html",
+            "host": "https://www.biqusk.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"novelname\"]/@href",
+            "cover": "//img/@src",
+            "moreKeys": {
+                "pageSize": 15,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "入库时间",
+                                "value": "postdate"
+                            },
+                            {
+                                "title": "最新更新",
+                                "value": "lastupdate"
+                            },
+                            {
+                                "title": "日点击",
+                                "value": "dayvisit"
+                            },
+                            {
+                                "title": "周点击",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "月点击",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "总点击",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "收藏数",
+                                "value": "marknum"
+                            },
+                            {
+                                "title": "推荐数",
+                                "value": "votenum"
+                            },
+                            {
+                                "title": "下载数",
+                                "value": "downnum"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "list": "//ul[@class='librarylist']//li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    }
+}

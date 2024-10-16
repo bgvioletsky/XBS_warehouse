@@ -1,0 +1,814 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "miniAppVersion": "2.53.2",
+    "loginUrl": "https://boylove.live/home/auth/login/type/login.html",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "$.result.list[-1:].update_time||@replace:(\\n    \\\"||@replace:\\\"\\n)",
+        "requestInfo": "@js:\nreturn 'https://boylove.cc/home/api/chapter_list/tp/'+params.queryInfo.detailUrl+'-1-0-10';",
+        "title": "title",
+        "host": "https://boylove.live/",
+        "list": "result/list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "sourceName": "🌺香香腐宅🔮🔞✨",
+    "sourceType": "comic",
+    "sourceUrl": "https://boylove.live/",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666017535.356169",
+    "searchBook": {
+        "cat": "keyword",
+        "author": "auther",
+        "lastChapterTitle": "last_chapter_title",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "desc": "desc",
+        "requestInfo": "https://boylove.live/home/api/searchk?keyword=%@keyWord&type=1&pageNo=%@pageIndex",
+        "host": "https://boylove.live/",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "image",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "result/list",
+        "status": "status"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class='reader-cartoon-image loaded']//img/@data-original||@js:\nreturn result.replaceAll(' ', '');",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, jsparams, result) {\n\nlet dat = result.content.split('\\n').map(s => `https://boylove.live${s}`);\r \nreturn JSON.stringify({'urls': dat});\n\r}",
+        "requestInfo": "https://boylove.cc/home/book/capter/id/%@result",
+        "host": "https://boylove.live/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "detail": "content",
+        "createdTime": "created_at",
+        "fromUserName": "nickname",
+        "responseFormatType": "json",
+        "requestInfo": "@js:\nreturn {'url':'https://boylove.cc/home/api/getComment', 'POST':true, 'httpParams':{'manhua_id':params.queryInfo.detailUrl.replace('https:\\/\\/boylove.house\\/home\\/book\\/index\\/id\\/', ''), 'page':params.pageIndex, 'loadMod':params.filters.sort, 'force': false}};",
+        "host": "https://boylove.live/",
+        "actionID": "shupingList",
+        "moreKeys": {
+            "pageSize": 15,
+            "requestFilters": [
+                {
+                    "items": [
+                        {
+                            "title": "最火评论",
+                            "value": "hot"
+                        },
+                        {
+                            "title": "最新评论",
+                            "value": "new"
+                        },
+                        {
+                            "title": "默认排序",
+                            "value": "asc"
+                        }
+                    ],
+                    "key": "sort"
+                }
+            ]
+        },
+        "validConfig": "",
+        "list": "result/list",
+        "parserID": "DOM",
+        "replyCount": "reply_count",
+        "fromUserCover": "headimage"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "status": "//div[@class='stui-content__detail']/p[1]",
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "https://boylove.house/home/book/index/id/%@result",
+        "lastChapterTitle": "//div[@class='stui-content__detail']/p[5]",
+        "host": "https://boylove.live/",
+        "cat": "//div[@class='stui-content__detail']/p[7]/a",
+        "cover": "//span[@class='pic']/a",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "keyword",
+            "author": "auther",
+            "lastChapterTitle": "last_chapter_title",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "desc",
+            "host": "https://boylove.live/",
+            "requestInfo": "@js:\nreturn 'https://boylove.live/home/api/cate/tp/1-' + encodeURI(params.filters.type) + '-' + params.filters.status + '-1-' + params.pageIndex + '-' + params.filters.rou + '-1-2';",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "image||cover",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 18,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "2"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "0"
+                            },
+                            {
+                                "value": "1",
+                                "title": "完结"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "待分类",
+                                "value": "待分类"
+                            },
+                            {
+                                "title": "日漫",
+                                "value": "日漫"
+                            },
+                            {
+                                "title": "高H",
+                                "value": "高H"
+                            },
+                            {
+                                "title": "韩漫",
+                                "value": "韩漫"
+                            },
+                            {
+                                "title": "甜文",
+                                "value": "甜文"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "校园"
+                            },
+                            {
+                                "title": "年下攻",
+                                "value": "年下攻"
+                            },
+                            {
+                                "title": "健气受",
+                                "value": "健气受"
+                            },
+                            {
+                                "title": "腹黑攻",
+                                "value": "腹黑攻"
+                            },
+                            {
+                                "title": "清水",
+                                "value": "清水"
+                            },
+                            {
+                                "title": "同人",
+                                "value": "同人"
+                            },
+                            {
+                                "title": "诱受",
+                                "value": "诱受"
+                            },
+                            {
+                                "title": "办公室恋情",
+                                "value": "办公室恋情"
+                            },
+                            {
+                                "title": "青梅竹马",
+                                "value": "青梅竹马"
+                            },
+                            {
+                                "title": "傲娇受",
+                                "value": "傲娇受"
+                            },
+                            {
+                                "title": "兽耳",
+                                "value": "兽耳"
+                            },
+                            {
+                                "title": "淫荡受｜诱受",
+                                "value": "淫荡受｜诱受"
+                            },
+                            {
+                                "title": "ABO",
+                                "value": "ABO"
+                            },
+                            {
+                                "title": "淫荡受",
+                                "value": "淫荡受"
+                            },
+                            {
+                                "title": "可爱受",
+                                "value": "可爱受"
+                            },
+                            {
+                                "title": "搞笑",
+                                "value": "搞笑"
+                            },
+                            {
+                                "title": "壮受",
+                                "value": "壮受"
+                            },
+                            {
+                                "title": "重逢｜重生",
+                                "value": "重逢｜重生"
+                            },
+                            {
+                                "title": "正太",
+                                "value": "正太"
+                            },
+                            {
+                                "title": "忠犬攻",
+                                "value": "忠犬攻"
+                            },
+                            {
+                                "title": "巨屌",
+                                "value": "巨屌"
+                            },
+                            {
+                                "title": "SM",
+                                "value": "SM"
+                            },
+                            {
+                                "title": "美人受",
+                                "value": "美人受"
+                            },
+                            {
+                                "title": "巨乳",
+                                "value": "巨乳"
+                            },
+                            {
+                                "title": "兽人",
+                                "value": "兽人"
+                            },
+                            {
+                                "title": "调教",
+                                "value": "调教"
+                            },
+                            {
+                                "title": "双向暗恋",
+                                "value": "双向暗恋"
+                            },
+                            {
+                                "title": "女装",
+                                "value": "女装"
+                            },
+                            {
+                                "title": "娱乐圈",
+                                "value": "娱乐圈"
+                            },
+                            {
+                                "title": "美人攻",
+                                "value": "美人攻"
+                            },
+                            {
+                                "title": "温柔攻",
+                                "value": "温柔攻"
+                            },
+                            {
+                                "title": "多P",
+                                "value": "多P"
+                            },
+                            {
+                                "title": "微虐",
+                                "value": "微虐"
+                            },
+                            {
+                                "title": "师生恋",
+                                "value": "师生恋"
+                            },
+                            {
+                                "title": "体型差",
+                                "value": "体型差"
+                            },
+                            {
+                                "title": "重逢",
+                                "value": "重逢"
+                            },
+                            {
+                                "title": "天然攻",
+                                "value": "天然攻"
+                            },
+                            {
+                                "title": "男孕",
+                                "value": "男孕"
+                            },
+                            {
+                                "title": "女王受",
+                                "value": "女王受"
+                            },
+                            {
+                                "title": "人外",
+                                "value": "人外"
+                            },
+                            {
+                                "title": "骨科",
+                                "value": "骨科"
+                            },
+                            {
+                                "title": "3P",
+                                "value": "3P"
+                            },
+                            {
+                                "title": "黑道",
+                                "value": "黑道"
+                            },
+                            {
+                                "title": "职场",
+                                "value": "职场"
+                            },
+                            {
+                                "title": "2019_BL_AWARD",
+                                "value": "2019_BL_AWARD"
+                            },
+                            {
+                                "title": "虐",
+                                "value": "虐"
+                            },
+                            {
+                                "title": "小说改编",
+                                "value": "小说改编"
+                            },
+                            {
+                                "title": "年上攻",
+                                "value": "年上攻"
+                            },
+                            {
+                                "title": "架空",
+                                "value": "架空"
+                            },
+                            {
+                                "title": "兄贵",
+                                "value": "兄贵"
+                            },
+                            {
+                                "title": "2020_BL_AWARD",
+                                "value": "2020_BL_AWARD"
+                            },
+                            {
+                                "title": "暗恋",
+                                "value": "暗恋"
+                            },
+                            {
+                                "title": "男妓",
+                                "value": "男妓"
+                            },
+                            {
+                                "title": "黑皮",
+                                "value": "黑皮"
+                            },
+                            {
+                                "title": "强攻强受",
+                                "value": "强攻强受"
+                            },
+                            {
+                                "title": "黑皮受",
+                                "value": "黑皮受"
+                            },
+                            {
+                                "title": "豪门",
+                                "value": "豪门"
+                            },
+                            {
+                                "title": "疯批攻",
+                                "value": "疯批攻"
+                            },
+                            {
+                                "title": "圈养",
+                                "value": "圈养"
+                            },
+                            {
+                                "title": "天然受",
+                                "value": "天然受"
+                            },
+                            {
+                                "title": "呆萌受",
+                                "value": "呆萌受"
+                            },
+                            {
+                                "title": "虐恋",
+                                "value": "虐恋"
+                            },
+                            {
+                                "title": "",
+                                "value": ""
+                            },
+                            {
+                                "title": "多CP",
+                                "value": "多CP"
+                            },
+                            {
+                                "title": "总裁系列",
+                                "value": "总裁系列"
+                            },
+                            {
+                                "title": "追妻火葬场",
+                                "value": "追妻火葬场"
+                            },
+                            {
+                                "title": "执着攻",
+                                "value": "执着攻"
+                            },
+                            {
+                                "title": "伪娘",
+                                "value": "伪娘"
+                            },
+                            {
+                                "title": "病娇攻",
+                                "value": "病娇攻"
+                            },
+                            {
+                                "title": "甜",
+                                "value": "甜"
+                            },
+                            {
+                                "title": "道具",
+                                "value": "道具"
+                            },
+                            {
+                                "title": "古代｜非现代",
+                                "value": "古代｜非现代"
+                            },
+                            {
+                                "title": "生子",
+                                "value": "生子"
+                            },
+                            {
+                                "title": "心机攻",
+                                "value": "心机攻"
+                            },
+                            {
+                                "title": "HE",
+                                "value": "HE"
+                            },
+                            {
+                                "title": "大叔受",
+                                "value": "大叔受"
+                            },
+                            {
+                                "title": "傲娇攻",
+                                "value": "傲娇攻"
+                            },
+                            {
+                                "title": "BDSM",
+                                "value": "BDSM"
+                            },
+                            {
+                                "title": "双CP",
+                                "value": "双CP"
+                            },
+                            {
+                                "title": "触手",
+                                "value": "触手"
+                            },
+                            {
+                                "title": "渣攻",
+                                "value": "渣攻"
+                            },
+                            {
+                                "title": "深情攻",
+                                "value": "深情攻"
+                            },
+                            {
+                                "title": "纯情攻",
+                                "value": "纯情攻"
+                            },
+                            {
+                                "title": "虐心",
+                                "value": "虐心"
+                            },
+                            {
+                                "title": "霸道攻",
+                                "value": "霸道攻"
+                            },
+                            {
+                                "title": "高甜",
+                                "value": "高甜"
+                            },
+                            {
+                                "title": "古代",
+                                "value": "古代"
+                            },
+                            {
+                                "title": "道具PLAY",
+                                "value": "道具PLAY"
+                            },
+                            {
+                                "title": "三角恋",
+                                "value": "三角恋"
+                            },
+                            {
+                                "title": "吸血鬼",
+                                "value": "吸血鬼"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "灵异"
+                            },
+                            {
+                                "title": "可爱攻",
+                                "value": "可爱攻"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "悬疑"
+                            },
+                            {
+                                "title": "不良受",
+                                "value": "不良受"
+                            },
+                            {
+                                "title": "年龄差",
+                                "value": "年龄差"
+                            },
+                            {
+                                "title": "巨根",
+                                "value": "巨根"
+                            },
+                            {
+                                "title": "剧情",
+                                "value": "剧情"
+                            },
+                            {
+                                "title": "互攻",
+                                "value": "互攻"
+                            },
+                            {
+                                "title": "攻受互换",
+                                "value": "攻受互换"
+                            },
+                            {
+                                "title": "无码",
+                                "value": "无码"
+                            },
+                            {
+                                "title": "囚禁",
+                                "value": "囚禁"
+                            },
+                            {
+                                "title": "演艺圈",
+                                "value": "演艺圈"
+                            },
+                            {
+                                "title": "有肉",
+                                "value": "有肉"
+                            },
+                            {
+                                "title": "哭包攻",
+                                "value": "哭包攻"
+                            },
+                            {
+                                "title": "哭包受",
+                                "value": "哭包受"
+                            },
+                            {
+                                "title": "纯情受",
+                                "value": "纯情受"
+                            },
+                            {
+                                "title": "伪骨科",
+                                "value": "伪骨科"
+                            },
+                            {
+                                "title": "失忆",
+                                "value": "失忆"
+                            },
+                            {
+                                "title": "强受",
+                                "value": "强受"
+                            },
+                            {
+                                "title": "强制爱",
+                                "value": "强制爱"
+                            },
+                            {
+                                "title": "重口",
+                                "value": "重口"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "古风"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "穿越"
+                            },
+                            {
+                                "title": "台漫",
+                                "value": "台漫"
+                            },
+                            {
+                                "title": "同居",
+                                "value": "同居"
+                            },
+                            {
+                                "title": "合集",
+                                "value": "合集"
+                            },
+                            {
+                                "title": "强强",
+                                "value": "强强"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "纯爱"
+                            },
+                            {
+                                "title": "异世界",
+                                "value": "异世界"
+                            },
+                            {
+                                "title": "淫荡受/诱受",
+                                "value": "淫荡受/诱受"
+                            },
+                            {
+                                "title": "自卑受",
+                                "value": "自卑受"
+                            },
+                            {
+                                "title": "黑皮攻",
+                                "value": "黑皮攻"
+                            },
+                            {
+                                "title": "催眠",
+                                "value": "催眠"
+                            },
+                            {
+                                "title": "甜宠",
+                                "value": "甜宠"
+                            },
+                            {
+                                "title": "年上受",
+                                "value": "年上受"
+                            },
+                            {
+                                "title": "黑帮",
+                                "value": "黑帮"
+                            },
+                            {
+                                "title": "单纯受",
+                                "value": "单纯受"
+                            },
+                            {
+                                "title": "兄弟",
+                                "value": "兄弟"
+                            },
+                            {
+                                "title": "身高差",
+                                "value": "身高差"
+                            },
+                            {
+                                "title": "师生",
+                                "value": "师生"
+                            },
+                            {
+                                "title": "年下",
+                                "value": "年下"
+                            },
+                            {
+                                "title": "现代",
+                                "value": "现代"
+                            },
+                            {
+                                "title": "重生",
+                                "value": "重生"
+                            },
+                            {
+                                "title": "淫魔",
+                                "value": "淫魔"
+                            },
+                            {
+                                "title": "BE",
+                                "value": "BE"
+                            },
+                            {
+                                "title": "现代都市",
+                                "value": "现代都市"
+                            },
+                            {
+                                "title": "穿越｜快穿",
+                                "value": "穿越｜快穿"
+                            },
+                            {
+                                "title": "破镜重圆",
+                                "value": "破镜重圆"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "奇幻"
+                            },
+                            {
+                                "title": "大叔攻",
+                                "value": "大叔攻"
+                            },
+                            {
+                                "title": "捆绑",
+                                "value": "捆绑"
+                            },
+                            {
+                                "title": "毛绒绒",
+                                "value": "毛绒绒"
+                            },
+                            {
+                                "title": "血腥",
+                                "value": "血腥"
+                            },
+                            {
+                                "title": "FGO",
+                                "value": "FGO"
+                            },
+                            {
+                                "title": "NTR",
+                                "value": "NTR"
+                            },
+                            {
+                                "title": "创伤受",
+                                "value": "创伤受"
+                            },
+                            {
+                                "title": "反差萌",
+                                "value": "反差萌"
+                            },
+                            {
+                                "title": "制服",
+                                "value": "制服"
+                            },
+                            {
+                                "title": "监禁",
+                                "value": "监禁"
+                            },
+                            {
+                                "title": "强姦",
+                                "value": "强姦"
+                            },
+                            {
+                                "title": "短篇",
+                                "value": "短篇"
+                            }
+                        ],
+                        "key": "type"
+                    }
+                ]
+            },
+            "list": "result/list",
+            "status": "mhstatus"
+        },
+        "首页": {
+            "cat": "keyword",
+            "author": "auther",
+            "lastChapterTitle": "last_chapter_title",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "desc",
+            "host": "https://boylove.live/",
+            "requestInfo": "https://boylove.live/home/api/getpage/tp/1-%@filter-%3C,%@pageIndex",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "cover",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 18,
+                "requestFilters": {
+                    "每日最新": "newest",
+                    "排行总榜": "topest",
+                    "猜你喜欢": "cnxh"
+                }
+            },
+            "list": "result/list",
+            "status": "mhstatus"
+        }
+    }
+}

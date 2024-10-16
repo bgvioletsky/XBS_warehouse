@@ -1,0 +1,72 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "content": "data/content",
+        "host": "https://quapp.shenbabao.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "https://quapp.shenbabao.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "趣app",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1659155326.483955",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "CNmae",
+        "author": "Author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "LastChapter",
+        "bookName": "Name",
+        "desc": "Desc",
+        "requestInfo": "https://sou.jiaston.com/search.aspx?key=%@keyWord&page=%@pageIndex&siteid=app2",
+        "host": "https://quapp.shenbabao.com",
+        "actionID": "searchBook",
+        "detailUrl": "Id",
+        "cover": "Img",
+        "validConfig": "",
+        "list": "data",
+        "parserID": "DOM",
+        "status": "BookStatus"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://quapp.shenbabao.com/book/%@result/",
+        "title": "$.name",
+        "host": "https://quapp.shenbabao.com",
+        "list": "$..list[*].list[*]",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\n\nvar a = params.queryInfo.detailUrl. match(/\\d+/);\n\nurl = 'https://quapp.shenbabao.com/book/' + a+ '/' + result.id +'.html';\n\nreturn url"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,112 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//article[@class=\"article-content\"]/p[1]/img/@src||@js:\nreturn JSON.stringify({\n    'urls': result,\n    'httpHeaders': config.httpHeaders,\n});",
+        "actionID": "chapterContent",
+        "host": "https://www.3004ss.vip",
+        "httpHeaders": {
+            "Referer": "https://www.3004ss.vip/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.3004ss.vip",
+        "httpHeaders": {
+            "Referer": "https://www.3004ss.vip/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "cover": "@js: \nvar img = params.queryInfo.cover;\nparams.nativeTool.log(img)\nreturn img;",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "转载": {
+            "responseFormatType": "html",
+            "bookName": "//h2/a/text()",
+            "httpHeaders": {
+                "Referer": "https://www.3004ss.vip/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.3004ss.vip${_type}/page/${params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.3004ss.vip",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 13,
+                "requestFilters": "_type\n新热点::/news\n美女写真::/meinv\n连载漫画::/item/%e8%bf%9e%e8%bd%bd\n完结漫画::/item/%e5%ae%8c%e7%bb%93\n爱情漫画::/mh"
+            },
+            "detailUrl": "//h2/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"box\"]",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//article/p[2]//img/@data-original"
+        }
+    },
+    "sourceUrl": "https://www.3004ss.vip",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "sourceType": "comic",
+    "sourceName": "三四娱乐",
+    "weight": "1",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "httpHeaders": {
+        "Referer": "https://www.3004ss.vip/",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+    },
+    "lastModifyTime": "1658305054.716043",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "requestInfo": "https://www.3004ss.vip/?s=%@keyWord",
+        "bookName": "//article/header/h2/a/text()",
+        "detailUrl": "//article/header/h2/a/@href",
+        "host": "https://www.3004ss.vip",
+        "httpHeaders": {
+            "Referer": "https://www.3004ss.vip/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@class=\"pb\"]//div",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "cover": "//article/p[2]//img/@data-original"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result) {\n\n    params.nativeTool.logWithKey(params, 'params');\n    let list = [{ 'title': '1', 'url': params.queryInfo.detailUrl }];\n    result.list.filter(x => x.title != '下一页').forEach(x => {\n        list.push(x);\n    });\n\n    return { 'list': list };\n}",
+        "title": "//text()",
+        "host": "https://www.3004ss.vip",
+        "httpHeaders": {
+            "Referer": "https://www.3004ss.vip/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@class=\"article-paging\"][last()]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    }
+}

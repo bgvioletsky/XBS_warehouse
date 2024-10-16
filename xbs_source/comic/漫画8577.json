@@ -1,0 +1,139 @@
+{
+    "bookWorld": {
+        "排行": {
+            "responseFormatType": "html",
+            "bookName": "//p[@class='comic-name']/text()",
+            "httpHeaders": {
+                "Referer": "http://www.mh857.com",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+            },
+            "requestInfo": "@js:\n\nlet url = config.host + \"/index.php/custom/\" + params.filters.type;\nreturn {\"url\":url, \"POST\":false, \"forbidCookie\":true, \"httpHeaders\":config.httpHeaders};",
+            "host": "http://www.mh857.cn",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "人气榜",
+                                "value": "top"
+                            },
+                            {
+                                "title": "月票榜",
+                                "value": "ticket"
+                            },
+                            {
+                                "title": "收场榜",
+                                "value": "fav"
+                            },
+                            {
+                                "title": "今日榜",
+                                "value": "day"
+                            },
+                            {
+                                "title": "本周榜",
+                                "value": "week"
+                            },
+                            {
+                                "title": "本月榜",
+                                "value": "month"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "cover": "//img/@data-src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class='rank-list']/div",
+            "desc": "//p[@class='comic-tip']/text()",
+            "detailUrl": "//div[@class='comic-item-info']/a/@href"
+        }
+    },
+    "weight": "85",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://www.mh857.cn",
+        "httpHeaders": {
+            "Referer": "http://www.mh857.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+        },
+        "list": "//div[@class='catalog-list']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "漫画8577",
+    "sourceType": "comic",
+    "sourceUrl": "http://www.mh857.cn",
+    "httpHeaders": {
+        "Referer": "http://www.mh857.com",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1647086063.640195",
+    "searchBook": {
+        "cat": "//p[@class='comic-tags']/span/text()",
+        "lastChapterTitle": "//p[@class='comic-update-at']/text()",
+        "responseFormatType": "html",
+        "author": "//p[@class='comic-author']/text()",
+        "bookName": "//p[@class='comic-name']/a/text()",
+        "httpHeaders": {
+            "Referer": "http://www.mh857.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+        },
+        "requestInfo": "/index.php/search?key=%@keyWord",
+        "host": "http://www.mh857.cn",
+        "actionID": "searchBook",
+        "detailUrl": "//p[@class='comic-name']/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//p[@class='comic-count']/text()|@replace:人气：",
+        "list": "//div[@class='search-result']/div"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "validConfig": "",
+        "content": "//ul[@class='comic-list']/li/img/@src",
+        "host": "http://www.mh857.cn",
+        "httpHeaders": {
+            "Referer": "http://www.mh857.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    }
+}

@@ -1,0 +1,255 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.ruochu.com/",
+        "content": "//div[contains(@class, 'page-content')]/p",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "https://www.ruochu.com/book/%@result",
+        "host": "https://www.ruochu.com/",
+        "cover": "//div[@class='pic']/a/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "书库": {
+            "cat": "@js:\nreturn result.sortname + ' ' + result.tags;",
+            "author": "authorname",
+            "lastChapterTitle": "lastchaptername",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "desc": "introduce",
+            "requestInfo": "@js:\nreturn 'https://search.ruochu.com/web/all?sort=' + params.filters.sort + '&words=' + params.filters.words +'&free=' + params.filters.free + '&finish=' + params.filters.finish + '&order=' + params.filters.order + '&page=' + params.pageIndex +'&size=100&solicitingid=0';",
+            "host": "https://www.ruochu.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "wordCount": "words",
+            "validConfig": "",
+            "list": "data/content",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "-1",
+                                "title": "全部"
+                            },
+                            {
+                                "value": "110",
+                                "title": "短篇"
+                            },
+                            {
+                                "value": "35",
+                                "title": "婚恋"
+                            },
+                            {
+                                "value": "4",
+                                "title": "都市"
+                            },
+                            {
+                                "value": "11",
+                                "title": "职场"
+                            },
+                            {
+                                "value": "12",
+                                "title": "豪门"
+                            },
+                            {
+                                "value": "13",
+                                "title": "总裁"
+                            },
+                            {
+                                "value": "15",
+                                "title": "架空"
+                            },
+                            {
+                                "value": "17",
+                                "title": "穿越"
+                            },
+                            {
+                                "value": "19",
+                                "title": "宫斗"
+                            },
+                            {
+                                "value": "20",
+                                "title": "宅斗"
+                            },
+                            {
+                                "value": "21",
+                                "title": "青春"
+                            },
+                            {
+                                "value": "7",
+                                "title": "仙侠"
+                            },
+                            {
+                                "value": "22",
+                                "title": "修真"
+                            },
+                            {
+                                "value": "6",
+                                "title": "玄幻"
+                            },
+                            {
+                                "value": "8",
+                                "title": "武侠"
+                            },
+                            {
+                                "value": "3",
+                                "title": "历史"
+                            },
+                            {
+                                "value": "23",
+                                "title": "纯爱"
+                            },
+                            {
+                                "value": "46",
+                                "title": "作女"
+                            }
+                        ],
+                        "key": "sort"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "-1",
+                                "title": "不限"
+                            },
+                            {
+                                "value": "1",
+                                "title": "30万以下"
+                            },
+                            {
+                                "value": "2",
+                                "title": "30-50万"
+                            },
+                            {
+                                "value": "3",
+                                "title": "50-100万"
+                            },
+                            {
+                                "value": "5",
+                                "title": "100万以上"
+                            }
+                        ],
+                        "key": "words"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "0",
+                                "title": "不限"
+                            },
+                            {
+                                "value": "1",
+                                "title": "周人气"
+                            },
+                            {
+                                "value": "2",
+                                "title": "月人气"
+                            },
+                            {
+                                "value": "3",
+                                "title": "总人气"
+                            },
+                            {
+                                "value": "4",
+                                "title": "推荐票"
+                            },
+                            {
+                                "value": "6",
+                                "title": "字数"
+                            }
+                        ],
+                        "key": "order"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "不限"
+                            },
+                            {
+                                "value": "true",
+                                "title": "免费作品"
+                            },
+                            {
+                                "value": "false",
+                                "title": "收费作品"
+                            }
+                        ],
+                        "key": "free"
+                    },
+                    {
+                        "items": [
+                            {
+                                "value": "",
+                                "title": "不限"
+                            },
+                            {
+                                "value": "true",
+                                "title": "已完结"
+                            },
+                            {
+                                "value": "false",
+                                "title": "未完结"
+                            }
+                        ],
+                        "key": "finish"
+                    }
+                ]
+            }
+        }
+    },
+    "sourceUrl": "https://www.ruochu.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "若初文学网",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1658505018.238772",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://www.ruochu.com/chapter/%@result",
+        "title": "//a",
+        "host": "https://www.ruochu.com/",
+        "list": "//ul[@class='float-list fill-block']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,313 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "content": "model/content",
+        "host": "http://api.qingoo.cn:9090",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "detail": "//p[@class='discuss_content']",
+        "createdTime": "//span[@class='time']",
+        "fromUserName": "//span[@class='name']",
+        "responseFormatType": "html",
+        "requestInfo": "@js:\nreturn 'https://qingoo.cn/details?bookId=' + params.queryInfo.detailUrl + '&count=100000';",
+        "host": "http://api.qingoo.cn:9090",
+        "actionID": "shupingList",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class='discuss']/div[@class='msg']",
+        "replyCount": "//div[@class='tips']/span[2]/a",
+        "fromUserCover": "//img/@src"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "wordCount": "//*[@id=\"xiangqing\"]/div[1]/div[1]/dl/dd/p[2]||@js:\nreturn result.replace(/字数：/, '');",
+        "requestInfo": "https://www.qingoo.cn/details?bookId=%@result",
+        "host": "http://api.qingoo.cn:9090",
+        "cat": "//*[@id=\"xiangqing\"]/div[1]/div[1]/dl/dd/span",
+        "cover": "//*[@id=\"xiangqing\"]/div[1]/div[1]/dl/dt/img[1]/@src",
+        "responseFormatType": "html",
+        "desc": "//*[@id=\"xiangqing\"]/div[1]/div[2]/div[1]/p[@class='description']",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "排行（有的无效）": {
+            "author": "//p[@class='author']||@js:\nreturn result.replace(/\n                            \n                            \n                                作者：/, '');",
+            "responseFormatType": "html",
+            "bookName": "//h5",
+            "desc": "//p[@class='word']",
+            "requestInfo": "@js:\nreturn 'https://qingoo.cn/list?type=' + params.filters.type + '&q=' + encodeURI(params.filters.tag) + '&title=' + encodeURI(params.filters.tag) + '&page=' + params.pageIndex + '&limit=30';",
+            "host": "http://api.qingoo.cn:9090",
+            "actionID": "bookWorld",
+            "detailUrl": "//h5/a/@href||@js:\nlet index = result.indexOf('bookId=');\nif(index>=0)\n\treturn result.substr(index+7);\nreturn undefined;",
+            "cover": "//a/dt/img[1]/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "all"
+                            },
+                            {
+                                "title": "男频",
+                                "value": "boy"
+                            },
+                            {
+                                "title": "女频",
+                                "value": "girl"
+                            },
+                            {
+                                "title": "二次元",
+                                "value": "unreal"
+                            }
+                        ],
+                        "key": "type"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "耽美小说",
+                                "value": "耽美小说"
+                            },
+                            {
+                                "title": "男频风云榜",
+                                "value": "男频风云榜"
+                            },
+                            {
+                                "title": "女频风云榜",
+                                "value": "女频风云榜"
+                            },
+                            {
+                                "title": "男频新书榜",
+                                "value": "男频新书榜"
+                            },
+                            {
+                                "title": "完本榜",
+                                "value": "完本榜"
+                            },
+                            {
+                                "title": "字数榜",
+                                "value": "字数榜"
+                            },
+                            {
+                                "title": "收藏榜",
+                                "value": "收藏榜"
+                            },
+                            {
+                                "title": "留存榜",
+                                "value": "留存榜"
+                            }
+                        ],
+                        "key": "tag"
+                    }
+                ]
+            },
+            "list": "//dl"
+        },
+        "分类": {
+            "cat": "tags",
+            "author": "author/name",
+            "responseFormatType": "json",
+            "lastChapterTitle": "chapter/name",
+            "bookName": "name",
+            "desc": "description",
+            "requestInfo": "@js:\nreturn 'http://api.qingoo.cn:9090/v3/type/' + params.filters.type + '?q=' + encodeURI(params.filters.tag) + '&page=' + params.pageIndex + '&limit=100&packagename=com.quduquxie&os=android&udid=40128CB63D1923C1F9862F070078526D&appversion=35&ch=qg0003_001';",
+            "host": "http://api.qingoo.cn:9090",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "all"
+                            },
+                            {
+                                "title": "男频",
+                                "value": "boy"
+                            },
+                            {
+                                "title": "女频",
+                                "value": "girl"
+                            },
+                            {
+                                "title": "二次元",
+                                "value": "unreal"
+                            }
+                        ],
+                        "key": "type"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "玄幻"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "都市"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "仙侠"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "科幻"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "奇幻"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "武侠"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "军事"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "悬疑"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "游戏"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "体育"
+                            },
+                            {
+                                "title": "现实",
+                                "value": "现实"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "灵异"
+                            },
+                            {
+                                "title": "二次元",
+                                "value": "二次元"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "古代言情"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "现代言情"
+                            },
+                            {
+                                "title": "玄幻言情",
+                                "value": "玄幻言情"
+                            },
+                            {
+                                "title": "浪漫青春",
+                                "value": "浪漫青春"
+                            },
+                            {
+                                "title": "科幻空间",
+                                "value": "科幻空间"
+                            },
+                            {
+                                "title": "仙侠奇缘",
+                                "value": "仙侠奇缘"
+                            },
+                            {
+                                "title": "N次元",
+                                "value": "N次元"
+                            },
+                            {
+                                "title": "悬疑灵异",
+                                "value": "悬疑灵异"
+                            },
+                            {
+                                "title": "游戏竞技",
+                                "value": "游戏竞技"
+                            }
+                        ],
+                        "key": "tag"
+                    }
+                ]
+            },
+            "detailUrl": "id",
+            "cover": "image",
+            "parserID": "DOM",
+            "wordCount": "word_count",
+            "validConfig": "",
+            "list": "model",
+            "status": "attribute"
+        }
+    },
+    "sourceUrl": "http://api.qingoo.cn:9090",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺青果阅读📊🔮©️",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665935062.690999",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//a/h3/div||@js:\nlet dat = result.match(/(\\-|\\_).*?著/, '').toString();\nreturn dat.replace('著', '').replaceAll('-', '').replaceAll('_', '').replace(',', '');",
+        "responseFormatType": "html",
+        "bookName": "//a/h3/div||//a/h3||@js:\nreturn result.replace('《', '').replace('》', '').replace(/(-|_).*?著/, '').replace(' - 本站维护中…………', '');",
+        "desc": "//text()",
+        "requestInfo": "@js:\nreturn {'url':'https://www.google.com/search?q=site%3Aqingoo.cn%20' + encodeURI(params.keyWord) + '&start=' + ((params.pageIndex-1)*10), 'webView':''};",
+        "host": "http://api.qingoo.cn:9090",
+        "actionID": "searchBook",
+        "detailUrl": "//a/@href||@js:\nlet dat = result.match(/bookId%3D.*?&ved/).toString();\nreturn dat.replace('bookId%3D', '').replace('&ved', '');",
+        "moreKeys": {
+            "pageSize": 10,
+            "skipCount": 2
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@id='search']/div/div/div||//div[@id='main']/div/div"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "/v3/books/%@result/chapters?start=1&host=open.qingoo.cn&packagename=com.quduquxie&os=android&udid=40128CB63D1923C1F9862F070078526D&appversion=35&ch=qg0003_001&token=",
+        "title": "name",
+        "host": "http://api.qingoo.cn:9090",
+        "list": "model",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id||@js:\nreturn '/v3/books/' + params.queryInfo.detailUrl + '/chapters/' + result + '?host=open.qingoo.cn&version=0&packagename=com.quduquxie&os=android&udid=40128CB63D1923C1F9862F070078526D&appversion=35&ch=qg0003_001&token=';"
+    },
+    "sourceType": "text"
+}

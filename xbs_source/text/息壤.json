@@ -1,0 +1,218 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "content": "data/content",
+        "host": "https://pre-api.xrzww.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "女频": {
+            "cat": "second_type_name",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_info",
+            "requestInfo": "@js:\n\nlet url = config.host+\"/api/getTypeNovel?novel_process=&novel_sell=&novel_sign_id=&time_type=&word_type=&second_type=\"+params.filters.type+\"&page=\"+params.pageIndex+\"&novel_sex=2&type_id=&pageSize=20&order=novel_hotvalue+&tag=\"\n\nreturn{'url':url,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://pre-api.xrzww.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover | https://oss.xrzww.com%@result",
+            "validConfig": "",
+            "list": "data/data",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "129"
+                            },
+                            {
+                                "title": "衍生",
+                                "value": "135"
+                            },
+                            {
+                                "title": "魔幻",
+                                "value": "134"
+                            },
+                            {
+                                "title": "现言",
+                                "value": "77"
+                            },
+                            {
+                                "title": "古言",
+                                "value": "80"
+                            },
+                            {
+                                "title": "幻言",
+                                "value": "81"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "82"
+                            },
+                            {
+                                "title": "现实",
+                                "value": "83"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "status": "novel_process_name",
+            "wordCount": "novel_wordnumber"
+        },
+        "男频": {
+            "cat": "second_type_name",
+            "author": "novel_author",
+            "responseFormatType": "json",
+            "bookName": "novel_name",
+            "desc": "novel_info",
+            "requestInfo": "@js:\nlet url = config.host+\"/api/getTypeNovel?second_type=\"+params.filters.type+\"&page=\"+params.pageIndex\n\nreturn{'url':url,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "https://pre-api.xrzww.com",
+            "actionID": "bookWorld",
+            "detailUrl": "novel_id",
+            "cover": "novel_cover | https://oss.xrzww.com%@result",
+            "validConfig": "",
+            "list": "data/data",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "4"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "5"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "6"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "7"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "9"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "11"
+                            },
+                            {
+                                "title": "体育",
+                                "value": "12"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "13"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "14"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "status": "novel_process_name",
+            "wordCount": "novel_wordnumber"
+        }
+    },
+    "sourceUrl": "https://pre-api.xrzww.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "息壤",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1657330809.273826",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "second_type_name",
+        "author": "novel_author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "novel_newcname",
+        "bookName": "novel_name",
+        "desc": "novel_info",
+        "requestInfo": "@js:\nlet url = 'https://pre-api.xrzww.com/api/searchAll';\nlet hp = {'page':params.pageIndex, 'pageSize':10, 'search_value':params.keyWord, 'search_type':'novel_tag'};\nreturn {'url':url, 'httpParams':hp};",
+        "host": "https://pre-api.xrzww.com",
+        "actionID": "searchBook",
+        "detailUrl": "novel_id",
+        "cover": "novel_cover|https://oss.xrzww.com%@result",
+        "validConfig": "",
+        "list": "data/data",
+        "parserID": "DOM",
+        "wordCount": "novel_wordnumber",
+        "status": "novel_process_name"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://pre-api.xrzww.com/api/directoryList?nid=%@result&orderBy=0",
+        "title": "chapter_name",
+        "host": "https://pre-api.xrzww.com",
+        "list": "data/data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nlet nid = result.chapter_nid;\nlet vid = result.chapter_vid;\nlet cid = result.chapter_id;\nlet order = result.chapter_order;\nreturn 'https://pre-api.xrzww.com/api/readNew?nid=' + nid + '&vid=' + vid + '&chapter_id=' + cid + '&chapter_order=' + order;"
+    },
+    "sourceType": "text"
+}

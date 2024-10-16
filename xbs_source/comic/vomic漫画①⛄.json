@@ -1,0 +1,140 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = 'http://api.vomicmh.com:80/api/v1/detail/get-comic-detail-chapter-data?mid=' + params.queryInfo.detailUrl;\nreturn url;",
+        "title": "title",
+        "host": "http://www.iewoai.com",
+        "httpHeaders": {
+            "Accept": "application/json, text/plain, */*",
+            "Host": "api.vomicmh.com:80",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)",
+            "X-Requested-With": "vomic.v1"
+        },
+        "list": "$.data ||@js:\nreturn result.reverse();",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "cid||@js:\nlet url = 'http://api.vomicmh.com:80/api/v1/page/get-comic-page-img-data?mid=' + params.queryInfo.detailUrl +'&cid=' + result;\nreturn url;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "vomic漫画①⛄",
+    "sourceType": "comic",
+    "sourceUrl": "http://www.iewoai.com",
+    "httpHeaders": {
+        "Accept": "application/json, text/plain, */*",
+        "Host": "api.vomicmh.com:80",
+        "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)",
+        "X-Requested-With": "vomic.v1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666583674.458197",
+    "searchBook": {
+        "responseFormatType": "json",
+        "lastChapterTitle": "latest_chapter ||@js:\nreturn result.title",
+        "author": "site ||@js:\nreturn '来源：'+ result.site_en;",
+        "bookName": "title",
+        "httpHeaders": {
+            "Accept": "application/json, text/plain, */*",
+            "Host": "api.vomicmh.com:80",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)",
+            "X-Requested-With": "vomic.v1"
+        },
+        "requestInfo": "http://api.vomicmh.com:80/api/v1/search/search-comic-data?mode=0&title=%@keyWord&page=%@pageIndex&sort=0",
+        "host": "http://www.iewoai.com",
+        "actionID": "searchBook",
+        "detailUrl": "mid",
+        "moreKeys": {
+            "pageSize": 12
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "$.data.result",
+        "cover": "cover_img_url",
+        "desc": "description",
+        "status": "status"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "data ||@js:\nlet hh = {\n\t//'Host':result[0].match(/\\/\\/(.*?)\\//)[1],\n\t'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15'\n}\nlet obj = {\n\t'urls':result.join('\\n'),\n\t'httpHeaders':hh\n}\nreturn JSON.stringify(obj);",
+        "actionID": "chapterContent",
+        "host": "http://www.iewoai.com",
+        "httpHeaders": {
+            "Accept": "application/json, text/plain, */*",
+            "Host": "api.vomicmh.com:80",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)",
+            "X-Requested-With": "vomic.v1"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34l-GM|6{|",
+    "desc": "很推荐👍，聚合源",
+    "shudanList": {},
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nlet url ='http://api.vomicmh.com:80/api/v1/detail/get-comic-detail-data?mid=' + params.queryInfo.detailUrl;\nreturn url;",
+        "host": "http://www.iewoai.com",
+        "cat": "$.data ||@js:\nreturn result.categories.join(',');",
+        "httpHeaders": {
+            "Accept": "application/json, text/plain, */*",
+            "Host": "api.vomicmh.com:80",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)",
+            "X-Requested-With": "vomic.v1"
+        },
+        "responseFormatType": "json",
+        "desc": "$.data ||@js:\nreturn '作者：'+result.authors_name.join(' / ') + '\\n' +result.description;",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "榜单": {
+            "cat": "categories",
+            "responseFormatType": "json",
+            "author": "site ||@js:\nreturn '来源：'+ result.site_en;",
+            "bookName": "title",
+            "desc": "description",
+            "requestInfo": "@js:\nlet url='http://api.vomicmh.com:80/api/v1/rank/rank-data?rank_id=%@filter&page=%@pageIndex';\nurl = url.replace('%@filter',params.filter);\nurl = url.replace('%@pageIndex',params.pageIndex);\nlet hh = {\n\t\"Host\":\"api.vomicmh.com:80\",\n\t\"Accept\":\"application/json, text/plain, */*\",\n\t\"User-Agent\": \"Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)\",\n\t\"X-Requested-With\":\"vomic.v1\"\n}\nlet obj = {\n\t\"httpHeaders\":hh,\n\t\"url\":url\n}\nreturn obj;",
+            "host": "http://www.iewoai.com",
+            "actionID": "bookWorld",
+            "detailUrl": "mid",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "热门榜::1\n实时榜::2\n一日榜::3\n一周榜::4\n一月榜::5\n收藏榜::6\n可惜榜::7\n上升榜::8\n其他榜::9\n热血榜::10\n奇幻榜::11\n玄幻榜::12\n冒险榜::13\n大陆榜🇨🇳::15\n中国榜🇨🇳::16\n日本榜::14\n韩国榜::17\n中韩榜::18"
+            },
+            "validConfig": "",
+            "list": "$.data.result",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "cover_img_url",
+            "status": "status",
+            "httpHeaders": {
+                "Accept": "application/json, text/plain, */*",
+                "Host": "api.vomicmh.com:80",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)",
+                "X-Requested-With": "vomic.v1"
+            }
+        }
+    }
+}

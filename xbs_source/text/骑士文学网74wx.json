@@ -1,0 +1,103 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"content\"] ||@js:\nreturn result.replace(/一秒记住：.*/, '');",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'cacheTime':3600,'webView':true};",
+        "host": "https://www.74wx.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'cacheTime':3600};",
+        "host": "https://www.74wx.com",
+        "cat": "//div[@class=\"con_top\"]/a[2]",
+        "cover": "//div[@id=\"fmimg\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]/p[1]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.74wx.com/${_type}_${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders, 'webView':true,'cacheTime':3600}",
+            "host": "https://www.74wx.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻::xuanhuanxiaoshuo/1\n修真::xiuzhenxiaoshuo/2\n都市::dushixiaoshuo/3\n穿越::chuanyuexiaoshuo/4\n网游::wangyouxiaoshuo/5\n科幻::kehuanxiaoshuo/6\n其他::qitaxiaoshuo/7"
+            },
+            "detailUrl": "//span[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"l\"]//li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.74wx.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "骑士文学网74wx",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1663398582.452886",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//td[3]",
+        "lastChapterTitle": "//td[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//td[1]/a",
+        "requestInfo": "@js:\nlet url =config.host+\"/modules/article/so.php\";\n\nlet hh={\"User-Agent\": \"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.42\"};\n\nlet hp={\"searchkey\":params.keyWord,\"searchtype\":\"articlename\",\"page\":params.pageIndex}\n\nreturn{'url':url,'POST':true,'httpParams':hp,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "host": "https://www.74wx.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "wordCount": "//td[4]",
+        "validConfig": "",
+        "list": "//div[@id=\"content\"]//tr",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 30
+        },
+        "status": "//td[6]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn{'url':result,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 9
+        },
+        "host": "https://www.74wx.com",
+        "list": "//div[@id=\"list\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

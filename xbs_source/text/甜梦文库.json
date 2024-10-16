@@ -1,0 +1,117 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@class=\"readcontent\"] ||@js:\nreturn result.replace(/本章未.*/, '');",
+        "validConfig": "",
+        "moreKeys": {
+            "maxPage": 7
+        },
+        "host": "https://www.tmwk9.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//p[@class=\"booktag\"]/span[3]",
+        "wordCount": "//p[@class=\"booktag\"]/span[1]",
+        "validConfig": "",
+        "lastChapterTitle": "//div[@class=\"bookinfo\"]/p[3]/a",
+        "host": "https://www.tmwk9.com",
+        "cat": "//ol[@class=\"breadcrumb\"]/li[2]/a",
+        "cover": "//div/img/@src",
+        "responseFormatType": "html",
+        "desc": "//p[@class=\"bookintro\"]/text()",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "author": "//div[@class=\"author\"][1] ||@js:\nreturn result.replace(/作者：/, '');",
+            "responseFormatType": "html",
+            "bookName": "//h4/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.tmwk9.com/${_type}-${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.tmwk9.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n总点击榜::allvisit\n月点击榜::monthvisit\n周点击榜::weekvisit\n总推荐榜::allvote\n月推荐榜::monthvote\n收藏排行::goodnum\n最近更新::lastupdate\n新书上架::postdate\n字数排行::size"
+            },
+            "detailUrl": "//h4/a/@href",
+            "validConfig": "",
+            "list": "//div[@id=\"fengtui\"]/div",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        },
+        "分类": {
+            "author": "//div[@class=\"author\"][1] ||@js:\nreturn result.replace(/作者：/, '');",
+            "responseFormatType": "html",
+            "bookName": "//h4/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.tmwk9.com/${_type}-${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.tmwk9.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻灵异::xuanhuan\n近代现代::xiandai\n古代穿越::gudai\n推理悬疑::xuanyi\n网游竞技::wangyou\nＢＬ同人::bl\nＧＬ百合::gl"
+            },
+            "detailUrl": "//h4/a/@href",
+            "validConfig": "",
+            "list": "//div[@id=\"fengtui\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.tmwk9.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "999",
+    "sourceName": "甜梦文库",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1658299435.198046",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//div[@class=\"author\"][1] ||@js:\nreturn result.replace(/作者：/, '');",
+        "lastChapterTitle": "//div[@class=\"cat\"]/a",
+        "responseFormatType": "html",
+        "bookName": "//h4/a",
+        "requestInfo": "@js:\nlet url = 'https://www.tmwk9.com/modules/article/search.php';\nreturn {'url':url, 'POST':true, 'httpParams':{'searchkey':params.keyWord, 'action':'login', 'submit':''}};",
+        "host": "https://www.tmwk9.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "wordCount": "//div[@class=\"author\"][2] ||@js:\nreturn result.replace(/字数：/, '');",
+        "validConfig": "",
+        "list": "//div[@class=\"keywords\"]/div",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.tmwk9.com",
+        "list": "//div[@id=\"list-chapterAll\"]/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href||@js:\nreturn params.queryInfo.detailUrl +result;"
+    },
+    "sourceType": "text"
+}

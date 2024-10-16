@@ -1,0 +1,103 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]/text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 3
+        },
+        "host": "https://www.iove.net/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//div[@class=\"fix\"]/p[5]/text()",
+        "host": "https://www.iove.net/",
+        "cover": "//div[@class=\"imgbox\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"desc xs-hidden\"]/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//span[1]",
+            "author": "//span[4]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[3]/text()",
+            "bookName": "//span[2]",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.iove.net${_type}${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.iove.net/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n玄幻奇幻::/ksl/1/1.html\n武侠仙侠::/ksl/2/1.html\n都市言情::/ksl/3/1.html\n历史军事::/ksl/4/1.html\n科幻灵异::/ksl/5/1.html\n网游竞技::/ksl/6/1.html\n女生频道::/ksl/7/1.html"
+            },
+            "detailUrl": "//span[2]/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"layout layout2 layout-col2\"]/ul[1]/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.iove.net/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "5555",
+    "sourceName": "笔趣阁iove.net",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1660278854.075923",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[@class=\"s1\"]/text()",
+        "author": "//li/span[4]/text()",
+        "lastChapterTitle": "//span[@class=\"s3\"]/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//li/span[2]/a/text()",
+        "requestInfo": "https://www.iove.net/ar.php?keyWord=%@keyWord",
+        "host": "https://www.iove.net/",
+        "actionID": "searchBook",
+        "detailUrl": "//span[@class=\"s2\"]/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"layout layout2 layout-co18\"]/ul/li[position()>1]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "updateTime": "//div[@class=\"fix\"]/p[5]/text()",
+        "title": "//a/text()",
+        "moreKeys": {
+            "maxPage": 200,
+            "pageSize": 20
+        },
+        "host": "https://www.iove.net/",
+        "list": "//div[@class=\"row row-section\"]/div/div[2]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "sourceType": "text"
+}

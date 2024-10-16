@@ -1,0 +1,145 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//a[contains(text(),'Download Here')]//@href",
+        "host": "https://tempyuriradiohouse.blogspot.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "archive": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://tempyuriradiohouse.blogspot.com/%@filter",
+            "bookName": "//h3[@class='post-title entry-title']/a/div/div[1]",
+            "detailUrl": "//h3[@class='post-title entry-title']/a/@href",
+            "host": "https://tempyuriradiohouse.blogspot.com/",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "Home",
+                                "value": ""
+                            },
+                            {
+                                "value": "2022/4",
+                                "title": "April 2022"
+                            },
+                            {
+                                "value": "2022/3",
+                                "title": "March 2022"
+                            },
+                            {
+                                "value": "2022/2",
+                                "title": "February 2022"
+                            },
+                            {
+                                "value": "2022/1",
+                                "title": "January 2022"
+                            },
+                            {
+                                "value": "2021/12",
+                                "title": "December 2021"
+                            },
+                            {
+                                "value": "2021/11",
+                                "title": "November 2021"
+                            },
+                            {
+                                "value": "2021/10",
+                                "title": "October 2021"
+                            },
+                            {
+                                "value": "2021/09",
+                                "title": "September 2021"
+                            },
+                            {
+                                "value": "2021/08",
+                                "title": "August 2021"
+                            },
+                            {
+                                "value": "2021/07",
+                                "title": "July 2021"
+                            },
+                            {
+                                "value": "2021/06",
+                                "title": "June 2021"
+                            },
+                            {
+                                "value": "2021/05",
+                                "title": "May 2021"
+                            },
+                            {
+                                "value": "2021/04",
+                                "title": "April 2021"
+                            },
+                            {
+                                "value": "2021/03",
+                                "title": "March 2021"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "list": "//article[@class='post-outer-container']",
+            "responseFormatType": "html",
+            "desc": "//div[@class='post-header-line-1']",
+            "parserID": "DOM"
+        }
+    },
+    "shudanList": {},
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺New Temp Drama House",
+    "sourceUrl": "https://tempyuriradiohouse.blogspot.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666019809.231264",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://tempyuriradiohouse.blogspot.com/search?q=%@keyWord",
+        "bookName": "//h3[@class='post-title entry-title']/a/div/div[1]",
+        "detailUrl": "//h3[@class='post-title entry-title']/a/@href",
+        "host": "https://tempyuriradiohouse.blogspot.com/",
+        "list": "//article[@class='post-outer-container']",
+        "responseFormatType": "html",
+        "desc": "//div[@class='post-header-line-1']",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://tempyuriradiohouse.blogspot.com/",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n\tlet chapterInfo = {};\n\tchapterInfo.title = params.queryInfo.bookName;\n\tchapterInfo.url = params.queryInfo.detailUrl;\n\tlist.push(chapterInfo);\n\n\treturn {'list':list};\n}",
+        "actionID": "chapterList"
+    }
+}

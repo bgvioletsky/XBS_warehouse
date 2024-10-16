@@ -1,0 +1,132 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "11",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://ts.txs12.com/playlist/%@result?view=chapters",
+        "title": "$..tit",
+        "host": "https://ts.txs12.com",
+        "httpHeaders": {
+            "vn": "1.1.2",
+            "device_id": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+            "ts": "1642251872",
+            "m2": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+            "User-Agent": "okhttp/3.8.0",
+            "language": "zh_cn",
+            "Keep-Alive": "300",
+            "app_name": "androidx.multidex"
+        },
+        "list": "$.data.chapterCon",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "$..num ||@js:\nvar id =params.queryInfo.wordCount\n\nvar id= id.replace(\"-\",\"\")\n\nparams.nativeTool.log(id)\n\nvar url =\"https://res.txs12.com/\"+id+\"/\"+ result;\nreturn url;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "听小说api",
+    "sourceType": "text",
+    "sourceUrl": "https://ts.txs12.com",
+    "httpHeaders": {
+        "vn": "1.1.2",
+        "device_id": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+        "ts": "1642251872",
+        "m2": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+        "User-Agent": "okhttp/3.8.0",
+        "language": "zh_cn",
+        "Keep-Alive": "300",
+        "app_name": "androidx.multidex"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1664738900.778854",
+    "searchBook": {
+        "author": "$.xsAuthor",
+        "responseFormatType": "json",
+        "bookName": "$.xsName",
+        "desc": "$.xslntro",
+        "requestInfo": "https://ts.txs12.com/search/result?query=%@keyWord&language=zh_cn",
+        "host": "https://ts.txs12.com",
+        "actionID": "searchBook",
+        "httpHeaders": {
+            "vn": "1.1.2",
+            "device_id": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+            "ts": "1642251872",
+            "m2": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+            "User-Agent": "okhttp/3.8.0",
+            "language": "zh_cn",
+            "Keep-Alive": "300",
+            "app_name": "androidx.multidex"
+        },
+        "cover": "$.xsCover",
+        "validConfig": "",
+        "list": "$.data[*]",
+        "parserID": "DOM",
+        "detailUrl": "$._id"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.chapter.body",
+        "actionID": "chapterContent",
+        "host": "https://ts.txs12.com",
+        "httpHeaders": {
+            "vn": "1.1.2",
+            "device_id": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+            "ts": "1642251872",
+            "m2": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+            "User-Agent": "okhttp/3.8.0",
+            "language": "zh_cn",
+            "Keep-Alive": "300",
+            "app_name": "androidx.multidex"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐲",
+    "password": "0155",
+    "shudanList": {},
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "wordCount": "$.data.x_id",
+        "requestInfo": "https://ts.txs12.com/bookinfo/%@result",
+        "host": "https://ts.txs12.com",
+        "httpHeaders": {
+            "vn": "1.1.2",
+            "device_id": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+            "ts": "1642251872",
+            "m2": "0857e81c-e919-3af6-a627-08adc6a92e0e",
+            "User-Agent": "okhttp/3.8.0",
+            "language": "zh_cn",
+            "Keep-Alive": "300",
+            "app_name": "androidx.multidex"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "测试": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        }
+    }
+}

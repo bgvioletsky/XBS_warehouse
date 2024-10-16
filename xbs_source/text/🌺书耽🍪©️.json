@@ -1,0 +1,411 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//p[@class='chapter']/text()",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':''};",
+        "host": "https://www.shubl.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "shupingList": {
+        "detail": "//div@class='row']/div[@class='c-right']/div[@class='comment-content']",
+        "createdTime": "//div@class='row']/div[@class='c-right']/div[@class='state row']/span",
+        "fromUserName": "//div@class='row']/div[@class='c-right']/div[@class='name']",
+        "responseFormatType": "html",
+        "requestInfo": "@js:\nreturn params.queryInfo.detailUrl;",
+        "host": "https://www.shubl.com/",
+        "actionID": "shupingList",
+        "validConfig": "",
+        "list": "//*[@class='comment']",
+        "parserID": "DOM",
+        "replyCount": "//div@class='row']/div[@class='c-right']/div[@class='state row']/div[@class='pull-right']/a[3]/i",
+        "fromUserCover": "//div@class='row']/div[@class='avatar']/img/@src"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "wordCount": "//*[@id=\"main_content\"]/div[@class='container white-bg']/div[@class='row']/div[@class='left']/div[@class='row book-info-box']/div[@class='book-info']/div[@class='row book-info-numbers']/span[1]/text()",
+        "status": "//*[@id=\"main_content\"]/div[@class='container white-bg']/div[@class='row']/div[@class='left']/div[@class='row book-info-box']/div[@class='book-info']/div[@class='book-title']/div[@class='tag tag-lianzai']",
+        "host": "https://www.shubl.com/",
+        "cat": "//*[@id=\"main_content\"]/div[@class='container white-bg']/div[@class='row']/div[@class='left']/div[@class='row book-info-box']/div[@class='book-info']/div[@class='row']/span[@class='tag']",
+        "cover": "//*[@id=\"main_content\"]/div[@class='container white-bg']/div[@class='row']/div[@class='left']/div[@class='row book-info-box']/img/@data-original",
+        "responseFormatType": "html",
+        "desc": "//*[@id=\"main_content\"]/div[@class='container white-bg']/div[@class='row']/div[@class='left']/div[@class='row book-info-box']/div[@class='book-info']/div[@class='book-brief']",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "书库": {
+            "author": "//a[1]/div/div/text()",
+            "responseFormatType": "html",
+            "bookName": "//a[2]",
+            "requestInfo": "@js:\nreturn 'https://www.shubl.com/index/book_list/' + params.filters.fanwei + '/' + params.filters.fenlei + '/' + params.filters.paixu + '/' + params.filters.gengxin + '/' + params.filters.zishu + '/' + params.filters.qita + '/' + params.pageIndex;",
+            "host": "https://www.shubl.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[2]/@href",
+            "moreKeys": {
+                "pageSize": 28,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "1"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "2"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "3"
+                            },
+                            {
+                                "title": "无CP",
+                                "value": "21"
+                            }
+                        ],
+                        "key": "fanwei"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "甜文",
+                                "value": "1"
+                            },
+                            {
+                                "title": "爽文",
+                                "value": "2"
+                            },
+                            {
+                                "title": "HE",
+                                "value": "3"
+                            },
+                            {
+                                "title": "BE",
+                                "value": "4"
+                            },
+                            {
+                                "title": "快穿",
+                                "value": "5"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "6"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "7"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "8"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "9"
+                            }
+                        ],
+                        "key": "fenlei"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "三日内",
+                                "value": "1"
+                            },
+                            {
+                                "title": "七日内",
+                                "value": "2"
+                            },
+                            {
+                                "title": "半月内",
+                                "value": "3"
+                            },
+                            {
+                                "title": "一个月",
+                                "value": "4"
+                            }
+                        ],
+                        "key": "gengxin"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "10万以下",
+                                "value": "1"
+                            },
+                            {
+                                "title": "10～30万",
+                                "value": "2"
+                            },
+                            {
+                                "title": "30～50万",
+                                "value": "3"
+                            },
+                            {
+                                "title": "50～80万",
+                                "value": "4"
+                            },
+                            {
+                                "title": "80万以上",
+                                "value": "5"
+                            }
+                        ],
+                        "key": "zishu"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "只看完本",
+                                "value": "1"
+                            },
+                            {
+                                "title": "免费作品",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "qita"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "人气",
+                                "value": "week_click"
+                            },
+                            {
+                                "title": "更新时间",
+                                "value": "uptime"
+                            },
+                            {
+                                "title": "总推荐",
+                                "value": "total_recommend"
+                            },
+                            {
+                                "title": "总收藏",
+                                "value": "total_favor"
+                            },
+                            {
+                                "title": "总月票",
+                                "value": "total_yp"
+                            },
+                            {
+                                "title": "总点击",
+                                "value": "total_click"
+                            },
+                            {
+                                "title": "总吐槽",
+                                "value": "total_tsukkomi"
+                            }
+                        ],
+                        "key": "paixu"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "//a[1]/img[@class='lazyload cover']/@data-original",
+            "parserID": "DOM",
+            "list": "//ul[@class='book-list J_BookList']/li"
+        },
+        "标签": {
+            "author": "//a/div/div[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//a/div/span[@class='title']",
+            "desc": "//a/div/div[@class='summaries']",
+            "requestInfo": "https://m.shubl.com/index/filter_book_list?tag=%@filter",
+            "host": "https://www.shubl.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href||@js:\nreturn result.replace('m.shubl.com', 'www.shubl.com');",
+            "cover": "//a/span/img/@data-original",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "全部&tag_module=all"
+                            },
+                            {
+                                "title": "签约",
+                                "value": "签约&tag_module=signed"
+                            },
+                            {
+                                "title": "完本",
+                                "value": "完本&tag_module=ended"
+                            },
+                            {
+                                "title": "甜文",
+                                "value": "甜文&tag_module="
+                            },
+                            {
+                                "title": "爽文",
+                                "value": "爽文&tag_module="
+                            },
+                            {
+                                "title": "HE",
+                                "value": "HE&tag_module="
+                            },
+                            {
+                                "title": "BE",
+                                "value": "BE&tag_module="
+                            },
+                            {
+                                "title": "快穿",
+                                "value": "快穿&tag_module="
+                            },
+                            {
+                                "title": "青春",
+                                "value": "青春&tag_module="
+                            },
+                            {
+                                "title": "校园",
+                                "value": "校园&tag_module="
+                            },
+                            {
+                                "title": "百合",
+                                "value": "百合&tag_module="
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "科幻&tag_module="
+                            },
+                            {
+                                "title": "古代",
+                                "value": "古代&tag_module="
+                            },
+                            {
+                                "title": "民国",
+                                "value": "民国&tag_module="
+                            },
+                            {
+                                "title": "现代",
+                                "value": "现代&tag_module="
+                            },
+                            {
+                                "title": "都市",
+                                "value": "都市&tag_module="
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "武侠&tag_module="
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "仙侠&tag_module="
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "玄幻&tag_module="
+                            },
+                            {
+                                "title": "架空",
+                                "value": "架空&tag_module="
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "穿越&tag_module="
+                            },
+                            {
+                                "title": "重生",
+                                "value": "重生&tag_module="
+                            },
+                            {
+                                "title": "动漫",
+                                "value": "动漫&tag_module="
+                            },
+                            {
+                                "title": "网游",
+                                "value": "网游&tag_module="
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "悬疑&tag_module="
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "灵异&tag_module="
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "list": "//ul[@class='book-list book-list-vetical']/li"
+        }
+    },
+    "shudanList": {},
+    "loginUrl": "https://shubl.com/signup/login",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺书耽🍪©️",
+    "sourceUrl": "https://www.shubl.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665928495.578393",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[@class='book-info']/div[@class='smaller text-muted']/text()[1]||@js:\nreturn result.replace(/                                作者：/, '');",
+        "lastChapterTitle": "//div[@class='book-info']/div[@class='smaller text-muted']/text()[2]||@js:\nreturn result.replace(/                                最近更新：/, '');",
+        "responseFormatType": "html",
+        "bookName": "//div[@class='book-info']/a",
+        "desc": "//div[@class='book-info]/div[@class='summaries']/text()",
+        "requestInfo": "https://www.shubl.com/index/get_search_book_list/%@keyWord/%@pageIndex",
+        "host": "https://www.shubl.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class='book-info']/a/@href",
+        "cover": "//a/img/@data-original",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//*[@id=\"main_content\"]/div[@class='container white-bg']/div[@class='books-section']/ul[@class='book-list']/li"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//*[@id=\"main_content\"]/div[@class='container white-bg']/div[@class='row']/div[@class='left']/div[@class='row book-info-box']/div[@class='book-info']/div[4]",
+        "title": "//a",
+        "host": "https://www.shubl.com/",
+        "list": "//*[@id=\"chapter_list\"]/div/div[2]/span",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

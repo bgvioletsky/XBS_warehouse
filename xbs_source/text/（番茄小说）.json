@@ -1,0 +1,96 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "data/content",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "removeHtmlKeys": [
+                "content"
+            ]
+        },
+        "host": "https://fanqienovel.com/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "responseFormatType": "json",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "cat": "$.complete_category",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "book_name",
+            "desc": "$.abstract",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://api5-normal-lf.fqnovel.com/reading/bookapi/new_category/landing/v/?genre_type=160&limit=10&source=front_category&category_${_type}&offset=${params.pageIndex}&query_gender=2&iid=1662886704841607&aid=1967&app_name=novelapp&version_code=500`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://fanqienovel.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "_type\n科学幻想::id=8\n悬疑解密::id=10\n历史纪实::id=12\n现代武侠::id=16\n影视小说::id=45\n诗歌散文::id=46\n生活日常::id=48\n社会科学::id=50\n科技探索::id=52\n经济管理::id=53\n成功励志::id=56\n文化历史::id=62\n军事战争::id=97\n中国名著::id=98\n外国名著::id=99"
+            },
+            "detailUrl": "@js: \nreturn \"https://api3-normal-lf.fqnovel.com/reading/bookapi/directory/all_items/v/?need_version=true&book_id=\"+result.book_id+\"&iid=2665637677906061&aid=1967&app_name=novelapp&version_code=100103\";",
+            "validConfig": "",
+            "list": "$..book_info[*]",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "@js:\nvar cover = result.thumb_uri\n\nreturn \"https://p6-novel.byteimg.com/\"+cover+\"~tplv-shrink:640:0.image\""
+        }
+    },
+    "shudanList": {},
+    "sourceType": "text",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "999",
+    "sourceName": "（番茄小说）",
+    "sourceUrl": "https://fanqienovel.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🍅",
+    "lastModifyTime": "1663469272.647748",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "$.complete_category",
+        "author": "$.author",
+        "responseFormatType": "json",
+        "bookName": "$.book_name",
+        "desc": "$.abstract",
+        "requestInfo": "https://fanqienovel.com/reading/bookapi/search/tab/v/?offset=0&passback=&query=%@keyWord&search_id=&iid=308323375917453&aid=1967&app_name=novelapp&version_code=&version_name=5.0.4.32&device_platform=android",
+        "host": "https://fanqienovel.com/",
+        "actionID": "searchBook",
+        "detailUrl": "@js: \nreturn \"https://fanqienovel.com/reading/bookapi/directory/all_items/v/?need_version=true&book_id=\"+result.book_id+\"&iid=2665637677906061&aid=1967&app_name=novelapp&version_code=100103\";",
+        "cover": "@js:\nvar cover = result.thumb_uri\n\nreturn \"https://p6-novel.byteimg.com/\"+cover+\"~tplv-shrink:640:0.image\"",
+        "validConfig": "",
+        "list": "$..book_data[*]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "title",
+        "host": "https://fanqienovel.com/",
+        "list": "$..item_data_list[*]",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn \"https://novel.snssdk.com/api/novel/book/reader/full/v1/?group_id=\"+ result.item_id+\"&item_id=\"+ result.item_id;"
+    }
+}

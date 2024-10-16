@@ -1,0 +1,60 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "空": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "http://222.186.45.128/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "validConfig": "",
+        "requestInfo": "http://222.186.45.128/s/%@keyWord/%@pageIndex",
+        "title": "//a",
+        "host": "http://222.186.45.128/",
+        "list": "//ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺词条精选🔭",
+    "desc": "仅搜索热词",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666179603.241061",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

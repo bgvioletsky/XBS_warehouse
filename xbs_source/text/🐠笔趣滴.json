@@ -1,0 +1,215 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"chaptercontent\"]//text()||@js:return result.replace(/\\『.*/g,'').replace(/第\\d+章.*/g,'').replace(/首发网址：/,'') .replace(/m|www.*com/,'') .replace(/h.*com/,'')",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://m.hdrmjgj.com",
+        "httpHeaders": {
+            "Referer": "https://m.hdrmjgj.com/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//p[@class=\"Readpage\"]/a[text()='下一页']/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//ul[@id=\"book_detail\"]/li[3]||@js:return result.replace(/状态：/,'')",
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://m.hdrmjgj.com",
+        "cat": "//li[@class=\"sort\"]/span",
+        "httpHeaders": {
+            "Referer": "https://m.hdrmjgj.com/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+        },
+        "responseFormatType": "html",
+        "desc": "//p[@class=\"review\"]",
+        "cover": "//div[@id=\"thumb\"]/img/@src"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "月榜": {
+            "author": "//p[2]||@js:\nreturn result.replace(/作者：/,'')",
+            "responseFormatType": "html",
+            "bookName": "//p[@class=\"title\"]",
+            "desc": "//p[@class=\"review\"]",
+            "requestInfo": "@js:\rlet {_type}=params.filters\rlet url=`${config.host}/ph/${_type}_${params.pageIndex}.html`;\r\rreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "httpHeaders": {
+                "Referer": "https://m.hdrmjgj.com/",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+            },
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"bookimg\"]/a/@href",
+            "host": "https://m.hdrmjgj.com",
+            "cover": "//div[@class=\"bookimg\"]//img/@src",
+            "list": "//div[@id=\"main\"]/div",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n全部::month0\n玄幻::month1\n武侠::month2\n都市::month3\n穿越::month4\n网游::month5\n科幻::month6\n其它::month7"
+            },
+            "validConfig": ""
+        },
+        "总榜": {
+            "author": "//p[2]||@js:\nreturn result.replace(/作者：/,'')",
+            "responseFormatType": "html",
+            "bookName": "//p[@class=\"title\"]",
+            "desc": "//p[@class=\"review\"]",
+            "requestInfo": "@js:\rlet {_type}=params.filters\rlet url=`${config.host}/ph/${_type}_${params.pageIndex}.html`;\r\rreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "httpHeaders": {
+                "Referer": "https://m.hdrmjgj.com/",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+            },
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"bookimg\"]/a/@href",
+            "host": "https://m.hdrmjgj.com",
+            "cover": "//div[@class=\"bookimg\"]//img/@src",
+            "list": "//div[@id=\"main\"]/div",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n全部::all0\n玄幻::all1\n武侠::all2\n都市::all3\n穿越::all4\n网游::all5\n科幻::all6\n其它::all7"
+            },
+            "validConfig": ""
+        },
+        "完本": {
+            "author": "//p[2]||@js:\nreturn result.replace(/作者：/,'')",
+            "responseFormatType": "html",
+            "bookName": "//p[@class=\"title\"]",
+            "desc": "//p[@class=\"review\"]",
+            "requestInfo": "@js:\rlet {_type}=params.filters\rlet url=`${config.host}/${_type}_${params.pageIndex}.html`;\r\rreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "httpHeaders": {
+                "Referer": "https://m.hdrmjgj.com/",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+            },
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"bookimg\"]/a/@href",
+            "host": "https://m.hdrmjgj.com",
+            "cover": "//div[@class=\"bookimg\"]//img/@src",
+            "list": "//div[@id=\"main\"]/div",
+            "_sIndex": 4,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n全部::quanben0\n玄幻::quanben1\n武侠::quanben2\n都市::quanben3\n穿越::quanben4\n网游::quanben5\n科幻::quanben6\n其它::quanben7"
+            },
+            "validConfig": ""
+        },
+        "周榜": {
+            "author": "//p[2]||@js:\nreturn result.replace(/作者：/,'')",
+            "responseFormatType": "html",
+            "bookName": "//p[@class=\"title\"]",
+            "desc": "//p[@class=\"review\"]",
+            "requestInfo": "@js:\rlet {_type}=params.filters\rlet url=`${config.host}/ph/${_type}_${params.pageIndex}.html`;\r\rreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "httpHeaders": {
+                "Referer": "https://m.hdrmjgj.com/",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+            },
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"bookimg\"]/a/@href",
+            "host": "https://m.hdrmjgj.com",
+            "cover": "//div[@class=\"bookimg\"]//img/@src",
+            "list": "//div[@id=\"main\"]/div",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n全部::week0\n玄幻::week1\n武侠::week2\n都市::week3\n穿越::week4\n网游::week5\n科幻::week6\n其它::week7"
+            },
+            "validConfig": ""
+        },
+        "分类": {
+            "author": "//p[2]||@js:\nreturn result.replace(/作者：/,'')",
+            "responseFormatType": "html",
+            "bookName": "//p[@class=\"title\"]",
+            "desc": "//p[@class=\"review\"]",
+            "requestInfo": "@js:\rlet {_type}=params.filters\rlet url=`${config.host}/xclass/${_type}/${params.pageIndex}.html`;\r\rreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "httpHeaders": {
+                "Referer": "https://m.hdrmjgj.com/",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+            },
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class=\"bookimg\"]/a/@href",
+            "host": "https://m.hdrmjgj.com",
+            "cover": "//div[@class=\"bookimg\"]//img/@src",
+            "list": "//div[@id=\"main\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n全部::0\n玄幻::1\n武侠::2\n都市::3\n穿越::4\n网游::5\n科幻::6\n其它::7"
+            },
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://m.hdrmjgj.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🐠笔趣滴",
+    "httpHeaders": {
+        "Referer": "https://m.hdrmjgj.com/",
+        "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666190809.272265",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//p[2]||@js:\nreturn result.replace(/作者：/,'')",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//a/@title",
+        "bookName": "//a/p[1]",
+        "httpHeaders": {
+            "Referer": "https://m.hdrmjgj.com/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+        },
+        "requestInfo": "@js:\nlet url=config.host+\"/search.php\";\n\nlet hp= {'keyword':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://m.hdrmjgj.com",
+        "actionID": "searchBook",
+        "detailUrl": "//div/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"slide-item list1\"]/div"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url =result+'all'+'.html';\rreturn url;",
+        "title": "//a",
+        "host": "https://m.hdrmjgj.com",
+        "httpHeaders": {
+            "Referer": "https://m.hdrmjgj.com/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Mobile Safari/537.36 Edg/106.0.1370.47"
+        },
+        "list": "//div[@id=\"chapterlist\"]/p/following-sibling::*",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

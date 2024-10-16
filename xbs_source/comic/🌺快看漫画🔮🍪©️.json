@@ -1,0 +1,839 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "miniAppVersion": "2.53.2",
+    "loginUrl": "https://www.kuaikanmanhua.com/webs/loginh",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://api.kkmh.com/v1/topics/%@result",
+        "title": "title",
+        "host": "https://api.kkmh.com/",
+        "list": "data/comics||@js:\nreturn result.reverse();",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "validConfig": "",
+        "actionID": "relatedWord",
+        "requestInfo": "https://www.kuaikanmanhua.com/v1/search/suggestion_topic_author?q=%@keyWord&type=3&f=3",
+        "title": "title",
+        "host": "https://api.kkmh.com/",
+        "list": "data/info",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "🌺快看漫画🔮🍪©️",
+    "sourceType": "comic",
+    "sourceUrl": "https://api.kkmh.com/",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666012722.834778",
+    "searchBook": {
+        "cat": "category",
+        "author": "nickname",
+        "responseFormatType": "json",
+        "lastChapterTitle": "latest_comic_title",
+        "bookName": "title",
+        "desc": "description",
+        "requestInfo": "https://search.kkmh.com/search/complex?q=%@keyWord",
+        "host": "https://api.kkmh.com/",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "vertical_image_url",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "data/topic/hit"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "$..url||@js:\nreturn JSON.stringify({'urls':result});",
+        "requestInfo": "https://www.kuaikanmanhua.com/v2/pweb/comic/%@result",
+        "host": "https://api.kkmh.com/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {
+        "表情": {
+            "validConfig": "",
+            "actionID": "shudanList",
+            "detail": "@js:\nreturn result.description + '; memeId=' + result.memeId;",
+            "requestInfo": "https://social.kkmh.com/v1/graph/meme/allList",
+            "title": "memeCode",
+            "host": "https://api.kkmh.com/",
+            "_sIndex": 0,
+            "list": "data/classifyDtos[0]/memes",
+            "responseFormatType": "json",
+            "parserID": "DOM",
+            "cover": "resourceUrl"
+        }
+    },
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "data/update_status",
+        "requestInfo": "https://api.kkmh.com/v1/topics/%@result",
+        "host": "https://api.kkmh.com/",
+        "cat": "data/category",
+        "cover": "data/vertical_image_url",
+        "responseFormatType": "json",
+        "desc": "data/description",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "标签": {
+            "cat": "category",
+            "author": "user/nickname",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "@js:\nreturn result.recommend_text + '\\n' + result.description;",
+            "requestInfo": "@js:\nreturn 'https://api.kkmh.com/v1/freestyle/tag/more?gender=0&limit=20&since=' + ((params.pageIndex-1)*20) + '&tag_name=' + encodeURI(params.filters.filter);",
+            "host": "https://api.kkmh.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "原创",
+                                "title": "原创"
+                            },
+                            {
+                                "value": "投稿",
+                                "title": "投稿"
+                            },
+                            {
+                                "value": "完结",
+                                "title": "完结"
+                            },
+                            {
+                                "value": "恋爱",
+                                "title": "恋爱"
+                            },
+                            {
+                                "value": "正能量",
+                                "title": "正能量"
+                            },
+                            {
+                                "value": "日常",
+                                "title": "日常"
+                            },
+                            {
+                                "value": "校园",
+                                "title": "校园"
+                            },
+                            {
+                                "value": "体育",
+                                "title": "体育"
+                            },
+                            {
+                                "value": "竞技",
+                                "title": "竞技"
+                            },
+                            {
+                                "value": "都市",
+                                "title": "都市"
+                            },
+                            {
+                                "value": "偶像",
+                                "title": "偶像"
+                            },
+                            {
+                                "value": "歌舞",
+                                "title": "歌舞"
+                            },
+                            {
+                                "value": "萌系",
+                                "title": "萌系"
+                            },
+                            {
+                                "value": "治愈",
+                                "title": "治愈"
+                            },
+                            {
+                                "value": "青春",
+                                "title": "青春"
+                            },
+                            {
+                                "value": "搞笑",
+                                "title": "搞笑"
+                            },
+                            {
+                                "value": "古风",
+                                "title": "古风"
+                            },
+                            {
+                                "value": "宫斗",
+                                "title": "宫斗"
+                            },
+                            {
+                                "value": "后宫",
+                                "title": "后宫"
+                            },
+                            {
+                                "value": "玄幻",
+                                "title": "玄幻"
+                            },
+                            {
+                                "value": "奇幻",
+                                "title": "奇幻"
+                            },
+                            {
+                                "value": "魔幻",
+                                "title": "魔幻"
+                            },
+                            {
+                                "value": "科幻",
+                                "title": "科幻"
+                            },
+                            {
+                                "value": "武侠",
+                                "title": "武侠"
+                            },
+                            {
+                                "value": "仙侠",
+                                "title": "仙侠"
+                            },
+                            {
+                                "value": "热血",
+                                "title": "热血"
+                            },
+                            {
+                                "value": "冒险",
+                                "title": "冒险"
+                            },
+                            {
+                                "value": "异能",
+                                "title": "异能"
+                            },
+                            {
+                                "value": "系统",
+                                "title": "系统"
+                            },
+                            {
+                                "value": "动作",
+                                "title": "动作"
+                            },
+                            {
+                                "value": "复仇",
+                                "title": "复仇"
+                            },
+                            {
+                                "value": "黑暗",
+                                "title": "黑暗"
+                            },
+                            {
+                                "value": "逆袭",
+                                "title": "逆袭"
+                            },
+                            {
+                                "value": "悬疑",
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": "恐怖",
+                                "title": "恐怖"
+                            },
+                            {
+                                "value": "惊悚",
+                                "title": "惊悚"
+                            },
+                            {
+                                "value": "剧情",
+                                "title": "剧情"
+                            },
+                            {
+                                "value": "强剧情",
+                                "title": "强剧情"
+                            },
+                            {
+                                "value": "灵异",
+                                "title": "灵异"
+                            },
+                            {
+                                "value": "异形",
+                                "title": "异形"
+                            },
+                            {
+                                "value": "大女主",
+                                "title": "大女主"
+                            },
+                            {
+                                "value": "总裁",
+                                "title": "总裁"
+                            },
+                            {
+                                "value": "穿越",
+                                "title": "穿越"
+                            },
+                            {
+                                "value": "重生",
+                                "title": "重生"
+                            },
+                            {
+                                "value": "纯爱",
+                                "title": "纯爱"
+                            },
+                            {
+                                "value": "橘系",
+                                "title": "橘系"
+                            },
+                            {
+                                "value": "韩漫",
+                                "title": "韩漫"
+                            },
+                            {
+                                "value": "日漫",
+                                "title": "日漫"
+                            },
+                            {
+                                "value": "名著",
+                                "title": "名著"
+                            },
+                            {
+                                "value": "真人漫",
+                                "title": "真人漫"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "cover": "vertical_image_url",
+            "validConfig": "",
+            "list": "data/topics",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "detailUrl": "id"
+        },
+        "漫画大全": {
+            "cat": "category",
+            "author": "author_name",
+            "responseFormatType": "json",
+            "lastChapterTitle": "latest_comic_title",
+            "bookName": "title",
+            "requestInfo": "@js:\nreturn 'https://m.kuaikanmanhua.com/search/mini/topic/multi_filter?page=' + params.pageIndex + '&size=20&tag_id=' + params.filters.tag + '&update_status=' + params.filters.status + '&pay_status=' + params.filters.price + '&sort=' +params.filters.sort + '&fav_filter=0&gender=0';",
+            "host": "https://api.kkmh.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "vertical_image_url",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "日常",
+                                "value": "19"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "40"
+                            },
+                            {
+                                "title": "韩漫",
+                                "value": "60"
+                            },
+                            {
+                                "title": "少年",
+                                "value": "49"
+                            },
+                            {
+                                "title": "日漫",
+                                "value": "57"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "48"
+                            },
+                            {
+                                "title": "治愈",
+                                "value": "27"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "32"
+                            },
+                            {
+                                "title": "爆笑",
+                                "value": "24"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "80"
+                            },
+                            {
+                                "title": "畅销",
+                                "value": "59"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "47"
+                            },
+                            {
+                                "title": "恋爱",
+                                "value": "20"
+                            },
+                            {
+                                "title": "古风",
+                                "value": "46"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "63"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "83"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "90"
+                            },
+                            {
+                                "title": "剧情",
+                                "value": "23"
+                            },
+                            {
+                                "title": "强剧情",
+                                "value": "82"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "22"
+                            },
+                            {
+                                "title": "正能量",
+                                "value": "54"
+                            },
+                            {
+                                "title": "总裁",
+                                "value": "52"
+                            },
+                            {
+                                "title": "投稿",
+                                "value": "76"
+                            },
+                            {
+                                "title": "53",
+                                "value": "53"
+                            },
+                            {
+                                "title": "74",
+                                "value": "74"
+                            }
+                        ],
+                        "key": "tag"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "免费",
+                                "value": "1"
+                            },
+                            {
+                                "title": "付费",
+                                "value": "2"
+                            },
+                            {
+                                "title": "抢先看",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "price"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "推荐",
+                                "value": "1"
+                            },
+                            {
+                                "title": "最火热",
+                                "value": "2"
+                            },
+                            {
+                                "title": "新上架",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "sort"
+                    }
+                ]
+            },
+            "list": "hits/topicMessageList",
+            "_sIndex": 0
+        },
+        "app发现": {
+            "cat": "label_detail/left_bottom",
+            "responseFormatType": "json",
+            "lastChapterTitle": "label_detail/top",
+            "bookName": "title",
+            "desc": "sub_title",
+            "requestInfo": "https://api.kkmh.com/v2/topic/discovery_v2/list?cold_boot=1&gender=0&recommend_type=&since=0&size=10&tab_id=63",
+            "host": "https://api.kkmh.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "favourite_detail/target_id||action_type/target_id",
+            "cover": "image",
+            "validConfig": "",
+            "list": "@js:\nif (params.filters.filter == 6)\n\treturn result.data.info_list[6].banner_list;\nif (params.filters.filter == 3)\n\treturn result.data.info_list[3].banner_list;\nif (params.filters.filter == 2)\n\treturn result.data.info_list[2].banner_list;\nif (params.filters.filter == 4)\n\treturn result.data.info_list[4].banner_list;\nif (params.filters.filter == 5)\n\treturn result.data.info_list[5].banner_list;",
+            "_sIndex": 8,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": "filter\n全站热门::2\n潜力新作::3\n本周热议::4\n新人作者强推::5\n新作::6\n"
+            }
+        },
+        "阅读币": {
+            "cat": "$.topic_categories..title",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "@js:\nreturn '单话需付' + result.single_comic_price + '币\\n' + result.introduce;",
+            "requestInfo": "https://h5.kuaikanmanhua.com/v1/payactivity/rp_mini/home_page?activity_name=rp_mini_activity&pool_name=rp_mini_pool_yangmao_wechat&topic_id=&success=1",
+            "host": "https://api.kkmh.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "topic_id",
+            "cover": "vertical_pic",
+            "validConfig": "",
+            "list": "data/category[1]/rp_topic",
+            "_sIndex": 5,
+            "parserID": "DOM"
+        },
+        "榜单": {
+            "cat": "category",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "description",
+            "requestInfo": "https://m.kuaikanmanhua.com/mini/v1/comic/mkuaikan/rank_list?since=0&limit=20&need_ranks=true&rank_id=%@filter",
+            "host": "https://api.kkmh.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "image_url",
+            "validConfig": "",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": {
+                    "女生榜": "8",
+                    "完结榜": "12",
+                    "恋爱榜": "6",
+                    "原创榜": "27",
+                    "男生榜": "5",
+                    "新作榜": "2",
+                    "人气榜": "9",
+                    "投稿榜": "13",
+                    "剧情榜": "25",
+                    "畅销榜": "4",
+                    "纯爱榜": "7",
+                    "日漫榜": "10",
+                    "飙升榜": "16",
+                    "韩漫榜": "11"
+                }
+            },
+            "list": "data/topics",
+            "_sIndex": 1
+        },
+        "group": {
+            "cat": "category",
+            "author": "user/nickname",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "@js:\nreturn result.recommend_text + '\\n' + result.description;",
+            "requestInfo": "@js:\nreturn 'https://api.kkmh.com/v2/topic/discovery_v2/module_list/' + params.filters.filter + '?filter_free=0&gender=0&limit=20&module_id=' + params.filters.filter + '&module_type=4&since=' + ((params.pageIndex-1)*20) + '&tab_id=68';",
+            "host": "https://api.kkmh.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "vertical_image_url",
+            "validConfig": "",
+            "list": "data/topics",
+            "_sIndex": 4,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "完结·流连柑橘味香气::1021\n打开姬关 开启新世界::1019"
+            }
+        },
+        "免费纯享": {
+            "cat": "category",
+            "author": "user/nickname",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "@js:\nreturn result.recommend_text + '\\n' + result.description;",
+            "requestInfo": "@js:\nreturn {'url':'https://api.kkmh.com/v2/topic/discovery_v2/module_list/1127?filter_free=0&gender=0&limit=20&module_id=1127&module_type=4&recommend_type=freeTotalModule&since=' + ((params.pageIndex-1)*20) + '&tab_id=72', 'httpHeaders':{\"HW-Model\":\"iPhone10,2\",\"Accept-Encoding\":\"gzip, deflate, br\",\"Accept-Language\":\"zh-Hans-US;q=1, en-US;q=0.9, ko-US;q=0.8\",\"kkFlowType\":\"NotFree\",\"Connection\":\"keep-alive\",\"Package-Id\":\"com.kuaikan.comic\",\"User-Agent\":\"Kuaikan\\/7.13.0\\/713000(iPhone;iOS 15.3.1;Scale\\/3.00;WiFi;2208*1242)\",\"Host\":\"api.kkmh.com\",\"X-Device\":\"I:73708407-31BF-4112-A56A-E3C53733AB89\",\"Accept\":\"*\\/*\",\"Lower-Flow\":\"No\"}};",
+            "host": "https://api.kkmh.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "vertical_image_url",
+            "validConfig": "",
+            "list": "data/topics",
+            "_sIndex": 6,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20
+            }
+        },
+        "标签排行": {
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nreturn 'https://api.kkmh.com/v1/freestyle/tag/more?gender=0&limit=20&since=' + ((params.pageIndex-1)*20) + '&tag_name=' + encodeURI(params.filters.filter);",
+            "host": "https://api.kkmh.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "原创",
+                                "title": "原创"
+                            },
+                            {
+                                "value": "投稿",
+                                "title": "投稿"
+                            },
+                            {
+                                "value": "完结",
+                                "title": "完结"
+                            },
+                            {
+                                "value": "恋爱",
+                                "title": "恋爱"
+                            },
+                            {
+                                "value": "正能量",
+                                "title": "正能量"
+                            },
+                            {
+                                "value": "日常",
+                                "title": "日常"
+                            },
+                            {
+                                "value": "校园",
+                                "title": "校园"
+                            },
+                            {
+                                "value": "体育",
+                                "title": "体育"
+                            },
+                            {
+                                "value": "竞技",
+                                "title": "竞技"
+                            },
+                            {
+                                "value": "都市",
+                                "title": "都市"
+                            },
+                            {
+                                "value": "偶像",
+                                "title": "偶像"
+                            },
+                            {
+                                "value": "歌舞",
+                                "title": "歌舞"
+                            },
+                            {
+                                "value": "萌系",
+                                "title": "萌系"
+                            },
+                            {
+                                "value": "治愈",
+                                "title": "治愈"
+                            },
+                            {
+                                "value": "青春",
+                                "title": "青春"
+                            },
+                            {
+                                "value": "搞笑",
+                                "title": "搞笑"
+                            },
+                            {
+                                "value": "古风",
+                                "title": "古风"
+                            },
+                            {
+                                "value": "宫斗",
+                                "title": "宫斗"
+                            },
+                            {
+                                "value": "后宫",
+                                "title": "后宫"
+                            },
+                            {
+                                "value": "玄幻",
+                                "title": "玄幻"
+                            },
+                            {
+                                "value": "奇幻",
+                                "title": "奇幻"
+                            },
+                            {
+                                "value": "魔幻",
+                                "title": "魔幻"
+                            },
+                            {
+                                "value": "武侠",
+                                "title": "武侠"
+                            },
+                            {
+                                "value": "仙侠",
+                                "title": "仙侠"
+                            },
+                            {
+                                "value": "热血",
+                                "title": "热血"
+                            },
+                            {
+                                "value": "冒险",
+                                "title": "冒险"
+                            },
+                            {
+                                "value": "异能",
+                                "title": "异能"
+                            },
+                            {
+                                "value": "系统",
+                                "title": "系统"
+                            },
+                            {
+                                "value": "动作",
+                                "title": "动作"
+                            },
+                            {
+                                "value": "复仇",
+                                "title": "复仇"
+                            },
+                            {
+                                "value": "黑暗",
+                                "title": "黑暗"
+                            },
+                            {
+                                "value": "逆袭",
+                                "title": "逆袭"
+                            },
+                            {
+                                "value": "悬疑",
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": "恐怖",
+                                "title": "恐怖"
+                            },
+                            {
+                                "value": "惊悚",
+                                "title": "惊悚"
+                            },
+                            {
+                                "value": "剧情",
+                                "title": "剧情"
+                            },
+                            {
+                                "value": "强剧情",
+                                "title": "强剧情"
+                            },
+                            {
+                                "value": "灵异",
+                                "title": "灵异"
+                            },
+                            {
+                                "value": "异形",
+                                "title": "异形"
+                            },
+                            {
+                                "value": "大女主",
+                                "title": "大女主"
+                            },
+                            {
+                                "value": "总裁",
+                                "title": "总裁"
+                            },
+                            {
+                                "value": "穿越",
+                                "title": "穿越"
+                            },
+                            {
+                                "value": "重生",
+                                "title": "重生"
+                            },
+                            {
+                                "value": "纯爱",
+                                "title": "纯爱"
+                            },
+                            {
+                                "value": "橘系",
+                                "title": "橘系"
+                            },
+                            {
+                                "value": "韩漫",
+                                "title": "韩漫"
+                            },
+                            {
+                                "value": "日漫",
+                                "title": "日漫"
+                            },
+                            {
+                                "value": "名著",
+                                "title": "名著"
+                            },
+                            {
+                                "value": "真人漫",
+                                "title": "真人漫"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "cover": "cover_image_url",
+            "validConfig": "",
+            "list": "data/rank/topics",
+            "_sIndex": 3,
+            "parserID": "DOM",
+            "detailUrl": "id"
+        }
+    }
+}

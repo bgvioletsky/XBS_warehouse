@@ -1,0 +1,120 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//*[@id=\"content\"]",
+        "actionID": "chapterContent",
+        "host": "http://www.gebiqu.com",
+        "httpHeaders": {
+            "Referer": "http://www.gebiqu.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "lastChapterTitle": "//*[@id=\"list\"]/dl/dd[1]/a",
+        "host": "http://www.gebiqu.com",
+        "httpHeaders": {
+            "Referer": "http://www.gebiqu.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44"
+        },
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//*[@id=\"intro\"]/p|| //*[@id=\"hotcontent\"]/div/div[4]/dl/dd|| //*[@id=\"hotcontent\"]/div/div[5]/dl/dd/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//span[@class=\"s5\"]",
+            "responseFormatType": "html",
+            "bookName": "//*[@target=\"_blank\"]",
+            "httpHeaders": {
+                "Referer": "http://www.gebiqu.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.gebiqu.com${_type}${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.gebiqu.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻魔法::/xuanhuanmofa/\n修真小说::/xiuzhenxiaoshuo/\n都市小说::/dushixiaoshuo/\n历史军事::/lishijunshi/\n游戏小说::/youxixiaoshuo/\n科幻灵异::/kehuanlingyi/\n同人小说::/tongrenxiaoshuo/\n女生言情::/nvshengyanqing/\n综合小说::/zonghexiaoshuo/\n全本小说::/quanben/"
+            },
+            "validConfig": "",
+            "list": "//ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "http://www.gebiqu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "歌书",
+    "httpHeaders": {
+        "Referer": "http://www.gebiqu.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "lastModifyTime": "1666869353.471157",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//*[@id=\"nr\"]/td[3]",
+        "responseFormatType": "html",
+        "bookName": "//*[@id=\"nr\"]/td[1]/a",
+        "httpHeaders": {
+            "Referer": "http://www.gebiqu.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44"
+        },
+        "requestInfo": "http://www.gebiqu.com/modules/article/search.php?searchkey=%@keyWord",
+        "host": "http://www.gebiqu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[@class=\"odd\"]/a/@href",
+        "wordCount": "//*[@id=\"nr\"]/td[4]",
+        "validConfig": "",
+        "list": "//*[@id=\"nr\"]",
+        "parserID": "DOM",
+        "status": "//*[@id=\"nr\"]/td[6]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet bookid = result.match(/\\d+/)[0];\rlet url = config.host + \"/biquge_\"+ bookid + '/';\rreturn{'url':url, 'webView':true};",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 8
+        },
+        "host": "http://www.gebiqu.com",
+        "httpHeaders": {
+            "Referer": "http://www.gebiqu.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.124 Safari/537.36 Edg/102.0.1245.44"
+        },
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

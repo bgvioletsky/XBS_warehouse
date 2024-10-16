@@ -1,0 +1,142 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "nextPageUrl": "//div[8]/span[3]/a/@href",
+        "responseFormatType": "html",
+        "url": "//a/@href",
+        "httpHeaders": {
+            "Referer": "https://m.eexiaoshuo.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url = config.host+params.queryInfo.detailUrl + \"index_\" + params.pageIndex + '.html';\nreturn url;",
+        "title": "//a",
+        "actionID": "chapterList",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://m.eexiaoshuo.com",
+        "validConfig": "",
+        "list": "//ul[2]/li",
+        "parserID": "DOM",
+        "updateTime": "//div[@class='block_txt2']/p[6]/a/text()"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "E小说",
+    "sourceType": "text",
+    "sourceUrl": "https://m.eexiaoshuo.com",
+    "httpHeaders": {
+        "Referer": "https://m.eexiaoshuo.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654213674.597305",
+    "searchBook": {
+        "cat": "//p[2]/span/text() ||@js:\r\nreturn result.replace(/\\s+/g,\"\");",
+        "author": "//p[1]/span/text()  ||@js:\r\nreturn result.replace(/\\s+/g,\"\");",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//p[4]/a/text()",
+        "bookName": "//h3/a/span/text()",
+        "desc": "//p/text() ||@js:\r\nreturn result.replace(/\\s+/g,\"\");",
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet hh  = {\n    \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123a) NetType/WIFI Language/zh_CN\"\n};\nlet hp ={\n    \"q\": params.keyWord\n};\n\nlet url = config.host+\"/search.php\";\n\n\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600,\"forbidCookie\":true};",
+        "host": "https://m.eexiaoshuo.com",
+        "actionID": "searchBook",
+        "httpHeaders": {
+            "Referer": "https://m.eexiaoshuo.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//a/img/@src",
+        "validConfig": "",
+        "list": "//div[@class='result-list']/div[@class='result-item result-game-item']",
+        "parserID": "DOM",
+        "detailUrl": "//h3/a/@href"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='nr1']/text()",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet url = config.host+params.queryInfo.url + \"index_\" + params.pageIndex + '.html';\nreturn url;",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://m.eexiaoshuo.com",
+        "httpHeaders": {
+            "Referer": "https://m.eexiaoshuo.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//td[@class='next-chapter']/a/@href"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐲",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 15,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "科幻",
+                                "value": "khjj"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "dsxs"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "xuanhuan"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "lishi"
+                            },
+                            {
+                                "title": "穿越架空",
+                                "value": "cyjk"
+                            },
+                            {
+                                "title": "鬼怪悬疑",
+                                "value": "guihua"
+                            },
+                            {
+                                "title": "同人",
+                                "value": "tongren"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "actionID": "bookWorld"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

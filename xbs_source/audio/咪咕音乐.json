@@ -1,0 +1,124 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "data/url",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nlet hh={\n'channel': '0146951',\n'uid': '1234',\n'Host': 'app.c.nf.migu.cn',\n'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.139 Safari/537.36'\n};\n\nreturn {'url': params.queryInfo.url, 'httpHeaders':hh,\"POST\":false};",
+        "host": "https://music.migu.cn/v3",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "测试": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "@js:\nlet url='https://app.c.nf.migu.cn/MIGUM3.0/v1.0/template/musiclistplaza-listbytag?pageNumber=1&tagId=1000001635&templateVersion=1';\nreturn url;",
+            "bookName": "logEvent/contentName",
+            "detailUrl": "actionUrl",
+            "host": "https://music.migu.cn/v3",
+            "_sIndex": 3,
+            "cover": "imageUrl",
+            "responseFormatType": "json",
+            "list": "data/contentItemList/itemList",
+            "parserID": "DOM"
+        },
+        "推荐": {
+            "responseFormatType": "json",
+            "bookName": "title",
+            "requestInfo": "@js:\nlet url='https://app.c.nf.migu.cn/MIGUM2.0/v2.0/content/getMusicData.do?count=30&start='+ params.pageIndex +'&templateVersion=5&type=1';\nreturn url;",
+            "host": "https://music.migu.cn/v3",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": ""
+            },
+            "detailUrl": "actionUrl",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "data/contentItemList[0]/itemList",
+            "cover": "imageUrl"
+        },
+        "主题": {
+            "responseFormatType": "json",
+            "bookName": "logEvent/contentName",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://app.c.nf.migu.cn/MIGUM3.0/v1.0/template/musiclistplaza-listbytag?pageNumber=${params.pageIndex}&tagId=${_type}&templateVersion=1`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://music.migu.cn/v3",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n经典老歌::1000001635\n红歌::1000001670\n中国风::1000001675\n爱情::1000001698\n儿童歌曲::1000001780\nKTV::1000001827\n小清新::1000587673\n游戏::1000587698\n广场舞::1000587702\n动漫::1000587706\n青春校园::1000587712\n70后::1000587717\n80后::1000587718\n90后::1000587726\n电视剧::1001076078\n电影::1001076080\n综艺::1001076083\n网络热歌::1001076096\n运动::1003449209\n厂牌::1003449727\n正向::1003450109"
+            },
+            "detailUrl": "actionUrl",
+            "validConfig": "",
+            "list": "data/contentItemList/itemList",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "imageUrl"
+        },
+        "风格": {
+            "responseFormatType": "json",
+            "bookName": "logEvent/contentName",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://app.c.nf.migu.cn/MIGUM3.0/v1.0/template/musiclistplaza-listbytag?pageNumber=${params.pageIndex}&tagId=${_type}&templateVersion=1`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://music.migu.cn/v3",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n流行::1000001672\n摇滚::1000001674\n爵士::1000001681\n电子::1000001682\n乡村::1000001683\n民谣::1000001775\n古典::1000001783\n纯音乐::1000001807\nR&amp;B::1000001808\n嘻哈::1000001809\n蓝调::1000001851\n电子舞曲::1000001852\n配乐::1003449577"
+            },
+            "detailUrl": "actionUrl",
+            "validConfig": "",
+            "list": "data/contentItemList/itemList",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "cover": "imageUrl"
+        }
+    },
+    "shudanList": {},
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "咪咕音乐",
+    "sourceUrl": "https://music.migu.cn/v3",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1660653453.256907",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\n//let tag=params.queryInfo.detailUrl.match(/id =(\\d+)/)[1];\n\n    let tag=params.queryInfo.detailUrl.match(/(\\d+)/)[1];\n\nparams.nativeTool.log(tag);\n\nlet url= 'https://app.c.nf.migu.cn/MIGUM2.0/v1.0/user/queryMusicListSongs.do?musicListId='+tag+'&pageNo=1&pageSize=50';\n\nreturn url;",
+        "title": "@js:\nreturn result.songName+' - - '+ result.singer",
+        "host": "https://music.migu.cn/v3",
+        "list": "list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nlet url=\"https://app.c.nf.migu.cn/MIGUM2.0/strategy/listen-url/v2.2?netType=01&resourceType=E&songId=\"+result.songId+\"&toneFlag=HQ\";\nreturn url;"
+    }
+}

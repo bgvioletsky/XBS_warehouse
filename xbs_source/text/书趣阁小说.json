@@ -1,0 +1,130 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@class=\"showtxt\"] |@replace:https://www.shuquge.com/txt/|@replace:请记住本书首发域名：www.shuquge.com。书趣阁_笔趣阁手机版阅读网址：m.shuquge.com|@replace:.html|@replace:1|@replace:2|@replace:3|@replace:4|@replace:5|@replace:6|@replace:7|@replace:8|@replace:9|@replace:0|@replace:&#;",
+        "host": "https://www.ishuquge.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//div[@class=\"small\"]/span[3]|@replace:状态：",
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "wordCount": "//div[@class=\"small\"]/span[4]|@replace:字数：",
+        "requestInfo": "%@result",
+        "lastChapterTitle": "//dl[1]/dd[1]/a",
+        "host": "https://www.ishuquge.com",
+        "cover": "//div[@class=\"cover\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class='intro'][1]/span[2]"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//span[@class=\"s4\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"s3\"]/a",
+            "bookName": "//span[@class=\"s2\"]/a",
+            "requestInfo": "https://www.ishuquge.com/category/%@filter%@pageIndex.html",
+            "host": "https://www.ishuquge.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "18",
+                "requestFilters": [
+                    {
+                        "key": "filter",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1_"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "2_"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "3_"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "4_"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "5_"
+                            },
+                            {
+                                "title": "网游",
+                                "value": "6_"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "7_"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "cover": "//span[@class=\"s2\"]/a/@href ||@js:\n\nvar id = result.match(/(\\d+)/)[1];\nvar iid = parseInt(id/1000);\nreturn 'http://www.shuquge.com/files/article/image/'+iid+'/'+id+'/'+id+'s.jpg';",
+            "list": "//div[@class=\"l bd\"]/ul/li"
+        }
+    },
+    "sourceUrl": "https://www.ishuquge.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "4",
+    "sourceName": "书趣阁小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666708159.221227",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class=\"cat\"] ||@js:\nreturn result.replace(/分类：/,\"\")",
+        "author": "//div[@class=\"author\"]||@js:\nreturn result.replace(/作者：/,\"\")",
+        "lastChapterTitle": "//div[@class=\"update\"]/a",
+        "responseFormatType": "html",
+        "bookName": "//h4/a",
+        "requestInfo": "https://www.ishuquge.com/search.php?searchkey=%@keyWord",
+        "host": "https://www.ishuquge.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"bookcase\"]//div"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.ishuquge.com",
+        "list": "//dt[2]/following-sibling::*",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|@js: return params.queryInfo.detailUrl + result;"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,151 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "JSParser": "function functionName(config, params, result)\n{\n\treturn JSON.stringify({'urls':params.queryInfo.url});\n}",
+        "host": "https://www.shuige.club/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "host": "https://www.shuige.club/",
+        "cover": "//figure/img/@src",
+        "responseFormatType": "html",
+        "desc": "//main[@id=\"main-container\"]",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "检索": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.shuige.club/index.php/%e6%a3%80%e7%b4%a2/",
+            "detailUrl": "//a/@href",
+            "bookName": "//a",
+            "host": "https://www.shuige.club/",
+            "list": "//div[@itemprop='articleBody']/ul/li",
+            "responseFormatType": "html",
+            "parserID": "DOM"
+        },
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//h5[@class='card-title']/a",
+            "desc": "//p[@class='card-text']",
+            "requestInfo": "https://www.shuige.club/index.php/category/%@filter/page/%@pageIndex/",
+            "host": "https://www.shuige.club/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 9,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "众筹",
+                                "title": "众筹"
+                            },
+                            {
+                                "value": "免费",
+                                "title": "分享"
+                            },
+                            {
+                                "value": "听电视",
+                                "title": "听电视"
+                            },
+                            {
+                                "value": "广播剧/在更",
+                                "title": "在更广播剧"
+                            },
+                            {
+                                "value": "有声剧/在更-有声剧",
+                                "title": "在更有声剧"
+                            },
+                            {
+                                "value": "广播剧/完结",
+                                "title": "完结广播剧"
+                            },
+                            {
+                                "value": "有声剧/完结-有声剧",
+                                "title": "完结有声剧"
+                            },
+                            {
+                                "value": "广播剧",
+                                "title": "广播剧"
+                            },
+                            {
+                                "value": "有声剧",
+                                "title": "有声剧"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "detailUrl": "//h5[@class='card-title']/a/@href",
+            "validConfig": "",
+            "cover": "//img/@src",
+            "parserID": "DOM",
+            "list": "//*[@id=\"main-container\"]/div[1]/div"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.shuige.club/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "水哥故事会",
+    "sourceType": "audio",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1636333305.763765",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "responseFormatType": "html",
+        "bookName": "//h5[@class='card-title']/a",
+        "desc": "//p[@class='card-text']",
+        "requestInfo": "https://www.shuige.club/index.php/page/%@pageIndex/?s=%@keyWord",
+        "host": "https://www.shuige.club/",
+        "actionID": "searchBook",
+        "detailUrl": "//h5[@class='card-title']/a/@href",
+        "moreKeys": {
+            "pageSize": 9
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "cover": "//img/@src",
+        "list": "//*[@id=\"main-container\"]/div[1]/div"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//@data-audiopath||//audio/@src||@js:\nreturn encodeURI(result);",
+        "updateTime": "//section[@class='modified-date']",
+        "title": "//@data-tracktitle||//figcaption",
+        "moreKeys": {
+            "pageSize": 100
+        },
+        "host": "https://www.shuige.club/",
+        "list": "//div[@class='playlist']/ul/li||//figure[@class='wp-block-audio']",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "@js:\nreturn params.queryInfo.detailUrl + (params.pageIndex+1) + '/';"
+    }
+}

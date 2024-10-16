@@ -1,0 +1,128 @@
+{
+    "bookWorld": {
+        "排行榜": {
+            "cat": "//p/strong[2]/span/text()",
+            "author": "//p/strong[1]/span",
+            "responseFormatType": "html",
+            "bookName": "//h2/text()",
+            "desc": "//a[2]/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.yodu.org${_type}${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders , forbidCookie:true, cacheTime:3600}",
+            "host": "https://www.yodu.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[2]/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n总点击榜::/top/allvisit_\n月点击榜::/top/monthvisit_\n总推荐榜::/top/allvote_\n月推荐榜::/top/monthvote_\n最近更新::/top/lastupdate_\n最新入库::/top/postdate_\n最新上架::/top/signtime_\n收藏榜::/top/goodnum_\n字数榜::/top/words_\n新书榜::/top/newhot_"
+            },
+            "cover": "//i/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//ul[@class=\"g_row lis-mn j_bookList\"]/li",
+            "httpHeaders": {
+                "Referer": "https://www.yodu.org/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+            },
+            "status": "//p/strong[3]/span/text()",
+            "_sIndex": 1
+        },
+        "分类": {
+            "cat": "//p/strong[2]/span/text()",
+            "author": "//p/strong[1]/span",
+            "responseFormatType": "html",
+            "bookName": "//h2/text()",
+            "desc": "//a[2]/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.yodu.org${_type}${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders , forbidCookie:true, cacheTime:3600}",
+            "host": "https://www.yodu.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[2]/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n世紀百強::/shijibaiqiang/\n隨身智囊::/suishenzhinang/\n歷史煙雲::/lishiyanyun/\n武俠小說::/wuxia/\n懸疑小說::/xuanyi/\n言情小說::/yanqing/\n奇幻小說::/qihuanxiaoshuo/\n传记回忆::/zhuanjihuiyi/\n英文读本::/yingwenduben/\n杂文随笔::/zawensuibi/\n经典言情::/jingdianyanqing/\n经典历史::/jingdianlishi/\n侦探推理::/zhentantuili/\n惊悚悬疑::/jingsongxuanyi/\n网络玄幻::/wangluoxuanhuan/\n寓言童话::/yuyantonghua/\n青春都市::/qingchundushi/\n社会心理::/shehuixinli/\n外国小说::/waiguoxiaoshuo/\n经典科幻::/jingdiankehuan/\n当代小说::/dangdaixiaoshuo/\n经典武侠::/jingdianwuxia/\n纪实报告::/jishibaogao/\n世界历史::/shijielishi/\n中国历史::/zhongguolishi/\n科普学习::/kepuxuexi/\n诗歌戏曲::/shigexiqu/\n宗教哲学::/zongjiaozhexue/\n文学理论::/wenxuelilun/\n日语读物::/riyuduwu/\n作品集::/zuopinji/\n国学古籍::/guoxueguji/\n战争军事::/zhanzhengjunshi/\n政治经济::/zhengzhijingji/\n古典文学::/gudianwenxue/\n现代小说::/xiandaixiaoshuo/\n官场小说::/guanchangxiaoshuo/\n轻小说::/qingxiaoshuo/\n网游小说::/wangyouxiaoshuo/\n玄幻小说::/xuanhuanxiaoshuo/\n穿越小说::/chuanyuexiaoshuo/\n科幻小说::/kehuanxiaoshuo/\n仙侠小说::/xianxiaxiaoshuo/\n都市小说::/dushixiaoshuo/\n武侠小说::/wuxiaxiaoshuo/\n历史小说::/lishixiaoshuo/\n竞技小说::/jingjixiaoshuo/\n言情小说::/yanqingxiaoshuo/\n悬疑小说::/xuanyixiaoshuo/\n军事小说::/junshixiaoshuo/\n灵异小说::/lingyixiaoshuo/\n电击文库::/dianjiwenku/\n富士见文库::/fushijianwenku/\n角川文库::/jiaochuanwenku/\nMF文库J::/MFwenkuJ/\nFami通文库::/Famitongwenku/\nGA文库::/GAwenku/\nHJ文库::/HJwenku/\n一迅社::/yixunshe/\n集英社::/jiyingshe/\n小学馆::/xiaoxueguan/\n讲谈社::/jiangtanshe/\n少女文库::/shaonvwenku/\n其他文库::/qitawenku/"
+            },
+            "cover": "//i/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//ul[@class=\"g_row lis-mn j_bookList\"]/li",
+            "httpHeaders": {
+                "Referer": "https://www.yodu.org/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+            },
+            "status": "//p/strong[3]/span/text()",
+            "_sIndex": 0
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//span/text()",
+        "host": "https://www.yodu.org",
+        "httpHeaders": {
+            "Referer": "https://www.yodu.org/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "list": "//ol[@id=\"chapterList\"]/li[@class=\"w33p\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "有度中文网",
+    "sourceUrl": "https://www.yodu.org",
+    "httpHeaders": {
+        "Referer": "https://www.yodu.org/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1662694585.057196",
+    "searchBook": {
+        "parserID": "DOM",
+        "actionID": "searchBook",
+        "responseFormatType": "html"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"TextContent\"]/p/text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 20
+        },
+        "host": "https://www.yodu.org",
+        "httpHeaders": {
+            "Referer": "https://www.yodu.org/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//*[@id=\"readbg\"]/script[2]/text()||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"_\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "无搜索 修",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "parserID": "DOM",
+        "actionID": "bookDetail",
+        "responseFormatType": "html"
+    },
+    "sourceType": "text"
+}

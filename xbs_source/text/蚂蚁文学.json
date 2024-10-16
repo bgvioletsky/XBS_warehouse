@@ -1,0 +1,119 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]||@js:\n\nreturn result.replace(/.*?com/, '').replace(/最新网址.*?com/, '').replace(\"（兄弟们，求推荐票呀~）\", '')",
+        "actionID": "chapterContent",
+        "host": "https://www.mayiwxw.com",
+        "httpHeaders": {
+            "Referer": "https://www.mayiwxw.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.mayiwxw.com",
+        "httpHeaders": {
+            "Referer": "https://www.mayiwxw.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@id=\"intro\"]",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//span[2]/a",
+            "author": "//span[3]",
+            "responseFormatType": "html",
+            "bookName": "//span[1]/a",
+            "httpHeaders": {
+                "Referer": "https://www.mayiwxw.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.mayiwxw.com${_type}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.mayiwxw.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[1]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻小说::/xuanhuanxiaoshuo/\n修真小说::/xiuzhenxiaoshuo/\n都市小说::/dushixiaoshuo/\n穿越小说::/chuanyuexiaoshuo/\n网游小说::/wangyouxiaoshuo/\n科幻小说::/kehuanxiaoshuo/\n完本小说::/wanben/"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"l\"]//li",
+            "cover": "//span[1]/a/@href ||@js:\nvar url = config.host + \"/files/article/image/\";\nvar id= result.match(/(\\d+)?_(\\d+)/)[2];\nurl=url+ parseInt(id/1000) +\"/\"+id+\"/\"+id+\"s.jpg\";\nreturn url;"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.mayiwxw.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "99",
+    "sourceName": "蚂蚁文学",
+    "httpHeaders": {
+        "Referer": "https://www.mayiwxw.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐲",
+    "lastModifyTime": "1659288126.322268",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[3]",
+        "lastChapterTitle": "//td[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//td[1]/a",
+        "httpHeaders": {
+            "Referer": "https://www.mayiwxw.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url=config.host+\"/modules/article/search.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord,\n\"searchtype\":\"articlename\"};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp,\n\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.mayiwxw.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "wordCount": "//td[4]",
+        "validConfig": "",
+        "list": "//tr[@id=\"nr\"]",
+        "parserID": "DOM",
+        "cover": "//td[1]/a/@href||@js:\nvar url = config.host + \"/files/article/image/\";\nvar id= result.match(/(\\d+)?_(\\d+)/)[2];\nurl=url+ parseInt(id/1000) +\"/\"+id+\"/\"+id+\"s.jpg\";\nreturn url;",
+        "status": "//td[6]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.mayiwxw.com",
+        "httpHeaders": {
+            "Referer": "https://www.mayiwxw.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@id=\"list\"]/dl/dd[position()>9]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

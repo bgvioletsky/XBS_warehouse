@@ -1,0 +1,117 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://manhua.szssjg.com",
+        "list": "//ul[@id='chapter-list-1']//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "松鼠下拉式漫画⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://manhua.szssjg.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666150310.289747",
+    "searchBook": {
+        "cat": "//dd/p[3]//a ||@js:\nreturn result.replace(/\\n/gi,' / ');",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//a[@class=\"yellow\"]",
+        "bookName": "//a[@class=\"pic\"]//img/@alt",
+        "desc": "//p[@class=\"intro\"]/text()",
+        "requestInfo": "/search/?keywords=%@keyWord&page=%@pageIndex",
+        "host": "https://manhua.szssjg.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class=\"pic\"]/@href",
+        "moreKeys": {
+            "pageSize": 36
+        },
+        "validConfig": "",
+        "cover": "//a[@class=\"pic\"]//img/@src",
+        "parserID": "DOM",
+        "list": "//div[@id=\"dmList\"]//li",
+        "status": "//dd/p[2]/span"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nlet res = result.match(/chapterImages[\\s\\S]+?;/)[0];\neval(res);\nreturn chapterImages.join('\\n');",
+        "host": "https://manhua.szssjg.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "stacksensei",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "cat": "//dd/p[3]//a ||@js:\nreturn result.replace(/\\n/gi,' / ');",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//a[@class=\"yellow\"]",
+            "bookName": "//a[@class=\"pic\"]//img/@alt",
+            "desc": "//p[@class=\"intro\"]/text()",
+            "requestInfo": "/list/%@filter/%@pageIndex/",
+            "host": "https://manhua.szssjg.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"pic\"]/@href",
+            "cover": "//a[@class=\"pic\"]//img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@id=\"dmList\"]//li",
+            "moreKeys": {
+                "pageSize": 36,
+                "requestFilters": "filter0\n少年热血::rexue\n武侠格斗::wuxia\n科幻魔幻::kehuan\n侦探推理::tuili\n恐怖灵异::kongbu\n耽美人生::danmei\n少女爱情::shaonv\n恋爱生活::lianai\n生活漫画::shenghuo\n战争漫画::zhanzheng"
+            },
+            "status": "//dd/p[2]/span"
+        },
+        "字母索引": {
+            "cat": "//dd/p[3]//a ||@js:\nreturn result.replace(/\\n/gi,' / ');",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//a[@class=\"yellow\"]",
+            "bookName": "//a[@class=\"pic\"]//img/@alt",
+            "desc": "//p[@class=\"intro\"]/text()",
+            "requestInfo": "/list/%@filter/%@pageIndex/",
+            "host": "https://manhua.szssjg.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"pic\"]/@href",
+            "cover": "//a[@class=\"pic\"]//img/@src",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@id=\"dmList\"]//li",
+            "moreKeys": {
+                "pageSize": 36,
+                "requestFilters": "filter0\nA::a\nB::b\nC::c\nD::d\nE::e\nF::f\nG::g\nH::h\nI::i\nJ::j\nK::k\nL::l\nM::m\nN::n\nO::o\nP::p\nQ::q\nR::r\nS::s\nT::t\nU::u\nV::v\nW::w\nX::x\nY::y\nZ::z"
+            },
+            "status": "//dd/p[2]/span"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

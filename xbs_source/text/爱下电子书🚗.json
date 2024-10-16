@@ -1,0 +1,68 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "content": "chapter/body",
+        "host": "http://api.aixdzs.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {},
+    "sourceUrl": "http://api.aixdzs.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "99",
+    "sourceName": "爱下电子书🚗",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665972765.277811",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "author",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "desc": "shortIntro",
+        "requestInfo": "http://api.aixdzs.com/book/search?query=%@keyWord",
+        "host": "http://api.aixdzs.com",
+        "actionID": "searchBook",
+        "detailUrl": "_id |@js:\nreturn '/content/'+result + '?virw=chapter'",
+        "cover": "cover |@js:\nreturn 'http:/img22.aixdzs.com/'+result",
+        "validConfig": "",
+        "list": "books",
+        "parserID": "DOM",
+        "status": "zt"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "title",
+        "host": "http://api.aixdzs.com",
+        "list": "mixToc/chapters",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "link |@js:\nreturn '/chapter/'+result"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,108 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "http://m.ucshuku.com",
+        "httpHeaders": {
+            "Referer": "http://m.ucshuku.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://m.ucshuku.com${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n奇幻仙侠::/sort/1_\n清穿小说::/sort/2_\n言情小说::/sort/3_\n女尊小说::/sort/4_\n耽美小说::/sort/5_\n同人小说::/sort/6_\n其他小说::/sort/7_\n传统言情::/sort/8_\n现代耽美::/sort/9_\n架空历史::/sort/10_"
+            },
+            "host": "http://m.ucshuku.com",
+            "httpHeaders": {
+                "Referer": "http://m.ucshuku.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "_sIndex": 0,
+            "responseFormatType": "html",
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "http://m.ucshuku.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "99",
+    "sourceName": "uc小说网",
+    "httpHeaders": {
+        "Referer": "http://m.ucshuku.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1656269210.802059",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//a[2]",
+        "author": "//a[3]",
+        "responseFormatType": "html",
+        "bookName": "//a[1]",
+        "httpHeaders": {
+            "Referer": "http://m.ucshuku.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "requestInfo": "@js:\nlet url=config.host+\"/s.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'s':params.keyWord,\n\"type\":\"articename\"};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "http://m.ucshuku.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[1]/@href",
+        "validConfig": "",
+        "list": "//p[@class=\"search_list\"]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "title": "//a/text()",
+        "moreKeys": {
+            "maxPage": 1000
+        },
+        "host": "http://m.ucshuku.com",
+        "httpHeaders": {
+            "Referer": "http://m.ucshuku.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@class=\"box m10\"]/div[6]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class=\"listpage\"]/span[3]/a[text()=\"下一页\"]/@href"
+    },
+    "sourceType": "text"
+}

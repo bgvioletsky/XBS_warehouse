@@ -1,0 +1,76 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@id='content']/p/text()",
+        "host": "http://www.siluke.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://www.siluke.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-思路客",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357713.895429",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]",
+        "author": "//span[3]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//span[4]/a",
+        "bookName": "//span[2]/a",
+        "requestInfo": "@js:\nlet url = 'http://www.siluke.com/search.php';\nlet hp = {};\nhp.keyword = params.keyWord;\n//hp.pn= params.pageIndex;\n//hp.searchtype='0';\nreturn {'POST':true,'url':url, 'httpParams':hp,};",
+        "host": "http://www.siluke.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//span[@class=\"s2\"]/a/@href || //meta[@property=\"og:novel:read_url\"]/@content",
+        "moreKeys": {
+            "maxPage": 1
+        },
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"novelslist\"]/ul/li[position()>1]",
+        "status": "//span[6]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 15
+        },
+        "host": "http://www.siluke.com/",
+        "list": "//div[@id=\"list\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

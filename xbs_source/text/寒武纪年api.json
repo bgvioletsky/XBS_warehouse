@@ -1,0 +1,267 @@
+{
+    "bookDetail": {
+        "status": "$.presize",
+        "actionID": "bookDetail",
+        "wordCount": "$.articleid",
+        "validConfig": "",
+        "requestInfo": "https://www.hanwujinian.com/riku/minibook/articleinfo.php?network=wifi&bookid=%@result&uid=3007628",
+        "host": "https://www.hanwujinian.com",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':'https://api.hanwujinian.net/api.php/api/book_app/chapterList', 'POST':true, 'httpParams':{'lastupdate':0, 'bookId':params.queryInfo.detailUrl}};",
+        "title": "chapterName",
+        "host": "https://www.hanwujinian.com",
+        "list": "data/chapterlist",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "$.chapterId||@js:\nvar url = \"https://www.hanwujinian.com/riku/minibook/read.php?network=wifi&aid=\"+ params.queryInfo.detailUrl +\"&cid=\"+ result +\"&uid=3007628&token=d990d45f1cf17b468cc165da9762db4c&app=&system=Android&showOpen=1\"\n\nreturn url"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "寒武纪年api",
+    "sourceType": "text",
+    "sourceUrl": "https://www.hanwujinian.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1664995013.777177",
+    "searchBook": {
+        "cat": "$.rgroupName||$.label",
+        "author": "$.author",
+        "responseFormatType": "json",
+        "bookName": "$.bookname",
+        "desc": "$.intro",
+        "requestInfo": "@js:\nlet url=\"http://wap.hanwujinian.com/api.php/api/search_app/searchResultPC\";\n\nlet hp={\"search\":params.keyWord,\"offset\":0,\"limit\":10,\"uid\":\"\"};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp};",
+        "host": "https://www.hanwujinian.com",
+        "actionID": "searchBook",
+        "detailUrl": "$.bookid",
+        "cover": "$.pic",
+        "validConfig": "",
+        "list": "$.data.book",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "host": "https://www.hanwujinian.com",
+        "content": "$.data.content",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "0155",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "书库": {
+            "cat": "label",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "bookname",
+            "desc": "intro",
+            "requestInfo": "@js:\nreturn {'url':'https://api.hanwujinian.net/api.php/api/home_app/libraryBookList', 'POST':true, 'httpParams':{'fullflag':params.filters.status, 'order':params.filters.order, 'limit':20, 'offset':((params.pageIndex-1)*20), 'groupid':params.filters.type}};",
+            "host": "https://www.hanwujinian.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "1"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "2"
+                            }
+                        ],
+                        "key": "status"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "更新排序",
+                                "value": "1"
+                            },
+                            {
+                                "title": "点击排序",
+                                "value": "2"
+                            },
+                            {
+                                "title": "月销量排序",
+                                "value": "3"
+                            }
+                        ],
+                        "key": "order"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "0"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "1"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "5"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "6"
+                            }
+                        ],
+                        "key": "type"
+                    }
+                ]
+            },
+            "cover": "image",
+            "detailUrl": "bookid",
+            "list": "data/list",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "status"
+        },
+        "测试": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        },
+        "完结专题书单": {
+            "cat": "label",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "bookname",
+            "desc": "intro",
+            "requestInfo": "@js:\nreturn {'url':'https://api.hanwujinian.net/api.php/api/home_app/fullbookSpecBookList', 'POST':true, 'httpParams':{'limit':20, 'offset':((params.pageIndex-1)*20), 'specid':params.filters.type}};",
+            "host": "https://www.hanwujinian.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": 1,
+                                "title": "编辑推荐"
+                            },
+                            {
+                                "value": 5,
+                                "title": "热门小说"
+                            },
+                            {
+                                "value": 6,
+                                "title": "今日必读"
+                            },
+                            {
+                                "value": 7,
+                                "title": "最新关注"
+                            },
+                            {
+                                "value": 6246,
+                                "title": "打脸虐渣"
+                            },
+                            {
+                                "value": 6247,
+                                "title": "先婚后爱"
+                            },
+                            {
+                                "value": 49,
+                                "title": "信息素哨向"
+                            },
+                            {
+                                "value": 39,
+                                "title": "揣崽萌娃"
+                            },
+                            {
+                                "value": 78,
+                                "title": "娱乐圈"
+                            },
+                            {
+                                "value": 2,
+                                "title": "虐恋情深"
+                            },
+                            {
+                                "value": 4,
+                                "title": "穿越重生"
+                            },
+                            {
+                                "value": 88,
+                                "title": "甜宠糖饼"
+                            },
+                            {
+                                "value": 6248,
+                                "title": "灵异探险"
+                            },
+                            {
+                                "value": 44,
+                                "title": "快穿系统"
+                            },
+                            {
+                                "value": 6249,
+                                "title": "悬疑推理"
+                            },
+                            {
+                                "value": 11,
+                                "title": "青春校园"
+                            },
+                            {
+                                "value": 42,
+                                "title": "豪门恩怨"
+                            },
+                            {
+                                "value": 86,
+                                "title": "古代架空"
+                            },
+                            {
+                                "value": 10202,
+                                "title": "竞技网游"
+                            },
+                            {
+                                "value": 43,
+                                "title": "冷门宝藏"
+                            }
+                        ],
+                        "key": "type"
+                    }
+                ]
+            },
+            "cover": "image",
+            "detailUrl": "bookid",
+            "list": "data",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "validConfig": "",
+            "status": "status"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

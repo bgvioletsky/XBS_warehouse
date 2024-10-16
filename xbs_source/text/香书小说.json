@@ -1,0 +1,94 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//*[@id='content']/text()",
+        "host": "https://www.xbiquge.la",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//p[3]||@js:\nreturn result.replace(/最后更新：/,\"\")",
+        "host": "https://www.xbiquge.la",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id='intro']/p[2]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//span[@class=\"s5\"]",
+            "responseFormatType": "html",
+            "bookName": "//span[@class=\"s2\"]",
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\nlet url=`https://www.xbiquge.la/fenlei/${_aa}_${params.pageIndex}.html`;\r\n\r\nreturn {url:url}",
+            "host": "https://www.xbiquge.la",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_aa\n玄幻小说::1\n修真小说::2\n都市小说::3\n穿越小说::4\n网游小说::5\n科幻小说::6"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"l\"]/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.xbiquge.la",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9994",
+    "sourceName": "香书小说",
+    "desc": "🦞",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665903184.266419",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[3]",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet url=config.host+\"/modules/article/waps.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord,'page':params.pageIndex,};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true,cacheTime:3600};",
+        "lastChapterTitle": "//td[2]/a",
+        "bookName": "//td[1]/a",
+        "host": "https://www.xbiquge.la",
+        "detailUrl": "//td[1]/a/@href",
+        "list": "//table[@class='grid']//tr",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@id=\"info\"]/p[3]|@js:return result.replace('最后更新：','')",
+        "title": "//a",
+        "host": "https://www.xbiquge.la",
+        "list": "//*[@id='list']//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

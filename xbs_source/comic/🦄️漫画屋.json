@@ -1,0 +1,92 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.mhua5.com",
+        "content": "//img/@data-original",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.mhua5.com",
+        "desc": "//div[@class=\"comic-intro\"]/p[@class=\"intro\"]",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "lastChapterTitle": "//p[@class=\"comic-update\"]/a",
+            "responseFormatType": "html",
+            "bookName": "//p[@class=\"comic__title\"]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.mhua5.com/category/tags/${_type}/page/${params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.mhua5.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[@class=\"comic__title\"]/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n热血::6\n冒险::7\n科幻::8\n霸总::9\n玄幻::10\n校园::11\n修真::12\n搞笑::13\n穿越::14\n后宫::15\n耽美::16\n恋爱::17\n悬疑::18\n恐怖::19\n战争::20\n动作::21\n同人::22\n竞技::23\n励志::24\n架空::25\n灵异::26\n百合::27\n古风::28\n生活::29\n真人::30\n都市::31\n体育::48\n游戏::49\n历史::50\n武侠::51\n漫改::52\n萝莉::53\n剧情::56\n少年::57\n日常::58\n总裁::59\n奇幻::60\n推理::61\n女神::62\n修仙::63\n战斗::64\n青春::65\n逆袭::66\n复仇::67\n高甜::68\n系统::69\n大女主::70\n权谋::71\n脑洞::72\n电竞::73\n治愈::74\n魔法::75\n欢乐向::76\n萌系::77\n爱情::78\n职场::79\n其它::80\n纯爱::81\n格斗::82\n异能::83\n韩漫::84\n其他::85\n少女::86\n漫客栈::87\n少女爱情::88\n新作::89\n蔷薇::90\n彩虹::91\n爆笑::92\n魔幻::93\n轻小说::94\n神鬼::95\n未来::96\n浪漫::97\n秀吉::98\n感动::99\n轻松::100\n科技::101\n神话::102\n仙侠::103\n乡村::104\n四格::105\nAA::106\n东方::107\n温馨::108\n伪娘::109\n唯美::110\n舰娘::111\n音乐舞蹈::112\n异世界::113\n宅系::114\n性转换::115\n家庭::116\n惊悚::117\n高清单行::118\n史诗::119\n娱乐圈::120\n主仆::121\n正剧::122\n短篇::123\n美食::124\n惊奇::125\n搞笑喜剧::126\n侦探::127\n节操::128\n明星::129\n震撼::130\n恐怖灵异::131\n科幻魔幻::132\n恋爱生活::133\n机甲::134\n西方魔幻::135\n恶搞::136\n青年::137\n栏目::138\n血腥::139\n惊险::140\n暗黑::141\n僵尸::142\n宠物::143\n末世::144\n段子::145\n武侠格斗::146\n竞技体育::147\n侦探推理::148\n耽美人生::149\n内涵::150\n爽流::151\n虐心::152\n社会::153\n机战::154\n运动::155\n耽美BL::156\n故事::157\n温情::158\n烧脑::159\n豪门::160\n四格多格::161\n伦理::162\n漫画岛::163\n宫廷::164\n爆笑喜剧::165\n婚姻::166\n颜艺::167\n儿童::168\n故事漫画::169\n装逼::170\n致郁::171\n正能量::172\n绘本::173\n改编::174\n有妖气::175\n乙女::176\n橘味::177\n纠结::178\n音乐::179\n飒漫画::180\nゆり::181\n性转::182\n召唤兽::183\n重生::184\n逆转::185\n暧昧::186\n美型::187\n兄弟情::188\n暖萌::189\n情感::190\n绅士::191\n怀旧::192\n言情::193\n偶像::194\n古装::195\n独家::196\n日漫::197\n魔王::198\n鬼怪::199\n悬疑、惊悚::200\n狐仙::201\n兽耳::202\n病娇::203\n死后世界::204\n幻想::205\n智斗::206\n其他漫画::207\n麦萌::208\n西幻::209\n养成::210\n欢喜::211\n北欧::212\n妖怪::213\n男生::214\n限制级::215\n黑道::216\n基腐::217\n幽默搞笑::218\n浪漫爱情::219\n奇幻冒险::220\n神魔::221\n福瑞::222\n2021大赛::223\n现代::224\nTS::225\n亲情::226\n漫画一番::227\n女王点坑::228\n少儿::229\n美少女::230\n天上空::231\n渡之鸟::232\n魂穿::233\n军阀::234\n婚恋::235\n福利::236\n国漫::237\n断头岛::238\n男穿女::239\n兄弟::240\n异世::241\n三次元::242\n兄妹::243\n婚宠::244\n开挂::245\n宠婚::246\n新妻::247\n吃鸡::248\n枪战::249\n特种兵::250\n经典::251\n幽默::252\n条漫::253\nLOL::254\n日本::255\n猎奇::256\n宅斗::257\n生存::258\n悬疑灵异::259\n未来漫画家::260\n动作冒险::261\nGL::262\n古代宫廷::263\nBL::264\n欧风::265\n历史漫画::266\n末日::267\n奇幻爱情::268\n橘调::269\n欧式宫廷::270\n古风穿越::271\n台湾原创作品::272\n影视化::273"
+            },
+            "cover": "//img/@data-original",
+            "list": "//div[@class=\"cate-comic-list clearfix\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://www.mhua5.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "4",
+    "sourceName": "🦄️漫画屋",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666488037.988590",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "lastChapterTitle": "//p[@class=\"comic-update\"]/a",
+        "responseFormatType": "html",
+        "bookName": "//p[@class=\"comic__title\"]/a",
+        "requestInfo": "https://www.mhua5.com/search/%@keyWord/%@pageIndex",
+        "host": "https://www.mhua5.com",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "detailUrl": "//p[@class=\"comic__title\"]/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"cate-comic-list clearfix\"]/div",
+        "parserID": "DOM",
+        "cover": "//img/@data-original"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.mhua5.com",
+        "list": "//ul[@class=\"chapter__list-box clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

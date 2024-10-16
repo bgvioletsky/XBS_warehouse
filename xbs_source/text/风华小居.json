@@ -1,0 +1,97 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//article[@id=\"article\"] ||@js: return result.replace(/网站即将关闭.*/, \"\") .replace(/为您提供大神.*/, \"\");",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "http://www.fenghuaju.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//div[@class=\"dispc\"]/span ||@js:\nreturn result.replace(/最后更新：/, '');",
+        "lastChapterTitle": "//div[@class=\"dispc\"]/a",
+        "host": "http://www.fenghuaju.com",
+        "cat": "//div[@class=\"info-title\"]/a[2]",
+        "cover": "//img/@data-original",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"info-main-intro\"]/p"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//span[2]",
+            "bookName": "//em[2]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.fenghuaju.com/xs/${_type}/${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.fenghuaju.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//em[2]/a/@href",
+            "moreKeys": {
+                "pageSize": 27,
+                "requestFilters": "_type\n玄幻魔法::xuanhuan\n武侠修真::wuxia\n都市言情::dushixiaoshuo\n历史军事::lishi\n科幻灵异::kehuan\n游戏竞技::youxi\n女生小说::nvsheng\n其他类型::qita"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"border3-1 lastupdate\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "http://www.fenghuaju.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "69",
+    "sourceName": "风华小居",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1663411205.102389",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div/span",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = '/search/';\nreturn {'url':url, 'httpParams':{'searchkey':params.keyWord}, 'forbidCookie':true};",
+        "bookName": "//a/h3",
+        "detailUrl": "//div[@class=\"flex flex-between commend-title\"]/a/@href",
+        "host": "http://www.fenghuaju.com",
+        "cover": "//div[@class=\"category-div\"]//img/@data-original",
+        "responseFormatType": "html",
+        "list": "//div[@class=\"border3 commend flex flex-between category-commend\"]/div",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://www.fenghuaju.com",
+        "list": "//div[@class=\"container border3-2 mt8 mb20\"]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

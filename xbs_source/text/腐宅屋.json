@@ -1,0 +1,134 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://m.fuzhaiwu.net",
+        "content": "//div[@id=\"C-Box\"]",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "wordCount": "//p[@class=\"w\"]/span",
+        "lastChapterTitle": "//div[@class=\"NewChapter\"]/a/text()",
+        "host": "https://m.fuzhaiwu.net",
+        "cat": "//p[@class=\"f\"]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"box\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "cat": "//p/text()",
+            "author": "//p/span ||@js:\nreturn result.replace(/ - /, '');",
+            "responseFormatType": "html",
+            "bookName": "//p/a",
+            "requestInfo": "https://m.fuzhaiwu.net/paihang/click-%@pageIndex.html",
+            "host": "https://m.fuzhaiwu.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20
+            },
+            "detailUrl": "//p/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"Ca_List\"]//li",
+            "_sIndex": 2,
+            "parserID": "DOM"
+        },
+        "分类": {
+            "author": "//p[1]/span/a",
+            "responseFormatType": "html",
+            "bookName": "//p[1]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.fuzhaiwu.net/${_type}-${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.fuzhaiwu.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n耽美::danmei/11\n百合::baihe/22\n言情::yanqing/33\n高辣文::lawen/44"
+            },
+            "detailUrl": "//p[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"tuwen\"]//li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        },
+        "标签": {
+            "cat": "//p/text()",
+            "author": "//p/span ||@js:\nreturn result.replace(/ - /, '');",
+            "responseFormatType": "html",
+            "bookName": "//p/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://m.fuzhaiwu.net/tag/${_type}-${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.fuzhaiwu.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n快穿::kc\n美攻::mg\n肉文::rw\n年下::nx\n年上::ns\n生子::sz\n人兽::rs\n种田::zt\n强强::qq\n穿越::cy\n强受::qs\n反攻::fg\n重生::cs\n双性::sx\nHP::hp\n虐文::nw\n温馨::wx\nNP::np\n父子::fz\n兄弟::xd\n萌文::mw\nBE::be\n末世::ms\n人鱼::ry\n师生::ss\n网游::wy\n诱受::ys\n高干::gg\nABO::abo\n金手指::jsz\n娱乐圈::ylq\nSM调教::sm"
+            },
+            "detailUrl": "//p/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"Ca_List\"]//li",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://m.fuzhaiwu.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "8757",
+    "sourceName": "腐宅屋",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1659169304.686721",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "author": "//p[1]/span/a",
+        "validConfig": "",
+        "requestInfo": "https://m.fuzhaiwu.net/so/%@keyWord-%@pageIndex.html",
+        "bookName": "//p[1]/a",
+        "detailUrl": "//p[1]/a/@href",
+        "host": "https://m.fuzhaiwu.net",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "list": "//div[@class=\"tuwen\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "url": "//a/@href",
+        "requestInfo": "@js:\nreturn params.queryInfo.detailUrl +\"list/\"+ params.pageIndex+\".html\"",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://m.fuzhaiwu.net",
+        "list": "//ul[@id=\"booklistBox\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "sourceType": "text"
+}

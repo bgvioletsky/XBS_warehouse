@@ -1,0 +1,584 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "data/detail/des",
+        "requestInfo": "https://api.doufuyuedu.com/index.php/post/view/%@result?type=read",
+        "host": "https://www.doufuyuedu.com/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "wordCount": "length",
+        "status": "data/topic/finished",
+        "requestInfo": "https://api.doufuyuedu.com/topic/novel?topic_id=%@result",
+        "host": "https://www.doufuyuedu.com/",
+        "cat": "$..tags.name",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "tag": {
+            "cat": "$.tags..name",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "title",
+            "desc": "des",
+            "requestInfo": "@js:\nreturn 'http://api.doufuyuedu.com/search/single?keyword=' + encodeURI(params.filters.keyword) + '&parent_tag=' + encodeURI(params.filters.parenttag) + '&size=20&types=18&smart_filter=1&begin=' + ((params.pageIndex-1)*20) + '&data=%7B%22where%22%3A%5B%7B%22key%22%3A%22cs%7Cchar_num%22%2C%22title%22%3A%22%E5%AD%97%E6%95%B0%22%2C%22list%22%3A%5B%7B%22key' + params.filters.charnum + '%7D%5D%7D%2C%7B%22key%22%3A%22tl%7Cis_finished%22%2C%22title%22%3A%22%E8%BF%9B%E5%BA%A6%22%2C%22list%22%3A%5B%7B%22key' + params.filters.finish + '%7D%5D%7D%2C%7B%22title%22%3A%22%E7%8A%B6%E6%80%81%22%2C%22key%22%3A%22tl%7Cis_vip%22%2C%22list%22%3A%5B%7B%22key' + params.filters.vip + '%7D%5D%7D%5D%2C%22order%22%3A%5B%7B%22key' + params.filters.order + '%22%7D%5D%7D&last=' + ((params.pageIndex-1)*20) + '&lastStart=0&rows=0&size=20&start=' + ((params.pageIndex-1)*20) + '&sub_tag=' + encodeURI(params.filters.subtag);",
+            "host": "https://www.doufuyuedu.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "with_image_w",
+            "validConfig": "",
+            "list": "data/list",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "wordCount": "length",
+            "status": "finished",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "现代耽美",
+                                "value": "现代耽美"
+                            },
+                            {
+                                "title": "古代耽美",
+                                "value": "古代耽美"
+                            },
+                            {
+                                "title": "幻想耽美",
+                                "value": "幻想耽美"
+                            },
+                            {
+                                "title": "百合",
+                                "value": "百合"
+                            },
+                            {
+                                "title": "无cp",
+                                "value": "无cp"
+                            },
+                            {
+                                "title": "言情·最新",
+                                "value": "最新&xx=3"
+                            },
+                            {
+                                "title": "言情·签约",
+                                "value": "签约&xx=3"
+                            },
+                            {
+                                "title": "言情·无CP",
+                                "value": "无CP&xx=3"
+                            },
+                            {
+                                "title": "言情·古代",
+                                "value": "古代&xx=3"
+                            },
+                            {
+                                "title": "言情·民国",
+                                "value": "民国&xx=3"
+                            },
+                            {
+                                "title": "言情·现代",
+                                "value": "现代&xx=3"
+                            },
+                            {
+                                "title": "言情·女尊",
+                                "value": "女尊&xx=3"
+                            },
+                            {
+                                "title": "言情·重生",
+                                "value": "重生&xx=3"
+                            },
+                            {
+                                "title": "言情·种田",
+                                "value": "种田&xx=3"
+                            },
+                            {
+                                "title": "言情·宅斗",
+                                "value": "宅斗&xx=3"
+                            },
+                            {
+                                "title": "言情·轻小说",
+                                "value": "轻小说&xx=3"
+                            },
+                            {
+                                "title": "言情·校园",
+                                "value": "校园&xx=3"
+                            },
+                            {
+                                "title": "言情·仙侠",
+                                "value": "仙侠&xx=3"
+                            },
+                            {
+                                "title": "言情·青春",
+                                "value": "青春&xx=3"
+                            },
+                            {
+                                "title": "言情·古风",
+                                "value": "古风&xx=3"
+                            },
+                            {
+                                "title": "言情·穿越",
+                                "value": "穿越&xx=3"
+                            },
+                            {
+                                "title": "言情·玄幻",
+                                "value": "玄幻&xx=3"
+                            },
+                            {
+                                "title": "言情·悬疑",
+                                "value": "悬疑&xx=3"
+                            },
+                            {
+                                "title": "言情·灵异",
+                                "value": "灵异&xx=3"
+                            },
+                            {
+                                "title": "言情·科幻",
+                                "value": "科幻&xx=3"
+                            },
+                            {
+                                "title": "言情·架空",
+                                "value": "架空&xx=3"
+                            }
+                        ],
+                        "key": "parenttag"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "都市职场",
+                                "value": "都市职场"
+                            },
+                            {
+                                "title": "豪门世家",
+                                "value": "豪门世家"
+                            },
+                            {
+                                "title": "穿越重生",
+                                "value": "穿越重生"
+                            },
+                            {
+                                "title": "娱乐圈",
+                                "value": "娱乐圈"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "青春"
+                            },
+                            {
+                                "title": "网游电竞",
+                                "value": "网游电竞"
+                            },
+                            {
+                                "title": "悬疑推理",
+                                "value": "悬疑推理"
+                            },
+                            {
+                                "title": "宫廷侯爵",
+                                "value": "宫廷侯爵"
+                            },
+                            {
+                                "title": "穿越重生",
+                                "value": "穿越重生"
+                            },
+                            {
+                                "title": "武侠江湖",
+                                "value": "武侠江湖"
+                            },
+                            {
+                                "title": "玄幻修真",
+                                "value": "玄幻修真"
+                            },
+                            {
+                                "title": "布衣种田",
+                                "value": "布衣种田"
+                            },
+                            {
+                                "title": "灵异悬疑",
+                                "value": "灵异悬疑"
+                            },
+                            {
+                                "title": "穿书快穿",
+                                "value": "穿书快穿"
+                            },
+                            {
+                                "title": "星际机甲",
+                                "value": "星际机甲"
+                            },
+                            {
+                                "title": "abo",
+                                "value": "abo"
+                            },
+                            {
+                                "title": "无限流",
+                                "value": "无限流"
+                            },
+                            {
+                                "title": "末世",
+                                "value": "末世"
+                            },
+                            {
+                                "title": "现代都市",
+                                "value": "现代都市"
+                            },
+                            {
+                                "title": "古代生活",
+                                "value": "古代生活"
+                            },
+                            {
+                                "title": "幻想未来",
+                                "value": "幻想未来"
+                            },
+                            {
+                                "title": "最新",
+                                "value": "最新"
+                            },
+                            {
+                                "title": "长篇",
+                                "value": "长篇"
+                            },
+                            {
+                                "title": "现代",
+                                "value": "现代"
+                            },
+                            {
+                                "title": "古代",
+                                "value": "古代"
+                            },
+                            {
+                                "title": "未来",
+                                "value": "未来"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "穿越"
+                            },
+                            {
+                                "title": "架空",
+                                "value": "架空"
+                            },
+                            {
+                                "title": "重生",
+                                "value": "重生"
+                            },
+                            {
+                                "title": "快穿",
+                                "value": "快穿"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "仙侠"
+                            },
+                            {
+                                "title": "剧情",
+                                "value": "剧情"
+                            },
+                            {
+                                "title": "无cp",
+                                "value": "无cp"
+                            },
+                            {
+                                "title": "种田",
+                                "value": "种田"
+                            },
+                            {
+                                "title": "渣攻",
+                                "value": "渣攻"
+                            },
+                            {
+                                "title": "渣攻贱受",
+                                "value": "渣攻贱受"
+                            },
+                            {
+                                "title": "强强",
+                                "value": "强强"
+                            },
+                            {
+                                "title": "情有独钟",
+                                "value": "情有独钟"
+                            },
+                            {
+                                "title": "病弱",
+                                "value": "病弱"
+                            },
+                            {
+                                "title": "互宠",
+                                "value": "互宠"
+                            },
+                            {
+                                "title": "攻宠受",
+                                "value": "攻宠受"
+                            },
+                            {
+                                "title": "受宠攻",
+                                "value": "受宠攻"
+                            },
+                            {
+                                "title": "HE",
+                                "value": "HE"
+                            },
+                            {
+                                "title": "BE",
+                                "value": "BE"
+                            }
+                        ],
+                        "key": "keyword"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": ""
+                            },
+                            {
+                                "title": "虐恋",
+                                "value": "虐恋"
+                            },
+                            {
+                                "title": "甜宠",
+                                "value": "甜宠"
+                            },
+                            {
+                                "title": "正剧",
+                                "value": "正剧"
+                            },
+                            {
+                                "title": "轻松",
+                                "value": "轻松"
+                            },
+                            {
+                                "title": "都市豪门",
+                                "value": "都市豪门"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "都市"
+                            },
+                            {
+                                "title": "总裁",
+                                "value": "总裁"
+                            },
+                            {
+                                "title": "穿越",
+                                "value": "穿越"
+                            },
+                            {
+                                "title": "重生",
+                                "value": "重生"
+                            },
+                            {
+                                "title": "虐恋",
+                                "value": "虐恋"
+                            },
+                            {
+                                "title": "青春",
+                                "value": "青春"
+                            },
+                            {
+                                "title": "电竞",
+                                "value": "电竞"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "悬疑"
+                            },
+                            {
+                                "title": "灵异",
+                                "value": "灵异"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "科幻"
+                            },
+                            {
+                                "title": "宫廷",
+                                "value": "宫廷"
+                            },
+                            {
+                                "title": "宅斗",
+                                "value": "宅斗"
+                            },
+                            {
+                                "title": "玄幻",
+                                "value": "玄幻"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "仙侠"
+                            },
+                            {
+                                "title": "快穿",
+                                "value": "快穿"
+                            },
+                            {
+                                "title": "穿书",
+                                "value": "穿书"
+                            },
+                            {
+                                "title": "末世",
+                                "value": "末世"
+                            },
+                            {
+                                "title": "丧尸",
+                                "value": "丧尸"
+                            }
+                        ],
+                        "key": "subtag"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "%22%3A%20%22-1%22%2C%22title%22%3A%20%22%E4%B8%8D%E9%99%90%22"
+                            },
+                            {
+                                "title": "20万以下",
+                                "value": "%22%3A%20%220-200000%22%2C%22title%22%3A%20%2220%E4%B8%87%E4%BB%A5%E4%B8%8B%22"
+                            },
+                            {
+                                "title": "20万-50万",
+                                "value": "%22%3A%20%22200000-500000%22%2C%22title%22%3A%20%2220%E4%B8%87-50%E4%B8%87%22"
+                            },
+                            {
+                                "title": "50万-100万",
+                                "value": "%22%3A%20%22500000-1000000%22%2C%22title%22%3A%20%2250%E4%B8%87-100%E4%B8%87%22"
+                            }
+                        ],
+                        "key": "charnum"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "%22%3A%20%22-1%22%2C%22title%22%3A%20%22%E5%85%A8%E9%83%A8%22"
+                            },
+                            {
+                                "title": "连载",
+                                "value": "%22%3A%20%220%22%2C%22title%22%3A%20%22%E8%BF%9E%E8%BD%BD%22"
+                            },
+                            {
+                                "title": "完结",
+                                "value": "%22%3A%20%221%22%2C%22title%22%3A%20%22%E5%AE%8C%E7%BB%93%22"
+                            }
+                        ],
+                        "key": "finish"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "不限",
+                                "value": "%22%3A%20%22-1%22%2C%22title%22%3A%20%22%E4%B8%8D%E9%99%90%22"
+                            },
+                            {
+                                "title": "收费",
+                                "value": "%22%3A%20%221%22%2C%22title%22%3A%20%22%E6%94%B6%E8%B4%B9%22"
+                            },
+                            {
+                                "title": "免费",
+                                "value": "%22%3A%20%220%22%2C%22title%22%3A%20%22%E5%85%8D%E8%B4%B9%22"
+                            }
+                        ],
+                        "key": "vip"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "综合排序",
+                                "value": "%22%3A%20%22-1%22%2C%22title%22%3A%20%22%E7%BB%BC%E5%90%88%E6%8E%92%E5%BA%8F%22"
+                            },
+                            {
+                                "title": "收藏量",
+                                "value": "%22%3A%20%22tl%7Ccollect_times%22%2C%22title%22%3A%20%22%E6%94%B6%E8%97%8F%E9%87%8F%22"
+                            },
+                            {
+                                "title": "综合分",
+                                "value": "%22%3A%20%22cs%7Ccompex_score%22%2C%22title%22%3A%20%22%E7%BB%BC%E5%90%88%E5%88%86%22"
+                            },
+                            {
+                                "title": "最新更新",
+                                "value": "%22%3A%20%22tl%7Cupdate_time%22%2C%22title%22%3A%22%E6%9C%80%E6%96%B0%E6%9B%B4%E6%96%B0%22"
+                            }
+                        ],
+                        "key": "order"
+                    }
+                ]
+            }
+        }
+    },
+    "sourceUrl": "https://www.doufuyuedu.com/",
+    "relatedWord": {
+        "validConfig": "",
+        "actionID": "relatedWord",
+        "requestInfo": "https://m.doufuyuedu.com/api/getHotSearch",
+        "title": "l",
+        "host": "https://www.doufuyuedu.com/",
+        "list": "l",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺豆腐小说🔮🍪©️",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666144023.264366",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "$.tags.name",
+        "author": "author",
+        "responseFormatType": "json",
+        "bookName": "title",
+        "desc": "@js:\nreturn result.recommend_text + result.des;",
+        "requestInfo": "@js:\nreturn 'http://api.doufuyuedu.com/search/content?types=18&single_page=1&begin=0&keyword=' + encodeURI(params.keyWord) + '&last=&lastStart=0&order=&rows=0&size=20&start=' + ((params.pageIndex-1)*20);",
+        "host": "https://www.doufuyuedu.com/",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "images/imgUrl",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "data",
+        "status": "status"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "https://api.doufuyuedu.com/novel/chapter_list?novel_id=%@result",
+        "title": "title",
+        "host": "https://www.doufuyuedu.com/",
+        "list": "data/list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id"
+    },
+    "sourceType": "text"
+}

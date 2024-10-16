@@ -1,0 +1,91 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//p[@id='arraydata']||@js:\nlet res = result.replace('\\n', '');\nreturn JSON.stringify({'urls':res.split(',')});",
+        "host": "http://manganatos.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "category": {
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "requestInfo": "https://manganatos.com/mangas/%@filter?orderby=2&page=%@pageIndex",
+            "host": "http://manganatos.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3/a/@href",
+            "cover": "//img/@data-src",
+            "moreKeys": {
+                "pageSize": 16,
+                "requestFilters": "type\nAction::Action\nAdult::Adult\nAdventure::Adventure\nComedy::Comedy\nCooking::Cooking\nDoujinshi::Doujinshi\nDrama::Drama\nEcchi::Ecchi\nFantasy::Fantasy\nbender::Gender+bender\nMORE::#\nHarem::Harem\nHistorical::Historical\nHorror::Horror\nIsekai::Isekai\nJosei::Josei\nManhua::Manhua\nManhwa::Manhwa\narts::Martial+arts\nMature::Mature\nMecha::Mecha\nMedical::Medical\nMystery::Mystery\nshot::One+shot\nPsychological::Psychological\nRomance::Romance\nlife::School+life\nfi::Sci+fi\nSeinen::Seinen\nShoujo::Shoujo\nai::Shoujo+ai\nShounen::Shounen\nai::Shounen+ai\nlife::Slice+of+life\nSmut::Smut\nSports::Sports\nSupernatural::Supernatural\nTragedy::Tragedy\nWebtoons::Webtoons\nYaoi::Yaoi\nYuri::Yuri"
+            },
+            "list": "//div[@class='col-6 col-md-3 badge-pos-1']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺MangaNato🌐🔞",
+    "sourceUrl": "http://manganatos.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665951411.387789",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class='post-content_item mg_genres nofloat']/div[2]/a",
+        "responseFormatType": "html",
+        "author": "//div[@class='post-content_item mg_author nofloat']/div[2]/a|//div[@class='post-content_item mg_artists nofloat']/div[2]/a",
+        "bookName": "//h3/a",
+        "requestInfo": "http://manganatos.com/search?s=%@keyWord&page=%@pageIndex",
+        "host": "http://manganatos.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "moreKeys": {
+            "pageSize": 24
+        },
+        "validConfig": "",
+        "cover": "//img/@data-src",
+        "parserID": "DOM",
+        "list": "//div[@class='row c-tabs-item__content']",
+        "status": "//div[@class='post-content_item mg_status nofloat']/div[2]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':''};",
+        "title": "//a",
+        "host": "http://manganatos.com/",
+        "list": "//li[@class='wp-manga-chapter']||@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

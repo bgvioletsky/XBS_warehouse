@@ -1,0 +1,108 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://cn.godamanga.com",
+        "content": "//div[@class=\"text-left\"]//img/@src",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "//div[@class=\"summary-content\"]/div/a[4]",
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://cn.godamanga.com",
+        "cat": "//div[@class=\"genres-content\"]/a[position()<last()]\n||@js:\nreturn result.replace(/\\n/g,\",\")",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"summary_content\"]/div[4]/div[@class=\"summary-content\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "热门更新": {
+            "responseFormatType": "html",
+            "bookName": "//h3//a\n||@js:\nreturn result.replace(/\\n|\\t/g,\"\")",
+            "requestInfo": "https://cn.godamanga.com/dayup/%@pageIndex/",
+            "host": "https://cn.godamanga.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 20
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"elementor-widget-container\"]/div/article",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "//img/@data-src"
+        },
+        "人气推荐": {
+            "responseFormatType": "html",
+            "bookName": "//h3//a\n||@js:\nreturn result.replace(/\\n|\\t/g,\"\")",
+            "requestInfo": "https://cn.godamanga.com/hots/%@pageIndex/",
+            "host": "https://cn.godamanga.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 20
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"elementor-widget-container\"]/div/article",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//img/@data-src"
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "G站漫画",
+    "sourceUrl": "https://cn.godamanga.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "asaoge",
+    "lastModifyTime": "1665896202.018261",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://cn.godamanga.com/page/%@pageIndex/?s=%@keyWord",
+        "detailUrl": "//h3/a/@href",
+        "bookName": "//h3//a\n||@js:\nreturn result.replace(/\\n|\\t/g,\"\")",
+        "host": "https://cn.godamanga.com",
+        "moreKeys": {
+            "maxPage": 20
+        },
+        "list": "//div[@class=\"elementor-widget-container\"]/div/article",
+        "cover": "//img/@data-src",
+        "parserID": "DOM",
+        "responseFormatType": "html"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a/text()\n||@js:\nreturn result.replace(/\\t/g,\"\")",
+        "host": "https://cn.godamanga.com",
+        "list": "//li[contains(@class,\"wp-manga-chapter\")]\n||@js:\nreturn result.reverse()",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

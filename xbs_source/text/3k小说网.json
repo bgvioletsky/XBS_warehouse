@@ -1,0 +1,93 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.3kxs.net",
+        "content": "//p[@class=\"Text\"]/text()",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//dd[2]/p/a[2]/text()",
+            "responseFormatType": "html",
+            "author": "//dd[2]/p/a[1]/text()",
+            "lastChapterTitle": "//dd[2]/p/a[3]/text()",
+            "bookName": "//h3/a[1]/text()",
+            "requestInfo": "@js:\nlet {_type,_list,_status,_top}=params.filters\nlet url=`http://www.3kxs.net/type/${_type}_${_list}_${_status}_${_top}${params.pageIndex}.html`;\n\nreturn {url:url}",
+            "host": "http://www.3kxs.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻小说::1\n仙侠小说::2\n都市小说::3\n职场小说::4\n历史小说::5\n军事小说::6\n科幻小说::7\n游戏小说::8\n灵异小说::9\n短篇小说::10\n现言小说::11\n古言小说::12\n幻侠小说::13\n穿越小说::14\n总裁小说::15\n浪漫小说::16\n耽美小说::17\n\n_list\n全部::0\n500章以下::1\n500章-1000章::2\n1000章以上::3\n\n_status\n全部::0\n连载中::1\n已完本::2\n\n_top\n总点击::allvisit_\n月点击::monthvisit_\n日点击::dayvisit_\n总推荐::votenum_\n总下载::downnum_\n总收藏::marknum_\n最近更新::lastupdate_\n最新入库::postdate_"
+            },
+            "cover": "//dd[1]/a/img/@src",
+            "validConfig": "",
+            "list": "//div[@class=\"con\"]/dl",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//h3/a[1]/@href",
+            "status": "//dd[2]/p/text()[4]"
+        }
+    },
+    "sourceUrl": "http://www.3kxs.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "3k小说网",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1652410859.249021",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//tr/td[3]",
+        "lastChapterTitle": "//tr/td[2]/a",
+        "responseFormatType": "html",
+        "bookName": "//tr/td[1]/a",
+        "requestInfo": "@js:\nlet url = 'http://www.3kxs.net/novelsearch/search/result.html';\nreturn {'url':url, 'POST':true, 'httpParams':{'searchkey':params.keyWord}};",
+        "host": "http://www.3kxs.net",
+        "actionID": "searchBook",
+        "detailUrl": "//tr/td[1]/a/@href",
+        "moreKeys": {
+            "maxPage": 200
+        },
+        "validConfig": "",
+        "list": "//tr",
+        "parserID": "DOM",
+        "status": "//tr/td[5]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a/text()",
+        "host": "http://www.3kxs.net",
+        "list": "//dl[@class=\"book\"]/dd [position()>3]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

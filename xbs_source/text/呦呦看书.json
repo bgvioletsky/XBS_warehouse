@@ -1,0 +1,130 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//article[@class=\"content\"]/text()",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": hh, forbidCookie:true,cacheTime:3600};",
+        "moreKeys": {
+            "maxPage": 2
+        },
+        "host": "https://www.youyoukanshu.com",
+        "httpHeaders": {
+            "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Upgrade-Insecure-Requests": "1",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//div[@class=\"page hidden-xs hidden-sm\"]/a[3]/@href"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "cat": "//table/tbody/tr[1]/td/text()",
+        "lastChapterTitle": "//p[@class=\"pull-left\"]/a/text()",
+        "responseFormatType": "html",
+        "httpHeaders": {
+            "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Upgrade-Insecure-Requests": "1",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+        },
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": hh, forbidCookie:true,cacheTime:3600};",
+        "host": "https://www.youyoukanshu.com",
+        "actionID": "bookDetail",
+        "desc": "//div[@class=\"intro\"]/text()",
+        "cover": "//div[@class=\"bookcover col-lg-3 col-md-3 col-sm-3 col-xs-4\"]/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "status": "//table/tbody/tr[3]/td/text()"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//td[3]/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//td[2]/a/text()",
+            "bookName": "//td[1]/a/text()",
+            "httpHeaders": {
+                "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+                "Upgrade-Insecure-Requests": "1",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.youyoukanshu.com${_type}/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.youyoukanshu.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻魔法::/sort/xuanhuanmofa\n武侠修真::/sort/wuxiaxiuzhen\n都市言情::/sort/dushiyanqing\n历史军事::/sort/lishijunshi\n恐怖灵异::/sort/kongbulingyi\n其他类型::/sort/qita"
+            },
+            "detailUrl": "//td[1]/a/@href",
+            "validConfig": "",
+            "list": "//section[@class=\"container top\"]/div/div[1]/table/tbody/tr",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.youyoukanshu.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9",
+    "sourceName": "呦呦看书",
+    "httpHeaders": {
+        "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Upgrade-Insecure-Requests": "1",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1662016598.258531",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//td[3]/text()",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//td[2]/a/text()",
+        "bookName": "//td[1]/a/text()",
+        "httpHeaders": {
+            "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Upgrade-Insecure-Requests": "1",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+        },
+        "requestInfo": "@js:\nlet url=config.host+\"/search.php\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36\"\n};\n\nlet hp= {'search':params.keyWord};\n\nreturn {'url':url, 'POST':false, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "https://www.youyoukanshu.com",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]/a/@href",
+        "validConfig": "",
+        "list": "//section[@class=\"container top\"]/div/div[1]/table/tbody/tr",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1\"\n};\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": hh, forbidCookie:true,cacheTime:3600};",
+        "title": "//a/text()",
+        "host": "https://www.youyoukanshu.com",
+        "httpHeaders": {
+            "Accept-Language": "zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Upgrade-Insecure-Requests": "1",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+        },
+        "list": "//section[@class=\"container booklist\"]/div/article/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

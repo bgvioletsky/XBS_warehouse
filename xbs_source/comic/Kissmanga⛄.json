@@ -1,0 +1,256 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "weight": "10006",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, jsparams, result) {\n\n    let emo = ['⛄️','🧸','🐶','☕️','🐣','🐧','🚀', '🦅','🐼','🐷','🐯','🦉','🐮','🐹'];\n\n  \n\n    let list = result.list.reverse();\n  list= list.map(function(item,index,arr){\n\treturn {\"title\":item.title += emo[0],\"url\":item.url};\n});\n    return {\"list\": list};\n}",
+        "title": "//a||@js:\nreturn result.replace(/[\\s]{2,}/gi,'');",
+        "host": "https://kissmanga.org",
+        "list": "//div[contains(@class,\"episodeList full\")]//h3",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "sourceName": "Kissmanga⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://kissmanga.org",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1642048464.748331",
+    "searchBook": {
+        "lastChapterTitle": "//div[2]/a ||@js:\nreturn result.trim();",
+        "responseFormatType": "html",
+        "bookName": "//div[1]/a",
+        "requestInfo": "https://kissmanga.org/manga_list?page=%@pageIndex&action=search&q=%@keyWord",
+        "host": "https://kissmanga.org",
+        "actionID": "searchBook",
+        "detailUrl": "//div[1]/a/@href",
+        "cover": "//div[1]/a/@href ||@js:\nlet tem = result.split(/\\//);\nlet img = config.host + '/mangaimage/'+tem[2]+'.jpg';\nreturn img;",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[contains(@class,\"item_movies_in_cat\")]",
+        "moreKeys": {
+            "pageSize": 50
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"centerDivVideo\"]//img/@src ||@js:\nlet reg = /http[^\\s]+[jpg|png|webp|bmp]/gi;\nlet tem = result.match(reg);\n\nreturn tem;",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\t//params.nativeTool.log(result);\n\treturn result.content.join('\\n');\n}",
+        "host": "https://kissmanga.org",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "英文漫画",
+    "password": "KksnoyunaHonʌ_ə34",
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//div[@id=\"leftside\"]//div[@class=\"static_single\"]//p[1]",
+        "host": "https://kissmanga.org",
+        "cat": "//div[@id=\"leftside\"]//p[3]//a/@title",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"leftside\"]//div[@class=\"summary\"] | //div[@id=\"leftside\"]//p[1]/a ||@js:\nreturn result.replace(/[\\s]{2,}/gi,'@');"
+    },
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[2]/a ||@js:\nreturn result.trim();",
+            "bookName": "//div[1]/a",
+            "requestInfo": "https://kissmanga.org/manga_list?page=%@pageIndex&action=genre&q=%@filter",
+            "host": "https://kissmanga.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[1]/a/@href",
+            "moreKeys": {
+                "pageSize": "50",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "Action Manga.",
+                                "value": "Action"
+                            },
+                            {
+                                "title": "Adventure Manga.",
+                                "value": "Adventure"
+                            },
+                            {
+                                "title": "Comedy Manga.",
+                                "value": "Comedy"
+                            },
+                            {
+                                "title": "Cooking Manga.",
+                                "value": "Cooking"
+                            },
+                            {
+                                "title": "Doujinshi Manga.",
+                                "value": "Doujinshi"
+                            },
+                            {
+                                "title": "Drama Manga.",
+                                "value": "Drama"
+                            },
+                            {
+                                "title": "Fantasy Manga.",
+                                "value": "Fantasy"
+                            },
+                            {
+                                "title": "Gender bender Manga.",
+                                "value": "Gender bender"
+                            },
+                            {
+                                "title": "Harem Manga.",
+                                "value": "Harem"
+                            },
+                            {
+                                "title": "Historical Manga.",
+                                "value": "Historical"
+                            },
+                            {
+                                "title": "Horror Manga.",
+                                "value": "Horror"
+                            },
+                            {
+                                "title": "Isekai Manga.",
+                                "value": "Isekai"
+                            },
+                            {
+                                "title": "Josei Manga.",
+                                "value": "Josei"
+                            },
+                            {
+                                "title": "Manhua Manga.",
+                                "value": "Manhua"
+                            },
+                            {
+                                "title": "Manhwa Manga.",
+                                "value": "Manhwa"
+                            },
+                            {
+                                "title": "Martial arts Manga.",
+                                "value": "Martial arts"
+                            },
+                            {
+                                "title": "Mature Manga.",
+                                "value": "Mature"
+                            },
+                            {
+                                "title": "Mecha Manga.",
+                                "value": "Mecha"
+                            },
+                            {
+                                "title": "Medical Manga.",
+                                "value": "Medical"
+                            },
+                            {
+                                "title": "Mystery Manga.",
+                                "value": "Mystery"
+                            },
+                            {
+                                "title": "One shot Manga.",
+                                "value": "One shot"
+                            },
+                            {
+                                "title": "Psychological Manga.",
+                                "value": "Psychological"
+                            },
+                            {
+                                "title": "Romance Manga.",
+                                "value": "Romance"
+                            },
+                            {
+                                "title": "School life Manga.",
+                                "value": "School life"
+                            },
+                            {
+                                "title": "Sci fi Manga.",
+                                "value": "Sci fi"
+                            },
+                            {
+                                "title": "Seinen Manga.",
+                                "value": "Seinen"
+                            },
+                            {
+                                "title": "Shoujo Manga.",
+                                "value": "Shoujo"
+                            },
+                            {
+                                "title": "Shoujo ai Manga.",
+                                "value": "Shoujo ai"
+                            },
+                            {
+                                "title": "Shounen Manga.",
+                                "value": "Shounen"
+                            },
+                            {
+                                "title": "Shounen ai Manga.",
+                                "value": "Shounen ai"
+                            },
+                            {
+                                "title": "Slice of life Manga.",
+                                "value": "Slice of life"
+                            },
+                            {
+                                "title": "Smut Manga.",
+                                "value": "Smut"
+                            },
+                            {
+                                "title": "Sports Manga.",
+                                "value": "Sports"
+                            },
+                            {
+                                "title": "Supernatural Manga.",
+                                "value": "Supernatural"
+                            },
+                            {
+                                "title": "Tragedy Manga.",
+                                "value": "Tragedy"
+                            },
+                            {
+                                "title": "Webtoons Manga.",
+                                "value": "Webtoons"
+                            },
+                            {
+                                "title": "Yaoi Manga.",
+                                "value": "Yaoi"
+                            },
+                            {
+                                "title": "Yuri Manga.",
+                                "value": "Yuri"
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "//div[1]/a/@href ||@js:\nlet tem = result.split(/\\//);\nlet img = config.host + '/mangaimage/'+tem[2]+'.jpg';\nreturn img;",
+            "parserID": "DOM",
+            "list": "//div[contains(@class,\"item_movies_in_cat\")]"
+        }
+    }
+}

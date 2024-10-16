@@ -1,0 +1,77 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//audio//@src",
+        "requestInfo": "@js:\nreturn {'url':result, 'webView':''};",
+        "host": "https://mixes.cloud/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "top 20 mixes": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://mixes.cloud/",
+            "bookName": "//strong",
+            "detailUrl": "//a/@href",
+            "host": "https://mixes.cloud/",
+            "list": "//blockquote[@class='post']",
+            "cover": "//img/@src",
+            "responseFormatType": "html",
+            "parserID": "DOM"
+        }
+    },
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺Mixes.Cloud",
+    "sourceUrl": "https://mixes.cloud/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666103512.983786",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://mixes.cloud/?q=%@keyWord&page=%@pageIndex",
+        "bookName": "//strong",
+        "detailUrl": "//a/@href",
+        "host": "https://mixes.cloud/",
+        "list": "//blockquote[@class='post']",
+        "cover": "//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://mixes.cloud/",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n\tlet chapterInfo = {};\n\tchapterInfo.title = params.queryInfo.bookName;\n\tchapterInfo.url = params.queryInfo.detailUrl;\n\tlist.push(chapterInfo);\n\n\treturn {'list':list};\n}",
+        "actionID": "chapterList"
+    }
+}

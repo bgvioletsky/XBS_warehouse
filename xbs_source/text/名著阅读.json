@@ -1,0 +1,157 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://b.guidaye.com",
+        "content": "//div[@id=\"nr1\"]",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "host": "https://b.guidaye.com",
+        "cat": "//div[@class=\"book-describe\"]/p[2]/a/text()",
+        "cover": "//div[@class=\"book-img\"]/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"describe-html\"]/p/text()",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "经典名著": {
+            "responseFormatType": "html",
+            "bookName": "//li/a[2]/h2/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://b.guidaye.com${_type}`;\n\nreturn {url:url}",
+            "host": "https://b.guidaye.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//li/a[2]/@href",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": "_type\n传记小说::/zhuanji/\n古典小说::/gudian/\n国学经典::/guoxue/\n外国小说::/waiguo/\n创业小说::/chuangye/\n互联网::/hulianwang/\n科普小说::/kepu/\n散文随笔::/sanwen/\n学习小说::/xuexi/\n诗集小说::/shiji/\n心理学::/xinlixue/\n哲学小说::/zhexue/\n健康与美食::/jkms/\n纪实小说::/jishi/\n畅销书::/changxiao/"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"pop-books2 clearfix\"]/ol/li",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "cover": "//li/a[1]/img/@src"
+        },
+        "男生小说": {
+            "responseFormatType": "html",
+            "bookName": "//li/a[2]/h2/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://b.guidaye.com${_type}`;\n\nreturn {url:url}",
+            "host": "https://b.guidaye.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//li/a[2]/@href",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": "_type\n武侠小说::/wuxia/\n恐怖小说::/kongbu/\n道士小说::/daoshi/\n盗墓小说::/daomu/\n科幻小说::/kehuan/\n官场小说::/guanchang/\n网络小说::/wangluo/\n逻辑思维::/luojisiwei/"
+            },
+            "validConfig": "",
+            "list": "//div[@class=\"pop-books2 clearfix\"]/ol/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "//li/a[1]/img/@src"
+        },
+        "女生小说": {
+            "responseFormatType": "html",
+            "bookName": "//li/a[2]/h2/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://b.guidaye.com${_type}`;\n\nreturn {url:url}",
+            "host": "https://b.guidaye.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": "_type\n言情小说::/yanqing/\n都市小说::/dushi/\n青春小说::/qingchun/\n文化小说::/wenhua/\n女性小说::/nvxing/\n现代小说::/xiandai/\n儿童小说::/ertong/\n育儿小说::/yuer/\n灵异悬疑::/lingyi/\n旅游小说::/lvyou/"
+            },
+            "cover": "//li/a[1]/img/@src",
+            "validConfig": "",
+            "list": "//div[@class=\"pop-books2 clearfix\"]/ol/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//li/a[2]/@href"
+        },
+        "古典小说": {
+            "responseFormatType": "html",
+            "bookName": "//li/a[2]/h2/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://b.guidaye.com${_type}`;\n\nreturn {url:url}",
+            "host": "https://b.guidaye.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//li/a[2]/@href",
+            "cover": "//li/a[1]/img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": "_type\n四大名著::/sdmz/\n才子佳人::/czjr/\n谴责讽刺::/qzfc/\n神魔志怪::/smzg/\n侠义小说::/xiayi/\n公案小说::/gongan/\n历史演义::/lsyy/\n笔记小说::/biji/"
+            },
+            "_sIndex": 3,
+            "list": "//div[@class=\"pop-books2 clearfix\"]/ol/li",
+            "parserID": "DOM"
+        },
+        "国学典籍": {
+            "responseFormatType": "html",
+            "bookName": "//li/a[2]/h2/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://b.guidaye.com${_type}`;\n\nreturn {url:url}",
+            "host": "https://b.guidaye.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//li/a[2]/@href",
+            "cover": "//li/a[1]/img/@src",
+            "validConfig": "",
+            "moreKeys": {
+                "pageSize": 100,
+                "requestFilters": "_type\n诸子百家::/zzbj/\n蒙学典籍::/mengxue/\n易经书籍::/yijing/\n古代兵书::/bingshu/\n道教书籍::/daojiao/\n史书典籍::/shishu/\n佛经典籍::/fojing/\n医书大全::/ysdq/"
+            },
+            "_sIndex": 4,
+            "list": "//div[@class=\"pop-books2 clearfix\"]/ol/li",
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://b.guidaye.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "名著阅读",
+    "desc": "oaix",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1652251278.220119",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "requestInfo": "@js:\nlet url = 'https://b.guidaye.com/e/search/index.php';\nreturn {'url':url, 'POST':true, 'httpParams':{'keyboard':params.keyWord, 'show':'title', 'tempid':1, 'tbname':''}};",
+        "bookName": "//li/span[2]/a",
+        "detailUrl": "//li/span[2]/a/@href",
+        "host": "https://b.guidaye.com",
+        "list": "//ul[@class=\"search-novel-list\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//li/a/text()",
+        "host": "https://b.guidaye.com",
+        "list": "//div[@class=\"book-list mb clearfix\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//li/a/@href"
+    },
+    "sourceType": "text"
+}

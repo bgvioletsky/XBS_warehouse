@@ -1,0 +1,204 @@
+{
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//td[3]",
+            "lastChapterTitle": "//td[2]",
+            "bookName": "//td[1]/a",
+            "requestInfo": "@js:\nlet url = \"https://www.19826.net/list/\";\nif(params.filters.class!=\"\"){\nif(params.filters.class!=\"wanben\"){\n\turl += params.filters.class +'/'+params.pageIndex+'.html';\n}else {\n      url = \"https://www.19826.net/\"+ params.filters.class+'/'+params.pageIndex+'.html';\n}\n}\nreturn encodeURI(url);",
+            "host": "https://www.19826.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[1]/a/@href",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻魔法",
+                                "value": "1"
+                            },
+                            {
+                                "title": "仙侠修真",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "4"
+                            },
+                            {
+                                "title": "网游动漫",
+                                "value": "5"
+                            },
+                            {
+                                "title": "女频科幻",
+                                "value": "6"
+                            },
+                            {
+                                "title": "完本小说",
+                                "value": "wanben"
+                            }
+                        ],
+                        "key": "class"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "//td[1]/a/@href ||@js:\n\nvar item = result.match(/\\/(\\d+)\\//);\nlet id1 = item[1];\nvar id2 = parseInt(id1/1000);\nreturn 'https://www.19826.net/image/'+id2+'/'+id1+'/'+id1+'s.jpg';",
+            "parserID": "DOM",
+            "list": "//table//tr[position()>1]",
+            "status": "//td[5]"
+        },
+        "排行": {
+            "responseFormatType": "html",
+            "author": "//td[3]",
+            "lastChapterTitle": "//td[2]",
+            "bookName": "//td[1]/a",
+            "requestInfo": "@js:\nlet url = \"https://www.19826.net/top/\";\nif(params.filters.sort!=\"\"){\n\turl += params.filters.sort +'/'+params.pageIndex+'.html';\n}\nreturn encodeURI(url);",
+            "host": "https://www.19826.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//td[1]/a/@href",
+            "moreKeys": {
+                "pageSize": "30",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "总推荐榜",
+                                "value": "allvote"
+                            },
+                            {
+                                "title": "月排行榜",
+                                "value": "monthvisit"
+                            },
+                            {
+                                "title": "月推荐榜",
+                                "value": "monthvote"
+                            },
+                            {
+                                "title": "周排行榜",
+                                "value": "weekvisit"
+                            },
+                            {
+                                "title": "周推荐榜",
+                                "value": "weekvote"
+                            },
+                            {
+                                "title": "最新入库",
+                                "value": "postdate"
+                            },
+                            {
+                                "title": "最近更新",
+                                "value": "lastupdate"
+                            },
+                            {
+                                "title": "总收藏榜",
+                                "value": "goodnum"
+                            },
+                            {
+                                "title": "字数排行",
+                                "value": "size"
+                            },
+                            {
+                                "title": "本站推荐",
+                                "value": "toptime"
+                            }
+                        ],
+                        "key": "sort"
+                    }
+                ]
+            },
+            "validConfig": "",
+            "cover": "//td[1]/a/@href ||@js:\n\nvar item = result.match(/\\/(\\d+)\\//);\nlet id1 = item[1];\nvar id2 = parseInt(id1/1000);\nreturn 'https://www.19826.net/image/'+id2+'/'+id1+'/'+id1+'s.jpg';",
+            "parserID": "DOM",
+            "list": "//table//tr[position()>1]",
+            "status": "//td[5]"
+        }
+    },
+    "desc": "Ks🔍✨",
+    "weight": "9999",
+    "miniAppVersion": "2.52.0",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.19826.net",
+        "list": "//div[@id=\"list-chapterAll\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "19826文学⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://www.19826.net",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1636532055.511061",
+    "searchBook": {
+        "author": "//td[3]",
+        "lastChapterTitle": "//td[2]",
+        "responseFormatType": "html",
+        "bookName": "//td[1]//a",
+        "desc": "//p[@class=\"intro\"]",
+        "requestInfo": "https://www.19826.net/?a=search&keyword=%@keyWord&page=%@pageIndex",
+        "host": "https://www.19826.net",
+        "actionID": "searchBook",
+        "detailUrl": "//td[1]//a//@href",
+        "cover": "//td[1]//a/@href ||@js:\nvar item = result.match(/\\/(\\d+)\\//);\nlet id1 = item[1];\nvar id2 = parseInt(id1/1000);\nreturn 'https://www.19826.net/image/'+id2+'/'+id1+'/'+id1+'s.jpg';",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//td[4]",
+        "moreKeys": {
+            "pageSize": 29
+        },
+        "list": "//table//tr[position()>1]",
+        "status": "//td[6]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"content\"]//div[@class=\"panel-body\"]/div ||@js:\n\nfunction typeset(str)//文字排版正则替换\n{\n //修正不规则标点\n str=str.replace(/,/gi,\"，\");\n str=str.replace(/\\.\\r/gi,\"。\\r\");\n str=str.replace(/．/gi,\"。\");\n str=str.replace(/;/gi,\"；\");\n str=str.replace(/\\\"/gi,\"＂\");\n str=str.replace(/\\'/gi,\"｀\");\n str=str.replace(/!/gi,\"！\");\n str=str.replace(/\\(/gi,\"（\");\n str=str.replace(/\\)/gi,\"）\");\n str=str.replace(/【/gi,\"「\");\n str=str.replace(/『/gi,\"「\");\n str=str.replace(/】/gi,\"」\");\n str=str.replace(/』/gi,\"」\");\nstr=str.replace(/<br>/gi,\"\");\n //str=\"\\n\"+str;\n //str=str.replace(/[\\n|\\r]+[ |　|\\t]*/gi,\"\\n\\n　　\");\n str=str.replace(\"\\n\\n\",\"\");\nlet regstr = /注意：显示本章节全部内容，请点击屏幕退出浏览器转码模式，可催更及下载TXT文件！\\s*|-->>本章未完，点击下一页继续阅读\\s*\\n/gim;\n str=str.replace(new RegExp(regstr),\"\");\n return str;\n}\n\nreturn typeset(result);",
+        "requestInfo": "@js:\n\nlet det = params.queryInfo.url.replace(/\\\\/,'');\nlet detail = det.split('.html')[0];\nlet url = detail;\nif(params.pageIndex <= 1){\n    url += '.html';\n}else {\n    url += '_'+ params.pageIndex + '.html';\n}\nreturn encodeURI(url);",
+        "moreKeys": {
+            "pageSize": 1
+        },
+        "host": "https://www.19826.net",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//h1[@class=\"readTitle\"] ||@js:\nlet reg = /\\(\\d+\\/(\\d+)\\)/gim;\nlet tem = reg.exec(result);\nlet det = params.queryInfo.url.replace(/\\\\/,'');\nlet detail = det.split('.html')[0];\nlet url =  detail;\nlet next = '';\nif(params.pageIndex<tem[1]){\nnext = url + '_'+(params.pageIndex+1)+'.html';\n\n}\nreturn next;"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "ks123",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.19826.net",
+        "desc": "//p[@id=\"bookIntro\"]",
+        "actionID": "bookDetail"
+    }
+}

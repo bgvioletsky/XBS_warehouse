@@ -1,0 +1,148 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn {\n    'url':result,\n    'forbidCookie':true\n};",
+        "title": "//a/text()",
+        "host": "http://m.ychy.com",
+        "httpHeaders": {
+            "Referer": "http://m.ychy.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/31.0.1650.18 Mobile/11B554a Safari/8536.25",
+            "cookie": "virtualwall=vsid=2740c1aeb191ac4df4d31f7a19822622;"
+        },
+        "list": "//div[@id=\"playlist\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "sourceName": "海洋听书",
+    "sourceType": "audio",
+    "sourceUrl": "http://m.ychy.com",
+    "httpHeaders": {
+        "Referer": "http://m.ychy.com/",
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/31.0.1650.18 Mobile/11B554a Safari/8536.25",
+        "cookie": "virtualwall=vsid=2740c1aeb191ac4df4d31f7a19822622;"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665860167.720364",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "responseFormatType": "html",
+        "author": "//div[@class=\"author\"]/text()",
+        "bookName": "//h4[@class=\"bookname\"]/text()",
+        "httpHeaders": {
+            "Referer": "http://m.ychy.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/31.0.1650.18 Mobile/11B554a Safari/8536.25",
+            "cookie": "virtualwall=vsid=2740c1aeb191ac4df4d31f7a19822622;"
+        },
+        "requestInfo": "/search.asp?page=%@pageIndex&searchword=%@keyWord&searchtype=-1",
+        "host": "http://m.ychy.com",
+        "actionID": "searchBook",
+        "detailUrl": "//@bookid|| @js:\nreturn `/book/${result}.html`;",
+        "cover": "//img/@orgsrc",
+        "validConfig": "",
+        "list": "//div[@class=\"book_slist\"]/div",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"intro_line\"]/text()[last()]",
+        "moreKeys": {
+            "pageSize": 12
+        },
+        "status": "//div[@class=\"update\"]/text()[last()]||@js:\nreturn result.replace(/[\\s]+/g,'');"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nfunction getHtmlParas(url, str) {\r    var ss = url;\r    var sid = ss.split('-');\r    var n = sid.length;\r    var vid = sid[n - 1].split(\".\")[0];\r    var pid = 0;\r    var sArr = new Array(pid, vid);\r    return sArr;\r}\r\rfunction getPlayUrl(pid, vid) {\r    vid = vid - 1;\r    var sStr = VideoListJson[pid][1][vid];\r    v_n = VideoListJson[pid][1].length - 1;\r    var uArr = sStr.split(\"$\");\r    return uArr[1];\r}\r\reval(result.match(/var.VideoListJson\\=.*?\\]\\]\\]/g)[0]);\rlet param = getHtmlParas(params.queryInfo.url, \".html\");\nlet url = encodeURI(getPlayUrl(param[0], param[1]));\n\rreturn JSON.stringify({\n    'url': url,\n    'httpHeaders': config.httpHeaders,\n\n'forbidCache': true,\n\n});",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nreturn {\n    'url':result,\n    'forbidCookie':true\n};",
+        "host": "http://m.ychy.com",
+        "httpHeaders": {
+            "Referer": "http://m.ychy.com/",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/31.0.1650.18 Mobile/11B554a Safari/8536.25",
+            "cookie": "virtualwall=vsid=2740c1aeb191ac4df4d31f7a19822622;"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "张益达",
+    "shudanList": {},
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "status": "//div[@class=\"info\"]/p/span[1]/text()",
+            "responseFormatType": "html",
+            "author": "//span[@class=\"author\"]/text()",
+            "bookName": "//span[@class=\"tit\"]/text()",
+            "desc": "//div[@class=\"desc\"]/text()",
+            "httpHeaders": {
+                "Referer": "http://m.ychy.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/31.0.1650.18 Mobile/11B554a Safari/8536.25",
+                "cookie": "virtualwall=vsid=2740c1aeb191ac4df4d31f7a19822622;"
+            },
+            "requestInfo": "@js:\n\nlet { filter } = params.filters;\nlet url= `${filter}_${params.pageIndex}.html`\n\n\nreturn {\n    'url':url,\n    'forbidCookie':true\n};",
+            "moreKeys": {
+                "pageSize": 12,
+                "requestFilters": "网络玄幻::/list/52\n恐怖悬疑::/list/17\n评书下载::/list/3\n儿童读物::/list/4\n相声戏曲::/list/7\n传统武侠::/list/12\n都市言情::/list/13\n历史军事::/list/15\n人物传记::/list/16\n广播剧::/list/18\n百家讲坛::/list/32\n有声文学::/list/41\n探险盗墓::/list/45\n职场商战::/list/81"
+            },
+            "host": "http://m.ychy.com",
+            "cover": "//img/@src",
+            "actionID": "bookWorld",
+            "list": "//ul[@class=\"list-ul\"]/li",
+            "parserID": "DOM",
+            "detailUrl": "//a/@href||@js:\nreturn result.trim();",
+            "_sIndex": 0,
+            "validConfig": "",
+            "wordCount": "//div[@class=\"info\"]/p/span[1]/text()"
+        },
+        "排行": {
+            "status": "//div[@class=\"info\"]/p/span[1]/text()",
+            "responseFormatType": "html",
+            "author": "//span[@class=\"author\"]/text()",
+            "bookName": "//span[@class=\"tit\"]/text()",
+            "desc": "//div[@class=\"desc\"]/text()",
+            "httpHeaders": {
+                "Referer": "http://m.ychy.com/",
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) CriOS/31.0.1650.18 Mobile/11B554a Safari/8536.25",
+                "cookie": "virtualwall=vsid=2740c1aeb191ac4df4d31f7a19822622;"
+            },
+            "requestInfo": "@js:\nlet { filter } = params.filters;\nlet pageIndex = params.pageIndex;\nlet url = `${filter}${pageIndex == 1 ? '' : pageIndex}.html`;\nreturn {\n    'url':url,\n    'forbidCookie':true\n};;",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "推荐::/best\n最新::/new"
+            },
+            "host": "http://m.ychy.com",
+            "cover": "//img/@src",
+            "actionID": "bookWorld",
+            "list": "//ul[@class=\"list-ul\"]/li",
+            "parserID": "DOM",
+            "detailUrl": "//a/@href||@js:\nreturn result.trim();",
+            "_sIndex": 1,
+            "validConfig": "",
+            "wordCount": "//div[@class=\"info\"]/p/span[1]/text()"
+        }
+    }
+}

@@ -1,0 +1,244 @@
+{
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "weight": "10006",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a/h4 |//a/span ||@js:\nreturn result.replace('\\n',' @ ');",
+        "host": "https://beta.lovehug.net",
+        "list": "//main//ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "sourceName": "LoveHug⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://beta.lovehug.net",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1640162158.478842",
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\tlet reg = /script id=\"__NEXT_DATA__\"[^>]*>(.*?)<\\//gim;\n\tlet tem = reg.exec(result);\n      let listObj = JSON.parse(tem[1]).props.pageProps.content;\n      //params.nativeTool.log(listObj);\n      for(let i=0;i<listObj.length;i++){\n            let bookInfo = {};\n\t\tbookInfo.detailUrl = config.host+'/post/'+listObj[i].slug;\n\t\tbookInfo.bookName = listObj[i].name;\n\t\tbookInfo.author = listObj[i].authors;\n\t\tbookInfo.lastChapterTitle = 'chapter '+listObj[i].last_chapter;\n            bookInfo.cover = listObj[i].cover;\n            bookInfo.cat = listObj[i].genres;\n            bookInfo.status = listObj[i].last_update\n            bookInfo.desc = '「别名」：'+listObj[i].other_name;\n            bookInfo.desc += ' |「简介」：'+listObj[i].description.replace(/\\n/gi,'');\n\t\tlist.push(bookInfo);\n      }\n\treturn {'list':list};\n}",
+        "requestInfo": "@js:\nlet url = config.host + '/search?q='+params.keyWord+'&p='+params.pageIndex;\nreturn encodeURI(url);",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "host": "https://beta.lovehug.net",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet reg = /\\\"content\\\":\\[\\\"(.*?)\\\"\\]/gi;\n\tlet tem = reg.exec(result);\n\t//return tem[1];\n      let imgs = tem[1].replace(/\\\",\\\"/gi,'\\n');\n      return imgs;\n\treturn undefined;\n}",
+        "host": "https://beta.lovehug.net",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "生肉漫画",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\tlet reg = /script id=\"__NEXT_DATA__\"[^>]*>(.*?)<\\//gim;\n\tlet tem = reg.exec(result);\n      let listObj = JSON.parse(tem[1]).props.pageProps.content;\n      params.nativeTool.log(listObj);\n      for(let i=0;i<listObj.length;i++){\n            let bookInfo = {};\n\t\tbookInfo.detailUrl = config.host+'/post/'+listObj[i].slug;\n\t\tbookInfo.bookName = listObj[i].name;\n\t\tbookInfo.author = listObj[i].authors;\n\t\tbookInfo.lastChapterTitle = 'chapter '+listObj[i].last_chapter;\n            bookInfo.cover = listObj[i].cover;\n            bookInfo.cat = listObj[i].genres;\n            bookInfo.status = listObj[i].last_update\n            bookInfo.desc = '「别名」：'+listObj[i].other_name;\n            bookInfo.desc += ' |「简介」：'+listObj[i].description;\n\t\tlist.push(bookInfo);\n      }\n\treturn {'list':list};\n}",
+            "requestInfo": "@js:\nlet url = config.host + '/list?page='+params.pageIndex+'&genre='+params.filters.genre;\nurl += '&status='+params.filters.status+'&sort='+params.filters.sort;\nreturn encodeURI(url);",
+            "moreKeys": {
+                "pageSize": "10",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "Action",
+                                "value": "action"
+                            },
+                            {
+                                "title": "Adult",
+                                "value": "adult"
+                            },
+                            {
+                                "title": "Adventure",
+                                "value": "adventure"
+                            },
+                            {
+                                "title": "Comedy",
+                                "value": "comedy"
+                            },
+                            {
+                                "title": "Drama",
+                                "value": "drama"
+                            },
+                            {
+                                "title": "Ecchi",
+                                "value": "ecchi"
+                            },
+                            {
+                                "title": "Fantasy",
+                                "value": "fantasy"
+                            },
+                            {
+                                "title": "Gender Bender",
+                                "value": "gender-bender"
+                            },
+                            {
+                                "title": "Harem",
+                                "value": "harem"
+                            },
+                            {
+                                "title": "Historical",
+                                "value": "historical"
+                            },
+                            {
+                                "title": "Horror",
+                                "value": "horror"
+                            },
+                            {
+                                "title": "Josei",
+                                "value": "josei"
+                            },
+                            {
+                                "title": "Martial Art",
+                                "value": "martial-art"
+                            },
+                            {
+                                "title": "Mature",
+                                "value": "mature"
+                            },
+                            {
+                                "title": "Mecha",
+                                "value": "mecha"
+                            },
+                            {
+                                "title": "Mystery",
+                                "value": "mystery"
+                            },
+                            {
+                                "title": "One shot",
+                                "value": "one-shot"
+                            },
+                            {
+                                "title": "Psychological",
+                                "value": "psychological"
+                            },
+                            {
+                                "title": "Romance",
+                                "value": "romance"
+                            },
+                            {
+                                "title": "School Life",
+                                "value": "school-life"
+                            },
+                            {
+                                "title": "Sci-fi",
+                                "value": "sci-fi"
+                            },
+                            {
+                                "title": "Seinen",
+                                "value": "seinen"
+                            },
+                            {
+                                "title": "Shoujo",
+                                "value": "shoujo"
+                            },
+                            {
+                                "title": "Shojou Ai",
+                                "value": "shojou-ai"
+                            },
+                            {
+                                "title": "Shounen",
+                                "value": "shounen"
+                            },
+                            {
+                                "title": "Shounen Ai",
+                                "value": "shounen-ai"
+                            },
+                            {
+                                "title": "Slice of Life",
+                                "value": "slice-of-life"
+                            },
+                            {
+                                "title": "Smut",
+                                "value": "smut"
+                            },
+                            {
+                                "title": "Sports",
+                                "value": "sports"
+                            },
+                            {
+                                "title": "Supernatural",
+                                "value": "supernatural"
+                            },
+                            {
+                                "title": "Tragedy",
+                                "value": "tragedy"
+                            },
+                            {
+                                "title": "Yuri",
+                                "value": "yuri"
+                            },
+                            {
+                                "title": "Shotacon",
+                                "value": "shotacon"
+                            }
+                        ],
+                        "key": "genre"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "Desc",
+                                "value": "desc"
+                            },
+                            {
+                                "title": "Asc",
+                                "value": ""
+                            }
+                        ],
+                        "key": "sort"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "Ongoing",
+                                "value": "2"
+                            },
+                            {
+                                "title": "Finished",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "status"
+                    }
+                ]
+            },
+            "host": "https://beta.lovehug.net",
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

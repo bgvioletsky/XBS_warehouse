@@ -1,0 +1,105 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "desc": "🙈",
+    "weight": "6666",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href",
+        "requestInfo": "@js:\nurl =result.replace(\"book\",\"indexlist\")\nreturn url;",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://www.shmd03.com",
+        "list": "//ol[@class=\"BCsectionTwo-top\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "笔趣shmd",
+    "sourceType": "text",
+    "sourceUrl": "https://www.shmd03.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1661701215.978664",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "author": "//span[3]/a/text()",
+        "requestInfo": "@js:\n\n\nlet url=config.host+\"/search/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord,\"searchtype\":\"all\",\"submit\":\"\"};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders, forbidCookie:true,cacheTime:3600};",
+        "bookName": "//span[2]/a/text()",
+        "detailUrl": "//span[2]/a/@href",
+        "host": "https://www.shmd03.com",
+        "cat": "//span[1]/a/text()",
+        "list": "//div[@class=\"SHsectionThree-middle\"]/p",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@id=\"content\"]/p/text()",
+        "validConfig": "",
+        "moreKeys": {
+            "maxPage": 6
+        },
+        "host": "https://www.shmd03.com",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "111",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//p[@class=\"time\"]/span/text()",
+        "validConfig": "",
+        "lastChapterTitle": "//div[@class=\"BGsectionOne-top-right\"]/p[5]/span/a/text()",
+        "host": "https://www.shmd03.com",
+        "cover": "//div[@class=\"BGsectionOne-top-left\"]/img/@src",
+        "responseFormatType": "html",
+        "desc": "//section[@id=\"intro\"]/div/p/text()",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//p[2]/span/a/text()",
+            "responseFormatType": "html",
+            "bookName": "//p[1]/a[1]/text()",
+            "desc": "//p[3]/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.shmd03.com${_type}_${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders, forbidCookie:true,cacheTime:3600};",
+            "host": "https://www.shmd03.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻::/bok/1\n修真::/bok/2\n都市::/bok/3\n历史::/bok/4\n科幻::/bok/6\n网游::/bok/5\n言情::/bok/8\n其它::/bok/7"
+            },
+            "detailUrl": "//p[1]/a[1]/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"CGsectionTwo-right-content\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "status": "//p[4]"
+        }
+    }
+}

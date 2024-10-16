@@ -1,0 +1,79 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//*[@id=\"content\"]/p[@class='content_detail']",
+        "host": "https://www.xswang.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": false,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//*[@id=\"info\"]/p[5]||@js:\nreturn result.replace(/书籍状态：/, '');",
+        "lastChapterTitle": "//*[@id=\"info\"]/p[4]/a",
+        "host": "https://www.xswang.com/",
+        "cover": "//*[@id=\"fmimg\"]/img/@src",
+        "responseFormatType": "html",
+        "desc": "//*[@id=\"intro\"]",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.xswang.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "100",
+    "sourceName": "笔趣阁xswang",
+    "desc": "搜索必须完整书名",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1635081851.946843",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//span[@class='s4']/a",
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://www.xswang.com/search?keyword=%@keyWord",
+        "lastChapterTitle": "//span[@class='s3']/a",
+        "bookName": "//span[@class='s2']/a",
+        "host": "https://www.xswang.com/",
+        "detailUrl": "//span[@class='s2']/a/@href",
+        "list": "//ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//*[@id=\"info\"]/p[3]||@js:\nreturn result.replace(/最后更新：/, '');",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.xswang.com/",
+        "list": "//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

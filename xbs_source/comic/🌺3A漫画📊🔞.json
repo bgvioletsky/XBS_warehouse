@@ -1,0 +1,90 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://308mh.com/",
+        "content": "//article[@id='contxt']/img/@src",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "requestInfo": "https://308mh.com/%@filter_%@pageIndex.html",
+            "host": "https://308mh.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 6,
+                "requestFilters": "日韩漫画::/mh/list_1\n3D彩漫::/3d/list_213\n美女图片::/mv/list_67\n私房美图::/2cy/list_68\n胴体诱惑::/yh/list_82\n性感裸体::/qs/list_90\nGIF动图::/gif/list_253\n街拍美女::/jp/list_1011\n"
+            },
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//div[@class='books']/div[@class='bk']",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "detailUrl": "//h3/a/@href"
+        },
+        "首页": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://308mh.com/",
+            "bookName": "//a/h4||//h3/a",
+            "detailUrl": "//a[1]/@href",
+            "host": "https://308mh.com/",
+            "_sIndex": 0,
+            "list": "(//ul[@class='slides'])[1]/li|//div[@class='bk']",
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "cover": "//a/img/@src"
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺3A漫画📊🔞",
+    "sourceUrl": "https://308mh.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "没有小说",
+    "lastModifyTime": "1666007342.878727",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@class='book_info']/div[@class='infos']/span",
+        "title": "//a",
+        "host": "https://308mh.com/",
+        "list": "//div[@class='book_list']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

@@ -1,0 +1,296 @@
+{
+    "bookWorld": {
+        "轻小说列表": {
+            "cat": "//p[3]//span",
+            "responseFormatType": "html",
+            "author": "//p[1] ||@js:\nreturn result.split('/')[0]",
+            "bookName": "//b/a",
+            "desc": "//p[4]",
+            "requestInfo": "@js:\nlet url = 'https://www.wenku8.net/modules/article/articlelist.php?initial='+params.filters.letter;\nurl += '&fullflag='+params.filters.tag;\nurl +='&page='+params.pageIndex;\nreturn url;",
+            "host": "https://www.wenku8.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//b/a//@href ||@js:\nlet reg = /(\\d+).htm/gi;\nlet tem = reg.exec(result)[1];\nlet tem1 = parseInt(tem/1000);\nlet url = result.replace(/book.*/gi,'novel'+'/'+tem1+'/'+tem+'/index.htm');\nreturn url;",
+            "wordCount": "//p[2] ||@js:\nreturn result.split('/')[1]",
+            "validConfig": "",
+            "list": "//table//td/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "字母",
+                                "value": ""
+                            },
+                            {
+                                "title": "A",
+                                "value": "A"
+                            },
+                            {
+                                "title": "B",
+                                "value": "B"
+                            },
+                            {
+                                "title": "C",
+                                "value": "C"
+                            },
+                            {
+                                "title": "D",
+                                "value": "D"
+                            },
+                            {
+                                "title": "E",
+                                "value": "E"
+                            },
+                            {
+                                "title": "F",
+                                "value": "F"
+                            },
+                            {
+                                "title": "G",
+                                "value": "G"
+                            },
+                            {
+                                "title": "H",
+                                "value": "H"
+                            },
+                            {
+                                "title": "I",
+                                "value": "I"
+                            },
+                            {
+                                "title": "J",
+                                "value": "J"
+                            },
+                            {
+                                "title": "K",
+                                "value": "K"
+                            },
+                            {
+                                "title": "L",
+                                "value": "L"
+                            },
+                            {
+                                "title": "M",
+                                "value": "M"
+                            },
+                            {
+                                "title": "N",
+                                "value": "N"
+                            },
+                            {
+                                "title": "O",
+                                "value": "O"
+                            },
+                            {
+                                "title": "P",
+                                "value": "P"
+                            },
+                            {
+                                "title": "Q",
+                                "value": "Q"
+                            },
+                            {
+                                "title": "R",
+                                "value": "R"
+                            },
+                            {
+                                "title": "S",
+                                "value": "S"
+                            },
+                            {
+                                "title": "T",
+                                "value": "T"
+                            },
+                            {
+                                "title": "U",
+                                "value": "U"
+                            },
+                            {
+                                "title": "V",
+                                "value": "V"
+                            },
+                            {
+                                "title": "W",
+                                "value": "W"
+                            },
+                            {
+                                "title": "X",
+                                "value": "X"
+                            },
+                            {
+                                "title": "Y",
+                                "value": "Y"
+                            },
+                            {
+                                "title": "Z",
+                                "value": "Z"
+                            },
+                            {
+                                "title": "0-9",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "letter"
+                    },
+                    {
+                        "items": [
+                            {
+                                "title": "状态",
+                                "value": ""
+                            },
+                            {
+                                "title": "完结全本",
+                                "value": "1"
+                            }
+                        ],
+                        "key": "tag"
+                    }
+                ]
+            },
+            "status": "//p[2] ||@js:\nreturn result.split('/')[2]",
+            "cover": "//img/@src"
+        },
+        "分类": {
+            "cat": "//p[3]//span",
+            "responseFormatType": "html",
+            "author": "//p[1] ||@js:\nreturn result.split('/')[0]",
+            "bookName": "//b/a",
+            "desc": "//p[4]",
+            "requestInfo": "https://www.wenku8.net/modules/article/toplist.php?sort=%@filter&page=%@pageIndex",
+            "host": "https://www.wenku8.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//b/a//@href ||@js:\nlet reg = /(\\d+).htm/gi;\nlet tem = reg.exec(result)[1];\nlet tem1 = parseInt(tem/1000);\nlet url = result.replace(/book.*/gi,'novel'+'/'+tem1+'/'+tem+'/index.htm');\nreturn url;",
+            "wordCount": "//p[2] ||@js:\nreturn result.split('/')[1]",
+            "validConfig": "",
+            "list": "//table//td/div",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": "20",
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "热门轻小说",
+                                "value": "allvisit"
+                            },
+                            {
+                                "title": "动画化作品",
+                                "value": "anime"
+                            },
+                            {
+                                "title": "今日更新",
+                                "value": "lastupdate"
+                            },
+                            {
+                                "title": "新书一览",
+                                "value": "postdate"
+                            }
+                        ],
+                        "key": "letter"
+                    }
+                ]
+            },
+            "status": "//p[2] ||@js:\nreturn result.split('/')[2]",
+            "cover": "//img/@src"
+        },
+        "登入": {
+            "cat": "//table[2]/tr[1]/td[2]/span[1]",
+            "responseFormatType": "html",
+            "author": "//table[1]/tr[2]/td[2]",
+            "lastChapterTitle": "//table[2]/tr[1]/td[2]/span[4]",
+            "bookName": "@js:\nlet str = \"点击我，然后看简介提示\"\nreturn str;",
+            "desc": "@js:\nlet str = \"用于登入\\n随便选择一个章节，进入正文后，点击右上角的三个点\\n点击书源登入，注册登入账号后就可以使用该源的搜索等功能\";\nreturn str;",
+            "requestInfo": "https://www.wenku8.net/book/1213.htm",
+            "host": "https://www.wenku8.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//fieldset//a/@href ||@js:\nlet url = result.split('\\n')[0];\nreturn url;",
+            "wordCount": "//table[1]/tr[2]/td[5]",
+            "validConfig": "",
+            "list": "//div[@id=\"content\"]/div[1]",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "cover": "//img/@src",
+            "status": "//table[1]/tr[2]/td[3]"
+        }
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.52.9",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//td[@class=\"vcss\"]",
+        "title": "//a",
+        "host": "https://www.wenku8.net",
+        "list": "//table//td[@class=\"ccss\"]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href ||@js:\nlet url = params.queryInfo.detailUrl.replace(/index.*/gi,result);\nreturn url;"
+    },
+    "loginUrl": "https://www.wenku8.net/login.php",
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "轻小说文库⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://www.wenku8.net",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1639913080.822012",
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//p[3]//span",
+        "author": "//p[1] ||@js:\nreturn result.split('/')[0]",
+        "responseFormatType": "html",
+        "bookName": "//b/a",
+        "desc": "//p[4]",
+        "requestInfo": "https://www.wenku8.net/modules/article/search.php?searchtype=articlename&searchkey=%@keyWord&page=%@pageIndex",
+        "host": "https://www.wenku8.net",
+        "actionID": "searchBook",
+        "detailUrl": "//b/a//@href ||@js:\nlet reg = /(\\d+).htm/gi;\nlet tem = reg.exec(result)[1];\nlet tem1 = parseInt(tem/1000);\nlet url = result.replace(/book.*/gi,'novel'+'/'+tem1+'/'+tem+'/index.htm');\nreturn url;",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//p[2] ||@js:\nreturn result.split('/')[1]",
+        "list": "//table//td/div",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "status": "//p[2] ||@js:\nreturn result.split('/')[2]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet beginStr = '<div id=\"content\">';\n\tlet beginIndex = result.indexOf(beginStr);\n      function typeSet(str){\n            //str = str.replace(/&nbsp;.*[翻译|转自].*<br[\\s]*\\/>/gi,'');\n            str = str.replace(/<br[\\s]*\\/>/gi,'\\n');\n            str = str.replace(/\\n[\\s]*\\n/gi,'\\n');\n            str = str.replace(/&nbsp;/gi,'  ');\n            str = str.replace(/<i>(.*?)<\\/i>/gi,'');\n            str = str.replace(/<ul.*>(.*?)<\\/ul>/gi,'');\n            //str = \n            str = str.replace(/&#8224;/gi,'†');\n            return str;\n      }\n\tif(beginIndex>0)\n\t{\n\t\tlet subStr = result.substr(beginIndex + beginStr.length);\n\t\tlet endIndex = subStr.indexOf('</div>');\n\t\tlet tarStr = subStr.substr(0, endIndex);\n            if(tarStr.indexOf('<img')>=0){\n                  let reg = /src=\\\"http(.*?)jpg/gi;\n                  let imgReg = /src=\\\"(.*?)/gi;\n                  let tem = result.match(reg);\n                  let imgStr = '';\n                  for(let i=1;i<tem.length;i++){\n                      imgStr += tem[i].replace(/src=\\\"/gi,'')+'\\n';\n                  }\n                  return imgStr;\n            }\n\t\treturn typeSet(tarStr);\n\t}\n\treturn undefined;\n}",
+        "host": "https://www.wenku8.net",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "Ks🔍✨",
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "html",
+        "actionID": "bookDetail"
+    }
+}

@@ -1,0 +1,239 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"BookText\"]/text()",
+        "actionID": "chapterContent",
+        "requestParamsEncode": "2147485234",
+        "host": "http://www.didaxs.net",
+        "httpHeaders": {
+            "Referer": "http://www.didaxs.net",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.didaxs.net",
+        "httpHeaders": {
+            "Referer": "http://www.didaxs.net",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "cover": "//div[@class=\"book-img\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@class=\"details\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "cat": "//span[@class=\"s1\"]",
+            "author": "//span[@class=\"s3\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//ul/li/span[2]/i/a/text()",
+            "bookName": "//span[@class=\"s2\"]/a/text()",
+            "httpHeaders": {
+                "Referer": "http://www.didaxs.net",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+            },
+            "requestInfo": "@js:\nlet url = config.host+\"/\"+params.filters.cat+\"/\"+params.pageIndex+\".html\"\n\nlet hh = {\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50\"};\n\nreturn{'url':url,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "http://www.didaxs.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "cat",
+                        "items": [
+                            {
+                                "title": "最新入库",
+                                "value": "toppostdate"
+                            },
+                            {
+                                "title": "日点击榜",
+                                "value": "topdayvisit"
+                            },
+                            {
+                                "title": "周点击榜",
+                                "value": "topweekvisit"
+                            },
+                            {
+                                "title": "月点击榜",
+                                "value": "topmonthvisit"
+                            },
+                            {
+                                "title": "总点击榜",
+                                "value": "topallvisit"
+                            },
+                            {
+                                "title": "日推荐榜",
+                                "value": "topdayvote"
+                            },
+                            {
+                                "title": "周推荐榜",
+                                "value": "topweekvote"
+                            },
+                            {
+                                "title": "月推荐榜",
+                                "value": "topmonthvote"
+                            },
+                            {
+                                "title": "总推荐榜",
+                                "value": "topallvote"
+                            },
+                            {
+                                "title": "字数排行",
+                                "value": "topsize"
+                            },
+                            {
+                                "title": "总收藏榜",
+                                "value": "topgoodnum"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//ul[@class=\"item-con\"]/li",
+            "status": "//span[@class=\"s5\"]"
+        },
+        "分类": {
+            "cat": "//span[@class=\"s1\"]",
+            "author": "//span[@class=\"s3\"]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//ul/li/span[2]/i/a/text()",
+            "bookName": "//span[@class=\"s2\"]/a/text()",
+            "httpHeaders": {
+                "Referer": "http://www.didaxs.net",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+            },
+            "requestInfo": "@js:\nlet url = config.host+\"/sort\"+params.filters.type+\"/\"+params.pageIndex+\".html\"\n\nlet hh = {\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50\"};\n\nreturn{'url':url,'POST':false,\"httpHeaders\":config.httpHeaders,forbidCookie:true,cacheTime:3600};",
+            "host": "http://www.didaxs.net",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "2"
+                            },
+                            {
+                                "title": "都市异能",
+                                "value": "3"
+                            },
+                            {
+                                "title": "历史军事",
+                                "value": "4"
+                            },
+                            {
+                                "title": "游戏竞技",
+                                "value": "5"
+                            },
+                            {
+                                "title": "科幻世界",
+                                "value": "6"
+                            },
+                            {
+                                "title": "灵异悬疑",
+                                "value": "7"
+                            },
+                            {
+                                "title": "耽美同人",
+                                "value": "8"
+                            },
+                            {
+                                "title": "言情小说",
+                                "value": "9"
+                            },
+                            {
+                                "title": "其他类型",
+                                "value": "10"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "detailUrl": "//span[@class=\"s2\"]/a/@href",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul[@class=\"item-con\"]/li",
+            "status": "//span[@class=\"s5\"]"
+        }
+    },
+    "sourceUrl": "http://www.didaxs.net",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "555",
+    "sourceName": "滴答小说网(oaix)",
+    "httpHeaders": {
+        "Referer": "http://www.didaxs.net",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650990750.777101",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "author": "//p",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//p[2]/a/text()",
+        "bookName": "//h3/a/text()",
+        "httpHeaders": {
+            "Referer": "http://www.didaxs.net",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "requestInfo": "http://www.didaxs.net/modules/article/search.php?searchkey=%@keyWord",
+        "host": "http://www.didaxs.net",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"item-pic\"]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestParamsEncode": "2147485234",
+        "title": "//dd/a/text()",
+        "host": "http://www.didaxs.net",
+        "httpHeaders": {
+            "Referer": "http://www.didaxs.net",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50"
+        },
+        "list": "//dl[@class=\"chapterlist\"]/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//dd/a/@href"
+    },
+    "sourceType": "text"
+}

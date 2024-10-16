@@ -1,0 +1,119 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "data/pics",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, jsparams, result) {\nlet dat = result.content.split(',');\nreturn JSON.stringify({'urls': dat});\n}",
+        "requestInfo": "https://dans.cc/prod-api/app-api/vv/mh-episodes/get?%@result",
+        "host": "https://dans.cc/",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "https://dans.cc/prod-api/app-api/vv/mh-list/get?id=%@result",
+        "lastChapterTitle": "data/episodes",
+        "host": "https://dans.cc/",
+        "cover": "data/coverPic",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "data/summary"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "other": {
+            "author": "author",
+            "responseFormatType": "json",
+            "lastChapterTitle": "episodes",
+            "bookName": "title",
+            "desc": "summary",
+            "requestInfo": "https://dans.cc/prod-api/app-api/vv/mh-list/page?pageNo=%@pageIndex&pageSize=18&mhcate=%@filter",
+            "host": "https://dans.cc/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "coverPic",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "data/list",
+            "moreKeys": {
+                "pageSize": 18,
+                "requestFilters": "filter\n排行::2\n新作::4\n完结漫::5"
+            }
+        },
+        "分类": {
+            "author": "author",
+            "responseFormatType": "json",
+            "lastChapterTitle": "episodes",
+            "bookName": "title",
+            "desc": "summary",
+            "requestInfo": "https://dans.cc/prod-api/app-api/vv/mh-list/page?pageNo=%@pageIndex&pageSize=18&cateid=%@filter",
+            "host": "https://dans.cc/",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "cover": "coverPic",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "data/list",
+            "moreKeys": {
+                "pageSize": 18,
+                "requestFilters": "filter\n全部::\n短漫::1\n甜漫::2\n强强::3\n年下攻::4\n淫荡受/诱受::5\n骨科::6\n调教::7\n健气受::8\nABO::9\n重生/重逢::10\n财阀::11\n校园::12\n女王受::13\nNP/SM::14\n韩国榜单::15\n高H::16\n架空::17\n娱乐圈::18\n办公室::19\n青梅竹马::20"
+            }
+        }
+    },
+    "sourceUrl": "https://dans.cc/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺一耽女孩🔞",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666006982.004414",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "episodes",
+        "bookName": "title",
+        "desc": "summary",
+        "requestInfo": "https://dans.cc/prod-api/app-api/vv/mh-list/page?pageNo=%@pageIndex&pageSize=100&word=%@keyWord",
+        "host": "https://dans.cc/",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "coverPic",
+        "validConfig": "",
+        "list": "data/list",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "https://dans.cc/prod-api/app-api/vv/mh-episodes/list?mhid=%@result",
+        "title": "title",
+        "host": "https://dans.cc/",
+        "list": "data||@js:\nreturn result.reverse();",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn 'jiNo=' + result.jiNo + '&mhid=' + result.mhid;"
+    }
+}

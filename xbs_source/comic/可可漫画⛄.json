@@ -1,0 +1,114 @@
+{
+    "bookWorld": {
+        "排序": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"tt\"]",
+            "bookName": "//p",
+            "requestInfo": "/list/%@filter/?page=%@pageIndex",
+            "host": "https://coco.tfvisa.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 36,
+                "requestFilters": "发布::post\n更新::update\n点击::click"
+            },
+            "detailUrl": "//p/a/@href",
+            "cover": "//img//@src",
+            "list": "//ul[@id=\"contList\"]//li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "validConfig": ""
+        },
+        "进度": {
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[@class=\"tt\"]",
+            "bookName": "//p",
+            "requestInfo": "/list/%@filter/?page=%@pageIndex",
+            "host": "https://coco.tfvisa.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 36,
+                "requestFilters": "已完结::wanjie\n连载中::lianzai"
+            },
+            "detailUrl": "//p/a/@href",
+            "cover": "//img//@src",
+            "list": "//ul[@id=\"contList\"]//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://coco.tfvisa.com",
+        "list": "//ul[@id=\"chapter-list-1\"]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "可可漫画⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://coco.tfvisa.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1654931659.611887",
+    "searchBook": {
+        "responseFormatType": "html",
+        "lastChapterTitle": "//span[@class=\"tt\"]",
+        "bookName": "//p",
+        "requestInfo": "/search/?keywords=%@keyWord&page=%@pageIndex",
+        "host": "https://coco.tfvisa.com",
+        "actionID": "searchBook",
+        "detailUrl": "//p/a/@href",
+        "moreKeys": {
+            "pageSize": 36
+        },
+        "validConfig": "",
+        "cover": "//img//@src",
+        "list": "//ul[@id=\"contList\"]//li",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nlet reg = /chapterImages = [^\\]]+\\]/gi;\nlet res = result.match(reg)[0];\neval(res);\nreturn chapterImages.join('\\n');",
+        "host": "https://coco.tfvisa.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//ul[@class=\"detail-list cf\"]//li[1]/span[1]//a",
+        "lastChapterTitle": "//ul[@class=\"detail-list cf\"]//li[3]//a",
+        "host": "https://coco.tfvisa.com",
+        "cat": "//ul[@class=\"detail-list cf\"]//li[2]/span[1]//a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro-cut\"]//p"
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://91mh.xyz",
+        "content": "//div[@class=\"rd-article-wr clearfix\"]/div/img/@data-original",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "author": "//p[@class=\"comic-author\"]/a",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//p[@class=\"comic-update\"]/a/span[@class=\"hl\"]",
+            "bookName": "//p[@class=\"comic__title\"]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://91mh.xyz/custom/${_type}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://91mh.xyz",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[@class=\"cover\"]/@href",
+            "cover": "//img/@data-original",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n年度榜::hot\n本月榜::month\n本周榜::week\n今日榜::day\n上升榜::ascension\n评分榜::score\n收藏榜::fav\n打赏榜::reward\n月票榜::ticket\n收费榜::pay"
+            },
+            "list": "//div[@class=\"top-list__box clearfix\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "九妖漫画",
+    "sourceUrl": "https://91mh.xyz",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "asaoge",
+    "lastModifyTime": "1662610318.223394",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "desc": "//p[@class=\"comic-feature\"]",
+        "requestInfo": "https://91mh.xyz/index.php/search?key=%@keyWord",
+        "bookName": "//p[@class=\"comic__title\"]/a",
+        "detailUrl": "//a[@class=\"cover\"]/@href",
+        "host": "https://91mh.xyz",
+        "cover": "//img/@data-original",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "list": "//div[@class=\"common-comic-item\"]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://91mh.xyz",
+        "list": "//ul[@class=\"chapter__list-box clearfix\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

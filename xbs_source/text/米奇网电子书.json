@@ -1,0 +1,94 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.llskw.com",
+        "content": "//div[@id=\"content\"]/text() ||@js:\nreturn result.replace(/请记[\\s\\S]*m/,\"\");",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nreturn {'url':result, 'POST':false, \n\"httpHeaders\": config.httpHeaders,'webView':true};",
+        "host": "http://www.llskw.com",
+        "cat": "//div[@class=\"m-bookinfo\"]/p[1]/span[1]/a",
+        "cover": "//div/a/img/@src| http://www.llskw.com%@result",
+        "responseFormatType": "html",
+        "desc": "//div[@class=\"txt\"]/text()",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//td[3]",
+            "responseFormatType": "html",
+            "bookName": "//td[2]/div[1]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.llskw.com${_type}${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.llskw.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻奇幻::/xuanhuan_qihuan/list_2_\n武侠仙侠::/wuxia_xianxia/list_3_\n女频言情::/nvpin_yanqing/list_4_\n都市职业::/dushi_zhiye/list_5_\n游戏竞技::/youxi_jingji/list_6_\n科幻恐怖::/kehuan_lingyi/list_7_\n历史军事::/lishi_junshi/list_8_\n耽美同人::/danmei_tongren/list_9_\n综合其他::/more/list_10_"
+            },
+            "detailUrl": "//td[2]/div[1]/a/@href",
+            "validConfig": "",
+            "list": "//div[@class=\"yd-store-content-container\"]//tbody/tr",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "http://www.llskw.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "999",
+    "sourceName": "米奇网电子书",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1660276167.778272",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//p[2] ||@js:\nreturn result.replace(/类别：/, \"\").replace(/]/,\"\").replace(/\\[/,\"\");",
+        "author": "//p[1] ||@js:\nreturn result.replace(/作者：/, \"\").replace(/]/,\"\").replace(/\\[/,\"\");",
+        "responseFormatType": "html",
+        "bookName": "//h3/a",
+        "requestInfo": "@js:\nlet url = 'http://www.llskw.com/plus/search.php';\nreturn {'url':url, 'POST':true, 'httpParams':{'searchkey':params.keyWord,'kwtype':0}};",
+        "host": "http://www.llskw.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h3/a/@href",
+        "cover": "//a/img/@src| http://www.llskw.com%@result",
+        "validConfig": "",
+        "list": "//div[@class=\"resultlist\"]//li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn result.replace('.html', '_index.html');",
+        "title": "//a",
+        "host": "http://www.llskw.com",
+        "list": "//div[@class=\"m-introbox\"][2]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href| http://www.llskw.com%@result"
+    },
+    "sourceType": "text"
+}

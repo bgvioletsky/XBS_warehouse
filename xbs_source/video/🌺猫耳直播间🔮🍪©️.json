@@ -1,0 +1,91 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "host": "https://fm.missevan.com/",
+        "content": "info/room/channel/hls_pull_url",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "catalog_name",
+            "responseFormatType": "json",
+            "author": "creator_username",
+            "bookName": "name",
+            "desc": "announcement",
+            "requestInfo": "@js:\nreturn {'url':'https://fm.missevan.com/api/v2/chatroom/open/list?p=' + params.pageIndex + params.filters.filter, 'httpHeaders':{'user-agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'}};",
+            "host": "https://fm.missevan.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "room_id",
+            "cover": "cover_url",
+            "validConfig": "",
+            "list": "info/Datas",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "filter\n热门::&type=0\n配音::&catalog_id=105\n音乐::&catalog_id=104\n情感::&catalog_id=116\n放松::&catalog_id=115\n古风::&catalog_id=122\n新星::&tag_id=1\n"
+            },
+            "status": "status/open||@js:\nif (result == 0)\n\treturn '暂未开播';\nif (result == 1)\n\treturn '直播中';"
+        }
+    },
+    "sourceUrl": "https://fm.missevan.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺猫耳直播间🔮🍪©️",
+    "sourceType": "video",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666215754.865582",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "catalog_name",
+        "author": "creator_username",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "desc": "announcement",
+        "requestInfo": "https://fm.missevan.com/api/v2/chatroom/search?s=%@keyWord&p=%@pageIndex&page_size=24",
+        "host": "https://fm.missevan.com/",
+        "actionID": "searchBook",
+        "detailUrl": "room_id",
+        "cover": "cover_url",
+        "validConfig": "",
+        "list": "info/data",
+        "parserID": "DOM",
+        "moreKeys": {
+            "pageSize": 24
+        },
+        "status": "status/open||@js:\nif (result == 0)\n\treturn '暂未开播';\nif (result == 1)\n\treturn '直播中';"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "parserID": "DOM",
+        "host": "https://fm.missevan.com/",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n\tlet chapterInfo = {};\n\tchapterInfo.title = params.queryInfo.bookName;\n\tchapterInfo.url = 'https://fm.missevan.com/api/v2/live/'+params.queryInfo.detailUrl;\n\tlist.push(chapterInfo);\n\n\treturn {'list':list};\n}",
+        "actionID": "chapterList"
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.mengyuanshucheng.com",
+        "content": "//div[@class=\"size16 color5 pt-read-text\"]",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//div[@id=\"count\"]/span[6]",
+        "wordCount": "//div[@id=\"count\"]/span[5]",
+        "validConfig": "",
+        "lastChapterTitle": "//div[@class=\"new\"]/span[1]/a",
+        "host": "https://www.mengyuanshucheng.com",
+        "cat": "//div[@id=\"count\"]/span[1]",
+        "cover": "//div/img/@src",
+        "responseFormatType": "html",
+        "desc": "//div[@id=\"bookintro\"]/p",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "排行榜": {
+            "author": "//td[3]/a",
+            "responseFormatType": "html",
+            "bookName": "//td[1]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.mengyuanshucheng.com/rank/${_type}/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.mengyuanshucheng.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n总点击::allvisit\n月点击::monthvisit\n周点击::weekvisit\n日点击::dayvisit\n推荐数::vote\n收藏数::mark\n下载数::down\n评论数::comment\n评分::star_score\n入库时间::postdate"
+            },
+            "detailUrl": "//td[1]/a/@href",
+            "validConfig": "",
+            "list": "//table[@class=\"grid searall\"]//tr",
+            "_sIndex": 3,
+            "parserID": "DOM"
+        },
+        "男频": {
+            "author": "//dd[2]/span[1]/a",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.mengyuanshucheng.com/sort/${_type}/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.mengyuanshucheng.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻::xuanhuan\n奇幻::qihuan\n武侠::wuxia\n仙侠::xianxia\n都市::dushi\n历史::lishi\n军事::junshi\n游戏::youxi\n竞技::jingji\n科幻::kehuan\n灵异::lingyi\n其他::qita"
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@id=\"sitebox\"]/dl",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        },
+        "女频": {
+            "author": "//dd[2]/span[1]/a",
+            "responseFormatType": "html",
+            "bookName": "//h3/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.mengyuanshucheng.com/sort/${_type}/${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.mengyuanshucheng.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n总裁豪门::zongcai\n穿越重生::chongsheng\n古典架空::gudian\n宫斗宅斗::gongdou\n都市现言::dushi\n仙侠玄幻::xianxiaxuanhuan\n青春校园::qingchun\n游戏竞技::game\n科幻灵异::kehuanlingyi\n耽美同人::danmei\n女尊王朝::nvzun\n其他类型::other"
+            },
+            "detailUrl": "//h3/a/@href",
+            "validConfig": "",
+            "list": "//div[@id=\"sitebox\"]/dl",
+            "_sIndex": 1,
+            "parserID": "DOM"
+        },
+        "风云榜": {
+            "author": "//td[3]/a",
+            "responseFormatType": "html",
+            "bookName": "//td[1]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.mengyuanshucheng.com/rank/${_type}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.mengyuanshucheng.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 300,
+                "requestFilters": "_type\n百度热搜榜::baidu\n追书热度榜::zhuishu\n书旗热搜榜::shuqi\n掌阅热销榜::zhangyue\n起点月票榜::qidian\n17K鲜花榜::17k"
+            },
+            "detailUrl": "//td[1]/a/@href",
+            "validConfig": "",
+            "list": "//table[@class=\"grid searall\"]//tr",
+            "_sIndex": 2,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.mengyuanshucheng.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "999",
+    "sourceName": "梦远书城",
+    "desc": "🐮",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1658203220.224697",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[@class=\"fl color7\"]/span[2]/a",
+        "author": "//span[@class=\"mr30\"]/a",
+        "lastChapterTitle": "//div[@class=\"fl lh100\"]/span[1]/a",
+        "responseFormatType": "html",
+        "bookName": "//span[@class=\"fl mr60\"]/a",
+        "requestInfo": "https://www.mengyuanshucheng.com/search/result.html?searchkey=%@keyWord",
+        "host": "https://www.mengyuanshucheng.com",
+        "actionID": "searchBook",
+        "detailUrl": "//span[@class=\"fl mr60\"]/a/@href",
+        "cover": "//a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"relative pt-rank\"]/div"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn result.replace('my', 'index');",
+        "title": "//a",
+        "host": "https://www.mengyuanshucheng.com",
+        "list": "//div[@class=\"mulu\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

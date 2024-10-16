@@ -1,0 +1,121 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"novelcontent\"]/text()||@js:\nreturn result.replace(/内[\\s\\S]*读/,\"\") .replace(/【本[\\s\\S]*说】/,\"\") .replace(/内[\\s\\S]*毕/,\"\");",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 15
+        },
+        "host": "http://m.shikongzhizuobiao.com",
+        "httpHeaders": {
+            "Referer": "http://m.shikongzhizuobiao.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href ||@js:\n\nif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"_\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\n\nreturn \"\"\n}"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "status": "//meta[@property=\"og:novel:status\"]/@content",
+        "validConfig": "",
+        "desc": "//meta[@property=\"og:description\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "http://m.shikongzhizuobiao.com",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "cover": "//meta[@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "httpHeaders": {
+            "Referer": "http://m.shikongzhizuobiao.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54"
+        }
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//p[3]/a",
+            "responseFormatType": "html",
+            "bookName": "//p[2]/a",
+            "httpHeaders": {
+                "Referer": "http://m.shikongzhizuobiao.com/",
+                "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://m.shikongzhizuobiao.com/sort/${_type}_1/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://m.shikongzhizuobiao.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//p[2]/a/@href",
+            "moreKeys": {
+                "pageSize": 1000,
+                "requestFilters": "_type\n全部::0\n古言::2\n幻情::6\n都市小说::9\n穿越小说::11\n修真小说::13\n现言::15\n轻小说::18"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@class=\"user_content\"]/div"
+        }
+    },
+    "sourceUrl": "http://m.shikongzhizuobiao.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "796",
+    "sourceName": "新笔趣阁",
+    "httpHeaders": {
+        "Referer": "http://m.shikongzhizuobiao.com/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐮",
+    "lastModifyTime": "1660636301.356693",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//a[3]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//a[2]",
+        "bookName": "//a[1]",
+        "httpHeaders": {
+            "Referer": "http://m.shikongzhizuobiao.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54"
+        },
+        "requestInfo": "http://m.shikongzhizuobiao.com/book/search.aspx?key=%@keyWord&type=articlename",
+        "host": "http://m.shikongzhizuobiao.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[1]/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"search_box\"]/p",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "//a",
+        "host": "http://m.shikongzhizuobiao.com",
+        "httpHeaders": {
+            "Referer": "http://m.shikongzhizuobiao.com/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54"
+        },
+        "list": "//ul[@class=\"p2\"][2]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

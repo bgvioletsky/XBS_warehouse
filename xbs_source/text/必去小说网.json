@@ -1,0 +1,96 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://www.biquw.com/",
+        "content": "//div[@id=\"htmlContent\"]/text()",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.biquw.com/",
+        "cover": "//div/div[@class=\"pic\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//h3[@class=\"bookinfo_intro\"]/text()"
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//dl/dd[@class=\"book_other\"]/span/text()",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//dl/dd[@class=\"book_other\"]/a/text()",
+            "bookName": "//dl/dd/h3/a/text()",
+            "desc": "//dl/dd[@class =\"book_des\"]/text()",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.biquw.com/${_type}${params.pageIndex}.html`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.biquw.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 15,
+                "requestFilters": "_type\n玄幻::/xs/1-default-0-0-0-0-0-0-\n仙侠::/xs/2-default-0-0-0-0-0-0-\n都市::/xs/3-default-0-0-0-0-0-0-\n军史::/xs/4-default-0-0-0-0-0-0-\n网游::/xs/5-default-0-0-0-0-0-0-\n科幻::/xs/6-default-0-0-0-0-0-0-\n灵异::/xs/7-default-0-0-0-0-0-0-\n言情::/xs/8-default-0-0-0-0-0-0-\n其他::/xs/9-default-0-0-0-0-0-0-"
+            },
+            "cover": "//dl/dt/a/img/@src",
+            "validConfig": "",
+            "list": "//div[@class=\"sitebox\"]/dl",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//dl/dd/h3/a/@href",
+            "status": "//dl/dd/h3/span/text()"
+        }
+    },
+    "shudanList": {},
+    "sourceType": "text",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9998",
+    "sourceName": "必去小说网",
+    "sourceUrl": "http://www.biquw.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🐰",
+    "lastModifyTime": "1665729903.559930",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//li/p[3]/text()",
+        "lastChapterTitle": "//li/p[2]/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//li/p[1]/a/text()",
+        "requestInfo": "http://www.biquw.com/modules/article/search.php?action=login&searchkey=%@keyWord",
+        "host": "http://www.biquw.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//li/p[1]/a/@href",
+        "wordCount": "//li/p[4]/text()",
+        "validConfig": "",
+        "list": "//div[@class=\"toplist\"]/ul/li",
+        "parserID": "DOM",
+        "status": "//li/p[5]/text()"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//li/a/text()",
+        "host": "http://www.biquw.com/",
+        "list": "//div[@class=\"book_list\"]/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//li/a/@href||@js:\nreturn params.queryInfo.detailUrl+ result"
+    }
+}

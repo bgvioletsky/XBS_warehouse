@@ -1,0 +1,112 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "content": "//div[@id=\"content\"]/p ||@js:return result.replace(/.*提醒您.*/,'').replace(/本章未完，请点击下一页继续阅读！/,'')",
+        "validConfig": "",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://www.nchdzx.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href||@js:\rif(result){\nvar pageid=params.pageIndex+1;\nvar url = params.queryInfo.url.replace(/.html/,\"\");\n\nurl = url+\"-\"+pageid+\".html\";\n\nparams.nativeTool.log(url) ;\nreturn url;\n\n}else{\nreturn \"\"\n}"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "status": "//div[@id=\"info\"]/p[2]/span[2]||@replace:状态：",
+        "validConfig": "",
+        "lastChapterTitle": "//div[@id=\"intro\"]/p[4]/a",
+        "host": "https://www.nchdzx.com/",
+        "cover": "//div[@class=\"Dimg\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]/p[2]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "requestParamsEncode": "2147485234",
+            "responseEncode": "2147485234",
+            "responseFormatType": "html",
+            "author": "//dd[2]||@replace:作者：",
+            "lastChapterTitle": "//dd[5]/a",
+            "bookName": "//dt/a",
+            "desc": "//dd[3]||@replace:简介：",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.nchdzx.com${_type}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.nchdzx.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 50,
+                "requestFilters": "_type\n历史军事::/hd251/\n灵异悬疑::/hd252/\n二次元::/hd253/\n玄幻奇幻::/hd254/\n游戏竞技::/hd255/\n女生言情::/hd256/\n仙侠武侠::/hd257/\n科幻未来::/hd258/\n都市重生::/hd259/"
+            },
+            "cover": "//dd[1]/a/img/@src",
+            "validConfig": "",
+            "list": "//div[@id=\"main\"]/div/dl",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//dt/a/@href"
+        }
+    },
+    "sourceUrl": "https://www.nchdzx.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "洪都中文",
+    "desc": "🐰",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666602834.739385",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "cat": "//dd[2]/span[2]/text() ||@replace:类别：",
+        "author": "//dd[2]/span[1]/text()||@replace:作者：",
+        "lastChapterTitle": "//dd[@class=\"p4\"]/a/text()",
+        "responseFormatType": "html",
+        "bookName": "//dt/a/text()",
+        "responseEncode": "2147485234",
+        "desc": "//dd[@class=\"d2\"] ||@replace:简介：",
+        "requestInfo": "@js:\n\nlet url=config.host+\"/sscc/\";\n\nlet hp= {\n'q':params.keyWord,\n\n'submit':'%CB%D1%CB%F7+',\n\n\"act\":\"5dfc610e42fac65c\"\n\n};\n\nreturn {\n'url':url, \n'POST':true,\n'httpParams':hp,\n\n};",
+        "host": "https://www.nchdzx.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//dt/a/@href",
+        "cover": "//dd[@class=\"imgB\"]/a/img/@src",
+        "validConfig": "",
+        "list": "//div[@class=\"mainLeft1 SSp\"]/dl",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.nchdzx.com/",
+        "list": "//dl/dd[position()>12]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,92 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//*[@id='_imageList']/img/@data-url || @js:\nlet urls = result.replace(/webtoon/g, 'mwebtoon');\nreturn JSON.stringify({'urls':urls, 'httpHeaders':{'Referer':params.responseUrl}});",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn result.replace('m.webtoons.com', 'www.webtoons.com');",
+        "host": "https://www.webtoons.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": false,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.webtoons.com",
+        "desc": "//p[@class='summary']",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "responseFormatType": "html",
+            "author": "//p[@class='author']",
+            "bookName": "//p[@class='subj']",
+            "requestInfo": "@js:\nreturn 'https://www.webtoons.com/zh-hant/drama?sortOrder=' + params.filters.sort;",
+            "host": "https://www.webtoons.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": "cat\n劇情::1\n奇幻::2\n搞笑::3\n動作::4\n生活::5\n愛情::6\n感人::8\n古裝::9\n驚悚::10\n運動::11\n科幻::12\n恐怖::13\n超級英雄::7\n生活常識漫畫::14\n\nsort\n人氣排序::READ_COUNT\n愛心排序::LIKEIT\n最近更新::UPDATE"
+            },
+            "cover": "//img/@src",
+            "detailUrl": "//@href",
+            "list": "@js:\nlet xpath = '//ul[@class=\"card_lst\"][' + params.filters.cat + ']/li/a';\nreturn result.queryWithXPath(xpath);",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://www.webtoons.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9952",
+    "sourceName": "☘️WebTOONS",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "推荐",
+    "lastModifyTime": "1641259544.557246",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//*[contains(@class, 'genre')]",
+        "author": "//p[@class='author']",
+        "responseFormatType": "html",
+        "bookName": "//p[@class='subj']",
+        "requestInfo": "https://www.webtoons.com/zh-hant/search?searchType=ALL&keyword=%@keyWord",
+        "host": "https://www.webtoons.com",
+        "actionID": "searchBook",
+        "detailUrl": "//@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//a[contains(@class, 'challenge_item') or contains(@class, 'card_item')]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet hh = {'User-Agent':'Mozilla/5.0 (Linux; Android 8.1.0; JKM-AL00b Build/HUAWEIJKM-AL00b; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044807 Mobile Safari/537.36'};\n\nlet url = 'https://m.webtoons.com' + result.replace(/http.*?com/, '');\n\nreturn {'url':url, 'httpHeaders':hh};",
+        "title": "//*[@class='sub_title']",
+        "host": "https://www.webtoons.com",
+        "list": "//*[@id='_episodeList']/li/a || @js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//@href"
+    }
+}

@@ -1,0 +1,72 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "host": "http://app.zhoudamozi.com",
+        "parserID": "DOM",
+        "requestInfo": "https://book2.tvb23.com/book%@result",
+        "actionID": "chapterContent"
+    },
+    "enable": false,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "http://app.zhoudamozi.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "30",
+    "sourceName": "有🐇阅读",
+    "desc": "待修复",
+    "miniAppVersion": "2.52.0",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1637341729.577038",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "clsName",
+        "author": "author",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "desc": "intro",
+        "requestInfo": "@js:\nlet url = \"http://app.zhoudamozi.com/es/search/book?pageNo=1&pageSize=20&q=\" + encodeURI(params.keyWord);\nreturn {\"url\":url,\"httpHeaders\":{\"Seq\":\"c1f9b35bca805d01b85a355f2a6e3f7f\",\"Authorization\":\"05112269c77cd3f02a49f06d9c2f3595e7b408cd68b6b91be0fd850930c36a6991\",\"PushToken\":\"Ah_rcltSwsHGwwMKOWrnuFQz4Lvj04A9aGmhStOAgvoW\"}};",
+        "host": "http://app.zhoudamozi.com",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "photoPath",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "wordCnt",
+        "list": "data"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nlet url = \"http://app.zhoudamozi.com/book/chapter/listAll?&userId=9641482&bookId=\" + result;\nreturn {\"httpHeaders\":{\"Seq\":\"c1f9b35bca805d01b85a355f2a6e3f7f\",\"Authorization\":\"05112269c77cd3f02a49f06d9c2f3595e7b408cd68b6b91be0fd850930c36a6991\",\"PushToken\":\"Ah_rcltSwsHGwwMKOWrnuFQz4Lvj04A9aGmhStOAgvoW\"}, \"url\":url};",
+        "title": "name",
+        "host": "http://app.zhoudamozi.com",
+        "list": "data",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "filePath"
+    },
+    "sourceType": "text"
+}

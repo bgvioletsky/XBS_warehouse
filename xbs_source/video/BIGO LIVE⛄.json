@@ -1,0 +1,128 @@
+{
+    "bookDetail": {
+        "parserID": "DOM",
+        "actionID": "bookDetail",
+        "responseFormatType": "html"
+    },
+    "bookWorld": {
+        "热门直播": {
+            "cat": "country_name ||@js:\nif (result == 'TW' || result == 'Taiwan'){\n\tresult = '中国台湾';\n}\nreturn '国家或地区: ' + result;",
+            "responseFormatType": "json",
+            "author": "nick_name",
+            "bookName": "room_topic",
+            "httpHeaders": {
+                "api_url": "http://live.stackblog.eu.org/api/bigo/",
+                "api_key": "stacksenseiisveryhandsome"
+            },
+            "requestInfo": "https://ta.bigo.tv/official_website/OInterfaceWeb/vedioList/5?fetchNum=50",
+            "host": "https://live.bilibili.com",
+            "actionID": "bookWorld",
+            "detailUrl": "bigo_id",
+            "cover": "cover_m",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "$.data.data"
+        },
+        "游戏": {
+            "cat": "country_name ||@js:\nif (result == 'TW' || result == 'Taiwan'){\n\tresult = '中国台湾';\n}\nreturn '国家或地区: ' + result;",
+            "responseFormatType": "json",
+            "author": "nick_name",
+            "bookName": "room_topic",
+            "httpHeaders": {
+                "api_url": "http://live.stackblog.eu.org/api/bigo/",
+                "api_key": "stacksenseiisveryhandsome"
+            },
+            "requestInfo": "https://ta.bigo.tv/official_website/OInterfaceWeb/vedioList/11?fetchNum=50",
+            "host": "https://live.bilibili.com",
+            "actionID": "bookWorld",
+            "detailUrl": "bigo_id",
+            "cover": "cover_m",
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "$.data.data"
+        }
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result){\n\tlet res = result;\n\tparams.nativeTool.log(res.code);\n\tlet list = [];\n\tlet item = {}\n\tif(res.code == 200){\n\t\titem.title = res.data[0].name+'(如果放不了可以多点几次)';\n\t\titem.url = res.data[0].url;\n\t}else{\n\t\titem.title = '主播未开播'\n\t\titem.url = '';\n\t}\n\tlist.push(item);\n\treturn {'list':list};\n}",
+        "requestInfo": "@js:\nlet url = config.httpHeaders.api_url + params.queryInfo.detailUrl + '?api_key=' + config.httpHeaders.api_key;\nlet hh = {'deviceId':params.nativeTool.deviceId()};\n\nreturn {'url': encodeURI(url), 'httpHeaders':hh};",
+        "host": "https://live.bilibili.com",
+        "httpHeaders": {
+            "api_url": "http://live.stackblog.eu.org/api/bigo/",
+            "api_key": "stacksenseiisveryhandsome"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "BIGO LIVE⛄",
+    "sourceType": "video",
+    "sourceUrl": "https://live.bilibili.com",
+    "httpHeaders": {
+        "api_url": "http://live.stackblog.eu.org/api/bigo/",
+        "api_key": "stacksenseiisveryhandsome"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1659259905.967882",
+    "searchBook": {
+        "cat": "country_name ||@js:\nif (result == 'TW' || result == 'Taiwan'){\n\tresult = '中国台湾';\n}\nreturn '国家或地区: ' + result;",
+        "author": "nick_name",
+        "responseFormatType": "json",
+        "bookName": "room_topic",
+        "httpHeaders": {
+            "api_url": "http://live.stackblog.eu.org/api/bigo/",
+            "api_key": "stacksenseiisveryhandsome"
+        },
+        "requestInfo": "@js:\nlet obj = {\n\t'url':'https://ta.bigo.tv/official_website_tiebar/search/room',\n\t'POST':true,\n\t'httpParams': {\"query\":params.keyWord,\"index\":0,\"size\":10,\"device-id\":\"\"}\n}\nlet hh = {\n\t'Content-Type': 'application/json;charset=utf-8',\n\t'Host': 'ta.bigo.tv',\n\t'Referer': 'https://www.bigo.tv/'\n}\nobj.httpHeaders = hh;\nreturn obj;",
+        "host": "https://live.bilibili.com",
+        "actionID": "searchBook",
+        "detailUrl": "bigoID",
+        "cover": "data5",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "$.data.list",
+        "moreKeys": {
+            "pageSize": 42
+        }
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.url;",
+        "actionID": "chapterContent",
+        "requestInfo": "https://live.bilibili.com",
+        "host": "https://live.bilibili.com",
+        "httpHeaders": {
+            "api_url": "http://live.stackblog.eu.org/api/bigo/",
+            "api_key": "stacksenseiisveryhandsome"
+        },
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "stack_|TJEj/HzKFbmʌ_ə34",
+    "desc": "直播",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": ""
+}

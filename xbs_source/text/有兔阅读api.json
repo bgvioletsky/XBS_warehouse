@@ -1,0 +1,471 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "11",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "$.name",
+        "host": "https://app1.youzibank.com",
+        "httpHeaders": {
+            "Seq": "11111111111111111111111111111111",
+            "version": "1.9.5",
+            "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+        },
+        "list": "$.data[*]",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "$.filePath||@js:\n\nreturn \"https://book.tianzhenxing.com/book\"+ result"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "有兔阅读api",
+    "sourceType": "text",
+    "sourceUrl": "https://app1.youzibank.com",
+    "httpHeaders": {
+        "Seq": "11111111111111111111111111111111",
+        "version": "1.9.5",
+        "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1664777120.673379",
+    "searchBook": {
+        "cat": "$.clsName",
+        "author": "$.author",
+        "responseFormatType": "json",
+        "bookName": "$.name",
+        "httpHeaders": {
+            "Seq": "11111111111111111111111111111111",
+            "version": "1.9.5",
+            "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+        },
+        "requestInfo": "https://app1.youzibank.com/es/search/book?q=%@keyWord&pageNo=%@pageIndex&pageSize=10",
+        "host": "https://app1.youzibank.com",
+        "actionID": "searchBook",
+        "detailUrl": "$.id ||@js: \n\nreturn \"https://app1.youzibank.com/book/chapter/listAll?bookId=\"+ result",
+        "cover": "$.photoPath||@js: \n\nreturn \"https://book.tianzhenxing.com/book\" + result",
+        "validConfig": "",
+        "list": "$.data",
+        "parserID": "DOM",
+        "wordCount": "$.wordCnt",
+        "desc": "$.intro"
+    },
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "|",
+        "validConfig": "",
+        "host": "https://app1.youzibank.com",
+        "httpHeaders": {
+            "Seq": "11111111111111111111111111111111",
+            "version": "1.9.5",
+            "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐲",
+    "password": "0155",
+    "shudanList": {},
+    "bookWorld": {
+        "出版小说": {
+            "cat": "clsName",
+            "responseFormatType": "json",
+            "author": "author",
+            "bookName": "name",
+            "httpHeaders": {
+                "Seq": "11111111111111111111111111111111",
+                "version": "1.9.5",
+                "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+            },
+            "requestInfo": "http://app.liushuo.cc/book/list?wordFilter=0&fullFlag=0&clsIdSecond=%@filter&pageNo=%@pageIndex&orderBy=read_cnt&clsIdFirst=163",
+            "host": "https://app1.youzibank.com",
+            "actionID": "bookWorld",
+            "detailUrl": "@js:\nvar id = result.id\nparams.nativeTool.log(id)\nreturn \"http://app.liushuo.cc/book/chapter/listAll?sortType=0&userId=11682791&bookId=\" + id",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "恐怖惊悚",
+                                "value": "165"
+                            },
+                            {
+                                "title": "欧美小说",
+                                "value": "166"
+                            },
+                            {
+                                "title": "日式推理",
+                                "value": "167"
+                            },
+                            {
+                                "title": "悬疑探险",
+                                "value": "168"
+                            },
+                            {
+                                "title": "言情小说",
+                                "value": "169"
+                            },
+                            {
+                                "title": "社会小说",
+                                "value": "170"
+                            },
+                            {
+                                "title": "都市小说",
+                                "value": "171"
+                            },
+                            {
+                                "title": "名人传奇",
+                                "value": "172"
+                            },
+                            {
+                                "title": "架空历史",
+                                "value": "173"
+                            },
+                            {
+                                "title": "近代风云",
+                                "value": "174"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "list": "data",
+            "desc": "intro",
+            "cover": "photoPath ||@js: return \"https://book.tianzhenxing.com/book/\"+result;"
+        },
+        "现代文学": {
+            "cat": "clsName",
+            "responseFormatType": "json",
+            "author": "author",
+            "bookName": "name",
+            "httpHeaders": {
+                "Seq": "11111111111111111111111111111111",
+                "version": "1.9.5",
+                "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+            },
+            "requestInfo": "http://app.liushuo.cc/book/list?wordFilter=0&fullFlag=0&clsIdSecond=%@filter&pageNo=%@pageIndex&orderBy=read_cnt&clsIdFirst=287",
+            "host": "https://app1.youzibank.com",
+            "actionID": "bookWorld",
+            "detailUrl": "@js:\nvar id = result.id\nparams.nativeTool.log(id)\nreturn \"http://app.liushuo.cc/book/chapter/listAll?sortType=0&userId=11682791&bookId=\" + id",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "当代经典",
+                                "value": "288"
+                            },
+                            {
+                                "title": "近现代经典",
+                                "value": "290"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 5,
+            "list": "data",
+            "desc": "intro",
+            "cover": "photoPath ||@js: return \"https://book.tianzhenxing.com/book/\"+result;"
+        },
+        "男频": {
+            "cat": "clsName",
+            "responseFormatType": "json",
+            "author": "author",
+            "bookName": "name",
+            "httpHeaders": {
+                "Seq": "11111111111111111111111111111111",
+                "version": "1.9.5",
+                "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+            },
+            "requestInfo": "http://app.liushuo.cc/book/list?wordFilter=0&fullFlag=0&clsIdSecond=0&pageNo=%@pageIndex&orderBy=read_cnt&clsIdFirst=%@filter",
+            "host": "https://app1.youzibank.com",
+            "actionID": "bookWorld",
+            "detailUrl": "@js:\nvar id = result.id\nparams.nativeTool.log(id)\nreturn \"http://app.liushuo.cc/book/chapter/listAll?sortType=0&userId=11682791&bookId=\" + id",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "玄幻",
+                                "value": "1"
+                            },
+                            {
+                                "title": "奇幻",
+                                "value": "2"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "3"
+                            },
+                            {
+                                "title": "仙侠",
+                                "value": "4"
+                            },
+                            {
+                                "title": "都市",
+                                "value": "5"
+                            },
+                            {
+                                "title": "校园",
+                                "value": "6"
+                            },
+                            {
+                                "title": "历史",
+                                "value": "7"
+                            },
+                            {
+                                "title": "军事",
+                                "value": "8"
+                            },
+                            {
+                                "title": "游戏",
+                                "value": "9"
+                            },
+                            {
+                                "title": "竞技",
+                                "value": "10"
+                            },
+                            {
+                                "title": "科幻",
+                                "value": "11"
+                            },
+                            {
+                                "title": "悬疑",
+                                "value": "12"
+                            },
+                            {
+                                "title": "恐怖",
+                                "value": "13"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "14"
+                            },
+                            {
+                                "title": "怪谈",
+                                "value": "15"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "16"
+                            },
+                            {
+                                "title": "BQRM",
+                                "value": "17"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "data",
+            "desc": "intro",
+            "cover": "photoPath ||@js: return \"https://book.tianzhenxing.com/book/\"+result;"
+        },
+        "影视著作": {
+            "cat": "clsName",
+            "responseFormatType": "json",
+            "author": "author",
+            "bookName": "name",
+            "httpHeaders": {
+                "Seq": "11111111111111111111111111111111",
+                "version": "1.9.5",
+                "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+            },
+            "requestInfo": "http://app.liushuo.cc/book/list?wordFilter=0&fullFlag=0&clsIdSecond=%@filter&pageNo=%@pageIndex&orderBy=read_cnt&clsIdFirst=258",
+            "host": "https://app1.youzibank.com",
+            "actionID": "bookWorld",
+            "detailUrl": "@js:\nvar id = result.id\nparams.nativeTool.log(id)\nreturn \"http://app.liushuo.cc/book/chapter/listAll?sortType=0&userId=11682791&bookId=\" + id",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "高分原著",
+                                "value": "259"
+                            },
+                            {
+                                "title": "国产影视",
+                                "value": "260"
+                            },
+                            {
+                                "title": "海外影视",
+                                "value": "261"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 3,
+            "list": "data",
+            "desc": "intro",
+            "cover": "photoPath ||@js: return \"https://book.tianzhenxing.com/book/\"+result;"
+        },
+        "女频": {
+            "cat": "clsName",
+            "responseFormatType": "json",
+            "author": "author",
+            "bookName": "name",
+            "httpHeaders": {
+                "Seq": "11111111111111111111111111111111",
+                "version": "1.9.5",
+                "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+            },
+            "requestInfo": "http://app.liushuo.cc/book/list?wordFilter=0&fullFlag=0&clsIdSecond=0&pageNo=%@pageIndex&orderBy=read_cnt&clsIdFirst=%@filter",
+            "host": "https://app1.youzibank.com",
+            "actionID": "bookWorld",
+            "detailUrl": "@js:\nvar id = result.id\nparams.nativeTool.log(id)\nreturn \"http://app.liushuo.cc/book/chapter/listAll?sortType=0&userId=11682791&bookId=\" + id",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "耽美百合",
+                                "value": "128"
+                            },
+                            {
+                                "title": "轻小说",
+                                "value": "298"
+                            },
+                            {
+                                "title": "次元专区",
+                                "value": "18"
+                            },
+                            {
+                                "title": "同人作品",
+                                "value": "16"
+                            },
+                            {
+                                "title": "青春校园",
+                                "value": "15"
+                            },
+                            {
+                                "title": "幻想言情",
+                                "value": "14"
+                            },
+                            {
+                                "title": "古代言情",
+                                "value": "13"
+                            },
+                            {
+                                "title": "现代言情",
+                                "value": "12"
+                            },
+                            {
+                                "title": "其他",
+                                "value": "116"
+                            },
+                            {
+                                "title": "BQRM",
+                                "value": "310"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "data",
+            "desc": "intro",
+            "cover": "photoPath ||@js: return \"https://book.tianzhenxing.com/book/\"+result;"
+        },
+        "古典文学": {
+            "cat": "clsName",
+            "responseFormatType": "json",
+            "author": "author",
+            "bookName": "name",
+            "httpHeaders": {
+                "Seq": "11111111111111111111111111111111",
+                "version": "1.9.5",
+                "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 9; MI 6 MIUI/V11.0.5.0.PCACNXM)"
+            },
+            "requestInfo": "http://app.liushuo.cc/book/list?wordFilter=0&fullFlag=0&clsIdSecond=%@filter&pageNo=%@pageIndex&orderBy=read_cnt&clsIdFirst=283",
+            "host": "https://app1.youzibank.com",
+            "actionID": "bookWorld",
+            "detailUrl": "@js:\nvar id = result.id\nparams.nativeTool.log(id)\nreturn \"http://app.liushuo.cc/book/chapter/listAll?sortType=0&userId=11682791&bookId=\" + id",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": [
+                    {
+                        "key": "type",
+                        "items": [
+                            {
+                                "title": "全部",
+                                "value": "0"
+                            },
+                            {
+                                "title": "海外经典",
+                                "value": "285"
+                            },
+                            {
+                                "title": "古典国学",
+                                "value": "286"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 4,
+            "list": "data",
+            "desc": "intro",
+            "cover": "photoPath ||@js: return \"https://book.tianzhenxing.com/book/\"+result;"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

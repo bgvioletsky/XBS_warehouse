@@ -1,0 +1,90 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id='bo_v_con']/img/@src",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\nreturn encodeURI(result);",
+        "host": "https://copytoon305.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "장르": {
+            "cat": "//div[@class='section-item-genre']",
+            "lastChapterTitle": "//div[@class='section-item-addon']/span",
+            "responseFormatType": "html",
+            "bookName": "//div[@class='section-item-title']/a/h3",
+            "desc": "//div[@class='toon-summary']",
+            "requestInfo": "https://copytoon305.com/%EC%9B%B9%ED%88%B0/%EC%9E%A5%EB%A5%B4/%@filter",
+            "host": "https://copytoon305.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//div[@class='section-item-title']/a/@href",
+            "cover": "//img/@src",
+            "moreKeys": {
+                "requestFilters": "all::\n일상::일상\n개그::개그\n미스터리::미스터리\n시대극::시대극\n스포츠::스포츠\nBL::BL\n백합::백합\nSF::SF\n학원::학원\n공포::공포\n옴니버스::옴니버스\nSM::SM"
+            },
+            "list": "//div[@class='list-row']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "validConfig": ""
+        }
+    },
+    "sourceUrl": "https://copytoon305.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺copytoon🌐🔞",
+    "sourceType": "comic",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666271786.192591",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class='section-item-genre']",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class='section-item-addon']/span",
+        "bookName": "//div[@class='section-item-title']/a/h3",
+        "desc": "//div[@class='toon-summary']",
+        "requestInfo": "https://copytoon305.com/bbs/search_webtoon.php?stx=%@keyWord",
+        "host": "https://copytoon305.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class='section-item-title']/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//div[@class='list-row']",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\nreturn encodeURI(result);",
+        "title": "//a/div[1]/text()",
+        "host": "https://copytoon305.com/",
+        "list": "//div[@class='contents-list']/ul/li||@js:\nreturn result.reverse();",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

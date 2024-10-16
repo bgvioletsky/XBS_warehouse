@@ -1,0 +1,89 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nlet url=params.queryInfo.detailUrl\nreturn {'url':url,'webView':true}",
+        "host": "https://m.huya.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "list": "//div[@id=\"video\"]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//video/@src"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceType": "video",
+    "sourceName": "虎牙直播",
+    "sourceUrl": "https://m.huya.com",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1657893951.134143",
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+        },
+        "content": "@js:\nreturn params.queryInfo.url",
+        "host": "https://m.huya.com",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "chenxing",
+    "shudanList": {},
+    "bookWorld": {
+        "热门": {
+            "cat": "//div[@class=\"g-item\"]/div[1]/span/text()",
+            "author": "//div[@class=\"g-item\"]/div[2]/span/text()",
+            "responseFormatType": "html",
+            "bookName": "//div[@class=\"g-item\"]/p/text()",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+            },
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\nlet url=`https://m.huya.com/g/${_aa}`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://m.huya.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//@href",
+            "cover": "//div[@class=\"g-item\"]/div[1]/div[1]/img/@src",
+            "validConfig": "",
+            "list": "//div[@class=\"m-container-slide hidden\"]/a",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "wordCount": "//div[@class=\"g-item\"]/div[2]/div[1]/span/text()",
+            "moreKeys": {
+                "requestFilters": "_aa\n王者荣耀::2336\n绝地求生::2793\n英雄联盟::1\n星秀::1663\n吃喝玩乐::100044\n主机游戏::100032\n和平精英::3203\n穿越火线::4\n颜值::2168\n二次元::2633\n地下城与勇者::2\n暴雪专区::100043\n一起看::2135\n我的世界::1732\n燃烧意志::3943\n"
+            }
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

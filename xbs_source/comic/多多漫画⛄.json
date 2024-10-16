@@ -1,0 +1,111 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34l-GM|6{|",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "title": "name",
+        "host": "https://m.duoduomh.com",
+        "httpHeaders": {
+            "User-Agent": "DuoduoMH Android Client/1.0 (admin@duoduomh.com)"
+        },
+        "list": "$.data.chapterGroup..chapters.*",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "id ||@js:\nreturn 'http://api.duoduomh.1a3.net/app2/chapter/view?id=' + result;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "多多漫画⛄",
+    "sourceType": "comic",
+    "sourceUrl": "https://m.duoduomh.com",
+    "httpHeaders": {
+        "User-Agent": "DuoduoMH Android Client/1.0 (admin@duoduomh.com)"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1663161768.795691",
+    "searchBook": {
+        "author": "author",
+        "responseFormatType": "json",
+        "lastChapterTitle": "last_chapter_name",
+        "bookName": "name",
+        "httpHeaders": {
+            "User-Agent": "DuoduoMH Android Client/1.0 (admin@duoduomh.com)"
+        },
+        "requestInfo": "http://api.duoduomh.1a3.net/app2/comic/search?sort=click&page=%@pageIndex&keywords=%@keyWord",
+        "host": "https://m.duoduomh.com",
+        "actionID": "searchBook",
+        "detailUrl": "id ||@js:\nreturn \"http://api.duoduomh.1a3.net/app2/comic/view?id=\" + result;",
+        "desc": "description",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "$.items",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "cover": "coverUrl || coverHUrl"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.data.imageArray.* ||@js:\nreturn result.join('\\n');",
+        "actionID": "chapterContent",
+        "host": "https://m.duoduomh.com",
+        "httpHeaders": {
+            "User-Agent": "DuoduoMH Android Client/1.0 (admin@duoduomh.com)"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "推荐",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "parserID": "DOM",
+        "responseFormatType": "json",
+        "actionID": "bookDetail"
+    },
+    "bookWorld": {
+        "分类1": {
+            "lastChapterTitle": "last_chapter_name",
+            "author": "author",
+            "responseFormatType": "json",
+            "bookName": "name",
+            "httpHeaders": {
+                "User-Agent": "DuoduoMH Android Client/1.0 (admin@duoduomh.com)"
+            },
+            "host": "https://m.duoduomh.com",
+            "requestInfo": "http://api.duoduomh.1a3.net/app2/comic/index?sort=click&filter=%@filter&page=%@pageIndex",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "全部::\n轻松::qingsong\n日常::richang\n恋爱::lianai\n青春::qingchun\n都市::dushi\n仙侠::xianxia\n奇幻::qihuan\n科幻::kehuan\n悬疑::xuanyi\n恐怖::kongbu\n推理::zhentantuili\n动作::dongzuo\n后宫::hougong"
+            },
+            "cover": "coverUrl || coverHUrl",
+            "validConfig": "",
+            "list": "$.items",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "id ||@js:\nreturn \"http://api.duoduomh.1a3.net/app2/comic/view?id=\" + result;",
+            "desc": "description"
+        }
+    }
+}

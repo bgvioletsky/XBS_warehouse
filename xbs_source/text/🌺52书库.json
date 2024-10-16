@@ -1,0 +1,119 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.52shukuwang.com/",
+        "content": "//div[@class='book_con fix']/p",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "status": "(//div[@class='infotype infotype_mulu']/span[@class='bookinfo'])[2]||@replace:状态：",
+        "validConfig": "",
+        "responseFormatType": "html",
+        "host": "https://www.52shukuwang.com/",
+        "parserID": "DOM",
+        "actionID": "bookDetail"
+    },
+    "shudanList": {
+        "知名作者": {
+            "actionID": "shudanList",
+            "validConfig": "",
+            "requestInfo": "@js:\nlet url = 'https://www.52shukuwang.com/author/' + params.filters.filter + 'index_' + params.pageIndex + '.html';\nreturn url.replace('index_1.html', '');",
+            "title": "//a",
+            "moreKeys": {
+                "pageSize": 120,
+                "requestFilters": "耽美作者::\n言情作者::yanqing/"
+            },
+            "host": "https://www.52shukuwang.com/",
+            "_sIndex": 0,
+            "list": "//ul[@class='writer_list fix']/li",
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "url": "//a/@href"
+        }
+    },
+    "bookWorld": {
+        "分类": {
+            "author": "//h2/a||@js:\nreturn result.replace(/.*作者：/, '');",
+            "responseFormatType": "html",
+            "bookName": "//h2/a||@js:\nreturn result.replace(/作者：.*/, '');",
+            "desc": "//p",
+            "requestInfo": "@js:\nlet url = 'https://www.52shukuwang.com/' + params.filters.filter + '/index_' + params.pageIndex + '.html';\nreturn url.replace('index_1.html', '');",
+            "host": "https://www.52shukuwang.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 25,
+                "requestFilters": "现代都市::xiandaidushi\n古代架空::jiakong\n穿越重生::chongsheng\nBL同人::bl\nGL百合::gl\n都市言情::yanqing"
+            },
+            "detailUrl": "//h2/a/@href",
+            "validConfig": "",
+            "list": "//ul[@class='list']/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.52shukuwang.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺52书库",
+    "sourceType": "text",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "author": "//h2/a||@js:\nreturn result.replace(/.*作者：/, '');",
+        "responseFormatType": "html",
+        "bookName": "//h2/a||@js:\nreturn result.replace(/作者：.*/, '');",
+        "desc": "//p",
+        "requestInfo": "@js:\nreturn params.queryInfo.url;",
+        "host": "https://www.52shukuwang.com/",
+        "actionID": "shudanDetail",
+        "detailUrl": "//h2/a/@href",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "validConfig": "",
+        "list": "//ul[@class='list']/li",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666179256.238449",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "author": "//h2/a||@js:\nreturn result.replace(/.*作者：/, '');",
+        "requestInfo": "@js:\nreturn {'url':'https://www.52shukuwang.com/e/search/', 'POST':true, 'httpParams':{'show':'title,writer', 'tempid':1, 'tbname':'article', 'keyboard':params.keyWord}};",
+        "bookName": "//h2/a||@js:\nreturn result.replace(/作者：.*/, '');",
+        "detailUrl": "//h2/a/@href",
+        "host": "https://www.52shukuwang.com/",
+        "list": "//ul[@class='list']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//p"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//div[@class='infotype infotype_mulu']/time[@class='bookinfo']||@replace:更新时间：",
+        "title": "//a",
+        "host": "https://www.52shukuwang.com/",
+        "list": "//ul[@class='catalog']/li[@class='column4']",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

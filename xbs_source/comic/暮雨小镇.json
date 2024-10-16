@@ -1,0 +1,99 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.muyuxiaozhen.com",
+        "content": "//@data-src",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "status": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "lastChapterTitle": "//meta[@property=\"og:novel:latest_chapter_name\"]/@content",
+        "host": "https://www.muyuxiaozhen.com",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@property=\"og:description\"]/@content"
+    },
+    "bookWorld": {
+        "排行榜": {
+            "responseFormatType": "html",
+            "bookName": "//@alt",
+            "requestInfo": "@js:\r\nlet {_aa}=params.filters\nlet url=`https://www.muyuxiaozhen.com/top/${_aa}.html`;\r\n\r\nreturn {url:url}",
+            "host": "https://www.muyuxiaozhen.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3[@class=\"comic-name acgn-title\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//ul[@class=\"comic-sort-list acgn-col4 acgn-comic-list\"]/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": "_aa\n总点击::alldj\n月点击::ydj\n日点击::rdj\n总收藏::allfav"
+            }
+        },
+        "分类": {
+            "responseFormatType": "html",
+            "bookName": "//@alt",
+            "requestInfo": "@js:\r\nlet {_aa,_ab,_ac}=params.filters\nlet url=`https://www.muyuxiaozhen.com/list/${_ab}/${encodeURI(_aa)}/${_ac}/${params.pageIndex}.html`;\r\n\r\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.muyuxiaozhen.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//h3[@class=\"acgn-title\"]/a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//ul[@id=\"J_comicList\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 48,
+                "requestFilters": "_aa\n全部::全部\n都市::都市\n校园::校园\n耽美::耽美\n恋爱::恋爱\n穿越::穿越\n后宫::后宫\n悬疑::悬疑\n恐怖::恐怖\n架空::架空\n灵异::灵异\n百合::百合\n古风::古风\n生活::生活\n真人::真人\n冒险::冒险\n科幻::科幻\n霸总::霸总\n玄幻::玄幻\n修真::修真\n搞笑::搞笑\n战争::战争\n动作::动作\n同人::同人\n竞技::竞技\n励志::励志\n热血::热血\n\n_ab\n全部::9\n国产漫画::1\n日本漫画::2\n韩国漫画::3\n\n_ac\n全部::3\n连载中::4\n已完结::1"
+            }
+        }
+    },
+    "shudanList": {},
+    "sourceType": "comic",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "暮雨小镇",
+    "sourceUrl": "https://www.muyuxiaozhen.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "lastModifyTime": "1660489512.919275",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.muyuxiaozhen.com",
+        "list": "//ol[@class=\"chapter-list col-4 text\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

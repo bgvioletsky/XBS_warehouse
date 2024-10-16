@@ -1,0 +1,94 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://www.biqudu.net/",
+        "content": "//div[@id=\"content\"]||@js:\nreturn result.replace(/一秒记住【笔趣阁　】为您提供最快更新！/,\"\").replace(/手机用户请浏览m.1biquge.com　阅读，更优质的阅读体验。/,\"\").replace(/一秒记住【笔趣阁　】/,\"\")",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "lastChapterTitle": "//div[@id=\"info\"]/p[4]/a",
+        "host": "https://www.biqudu.net/",
+        "cover": "//div[@id=\"fmimg\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "//span[1]",
+            "author": "//span[4]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[3]",
+            "bookName": "//span[2]/a",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.biqudu.net${_type}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.biqudu.net/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 35,
+                "requestFilters": "_type\n玄幻奇幻::/biquge_1/\n武侠仙侠::/biquge_2/\n都市言情::/biquge_3/\n历史军事::/biquge_4/\n科幻灵异::/biquge_5/\n网游竞技::/biquge_6/\n女频频道::/biquge_7/\n"
+            },
+            "detailUrl": "//span[2]/a/@href|https://www.biqudu.net%@result",
+            "validConfig": "",
+            "list": "//div[@class=\"l\"]/ul/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "https://www.biqudu.net/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9997",
+    "sourceName": "笔趣阁(biqudu)",
+    "desc": "🐰",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666521804.075717",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]",
+        "author": "//span[4]",
+        "responseFormatType": "html",
+        "bookName": "//span[2]/a",
+        "requestInfo": "searchbook.php?keyword=%@keyWord",
+        "host": "https://www.biqudu.net/",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]/a/@href|https://www.biqudu.net%@result",
+        "validConfig": "",
+        "list": "//div[@class=\"novelslist2\"]/ul/li[position()>1]",
+        "parserID": "DOM",
+        "status": "//span[3]"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a||@js:\nreturn result.replace(/[\\S]*【/,\"\"). replace(/[\\S]*】/,\"\")",
+        "host": "https://www.biqudu.net/",
+        "list": "//div[@id=\"list\"]/dl/dd[position()>12]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href| https://www.biqudu.net%@result"
+    },
+    "sourceType": "text"
+}

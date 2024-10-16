@@ -1,0 +1,227 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.aiyueshuxiang.com",
+        "httpHeaders": {
+            "Referer": "https://www.aiyueshuxiang.com/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+            "Host": "www.aiyueshuxiang.com"
+        },
+        "list": "//div[@id=\"list\"]//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "爱阅书香⛄",
+    "sourceType": "text",
+    "sourceUrl": "https://www.aiyueshuxiang.com",
+    "httpHeaders": {
+        "Referer": "https://www.aiyueshuxiang.com/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+        "Host": "www.aiyueshuxiang.com"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1661496990.469101",
+    "searchBook": {
+        "cat": "//span[1]",
+        "author": "//span[4]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//span[3]//a",
+        "bookName": "//span[2] ||@js:\nif(result.indexOf('深空彼岸')>=0){\n\treturn '深空 彼岸';\n}\nreturn result.trim();",
+        "httpHeaders": {
+            "Referer": "https://www.aiyueshuxiang.com/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+            "Host": "www.aiyueshuxiang.com"
+        },
+        "requestInfo": "@js:\nlet obj = {\n\t'url':'/search.php',\n\t'httpParams':{'keyword':params.keyWord},\n\t'POST':true\n}\nreturn obj;",
+        "host": "https://www.aiyueshuxiang.com",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]//a/@href",
+        "cover": "//span[2]//a/@href ||@js:\nlet id = result.match(/\\d+/)[0];\nreturn 'http://img.aiyueshuxiang.com/img/'+id+'.jpg';",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[contains(@class,\"search-list\")]//li[position()>1]",
+        "status": "//span[last()]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]//p",
+        "actionID": "chapterContent",
+        "host": "https://www.aiyueshuxiang.com",
+        "httpHeaders": {
+            "Referer": "https://www.aiyueshuxiang.com/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+            "Host": "www.aiyueshuxiang.com"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://www.aiyueshuxiang.com",
+        "httpHeaders": {
+            "Referer": "https://www.aiyueshuxiang.com/",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+            "Host": "www.aiyueshuxiang.com"
+        },
+        "cover": "//div[@id=\"fmimg\"]//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"intro\"]"
+    },
+    "bookWorld": {
+        "最新": {
+            "cat": "//span[1]",
+            "author": "//span[4]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[3]//a",
+            "bookName": "//span[2] ||@js:\nreturn result.trim();",
+            "httpHeaders": {
+                "Referer": "https://www.aiyueshuxiang.com/",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+                "Host": "www.aiyueshuxiang.com"
+            },
+            "host": "https://www.aiyueshuxiang.com",
+            "requestInfo": "%@filter",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[2]//a/@href",
+            "cover": "//span[2]//a/@href ||@js:\nlet id = result.match(/\\d+/)[0];\nreturn 'http://img.aiyueshuxiang.com/img/'+id+'.jpg';",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "/xuanhuan/"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "/wuxia/"
+                            },
+                            {
+                                "title": "军事游戏",
+                                "value": "/junshi/"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "/dushi/"
+                            },
+                            {
+                                "title": "科幻悬疑",
+                                "value": "/kehuan/"
+                            },
+                            {
+                                "title": "次元小说",
+                                "value": "/ciyuan/"
+                            },
+                            {
+                                "title": "排行榜单",
+                                "value": "/top/"
+                            },
+                            {
+                                "title": "完本小说",
+                                "value": "/wanben/"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//div[@id=\"newscontent\"]/div[@class=\"l\"]//ul/li",
+            "validConfig": "",
+            "status": "//span[last()]"
+        },
+        "热门": {
+            "cat": "//span[1]",
+            "author": "//span[last()]",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//span[3]//a",
+            "bookName": "//span[2] ||@js:\nreturn result.trim();",
+            "httpHeaders": {
+                "Referer": "https://www.aiyueshuxiang.com/",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Safari/605.1.15",
+                "Host": "www.aiyueshuxiang.com"
+            },
+            "host": "https://www.aiyueshuxiang.com",
+            "requestInfo": "%@filter",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[2]//a/@href",
+            "cover": "//span[2]//a/@href ||@js:\nlet id = result.match(/\\d+/)[0];\nreturn 'http://img.aiyueshuxiang.com/img/'+id+'.jpg';",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "玄幻奇幻",
+                                "value": "/xuanhuan/"
+                            },
+                            {
+                                "title": "武侠仙侠",
+                                "value": "/wuxia/"
+                            },
+                            {
+                                "title": "军事游戏",
+                                "value": "/junshi/"
+                            },
+                            {
+                                "title": "都市言情",
+                                "value": "/dushi/"
+                            },
+                            {
+                                "title": "科幻悬疑",
+                                "value": "/kehuan/"
+                            },
+                            {
+                                "title": "次元小说",
+                                "value": "/ciyuan/"
+                            },
+                            {
+                                "title": "排行榜单",
+                                "value": "/top/"
+                            },
+                            {
+                                "title": "完本小说",
+                                "value": "/wanben/"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            },
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//div[@id=\"newscontent\"]/div[@class=\"r\"]//ul/li",
+            "validConfig": ""
+        }
+    }
+}

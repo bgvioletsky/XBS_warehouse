@@ -1,0 +1,79 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//div[@id='content']/p/text()|@js:\nreturn result.replace(/您可以在百度里搜索.*?查找最新章节！/, '').replace(/为了方便下次阅读(\\S|\\s)*?\\(www.bxwxorg.com\\)/, '');",
+        "requestInfo": "@js:\nlet url = params.queryInfo.url;\nif(url.indexOf('http')!=0)\n\treturn 'https://www.bxwxorg.com' + url;\nreturn url;",
+        "host": "https://www.bxwxorg.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.bxwxorg.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-笔下文学",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357548.227543",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//dd[2]/span[3]",
+        "author": "//dd[2]/span[1]",
+        "lastChapterTitle": "//dd[4]/a",
+        "responseFormatType": "html",
+        "bookName": "//dd[1]/h3/a",
+        "desc": "//dd[@class='book_des']",
+        "requestInfo": "@js:\nlet url = 'https://www.bxwxorg.com/search.html';\nlet hp = {};\nhp.searchkey = params.keyWord;\nhp.pn= params.pageIndex;\nhp.searchtype='all';\nlet g={\"cookie\":\"Hm_lpvt_46329db612a10d9ae3a668a40c152e0e=1617710227; Hm_lvt_46329db612a10d9ae3a668a40c152e0e=1617710219; __cfduid=d201a73653a42d05eb1cb2cdbd8c6f27f1617710219\"};\nreturn {'POST':true,'url':url, 'httpParams':hp, 'httpHeaders':g};",
+        "host": "https://www.bxwxorg.com",
+        "actionID": "searchBook",
+        "detailUrl": "//dd[1]/h3/a/@href",
+        "cover": "//dt/a/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//dd[2]/span[4]",
+        "list": "//div[@id='sitembox']/dl",
+        "success": "//div[@id='sitembox']",
+        "status": "//dd[2]/span[2]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "requestInfo": "@js:\nlet url = params.queryInfo.detailUrl;\nif(url.indexOf('http')!=0)\n\treturn 'https://www.bxwxorg.com' + url;\nreturn url;",
+        "title": "//a",
+        "moreKeys": {
+            "skipCount": 12
+        },
+        "host": "https://www.bxwxorg.com",
+        "list": "//div[@id='list']/dl//dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

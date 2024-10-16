@@ -1,0 +1,82 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]/p/text()",
+        "actionID": "chapterContent",
+        "host": "https://www.xinqingdou.cc/",
+        "httpHeaders": {
+            "cookie": "Hm_lvt_45a480524e18a52ba8e23a7c664d8628=1642244193; Hm_lpvt_45a480524e18a52ba8e23a7c664d8628=1642248519"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.xinqingdou.cc/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-青豆小说网",
+    "httpHeaders": {
+        "cookie": "Hm_lvt_45a480524e18a52ba8e23a7c664d8628=1642244193; Hm_lpvt_45a480524e18a52ba8e23a7c664d8628=1642248519"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357842.946229",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[@class=\"title\"]/span/a",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//div[@class=\"sys\"]/li/a",
+        "bookName": "//div[@class=\"title\"]/h2/a",
+        "httpHeaders": {
+            "cookie": "Hm_lvt_45a480524e18a52ba8e23a7c664d8628=1642244193; Hm_lpvt_45a480524e18a52ba8e23a7c664d8628=1642248519"
+        },
+        "requestInfo": "@js:\nlet hp = {};\nhp.searchkey = params.keyWord;\nhp.searchtype = 'keywords';\nlet url = 'search.html';\nlet hh ={\"cookie\":\"Hm_lvt_45a480524e18a52ba8e23a7c664d8628=1642244193; Hm_lpvt_45a480524e18a52ba8e23a7c664d8628=1642248519\"};\nreturn {'url':url, 'httpParams':hp, 'httpHeaders':hh,\"POST\":true};",
+        "host": "https://www.xinqingdou.cc/",
+        "actionID": "searchBook",
+        "detailUrl": "//div[@class=\"title\"]/h2/a/@href",
+        "cover": "//div[@class=\"pic\"]/a/img/@src|@js:\nreturn \"https:\"+result",
+        "validConfig": "",
+        "list": "//div[@id=\"alistbox\"]",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "nextPageUrl": "//div[@class=\"col-xs-8\"]/ul[@class=\"list-group\"]/li[6]/a[1]/@href",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.xinqingdou.cc/",
+        "httpHeaders": {
+            "cookie": "Hm_lvt_45a480524e18a52ba8e23a7c664d8628=1642244193; Hm_lpvt_45a480524e18a52ba8e23a7c664d8628=1642248519"
+        },
+        "list": "//div[@class=\"link_14\"]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,125 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "url": "//a/@href",
+        "title": "//a",
+        "moreKeys": {
+            "maxPage": 500
+        },
+        "host": "https://lingjingxingzhe.com",
+        "httpHeaders": {
+            "referer": "https://lingjingxingzhe.com/",
+            "cookie": "waf_sc=5889647726;sex=boy"
+        },
+        "list": "//div [@class=\"section-box\"][2]//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(), '下一页')]/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "🚗灵镜行者",
+    "sourceType": "text",
+    "sourceUrl": "https://lingjingxingzhe.com",
+    "httpHeaders": {
+        "referer": "https://lingjingxingzhe.com/",
+        "cookie": "waf_sc=5889647726;sex=boy"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666394456.050471",
+    "searchBook": {
+        "author": "//span [@class=\"s1\"]",
+        "responseFormatType": "html",
+        "bookName": "//span [@class=\"s2\"]/a",
+        "httpHeaders": {
+            "referer": "https://lingjingxingzhe.com/",
+            "cookie": "waf_sc=5889647726;sex=boy"
+        },
+        "requestInfo": "@js:\nlet url= \"https://lingjingxingzhe.com/search/\";\nlet hp= {'searchkey':params.keyWord,'Submit':''};\n\nreturn {'url':url, 'POST':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders,\nforbidCookie:true\n}",
+        "host": "https://lingjingxingzhe.com",
+        "actionID": "searchBook",
+        "detailUrl": "//span [@class=\"s2\"]/a/@href",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "validConfig": "",
+        "list": "//ul [@class=\"txt-list txt-list-row5\"]/li",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div [@class=\"content\"]/p/text() ||@js:\nreturn result.replace(/天才本站地址.*?\\)\\;\\;/,\"\").replace(/https.*?html/,\"\") .replace(/百度搜索.*最新章节。/,\"\");",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 10
+        },
+        "host": "https://lingjingxingzhe.com",
+        "httpHeaders": {
+            "referer": "https://lingjingxingzhe.com/",
+            "cookie": "waf_sc=5889647726;sex=boy"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(), '下一页')]/@href"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "0",
+    "shudanList": {},
+    "authorId": "",
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://lingjingxingzhe.com",
+        "httpHeaders": {
+            "referer": "https://lingjingxingzhe.com/",
+            "cookie": "waf_sc=5889647726;sex=boy"
+        },
+        "cover": "//meta [@property=\"og:image\"]/@content",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta [@name=\"description\"]/@content"
+    },
+    "bookWorld": {
+        "分类排行榜": {
+            "author": "//span[4]",
+            "responseFormatType": "html",
+            "bookName": "//span[2]/a",
+            "httpHeaders": {
+                "referer": "https://lingjingxingzhe.com/",
+                "cookie": "waf_sc=5889647726;sex=boy"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://lingjingxingzhe.com${_type}${params.pageIndex}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://lingjingxingzhe.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n玄幻小说::/category/xuanhuan_\n武侠小说::/category/wuxia_\n都市小说::/category/dushi_\n历史小说::/category/lishi_\n科幻小说::/category/kehuan_\n网游小说::/category/wangyou_\n其他小说::/category/qita_"
+            },
+            "detailUrl": "//span[2]/a/@href",
+            "validConfig": "",
+            "list": "//ul [@class=\"cdsf-bgf-tgrt txt-list txt-list-row5\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    }
+}

@@ -1,0 +1,188 @@
+{
+    "chapterContent": {
+        "actionID": "chapterContent",
+        "content": "//div[@id='content']||@js:\nreturn result.replaceAll('纯文字在线阅读本站域名www.xklxsw.com 手机同步阅读请访问 m.xklxsw.com', '').replaceAll('可乐小说网最快更新，无弹窗阅读请收藏可乐小说网(www.xklxsw.com)。', '');",
+        "responseEncode": "2147485234",
+        "requestParamsEncode": "2147485234",
+        "validConfig": "",
+        "host": "https://www.xklxsw.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "validConfig": "",
+        "host": "https://www.xklxsw.com/",
+        "cover": "//div[@class='bookimg']/img/@data-original",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "(//div[@class='fd-list'])[1]"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "sort": {
+            "requestParamsEncode": "2147485234",
+            "responseEncode": "2147485234",
+            "author": "//span[@class='author']",
+            "responseFormatType": "html",
+            "bookName": "//span[@class='name']/a",
+            "desc": "//span[@class='say']",
+            "requestInfo": "https://www.xklxsw.com/%@filter.html",
+            "host": "https://www.xklxsw.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//span[@class='name']/a/@href",
+            "cover": "//span[@class='img']/a/img/@data-original",
+            "validConfig": "",
+            "list": "//div[@class='content']/div[@class='sortItem']",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "list-1",
+                                "title": "玄幻魔法"
+                            },
+                            {
+                                "value": "list-2",
+                                "title": "仙侠修真"
+                            },
+                            {
+                                "value": "list-3",
+                                "title": "都市言情"
+                            },
+                            {
+                                "value": "list-4",
+                                "title": "历史军事"
+                            },
+                            {
+                                "value": "list-5",
+                                "title": "网游竞技"
+                            },
+                            {
+                                "value": "list-6",
+                                "title": "科幻小说"
+                            },
+                            {
+                                "value": "list-7",
+                                "title": "恐怖灵异"
+                            },
+                            {
+                                "value": "list-8",
+                                "title": "其他小说"
+                            },
+                            {
+                                "value": "hot-dayvisit",
+                                "title": "点击日榜"
+                            },
+                            {
+                                "value": "hot-weekvisit",
+                                "title": "点击周榜"
+                            },
+                            {
+                                "value": "hot-monthvisit",
+                                "title": "点击月榜"
+                            },
+                            {
+                                "value": "hot-allvisit",
+                                "title": "点击总榜"
+                            },
+                            {
+                                "value": "hot-dayvote",
+                                "title": "投票日榜"
+                            },
+                            {
+                                "value": "hot-weekvote",
+                                "title": "投票周榜"
+                            },
+                            {
+                                "value": "hot-monthvote",
+                                "title": "投票月榜"
+                            },
+                            {
+                                "value": "hot-allvote",
+                                "title": "投票总榜"
+                            },
+                            {
+                                "value": "hot-goodnum",
+                                "title": "总收藏榜"
+                            },
+                            {
+                                "value": "hot-size",
+                                "title": "总字数榜"
+                            },
+                            {
+                                "value": "hot-lastupdate",
+                                "title": "最新更新"
+                            },
+                            {
+                                "value": "hot-postdate",
+                                "title": "最新入库"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            }
+        }
+    },
+    "sourceUrl": "https://www.xklxsw.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺可乐小说网✨",
+    "loginUrl": "https://www.xklxsw.com/login.php",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665938795.194012",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "author": "//span[@class='n4']",
+        "cat": "//span[@class='n1']",
+        "responseFormatType": "html",
+        "bookName": "//span[@class='n2']/a",
+        "lastChapterTitle": "//span[@class='n3']/a",
+        "requestInfo": "https://www.xklxsw.com/modules/article/search.php?searchkey=%@keyWord",
+        "host": "https://www.xklxsw.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//span[@class='n2']/a/@href",
+        "validConfig": "",
+        "list": "//ul[@class='update-list']/li",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "requestParamsEncode": "2147485234",
+        "responseEncode": "2147485234",
+        "validConfig": "",
+        "title": "//a",
+        "host": "https://www.xklxsw.com/",
+        "list": "(//div[@class='fd-list'])[4]/span",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href||@js:\nreturn params.queryInfo.detailUrl + result;"
+    },
+    "sourceType": "text"
+}

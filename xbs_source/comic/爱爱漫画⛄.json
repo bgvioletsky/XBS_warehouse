@@ -1,0 +1,195 @@
+{
+    "bookWorld": {
+        "分类": {
+            "cat": "//dl[2]/dd",
+            "lastChapterTitle": "//dl[1]/dd",
+            "responseFormatType": "html",
+            "author": "/a/dl/dd",
+            "bookName": "//h3",
+            "httpHeaders": {
+                "Referer": "http://m.iimh.net"
+            },
+            "requestInfo": "@js:\n\nlet url = '/' + params.filter + '/index'\nif(params.pageIndex > 1){\n\turl += '_' + params.pageIndex;\n}\nurl += '.html';\nreturn encodeURI(url);",
+            "host": "http://m.iimh.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[1]/@href ||@js:\nreturn result.split('\\n')[0];",
+            "cover": "//img/@data-src",
+            "validConfig": "",
+            "list": "//ul[@id=\"detail\"]//li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 25,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "少年热血",
+                                "value": "shaonianrexue"
+                            },
+                            {
+                                "title": "少女爱情",
+                                "value": "shaonvaiqing"
+                            },
+                            {
+                                "title": "武侠格斗",
+                                "value": "wuxiagedou"
+                            },
+                            {
+                                "title": "科幻魔幻",
+                                "value": "kehuan"
+                            },
+                            {
+                                "title": "竞技体育",
+                                "value": "jingjitiyu"
+                            },
+                            {
+                                "title": "搞笑喜剧",
+                                "value": "gaoxiaoxiju"
+                            },
+                            {
+                                "title": "耽美BL",
+                                "value": "danmeirensheng"
+                            },
+                            {
+                                "title": "侦探推理",
+                                "value": "zhentantuili"
+                            },
+                            {
+                                "title": "恐怖灵异",
+                                "value": "kongbulingyi"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            }
+        },
+        "排行": {
+            "cat": "//dl[2]/dd",
+            "lastChapterTitle": "//dl[1]/dd",
+            "responseFormatType": "html",
+            "author": "/a/dl/dd",
+            "bookName": "//h3",
+            "httpHeaders": {
+                "Referer": "http://m.iimh.net"
+            },
+            "requestInfo": "/manhua/%@filter.html",
+            "host": "http://m.iimh.net",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[1]/@href ||@js:\nreturn result.split('\\n')[0];",
+            "cover": "//img/@data-src",
+            "validConfig": "",
+            "list": "//ul[@id=\"detail\"]//li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "最新漫画",
+                                "value": "update"
+                            },
+                            {
+                                "title": "最热",
+                                "value": "paihang"
+                            }
+                        ],
+                        "key": "type0"
+                    }
+                ]
+            }
+        }
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result){\n\tlet list = result.list.reverse();\n\treturn {'list':list};\n\n}",
+        "title": "//a",
+        "host": "http://m.iimh.net",
+        "httpHeaders": {
+            "Referer": "http://m.iimh.net"
+        },
+        "list": "//div[@class=\"chapter-list\"]//ul//li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a//@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "爱爱漫画⛄",
+    "sourceType": "comic",
+    "sourceUrl": "http://m.iimh.net",
+    "httpHeaders": {
+        "Referer": "http://m.iimh.net"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1655901000.270103",
+    "searchBook": {
+        "cat": "//dl[2]/dd",
+        "responseFormatType": "html",
+        "author": "/a/dl/dd",
+        "lastChapterTitle": "//dl[1]/dd",
+        "bookName": "//h3",
+        "httpHeaders": {
+            "Referer": "http://m.iimh.net"
+        },
+        "requestInfo": "/manhua/paihang.html",
+        "host": "http://m.iimh.net",
+        "actionID": "searchBook",
+        "detailUrl": "//a[1]/@href ||@js:\nreturn result.split('\\n')[0];",
+        "moreKeys": {
+            "pageSize": 50
+        },
+        "validConfig": "",
+        "cover": "//img/@data-src",
+        "parserID": "DOM",
+        "list": "//ul[@id=\"detail\"]//li"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "httpHeaders": {
+            "Referer": "http://m.iimh.net"
+        },
+        "JSParser": "function functionName(config, params, result){\n\tlet reg = /cp=[\\s\\S]+?;/;\n\tlet res = result.match(reg)[0];\n\teval(res);\n\tlet resdata = params.nativeTool.base64Decode(cp);\n\teval(eval(resdata));\n\tlet oldimgL = _cuRs;\n\tlet newimgL = [];\n\t\n\tlet imgHost = 'https://res.img.96youhuiquan.com/';\n\tfor(let i=0;i<oldimgL.length;i++){\n\t\tlet item = oldimgL[i];\n\t\tif(item.indexOf('http') != -1){\n\t\t\tnewimgL.push(item);\n\t\t\tcontinue;\n\t\t}\n\t\tlet path_arr = item.split('/');\n\t\tlet path_str = path_arr[0] + path_arr[1];\n\t\tif (parseInt(path_str) <= 201801){\n\t\t\timgHost = 'https://res.img.96youhuiquan.com/';\n\t\t}\n\t\tif(item.startsWith('http')){\n\t\t\timgHost = '';\n\t\t}\n\t\titem = imgHost + item;\n\t\tnewimgL.push(item);\n\t}\n\tlet hh = config.httpHeaders;\n\thh.Host = imgHost.match(/\\/\\/(.*?)\\//)[1];\n\tlet imgObj = {'urls':newimgL.join('\\n'),'httpHeaders':hh};\n\treturn JSON.stringify(imgObj);\n}",
+        "host": "http://m.iimh.net",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "搜索暂无",
+    "shudanList": {},
+    "authorId": "",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://m.iimh.net",
+        "httpHeaders": {
+            "Referer": "http://m.iimh.net"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//div[@id=\"bookIntro\"]/p"
+    }
+}

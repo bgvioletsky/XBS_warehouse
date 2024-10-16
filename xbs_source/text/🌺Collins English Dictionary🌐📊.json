@@ -1,0 +1,194 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@class='dictionaries dictionary']//div[@class='dictentry dictlink']",
+        "host": "https://www.collinsdictionary.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": "1",
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "starting with digit": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "requestInfo": "https://www.collinsdictionary.com/browse/english/words-starting-with-digit",
+            "bookName": "//a",
+            "detailUrl": "//a/@href",
+            "host": "https://www.collinsdictionary.com/",
+            "list": "//ul[@class='bLtr']/li[1]",
+            "responseFormatType": "html",
+            "parserID": "DOM"
+        },
+        "browse by letter": {
+            "actionID": "bookWorld",
+            "validConfig": "",
+            "requestInfo": "https://www.collinsdictionary.com/browse/english/words-starting-with-%@filter",
+            "bookName": "//a",
+            "detailUrl": "//a/@href",
+            "host": "https://www.collinsdictionary.com/",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "a",
+                                "title": "A"
+                            },
+                            {
+                                "value": "b",
+                                "title": "B"
+                            },
+                            {
+                                "value": "c",
+                                "title": "C"
+                            },
+                            {
+                                "value": "d",
+                                "title": "D"
+                            },
+                            {
+                                "value": "e",
+                                "title": "E"
+                            },
+                            {
+                                "value": "f",
+                                "title": "F"
+                            },
+                            {
+                                "value": "g",
+                                "title": "G"
+                            },
+                            {
+                                "value": "h",
+                                "title": "H"
+                            },
+                            {
+                                "value": "i",
+                                "title": "I"
+                            },
+                            {
+                                "value": "j",
+                                "title": "J"
+                            },
+                            {
+                                "value": "k",
+                                "title": "K"
+                            },
+                            {
+                                "value": "l",
+                                "title": "L"
+                            },
+                            {
+                                "value": "m",
+                                "title": "M"
+                            },
+                            {
+                                "value": "n",
+                                "title": "N"
+                            },
+                            {
+                                "value": "o",
+                                "title": "O"
+                            },
+                            {
+                                "value": "p",
+                                "title": "P"
+                            },
+                            {
+                                "value": "q",
+                                "title": "Q"
+                            },
+                            {
+                                "value": "r",
+                                "title": "R"
+                            },
+                            {
+                                "value": "s",
+                                "title": "S"
+                            },
+                            {
+                                "value": "t",
+                                "title": "T"
+                            },
+                            {
+                                "value": "u",
+                                "title": "U"
+                            },
+                            {
+                                "value": "v",
+                                "title": "V"
+                            },
+                            {
+                                "value": "w",
+                                "title": "W"
+                            },
+                            {
+                                "value": "x",
+                                "title": "X"
+                            },
+                            {
+                                "value": "y",
+                                "title": "Y"
+                            },
+                            {
+                                "value": "z",
+                                "title": "Z"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "list": "//ul[@class='columns2 bL']/li",
+            "responseFormatType": "html",
+            "parserID": "DOM"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.collinsdictionary.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺Collins English Dictionary🌐📊",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665930099.130232",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "https://www.collinsdictionary.com/",
+        "list": "//ul[@class='columns2 bL']/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

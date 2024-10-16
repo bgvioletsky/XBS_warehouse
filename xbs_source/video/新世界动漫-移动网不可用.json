@@ -1,0 +1,157 @@
+{
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "http://www.xsjdm8.com",
+        "httpHeaders": {
+            "Referer": "http://www.xsjdm8.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//meta[@name=\"description\"]/@content"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a",
+        "host": "http://www.xsjdm8.com",
+        "httpHeaders": {
+            "Referer": "http://www.xsjdm8.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//div[@class=\"video_list fn-clear\"]/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "新世界动漫-移动网不可用",
+    "sourceType": "video",
+    "sourceUrl": "http://www.xsjdm8.com",
+    "httpHeaders": {
+        "Referer": "http://www.xsjdm8.com",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666868690.027093",
+    "searchBook": {
+        "responseFormatType": "html",
+        "bookName": "//@alt",
+        "desc": "//dl[@class=\"juqing\"]/dd",
+        "requestInfo": "http://www.xsjdm8.com/vodsearch/-------------.html?wd=%@keyWord",
+        "host": "http://www.xsjdm8.com",
+        "actionID": "searchBook",
+        "detailUrl": "//h2/a/@href",
+        "cover": "//img/@src",
+        "validConfig": "",
+        "list": "//ul[@class=\"show-list\"]/li",
+        "parserID": "DOM",
+        "httpHeaders": {
+            "Referer": "http://www.xsjdm8.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "status": "//span[@id=\"addtime\"]"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "|",
+        "actionID": "chapterContent",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet url=result.content.match(/=(https?:\\/\\/.*\\.m3u8)/)[1]\n      return url\n}",
+        "requestInfo": "@js:\nlet pat=\".*(m3u8)$\"\nreturn {'url':result,'httpHeaders':config.httpHeaders, 'webView':true,'sourceRegex':pat};",
+        "host": "http://www.xsjdm8.com",
+        "httpHeaders": {
+            "Referer": "http://www.xsjdm8.com",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🦞",
+    "shudanList": {},
+    "bookWorld": {
+        "日本动漫": {
+            "responseFormatType": "html",
+            "author": "//p",
+            "bookName": "//@title",
+            "httpHeaders": {
+                "Referer": "http://www.xsjdm8.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n let url=`http://www.xsjdm8.com/category/20-${params.pageIndex}.html`;\nurl=url.replace(/\\w+\\/\\//g,\"\").replace(/\\/\\w+\\/.html/,\".html\");\nurl=encodeURI(url);\nreturn {url:url}",
+            "host": "http://www.xsjdm8.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//ul[@class=\"img-list\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 24
+            }
+        },
+        "中国动漫": {
+            "responseFormatType": "html",
+            "author": "//p",
+            "bookName": "//@title",
+            "httpHeaders": {
+                "Referer": "http://www.xsjdm8.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n let url=`http://www.xsjdm8.com/category/22-${params.pageIndex}.html`;\nurl=url.replace(/\\w+\\/\\//g,\"\").replace(/\\/\\w+\\/.html/,\".html\");\nurl=encodeURI(url);\nreturn {url:url}",
+            "host": "http://www.xsjdm8.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//ul[@class=\"img-list\"]/li",
+            "_sIndex": 2,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 24
+            }
+        },
+        "动漫电影": {
+            "responseFormatType": "html",
+            "bookName": "//@alt",
+            "httpHeaders": {
+                "Referer": "http://www.xsjdm8.com",
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+            },
+            "requestInfo": "@js:\n let url=`http://www.xsjdm8.com/category/23-${params.pageIndex}.html`;\nurl=url.replace(/\\w+\\/\\//g,\"\").replace(/\\/\\w+\\/.html/,\".html\");\nurl=encodeURI(url);\nreturn {url:url}",
+            "host": "http://www.xsjdm8.com",
+            "actionID": "bookWorld",
+            "detailUrl": "//a/@href",
+            "cover": "//img/@src",
+            "validConfig": "",
+            "list": "//ul[@class=\"img-list\"]/li",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "moreKeys": {
+                "pageSize": 24
+            }
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

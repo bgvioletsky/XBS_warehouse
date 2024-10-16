@@ -1,0 +1,115 @@
+{
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "11",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nvar id = params.queryInfo.detailUrl.match(/\\d+/);\nreturn \"/cdn/book/chapterList/\"+id+\".html\"",
+        "title": "$.name",
+        "host": "https://gfnormal05at.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; PCT-AL10 Build/N6F26Q) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+        },
+        "list": "$.result.list..list[*]",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "$.id||@js:\nvar bid = params.queryInfo.detailUrl.match(/\\d+/);\nreturn \"/cdn/book/content/\"+bid+\"/\"+result+\".html\""
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "9x(api)",
+    "sourceType": "text",
+    "sourceUrl": "https://gfnormal05at.com",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; PCT-AL10 Build/N6F26Q) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1665909201.348378",
+    "searchBook": {
+        "cat": "$.category",
+        "author": "$.author",
+        "responseFormatType": "json",
+        "bookName": "$.name",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; PCT-AL10 Build/N6F26Q) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+        },
+        "requestInfo": "/api/category-search?name=%@keyWord",
+        "host": "https://gfnormal05at.com",
+        "actionID": "searchBook",
+        "detailUrl": "$.id||@js:\n\nreturn \"/cdn/book/info/\"+result+\".html\"",
+        "desc": "$.description",
+        "validConfig": "",
+        "list": "$..list[*] ||@js:\nif(result.length==2){\n\n//var result = result.slice(0);\n    //result.length= result.length-1;\n\n     //return result;\n\n var a = result.slice(0);  //或者arr.concat()\n     a.pop();   //pop会改变原数组，a.pop()的返回值为最后一个元素\n     return a;\n\n     //return result.slice(0,-1); \n\n}else{\n\nreturn result;\n\n}",
+        "parserID": "DOM",
+        "cover": "$.icon"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.result.info.content",
+        "actionID": "chapterContent",
+        "host": "https://gfnormal05at.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; PCT-AL10 Build/N6F26Q) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "🐲",
+    "password": "0155",
+    "shudanList": {},
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "host": "https://gfnormal05at.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; PCT-AL10 Build/N6F26Q) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+        },
+        "cover": "$..icon",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "测试": {
+            "cat": "$.category",
+            "author": "$.author",
+            "responseFormatType": "json",
+            "bookName": "$.name",
+            "desc": "$.description",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://gfnormal05at.com/h5/category-rank-category_id-${_type}-rank_type-zuire?page=${params.pageIndex==1?0:params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "httpHeaders": {
+                "User-Agent": "Mozilla/5.0 (Linux; U; Android 7.1.2; zh-cn; PCT-AL10 Build/N6F26Q) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
+            },
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 20,
+                "requestFilters": "_type\n玄幻::1\n武侠::2\n都市::3\n历史::4\n科幻::5\n网游::6\n女生::7\n同人::66"
+            },
+            "host": "https://gfnormal05at.com",
+            "cover": "$.icon",
+            "list": "$.result.list",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "$.url||@js:\nvar id= result.match(/id-(\\d+)/);\n\nreturn \"/cdn/book/info/\"+id[1]+\".html\"",
+            "validConfig": ""
+        }
+    }
+}

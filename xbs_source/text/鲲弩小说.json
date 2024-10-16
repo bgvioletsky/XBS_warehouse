@@ -1,0 +1,493 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//*[@id=\"nr1\"]",
+        "host": "https://www.kunnu.com/",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "authorId": "",
+    "bookDetail": {
+        "status": "//*[@id=\"content-list\"]/div[1]/div/p[3]",
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "lastChapterTitle": "//*[@id=\"content-list\"]/div[1]/div/p[5]/a",
+        "host": "https://www.kunnu.com/",
+        "cat": "//*[@id=\"content-list\"]/div[1]/div/p[2]",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//*[@id=\"content-list\"]/div[1]/div/div"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {
+        "恩京的书房tag": {
+            "cat": "//div/p[1]/a",
+            "responseFormatType": "html",
+            "bookName": "//div/h3/a",
+            "desc": "//div/p[2]",
+            "requestInfo": "https://www.enjing.com/tag/%@filter/page/%@pageIndex/",
+            "host": "https://www.kunnu.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 12,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "xiaoshuo2",
+                                "title": "小说"
+                            },
+                            {
+                                "value": "wenxue2",
+                                "title": "文学"
+                            },
+                            {
+                                "value": "lishi2",
+                                "title": "历史"
+                            },
+                            {
+                                "value": "riben",
+                                "title": "日本"
+                            },
+                            {
+                                "value": "meiguo",
+                                "title": "美国"
+                            },
+                            {
+                                "value": "kepu",
+                                "title": "科普"
+                            },
+                            {
+                                "value": "yingguo",
+                                "title": "英国"
+                            },
+                            {
+                                "value": "zhongguo",
+                                "title": "中国"
+                            },
+                            {
+                                "value": "zhexue",
+                                "title": "哲学"
+                            },
+                            {
+                                "value": "wenhua2",
+                                "title": "文化"
+                            },
+                            {
+                                "value": "jingdian",
+                                "title": "经典"
+                            },
+                            {
+                                "value": "guanli",
+                                "title": "管理"
+                            },
+                            {
+                                "value": "suibi",
+                                "title": "随笔"
+                            },
+                            {
+                                "value": "shehui2",
+                                "title": "社会"
+                            },
+                            {
+                                "value": "siwei",
+                                "title": "思维"
+                            },
+                            {
+                                "value": "jinrong2",
+                                "title": "金融"
+                            },
+                            {
+                                "value": "tuili",
+                                "title": "推理"
+                            },
+                            {
+                                "value": "jingji2",
+                                "title": "经济"
+                            },
+                            {
+                                "value": "chuanji",
+                                "title": "传记"
+                            },
+                            {
+                                "value": "shangye",
+                                "title": "商业"
+                            },
+                            {
+                                "value": "touzi",
+                                "title": "投资"
+                            },
+                            {
+                                "value": "xinlixue2",
+                                "title": "心理学"
+                            },
+                            {
+                                "value": "waiguowenxue",
+                                "title": "外国文学"
+                            },
+                            {
+                                "value": "xuanyi",
+                                "title": "悬疑"
+                            },
+                            {
+                                "value": "chengchang",
+                                "title": "成长"
+                            },
+                            {
+                                "value": "lizhi",
+                                "title": "励志"
+                            },
+                            {
+                                "value": "xinli1",
+                                "title": "心理"
+                            },
+                            {
+                                "value": "politics",
+                                "title": "政治"
+                            },
+                            {
+                                "value": "faguo",
+                                "title": "法国"
+                            },
+                            {
+                                "value": "kehuan",
+                                "title": "科幻"
+                            },
+                            {
+                                "value": "shenghuo2",
+                                "title": "生活"
+                            },
+                            {
+                                "value": "sanwen2",
+                                "title": "散文"
+                            },
+                            {
+                                "value": "yishu2",
+                                "title": "艺术"
+                            },
+                            {
+                                "value": "shehuixue",
+                                "title": "社会学"
+                            },
+                            {
+                                "value": "jishi",
+                                "title": "纪实"
+                            },
+                            {
+                                "value": "zhichang",
+                                "title": "职场"
+                            },
+                            {
+                                "value": "yanqing2",
+                                "title": "言情"
+                            },
+                            {
+                                "value": "deguo",
+                                "title": "德国"
+                            },
+                            {
+                                "value": "shige",
+                                "title": "诗歌"
+                            },
+                            {
+                                "value": "kexue",
+                                "title": "科学"
+                            },
+                            {
+                                "value": "gupiao",
+                                "title": "股票"
+                            },
+                            {
+                                "value": "qihuan",
+                                "title": "奇幻"
+                            },
+                            {
+                                "value": "nvxing",
+                                "title": "女性"
+                            },
+                            {
+                                "value": "jiaoyu",
+                                "title": "教育"
+                            },
+                            {
+                                "value": "aiqing",
+                                "title": "爱情"
+                            },
+                            {
+                                "value": "jingjixue",
+                                "title": "经济学"
+                            },
+                            {
+                                "value": "dongyeguiwu",
+                                "title": "东野圭吾"
+                            },
+                            {
+                                "value": "manhua",
+                                "title": "漫画"
+                            },
+                            {
+                                "value": "junshi",
+                                "title": "军事"
+                            },
+                            {
+                                "value": "yingxiao",
+                                "title": "营销"
+                            },
+                            {
+                                "value": "renwu",
+                                "title": "人物"
+                            },
+                            {
+                                "value": "xuexi",
+                                "title": "学习"
+                            },
+                            {
+                                "value": "licai",
+                                "title": "理财"
+                            },
+                            {
+                                "value": "zhiyu",
+                                "title": "治愈"
+                            },
+                            {
+                                "value": "meishi2",
+                                "title": "美食"
+                            },
+                            {
+                                "value": "zongjiao",
+                                "title": "宗教"
+                            },
+                            {
+                                "value": "lvxing",
+                                "title": "旅行"
+                            },
+                            {
+                                "value": "erzhan",
+                                "title": "二战"
+                            },
+                            {
+                                "value": "guoxue2",
+                                "title": "国学"
+                            },
+                            {
+                                "value": "jisuanji2",
+                                "title": "计算机"
+                            },
+                            {
+                                "value": "shici2",
+                                "title": "诗词"
+                            },
+                            {
+                                "value": "biancheng",
+                                "title": "编程"
+                            },
+                            {
+                                "value": "youji",
+                                "title": "游记"
+                            },
+                            {
+                                "value": "gudian2",
+                                "title": "古典"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "detailUrl": "//div/h3/a/@href",
+            "cover": "//a/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class='clearfix']"
+        },
+        "分类": {
+            "author": "//a/span | //span",
+            "responseFormatType": "html",
+            "bookName": "//a/h2",
+            "requestInfo": "https://www.kunnu.com/%@filter",
+            "host": "https://www.kunnu.com/",
+            "actionID": "bookWorld",
+            "detailUrl": "//a[1]/@href",
+            "moreKeys": {
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "title": "首页",
+                                "value": ""
+                            },
+                            {
+                                "title": "古典",
+                                "value": "jingdian"
+                            },
+                            {
+                                "title": "名著",
+                                "value": "mingzhu"
+                            },
+                            {
+                                "title": "武侠",
+                                "value": "wuxia"
+                            },
+                            {
+                                "title": "非虚构",
+                                "value": "fxg"
+                            },
+                            {
+                                "title": "言情",
+                                "value": "yanqing"
+                            },
+                            {
+                                "title": "纯爱",
+                                "value": "bl"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ],
+                "skipCount": 5
+            },
+            "validConfig": "",
+            "cover": "//a/img/@src",
+            "parserID": "DOM",
+            "list": "//li"
+        },
+        "恩京的书房分类": {
+            "cat": "//div/p[1]/a",
+            "responseFormatType": "html",
+            "bookName": "//div/h3/a",
+            "desc": "//div/p[2]",
+            "requestInfo": "https://www.enjing.com/%@filter/page/%@pageIndex/",
+            "host": "https://www.kunnu.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 12,
+                "requestFilters": [
+                    {
+                        "items": [
+                            {
+                                "value": "wenxue",
+                                "title": "传统文学经典作品"
+                            },
+                            {
+                                "value": "waiguo",
+                                "title": "国外近现代文学作品"
+                            },
+                            {
+                                "value": "dangdai",
+                                "title": "中国近代当代文学作品"
+                            },
+                            {
+                                "value": "xuanyituili",
+                                "title": "侦探悬疑推理类文学作品"
+                            },
+                            {
+                                "value": "sanwen",
+                                "title": "散文随笔类文学作品"
+                            },
+                            {
+                                "value": "kehuan",
+                                "title": "科幻作品"
+                            },
+                            {
+                                "value": "dongman",
+                                "title": "动漫作品"
+                            },
+                            {
+                                "value": "renwensheke",
+                                "title": "人文社科类作品"
+                            },
+                            {
+                                "value": "lishi",
+                                "title": "历史类书籍"
+                            },
+                            {
+                                "value": "xinlixue",
+                                "title": "心理学作品"
+                            },
+                            {
+                                "value": "zhengzhi",
+                                "title": "政治军事作品"
+                            },
+                            {
+                                "value": "zhexuezongjiao",
+                                "title": "哲学宗教类作品"
+                            },
+                            {
+                                "value": "wenhua",
+                                "title": "文化研究类作品"
+                            },
+                            {
+                                "value": "jingjizonghe",
+                                "title": "经济综合类作品"
+                            },
+                            {
+                                "value": "shenghuo",
+                                "title": "生活百科类作品"
+                            },
+                            {
+                                "value": "wangwen",
+                                "title": "网络文学流行作品"
+                            }
+                        ],
+                        "key": "filter"
+                    }
+                ]
+            },
+            "detailUrl": "//div/h3/a/@href",
+            "cover": "//a/img/@src",
+            "parserID": "DOM",
+            "validConfig": "",
+            "list": "//div[@class='clearfix']"
+        }
+    },
+    "shudanList": {},
+    "sourceUrl": "https://www.kunnu.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "2",
+    "sourceName": "鲲弩小说",
+    "miniAppVersion": "2.52.9",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1640004003.207112",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "actionID": "searchBook",
+        "validConfig": "",
+        "requestInfo": "https://www.kunnu.com/page/%@pageIndex/?s=%@keyWord",
+        "bookName": "//a",
+        "detailUrl": "//a/@href",
+        "host": "https://www.kunnu.com/",
+        "list": "//li[@class='cat-search-item']",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//*[@id=\"content-list\"]/div[1]/div/p[4]",
+        "title": "//a",
+        "host": "https://www.kunnu.com/",
+        "list": "//div[@class='book-list clearfix']/ul/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

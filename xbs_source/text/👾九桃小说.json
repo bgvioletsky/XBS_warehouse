@@ -1,0 +1,150 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+        "host": "https://www.9taoxs.com",
+        "httpHeaders": {
+            "Referer": "https://www.9taoxs.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "cover": "//div[@class=\"detail\"]//img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "weight": "4444",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestInfo": "@js:\n\nreturn {'url':result.replace(\".html\",\"/\"),'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+        "title": "//a",
+        "host": "https://www.9taoxs.com",
+        "httpHeaders": {
+            "Referer": "https://www.9taoxs.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "list": "//div[@class='read']/dl[2]/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "👾九桃小说",
+    "sourceUrl": "https://www.9taoxs.com",
+    "httpHeaders": {
+        "Referer": "https://www.9taoxs.com",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650355525.802779",
+    "searchBook": {
+        "cat": "//p[1]/a[2]",
+        "responseFormatType": "html",
+        "lastChapterTitle": "//a[@class='chapter']",
+        "author": "//p[1]/a[1]",
+        "bookName": "//a[@class='bookname']",
+        "desc": "//p[@class='intro']",
+        "requestInfo": "@js:\n\nlet url = config.host+\"/search.html\";\nlet hp = {\n  \"searchkey\":params.keyWord\n}\nreturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'cacheTime':3600}",
+        "host": "https://www.9taoxs.com",
+        "actionID": "searchBook",
+        "detailUrl": "//a[@class='bookname']/@href",
+        "cover": "//a[@class='bookimg']/img/@src",
+        "validConfig": "",
+        "parserID": "DOM",
+        "wordCount": "//p[1]/text()[2]",
+        "list": "//ul[@class='library']/li",
+        "httpHeaders": {
+            "Referer": "https://www.9taoxs.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "status": "//span"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@id=\"content\"]//p[position()>1  and position()<last()]",
+        "actionID": "chapterContent",
+        "requestInfo": "@js:\n\nreturn {'url':result,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+        "host": "https://www.9taoxs.com",
+        "httpHeaders": {
+            "Referer": "https://www.9taoxs.com",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "help": "失效",
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "分类": {
+            "cat": "//span[@class=\"layui-badge layui-bg-blue\"]/text()",
+            "responseFormatType": "html",
+            "author": "//p[2]/a[1]/text()",
+            "lastChapterTitle": "//a[@class=\"chapter\"]/text()",
+            "bookName": "(//a)[2]/text()",
+            "desc": "//p[@class=\"intro\"]",
+            "requestInfo": "@js:\n\nlet url = config.host+params.filters.type+params.filters.order+\"_\"+params.pageIndex+\".html\";\n\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+            "host": "https://www.9taoxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "50",
+                "requestFilters": "type\n全部::/library/0_0_\n玄幻奇幻::/library/0_1_\n武侠修真::/library/0_2_\n都市生活::/library/0_3_\n历史军事::/library/0_4_\n游戏竞技::/library/0_5_\n科幻未来::/library/0_6_\n悬疑灵异::/library/0_7_\n二次元::/library/0_8_\n经典短篇::/library/0_9_\n古代言情::/library/0_10_\n现代言情::/library/0_11_\n幻想奇缘::/library/0_12_\n浪漫青春::/library/0_13_\n网络情缘::/library/0_14_\n科幻空间::/library/0_15_\n恐怖灵异::/library/0_16_\nN次元::/library/0_17_\n言情美文::/library/0_18_\n其他类型::/library/0_19_\n\norder\n全部::0\n连载::1\n完本::2\n"
+            },
+            "cover": "//a/img/@src",
+            "validConfig": "",
+            "detailUrl": "(//a)[1]/@href",
+            "parserID": "DOM",
+            "list": "//ul[@class=\"library\"]/li",
+            "httpHeaders": {
+                "Referer": "https://www.9taoxs.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+            },
+            "_sIndex": 2
+        },
+        "榜单": {
+            "cat": "//p[2]/a[2]/text()",
+            "responseFormatType": "html",
+            "author": "//p[2]/a[1]/text()",
+            "bookName": "(//a)[2]/text()",
+            "desc": "//p[3]",
+            "requestInfo": "@js:\n\nlet url = config.host+\"/\"+params.filters.type+\"/\"+params.pageIndex+\".html\";\nreturn {'url':url,'POST':false,'httpHeaders':config.httpHeaders,'cacheTime':3600}",
+            "host": "https://www.9taoxs.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": "50",
+                "requestFilters": "type\n总点击榜::/top/allvisit\n月点击榜::/top/monthvisit\n周点击榜::/top/weekvisit\n日点击榜::/top/dayvisit\n总推荐榜::/top/allvote\n月推荐榜::/top/monthvote\n周推荐榜::/top/weekvote\n日推荐榜::/top/dayvote\n总收藏榜::/top/goodnum\n总字数榜::/top/size\n最新入库::/top/postdate\n最近更新::/top/lastupdate\n强推榜::/top/toptime\n新书榜::/top/goodnew\n"
+            },
+            "cover": "//a/img/@src",
+            "validConfig": "",
+            "detailUrl": "(//a)[1]/@href",
+            "parserID": "DOM",
+            "list": "//ul[@class=\"rank zoom\"]/li",
+            "httpHeaders": {
+                "Referer": "https://www.9taoxs.com",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36"
+            },
+            "_sIndex": 1
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "sourceType": "text"
+}

@@ -1,0 +1,184 @@
+{
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "status": "//meta[@property=\"og:novel:author\"]/@content",
+        "cat": "//meta[@property=\"og:novel:category\"]/@content",
+        "requestInfo": "@js:\r\nreturn {'url':result,'httpHeaders':config.httpHeaders,'cacheTime':3600};",
+        "host": "http://www.7278.org",
+        "httpHeaders": {
+            "Referer": "http://www.7278.org",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+        },
+        "cover": "//p/img/@src",
+        "responseFormatType": "html",
+        "desc": "//meta[@property=\"og:description\"]/@content",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\r\nreturn {'url':result,'httpHeaders':config.httpHeaders,'cacheTime':3600};",
+        "title": "//a/text()",
+        "host": "http://www.7278.org",
+        "httpHeaders": {
+            "Referer": "http://www.7278.org",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+        },
+        "list": "//div[@class=\"excerpts\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "古典文学",
+    "sourceType": "text",
+    "sourceUrl": "http://www.7278.org",
+    "httpHeaders": {
+        "Referer": "http://www.7278.org",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1660541632.109183",
+    "searchBook": {
+        "responseFormatType": "html",
+        "lastChapterTitle": "//li/a[2]",
+        "bookName": "//li/a[1]",
+        "httpHeaders": {
+            "Referer": "http://www.7278.org",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+        },
+        "requestInfo": "@js:\n\nlet timestamp = (new Date()).valueOf();\n\nlet url  = config.host+\"/e/search/index.php\"\nlet hp = {\n    \"keyboard\":params.keyWord,\n    \"show\":\"title\",\n    \"tempid\":1\n}\n\n\n\nreturn {'url':url,'POST':true,'httpHeaders':config.httpHeaders,'httpParams':hp,'forbidCookie':true, 'cacheTime':3600};",
+        "host": "http://www.7278.org",
+        "actionID": "searchBook",
+        "moreKeys": {
+            "pageSize": 10
+        },
+        "detailUrl": "//a[1]/@href",
+        "validConfig": "",
+        "list": "//div[@class=\"excerpts\"]/li",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "actionID": "chapterContent",
+        "content": "//article[@class=\"article-content\"]",
+        "requestInfo": "@js:\n\nreturn {'url':result, 'POST':false,\"httpHeaders\": config.httpHeaders,\"cahceTime\":3600};",
+        "host": "http://www.7278.org",
+        "httpHeaders": {
+            "Referer": "http://www.7278.org",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "authorId": "",
+    "bookWorld": {
+        "男生": {
+            "author": "//div/div[1]/a",
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "http://www.7278.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.7278.org/${_type}/`;\n\nif(params.pageIndex>1)\nurl=url+\"index_\"+params.pageIndex+\".html\";\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.7278.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n恐怖小说::kb\n武侠小说::wx"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "//ul[@class=\"notes-style-list\"]/li"
+        },
+        "女生": {
+            "author": "//div/div[1]/a",
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "http://www.7278.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.7278.org/${_type}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.7278.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n言情小说::yq\n都市小说::ds"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 1,
+            "list": "//ul[@class=\"notes-style-list\"]/li"
+        },
+        "古典小说": {
+            "author": "//div/div[1]/a",
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "http://www.7278.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.7278.org/${_type}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.7278.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n四大名著::sdmz\n才子佳人::czjr\n讽刺谴责::fcqz\n神魔志怪::smzg\n古典侠义::gdxy\n公案小说::ga\n历史演义::lsyy\n诸子百家::zzbj\n笔记小说::bj"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 2,
+            "list": "//ul[@class=\"notes-style-list\"]/li"
+        },
+        "国学典籍": {
+            "author": "//div/div[1]/a",
+            "responseFormatType": "html",
+            "bookName": "//h2/a",
+            "httpHeaders": {
+                "Referer": "http://www.7278.org",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36"
+            },
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`http://www.7278.org/${_type}/`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "http://www.7278.org",
+            "actionID": "bookWorld",
+            "detailUrl": "//h2/a/@href",
+            "moreKeys": {
+                "pageSize": 30,
+                "requestFilters": "_type\n史书典籍::ssdj\n兵书典籍::bsdj\n佛经典籍::fjdj\n易经书籍::yjsj\n蒙学书籍::mxsj\n辞赋鉴赏::cfjs\n文言文鉴赏::wyw"
+            },
+            "validConfig": "",
+            "parserID": "DOM",
+            "_sIndex": 3,
+            "list": "//ul[@class=\"notes-style-list\"]/li"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}

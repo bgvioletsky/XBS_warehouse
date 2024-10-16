@@ -1,0 +1,122 @@
+{
+    "bookWorld": {
+        "分类": {
+            "cat": "heat ||@js:\nreturn '热度：' + result;",
+            "author": "bookAnchor",
+            "responseFormatType": "json",
+            "bookName": "bookTitle",
+            "desc": "bookDesc",
+            "requestInfo": "/listen/apptingchina/categoryList?size=10&page=%@pageIndex&categoryId=%@filter",
+            "host": "https://www.tingxiaoshuo.cc",
+            "actionID": "bookWorld",
+            "detailUrl": "id",
+            "httpHeaders": {
+                "Referer": "https://app.tingxiaoshuo.cc/",
+                "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)"
+            },
+            "cover": "bookImage",
+            "parserID": "DOM",
+            "_sIndex": 0,
+            "list": "$.data.list",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "奇幻玄幻::6\n都市言情::7\n宫频女斗::8\n官场商场::9\n武侠仙侠::10\n侦探推理::11\n探险科幻::12\n重生穿越::13\n恐怖惊悚::14\n文学历史::15\n两性情感::49\n网游竞技::50"
+            },
+            "validConfig": ""
+        }
+    },
+    "authorId": "",
+    "weight": "9999",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nlet url = 'https://app.tingxiaoshuo.cc/listen/apptingchina/chapter?size=50000&page=1&sort=asc&bookId=' + params.queryInfo.detailUrl;\nreturn url;",
+        "title": "title",
+        "host": "https://www.tingxiaoshuo.cc",
+        "httpHeaders": {
+            "Referer": "https://app.tingxiaoshuo.cc/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)"
+        },
+        "list": "$.data.list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "chapterId ||@js:\nlet url = 'https://app.tingxiaoshuo.cc/listen/apptingchina/AppGetChapterUrl2022?uid=1&chapterId='+ result +'&bookId=' + params.queryInfo.detailUrl;\nreturn url;"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": true,
+    "sourceName": "海盗听书⛄",
+    "sourceType": "audio",
+    "sourceUrl": "https://www.tingxiaoshuo.cc",
+    "httpHeaders": {
+        "Referer": "https://app.tingxiaoshuo.cc/",
+        "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)"
+    },
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666776413.586102",
+    "searchBook": {
+        "author": "bookAnchor",
+        "responseFormatType": "json",
+        "bookName": "bookTitle",
+        "desc": "bookDesc",
+        "requestInfo": "/listen/apptingchina/appSearch?search=%@keyWord",
+        "host": "https://www.tingxiaoshuo.cc",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "bookImage",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "$.data.bookData",
+        "httpHeaders": {
+            "Referer": "https://app.tingxiaoshuo.cc/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)"
+        },
+        "status": "heat ||@js:\nreturn '热度：' + result;"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "$.src",
+        "actionID": "chapterContent",
+        "host": "https://www.tingxiaoshuo.cc",
+        "httpHeaders": {
+            "Referer": "https://app.tingxiaoshuo.cc/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)"
+        },
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "password": "KksnoyunaHonʌ_ə34",
+    "desc": "听中国",
+    "shudanList": {},
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "actionID": "bookDetail",
+        "requestInfo": "@js:\nlet url ='https://app.tingxiaoshuo.cc/listen/apptingchina/book?bookId=' + params.queryInfo.detailUrl;\nreturn url;",
+        "host": "https://www.tingxiaoshuo.cc",
+        "httpHeaders": {
+            "Referer": "https://app.tingxiaoshuo.cc/",
+            "User-Agent": "Mozilla/5.0 (Linux; Android 9) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 Html5Plus/1.0 (Immersed/30.0)"
+        },
+        "cat": "$.data.bookData.categoryName",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    }
+}

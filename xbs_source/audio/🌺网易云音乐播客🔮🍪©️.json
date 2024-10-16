@@ -1,0 +1,118 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "https://music.163.com/",
+        "JSParser": "function functionName(config, params, result)\n{\n\treturn JSON.stringify({'urls': params.responseUrl});\n}",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "detail": "content",
+        "createdTime": "time||timestr",
+        "fromUserName": "user/nickname",
+        "responseFormatType": "json",
+        "url": "commentId",
+        "requestInfo": "@js:\nreturn 'http://music.163.com/api/v1/resource/comments/R_SO_4_' + params.queryInfo.detailUrl + '?limit=20&offset=0';",
+        "host": "https://music.163.com/",
+        "actionID": "shupingList",
+        "validConfig": "",
+        "list": "comments",
+        "parserID": "DOM",
+        "fromUserCover": "user/avatarUrl"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "validConfig": "",
+        "requestInfo": "https://api.muxiv.com/dj/detail?id=%@result",
+        "host": "https://music.163.com/",
+        "cat": "@js:\nreturn result.data.category + ' ' + result.data.secondCategory;",
+        "cover": "data/picUrl",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "desc": "@js:\nlet intro = result.data.rcmdText + '\\n' + result.data.desc;\nlet pay = result.data.radioFeeType;\nif (pay == 1)\n\treturn '付费播客\\n' + intro;\nif (pay == 2)\n\treturn '付费播客\\n' + intro;\nif (pay == 0)\n\treturn '免费播客\\n' + intro;"
+    },
+    "authorId": "",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "cat": "@js:\nreturn result.category + ' ' + result.secondCategory;",
+            "author": "dj/nickname",
+            "responseFormatType": "json",
+            "lastChapterTitle": "lastProgramName",
+            "bookName": "name",
+            "desc": "@js:\nlet intro = result.desc;\nlet pay = result.radioFeeType;\nif (pay == 1)\n\treturn '付费播客\\n' + intro;\nif (pay == 2)\n\treturn '付费播客\\n' + intro;\nif (pay == 0)\n\treturn '免费播客\\n' + intro;",
+            "requestInfo": "@js:\nreturn {'url':'https://music.163.com/api/djradio/recommend', 'POST':true, 'httpParams':{'cateId':params.filters.cat}};",
+            "host": "https://music.163.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "requestFilters": "cat\n有声书::10001\n知识技能::453050\n商业财经::453051\n人文历史::11\n外语世界::13\n亲子宝贝::14\n创作|翻唱::2001\n音乐故事::2\n3D|电子::10002\n相声曲艺::8\n情感调频::3\n美文读物::6\n脱口秀::5\n广播剧::7\n二次元::3001\n明星做主播::1\n娱乐|影视::4\n科技科学::453052\n校园|教育::4001\n旅途|城市::12"
+            },
+            "cover": "picUrl",
+            "validConfig": "",
+            "list": "djRadios",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "id"
+        }
+    },
+    "sourceType": "audio",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "validConfig": "",
+        "requestInfo": "http://music.163.com/api/playlist/hottags",
+        "title": "name",
+        "host": "https://music.163.com/",
+        "list": "tags/playlistTag",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺网易云音乐播客🔮🍪©️",
+    "sourceUrl": "https://music.163.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "validConfig": "",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "host": "https://music.163.com/",
+        "actionID": "shudanDetail"
+    },
+    "lastModifyTime": "1666183685.944621",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "@js:\nreturn result.category + ' ' + result.secondCategory;",
+        "author": "dj/nickname",
+        "responseFormatType": "json",
+        "bookName": "name",
+        "desc": "@js:\nlet intro = result.rcmdText + '\\n' + result.desc;\nlet pay = result.radioFeeType;\nif (pay == 1)\n\treturn '付费播客\\n' + intro;\nif (pay == 2)\n\treturn '付费播客\\n' + intro;\nif (pay == 0)\n\treturn '免费播客\\n' + intro;",
+        "requestInfo": "@js:\nreturn {'url':'http://music.163.com/api/search/pc', 'POST':true, 'httpParams':{'s':params.keyWord, 'offset':0, 'limit':100, 'type':1009}};",
+        "host": "https://music.163.com/",
+        "actionID": "searchBook",
+        "detailUrl": "id",
+        "cover": "picUrl",
+        "validConfig": "",
+        "list": "result/djRadios",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "requestInfo": "@js:\nreturn {'url':'http://music.163.com/api/dj/program/byradio', 'POST':true, 'httpParams':{'radioId':params.queryInfo.detailUrl, 'offset':0, 'limit':100000}};",
+        "title": "name",
+        "host": "https://music.163.com/",
+        "list": "programs||@js:\nreturn result.reverse();",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "url": "@js:\nreturn 'http://music.163.com/song/media/outer/url?id=' + result.mainTrackId + '.mp3';"
+    }
+}

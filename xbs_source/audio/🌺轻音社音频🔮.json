@@ -1,0 +1,115 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.url;",
+        "actionID": "chapterContent",
+        "requestInfo": "http://fuciyuanbang.ciyuans.com/",
+        "host": "http://fuciyuanbang.ciyuans.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "parserID": "DOM",
+        "actionID": "bookDetail",
+        "responseFormatType": "json"
+    },
+    "bookWorld": {
+        "推荐": {
+            "responseFormatType": "json",
+            "author": "artist",
+            "bookName": "title",
+            "desc": "des",
+            "requestInfo": "http://fuciyuanbang.ciyuans.com/fuciyuanphp/getmusiclist.php?act=%@filter&pagenum=%@pageIndex&ver=1.1.3&plat=ip&channel=appstore&source=kon&app=FuCiYuan&forb=0&appt=0",
+            "host": "http://fuciyuanbang.ciyuans.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 100,
+                "requestFilters": "推荐::getmusichotlist\n最新::getmusicrecentlistv"
+            },
+            "detailUrl": "url",
+            "validConfig": "",
+            "list": "result/list",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "cover": "thumb"
+        },
+        "标签": {
+            "responseFormatType": "json",
+            "author": "artist",
+            "bookName": "title",
+            "desc": "des",
+            "requestInfo": "http://fuciyuanbang.ciyuans.com/fuciyuanphp/getmusiclist.php?act=getmusictaglist&pagenum=%@pageIndex&tag=%@filter&ver=1.1.3&plat=ip&channel=appstore&source=kon&app=FuCiYuan&forb=0&appt=0",
+            "host": "http://fuciyuanbang.ciyuans.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "maxPage": 100,
+                "requestFilters": "流行::liuxing\n英文::yingwen\n纯音::chunyinyue\n古风::gufeng\n日系::rixi\n广播剧::guangbo"
+            },
+            "detailUrl": "url",
+            "validConfig": "",
+            "list": "result/list",
+            "_sIndex": 1,
+            "parserID": "DOM",
+            "cover": "thumb"
+        }
+    },
+    "shudanList": {},
+    "sourceType": "audio",
+    "relatedWord": {
+        "validConfig": "",
+        "actionID": "relatedWord",
+        "requestInfo": "http://fuciyuanbang.ciyuans.com/fuciyuanphp/getmusiclist.php?act=gethotsearch&ver=1.0.9&plat=ip&channel=appstore&source=kon&app=FuCiYuan&forb=0",
+        "title": "key",
+        "host": "http://fuciyuanbang.ciyuans.com/",
+        "list": "result",
+        "responseFormatType": "json",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "🌺轻音社音频🔮",
+    "sourceUrl": "http://fuciyuanbang.ciyuans.com/",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "desc": "单个音频；播放列表移步另一源",
+    "lastModifyTime": "1666223422.252001",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "requestInfo": "http://fuciyuanbang.ciyuans.com/fuciyuanphp/search.php?act=search&type=music&key=%@keyWord&pagenum=%@pageIndex&plat=ip&channel=appstore&source=kon&app=FuCiYuan&forb=0",
+        "bookName": "title",
+        "detailUrl": "url",
+        "host": "http://fuciyuanbang.ciyuans.com/",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "list": "result/list",
+        "responseFormatType": "json",
+        "parserID": "DOM",
+        "cover": "thumb"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result)\n{\n\tlet list = [];\n\n\tlet chapterInfo = {};\n\tchapterInfo.title = params.queryInfo.bookName;\n\tchapterInfo.url = params.queryInfo.detailUrl;\n\tlist.push(chapterInfo);\n\n\treturn {'list':list};\n}",
+        "requestInfo": "http://fuciyuanbang.ciyuans.com/",
+        "host": "http://fuciyuanbang.ciyuans.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    }
+}

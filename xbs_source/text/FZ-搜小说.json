@@ -1,0 +1,70 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "content": "//div[@class='content']|@js:\n\nresult= result.replace(/您可以在百度里搜索.*?查找最新章节！/, '');\nvar g=result.lastIndexOf('最新章节地址');\nif(g>0){\nresult= result.substring(0,g);\n}\nreturn result;",
+        "host": "https://www.soxs.cc",
+        "parserID": "DOM",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "authorId": "",
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookWorld": {},
+    "shudanList": {},
+    "sourceUrl": "https://www.soxs.cc",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9000",
+    "sourceName": "FZ-搜小说",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1650357901.520971",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//span[1]",
+        "responseFormatType": "html",
+        "author": "//span[4]",
+        "lastChapterTitle": "//span[3]/a",
+        "bookName": "//span[2]/a",
+        "requestInfo": "@js:\nlet hp = {};\nhp.searchkey = params.keyWord;\nhp.searchtype = 'all';\nlet url = 'search.html';\nlet hh = {'accept':'text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8','cookie':'Hm_lpvt_005bc8e1b6f20e79932e7ff7586bc660=1619107867; Hm_lvt_005bc8e1b6f20e79932e7ff7586bc660=1619107388; __cfduid=d89234a593b7da0fa5d85336b36fca70b1619107364'};\nreturn {'url':url, 'httpParams':hp,'POST':true,'httpHeaders':hh};",
+        "host": "https://www.soxs.cc",
+        "actionID": "searchBook",
+        "detailUrl": "//span[2]/a/@href",
+        "validConfig": "",
+        "parserID": "DOM",
+        "list": "//div[@class=\"novelslist2\"]/ul/li[position()>1]",
+        "status": "//span[6]"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "updateTime": "//meta[@property=\"og:novel:update_time\"]/@content",
+        "title": "//a",
+        "host": "https://www.soxs.cc",
+        "list": "//div[@class=\"novel_list\"][2]/dl/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

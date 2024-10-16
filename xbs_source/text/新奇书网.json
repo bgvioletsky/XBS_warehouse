@@ -1,0 +1,128 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "host": "http://qishuk.com",
+        "content": "//div[@class=\"articlecon font-large\"]/p\n\n|| @replace:更多精校小说尽在奇书网下载：http://www.qishu.me/|| @replace: ==========================================================",
+        "actionID": "chapterContent"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "requestParamsEncode": "2147485234",
+        "actionID": "bookDetail",
+        "status": "//p[5]/span",
+        "host": "http://qishuk.com",
+        "cover": "//div[@class=\"bookcover\"]/div/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "desc": "//table/tr/td[3]/a/@href"
+    },
+    "bookWorld": {
+        "分类": {
+            "requestParamsEncode": "2147485234",
+            "responseFormatType": "html",
+            "author": "//li/a/p[2]\n\n||@js: return result.replace('作者：','')",
+            "bookName": "//li/a/p[1]",
+            "requestInfo": "@js:\nlet url = 'http://qishuk.com' + params.filters.filter + 'index_' + params.pageIndex + '.html';\nreturn url.replace('index_1.html', '');",
+            "host": "http://qishuk.com",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 10,
+                "requestFilters": "最新全本::/newbook/\n玄幻奇幻::/xuanhuan/\n武侠仙侠::/xianxia/\n女频言情::/yanqing/\n现代都市::/dushi/\n历史军事::/lishi/\n游戏竞技::/youxi/\n科幻灵异::/kehuan/"
+            },
+            "detailUrl": "//li/a/@href",
+            "validConfig": "",
+            "list": "//ul[@id=\"ulist\"]/li",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "shudanList": {
+        "知名作者": {
+            "actionID": "shudanList",
+            "validConfig": "",
+            "requestInfo": "@js:\nlet url = 'https://www.52shukuwang.com/author/' + params.filters.filter + 'index_' + params.pageIndex + '.html';\nreturn url.replace('index_1.html', '');",
+            "title": "//a",
+            "moreKeys": {
+                "pageSize": 120,
+                "requestFilters": "耽美作者::\n言情作者::yanqing/"
+            },
+            "host": "http://qishuk.com",
+            "_sIndex": 0,
+            "list": "//ul[@class='writer_list fix']/li",
+            "responseFormatType": "html",
+            "parserID": "DOM",
+            "url": "//a/@href"
+        }
+    },
+    "sourceType": "text",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "1",
+    "sourceName": "新奇书网",
+    "sourceUrl": "http://qishuk.com",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "author": "//h2/a||@js:\nreturn result.replace(/.*作者：/, '');",
+        "responseFormatType": "html",
+        "bookName": "//h2/a||@js:\nreturn result.replace(/作者：.*/, '');",
+        "desc": "//p",
+        "requestInfo": "@js:\nreturn params.queryInfo.url;",
+        "host": "http://qishuk.com",
+        "actionID": "shudanDetail",
+        "detailUrl": "//h2/a/@href",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "validConfig": "",
+        "list": "//ul[@class='list']/li",
+        "parserID": "DOM"
+    },
+    "desc": "🌻",
+    "lastModifyTime": "1666397717.800697",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "requestParamsEncode": "2147485234",
+        "responseFormatType": "html",
+        "author": "//li[2]",
+        "bookName": "//li/a",
+        "requestInfo": "@js:\nreturn {'url':'http://qishuk.com/e/search/', 'POST':true, 'httpParams':{'show':'title,smalltext,writer', 'tempid':1, 'tbname':'book', 'keyboard':params.keyWord}};",
+        "host": "http://qishuk.com",
+        "actionID": "searchBook",
+        "detailUrl": "//li/a/@href",
+        "moreKeys": {
+            "skipCount": 1
+        },
+        "validConfig": "",
+        "list": "//div[@class=\"item mt10\"]/ul",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "actionID": "chapterList",
+        "validConfig": "",
+        "requestParamsEncode": "2147485234",
+        "updateTime": "//div[@class='infotype infotype_mulu']/time[@class='bookinfo']||@replace:更新时间：",
+        "requestInfo": "@js:\n\nreturn params.queryInfo.desc",
+        "title": "//a",
+        "host": "http://qishuk.com",
+        "list": "//ul[@class='cataloglist']/a",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    }
+}

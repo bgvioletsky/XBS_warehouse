@@ -1,0 +1,86 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class=\"read-content\"]/p ||@js:\nreturn trs(result)\n\nfunction trs(str){\nlet key=\"\";\nlet data=\"的一是了我不人在他有这个上们来到时大地为子中你说生国年看就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发当没成只如事把还用第样道想作种开美总从无情己面最女但现前些所同日手又行意动\";\nlet darr=data.split(\"\");\nkey.split(\"\").forEach((x,k)=>{\n  let reg=new RegExp(x,\"g\");\n  str=str.replace(reg,darr[k]);\n});\nreturn str;\n}",
+        "actionID": "chapterContent",
+        "host": "http://www.biqujiao.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "mn": {
+            "_sIndex": 0,
+            "actionID": "bookWorld",
+            "parserID": "DOM"
+        }
+    },
+    "sourceUrl": "http://www.biqujiao.com",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "99",
+    "sourceName": "biqujiao.co修",
+    "httpHeaders": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+    },
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1663472644.445580",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "cat": "//div[@class='cover']/span",
+        "author": "//dd[@class=\"author\"]",
+        "responseFormatType": "html",
+        "bookName": "//dt/a",
+        "desc": "//dd[@class=\"intro\"]/text()",
+        "requestInfo": "@js:\nlet url=config.host+\"/search/\";\n\nlet hh= {\n  \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/13.0 Safari/604.1\"\n};\n\nlet hp= {'searchkey':params.keyWord,\"submit\":\"\"};\n\nreturn {'url':url, 'GET':true, 'httpParams':hp\n,\"httpHeaders\": config.httpHeaders};",
+        "host": "http://www.biqujiao.com",
+        "actionID": "searchBook",
+        "detailUrl": "//dt/a/@href",
+        "cover": "//a/img/@data-src",
+        "validConfig": "",
+        "list": "//div[@class='item']",
+        "parserID": "DOM",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        }
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "title": "//a||@js:\nreturn trs(result)\n\nfunction trs(str){\nlet key=\"\";\nlet data=\"的一是了我不人在他有这个上们来到时大地为子中你说生国年看就那和要她出也得里后自以会家可下而过天去能对小多然于心学么之都好看起发当没成只如事把还用第样道想作种开美总从无情己面最女但现前些所同日手又行意动\";\nlet darr=data.split(\"\");\nkey.split(\"\").forEach((x,k)=>{\n  let reg=new RegExp(x,\"g\");\n  str=str.replace(reg,darr[k]);\n});\nreturn str;\n}",
+        "host": "http://www.biqujiao.com",
+        "httpHeaders": {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36"
+        },
+        "list": "//ul[@class=\"hidden-xs\"]/li",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href"
+    },
+    "sourceType": "text"
+}

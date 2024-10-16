@@ -1,0 +1,101 @@
+{
+    "chapterContent": {
+        "validConfig": "",
+        "content": "//div[@class=\"readcontent\"]/p/text()",
+        "actionID": "chapterContent",
+        "moreKeys": {
+            "maxPage": 100
+        },
+        "host": "https://www.kandushu.com/",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "nextPageUrl": "//a[contains(text(),'下一页')]/@href"
+    },
+    "enable": "1",
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "bookDetail": {
+        "validConfig": "",
+        "status": "//p[@class=\"booktag\"]/span[3]",
+        "actionID": "bookDetail",
+        "wordCount": "//p[@class=\"booktag\"]/span[1]",
+        "host": "https://www.kandushu.com/",
+        "cover": "//div[@class=\"bookcover hidden-xs\"]/img/@src",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "author": "//div[@class=\"author\"][1]||@replace:作者：",
+            "responseFormatType": "html",
+            "lastChapterTitle": "//div[@class=\"cat\"]/a",
+            "bookName": "//h4",
+            "desc": "//div[@class=\"update\"]||@replace:简介：",
+            "requestInfo": "@js:\nlet {_type}=params.filters\nlet url=`https://www.kandushu.com${_type}${params.pageIndex}`;\n\nreturn {url:url,'httpHeaders':config.httpHeaders}",
+            "host": "https://www.kandushu.com/",
+            "actionID": "bookWorld",
+            "moreKeys": {
+                "pageSize": 12,
+                "requestFilters": "_type\n玄幻魔法::/quanben/xs/1/1\n武侠修真::/quanben/xs/2/1\n都市言情::/quanben/xs/3/1\n历史军事::/quanben/xs/4/1\n科幻灵异::/quanben/xs/5/1\n游戏竞技::/quanben/xs/6/1\n女生频道::/quanben/xs/7/1\n其他类型::/quanben/xs/8/1"
+            },
+            "wordCount": "//div[@class=\"author\"][2]||@replace:字数：",
+            "validConfig": "",
+            "list": "//div[@class=\"content book\"]/div",
+            "_sIndex": 0,
+            "parserID": "DOM",
+            "detailUrl": "//h4/a/@href|https://www.kandushu.com%@result",
+            "cover": "//h4[@class=\"bookname\"]/a/@href"
+        }
+    },
+    "sourceUrl": "https://www.kandushu.com/",
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "weight": "9999",
+    "sourceName": "看读书",
+    "desc": "🐰",
+    "miniAppVersion": "2.53.2",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1666780325.018289",
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "searchBook": {
+        "author": "//div[@class=\"author\"][1]||@replace:作者：",
+        "lastChapterTitle": "//div[@class=\"cat\"]/a",
+        "responseFormatType": "html",
+        "bookName": "//h4/a",
+        "desc": "//div[@class=\"update\"]||@replace:简介：",
+        "requestInfo": "@js:\n\nlet url = \"https://www.kandushu.com/search/\";\n\nlet hp = {\"searchkey\":params.keyWord, \"action\" : \"login\",\"searchtype\" : \"all\",\"submit\": \"\"}\n\nlet hh = {\"Referer\":\"https://www.kandushu.com\",\"User-Agent\":\"Mozilla\\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\\/537.36 (KHTML, like Gecko) Chrome\\/106.0.0.0 Safari\\/537.36 Edg\\/106.0.1370.42\"}\n\nreturn {'url':url,  'POST' : true, 'httpParams':hp, 'httpHeaders':hh,forbidCookie:true,cacheTime:3600};",
+        "host": "https://www.kandushu.com/",
+        "actionID": "searchBook",
+        "detailUrl": "//h4/a/@href|https://www.kandushu.com%@result",
+        "validConfig": "",
+        "list": "//div[@class=\"content book\"]/div",
+        "parserID": "DOM"
+    },
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "updateTime": "//div[@class=\"bookinfo\"]/p[4]|@replace:更新时间：",
+        "title": "//a",
+        "host": "https://www.kandushu.com/",
+        "list": "//div[@id=\"list-chapterAll\"]/dd",
+        "responseFormatType": "html",
+        "parserID": "DOM",
+        "url": "//a/@href|https://www.kandushu.com%@result"
+    },
+    "sourceType": "text"
+}

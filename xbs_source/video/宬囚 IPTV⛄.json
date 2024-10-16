@@ -1,0 +1,80 @@
+{
+    "bookDetail": {
+        "responseFormatType": "html",
+        "actionID": "bookDetail",
+        "parserID": "DOM"
+    },
+    "authorId": "",
+    "weight": "1006",
+    "miniAppVersion": "2.53.2",
+    "chapterList": {
+        "validConfig": "",
+        "actionID": "chapterList",
+        "JSParser": "function functionName(config, params, result) {\n\n  \tlet item = {}\n\titem.title = params.queryInfo.bookName;\n\titem.url = params.queryInfo.detailUrl;\n\tlet list = []\n\tlist.push(item);\n\treturn {'list':list};\n}",
+        "requestInfo": "@js:\nreturn config.host;",
+        "host": "https://www.baidu.com",
+        "responseFormatType": "html",
+        "parserID": "DOM"
+    },
+    "searchShudan": {
+        "actionID": "searchShudan",
+        "parserID": "DOM"
+    },
+    "relatedWord": {
+        "actionID": "relatedWord",
+        "parserID": "DOM"
+    },
+    "enable": 1,
+    "sourceName": "宬囚 IPTV⛄",
+    "sourceType": "video",
+    "sourceUrl": "https://www.baidu.com",
+    "shudanDetail": {
+        "actionID": "shudanDetail",
+        "parserID": "DOM"
+    },
+    "lastModifyTime": "1655919364.978407",
+    "searchBook": {
+        "validConfig": "",
+        "actionID": "searchBook",
+        "JSParser": "function functionName(config,params,result){\n\t//result = result.replace('#EXTM3U','');\n\tlet res = result.split('\\n');\n\tlet list = []\n\t//res.shift();\n\tpageSize = 20;\n\n\tfor(let i=(params.pageIndex-1)*pageSize;i<(pageSize+(params.pageIndex-1)*pageSize);i++){\n\t\tlet item = {}\n\t\titem.bookName = res[i].split(',')[0];\n\t\t\n\t\titem.detailUrl =\tres[i].split(',')[1];\n\t\tif(item.bookName.indexOf(params.keyWord)>=0){\n\t\t\tlist.push(item);\n\t\t}\n\t\t\n\t}\n\treturn {'list':list};\n}",
+        "requestInfo": "https://vidcache.net:8161/static/3c8e5f607674a54facaed6273adc99b41cddb45e/adultiptv.txt",
+        "moreKeys": {
+            "pageSize": 20
+        },
+        "host": "https://www.baidu.com",
+        "parserID": "DOM"
+    },
+    "chapterContent": {
+        "validConfig": "",
+        "content": "@js:\nreturn params.queryInfo.url;",
+        "host": "https://www.baidu.com",
+        "parserID": "DOM",
+        "requestInfo": "@js:\nreturn config.host;",
+        "actionID": "chapterContent"
+    },
+    "shupingList": {
+        "actionID": "shupingList",
+        "parserID": "DOM"
+    },
+    "desc": "r18+严禁倒卖分享，魔法使用，自觉删除",
+    "password": "ₓKSēnoYuanpro5kycg!@happy134∞",
+    "shudanList": {},
+    "bookWorld": {
+        "分类": {
+            "validConfig": "",
+            "actionID": "bookWorld",
+            "JSParser": "function functionName(config,params,result){\n\t//result = result.replace('#EXTM3U','');\n\tlet res = result.split('\\n');\n\tlet list = []\n\t//res.shift();\n\tpageSize = 20;\n\tfor(let i=(params.pageIndex-1)*pageSize;i<(pageSize+(params.pageIndex-1)*pageSize);i++){\n\t\tlet item = {}\n\t\titem.bookName = res[i].split(',')[0];\n\t\t\n\t\titem.detailUrl =\tres[i].split(',')[1];\n\n\t\t\tlist.push(item);\n\t\t\n\t\t\n\t}\n\treturn {'list':list};\n}",
+            "requestInfo": "https://vidcache.net:8161/static/3c8e5f607674a54facaed6273adc99b41cddb45e/adultiptv.txt",
+            "moreKeys": {
+                "pageSize": 20
+            },
+            "host": "https://www.baidu.com",
+            "_sIndex": 0,
+            "parserID": "DOM"
+        }
+    },
+    "shupingHome": {
+        "actionID": "shupingHome",
+        "parserID": "DOM"
+    }
+}
